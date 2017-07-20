@@ -6,6 +6,9 @@ this project.
 
 """
 
+INDENT = 2
+
+import json
 import collections
 
 def _fmtk(k):
@@ -58,29 +61,41 @@ class _base(object):
             self._type = self.__class__.__name__
         self._name = name
 
-        print('{} "{}" "{}" {{'.format(self._class, self._type, self._name))
-        for k,v in kwargs.items():
-            if isinstance(v, list):
-                _print_list(k, v)
-            elif isinstance(v, bool):
-                _print_bool(k, v)
-            elif isinstance(v, dict):
-                _print_dict(k, v)
-            else:
-                _print_string(k, v)
-        print('}\n')
+        self._data = {
+          self._class: {
+            self._type: kwargs
+            }
+        }
 
-    def _ref(self, ref):
-        if self._class == 'resource':
-            return '${{{}.{}.{}}}'.format(self._type, self._name, ref)
-        else:
-            return '${{{}.{}.{}.{}}}'.format(self._class, self._type, self._name, ref)
+        print(self)
 
-    def __getattr__(self, attr):
-        return self._ref(attr)
+    def __repr__(self):
+        return json.dumps(self._data, indent=INDENT, sort_keys=True)
 
-    def __str__(self):
-        return self._ref('id')
+
+#        print('{} "{}" "{}" {{'.format(self._class, self._type, self._name))
+#        for k,v in kwargs.items():
+#            if isinstance(v, list):
+#                _print_list(k, v)
+#            elif isinstance(v, bool):
+#                _print_bool(k, v)
+#            elif isinstance(v, dict):
+#                _print_dict(k, v)
+#            else:
+#                _print_string(k, v)
+#        print('}\n')
+#
+#    def _ref(self, ref):
+#        if self._class == 'resource':
+#            return '${{{}.{}.{}}}'.format(self._type, self._name, ref)
+#        else:
+#            return '${{{}.{}.{}.{}}}'.format(self._class, self._type, self._name, ref)
+#
+#    def __getattr__(self, attr):
+##        return self._ref(attr)
+#
+#    def __str__(self):
+#        return self._ref('id')
 
 
 class _resource(_base):
