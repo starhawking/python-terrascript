@@ -37,6 +37,6 @@ up to you to ensure that the generated output makes sense to Terraform.**
 
 More details can be found on the following pages.
 
-* [Interpolation](docs/interpolation.md)
+* [Interpolation](doc/interpolation.md)
 
 *The rest of this README is TODO!!!*
