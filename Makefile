@@ -8,12 +8,16 @@ all: help
 help:
 	@echo "make test"
 	@echo "make debug"
+	@echo "make code"
 
 test:
 	$(NOSE) tests/*
 
 debug:
 	$(NOSE) --pdb tests/*
+
+code:
+	./makecode.py
 
 clean:
 	rm -f tests/*.pyc

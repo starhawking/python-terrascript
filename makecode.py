@@ -1,3 +1,4 @@
+#!/usr/bin/env python3 
 
 import glob
 import collections
@@ -58,9 +59,11 @@ for provider,v in data.items():
         fp.write('from terrascript import _resource\n')
         for resource in v[0]:
             fp.write('class {}(_resource): pass\n'.format(resource))
+            fp.write('{} = {}\n\n'.format(resource[len(provider)+1:], resource))
 
     print(data_path)
     with open(data_path, 'w') as fp:
         fp.write('from terrascript import _data\n')
         for data in v[1]:
             fp.write('class {}(_data): pass\n'.format(data))
+            fp.write('{} = {}\n\n'.format(data[len(provider)+1:], data))

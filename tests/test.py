@@ -50,13 +50,24 @@ class _BaseTypes(object):
         assert CONFIG[self.k1][self.k2][self.k3] == {'argument': '${data.aws_instance.DATA.attr}' }
 
 
-class TestResourceTypes(_BaseTypes):
+class TestLongResourceTypes(_BaseTypes):
     _type = r.aws_instance
     k1 = 'resource'
     k2 = 'aws_instance'
 
-class TestDataTypes(_BaseTypes):
+class TestShortResourceTypes(_BaseTypes):
+    _type = r.instance
+    k1 = 'resource'
+    k2 = 'aws_instance'
+
+class TestLongDataTypes(_BaseTypes):
     _type = d.aws_instance
     k1 = 'data'
     k2 = 'aws_instance'
+
+class TestShortDataTypes(_BaseTypes):
+    _type = d.instance
+    k1 = 'data'
+    k2 = 'aws_instance'
+
 
