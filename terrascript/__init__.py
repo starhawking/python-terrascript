@@ -6,16 +6,20 @@ this project.
 
 """
 
+#import collections
+
 def _fmtk(k):
     return '{}'.format(k)
 
 def _fmtv(v):
     if isinstance(v, bool):
         return str(v).lower()
-    if isinstance(v, list):
+    elif isinstance(v, list):
         return str(v).replace("'", '"')
-    else:
+    elif isinstance(v, str):
         return '"{}"'.format(v)
+    else:
+        return '{}'.format(v)
 
 
 def _print_list(n, l):
@@ -28,7 +32,8 @@ def _print_string(n, s):
     print('  {} = {}'.format(_fmtk(n), _fmtv(s)))
 
 def _print_dict(n, d):
-    print('  {} {{'.format(n))
+    print('  {} = {{'.format(n))
+    #d = collections.OrderedDict(sorted(d.items()))
     for k,v in d.items():
         print('    {} = {}'.format(_fmtk(k), _fmtv(v)))
     print('  }')
