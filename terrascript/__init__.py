@@ -6,44 +6,18 @@ this project.
 
 """
 
-import collections
+INDENT = 2
+"""JSON indentation level."""
 
-def _fmtk(k):
-    return '{}'.format(k)
+import json
+from collections import defaultdict, OrderedDict
 
-def _fmtv(v):
-    if isinstance(v, bool):
-        return str(v).lower()
-    elif isinstance(v, list):
-        return str(v).replace("'", '"')
-    elif isinstance(v, str):
-        return '"{}"'.format(v)
-    else:
-        return '{}'.format(v)
-
-
-def _print_list(n, l):
-    print('  {} = {}'.format(_fmtk(n), _fmtv(l)))
-
-def _print_bool(n, b):
-    print('  {} = {}'.format(_fmtk(n), _fmtv(b)))
-
-def _print_string(n, s):
-    print('  {} = {}'.format(_fmtk(n), _fmtv(s)))
-
-def _print_dict(n, d):
-    print('  {} = {{'.format(n))
-    d = collections.OrderedDict(sorted(d.items()))
-    for k,v in d.items():
-        print('    {} = {}'.format(_fmtk(k), _fmtv(v)))
-    print('  }')
-
+CONFIG = {
+    "data": defaultdict(dict),
+    "resource": defaultdict(dict)
+}
 
 class _base(object):
-    """
-
-    """
-
     _class = None
     """One of 'resource', 'data' or 'module'."""
 
@@ -58,38 +32,24 @@ class _base(object):
             self._type = self.__class__.__name__
         self._name = name
 
-        print('{} "{}" "{}" {{'.format(self._class, self._type, self._name))
-        for k,v in kwargs.items():
-            if isinstance(v, list):
-                _print_list(k, v)
-            elif isinstance(v, bool):
-                _print_bool(k, v)
-            elif isinstance(v, dict):
-                _print_dict(k, v)
-            else:
-                _print_string(k, v)
-        print('}\n')
+        CONFIG[self._class][self._type][self._name] = kwargs
 
-    def _ref(self, ref):
+    def __getattr__(self, name):
         if self._class == 'resource':
-            return '${{{}.{}.{}}}'.format(self._type, self._name, ref)
+            return '${{{}.{}.{}}}'.format(self._type, self._name, name)
         else:
-            return '${{{}.{}.{}.{}}}'.format(self._class, self._type, self._name, ref)
-
-    def __getattr__(self, attr):
-        return self._ref(attr)
-
-    def __str__(self):
-        return self._ref('id')
+            return '${{{}.{}.{}.{}}}'.format(self._class, self._type, self._name, name)
 
 
 class _resource(_base):
     """Base class for resources."""
     _class = 'resource'
 
+
 class _data(_base):
     """Base class for data sources."""
     _class = 'data'
+
 
 class resource(_base):
     """Class for creating a resource for which no convenience wrapper exists."""
@@ -98,6 +58,7 @@ class resource(_base):
         self._type = type_
         super(resource, self).__init__(name, **kwargs)
 
+
 class data(_base):
     """Class for creating a data source for which no convenience wrapper exists."""
     _class = 'data'
@@ -105,19 +66,10 @@ class data(_base):
         self._type = type_
         super(data, self).__init__(name, **kwargs)
 
+
 class module(_base):
     """Base class for modules."""
     _class = 'module'
 
 
-if __name__ == '__main__':
-    ami1 = aws_ami('ubuntu', most_recent=True, owners = ["099720109477"],
-                  filter={'name': "NAME", 'values': ['VALUE1', 'VALUE2']})
-
-    i1 = aws_instance('aws_instance_1', ami=ami1)
-    i2 = aws_instance('aws_instance_2', otherid=i1, otherami=i1.ami)
-
-    ami2 = data('aws_ami', 'centos', most_recent=True, owners = ["099720109477"])
-    i3 = resource('aws_instance', 'aws_instance_1', ami=ami2)
-
-
+__all__ = ['CONFIG', 'resource', 'data', 'module']

@@ -1,94 +1,62 @@
 
-from base import Base
+from terrascript import *
+from terrascript.aws import r
+from terrascript.aws import d
 
-from  terrascript.aws import r
+STRING = 'STRING'
+BOOL = True
+INT = 10
+FLOAT = 1.1
+LIST = [1,'2',False]
+DICT = {'a': 1, 'b': '2', 'c': True}
 
-
-TEST_STRING = """
-resource "aws_instance" "NAME" {
-  argument = "STRING"
-}
-"""
-
-TEST_BOOL = """
-resource "aws_instance" "NAME" {
-  argument = false
-}
-"""
-
-TEST_INT = """
-resource "aws_instance" "NAME" {
-  argument = 10
-}
-"""
-
-TEST_FLOAT = """
-resource "aws_instance" "NAME" {
-  argument = 3.1415
-}
-"""
-
-TEST_LIST = """
-resource "aws_instance" "NAME" {
-  argument = ["a", "b", "c"]
-}
-"""
-
-TEST_DICT = """
-resource "aws_instance" "NAME" {
-  argument = {
-    a = "a"
-    b = "b"
-  }
-}
-"""
-
-# The exact output depends on the 
-TEST_MIXED = """
-resource "aws_instance" "NAME" {
-  argument = {
-    bool = true
-    float = 3.1415
-    int = 10
-    list = ["a", "b", "c"]
-    string = "STRING"
-  }
-}
-"""
-
-class TestTypes(Base):
+class _BaseTypes(object):
+    _type = None
+    k1 = k2 = None
+    k3 = name = 'NAME'
 
     def test_string(self):
-        r.aws_instance("NAME", argument='STRING')
-        assert self.stdout.strip() == TEST_STRING.strip()
+        self._type(self.name, argument=STRING)
+        assert CONFIG[self.k1][self.k2][self.k3] == {'argument': STRING}
 
     def test_bool(self):
-        r.aws_instance("NAME", argument=False)
-        assert self.stdout.strip() == TEST_BOOL.strip()
+        self._type(self.name, argument=BOOL)
+        assert CONFIG[self.k1][self.k2][self.k3] == {'argument': BOOL}
 
     def test_int(self):
-        r.aws_instance("NAME", argument=10)
-        assert self.stdout.strip() == TEST_INT.strip()
+        self._type(self.name, argument=INT)
+        assert CONFIG[self.k1][self.k2][self.k3] == {'argument': INT}
 
     def test_float(self):
-        r.aws_instance("NAME", argument=3.1415)
-        assert self.stdout.strip() == TEST_FLOAT.strip()
+        self._type(self.name, argument=FLOAT)
+        assert CONFIG[self.k1][self.k2][self.k3] == {'argument': FLOAT}
 
     def test_list(self):
-        r.aws_instance("NAME", argument=['a', 'b', 'c'])
-        assert self.stdout.strip() == TEST_LIST.strip()
+        self._type(self.name, argument=LIST)
+        assert CONFIG[self.k1][self.k2][self.k3] == {'argument': LIST}
 
     def test_dict(self):
-        r.aws_instance("NAME", argument={'a': 'a', 'b': 'b'})
-        assert self.stdout.strip() == TEST_DICT.strip()
+        self._type(self.name, argument=DICT)
+        assert CONFIG[self.k1][self.k2][self.k3] == {'argument': DICT}
 
-    def test_mixed(self):
-        a = {'string': 'STRING',
-             'bool': True,
-             'int': 10,
-             'float': 3.1415,
-             'list': ['a', 'b', 'c'],
-             # 'dict' not supported!
-             }
-        r.aws_instance("NAME", argument=a)
-        assert self.stdout.strip() == TEST_MIXED.strip()
+    def test_interpol_resource_attr(self):
+        resource = r.aws_instance('RESOURCE')
+        self._type(self.name, argument=resource.attr)
+        assert CONFIG[self.k1][self.k2][self.k3] == {'argument': '${aws_instance.RESOURCE.attr}' }
+
+    def test_interpol_data_attr(self):
+        data = d.aws_instance('DATA')
+        self._type(self.name, argument=data.attr)
+        assert CONFIG[self.k1][self.k2][self.k3] == {'argument': '${data.aws_instance.DATA.attr}' }
+
+
+class TestResourceTypes(_BaseTypes):
+    _type = r.aws_instance
+    k1 = 'resource'
+    k2 = 'aws_instance'
+
+class TestDataTypes(_BaseTypes):
+    _type = d.aws_instance
+    k1 = 'data'
+    k2 = 'aws_instance'
+
