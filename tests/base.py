@@ -3,7 +3,9 @@ import tempfile
 
 class Base(object):
     def setup(self):
-        sys.stdout = self._stdout = tempfile.NamedTemporaryFile('w+', delete=False)
+        sys.stdout = self._stdout = tempfile.NamedTemporaryFile('w+', delete=False,
+                                                                prefix='terrascript.')
+
         sys.stderr.write(self._stdout.name + ' ')
 
     def teardown(self):
