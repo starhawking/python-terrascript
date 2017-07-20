@@ -1,60 +1,19 @@
 
 from base import Base
 
-from  terrascript.aws import r
+import terrascript
+from terrascript.aws import r
 
+terrascript.INDENT = None
+"""For easier comparison don't indent JSON."""
 
-TEST_STRING = """
-resource "aws_instance" "NAME" {
-  argument = "STRING"
-}
-"""
-
-TEST_BOOL = """
-resource "aws_instance" "NAME" {
-  argument = false
-}
-"""
-
-TEST_INT = """
-resource "aws_instance" "NAME" {
-  argument = 10
-}
-"""
-
-TEST_FLOAT = """
-resource "aws_instance" "NAME" {
-  argument = 3.1415
-}
-"""
-
-TEST_LIST = """
-resource "aws_instance" "NAME" {
-  argument = ["a", "b", "c"]
-}
-"""
-
-TEST_DICT = """
-resource "aws_instance" "NAME" {
-  argument = {
-    a = "a"
-    b = "b"
-  }
-}
-"""
-
-# The exact output depends on the 
-TEST_MIXED = """
-resource "aws_instance" "NAME" {
-  argument = {
-    bool = true
-    float = 3.1415
-    int = 10
-    list = ["a", "b", "c"]
-    string = "STRING"
-  }
-}
-"""
+TEST_BOOL = '{"resource": {"aws_instance": {"argument": false}}}'
+TEST_DICT = '{"resource": {"aws_instance": {"argument": {"a": "a", "b": "b"}}}}'
+TEST_STRING = '{"resource": {"aws_instance": {"argument": "STRING"}}}'
+TEST_INT = '{"resource": {"aws_instance": {"argument": 10}}}'
+TEST_FLOAT = '{"resource": {"aws_instance": {"argument": 3.1415}}}'
+TEST_LIST = '{"resource": {"aws_instance": {"argument": ["a", "b", "c"]}}}'
+TEST_MIXED = '{"resource": {"aws_instance": {"argument": {"bool": true, "float": 3.1415, "int": 10, "list": ["a", "b", "c"], "string": "STRING"}}}}'
 
 class TestTypes(Base):
 
