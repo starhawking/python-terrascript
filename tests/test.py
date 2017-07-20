@@ -47,10 +47,10 @@ resource "aws_instance" "NAME" {
 TEST_MIXED = """
 resource "aws_instance" "NAME" {
   argument = {
+    bool = true
+    float = 3.1415
     int = 10
     list = ["a", "b", "c"]
-    float = 3.1415
-    bool = true
     string = "STRING"
   }
 }

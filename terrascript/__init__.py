@@ -6,7 +6,7 @@ this project.
 
 """
 
-#import collections
+import collections
 
 def _fmtk(k):
     return '{}'.format(k)
@@ -33,7 +33,7 @@ def _print_string(n, s):
 
 def _print_dict(n, d):
     print('  {} = {{'.format(n))
-    #d = collections.OrderedDict(sorted(d.items()))
+    d = collections.OrderedDict(sorted(d.items()))
     for k,v in d.items():
         print('    {} = {}'.format(_fmtk(k), _fmtv(v)))
     print('  }')
