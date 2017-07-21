@@ -26,7 +26,30 @@ CONFIG = {
 def dump():
     """Return the JSON representaion of CONFIG."""
     import json
-    return json.dumps(CONFIG, indent=INDENT, sort_keys=SORT, default=lambda v: str(v))
+    import copy
+
+    # Work on copy of CONFIG but with unused top-level elements removed.
+    #
+    config = {k: v for k,v in CONFIG.items() if v}
+    return json.dumps(config, indent=INDENT, sort_keys=SORT, default=lambda v: str(v))
+
+
+def validate():
+    """Validate a Terraform configuration."""
+    import tempfile
+    import subprocess
+
+    config = dump()
+    tmpdir = tempfile.mkdtemp()
+    tmpfile = tempfile.NamedTemporaryFile(mode='w', dir=tmpdir, suffix='.tf.json', delete=False)
+
+    tmpfile.write(config)
+    tmpfile.flush()
+
+    proc = subprocess.Popen(['terraform','validate'], cwd=tmpdir)
+    proc.communicate()
+    return proc.returncode == 0
+
 
 
 class _base(object):
@@ -61,6 +84,14 @@ class _resource(_base):
 class _data(_base):
     """Base class for data sources."""
     _class = 'data'
+
+    # TODO: Work-around for https://github.com/mjuenema/python-terrascript/issues/3
+    def __init__(self, name, **kwargs):
+        if not 'type' in kwargs:
+            kwargs['type'] = 'string'
+        if not 'description' in kwargs:
+            kwargs['description'] = ''
+        super(_data, self).__init__(name, **kwargs)
 
 
 class resource(_base):
@@ -106,4 +137,5 @@ class variable(object):
             return "${{var.{}[\"{}\"]}}".format(self._name, i)
 
 
-__all__ = ['CONFIG', 'dump', 'resource', 'data', 'module', 'variable']
+__all__ = ['CONFIG', 'dump', 'validate',
+           'resource', 'data', 'module', 'variable']
