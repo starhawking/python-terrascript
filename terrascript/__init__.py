@@ -50,10 +50,9 @@ def validate():
     return proc.returncode == 0
 
 
-
 class _base(object):
     _class = None
-    """One of 'resource', 'data' or 'module'."""
+    """One of 'resource', 'data', 'module', etc."""
 
     _type = None
     """The resource type, e.g. 'aws_instance'."""
@@ -66,22 +65,45 @@ class _base(object):
             self._type = self.__class__.__name__
         self._name = name
 
-        CONFIG[self._class][self._type][self._name] = kwargs
+        if self._class in ['resource', 'data']:
+            CONFIG[self._class][self._type][self._name] = kwargs
+        else:
+            CONFIG[self._class][self._name] = kwargs
 
     def __getattr__(self, name):
+        """References to attributes."""
         if self._class == 'resource':
             return '${{{}.{}.{}}}'.format(self._type, self._name, name)
+        elif self._class == 'module':
+            return '${{module.{}.{}}}'.format(self._name, name)
         else:
             return '${{{}.{}.{}.{}}}'.format(self._class, self._type, self._name, name)
+            
+    def __getitem__(self, i):
+        if isinstance(i, int):
+            # "${var.NAME[i]}"
+            return '${{var.{}[{}]}}'.format(self._name, i)
+        else:
+            # "${var.NAME["i"]}"
+            return "${{var.{}[\"{}\"]}}".format(self._name, i)
+
+    def __repr__(self):
+        """References to objects."""
+        if self._class == 'resource':
+            """Non-interpolated reference to a resource, e.g. ``aws_instance.web``."""
+            return '{}.{}'.format(self._type, self._name)
+        elif self._class == 'variable':
+            """Interpolated reference to a variable, e.g. ``var.http_port``."""
+            return '${{var.{}}}'.format(self._name)
+        else:
+            """Non-interpolated reference to a non-resource, e.g. ``module.http``."""
+            return '{}.{}'.format(self._class, self._name)
 
 
 class _resource(_base):
     """Base class for resources."""
     _class = 'resource'
 
-    def __repr__(self):
-        """Non-interpolated reference: ``TYPE.NAME``, such as ``aws_instance.web``."""
-        return '{}.{}'.format(self._type, self._name)
 
 
 class _data(_base):
@@ -100,6 +122,7 @@ class _data(_base):
 class resource(_base):
     """Class for creating a resource for which no convenience wrapper exists."""
     _class = 'resource'
+    
     def __init__(self, type_, name, **kwargs):
         self._type = type_
         super(resource, self).__init__(name, **kwargs)
@@ -108,6 +131,7 @@ class resource(_base):
 class data(_base):
     """Class for creating a data source for which no convenience wrapper exists."""
     _class = 'data'
+    
     def __init__(self, type_, name, **kwargs):
         self._type = type_
         super(data, self).__init__(name, **kwargs)
@@ -115,36 +139,15 @@ class data(_base):
 
 class module(_base):
     """Class for modules."""
-
-    def __init__(self, name, **kwargs):
-        self._name = name
-        CONFIG['module'][self._name] = kwargs
-
-    def __repr__(self):
-        """Non-interpolated reference: ``module.NAME``, such as ``module.foo``."""
-        return 'module.{}'.format(self._name)
-
-    def __getattr__(self, name):
-        return '${{module.{}.{}}}'.format(self._name, name)
+    
+    _class = 'module'
 
 
-class variable(object):
+class variable(_base):
     """Class for variables."""
+    
+    _class = 'variable'
 
-    def __init__(self, name, **kwargs):
-        self._name = name
-        CONFIG['variable'][self._name] = kwargs
-
-    def __repr__(self):
-        return '${{var.{}}}'.format(self._name)
-
-    def __getitem__(self, i):
-        if isinstance(i, int):
-            # "${var.NAME[i]}"
-            return '${{var.{}[{}]}}'.format(self._name, i)
-        else:
-            # "${var.NAME["i"]}"
-            return "${{var.{}[\"{}\"]}}".format(self._name, i)
 
 
 __all__ = ['CONFIG', 'dump', 'validate',
