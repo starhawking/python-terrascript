@@ -9,8 +9,11 @@ this project.
 INDENT = 2
 """JSON indentation level."""
 
+SORT = True
+"""Whether to sort keys when generating JSON."""
+
 import atexit
-from collections import defaultdict, UserString
+from collections import defaultdict
 
 
 CONFIG = {
@@ -19,6 +22,11 @@ CONFIG = {
     "variable": dict(),
     "module": dict()
 }
+
+def dump():
+    """Return the JSON representaion of CONFIG."""
+    import json
+    return json.dumps(CONFIG, indent=INDENT, sort_keys=SORT, default=lambda v: str(v))
 
 
 class _base(object):
@@ -95,14 +103,7 @@ class variable(object):
             return '${{var.{}[{}]}}'.format(self._name, i)
         else:
             # "${var.NAME["i"]}"
-            return '${{var.{}["{}"]}}'.format(self._name, i)
-
-def _serialise(v):
-    return str(v)
-
-def dump():
-    import json
-    return json.dumps(CONFIG, indent=INDENT, default=_serialise)
+            return "${{var.{}[\"{}\"]}}".format(self._name, i)
 
 
-__all__ = ['CONFIG', 'resource', 'data', 'module', 'variable']
+__all__ = ['CONFIG', 'dump', 'resource', 'data', 'module', 'variable']

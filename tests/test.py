@@ -82,9 +82,28 @@ class TestVariable(object):
         variable('NAME', description='DESCR', type='string', default='DEFAULT')
         assert CONFIG['variable']['NAME'] == {'default': 'DEFAULT', 'type': 'string', 'description': 'DESCR'}
 
+    def test_list(self):
+        variable('NAME', description='DESCR', type='list', default=[1,2,3])
+        assert CONFIG['variable']['NAME']['default'] == [1,2,3]
+
+    def test_map(self):
+        variable('NAME', description='DESCR', type='map', default={'a': 1, 'b': 2})
+        assert CONFIG['variable']['NAME']['default'] == {'a': 1, 'b': 2}
+
     def test_interpol_string(self):
         var = variable('NAME')
         res = r.instance('NAME', argument=var)
-        raise
+        assert CONFIG['resource']['aws_instance']['NAME']['argument'] == var
+        assert '"${var.NAME}"' in dump()
+
+    def test_interpol_listitem(self):
+        var = variable('NAME')
+        res = r.instance('NAME', argument=var[1])
+        assert '"${var.NAME[1]}"' in dump()
+
+    def test_interpol_mapitem(self):
+        var = variable('NAME')
+        res = r.instance('NAME', argument=var['KEY'])
+        assert '"${var.NAME[\\"KEY\\"]}"' in dump()
 
 
