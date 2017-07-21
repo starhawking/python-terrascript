@@ -63,6 +63,9 @@ class TestLongResourceTypes(_BaseTypes, _Validate):
     k1 = 'resource'
     k2 = 'aws_instance'
 
+    def test_reference(self):
+        res = r.aws_instance('NAME1')
+        r.instance('NAME2', depends_on=[res])
 
 class TestShortResourceTypes(_BaseTypes, _Validate):
     _type = r.instance
@@ -110,4 +113,18 @@ class TestVariable(_Validate):
         var = variable('NAME')
         res = r.instance('NAME', argument=var['KEY'])
         assert '"${var.NAME[\\"KEY\\"]}"' in dump()
+
+class TestModule(_Validate):
+    def test(self):
+        mod = module('NAME', source="github.com/hashicorp/consul/terraform/aws")
+
+    def test_interpolate(self):
+        mod = module('NAME', source="github.com/hashicorp/consul/terraform/aws")
+        res = r.instance('NAME', argument=mod.output)
+        assert '"${module.NAME.output}"' in dump()
+
+    def test_reference(self):
+        mod = module('NAME', source="github.com/hashicorp/consul/terraform/aws")
+        res = r.instance('NAME', depends_on=[mod])
+        assert '"module.NAME"' in dump()
 

@@ -12,7 +12,6 @@ INDENT = 2
 SORT = True
 """Whether to sort keys when generating JSON."""
 
-import atexit
 from collections import defaultdict
 
 
@@ -80,6 +79,10 @@ class _resource(_base):
     """Base class for resources."""
     _class = 'resource'
 
+    def __repr__(self):
+        """Non-interpolated reference: ``TYPE.NAME``, such as ``aws_instance.web``."""
+        return '{}.{}'.format(self._type, self._name)
+
 
 class _data(_base):
     """Base class for data sources."""
@@ -116,6 +119,13 @@ class module(_base):
     def __init__(self, name, **kwargs):
         self._name = name
         CONFIG['module'][self._name] = kwargs
+
+    def __repr__(self):
+        """Non-interpolated reference: ``module.NAME``, such as ``module.foo``."""
+        return 'module.{}'.format(self._name)
+
+    def __getattr__(self, name):
+        return '${{module.{}.{}}}'.format(self._name, name)
 
 
 class variable(object):
