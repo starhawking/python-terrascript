@@ -3,6 +3,9 @@ from terrascript import *
 from terrascript.aws import r
 from terrascript.aws import d
 
+PRINT = False
+"""Don't print configuration at exit."""
+
 STRING = 'STRING'
 BOOL = True
 INT = 10
@@ -55,19 +58,33 @@ class TestLongResourceTypes(_BaseTypes):
     k1 = 'resource'
     k2 = 'aws_instance'
 
+
 class TestShortResourceTypes(_BaseTypes):
     _type = r.instance
     k1 = 'resource'
     k2 = 'aws_instance'
+
 
 class TestLongDataTypes(_BaseTypes):
     _type = d.aws_instance
     k1 = 'data'
     k2 = 'aws_instance'
 
+
 class TestShortDataTypes(_BaseTypes):
     _type = d.instance
     k1 = 'data'
     k2 = 'aws_instance'
+
+
+class TestVariable(object):
+    def test_string(self):
+        variable('NAME', description='DESCR', type='string', default='DEFAULT')
+        assert CONFIG['variable']['NAME'] == {'default': 'DEFAULT', 'type': 'string', 'description': 'DESCR'}
+
+    def test_interpol_string(self):
+        var = variable('NAME')
+        res = r.instance('NAME', argument=var)
+        raise
 
 

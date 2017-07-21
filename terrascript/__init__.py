@@ -9,13 +9,17 @@ this project.
 INDENT = 2
 """JSON indentation level."""
 
-import json
-from collections import defaultdict, OrderedDict
+import atexit
+from collections import defaultdict, UserString
+
 
 CONFIG = {
     "data": defaultdict(dict),
-    "resource": defaultdict(dict)
+    "resource": defaultdict(dict),
+    "variable": dict(),
+    "module": dict()
 }
+
 
 class _base(object):
     _class = None
@@ -68,8 +72,37 @@ class data(_base):
 
 
 class module(_base):
-    """Base class for modules."""
-    _class = 'module'
+    """Class for modules."""
+
+    def __init__(self, name, **kwargs):
+        self._name = name
+        CONFIG['module'][self._name] = kwargs
 
 
-__all__ = ['CONFIG', 'resource', 'data', 'module']
+class variable(object):
+    """Class for variables."""
+
+    def __init__(self, name, **kwargs):
+        self._name = name
+        CONFIG['variable'][self._name] = kwargs
+
+    def __repr__(self):
+        return '${{var.{}}}'.format(self._name)
+
+    def __getitem__(self, i):
+        if isinstance(i, int):
+            # "${var.NAME[i]}"
+            return '${{var.{}[{}]}}'.format(self._name, i)
+        else:
+            # "${var.NAME["i"]}"
+            return '${{var.{}["{}"]}}'.format(self._name, i)
+
+def _serialise(v):
+    return str(v)
+
+def dump():
+    import json
+    return json.dumps(CONFIG, indent=INDENT, default=_serialise)
+
+
+__all__ = ['CONFIG', 'resource', 'data', 'module', 'variable']
