@@ -1,4 +1,4 @@
-# Why no error checking
+# Why no error checking?
 
 **Terrascript** does not perform any error checking whatsoever! This was a deliberate design decision to keep 
 the code simple. Therefore it is perfectly possible to generate JSON output that Terraform will later reject.

@@ -134,7 +134,27 @@ class _base(object):
         else:
             """Non-interpolated reference to a non-resource, e.g. ``module.http``."""
             return '{}.{}'.format(self._class, self._name)
-
+    
+    @property    
+    def interpolated(self):
+        """The object in interpolated syntax: ``${...}``."""
+        if self._class == 'variable':
+            return '${{{}}}'.format(self.fullname)
+        elif self._class == 'resources':
+            return '${{{}}'.format(self._fullname)
+        else:
+            return '${{{}}'.format(self._fullname)
+            
+    @property
+    def fullname(self):
+        """The object's full name."""
+        if self._class == 'variable':
+            return 'var.{}'.format(self._name)
+        elif self._class == 'resources':
+            return '{}.{}'.format(self._type, self._name)
+        else:
+            return '{}.{}'.format(self._class, self._name)
+        
 
 class _resource(_base):
     """Base class for resources."""
@@ -213,6 +233,27 @@ class backend(UserDict):
     def __init__(self,  name, **kwargs):
         self.data = {name: kwargs}
 
+
+class function(object):
+    """Terraform function.
+    
+       >>> function.lookup(map, key)
+       "${lookup(map, key)}"
+    
+    """
+    
+    class _function(object):
+        def __init__(self, name):
+            self.name = name
+        
+        def __call__(self, *args):
+            return '${{{}({})}}'.format(self.name, args)
+    
+    def __getattr__(self, name):
+        return _function(name)
+
+fn = func = function
+"""Shortcuts for `function()`."""
 
 
 __all__ = ['config', 'dump', 'validate',
