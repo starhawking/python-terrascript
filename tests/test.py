@@ -10,6 +10,8 @@ from nose.tools import *
 PRINT = False
 """Don't print configuration at exit."""
 
+DEBUG = True
+
 STRING = 'STRING'
 BOOL = True
 INT = 10
@@ -34,7 +36,7 @@ class TestConfig(object):
     @raises(KeyError)
     def test_wrongkey(self):
         isinstance(config['wrongkey'], dict)
-
+        
 
 class _Validate(object):
     def teardown(self):
@@ -149,4 +151,28 @@ class TestModule(_Validate):
         mod = module('NAME', source="github.com/hashicorp/consul/terraform/aws")
         res = r.instance('NAME', depends_on=[mod])
         assert '"module.NAME"' in dump()
+        
 
+class TestOutput(_Validate):
+    def test(self):
+        mod = module('NAME', source="github.com/hashicorp/consul/terraform/aws")
+        out = output('NAME', value=mod.output)
+
+
+class TestProvider(_Validate):
+    def test(self):
+        provider('NAME', region='REGION')
+        
+        
+class TestTerraform(_Validate):
+    def test(self):
+        provider('NAME', required_version='> 0.9')
+
+
+class TestProvisionerConnection(_Validate):
+    def test(self):
+        r.aws_instance('NAME', 
+            provisioner=provisioner('PROVISIONER', command='COMMAND',
+                connection=connection('NAME', type='ssh', user='USER', password='PASSWORD')
+            ))
+        
