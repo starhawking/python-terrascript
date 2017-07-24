@@ -9,9 +9,6 @@ branches:
     - master
     - develop
     - release/*
-env:
-  global:
-    PATH=$HOME:$PATH
 install:
 - (wget https://releases.hashicorp.com/terraform/0.9.11/terraform_0.9.11_linux_amd64.zip ; unzip terraform_0.9.11_linux_amd64.zip )
 - pip install --upgrade pip
@@ -20,6 +17,6 @@ install:
 before_script:
 - make code
 script:
-- make test
+- PATH=$HOME:$PATH make test
 after_success:
 - codecov
