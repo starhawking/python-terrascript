@@ -1,4 +1,5 @@
 language: python
+sudo: required
 python:
 - 3.3
 - 3.4
@@ -10,13 +11,12 @@ branches:
     - develop
     - release/*
 install:
-- (wget https://releases.hashicorp.com/terraform/0.9.11/terraform_0.9.11_linux_amd64.zip ; unzip terraform_0.9.11_linux_amd64.zip )
-- pip install --upgrade pip
+- (wget https://releases.hashicorp.com/terraform/0.9.11/terraform_0.9.11_linux_amd64.zip ; unzip terraform_0.9.11_linux_amd64.zip ; install -m 755 terraform /usr/local/bin/terraform)
 - pip install -r test_requirements.txt
 - pip install codecov
 before_script:
 - make code
 script:
-- PATH=$HOME:$PATH make test
+- make test
 after_success:
 - codecov
