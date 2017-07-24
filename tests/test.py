@@ -172,7 +172,12 @@ class TestTerraform(_Validate):
 class TestProvisionerConnection(_Validate):
     def test(self):
         r.aws_instance('NAME', 
-            provisioner=provisioner('PROVISIONER', command='COMMAND',
-                connection=connection('NAME', type='ssh', user='USER', password='PASSWORD')
+            provisioner={'file': {
+                             'source': 'SOURCE',
+                             'dest': 'destination',
+                             'connection': {
+                                 'user': 'USER'
+                             }
+                       } }
             ))
         
