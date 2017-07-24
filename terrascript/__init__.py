@@ -12,42 +12,59 @@ INDENT = 2
 SORT = True
 """Whether to sort keys when generating JSON."""
 
+import os
 from collections import defaultdict
 
 
-CONFIG = {
-    "data": defaultdict(dict),
-    "resource": defaultdict(dict),
-    "variable": dict(),
-    "module": dict()
-}
 
-def dump():
-    """Return the JSON representaion of CONFIG."""
-    import json
-    import copy
+class CONFIG(dict):
+    def __getitem__(self, key):
+        try:
+            return super(CONFIG, self).__getitem__(key)
+        except KeyError:
+            if key in ['data', 'resource']:
+                super(CONFIG, self).__setitem__(key, defaultdict(dict))
+            elif key in ['variable', 'module']:
+                super(CONFIG, self).__setitem__(key, {})
+            else:
+                raise KeyError(key)
+                
+        return super(CONFIG, self).__getitem__(key)
+        
+    def dump(self):
+        """Return the JSON representaion of config."""
+        import json
 
-    # Work on copy of CONFIG but with unused top-level elements removed.
-    #
-    config = {k: v for k,v in CONFIG.items() if v}
-    return json.dumps(config, indent=INDENT, sort_keys=SORT, default=lambda v: str(v))
+        # Work on copy of CONFIG but with unused top-level elements removed.
+        #
+        config = {k: v for k,v in self.items() if v}
+        return json.dumps(config, indent=INDENT, sort_keys=SORT, default=lambda v: str(v))
+        
+    def validate(self):
+        """Validate a Terraform configuration."""
+        import tempfile
+        import subprocess
+    
+        config = dump()
+        tmpdir = tempfile.mkdtemp()
+        tmpfile = tempfile.NamedTemporaryFile(mode='w', dir=tmpdir, suffix='.tf.json', delete=False)
+    
+        tmpfile.write(self.dump())
+        tmpfile.flush()
+    
+        proc = subprocess.Popen(['terraform','validate'], cwd=tmpdir)
+        proc.communicate()
+        
+        tmpfile.close()
+        os.remove(tmpfile.name)
+        os.rmdir(tmpdir)
+        
+        return proc.returncode == 0
+            
 
-
-def validate():
-    """Validate a Terraform configuration."""
-    import tempfile
-    import subprocess
-
-    config = dump()
-    tmpdir = tempfile.mkdtemp()
-    tmpfile = tempfile.NamedTemporaryFile(mode='w', dir=tmpdir, suffix='.tf.json', delete=False)
-
-    tmpfile.write(config)
-    tmpfile.flush()
-
-    proc = subprocess.Popen(['terraform','validate'], cwd=tmpdir)
-    proc.communicate()
-    return proc.returncode == 0
+config = CONFIG()
+dump = config.dump
+validate = config.validate
 
 
 class _base(object):
@@ -66,9 +83,9 @@ class _base(object):
         self._name = name
 
         if self._class in ['resource', 'data']:
-            CONFIG[self._class][self._type][self._name] = kwargs
+            config[self._class][self._type][self._name] = kwargs
         else:
-            CONFIG[self._class][self._name] = kwargs
+            config[self._class][self._name] = kwargs
 
     def __getattr__(self, name):
         """References to attributes."""
@@ -150,5 +167,5 @@ class variable(_base):
 
 
 
-__all__ = ['CONFIG', 'dump', 'validate',
+__all__ = ['config', 'dump', 'validate',
            'resource', 'data', 'module', 'variable']
