@@ -27,7 +27,7 @@ setup(
     author='Markus Juenemann',
     author_email='markus@juenemann.net',
     url='https://github.com/mjuenema/python-terrascript',
-    packages=['terrascript'],
+    packages=['terrascript','terrascript.aws'],
     package_dir={'terrascript': 'terrascript'},
     include_package_data=True,
     #install_requires=requirements,
