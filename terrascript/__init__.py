@@ -12,25 +12,35 @@ INDENT = 2
 SORT = True
 """Whether to sort keys when generating JSON."""
 
-from collections import defaultdict
+from collections import defaultdict, UserDict
 
 
-CONFIG = {
-    "data": defaultdict(dict),
-    "resource": defaultdict(dict),
-    "variable": dict(),
-    "module": dict()
-}
+
+class CONFIG(dict):
+    def __getitem__(self, key):
+        try:
+            return super(CONFIG, self).__getitem__(key)
+        except KeyError:
+            if key in ['data', 'resource']:
+                super(CONFIG, self).__setitem__(key, defaultdict(dict))
+            elif key in ['variable', 'module']:
+                super(CONFIG, self).__setitem__(key, dict)
+            else:
+                raise KeyError(key)
+                
+        return super(CONFIG, self).__getitem__(key)
+            
+
+config = CONFIG()
 
 def dump():
-    """Return the JSON representaion of CONFIG."""
+    """Return the JSON representaion of config."""
     import json
-    import copy
 
     # Work on copy of CONFIG but with unused top-level elements removed.
     #
-    config = {k: v for k,v in CONFIG.items() if v}
-    return json.dumps(config, indent=INDENT, sort_keys=SORT, default=lambda v: str(v))
+    config_copy = {k: v for k,v in config.items() if v}
+    return json.dumps(config_copy, indent=INDENT, sort_keys=SORT, default=lambda v: str(v))
 
 
 def validate():
@@ -66,9 +76,9 @@ class _base(object):
         self._name = name
 
         if self._class in ['resource', 'data']:
-            CONFIG[self._class][self._type][self._name] = kwargs
+            config[self._class][self._type][self._name] = kwargs
         else:
-            CONFIG[self._class][self._name] = kwargs
+            config[self._class][self._name] = kwargs
 
     def __getattr__(self, name):
         """References to attributes."""
@@ -150,5 +160,5 @@ class variable(_base):
 
 
 
-__all__ = ['CONFIG', 'dump', 'validate',
+__all__ = ['config', 'dump', 'validate',
            'resource', 'data', 'module', 'variable']

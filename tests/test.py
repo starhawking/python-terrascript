@@ -3,6 +3,8 @@ from terrascript import *
 from terrascript.aws import r
 from terrascript.aws import d
 
+from collections import defaultdict
+
 PRINT = False
 """Don't print configuration at exit."""
 
@@ -12,6 +14,11 @@ INT = 10
 FLOAT = 1.1
 LIST = [1,'2',False]
 DICT = {'a': 1, 'b': '2', 'c': True}
+
+
+class TestConfig(object):
+    def test_data(self):
+        assert isinstance(config['data'], defaultdict)
 
 
 class _Validate(object):
@@ -25,37 +32,37 @@ class _BaseTypes(object):
 
     def test_string(self):
         self._type(self.name, argument=STRING)
-        assert CONFIG[self.k1][self.k2][self.k3]['argument'] == STRING
+        assert config[self.k1][self.k2][self.k3]['argument'] == STRING
 
     def test_bool(self):
         self._type(self.name, argument=BOOL)
-        assert CONFIG[self.k1][self.k2][self.k3]['argument'] == BOOL
+        assert config[self.k1][self.k2][self.k3]['argument'] == BOOL
 
     def test_int(self):
         self._type(self.name, argument=INT)
-        assert CONFIG[self.k1][self.k2][self.k3]['argument'] == INT
+        assert config[self.k1][self.k2][self.k3]['argument'] == INT
 
     def test_float(self):
         self._type(self.name, argument=FLOAT)
-        assert CONFIG[self.k1][self.k2][self.k3]['argument'] == FLOAT
+        assert config[self.k1][self.k2][self.k3]['argument'] == FLOAT
 
     def test_list(self):
         self._type(self.name, argument=LIST)
-        assert CONFIG[self.k1][self.k2][self.k3]['argument'] == LIST
+        assert config[self.k1][self.k2][self.k3]['argument'] == LIST
 
     def test_dict(self):
         self._type(self.name, argument=DICT)
-        assert CONFIG[self.k1][self.k2][self.k3]['argument'] == DICT
+        assert config[self.k1][self.k2][self.k3]['argument'] == DICT
 
     def test_interpol_resource_attr(self):
         resource = r.aws_instance('RESOURCE')
         self._type(self.name, argument=resource.attr)
-        assert CONFIG[self.k1][self.k2][self.k3]['argument'] == '${aws_instance.RESOURCE.attr}'
+        assert config[self.k1][self.k2][self.k3]['argument'] == '${aws_instance.RESOURCE.attr}'
 
     def test_interpol_data_attr(self):
         data = d.aws_instance('DATA')
         self._type(self.name, argument=data.attr)
-        assert CONFIG[self.k1][self.k2][self.k3]['argument'] == '${data.aws_instance.DATA.attr}'
+        assert config[self.k1][self.k2][self.k3]['argument'] == '${data.aws_instance.DATA.attr}'
 
 
 class TestLongResourceTypes(_BaseTypes, _Validate):
@@ -88,20 +95,20 @@ class TestShortDataTypes(_BaseTypes, _Validate):
 class TestVariable(_Validate):
     def test_string(self):
         variable('NAME', description='DESCR', type='string', default='DEFAULT')
-        assert CONFIG['variable']['NAME'] == {'default': 'DEFAULT', 'type': 'string', 'description': 'DESCR'}
+        assert config['variable']['NAME'] == {'default': 'DEFAULT', 'type': 'string', 'description': 'DESCR'}
 
     def test_list(self):
         variable('NAME', description='DESCR', type='list', default=[1,2,3])
-        assert CONFIG['variable']['NAME']['default'] == [1,2,3]
+        assert config['variable']['NAME']['default'] == [1,2,3]
 
     def test_map(self):
         variable('NAME', description='DESCR', type='map', default={'a': 1, 'b': 2})
-        assert CONFIG['variable']['NAME']['default'] == {'a': 1, 'b': 2}
+        assert config['variable']['NAME']['default'] == {'a': 1, 'b': 2}
 
     def test_interpol_string(self):
         var = variable('NAME')
         res = r.instance('NAME', argument=var)
-        assert CONFIG['resource']['aws_instance']['NAME']['argument'] == var
+        assert config['resource']['aws_instance']['NAME']['argument'] == var
         assert '"${var.NAME}"' in dump()
 
     def test_interpol_listitem(self):
