@@ -179,3 +179,22 @@ class TestProvisionerConnection(_Validate):
         conn = connection(type='SSH', user='USER', password='PASSWORD')
         prov = provisioner('PROVISIONER', sorce='SOURCE', destination='DESTINATION', connection=conn)
         r.aws_instance('NAME', provisioner=[prov])
+        
+
+class TestFunctions(_Validate):
+    
+    def test_synonyms(self):
+        assert function == func == fn == f
+    
+    def test_string(self):
+        assert f.function('string') == '${function("string")}'
+        
+    def test_resource(self):
+        res = r.aws_instance('NAME')
+        assert f.function(res) == '${function(aws_instance.NAME)}'
+        
+    def test_variable(self):
+        aws_region = variable('aws_region', default='us-east-1', description='The AWS region to create things in.')
+        aws_amis = variable('aws_amis', default={'us-east-1': 'ami-5f709f34', 'us-west-2': 'ami-7f675e4f'})
+        assert function.lookup(aws_amis, aws_region) == '${lookup(var.aws_amis,var.aws_region)}'
+        

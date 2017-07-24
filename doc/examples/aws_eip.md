@@ -4,8 +4,7 @@ This example is based on the [Elastic IP example](https://github.com/terraform-p
 distributed with the Terraform source code.
 
 ```python
-from terrascript import variable, provider, dump
-from terrascript.fn import lookup, file
+from terrascript import variable, provider, dump, function
 from terrascript.aws.r import aws_eip, aws_security_group, aws_instance
 
 # From variables.tf
@@ -26,8 +25,8 @@ sg = aws_security_group('default', name='eip_example', description='Used in the 
                                   'protocol': '-1', 'cidr_blocks': ['0.0.0.0/0']}
                         ])
                         
-web = aws_instance('web', instance_type='t2.micro', ami=lookup(aws_amis, aws_region),
-                   key_name=key_name, security_groups=[sg], user_data=file('userdata.sh'),
+web = aws_instance('web', instance_type='t2.micro', ami=function.lookup(aws_amis, aws_region),
+                   key_name=key_name, security_groups=[sg], user_data=function.file('userdata.sh'),
                    tags={'Name': 'eip-example'})
                    
 eip = aws_eip('default', instance=web.id, vpc=True)

@@ -72,6 +72,7 @@ up to you to ensure that the generated output makes sense to Terraform.**
 * [Modules](doc/modules.md)
 * [Backends](doc/backends.md)
 * [Interpolation](doc/interpolation.md)
+* [Functions](doc/functions.md)
 
 ## Examples
 

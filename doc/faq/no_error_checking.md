@@ -4,23 +4,24 @@
 the code simple. Therefore it is perfectly possible to generate JSON output that Terraform will later reject.
 
 ```python
-from terrascript import dump
+from terrascript import dump, function
 from terrascript.aws.r import aws_instance
 
-aws_instance('myinstance', foo='bar')
+aws_instance('myinstance', foo=function.bar('hello world'))
 
 print(dump())
 
 ```
 
-Terraform will reject the generated JSON as the `aws_instance` resource does not accept a `foo` argument.
+Terraform will reject the generated JSON as the `aws_instance` resource does not accept a `foo` argument and
+there is also no function `bar()`.
 
 ```json
 {
   "resource": {
     "aws_instance": {
       "myinstance": {
-        "foo": "bar"
+        "foo": "${bar(\"hello world\")}"
       }
     }
   }

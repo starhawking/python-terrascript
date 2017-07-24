@@ -150,7 +150,7 @@ class _base(object):
         """The object's full name."""
         if self._class == 'variable':
             return 'var.{}'.format(self._name)
-        elif self._class == 'resources':
+        elif self._class == 'resource':
             return '{}.{}'.format(self._type, self._name)
         else:
             return '{}.{}'.format(self._class, self._name)
@@ -234,7 +234,7 @@ class backend(UserDict):
         self.data = {name: kwargs}
 
 
-class function(object):
+class _function(object):
     """Terraform function.
     
        >>> function.lookup(map, key)
@@ -245,18 +245,28 @@ class function(object):
     class _function(object):
         def __init__(self, name):
             self.name = name
+            
+        def format(self, arg):
+            """Format a function argument."""
+            if isinstance(arg, _base):
+                return arg.fullname
+            elif isinstance(arg, str):
+                return '"{}"'.format(arg)
+            else:
+                return arg
         
         def __call__(self, *args):
-            return '${{{}({})}}'.format(self.name, args)
+            return '${{{}({})}}'.format(self.name, ','.join([self.format(arg) for arg in args]))
     
     def __getattr__(self, name):
-        return _function(name)
+        return self._function(name)
 
-fn = func = function
+f = fn = func = function = _function()
 """Shortcuts for `function()`."""
 
 
 __all__ = ['config', 'dump', 'validate',
            'resource', 'data', 'module', 'variable',
            'output', 'terraform', 'provider', 
-           'provisioner', 'connection', 'backend']
+           'provisioner', 'connection', 'backend',
+           'f', 'fn', 'func', 'function']
