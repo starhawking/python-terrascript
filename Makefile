@@ -9,6 +9,7 @@ help:
 	@echo "make test"
 	@echo "make debug"
 	@echo "make code"
+	@echo "make package"
 
 test:
 	$(NOSE) tests/*
@@ -18,6 +19,12 @@ debug:
 
 code:
 	./makecode.py
+
+package: clean code
+	python3 setup.py clean
+	python3 setup.py sdist
+	python3 setup.py bdist_wheel --universal
+
 
 clean:
 	rm -f tests/*.pyc

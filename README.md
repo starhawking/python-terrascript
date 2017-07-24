@@ -1,7 +1,7 @@
 # python-terrascript
 
-**Terrascript** provides a method of generating [Terraform](https://www.terraform.io) 
-files, while harnessing all the features the Python language provides.
+**Terrascript** provides a method of generating [Terraform](https://www.terraform.io)
+files, while harnessing all the features the Python 3 language provides.
 
 ## Example
 
@@ -26,13 +26,13 @@ The equivalent **terrascript** example would look like this.
 from terrascript import provider, dump
 from terrascript.aws.r import aws_instance
 
-provider('aws', access_key='ACCESS_KEY_HERE', 
+provider('aws', access_key='ACCESS_KEY_HERE',
          secret_key='SECRET_KEY_HERE', region='us-east-1')
-         
+
 aws_instance('example', ami='ami-2757f631', instance_type='t2.micro')
 
 # Print the JSON-style configuration to stdout.
-dump()
+print(dump())
 ```
 
 Creating instances of `provider` and `aws_instance` will automatically add them to
@@ -59,7 +59,7 @@ JSON format.
 }
 ```
 
-**IMPORTANT: Terrascript does not perform any error checking whatsoever. It is entierly 
+**IMPORTANT: Terrascript does not perform any error checking whatsoever. It is entirely 
 up to you to ensure that the generated output makes sense to Terraform.**
 
 ## Documentation
@@ -77,6 +77,10 @@ up to you to ensure that the generated output makes sense to Terraform.**
 This section lists some more advanced examples.
 
 * [AWS Elastic IP (eip)](doc/examples/aws_eip.md)
+
+## Status
+
+Currently only the Terraform AWS provider is supported.
 
 ## FAQ
 
