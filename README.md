@@ -79,4 +79,6 @@ This section lists some more advanced examples.
 
 * [AWS Elastic IP (eip)](doc/examples/aws_eip.md)
 
+## FAQ
 
+* [Why no error checking?](doc/faq/no_error_checking.md)
