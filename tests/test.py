@@ -5,6 +5,8 @@ from terrascript.aws import d
 
 from collections import defaultdict
 
+from nose.tools import *
+
 PRINT = False
 """Don't print configuration at exit."""
 
@@ -28,6 +30,10 @@ class TestConfig(object):
         
     def test_variable(self):
         assert isinstance(config['variable'], dict)
+        
+    @raises(KeyError)
+    def test_wrongkey(self):
+        isinstance(config['wrongkey'], dict)
 
 
 class _Validate(object):
