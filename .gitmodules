@@ -1,0 +1,3 @@
+[submodule "terraform-providers/aws"]
+	path = terraform-providers/aws
+	url = https://github.com/terraform-providers/terraform-provider-aws.git
