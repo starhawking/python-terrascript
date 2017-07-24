@@ -1,5 +1,4 @@
 language: python
-sudo: required
 python:
 - 3.3
 - 3.4
@@ -14,8 +13,6 @@ env:
   global:
     PATH=$HOME:$PATH
 install:
-- apt-get update
-- apt-get install -y sudo
 - (wget https://releases.hashicorp.com/terraform/0.9.11/terraform_0.9.11_linux_amd64.zip ; unzip terraform_0.9.11_linux_amd64.zip )
 - pip install --upgrade pip
 - pip install -r test_requirements.txt
