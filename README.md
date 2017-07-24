@@ -5,38 +5,78 @@ files, while harnessing all the features the Python language provides.
 
 *This project is currently in the planning stage and the code will probably not yet work!*
 
-```python
-from terrascript.aws.r import aws_instance
+## Example
 
-PROD=True
-if PROD:
-  instance_count = 2
-else:
-  instance_count = 1
-
-for i in range(0, instance_count):
-    aws_instance('instance'+str(i), ami='ami-22b9a343', instance_type='t2.micro')
-```
-
-Running the Python 3 script above will emit the following.
+As an example let's translate the following Terraform configuration into **terrascript**.
 
 ```hcl
-resource "aws_instance" "instance0" {
-  ami = "ami-22b9a343"
-  instance_type = "t2.micro"
+provider "aws" {
+  access_key = "ACCESS_KEY_HERE"
+  secret_key = "SECRET_KEY_HERE"
+  region     = "us-east-1"
 }
 
-resource "aws_instance" "instance1" {
-  ami = "ami-22b9a343"
+resource "aws_instance" "example" {
+  ami           = "ami-2757f631"
   instance_type = "t2.micro"
+}
+```
+
+The equivalent **terrascript** example would look like this.
+
+```python
+from terrascript import provider, dump
+from terrascript.aws.r import aws_instance
+
+provider('aws', access_key='ACCESS_KEY_HERE', 
+         secret_key='SECRET_KEY_HERE', region='us-east-1')
+         
+aws_instance('example', ami='ami-2757f631', instance_type='t2.micro')
+
+# Print the JSON-style configuration to stdout.
+dump()
+```
+
+Creating instances of `provider` and `aws_instance` will automatically add them to
+the Terraform configuration. Calling `dump()` will return the configuration in
+JSON format.
+
+```json
+{
+  "provider": {
+    "aws": {
+      "access_key": "ACCESS_KEY_HERE",
+      "region": "us-east-1",
+      "secret_key": "SECRET_KEY_HERE"
+    }
+  },
+  "resource": {
+    "aws_instance": {
+      "example": {
+        "ami": "ami-2757f631",
+        "instance_type": "t2.micro"
+      }
+    }
+  }
 }
 ```
 
 **IMPORTANT: Terrascript does not perform any error checking whatsoever. It is entierly 
 up to you to ensure that the generated output makes sense to Terraform.**
 
-More details can be found on the following pages.
+## Documentation
 
+* [Dependencies](doc/dependencies.md)
+* [Provisioners](doc/provisioners.md)
+* [Variables](doc/variables.md)
+* [Modules](doc/modules.md)
+* [Backends](doc/backends.md)
 * [Interpolation](doc/interpolation.md)
 
-*The rest of this README is TODO!!!*
+## Examples
+
+This section lists some more advanced examples.
+
+* [AWS Elastic IP (eip)](doc/examples/aws_eip.md)
+
+

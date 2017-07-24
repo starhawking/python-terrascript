@@ -166,11 +166,11 @@ class TestProvider(_Validate):
         
 class TestTerraform(_Validate):
     def test(self):
-        terraform('NAME', required_version='> 0.9')
+        terraform(required_version='> 0.9')
         
     def test_backend(self):
-        b = backend('NAME', argument='ARGUMENT')
-        terraform('NAME', required_version='> 0.9', backend=b)
+        b = backend(name='NAME', argument='ARGUMENT')
+        terraform(required_version='> 0.9', backend=b)
 
 
 class TestProvisionerConnection(_Validate):

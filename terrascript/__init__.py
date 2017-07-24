@@ -94,13 +94,15 @@ class _base(object):
     _name = None
     """The name of this resource, e.g. 'my_ec2_instance'."""
 
-    def __init__(self, name, **kwargs):
+    def __init__(self, name_, **kwargs):
         if not self._type:
             self._type = self.__class__.__name__
-        self._name = name
+        self._name = name_
 
         if self._class in ['resource', 'data']:
             config[self._class][self._type][self._name] = kwargs
+        elif self._class in ['terraform']:
+            config[self._class] = kwargs
         else:
             config[self._class][self._name] = kwargs
 
@@ -192,6 +194,9 @@ class provider(_base):
     
 class terraform(_base):
     _class = 'terraform'
+    def __init__(self, **kwargs):
+        # Terraform does not have a name
+        super(terraform, self).__init__(None, **kwargs)
 
 
 class provisioner(UserDict):
@@ -207,6 +212,7 @@ class connection(UserDict):
 class backend(UserDict):
     def __init__(self,  name, **kwargs):
         self.data = {name: kwargs}
+
 
 
 __all__ = ['config', 'dump', 'validate',
