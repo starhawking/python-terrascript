@@ -1,0 +1,22 @@
+language: python
+python:
+- 3.3
+- 3.4
+- 3.5
+cache: pip
+branches:
+  only:
+    - master
+    - develop
+    - release/*
+install:
+- (cd /tmp ; wget https://releases.hashicorp.com/terraform/0.9.11/terraform_0.9.11_linux_amd64.zip ; unzip terraform_0.9.11_linux_amd64.zip )
+- pip install --upgrade pip
+- pip install -r test_requirements.txt
+- pip install codecov
+- pip install ansible
+- ansible localhost -b -m unarchive -a "src=https://releases.hashicorp.com/terraform/0.9.11/terraform_0.9.11_linux_amd64.zip dest=/usr/local/bin remote_src=True"
+script:
+- nosetests -v --with-coverage --cover-package=terrascript tests/test.py
+after_success:
+- codecov

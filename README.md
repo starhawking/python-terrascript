@@ -3,8 +3,6 @@
 **Terrascript** provides a method of generating [Terraform](https://www.terraform.io) 
 files, while harnessing all the features the Python language provides.
 
-*This project is currently in the planning stage and the code will probably not yet work!*
-
 ## Example
 
 As an example let's translate the following Terraform configuration into **terrascript**.
