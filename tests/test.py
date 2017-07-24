@@ -19,6 +19,15 @@ DICT = {'a': 1, 'b': '2', 'c': True}
 class TestConfig(object):
     def test_data(self):
         assert isinstance(config['data'], defaultdict)
+        
+    def test_resource(self):
+        assert isinstance(config['resource'], defaultdict)
+        
+    def test_module(self):
+        assert isinstance(config['module'], dict)
+        
+    def test_variable(self):
+        assert isinstance(config['variable'], dict)
 
 
 class _Validate(object):

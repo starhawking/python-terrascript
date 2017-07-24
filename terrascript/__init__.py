@@ -12,7 +12,8 @@ INDENT = 2
 SORT = True
 """Whether to sort keys when generating JSON."""
 
-from collections import defaultdict, UserDict
+import os
+from collections import defaultdict
 
 
 
@@ -24,40 +25,46 @@ class CONFIG(dict):
             if key in ['data', 'resource']:
                 super(CONFIG, self).__setitem__(key, defaultdict(dict))
             elif key in ['variable', 'module']:
-                super(CONFIG, self).__setitem__(key, dict)
+                super(CONFIG, self).__setitem__(key, {})
             else:
                 raise KeyError(key)
                 
         return super(CONFIG, self).__getitem__(key)
+        
+    def dump(self):
+        """Return the JSON representaion of config."""
+        import json
+
+        # Work on copy of CONFIG but with unused top-level elements removed.
+        #
+        config = {k: v for k,v in self.items() if v}
+        return json.dumps(config, indent=INDENT, sort_keys=SORT, default=lambda v: str(v))
+        
+    def validate(self):
+        """Validate a Terraform configuration."""
+        import tempfile
+        import subprocess
+    
+        config = dump()
+        tmpdir = tempfile.mkdtemp()
+        tmpfile = tempfile.NamedTemporaryFile(mode='w', dir=tmpdir, suffix='.tf.json', delete=False)
+    
+        tmpfile.write(self.dump())
+        tmpfile.flush()
+    
+        proc = subprocess.Popen(['terraform','validate'], cwd=tmpdir)
+        proc.communicate()
+        
+        tmpfile.close()
+        os.remove(tmpfile.name)
+        os.rmdir(tmpdir)
+        
+        return proc.returncode == 0
             
 
 config = CONFIG()
-
-def dump():
-    """Return the JSON representaion of config."""
-    import json
-
-    # Work on copy of CONFIG but with unused top-level elements removed.
-    #
-    config_copy = {k: v for k,v in config.items() if v}
-    return json.dumps(config_copy, indent=INDENT, sort_keys=SORT, default=lambda v: str(v))
-
-
-def validate():
-    """Validate a Terraform configuration."""
-    import tempfile
-    import subprocess
-
-    config = dump()
-    tmpdir = tempfile.mkdtemp()
-    tmpfile = tempfile.NamedTemporaryFile(mode='w', dir=tmpdir, suffix='.tf.json', delete=False)
-
-    tmpfile.write(config)
-    tmpfile.flush()
-
-    proc = subprocess.Popen(['terraform','validate'], cwd=tmpdir)
-    proc.communicate()
-    return proc.returncode == 0
+dump = config.dump
+validate = config.validate
 
 
 class _base(object):
