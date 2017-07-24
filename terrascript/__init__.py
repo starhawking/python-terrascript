@@ -12,9 +12,14 @@ INDENT = 2
 SORT = True
 """Whether to sort keys when generating JSON."""
 
+DEBUG = False
+"""Set to enable some debugging."""
+
+import logging 
 import os
 from collections import defaultdict
 
+logger = logging.getLogger(__name__)
 
 
 class CONFIG(dict):
@@ -24,7 +29,7 @@ class CONFIG(dict):
         except KeyError:
             if key in ['data', 'resource']:
                 super(CONFIG, self).__setitem__(key, defaultdict(dict))
-            elif key in ['variable', 'module']:
+            elif key in ['variable', 'module', 'output', 'provider', 'terraform']:
                 super(CONFIG, self).__setitem__(key, {})
             else:
                 raise KeyError(key)
@@ -56,8 +61,12 @@ class CONFIG(dict):
         proc.communicate()
         
         tmpfile.close()
-        os.remove(tmpfile.name)
-        os.rmdir(tmpdir)
+        
+        # if  DEBUG:
+        #     logger.debug(tmpfile.name)
+        # else:
+        #     os.remove(tmpfile.name)
+        #     os.rmdir(tmpdir)
         
         return proc.returncode == 0
             
@@ -84,6 +93,9 @@ class _base(object):
 
         if self._class in ['resource', 'data']:
             config[self._class][self._type][self._name] = kwargs
+        elif self._class in ['connection', 'provisioner']:
+            # Not a root level elements
+            pass
         else:
             config[self._class][self._name] = kwargs
 
@@ -120,7 +132,6 @@ class _base(object):
 class _resource(_base):
     """Base class for resources."""
     _class = 'resource'
-
 
 
 class _data(_base):
@@ -164,8 +175,30 @@ class variable(_base):
     """Class for variables."""
     
     _class = 'variable'
+    
+    
+class output(_base):
+    _class = 'output'
+    
+
+class provider(_base):
+    _class = 'provider'
+    
+
+class terraform(_base):
+    _class = 'terraform'
+    
+    
+class provisioner(_base):
+    _class = 'provisioner'
+    
+
+class connection(_base):
+    _class = 'connection'
 
 
 
 __all__ = ['config', 'dump', 'validate',
-           'resource', 'data', 'module', 'variable']
+           'resource', 'data', 'module', 'variable',
+           'output', 'terraform', 'provider',
+           'provisioner', 'connection']

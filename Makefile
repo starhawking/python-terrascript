@@ -1,6 +1,6 @@
 
 
-NOSE := nosetests --failed --verbose --with-coverage --cover-package=terrascript --stop --with-id --no-byte-compile
+NOSE := nosetests --failed --verbose --with-coverage --cover-package=terrascript --stop --with-id --no-byte-compile --logging-level=DEBUG
 
 
 all: help
