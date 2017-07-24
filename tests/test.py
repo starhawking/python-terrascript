@@ -166,18 +166,16 @@ class TestProvider(_Validate):
         
 class TestTerraform(_Validate):
     def test(self):
-        provider('NAME', required_version='> 0.9')
+        terraform('NAME', required_version='> 0.9')
+        
+    def test_backend(self):
+        b = backend('NAME', argument='ARGUMENT')
+        terraform('NAME', required_version='> 0.9', backend=b)
 
 
 class TestProvisionerConnection(_Validate):
+
     def test(self):
-        r.aws_instance('NAME', 
-            provisioner={'file': {
-                             'source': 'SOURCE',
-                             'dest': 'destination',
-                             'connection': {
-                                 'user': 'USER'
-                             }
-                       } }
-            ))
-        
+        conn = connection(type='SSH', user='USER', password='PASSWORD')
+        prov = provisioner('PROVISIONER', sorce='SOURCE', destination='DESTINATION', connection=conn)
+        r.aws_instance('NAME', provisioner=[prov])

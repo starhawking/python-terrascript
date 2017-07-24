@@ -17,7 +17,7 @@ DEBUG = False
 
 import logging 
 import os
-from collections import defaultdict
+from collections import defaultdict, UserDict
 
 logger = logging.getLogger(__name__)
 
@@ -35,15 +35,23 @@ class CONFIG(dict):
                 raise KeyError(key)
                 
         return super(CONFIG, self).__getitem__(key)
-        
+
     def dump(self):
         """Return the JSON representaion of config."""
         import json
+        
+        def _json_default(v):
+            # How to encode non-standard objects
+            if isinstance(v, UserDict):
+                return v.data
+            else:
+                return str(v)
 
         # Work on copy of CONFIG but with unused top-level elements removed.
         #
         config = {k: v for k,v in self.items() if v}
-        return json.dumps(config, indent=INDENT, sort_keys=SORT, default=lambda v: str(v))
+        return json.dumps(config, indent=INDENT, sort_keys=SORT, default=_json_default)
+        
         
     def validate(self):
         """Validate a Terraform configuration."""
@@ -93,9 +101,6 @@ class _base(object):
 
         if self._class in ['resource', 'data']:
             config[self._class][self._type][self._name] = kwargs
-        elif self._class in ['connection', 'provisioner']:
-            # Not a root level elements
-            pass
         else:
             config[self._class][self._name] = kwargs
 
@@ -184,21 +189,27 @@ class output(_base):
 class provider(_base):
     _class = 'provider'
     
-
+    
 class terraform(_base):
     _class = 'terraform'
-    
-    
-class provisioner(_base):
-    _class = 'provisioner'
-    
 
-class connection(_base):
-    _class = 'connection'
 
+class provisioner(UserDict):
+    def __init__(self, name, **kwargs):
+        self.data = {name: kwargs}
+
+
+class connection(UserDict):
+    def __init__(self,  **kwargs):
+        self.data = kwargs
+
+
+class backend(UserDict):
+    def __init__(self,  name, **kwargs):
+        self.data = {name: kwargs}
 
 
 __all__ = ['config', 'dump', 'validate',
            'resource', 'data', 'module', 'variable',
-           'output', 'terraform', 'provider',
-           'provisioner', 'connection']
+           'output', 'terraform', 'provider', 
+           'provisioner', 'connection', 'backend']
