@@ -9,31 +9,31 @@ except ImportError:
 
 from os.path import join, dirname
 
-from sigfoxapi import __version__, __license__
+from terrascript import __version__, __license__
 
-requirements = [
-  r.strip() for r in open(join(dirname(__file__), 'requirements.txt')).readlines()
-]
+# requirements = [
+#   r.strip() for r in open(join(dirname(__file__), 'requirements.txt')).readlines()
+# ]
 
 test_requirements = [
   r.strip() for r in open(join(dirname(__file__), 'test_requirements.txt')).readlines()
 ]
 
 setup(
-    name='sigfoxapi',
+    name='terrascript',
     version=__version__,
-    description='Python wrapper for the Sigfox backend REST API',
+    description='Python module for creating Terraform configurations',
     long_description='Terrascript provides a method of generating Terraform files, while harnessing all the features the Python language provides.',
     author='Markus Juenemann',
     author_email='markus@juenemann.net',
-    url='https://github.com/mjuenema/python-sigfox-backend-api',
-    packages=['sigfoxapi'],
-    package_dir={'sigfoxapi': 'sigfoxapi'},
+    url='https://github.com/mjuenema/python-terrascript',
+    packages=['terrascript'],
+    package_dir={'terrascript': 'terrascript'},
     include_package_data=True,
-    install_requires=requirements,
+    #install_requires=requirements,
     license=__license__,
     zip_safe=False,
-    keywords='sigfox',
+    keywords='terraform',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
