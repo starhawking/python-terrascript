@@ -2,6 +2,9 @@
 
 NOSE := nosetests --failed --verbose --with-coverage --cover-package=terrascript --stop --with-id --no-byte-compile --logging-level=DEBUG
 
+# The tests must be executed in this order!!
+TESTS := tests/test.py tests/test_providers.py
+
 
 all: help
 
@@ -12,10 +15,10 @@ help:
 	@echo "make package"
 
 test:
-	$(NOSE) tests/*
+	$(NOSE) $(TESTS)
 
 debug:
-	$(NOSE) --pdb tests/*
+	$(NOSE) --pdb $(TESTS)
 
 code: clean update
 	./makecode.py

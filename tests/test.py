@@ -164,7 +164,8 @@ class TestProvider(_Validate):
         provider('NAME', region='REGION')
         
         
-class TestTerraform(_Validate):
+class Test0Terraform(_Validate):
+    # These tests must be executed first, thus the '0' in the name
     def test(self):
         terraform(required_version='> 0.9')
         
