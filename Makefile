@@ -17,8 +17,11 @@ test:
 debug:
 	$(NOSE) --pdb tests/*
 
-code:
+code: clean update
 	./makecode.py
+	
+update:
+	git submodule update --recursive
 
 package: clean code
 	python3 setup.py clean

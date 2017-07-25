@@ -1,4 +1,6 @@
-#!/usr/bin/env python3 
+#!/usr/bin/env python3
+
+"""Auto-generate terrascript/PROVIDER/{r,d}.py files."""
 
 import glob
 import collections
@@ -23,21 +25,37 @@ paths.sort()
 data = collections.defaultdict(lambda : ([],[]))
 
 for path in paths:
-    x,y,provider,klass = path.split('/')
+    
+    # Split path into components, e.g.
+    # 'terraform-providers/aws/aws/resource_aws_instance.go' -> provider='aws', class_='resource_aws_instance.go'
+    x,y,provider,class_ = path.split('/')
 
     # Strip '.go' suffix
-    klass = klass.split('.')[0]
-
-    if klass.startswith('resource_'):
-        klass = klass[len('resource_'):]
-        if not klass.startswith(provider + '_'):
-            klass = provider + '_' + klass
-        data[provider][0].append(klass)
+    class_ = class_.split('.')[0]
+    
+    # Split the class_ and name (type_) of the resource/data source.
+    # 'resource_arm_dns_zone' -> ('resource', 'dns_zone')
+    # 'data_source_arm_client_config' -> ('data', 'client_config')
+    if class_.startswith('resource'):
+        class_, type_ = class_.split('_')[0], '_'.join(class_.split('_')[2:])
     else:
-        klass = klass[len('data_source_'):]
-        if not klass.startswith(provider + '_'):
-            klass = provider + '_' + klass
-        data[provider][1].append(klass)
+        class_, type_ = class_.split('_')[0], '_'.join(class_.split('_')[3:])
+
+    if class_ == 'resource':
+        data[provider][0].append(type_)
+    else:
+        data[provider][1].append(type_)
+        
+    # if class_.startswith('resource_'):
+    #     class_ = class_[len('resource_'):]
+    #     if not class_.startswith(provider + '_'):
+    #         class_ = provider + '_' + class_
+    #     data[provider][0].append(class_)
+    # else:
+    #     class_ = class_[len('data_source_'):]
+    #     if not class_.startswith(provider + '_'):
+    #         class_ = provider + '_' + class_
+    #     data[provider][1].append(class_)
 
 # Create Python modules
 #
@@ -49,7 +67,6 @@ for provider,v in data.items():
 
     if not os.path.exists(provider_path):
         os.mkdir(provider_path)
-        # TODO: create __init__.py
 
     with open(provider_init_path, 'w') as fp:
         fp.write('"""' + time.strftime('%Y-%m-%d %H:%M:%S') + '"""' + '\n')
@@ -57,13 +74,14 @@ for provider,v in data.items():
     print(resource_path)
     with open(resource_path, 'w') as fp:
         fp.write('from terrascript import _resource\n')
-        for resource in v[0]:
-            fp.write('class {}(_resource): pass\n'.format(resource))
-            fp.write('{} = {}\n\n'.format(resource[len(provider)+1:], resource))
-
+        for type_ in v[0]:
+            fp.write('class {}_{}(_resource): pass\n'.format(provider, type_))
+            fp.write('{} = {}_{}\n\n'.format(type_, provider, type_))
+            
     print(data_path)
     with open(data_path, 'w') as fp:
         fp.write('from terrascript import _data\n')
-        for data in v[1]:
-            fp.write('class {}(_data): pass\n'.format(data))
-            fp.write('{} = {}\n\n'.format(data[len(provider)+1:], data))
+        for type_ in v[1]:
+            fp.write('class {}_{}(_data): pass\n'.format(provider, type_))
+            fp.write('{} = {}_{}\n\n'.format(type_, provider, type_))
+
