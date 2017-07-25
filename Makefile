@@ -19,7 +19,7 @@ debug:
 
 code: clean update
 	./makecode.py
-	
+
 update:
 	git submodule update --recursive
 
