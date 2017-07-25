@@ -1,12 +1,10 @@
 language: python
 sudo: required
 python:
-- "3.2"
 - "3.3"
 - "3.4"
 - "3.5"
 - "3.6"
-- "pypy3-5.7"
 cache: pip
 branches:
   only:
