@@ -32,10 +32,10 @@ class TestGoogle(_Base):
     import_d = 'terrascript.google.d'
     
     
-class TestTerraform(_Base):
-    provider = 'terraform'
-    import_r = 'terrascript.terraform.r'
-    import_d = 'terrascript.terraform.d'
+class TestTerraform(object):
+    
+    def test(self):
+        from terrascript.terraform.d import terraform_remote_state, remote_state
     
     
 class TestTemplate(_Base):
