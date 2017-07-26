@@ -129,15 +129,12 @@ class _base(object):
 
     def __repr__(self):
         """References to objects."""
-        if self._class == 'resource':
-            """Non-interpolated reference to a resource, e.g. ``aws_instance.web``."""
-            return '{}.{}'.format(self._type, self._name)
-        elif self._class == 'variable':
-            """Interpolated reference to a variable, e.g. ``var.http_port``."""
-            return '${{var.{}}}'.format(self._name)
+        if self._class == 'variable':
+            """Interpolated reference to a variable, e.g. ``${var.http_port}``."""
+            return self.interpolated
         else:
             """Non-interpolated reference to a non-resource, e.g. ``module.http``."""
-            return '{}.{}'.format(self._class, self._name)
+            return self.fullname
     
     @property    
     def interpolated(self):

@@ -199,3 +199,11 @@ class TestFunctions(_Validate):
         aws_amis = variable('aws_amis', default={'us-east-1': 'ami-5f709f34', 'us-west-2': 'ami-7f675e4f'})
         assert function.lookup(aws_amis, aws_region) == '${lookup(var.aws_amis,var.aws_region)}'
         
+        
+class TestResourceData(_Validate):
+    def test_data(self):
+        data('aws_instance', 'NAME')
+        
+    def test_resource(self):
+        resource('aws_instance', 'NAME')
+        
