@@ -18,7 +18,10 @@ PROVIDERS = [
     'aws',
     'azurerm',
     'google',
-    'template'
+    'template',
+    'openstack',
+    'kubernetes',
+    'docker'
 ]
 PROVIDERS.sort()
 

@@ -80,7 +80,15 @@ This section lists some more advanced examples.
 
 ## Status
 
-Currently only the Terraform AWS provider is supported.
+The following providers are supported.
+
+* AWS
+* Azurerm
+* Docker
+* Google
+* Kubernetes
+* Openstack
+* Template
 
 ## FAQ
 
