@@ -1,15 +1,3 @@
-[submodule "terraform-providers/aws"]
-	path = terraform-providers/aws
-	url = https://github.com/terraform-providers/terraform-provider-aws.git
-[submodule "terraform-providers/google"]
-	path = terraform-providers/google
-	url = https://github.com/terraform-providers/terraform-provider-google
-[submodule "terraform-providers/azurerm"]
-	path = terraform-providers/azurerm
-	url = https://github.com/terraform-providers/terraform-provider-azurerm.git
 [submodule "terraform-providers/terraform"]
 	path = terraform-providers/terraform
 	url = https://github.com/terraform-providers/terraform-provider-terraform.git
-[submodule "terraform-providers/template"]
-	path = terraform-providers/template
-	url = https://github.com/terraform-providers/terraform-provider-template.git
