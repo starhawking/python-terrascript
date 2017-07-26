@@ -1,5 +1,11 @@
 # python-terrascript
 
+[![PyPI](https://img.shields.io/pypi/v/terrascript.svg?style=flat-square)](https://pypi.python.org/pypi/terrascript)
+[![license](https://img.shields.io/github/license/mjuenema/python-terrascript.svg?style=flat-square)](https://opensource.org/licenses/BSD-2-Clause)
+[![GitHub issues](https://img.shields.io/github/issues/mjuenema/python-terrascript.svg?style=flat-square)](https://github.com/mjuenema/python-terrascript/issues)
+[![Travis](https://img.shields.io/travis/mjuenema/python-terrascript.svg?style=flat-square)](https://www.travis-ci.org/mjuenema/python-terrascript)
+[![Codecov](https://img.shields.io/codecov/c/github/mjuenema/python-terrascript.svg?style=flat-square)](https://codecov.io/gh/mjuenema/python-terrascript)
+
 **Terrascript** provides a method of generating [Terraform](https://www.terraform.io)
 files, while harnessing all the features the Python 3 language provides.
 
@@ -80,7 +86,15 @@ This section lists some more advanced examples.
 
 ## Status
 
-Currently only the Terraform AWS provider is supported.
+The following providers are supported.
+
+* AWS
+* Azurerm
+* Docker
+* Google
+* Kubernetes
+* Openstack
+* Template
 
 ## FAQ
 

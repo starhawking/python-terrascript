@@ -103,3 +103,4 @@ ENV/
 .noseids
 **.swp
 terrascript/*/*
+!terrascript/terraform/*
