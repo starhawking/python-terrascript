@@ -26,7 +26,6 @@ code: clean
 package: clean code
 	python3 setup.py clean
 	python3 setup.py sdist
-	python3 setup.py bdist_wheel --universal
 
 clean:
 	rm -f tests/*.pyc
