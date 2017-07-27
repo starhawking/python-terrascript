@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+* Allow data sources without any keyword arguments.
 ### Added
 * Webserver Cluster example based on chapter 4 of "Terraform: Up and Running"
 
