@@ -1,5 +1,9 @@
 # Changelog
 
+## [Unreleased]
+### Added
+* Webserver Cluster example based on chapter 4 of "Terraform: Up and Running"
+
 ## [0.2.0] - 2017-07-26
 ### Added
 * `google` provider.
