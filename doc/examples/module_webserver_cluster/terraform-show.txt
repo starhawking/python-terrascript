@@ -1,6 +1,6 @@
 [0maws_autoscaling_group.example:
   id = tf-asg-00b069b7b8d961ca60df18d636
-  arn = arn:aws:autoscaling:us-east-1:451793104636:autoScalingGroup:5fa85c78-064e-4fb2-a965-a107c925c21d:autoScalingGroupName/tf-asg-00b069b7b8d961ca60df18d636
+  arn = arn:aws:autoscaling:us-east-1:123456789098:autoScalingGroup:5fa85c78-064e-4fb2-a965-a107c925c21d:autoScalingGroupName/tf-asg-00b069b7b8d961ca60df18d636
   availability_zones.# = 6
   availability_zones.1252502072 = us-east-1f
   availability_zones.1305112097 = us-east-1b
@@ -64,7 +64,7 @@ aws_elb.example:
   name = webservers-stage
   security_groups.# = 1
   security_groups.2031470625 = sg-d35369a2
-  source_security_group = 451793104636/webservers-stage-elb
+  source_security_group = 123456789098/webservers-stage-elb
   source_security_group_id = sg-d35369a2
   subnets.# = 6
   subnets.1760734550 = subnet-687afb55
@@ -100,7 +100,7 @@ aws_security_group.elb:
   egress.# = 0
   ingress.# = 0
   name = webservers-stage-elb
-  owner_id = 451793104636
+  owner_id = 123456789098
   tags.% = 0
   vpc_id = vpc-d52441b1
 aws_security_group.instance:
@@ -109,7 +109,7 @@ aws_security_group.instance:
   egress.# = 0
   ingress.# = 0
   name = webservers-stage-instance
-  owner_id = 451793104636
+  owner_id = 123456789098
   tags.% = 0
   vpc_id = vpc-d52441b1
 aws_security_group_rule.allow_all_outbound:
