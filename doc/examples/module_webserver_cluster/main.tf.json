@@ -1,0 +1,134 @@
+{
+  "data": {
+    "aws_availability_zones": {
+      "all": {}
+    }
+  },
+  "output": {
+    "elb_dns_name": {
+      "value": "${aws_elb.example.dns_name}"
+    }
+  },
+  "provider": {
+    "aws": {
+      "region": "us-east-1"
+    }
+  },
+  "resource": {
+    "aws_autoscaling_group": {
+      "example": {
+        "availability_zones": [
+          "${data.aws_availability_zones.all.names}"
+        ],
+        "health_check_type": "ELB",
+        "launch_configuration": "${aws_launch_configuration.example.id}",
+        "load_balancers": [
+          "${aws_elb.example.name}"
+        ],
+        "max_size": 2,
+        "min_size": 2,
+        "tag": [
+          {
+            "key": "Name",
+            "propagate_at_launch": true,
+            "value": "webservers-stage"
+          }
+        ]
+      }
+    },
+    "aws_elb": {
+      "example": {
+        "availability_zones": [
+          "${data.aws_availability_zones.all.names}"
+        ],
+        "health_check": [
+          {
+            "healthy_threshold": 2,
+            "interval": 30,
+            "target": "HTTP:8080/",
+            "timeout": 3,
+            "unhealthy_threshold": 2
+          }
+        ],
+        "listener": [
+          {
+            "instance_port": 8080,
+            "instance_protocol": "HTTP",
+            "lb_port": 80,
+            "lb_protocol": "HTTP"
+          }
+        ],
+        "name": "webservers-stage",
+        "security_groups": [
+          "${aws_security_group.elb.id}"
+        ]
+      }
+    },
+    "aws_launch_configuration": {
+      "example": {
+        "image_id": "ami-40d28157",
+        "instance_type": "t2.micro",
+        "lifecycle": {
+          "create_before_destroy": true
+        },
+        "security_groups": [
+          "${aws_security_group.instance.id}"
+        ],
+        "user_data": "#!/bin/bash\n\ncat > index.html <<EOF\n<h1>Hello, World</h1>\nEOF\n\nnohup busybox httpd -f -p \"{}\" &\n"
+      }
+    },
+    "aws_security_group": {
+      "elb": {
+        "name": "webservers-stage-elb"
+      },
+      "instance": {
+        "name": "webservers-stage-instance"
+      }
+    },
+    "aws_security_group_rule": {
+      "allow_all_outbound": {
+        "cidr_blocks": [
+          "0.0.0.0/0"
+        ],
+        "from_port": 0,
+        "protocol": "-1",
+        "security_group_id": "${aws_security_group.elb.id}",
+        "to_port": 0,
+        "type": "egress"
+      },
+      "allow_http_inbound": {
+        "cidr_blocks": [
+          "0.0.0.0/0"
+        ],
+        "from_port": 80,
+        "protocol": "tcp",
+        "security_group_id": "${aws_security_group.elb.id}",
+        "to_port": 80,
+        "type": "ingress"
+      },
+      "allow_server_http_inbound": {
+        "cidr_blocks": [
+          "0.0.0.0/0"
+        ],
+        "from_port": 8080,
+        "protocol": "tcp",
+        "security_group_id": "${aws_security_group.instance.id}",
+        "to_port": 8080,
+        "type": "ingress"
+      },
+      "allow_testing_inbound": {
+        "cidr_blocks": [
+          "0.0.0.0/0"
+        ],
+        "from_port": 12345,
+        "protocol": "tcp",
+        "security_group_id": "${aws_security_group.elb.id}",
+        "to_port": 12345,
+        "type": "ingress"
+      }
+    }
+  },
+  "terraform": {
+    "required_version": ">=0.9"
+  }
+}
