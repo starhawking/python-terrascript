@@ -7,8 +7,7 @@ The original code can be found in the
 
 This **Terrascript** adaption makes the following changes.
 
-* The [webserver-cluster](https://github.co m/brikis98/terraform-up-and-running-code/tree/master/code/terraform/04-terraform-module/module-example/modules/services/webserver-cluster)
-  Terraform module is implemented as a Python function which accepts the inputs as
+* The `webserver-cluster` Terraform module is implemented as a Python function which accepts the inputs as
   arguments and returns some resources as a tuple.
 * The `user_data` of the `launch_configuration` is rendered with Python's `format()`
   method instead of Terraform's `template_file` data source. For more advanced
