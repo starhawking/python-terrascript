@@ -168,10 +168,11 @@ class _data(_base):
 
     # TODO: Work-around for https://github.com/mjuenema/python-terrascript/issues/3
     def __init__(self, name, **kwargs):
-        if not 'type' in kwargs:
-            kwargs['type'] = 'string'
-        if not 'description' in kwargs:
-            kwargs['description'] = ''
+        if kwargs:
+            if not 'type' in kwargs:
+                kwargs['type'] = 'string'
+            if not 'description' in kwargs:
+                kwargs['description'] = ''
         super(_data, self).__init__(name, **kwargs)
 
 

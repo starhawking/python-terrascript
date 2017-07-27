@@ -83,6 +83,7 @@ up to you to ensure that the generated output makes sense to Terraform.**
 This section lists some more advanced examples.
 
 * [AWS Elastic IP (eip)](doc/examples/aws_eip.md)
+* [Example based on chapter 4 of "Terraform: Up and Running"](doc/examples/module_webserver_cluster).
 
 ## Status
 
