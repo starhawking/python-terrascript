@@ -13,6 +13,7 @@ help:
 	@echo "make debug"
 	@echo "make code"
 	@echo "make package"
+	@echo "make install"
 
 test:
 	$(NOSE) $(TESTS)
@@ -26,6 +27,9 @@ code: clean
 package: clean code
 	python3 setup.py clean
 	python3 setup.py sdist
+
+install: clean code
+	python3 setup.py install
 
 clean:
 	rm -f tests/*.pyc
