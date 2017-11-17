@@ -17,10 +17,15 @@ REPO_OWNER = 'terraform-providers'
 PROVIDERS = [
     'aws',
     'azurerm',
+    'bitbucket',
+    'cloudstack',
+    'github',
     'google',
     'template',
     'openstack',
     'kubernetes',
+    'softlayer',
+    'vsphere',
     'docker'
 ]
 PROVIDERS.sort()
