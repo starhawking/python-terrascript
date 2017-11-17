@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [0.3.0] - 2017-11-17
+* Added more providers (please report any bugs)
+* Added note about how to create provider modules in README.
+
 ## [0.2.1] - 2017-08-02
 ## Fixed
 * Added `MANIFEST.in` which I completely forgot.
