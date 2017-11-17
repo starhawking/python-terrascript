@@ -24,11 +24,11 @@ sg = aws_security_group('default', name='eip_example', description='Used in the 
                         egress=[{'from_port': 0, 'to_port': 0, 
                                   'protocol': '-1', 'cidr_blocks': ['0.0.0.0/0']}
                         ])
-                        
+
 web = aws_instance('web', instance_type='t2.micro', ami=function.lookup(aws_amis, aws_region),
                    key_name=key_name, security_groups=[sg], user_data=function.file('userdata.sh'),
                    tags={'Name': 'eip-example'})
-                   
+
 eip = aws_eip('default', instance=web.id, vpc=True)
 
 # From output.tf
@@ -37,9 +37,6 @@ output('elatsic ip', value=eip.public_ip)
 
 print(dump())
 ```
-
-BUG: There is currently a bug that does not interpolate "${file(userdata.sh)}" correctly!!!
-
 
 ```json
 {
