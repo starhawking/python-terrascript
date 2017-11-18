@@ -14,22 +14,9 @@ import base64
 
 PREFIX = 'terrascript'
 REPO_OWNER = 'terraform-providers'
-PROVIDERS = [
-    'aws',
-    'azurerm',
-    'bitbucket',
-    'cloudstack',
-    'github',
-    'google',
-    'template',
-    'openstack',
-    'kubernetes',
-    'softlayer',
-    'vsphere',
-    'docker'
-]
+PROVIDERS = [p.strip() for p in open('PROVIDERS').read().split('\n') if p]
 PROVIDERS.sort()
-
+print(PROVIDERS)
 
 REGEX = re.compile(b'".*?_(?P<type_>.+)":\s+(?P<class_>resource|data)')
 #"azurerm_traffic_manager_profile":   resourceArmTrafficManagerProfile(),
