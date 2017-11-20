@@ -20,48 +20,9 @@ class _Base(object):
                 assert k[len(self.provider)+1:] in dir(d)
 
 
-#class TestAWS(_Base):
-#    provider = 'aws'
-#    import_r = 'terrascript.aws.r'
-#    import_d = 'terrascript.aws.d'
-
-
-#class TestGoogle(_Base):
-#    provider = 'google'
-#    import_r = 'terrascript.google.r'
-#    import_d = 'terrascript.google.d'
-
-
 class TestTerraform(object):
-
     def test(self):
         from terrascript.terraform.d import terraform_remote_state, remote_state
-
-
-#class TestTemplate(_Base):
-#    provider = 'template'
-#    import_r = 'terrascript.template.r'
-#    import_d = 'terrascript.template.d'
-
-
-#class TestOpenstack(_Base):
-#    provider = 'openstack'
-#    import_r = 'terrascript.openstack.r'
-#    import_d = 'terrascript.openstack.d'
-
-
-#class TestKubernetes(_Base):
-#    provider = 'kubernetes'
-#    import_r = 'terrascript.kubernetes.r'
-#    import_d = 'terrascript.kubernetes.d'
-
-
-#class TestDocker(_Base):
-#    provider = 'docker'
-#    import_r = 'terrascript.docker.r'
-#    import_d = 'terrascript.docker.d'
-
-#----
 
 class TestAlicloud(_Base):
     provider = 'alicloud'
@@ -392,4 +353,9 @@ class TestVsphere(_Base):
     provider = 'vsphere'
     import_r = 'terrascript.vsphere.r'
     import_d = 'terrascript.vsphere.d'
+
+class TestConsul(_Base):
+    provider = 'consul'
+    import_r = 'terrascript.consul.r'
+    import_d = 'terrascript.consul.d'
 
