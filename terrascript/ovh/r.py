@@ -1,0 +1,13 @@
+from terrascript import _resource
+class ovh_publiccloud_private_network(_resource): pass
+publiccloud_private_network = ovh_publiccloud_private_network
+
+class ovh_publiccloud_private_network_subnet(_resource): pass
+publiccloud_private_network_subnet = ovh_publiccloud_private_network_subnet
+
+class ovh_publiccloud_user(_resource): pass
+publiccloud_user = ovh_publiccloud_user
+
+class ovh_vrack_publiccloud_attachment(_resource): pass
+vrack_publiccloud_attachment = ovh_vrack_publiccloud_attachment
+

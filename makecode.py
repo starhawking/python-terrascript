@@ -14,22 +14,8 @@ import base64
 
 PREFIX = 'terrascript'
 REPO_OWNER = 'terraform-providers'
-PROVIDERS = [
-    'aws',
-    'azurerm',
-    'bitbucket',
-    'cloudstack',
-    'github',
-    'google',
-    'template',
-    'openstack',
-    'kubernetes',
-    'softlayer',
-    'vsphere',
-    'docker'
-]
+PROVIDERS = [p.strip() for p in open('PROVIDERS').read().split('\n') if p]
 PROVIDERS.sort()
-
 
 REGEX = re.compile(b'".*?_(?P<type_>.+)":\s+(?P<class_>resource|data)')
 #"azurerm_traffic_manager_profile":   resourceArmTrafficManagerProfile(),
@@ -57,8 +43,9 @@ for provider in PROVIDERS:
     tree = repo.tree(commit.sha)
 
     regex = re.compile('^'+provider+'/provider.go')
+
     provider_go_hash = [h for h in tree.recurse().tree
-                       if regex.match(h.path)][0]
+                        if regex.match(h.path)][0]
 
     provider_go_blob = repo.blob(provider_go_hash.sha)
     decoded = base64.b64decode(provider_go_blob.content)

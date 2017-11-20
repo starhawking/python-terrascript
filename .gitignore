@@ -102,5 +102,5 @@ ENV/
 
 .noseids
 **.swp
-terrascript/*/*
-!terrascript/terraform/*
+#terrascript/*/*
+#!terrascript/terraform/*

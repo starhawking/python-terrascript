@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [0.4.0] - 2017-11-21
+* Added all other providers.
+
 ## [0.3.0] - 2017-11-17
 * Added more providers (please report any bugs)
 * Added note about how to create provider modules in README.
