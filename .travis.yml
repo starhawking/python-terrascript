@@ -16,10 +16,9 @@ install:
 - pip install -r test_requirements.txt
 - pip install codecov github3.py
 before_script:
-- make code
+- make package
 script:
 - make test
-- make package
 - tar tvfz dist/terrascript-*.tar.gz | grep vault
 after_success:
 - codecov

@@ -24,11 +24,11 @@ debug:
 code: clean
 	./makecode.py
 
-package: clean code
+package: clean
 	python3 setup.py clean
 	python3 setup.py sdist
 
-install: clean code
+install: clean
 	python3 setup.py install
 
 clean:
