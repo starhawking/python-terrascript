@@ -3,7 +3,7 @@
 
 
 try:
-    from setuptools import setup
+    from setuptools import setup, find_packages
 except ImportError:
     from distutils.core import setup
 
@@ -27,16 +27,7 @@ setup(
     author='Markus Juenemann',
     author_email='markus@juenemann.net',
     url='https://github.com/mjuenema/python-terrascript',
-    packages=['terrascript',
-              'terrascript.aws',
-              'terrascript.azurerm',
-              'terrascript.google',
-              'terrascript.template',
-              'terrascript.docker',
-              'terrascript.openstack',
-              'terrascript.terraform',
-              'terrascript.kubernetes'
-              ],
+    packages=find_packages(exclude=['__pycache__']),
     package_dir={'terrascript': 'terrascript'},
     include_package_data=True,
     #install_requires=requirements,

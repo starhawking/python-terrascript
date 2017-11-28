@@ -32,6 +32,9 @@ compute_floatingip_associate_v2 = openstack_compute_floatingip_associate_v2
 class openstack_compute_volume_attach_v2(_resource): pass
 compute_volume_attach_v2 = openstack_compute_volume_attach_v2
 
+class openstack_db_instance_v1(_resource): pass
+db_instance_v1 = openstack_db_instance_v1
+
 class openstack_dns_recordset_v2(_resource): pass
 dns_recordset_v2 = openstack_dns_recordset_v2
 

@@ -19,6 +19,8 @@ before_script:
 - make code
 script:
 - make test
+- make package
+- tar tvfz dist/terrascript-0.4.0.tar.gz | grep vault
 after_success:
 - codecov
 env:
