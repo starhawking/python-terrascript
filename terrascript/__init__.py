@@ -33,8 +33,10 @@ class CONFIG(dict):
         except KeyError:
             if key in ['data', 'resource']:
                 super(CONFIG, self).__setitem__(key, defaultdict(dict))
-            elif key in ['variable', 'module', 'output', 'provider', 'terraform']:
+            elif key in ['variable', 'module', 'output', 'terraform']:
                 super(CONFIG, self).__setitem__(key, {})
+            elif key in ['provider']:
+                super(CONFIG, self).__setitem__(key, [])
             else:
                 raise KeyError(key)
                 
@@ -107,6 +109,8 @@ class _base(object):
             config[self._class][self._type][self._name] = kwargs
         elif self._class in ['terraform']:
             config[self._class] = kwargs
+        elif self._class in ['provider']:
+            config[self._class].append({self._name: kwargs})
         else:
             config[self._class][self._name] = kwargs
 
@@ -212,8 +216,8 @@ class output(_base):
 
 class provider(_base):
     _class = 'provider'
-    
-    
+
+
 class terraform(_base):
     _class = 'terraform'
     def __init__(self, **kwargs):

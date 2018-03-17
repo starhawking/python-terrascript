@@ -162,8 +162,14 @@ class TestOutput(_Validate):
 class TestProvider(_Validate):
     def test(self):
         provider('NAME', region='REGION')
-        
-        
+
+
+class TestMultipleProvider(_Validate):
+    def test(self):
+        provider('NAME', region='REGION')
+        provider('NAME', region='OTHER_REGION', alias='PROVIDER2')
+
+
 class Test0Terraform(_Validate):
     # These tests must be executed first, thus the '0' in the name
     def test(self):
