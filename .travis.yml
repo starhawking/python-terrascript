@@ -6,10 +6,6 @@ python:
 - '3.5'
 - '3.6'
 cache: pip
-#branches:
-#  only:
-#  - master
-#  - develop
 install:
 - "(wget https://releases.hashicorp.com/terraform/0.11.4/terraform_0.11.4_linux_amd64.zip
   ; unzip terraform_0.11.4_linux_amd64.zip ; sudo install -m 755 terraform /usr/local/bin/terraform)"
