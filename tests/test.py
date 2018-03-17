@@ -182,7 +182,7 @@ class Test0Terraform(_Validate):
         terraform(required_version='> 0.9')
 
     def test_backend(self):
-        b = backend(name='local', path='ARGUMENT')
+        b = backend(name='local', path='ARGUMENT', provider='aws')
         terraform(required_version='> 0.9', backend=b)
 
 
