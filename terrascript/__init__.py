@@ -45,7 +45,7 @@ class CONFIG(dict):
     def dump(self):
         """Return the JSON representaion of config."""
         import json
-        
+
         def _json_default(v):
             # How to encode non-standard objects
             if isinstance(v, UserDict):
@@ -57,33 +57,39 @@ class CONFIG(dict):
         #
         config = {k: v for k,v in self.items() if v}
         return json.dumps(config, indent=INDENT, sort_keys=SORT, default=_json_default)
-        
-        
+
+
     def validate(self):
         """Validate a Terraform configuration."""
         import tempfile
         import subprocess
-    
+
         config = dump()
         tmpdir = tempfile.mkdtemp()
         tmpfile = tempfile.NamedTemporaryFile(mode='w', dir=tmpdir, suffix='.tf.json', delete=False)
-    
+
         tmpfile.write(self.dump())
         tmpfile.flush()
-    
+
+        # Download plugins
+        proc = subprocess.Popen(['terraform','init'], cwd=tmpdir)
+        proc.communicate()
+        assert proc.returncode == 0
+
+        # Validate configuration
         proc = subprocess.Popen(['terraform','validate'], cwd=tmpdir)
         proc.communicate()
-        
+
         tmpfile.close()
-        
+
         # if  DEBUG:
         #     logger.debug(tmpfile.name)
         # else:
         #     os.remove(tmpfile.name)
         #     os.rmdir(tmpdir)
-        
+
         return proc.returncode == 0
-            
+
 
 config = CONFIG()
 dump = config.dump

@@ -1,4 +1,4 @@
-
+import os
 from terrascript import *
 from terrascript.aws import r
 from terrascript.aws import d
