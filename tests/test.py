@@ -200,7 +200,7 @@ class TestFunctions(_Validate):
         assert f.function('string') == '${function("string")}'
 
     def test_resource(self):
-        res = r.aws_instance('NAME')
+        res = r.aws_instance('NAME', ami=AWS_AMI, instance_type=AWS_INSTANCE_TYPE)
         assert f.function(res) == '${function(aws_instance.NAME)}'
 
     def test_variable(self):
