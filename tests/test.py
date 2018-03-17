@@ -161,13 +161,13 @@ class TestOutput(_Validate):
 
 class TestProvider(_Validate):
     def test(self):
-        provider('NAME', region='REGION')
+        provider('aws', region='REGION')
 
 
 class TestMultipleProvider(_Validate):
     def test(self):
-        provider('NAME', region='REGION')
-        provider('NAME', region='OTHER_REGION', alias='PROVIDER2')
+        provider('aws', region='us-east-1')
+        provider('aws', region='us-east-2', alias='PROVIDER2')
 
 
 class Test0Terraform(_Validate):
@@ -176,7 +176,7 @@ class Test0Terraform(_Validate):
         terraform(required_version='> 0.9')
 
     def test_backend(self):
-        b = backend(name='NAME', argument='ARGUMENT')
+        b = backend(name='local', path='ARGUMENT')
         terraform(required_version='> 0.9', backend=b)
 
 
@@ -184,7 +184,7 @@ class TestProvisionerConnection(_Validate):
 
     def test(self):
         conn = connection(type='SSH', user='USER', password='PASSWORD')
-        prov = provisioner('PROVISIONER', sorce='SOURCE', destination='DESTINATION', connection=conn)
+        prov = provisioner('file', sorce='SOURCE', destination='DESTINATION', connection=conn)
         r.aws_instance('NAME', provisioner=[prov])
 
 
