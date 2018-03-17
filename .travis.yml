@@ -17,6 +17,7 @@ install:
 - pip install codecov github3.py
 before_script:
 - make package
+- terraform init
 script:
 - make test
 - tar tvfz dist/terrascript-*.tar.gz | grep vault
