@@ -42,8 +42,8 @@ class TestConfig(object):
         isinstance(config['wrongkey'], dict)
 
 class _Validate(object):
-    def setup(self):
-        provider('aws', region='us-east-1')
+#    def setup(self):
+#        provider('aws', region='us-east-1')
 
     def teardown(self):
         assert validate() is True
