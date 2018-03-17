@@ -20,6 +20,10 @@ LIST = [1,'2',False]
 DICT = {'a': 1, 'b': '2', 'c': True}
 
 
+AWS_AMI = 'ami-97785bed'
+AWS_INSTANCE_TYPE = 't2.large'
+
+
 class TestConfig(object):
     def test_data(self):
         assert isinstance(config['data'], defaultdict)
@@ -36,7 +40,6 @@ class TestConfig(object):
     @raises(KeyError)
     def test_wrongkey(self):
         isinstance(config['wrongkey'], dict)
-
 
 class _Validate(object):
     def teardown(self):
@@ -72,7 +75,7 @@ class _BaseTypes(object):
         assert config[self.k1][self.k2][self.k3]['argument'] == DICT
 
     def test_interpol_resource_attr(self):
-        resource = r.aws_instance('RESOURCE')
+        resource = r.aws_instance('RESOURCE', ami=AWS_AMI, instance_type=AWS_INSTANCE_TYPE)
         self._type(self.name, argument=resource.attr)
         assert config[self.k1][self.k2][self.k3]['argument'] == '${aws_instance.RESOURCE.attr}'
 

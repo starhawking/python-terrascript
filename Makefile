@@ -1,6 +1,6 @@
 
 
-NOSE := nosetests --failed --verbose --with-coverage --cover-package=terrascript --stop --with-id --no-byte-compile --logging-level=DEBUG
+NOSE := nosetests --failed --verbose --with-coverage --cover-package=terrascript --stop --with-id --no-byte-compile --logging-level=DEBUG --detailed-errors
 
 # The tests must be executed in this order!!
 TESTS := tests/test.py tests/test_providers.py
