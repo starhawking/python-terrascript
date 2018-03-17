@@ -19,7 +19,7 @@ script:
 after_success:
 - codecov
 after_failure:
-- ls /tmp
+- ls -R /tmp
 env:
   global:
     secure: jq+l+lqlpzmFX4Rtd7++SQ6lQvGs1oGEqBdNDr7McCpzqXjlIPaBh+2lxJA04A14VsDw6/mvAbS4Gjd0yHxBrglVySBJ4DYiysbXPwgAvbG9rzS/VAS++C3YOG/gYPW7h1R74Fq/9YFqtXt3HRJvdTZ3j06jl1SAPqqI0b+JS7soEWCoW48vRg/uEKBY9s96cu2CpnGfXLAQDOEzzVp1mbZbHy9dCNeCQHJ4sz8xC3Hm5Mlw5URHpBBtEspTbPQS8mbiyFCoi8ynYi5Nr8zYsnLaAHTYs418lUBZrfjMhnK7Mf3wlNUduCjcuYPc786zeNK+6/ue9VBRv2eqh83lOoIsnZ3S8+m03ZnzVXmn/aFScY61RbQY2J6PY3dEHpE7GPrlwQ1ZZsMrKEzCHfdGDiSQqJYB4k/8d0cqMqgsQGjOVCMc4X8Tc338LqDolaMGeXT+gXeoQ81ikm0ze3HjK9ordEajzGv9voBR0dCuDlGPdSoYSEhzlDU4DnX84CXm2pmyoNaLoV+k3nz5Ey7+QvVa1aLCb2WqGM2qrMuBJOWsg1cV3WJq+ETD0uTKy+cP4G1IUmTns0DURYXGRUPYwGw/8fjt/ScnLyezmr5JkLYeZBX7KYRc5hV9uK2Ay79KX/KaNC/RNiW6L25/AyB4xRDGzNmLyGq39cLiGrQlSNM=
