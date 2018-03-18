@@ -1,5 +1,7 @@
 # Example: AWS Elastic IP
 
+IMPORTANT: This example only works with **Terrascript** releases up to 0.4.1.
+
 This example is based on the [Elastic IP example](https://github.com/terraform-providers/terraform-provider-aws/tree/master/examples/eip)
 distributed with the Terraform source code.
 

@@ -1,5 +1,7 @@
 # Example: Webserver Cluster Module
 
+IMPORTANT: This example only works with **Terrascript** releases up to 0.4.1.
+
 This example is loosely based on an example from chapter 4 of the book
 [Terraform: Up and Running](http://www.terraformupandrunning.com/) by Yevgenij Brikman.
 The original code can be found in the

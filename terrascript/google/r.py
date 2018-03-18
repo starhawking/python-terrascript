@@ -143,6 +143,9 @@ container_node_pool = google_container_node_pool
 class google_dataproc_cluster(_resource): pass
 dataproc_cluster = google_dataproc_cluster
 
+class google_dataproc_job(_resource): pass
+dataproc_job = google_dataproc_job
+
 class google_dns_managed_zone(_resource): pass
 dns_managed_zone = google_dns_managed_zone
 
@@ -152,8 +155,8 @@ dns_record_set = google_dns_record_set
 class google_folder(_resource): pass
 folder = google_folder
 
-class google_folder_iam_policy(_resource): pass
-folder_iam_policy = google_folder_iam_policy
+class google_folder_organization_policy(_resource): pass
+folder_organization_policy = google_folder_organization_policy
 
 class google_logging_billing_account_sink(_resource): pass
 logging_billing_account_sink = google_logging_billing_account_sink
@@ -199,12 +202,6 @@ project = google_project
 
 class google_project_iam_policy(_resource): pass
 project_iam_policy = google_project_iam_policy
-
-class google_project_iam_binding(_resource): pass
-project_iam_binding = google_project_iam_binding
-
-class google_project_iam_member(_resource): pass
-project_iam_member = google_project_iam_member
 
 class google_project_service(_resource): pass
 project_service = google_project_service

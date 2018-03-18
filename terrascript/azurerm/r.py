@@ -131,6 +131,9 @@ log_analytics_workspace = azurerm_log_analytics_workspace
 class azurerm_managed_disk(_resource): pass
 managed_disk = azurerm_managed_disk
 
+class azurerm_management_lock(_resource): pass
+management_lock = azurerm_management_lock
+
 class azurerm_mysql_configuration(_resource): pass
 mysql_configuration = azurerm_mysql_configuration
 
@@ -151,6 +154,9 @@ network_security_group = azurerm_network_security_group
 
 class azurerm_network_security_rule(_resource): pass
 network_security_rule = azurerm_network_security_rule
+
+class azurerm_network_watcher(_resource): pass
+network_watcher = azurerm_network_watcher
 
 class azurerm_postgresql_configuration(_resource): pass
 postgresql_configuration = azurerm_postgresql_configuration

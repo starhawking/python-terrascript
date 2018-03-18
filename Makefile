@@ -1,9 +1,11 @@
 
 
-NOSE := nosetests --failed --verbose --with-coverage --cover-package=terrascript --stop --with-id --no-byte-compile --logging-level=DEBUG
+NOSE := python3 -m nose --failed --verbose --with-coverage --cover-package=terrascript --stop --no-byte-compile --logging-level=DEBUG --detailed-errors
 
 # The tests must be executed in this order!!
-TESTS := tests/test.py tests/test_providers.py
+TESTS := tests/test.py tests/test_providers.py tests/test_issues.py
+
+NOSEIDS = $(shell ./.read_noseids.py)
 
 
 all: help
@@ -15,20 +17,26 @@ help:
 	@echo "make package"
 	@echo "make install"
 
-test:
-	$(NOSE) $(TESTS)
+noseids:
+	python3 -m nose --collect-only --with-id --id-file=.noseids $(TESTS)
 
-debug:
+test2:
+	$(NOSE) --processes=165 --process-restartworker --process-timeout=30 $(TESTS)
+
+test:
+	$(NOSE) --with-id $(TESTS)
+
+debug: noseids
 	$(NOSE) --pdb $(TESTS)
 
 code: clean
 	./makecode.py
 
-package: clean code
+package: clean
 	python3 setup.py clean
 	python3 setup.py sdist
 
-install: clean code
+install: clean
 	python3 setup.py install
 
 clean:
