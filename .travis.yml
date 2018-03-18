@@ -6,6 +6,7 @@ python:
 - '3.5'
 - '3.6'
 env:
+- TERRAFORM=0.9.11
 - TERRAFORM=0.10.8
 - TERRAFORM=0.11.4
 cache: pip
