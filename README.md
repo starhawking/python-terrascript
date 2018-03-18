@@ -98,6 +98,10 @@ This section lists some more advanced examples.
 
 ## Status
 
+**Terrascript** works with Terraform release 0.10.0 and later. Earlier versions
+of Terraform should also work fine with the exception of the `Terrascript.validate()`
+method.
+
 All Terraform providers (as of 21-Nov-2017) are supported but most haven't seen
 any testing at all. Please let me know if you run into any problems.
 
