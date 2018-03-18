@@ -3,6 +3,8 @@
 ## [Unreleased]
 
 ## [0.5.0]
+* Added `terrascript.Terrascript` class wich makes this release
+  incompatible with earlier once.
 * Allow multiple providers thanks to Vianney Foucault.
 
 ## [0.4.0] - 2017-11-21
