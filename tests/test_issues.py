@@ -5,8 +5,17 @@ Test for Github issues.
 
 from terrascript import *
 from terrascript.aws.r import aws_instance
+from terrascript.aws.d import aws_eip
 from terrascript.datadog.r import datadog_monitor
 
+def test_issue3_aws_eip():
+    """Terraform issue https://github.com/hashicorp/terraform/issues/13911."""
+    
+    ts = Terrascript()
+    ts += provider('aws', region='us-east-1')
+    
+    ts += aws_eip('EIP', public_ip='10.1.2.3')
+    assert ts.validate() is True
 
 def test_issue22():
     """Issue 22: Allow multiple providers of same type.
