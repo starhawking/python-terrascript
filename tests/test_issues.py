@@ -63,3 +63,12 @@ def test_issue26():
         ts += datadog_monitor(name, name=name, type='metric alert',
                                 query='some query', escalation_message='some message')
         ts.validate()
+
+
+def test_issue31():
+    """Issue 31: Add (test) for vault provider"""
+    
+    ts = Terrascript()
+    ts += provider('vault', address='https://address.to.vault.provider:1234', token='TOKEN')
+    ts.validate()
+    
