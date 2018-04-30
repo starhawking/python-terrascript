@@ -86,14 +86,14 @@ class Terrascript(object):
         return json.dumps(config, indent=INDENT, sort_keys=SORT, default=_json_default)
 
 
-    def validate(self):
+    def validate(self, delete=True):
         """Validate a Terraform configuration."""
         import tempfile
         import subprocess
 
         config = self.dump()
         tmpdir = tempfile.mkdtemp()
-        tmpfile = tempfile.NamedTemporaryFile(mode='w', dir=tmpdir, suffix='.tf.json', delete=True)
+        tmpfile = tempfile.NamedTemporaryFile(mode='w', dir=tmpdir, suffix='.tf.json', delete=delete)
 
         tmpfile.write(self.dump())
         tmpfile.flush()

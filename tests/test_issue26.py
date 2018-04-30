@@ -20,5 +20,6 @@ def test_issue26():
         ts = Terrascript()
         ts += provider('datadog', api_key='DUMMY', app_key='DUMMY')
         ts += datadog_monitor(name, name=name, type='metric alert',
-                                query='some query', escalation_message='some message')
-        ts.validate()
+                                query='some query', message='a message',
+                                escalation_message='some message')
+        assert ts.validate(delete=False) is True

@@ -30,7 +30,7 @@ install:
 before_script:
 - make package
 script:
-- make test
+- travis_retry make test
 - tar tvfz dist/terrascript-*.tar.gz | grep vault
 after_success:
 - codecov

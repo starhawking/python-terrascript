@@ -43,4 +43,4 @@ def test_issue3a():
            name = "jbstest_fails",
            policy = "${data.aws_iam_policy_document.jbstest.json}")
            
-    ts.validate()
+    assert ts.validate(delete=False) == True

@@ -12,4 +12,4 @@ def test_issue31():
     
     ts = Terrascript()
     ts += provider('vault', address='https://address.to.vault.provider:1234', token='TOKEN')
-    ts.validate()
+    assert ts.validate() is True
