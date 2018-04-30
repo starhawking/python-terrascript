@@ -6,8 +6,21 @@ python:
 - '3.5'
 - '3.6'
 env:
+- TERRAFORM=0.10.1
+- TERRAFORM=0.10.2
+- TERRAFORM=0.10.3
+- TERRAFORM=0.10.4
+- TERRAFORM=0.10.5
+- TERRAFORM=0.10.6
+- TERRAFORM=0.10.7
 - TERRAFORM=0.10.8
+- TERRAFORM=0.11.1
+- TERRAFORM=0.11.2
+- TERRAFORM=0.11.3
 - TERRAFORM=0.11.4
+- TERRAFORM=0.11.5
+- TERRAFORM=0.11.6
+- TERRAFORM=0.11.7
 cache: pip
 install:
 - "(wget https://releases.hashicorp.com/terraform/${TERRAFORM}/terraform_${TERRAFORM}_linux_amd64.zip
@@ -17,7 +30,7 @@ install:
 before_script:
 - make package
 script:
-- make test
+- travis_retry make test
 - tar tvfz dist/terrascript-*.tar.gz | grep vault
 after_success:
 - codecov

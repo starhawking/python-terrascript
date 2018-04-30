@@ -1,12 +1,26 @@
 """
-Test for Github issues.
+Test for Github issue 22: Allow multiple providers of same type
+
+https://github.com/mjuenema/python-terrascript/issues/22
 
 """
 
 from terrascript import *
 from terrascript.aws.r import aws_instance
-from terrascript.datadog.r import datadog_monitor
+# <<<<<<< HEAD:tests/test_issue22.py
+# =======
+# from terrascript.aws.d import aws_eip
+# from terrascript.datadog.r import datadog_monitor
 
+# def test_issue3_aws_eip():
+#     """Terraform issue https://github.com/hashicorp/terraform/issues/13911."""
+    
+#     ts = Terrascript()
+#     ts += provider('aws', region='us-east-1')
+    
+#     ts += aws_eip('EIP', public_ip='10.1.2.3')
+#     assert ts.validate() is True
+# >>>>>>> feature/issue3_terraform_json_bug:tests/test_issues.py
 
 def test_issue22():
     """Issue 22: Allow multiple providers of same type.
@@ -47,19 +61,3 @@ def test_issue22():
     ts += aws_instance('I1', ami='ami-4bf3d731', instance_type='t2.large')
     ts += aws_instance('I2', ami='ami-e1496384', instance_type='t2.large', provider='aws.useast2')
     assert ts.validate() is True
-
-
-def test_issue26():
-    """Issue 26: Problem when using resource in a loop
-
-       The introduction of the `terrascript.Terrascript` class makes this
-       possible. The sample code of issue 26 as been altered for this test.
-
-    """
-
-    for name in ['first', 'second', 'third']:
-        ts = Terrascript()
-        ts += provider('datadog', api_key='DUMMY', app_key='DUMMY')
-        ts += datadog_monitor(name, name=name, type='metric alert',
-                                query='some query', escalation_message='some message')
-        ts.validate()

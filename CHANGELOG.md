@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+* Issue 3: Work-around for data/JSON bug. 
 
 ## [0.5.0]
 * Added `terrascript.Terrascript` class wich makes this release
@@ -15,7 +17,7 @@
 * Added note about how to create provider modules in README.
 
 ## [0.2.1] - 2017-08-02
-## Fixed
+### Fixed
 * Added `MANIFEST.in` which I completely forgot.
 * Allow data sources without any keyword arguments.
 ### Added
