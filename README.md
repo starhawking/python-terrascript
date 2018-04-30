@@ -7,7 +7,7 @@
 [![Codecov](https://img.shields.io/codecov/c/github/mjuenema/python-terrascript.svg?style=flat-square)](https://codecov.io/gh/mjuenema/python-terrascript)
 
 **Terrascript** provides a method of generating [Terraform](https://www.terraform.io)
-files, while harnessing all the features the Python 3 language provides.
+files, while harnessing all the features the Python 3 (3.3+) language provides. 
 
 IMPORTANT: Release 0.5.0 introduced changes that are not backwards compatible with
 earlier releases. The examples in this document describe the current
@@ -98,7 +98,7 @@ This section lists some more advanced examples.
 
 ## Status
 
-**Terrascript** works with Terraform release 0.10.0 and later. Earlier versions
+**Terrascript** works with Terraform release 0.10.0 and later. Older versions
 of Terraform should also work fine with the exception of the `Terrascript.validate()`
 method.
 
