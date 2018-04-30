@@ -44,7 +44,6 @@ install: clean
 	python3 setup.py install
 
 clean:
-	rm .noseids
 	rm -f tests/*.pyc
 	rm -f terrascript/*.pyc
 	rm -f terrascript/*/*.pyc

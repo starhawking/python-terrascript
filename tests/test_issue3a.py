@@ -14,8 +14,9 @@ import terrascript.aws.r
 
 
 def test_issue3a():
-    ts = terrascript.Terrascript()
+    """Issue 3: Work-around for data/JSON bug (a)"""
     
+    ts = terrascript.Terrascript()
     ts += terrascript.provider\
           ("aws",
            region = "us-east-1")
@@ -29,15 +30,17 @@ def test_issue3a():
            name = "jbstest_works",
            policy = json.dumps(policydict, sort_keys=True))
     
-    #ts += terrascript.aws.d.aws_iam_policy_document\
-    #      ("jbstest",
-    #       statement = {
-    #           "actions": ["s3:*"],
-    #           "resources": ["*"]
-    #           }
-    #       )
-    #
-    #ts += terrascript.aws.r.iam_policy\
-    #      ("jbstest_fails",
-    #       name = "jbstest_fails",
-    #       policy = "${data.aws_iam_policy_document.jbstest.json}")
+    ts += terrascript.aws.d.aws_iam_policy_document\
+          ("jbstest",
+           statement = {
+               "actions": ["s3:*"],
+               "resources": ["*"]
+               }
+           )
+    
+    ts += terrascript.aws.r.iam_policy\
+          ("jbstest_fails",
+           name = "jbstest_fails",
+           policy = "${data.aws_iam_policy_document.jbstest.json}")
+           
+    ts.validate()

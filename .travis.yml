@@ -8,6 +8,7 @@ python:
 env:
 - TERRAFORM=0.10.8
 - TERRAFORM=0.11.4
+- TERRAFORM=0.11.7
 cache: pip
 install:
 - "(wget https://releases.hashicorp.com/terraform/${TERRAFORM}/terraform_${TERRAFORM}_linux_amd64.zip
