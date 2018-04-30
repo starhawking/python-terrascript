@@ -3,7 +3,8 @@
 NOSE := python3 -m nose --failed --verbose --with-coverage --cover-package=terrascript --stop --no-byte-compile --logging-level=DEBUG --detailed-errors
 
 # The tests must be executed in this order!!
-TESTS := tests/test.py tests/test_providers.py tests/test_issues.py
+TESTS := tests/test.py tests/test_providers.py 
+TEST_ISSUES := $(wildcard tests/test_issue*.py)
 
 NOSEIDS = $(shell ./.read_noseids.py)
 
@@ -24,7 +25,10 @@ test2:
 	$(NOSE) --processes=165 --process-restartworker --process-timeout=30 $(TESTS)
 
 test:
-	$(NOSE) --with-id $(TESTS)
+	$(NOSE) --with-id $(TESTS) $(TEST_ISSUES)
+	
+test_issues:
+	$(NOSE) --with-id $(TEST_ISSUES)
 
 debug: noseids
 	$(NOSE) --pdb $(TESTS)
@@ -40,6 +44,7 @@ install: clean
 	python3 setup.py install
 
 clean:
+	rm .noseids
 	rm -f tests/*.pyc
 	rm -f terrascript/*.pyc
 	rm -f terrascript/*/*.pyc
