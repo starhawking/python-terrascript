@@ -9,9 +9,11 @@ Test for comment by @jbscare on 28-April-2018
 
 import json
 import terrascript
+import terrascript.aws.d
+import terrascript.aws.r
 
 def test_issue3a():
-    """Issue 3: Work-around for data/JSON bug (a)"""
+    """Issue 3(a): Work-around for data/JSON bug"""
     
     ts = terrascript.Terrascript()
     ts += terrascript.provider\
