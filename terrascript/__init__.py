@@ -39,7 +39,7 @@ class _Config(dict):
             # Work-around for issue 3 as described in https://github.com/hashicorp/terraform/issues/13037:
             # Make 'data' a list of a single dictionary.
             if key == 'data':
-                super(_Config, self).__setitem__(key, [defaultdict(lambda : [{}])])
+                super(_Config, self).__setitem__(key, [defaultdict(dict)])
             elif key in THREE_TIER_ITEMS:
                 super(_Config, self).__setitem__(key, defaultdict(dict))
             elif key in TWO_TIER_ITEMS:
@@ -62,7 +62,7 @@ class Terrascript(object):
         # Work-around for issue 3 as described in https://github.com/hashicorp/terraform/issues/13037:
         # Make 'data' a list of a single dictionary.
         if item._class == 'data':
-            self.config[item._class][0][item._type][0][item._name] = item._kwargs
+            self.config[item._class][0][item._type][item._name] = item._kwargs
         elif item._class in THREE_TIER_ITEMS:
             self.config[item._class][item._type][item._name] = item._kwargs
         elif item._class in TWO_TIER_ITEMS:
@@ -70,7 +70,7 @@ class Terrascript(object):
         elif item._class in ONE_TIER_ITEMS:
             self.config[item._class] = item._kwargs
         else:
-            raise KeyError(key)
+            raise KeyError(item)
 
         return self
 
@@ -116,7 +116,7 @@ class Terrascript(object):
         proc = subprocess.Popen(['terraform','validate'], cwd=tmpdir,
                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         proc.communicate()
-
+        
         tmpfile.close()
 
         return proc.returncode == 0

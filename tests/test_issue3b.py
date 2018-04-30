@@ -8,6 +8,7 @@ Test for comment by @nielsonsantana on 29-April-2018
 """
 
 import terrascript
+import terrascript.aws.d
 
 def test_issue3b():
     """Issue 3: Work-around for data/JSON bug (a)"""
@@ -17,7 +18,7 @@ def test_issue3b():
           ("aws",
            region = "us-east-1")
 
-    ts += terrascript.aws.d.aws_vpc('selected', id=vpc_id, default_attrs=False)
+    ts += terrascript.aws.d.aws_vpc('selected', id=1)
     
     # policydict = {
     #     "Version": "2012-10-17",
