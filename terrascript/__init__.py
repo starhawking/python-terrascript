@@ -66,7 +66,11 @@ class Terrascript(object):
 
         return self
 
-    add = __add__
+    def _add(self, item):
+        self += item
+        return item
+
+    add = _add
 
 
     def dump(self):
