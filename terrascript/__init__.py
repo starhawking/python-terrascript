@@ -187,14 +187,14 @@ class _data(_base):
     """Base class for data sources."""
     _class = 'data'
 
-    # TODO: Work-around for https://github.com/mjuenema/python-terrascript/issues/3
-    def __init__(self, name, **kwargs):
-        if kwargs:
-            if not 'type' in kwargs:
-                kwargs['type'] = 'string'
-            if not 'description' in kwargs:
-                kwargs['description'] = ''
-        super(_data, self).__init__(name, **kwargs)
+    # # TODO: Work-around for https://github.com/mjuenema/python-terrascript/issues/3
+    # def __init__(self, name, **kwargs):
+    #     if kwargs:
+    #         if not 'type' in kwargs:
+    #             kwargs['type'] = 'string'
+    #         if not 'description' in kwargs:
+    #             kwargs['description'] = ''
+    #     super(_data, self).__init__(name, **kwargs)
 
 
 class resource(_base):
