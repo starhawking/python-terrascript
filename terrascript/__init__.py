@@ -36,7 +36,11 @@ class _Config(dict):
         try:
             return super(_Config, self).__getitem__(key)
         except KeyError:
-            if key in THREE_TIER_ITEMS:
+            # Work-around for issue 3 as described in https://github.com/hashicorp/terraform/issues/13037:
+            # Make 'data' a list of a single dictionary.
+            if key == 'data':
+                super(_Config, self).__setitem__(key, [defaultdict(lambda : [{}])])
+            elif key in THREE_TIER_ITEMS:
                 super(_Config, self).__setitem__(key, defaultdict(dict))
             elif key in TWO_TIER_ITEMS:
                 super(_Config, self).__setitem__(key, {})
@@ -55,7 +59,11 @@ class Terrascript(object):
         self.config = _Config()
 
     def __add__(self, item):
-        if item._class in THREE_TIER_ITEMS:
+        # Work-around for issue 3 as described in https://github.com/hashicorp/terraform/issues/13037:
+        # Make 'data' a list of a single dictionary.
+        if item._class == 'data':
+            self.config[item._class][0][item._type][0][item._name] = item._kwargs
+        elif item._class in THREE_TIER_ITEMS:
             self.config[item._class][item._type][item._name] = item._kwargs
         elif item._class in TWO_TIER_ITEMS:
             self.config[item._class][item._name] = item._kwargs

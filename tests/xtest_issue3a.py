@@ -9,9 +9,6 @@ Test for comment by @jbscare on 28-April-2018
 
 import json
 import terrascript
-import terrascript.aws.d
-import terrascript.aws.r
-
 
 def test_issue3a():
     """Issue 3: Work-around for data/JSON bug (a)"""
@@ -32,10 +29,10 @@ def test_issue3a():
     
     ts += terrascript.aws.d.aws_iam_policy_document\
           ("jbstest",
-           statement = {
+           statement = [{
                "actions": ["s3:*"],
                "resources": ["*"]
-               }
+               }]
            )
     
     ts += terrascript.aws.r.iam_policy\
