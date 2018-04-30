@@ -14,10 +14,8 @@ def test_issue3b():
     """Issue 3(b): Work-around for data/JSON bug"""
     
     ts = terrascript.Terrascript()
-    ts += terrascript.provider\
-          ("aws",
-           region = "us-east-1")
+    ts += terrascript.provider("aws", region = "us-east-1")
 
     ts += terrascript.aws.d.aws_vpc('selected', id=1)
 
-    assert ts.validate(delete=False) == True
+    assert ts.validate() == True
