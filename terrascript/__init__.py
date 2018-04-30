@@ -74,7 +74,10 @@ class Terrascript(object):
 
         return self
 
-    add = __add__
+    
+    def add(self, item):
+        self.__add__(item)
+        return item
 
 
     def dump(self):
@@ -113,7 +116,7 @@ class Terrascript(object):
         assert proc.returncode == 0
 
         # Validate configuration
-        proc = subprocess.Popen(['terraform','validate'], cwd=tmpdir,
+        proc = subprocess.Popen(['terraform','validate','-check-variables=false'], cwd=tmpdir,
                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         proc.communicate()
         

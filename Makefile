@@ -44,7 +44,6 @@ install: clean
 	python3 setup.py install
 
 clean:
-	rm -f /tmp/tmp*/.terraform
 	rm -f tests/*.pyc
 	rm -f terrascript/*.pyc
 	rm -f terrascript/*/*.pyc
