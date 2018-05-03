@@ -188,13 +188,10 @@ class _data(_base):
     _class = 'data'
 
     # TODO: Work-around for https://github.com/mjuenema/python-terrascript/issues/3
-    def __init__(self, name, **kwargs):
-        if kwargs:
-            if not 'type' in kwargs:
-                kwargs['type'] = 'string'
-            if not 'description' in kwargs:
-                kwargs['description'] = ''
-        super(_data, self).__init__(name, **kwargs)
+    # Workaround: don't require (type, description) for data sources.
+    #   also, 'name' key errors, workaround is to use use `obj_name` instead of `name`
+    def __init__(self, obj_name, **kwargs):
+        super(_data, self).__init__(obj_name, **kwargs)
 
 
 class resource(_base):

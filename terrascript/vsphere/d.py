@@ -5,6 +5,9 @@ datacenter = vsphere_datacenter
 class vsphere_distributed_virtual_switch(_data): pass
 distributed_virtual_switch = vsphere_distributed_virtual_switch
 
+class vsphere_virtual_machine(_data): pass
+virtual_machine = vsphere_virtual_machine
+
 class vsphere_host(_data): pass
 host = vsphere_host
 
