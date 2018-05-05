@@ -1,4 +1,13 @@
 from terrascript import _resource
+class vsphere_custom_attribute(_resource): pass
+custom_attribute = vsphere_custom_attribute
+
+class vsphere_datastore_cluster(_resource): pass
+datastore_cluster = vsphere_datastore_cluster
+
+class vsphere_storage_drs_vm_override(_resource): pass
+storage_drs_vm_override = vsphere_storage_drs_vm_override
+
 class vsphere_datacenter(_resource): pass
 datacenter = vsphere_datacenter
 

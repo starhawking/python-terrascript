@@ -119,7 +119,7 @@ class Terrascript(object):
         proc = subprocess.Popen(['terraform','validate','-check-variables=false'], cwd=tmpdir,
                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         proc.communicate()
-        
+
         tmpfile.close()
 
         return proc.returncode == 0
@@ -198,14 +198,8 @@ class _data(_base):
     """Base class for data sources."""
     _class = 'data'
 
-    # # TODO: Work-around for https://github.com/mjuenema/python-terrascript/issues/3
-    # def __init__(self, name, **kwargs):
-    #     if kwargs:
-    #         if not 'type' in kwargs:
-    #             kwargs['type'] = 'string'
-    #         if not 'description' in kwargs:
-    #             kwargs['description'] = ''
-    #     super(_data, self).__init__(name, **kwargs)
+    def __init__(self, obj_name, **kwargs):
+        super(_data, self).__init__(obj_name, **kwargs)
 
 
 class resource(_base):
