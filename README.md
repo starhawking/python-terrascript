@@ -10,9 +10,7 @@
 files, while harnessing all the features the Python 3 (3.3+) language provides. 
 
 IMPORTANT: Release 0.5.0 introduced changes that are not backwards compatible with
-earlier releases. The examples in this document describe the current
-release of **Terrascript** while the [old README](README_OLD.md) covers releases
-up to 0.4.1.
+earlier releases. 
 
 ## Example
 
@@ -87,22 +85,11 @@ up to you to ensure that the generated output makes sense to Terraform.**
 * [Interpolation](doc/interpolation.md)
 * [Functions](doc/functions.md)
 
-## Examples
-
-IMPORTANT: These examples only work with **Terrascript** releases up to 0.4.1.
-
-This section lists some more advanced examples.
-
-* [AWS Elastic IP (eip)](doc/examples/aws_eip.md)
-* [Example based on chapter 4 of "Terraform: Up and Running"](doc/examples/module_webserver_cluster).
-
 ## Status
 
-**Terrascript** works with Terraform release 0.10.0 and later. Older versions
-of Terraform should also work fine with the exception of the `Terrascript.validate()`
-method.
+**Terrascript** works with Terraform release 0.10.6 and later.
 
-All Terraform providers (as of 21-Nov-2017) are supported but most haven't seen
+All Terraform providers are supported but most haven't seen
 any testing at all. Please let me know if you run into any problems.
 
 I'd also like to add more examples.

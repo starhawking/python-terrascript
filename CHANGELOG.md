@@ -2,9 +2,11 @@
 
 ## [Unreleased]
 ### Fixed
-* Issue 3: Work-around for data/JSON bug. 
+* Work-around for data/JSON bug  (issue 3).
 ### Added
-* `Terrascript.add()` method.
+* `Terrascript.add()` method (issue 33).
+### Removed
+*  Dropped support for Terraform < 0.10.6 (issue 38).
 
 ## [0.5.0]
 * Added `terrascript.Terrascript` class wich makes this release
