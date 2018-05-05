@@ -3,6 +3,8 @@
 ## [Unreleased]
 ### Fixed
 * Issue 3: Work-around for data/JSON bug. 
+### Added
+* `Terrascript.add()` method.
 
 ## [0.5.0]
 * Added `terrascript.Terrascript` class wich makes this release

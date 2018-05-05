@@ -39,12 +39,12 @@ from terrascript.aws.r import aws_instance
 
 ts = Terrascript()
 
-# Add a provider.
+# Add a provider (+= syntax)
 ts += provider('aws', access_key='ACCESS_KEY_HERE',
                secret_key='SECRET_KEY_HERE', region='us-east-1')
 
-# Add an AWS EC2 instance.
-ts += aws_instance('example', ami='ami-2757f631', instance_type='t2.micro')
+# Add an AWS EC2 instance (add() syntax).
+inst = ts.add(aws_instance('example', ami='ami-2757f631', instance_type='t2.micro'))
 
 # Print the JSON-style configuration to stdout.
 print(ts.dump())
@@ -89,7 +89,7 @@ up to you to ensure that the generated output makes sense to Terraform.**
 
 ## Examples
 
-IMPORTANT: These examples only works with **Terrascript** releases up to 0.4.1.
+IMPORTANT: These examples only work with **Terrascript** releases up to 0.4.1.
 
 This section lists some more advanced examples.
 
