@@ -119,7 +119,7 @@ class Terrascript(object):
         proc = subprocess.Popen(['terraform','validate','-check-variables=false'], cwd=tmpdir,
                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         proc.communicate()
-        
+
         tmpfile.close()
 
         return proc.returncode == 0
@@ -201,7 +201,7 @@ class _data(_base):
     def __init__(self, obj_name, **kwargs):
         super(_data, self).__init__(obj_name, **kwargs)
 
-        
+
 class resource(_base):
     """Class for creating a resource for which no convenience wrapper exists."""
     _class = 'resource'
