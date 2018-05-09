@@ -17,5 +17,5 @@ def test_issue32():
 
     assert 'mktemp' in j
 
-    assert ts.validate(delete=False) is True
+    assert ts.validate() is True
 
