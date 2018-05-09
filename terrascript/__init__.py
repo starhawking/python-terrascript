@@ -74,7 +74,7 @@ class Terrascript(object):
 
         return self
 
-    
+
     def add(self, item):
         self.__add__(item)
         return item
@@ -86,7 +86,9 @@ class Terrascript(object):
 
         def _json_default(v):
             # How to encode non-standard objects
-            if isinstance(v, UserDict):
+            if isinstance(v, provisioner):
+                return {v._type: v.data}
+            elif isinstance(v, UserDict):
                 return v.data
             else:
                 return str(v)
@@ -248,8 +250,10 @@ class terraform(_base):
         super(terraform, self).__init__(None, **kwargs)
 
 
-class provisioner(_base):
-    _class = 'provisioner'
+class provisioner(UserDict):
+    def __init__(self, type_, **kwargs):
+       self._type = type_
+       self.data = kwargs
 
 
 class connection(UserDict):
