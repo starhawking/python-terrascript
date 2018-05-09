@@ -30,7 +30,7 @@ class Test1ConfigDefaults(object):
         self.cfg = Terrascript()
 
     def test_data(self):
-        assert isinstance(self.cfg.config['data'], defaultdict)
+        assert isinstance(self.cfg.config['data'], list)
 
     def test_resource(self):
         assert isinstance(self.cfg.config['resource'], defaultdict)
