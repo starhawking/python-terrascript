@@ -7,7 +7,7 @@ this project.
 """
 
 __author__ = 'Markus Juenemann <markus@juenemann.net>'
-__version__ = '0.5.0'
+__version__ = '0.5.1'
 __license__ = 'BSD 2-clause "Simplified" License'
 
 INDENT = 2
@@ -36,7 +36,11 @@ class _Config(dict):
         try:
             return super(_Config, self).__getitem__(key)
         except KeyError:
-            if key in THREE_TIER_ITEMS:
+            # Work-around for issue 3 as described in https://github.com/hashicorp/terraform/issues/13037:
+            # Make 'data' a list of a single dictionary.
+            if key == 'data':
+                super(_Config, self).__setitem__(key, [defaultdict(dict)])
+            elif key in THREE_TIER_ITEMS:
                 super(_Config, self).__setitem__(key, defaultdict(dict))
             elif key in TWO_TIER_ITEMS:
                 super(_Config, self).__setitem__(key, {})
@@ -55,18 +59,25 @@ class Terrascript(object):
         self.config = _Config()
 
     def __add__(self, item):
-        if item._class in THREE_TIER_ITEMS:
+        # Work-around for issue 3 as described in https://github.com/hashicorp/terraform/issues/13037:
+        # Make 'data' a list of a single dictionary.
+        if item._class == 'data':
+            self.config[item._class][0][item._type][item._name] = item._kwargs
+        elif item._class in THREE_TIER_ITEMS:
             self.config[item._class][item._type][item._name] = item._kwargs
         elif item._class in TWO_TIER_ITEMS:
             self.config[item._class][item._name] = item._kwargs
         elif item._class in ONE_TIER_ITEMS:
             self.config[item._class] = item._kwargs
         else:
-            raise KeyError(key)
+            raise KeyError(item)
 
         return self
 
-    add = __add__
+    
+    def add(self, item):
+        self.__add__(item)
+        return item
 
     def update(self, terrascript2):
         if isinstance(terrascript2, Terrascript):
@@ -94,14 +105,14 @@ class Terrascript(object):
         return json.dumps(config, indent=INDENT, sort_keys=SORT, default=_json_default)
 
 
-    def validate(self):
+    def validate(self, delete=True):
         """Validate a Terraform configuration."""
         import tempfile
         import subprocess
 
         config = self.dump()
         tmpdir = tempfile.mkdtemp()
-        tmpfile = tempfile.NamedTemporaryFile(mode='w', dir=tmpdir, suffix='.tf.json', delete=True)
+        tmpfile = tempfile.NamedTemporaryFile(mode='w', dir=tmpdir, suffix='.tf.json', delete=delete)
 
         tmpfile.write(self.dump())
         tmpfile.flush()
@@ -113,10 +124,10 @@ class Terrascript(object):
         assert proc.returncode == 0
 
         # Validate configuration
-        proc = subprocess.Popen(['terraform','validate'], cwd=tmpdir,
+        proc = subprocess.Popen(['terraform','validate','-check-variables=false'], cwd=tmpdir,
                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         proc.communicate()
-
+        
         tmpfile.close()
 
         return proc.returncode == 0
@@ -195,13 +206,10 @@ class _data(_base):
     """Base class for data sources."""
     _class = 'data'
 
-    # TODO: Work-around for https://github.com/mjuenema/python-terrascript/issues/3
-    # Workaround: don't require (type, description) for data sources.
-    #   also, 'name' key errors, workaround is to use use `obj_name` instead of `name`
     def __init__(self, obj_name, **kwargs):
         super(_data, self).__init__(obj_name, **kwargs)
 
-
+        
 class resource(_base):
     """Class for creating a resource for which no convenience wrapper exists."""
     _class = 'resource'
