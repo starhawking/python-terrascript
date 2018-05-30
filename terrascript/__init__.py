@@ -78,6 +78,14 @@ class Terrascript(object):
         self.__add__(item)
         return item
 
+    def update(self, terrascript2):
+        if isinstance(terrascript2, Terrascript):
+            for item in terrascript2._item_list:
+                self.__add__(item)
+        else:
+            raise TypeError('{0} is not a Terrascript instance.'.format(
+                type(terrascript2)))
+
 
     def dump(self):
         """Return the JSON representaion of config."""
