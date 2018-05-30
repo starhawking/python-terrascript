@@ -19,7 +19,7 @@ SORT = True
 DEBUG = False
 """Set to enable some debugging."""
 
-import logging 
+import logging
 import os
 from collections import defaultdict, UserDict
 
@@ -74,7 +74,6 @@ class Terrascript(object):
 
         return self
 
-    
     def add(self, item):
         self.__add__(item)
         return item
@@ -119,7 +118,7 @@ class Terrascript(object):
         proc = subprocess.Popen(['terraform','validate','-check-variables=false'], cwd=tmpdir,
                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         proc.communicate()
-        
+
         tmpfile.close()
 
         return proc.returncode == 0
@@ -189,6 +188,8 @@ class _base(object):
             return '{}.{}'.format(self._class, self._name)
 
 
+
+
 class _resource(_base):
     """Base class for resources."""
     _class = 'resource'
@@ -201,7 +202,7 @@ class _data(_base):
     def __init__(self, obj_name, **kwargs):
         super(_data, self).__init__(obj_name, **kwargs)
 
-        
+
 class resource(_base):
     """Class for creating a resource for which no convenience wrapper exists."""
     _class = 'resource'
@@ -295,6 +296,6 @@ f = fn = func = function = _function()
 
 __all__ = ['Terrascript',
            'resource', 'data', 'module', 'variable',
-           'output', 'terraform', 'provider', 
+           'output', 'terraform', 'provider',
            'provisioner', 'connection', 'backend',
            'f', 'fn', 'func', 'function']
