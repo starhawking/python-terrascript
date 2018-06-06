@@ -199,8 +199,6 @@ class _base(object):
             return '{}.{}'.format(self._class, self._name)
 
 
-
-
 class _resource(_base):
     """Base class for resources."""
     _class = 'resource'
