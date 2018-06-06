@@ -13,7 +13,9 @@ all: help
 
 help:
 	@echo "make test"
+	@echo "make test_issues"
 	@echo "make debug"
+	@echo "make debug_issues"
 	@echo "make code"
 	@echo "make package"
 	@echo "make install"
@@ -26,12 +28,15 @@ test2:
 
 test:
 	$(NOSE) --with-id $(TESTS) $(TEST_ISSUES)
-	
+
 test_issues:
 	$(NOSE) --with-id $(TEST_ISSUES)
 
-debug: noseids
-	$(NOSE) --pdb $(TESTS)
+debug:
+	$(NOSE) --with-id --pdb $(TESTS) $(TEST_ISSUES)
+
+debug_issues:
+	$(NOSE) --with-id --pdb $(TEST_ISSUES)
 
 code: clean
 	./makecode.py
