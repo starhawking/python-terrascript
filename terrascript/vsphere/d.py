@@ -14,6 +14,9 @@ custom_attribute = vsphere_custom_attribute
 class vsphere_datastore_cluster(_data): pass
 datastore_cluster = vsphere_datastore_cluster
 
+class vsphere_datastore(_data): pass
+datastore = vsphere_datastore
+
 class vsphere_resource_pool(_data): pass
 resource_pool = vsphere_resource_pool
 

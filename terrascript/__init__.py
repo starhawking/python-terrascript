@@ -19,7 +19,7 @@ SORT = True
 DEBUG = False
 """Set to enable some debugging."""
 
-import logging 
+import logging
 import os
 from collections import defaultdict, UserDict
 
@@ -78,6 +78,14 @@ class Terrascript(object):
     def add(self, item):
         self.__add__(item)
         return item
+
+    def update(self, terrascript2):
+        if isinstance(terrascript2, Terrascript):
+            for item in terrascript2._item_list:
+                self.__add__(item)
+        else:
+            raise TypeError('{0} is not a Terrascript instance.'.format(
+                type(terrascript2)))
 
 
     def dump(self):
@@ -299,6 +307,6 @@ f = fn = func = function = _function()
 
 __all__ = ['Terrascript',
            'resource', 'data', 'module', 'variable',
-           'output', 'terraform', 'provider', 
+           'output', 'terraform', 'provider',
            'provisioner', 'connection', 'backend',
            'f', 'fn', 'func', 'function']
