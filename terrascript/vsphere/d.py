@@ -11,6 +11,9 @@ virtual_machine = vsphere_virtual_machine
 class vsphere_custom_attribute(_data): pass
 custom_attribute = vsphere_custom_attribute
 
+class vsphere_datastore(_data): pass
+datastore = vsphere_datastore
+
 class vsphere_datastore_cluster(_data): pass
 datastore_cluster = vsphere_datastore_cluster
 
