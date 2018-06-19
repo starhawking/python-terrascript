@@ -5,6 +5,9 @@ custom_attribute = vsphere_custom_attribute
 class vsphere_datastore_cluster(_resource): pass
 datastore_cluster = vsphere_datastore_cluster
 
+class vsphere_resource_pool(_resource): pass
+resource_pool = vsphere_resource_pool
+
 class vsphere_storage_drs_vm_override(_resource): pass
 storage_drs_vm_override = vsphere_storage_drs_vm_override
 
@@ -16,6 +19,9 @@ distributed_port_group = vsphere_distributed_port_group
 
 class vsphere_distributed_virtual_switch(_resource): pass
 distributed_virtual_switch = vsphere_distributed_virtual_switch
+
+class vsphere_compute_cluster(_resource): pass
+compute_cluster = vsphere_compute_cluster
 
 class vsphere_file(_resource): pass
 file = vsphere_file

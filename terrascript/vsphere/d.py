@@ -17,6 +17,9 @@ datastore = vsphere_datastore
 class vsphere_datastore_cluster(_data): pass
 datastore_cluster = vsphere_datastore_cluster
 
+class vsphere_compute_cluster(_data): pass
+compute_cluster = vsphere_compute_cluster
+
 class vsphere_resource_pool(_data): pass
 resource_pool = vsphere_resource_pool
 
