@@ -149,6 +149,9 @@ config_configuration_recorder_status = aws_config_configuration_recorder_status
 class aws_config_delivery_channel(_resource): pass
 config_delivery_channel = aws_config_delivery_channel
 
+class aws_config_configuration_aggregator(_resource): pass
+config_configuration_aggregator = aws_config_configuration_aggregator
+
 class aws_cognito_identity_pool(_resource): pass
 cognito_identity_pool = aws_cognito_identity_pool
 
@@ -439,6 +442,9 @@ kms_alias = aws_kms_alias
 
 class aws_kms_key(_resource): pass
 kms_key = aws_kms_key
+
+class aws_kms_grant(_resource): pass
+kms_grant = aws_kms_grant
 
 class aws_lambda_function(_resource): pass
 lambda_function = aws_lambda_function
