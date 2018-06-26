@@ -149,6 +149,9 @@ config_configuration_recorder_status = aws_config_configuration_recorder_status
 class aws_config_delivery_channel(_resource): pass
 config_delivery_channel = aws_config_delivery_channel
 
+class aws_config_configuration_aggregator(_resource): pass
+config_configuration_aggregator = aws_config_configuration_aggregator
+
 class aws_cognito_identity_pool(_resource): pass
 cognito_identity_pool = aws_cognito_identity_pool
 
