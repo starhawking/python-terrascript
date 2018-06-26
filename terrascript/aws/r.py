@@ -440,6 +440,9 @@ kms_alias = aws_kms_alias
 class aws_kms_key(_resource): pass
 kms_key = aws_kms_key
 
+class aws_kms_grant(_resource): pass
+kms_grant = aws_kms_grant
+
 class aws_lambda_function(_resource): pass
 lambda_function = aws_lambda_function
 
