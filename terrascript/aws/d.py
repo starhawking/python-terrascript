@@ -71,6 +71,9 @@ efs_mount_target = aws_efs_mount_target
 class aws_eip(_data): pass
 eip = aws_eip
 
+class aws_eks_cluster(_data): pass
+eks_cluster = aws_eks_cluster
+
 class aws_elastic_beanstalk_solution_stack(_data): pass
 elastic_beanstalk_solution_stack = aws_elastic_beanstalk_solution_stack
 

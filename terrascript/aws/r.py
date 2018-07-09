@@ -281,6 +281,9 @@ eip = aws_eip
 class aws_eip_association(_resource): pass
 eip_association = aws_eip_association
 
+class aws_eks_cluster(_resource): pass
+eks_cluster = aws_eks_cluster
+
 class aws_elasticache_cluster(_resource): pass
 elasticache_cluster = aws_elasticache_cluster
 
