@@ -269,3 +269,5 @@ virtual_network = azurerm_virtual_network
 class azurerm_virtual_network_peering(_resource): pass
 virtual_network_peering = azurerm_virtual_network_peering
 
+class azurerm_virtual_machine_data_disk_attachment(_resource): pass
+virtual_machine_data_disk_attachment = azurerm_virtual_machine_data_disk_attachment

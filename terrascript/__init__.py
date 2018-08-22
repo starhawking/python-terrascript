@@ -173,12 +173,7 @@ class _base(object):
     @property
     def interpolated(self):
         """The object in interpolated syntax: ``${...}``."""
-        if self._class == 'variable':
-            return '${{{}}}'.format(self.fullname)
-        elif self._class == 'resources':
-            return '${{{}}'.format(self._fullname)
-        else:
-            return '${{{}}'.format(self._fullname)
+        return '${{{}}}'.format(self.fullname)
 
     @property
     def fullname(self):
