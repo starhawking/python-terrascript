@@ -1,18 +1,31 @@
 # Changelog
 
 ## [Unreleased]
-### Fixed
-* Issue 3: Work-around for data/JSON bug. 
 
-## [0.5.0]
+### [ 0.5.1] - 2018-May-10
+### Fixed
+* Work-around for data/JSON bug  (issue #3).
+* Fixed `provisioner` (issue #32)
+### Added
+* `Terrascript.add()` method (issue #33).
+* Missing vSphere data sources and resources (issue #35).
+### Removed
+* Dropped support for Terraform < 0.10.6 (issue #38).
+
+## [0.5.0] - 2018-Mar-18
+### Fixed
+* Problem when using resource in a loop (issue #26)
+### Added
 * Added `terrascript.Terrascript` class wich makes this release
-  incompatible with earlier once.
-* Allow multiple providers thanks to Vianney Foucault.
+  incompatible with earlier ones.
+* Allow multiple providers (issue #22)
 
 ## [0.4.0] - 2017-11-21
+### Added
 * Added all other providers.
 
 ## [0.3.0] - 2017-11-17
+### Added
 * Added more providers (please report any bugs)
 * Added note about how to create provider modules in README.
 
