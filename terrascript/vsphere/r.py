@@ -1,6 +1,52 @@
 from terrascript import _resource
+class vsphere_custom_attribute(_resource): pass
+custom_attribute = vsphere_custom_attribute
+
+class vsphere_datastore_cluster(_resource): pass
+datastore_cluster = vsphere_datastore_cluster
+
+class vsphere_resource_pool(_resource): pass
+resource_pool = vsphere_resource_pool
+
+class vsphere_storage_drs_vm_override(_resource): pass
+storage_drs_vm_override = vsphere_storage_drs_vm_override
+
 class vsphere_datacenter(_resource): pass
 datacenter = vsphere_datacenter
+
+
+class vsphere_compute_cluster(_resource): pass
+compute_cluster= vsphere_compute_cluster
+
+class vsphere_compute_cluster_vm_affinity_rule(_resource): pass
+compute_cluster_vm_affinity_rule = vsphere_compute_cluster_vm_affinity_rule
+
+class vsphere_compute_cluster_vm_anti_affinity_rule(_resource): pass
+compute_cluster_vm_anti_affinity_rule = vsphere_compute_cluster_vm_anti_affinity_rule
+
+class vsphere_compute_cluster_vm_dependency_rule(_resource): pass
+compute_cluster_vm_dependency_rule = vsphere_compute_cluster_vm_dependency_rule
+
+class vsphere_compute_cluster_vm_group(_resource): pass
+compute_cluster_vm_group = vsphere_compute_cluster_vm_group
+
+class vsphere_compute_cluster_vm_host_rule(_resource): pass
+compute_cluster_vm_host_rule = vsphere_compute_cluster_vm_host_rule
+
+class vsphere_drs_vm_override(_resource): pass
+drs_vm_override = vsphere_drs_vm_override
+
+class vsphere_dpm_host_override(_resource): pass
+dpm_host_override = vsphere_dpm_host_override
+
+class vsphere_ha_vm_override(_resource): pass
+ha_vm_override = vsphere_ha_vm_override
+
+class vsphere_compute_cluster_host_group(_resource): pass
+compute_cluster_host_group = vsphere_compute_cluster_host_group
+
+class vsphere_datastore_cluster_vm_anti_affinity_rule(_resource): pass
+datastore_cluster_vm_anti_affinity_rule = vsphere_datastore_cluster_vm_anti_affinity_rule
 
 class vsphere_distributed_port_group(_resource): pass
 distributed_port_group = vsphere_distributed_port_group
@@ -43,4 +89,3 @@ vmfs_datastore = vsphere_vmfs_datastore
 
 class vsphere_virtual_machine_snapshot(_resource): pass
 virtual_machine_snapshot = vsphere_virtual_machine_snapshot
-

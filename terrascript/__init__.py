@@ -97,7 +97,9 @@ class Terrascript(object):
 
         def _json_default(v):
             # How to encode non-standard objects
-            if isinstance(v, UserDict):
+            if isinstance(v, provisioner):
+                return {v._type: v.data}
+            elif isinstance(v, UserDict):
                 return v.data
             else:
                 return str(v)
@@ -130,7 +132,7 @@ class Terrascript(object):
         proc = subprocess.Popen(['terraform','validate','-check-variables=false'], cwd=tmpdir,
                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         proc.communicate()
-        
+
         tmpfile.close()
 
         return proc.returncode == 0
@@ -182,12 +184,7 @@ class _base(object):
     @property
     def interpolated(self):
         """The object in interpolated syntax: ``${...}``."""
-        if self._class == 'variable':
-            return '${{{}}}'.format(self.fullname)
-        elif self._class == 'resources':
-            return '${{{}}'.format(self._fullname)
-        else:
-            return '${{{}}'.format(self._fullname)
+        return '${{{}}}'.format(self.fullname)
 
     @property
     def fullname(self):
@@ -209,14 +206,8 @@ class _data(_base):
     """Base class for data sources."""
     _class = 'data'
 
-    # # TODO: Work-around for https://github.com/mjuenema/python-terrascript/issues/3
-    # def __init__(self, name, **kwargs):
-    #     if kwargs:
-    #         if not 'type' in kwargs:
-    #             kwargs['type'] = 'string'
-    #         if not 'description' in kwargs:
-    #             kwargs['description'] = ''
-    #     super(_data, self).__init__(name, **kwargs)
+    def __init__(self, obj_name, **kwargs):
+        super(_data, self).__init__(obj_name, **kwargs)
 
 
 class resource(_base):
@@ -265,8 +256,10 @@ class terraform(_base):
         super(terraform, self).__init__(None, **kwargs)
 
 
-class provisioner(_base):
-    _class = 'provisioner'
+class provisioner(UserDict):
+    def __init__(self, type_, **kwargs):
+       self._type = type_
+       self.data = kwargs
 
 
 class connection(UserDict):
