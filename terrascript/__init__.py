@@ -59,6 +59,12 @@ class Terrascript(object):
         self.config = _Config()
 
     def __add__(self, item):
+        # Does not add EMPTY values
+        clone = item._kwargs.copy()
+        for k in clone:
+            if item._kwargs[k] is None:
+                del item._kwargs[k]
+
         # Work-around for issue 3 as described in https://github.com/hashicorp/terraform/issues/13037:
         # Make 'data' a list of a single dictionary.
         if item._class == 'data':
