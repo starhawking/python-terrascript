@@ -21,6 +21,7 @@ cache: pip
 install:
 - "(wget https://releases.hashicorp.com/terraform/${TERRAFORM}/terraform_${TERRAFORM}_linux_amd64.zip
   ; unzip terraform_${TERRAFORM}_linux_amd64.zip ; sudo install -m 755 terraform /usr/local/bin/terraform)"
+- pip install --upgrade pip setuptools
 - pip install -r test_requirements.txt
 - pip install codecov github3.py
 before_script:
