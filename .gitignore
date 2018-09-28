@@ -104,3 +104,4 @@ ENV/
 **.swp
 #terrascript/*/*
 #!terrascript/terraform/*
+.project
