@@ -46,7 +46,7 @@ package: clean
 	python3 setup.py sdist
 
 install: clean
-	python3 setup.py install
+	python3 setup.py install --user
 
 clean:
 	rm -f tests/*.pyc
