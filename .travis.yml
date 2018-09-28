@@ -21,16 +21,12 @@ cache: pip
 install:
 - "(wget https://releases.hashicorp.com/terraform/${TERRAFORM}/terraform_${TERRAFORM}_linux_amd64.zip
   ; unzip terraform_${TERRAFORM}_linux_amd64.zip ; sudo install -m 755 terraform /usr/local/bin/terraform)"
-- pip install --upgrade pip setuptools
 - pip install -r test_requirements.txt
-- pip install codecov github3.py
 before_script:
 - make package
 script:
 - travis_retry make test
 - tar tvfz dist/terrascript-*.tar.gz | grep vault
-after_success:
-- codecov
 after_failure:
 - cat /tmp/*/*tf.json
   #env:
