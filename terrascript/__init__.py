@@ -53,10 +53,10 @@ class _Config(dict):
 class Terrascript(object):
     """Top-level container for Terraform configurations."""
 
-
     def __init__(self):
 
         self.config = _Config()
+        self._item_list = []
 
     def __add__(self, item):
         # Does not add EMPTY values
@@ -78,13 +78,24 @@ class Terrascript(object):
         else:
             raise KeyError(item)
 
-        return self
+        if not isinstance(item, Terrascript):
+            if item in self._item_list:
+                self._item_list.remove(item)
+            self._item_list.append(item)
 
+        return self
 
     def add(self, item):
         self.__add__(item)
         return item
 
+    def update(self, terrascript2):
+        if isinstance(terrascript2, Terrascript):
+            for item in terrascript2._item_list:
+                self.__add__(item)
+        else:
+            raise TypeError('{0} is not a Terrascript instance.'.format(
+                type(terrascript2)))
 
     def dump(self):
         """Return the JSON representaion of config."""
