@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-### [ 0.5.1] - 2018-May-10
+## [0.5.1] - 2018-May-10
 ### Fixed
 * Work-around for data/JSON bug  (issue #3).
 * Fixed `provisioner` (issue #32)
