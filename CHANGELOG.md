@@ -2,7 +2,16 @@
 
 ## [Unreleased]
 
-### [ 0.5.1] - 2018-May-10
+## [0.6.0] - 2018-09-28
+### Added
+* vSphere data sources/resources (pull #52)
+* Added new aws resources (pull #51)
+* Update azurerm resource and the function `interpolated` (pull #53)
+* Added support for update terrascript from another terrascript. Same behavior as dict().update (pull #37)
+* Added new cloudflare resources and data (pull #54)
+* Added tests for Terraform 0.11.8
+
+## [0.5.1] - 2018-05-10
 ### Fixed
 * Work-around for data/JSON bug  (issue #3).
 * Fixed `provisioner` (issue #32)

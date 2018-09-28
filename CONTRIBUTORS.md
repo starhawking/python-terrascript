@@ -9,6 +9,11 @@ List of contributors (bug reports, fixes, suggestions, anything) to
 * Nielson Santana
 * Austin Millan
 * LaurensV
+* Niranjan Bommu
+* Sergey Puzirev
+* Yuri Leunguu
+* Joao Gilberto Magalhaes
+* Kumaresh
 
 Did I miss anyone?
 
