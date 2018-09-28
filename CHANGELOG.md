@@ -10,7 +10,6 @@
 * Added support for update terrascript from another terrascript. Same behavior as dict().update (pull #37)
 * Added new cloudflare resources and data (pull #54)
 * Added tests for Terraform 0.11.8
-* Added tests for Python 3.7
 
 ## [0.5.1] - 2018-05-10
 ### Fixed
