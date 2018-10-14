@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+* Added missing escape quote to the result json dump (pull #57)
 
 ## [0.6.0] - 2018-09-28
 ### Added
