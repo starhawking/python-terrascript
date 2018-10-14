@@ -73,7 +73,7 @@ print(dump())
         "tags": {
           "Name": "eip-example"
         },
-        "user_data": "${file(userdata.sh)}"
+        "user_data": "${file(\"userdata.sh\")}"
       }
     },
     "aws_security_group": {
