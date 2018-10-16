@@ -29,3 +29,8 @@ tag = digitalocean_tag
 class digitalocean_volume(_resource): pass
 volume = digitalocean_volume
 
+class digitalocean_volume_attachment(_resource): pass
+volume_attachment = digitalocean_volume_attachment
+
+class digitalocean_volume_snapshot(_resource): pass
+volume_snapshot = digitalocean_volume_snapshot
