@@ -11,7 +11,7 @@ files, while harnessing all the features the Python 3 (3.3+) language provides.
 ## Notes
 
 * **Terrascript** release 0.5.0 introduced changes that are not backwards compatible with earlier releases.
-* [Terraform 0.12](https://www.hashicorp.com/blog/terraform-0-1-2-preview) seems to introduce some [changes to its JSON syntax](https://www.hashicorp.com/blog/terraform-0-12-reliable-json-syntax). I have not investigated this yet.
+* [Terraform 0.12](https://www.hashicorp.com/blog/terraform-0-1-2-preview) seems to introduce some [changes to its JSON syntax](https://www.hashicorp.com/blog/terraform-0-12-reliable-json-syntax). I have not investigated this yet and any feedback is very welcome.
 
 ## Example
 
