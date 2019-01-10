@@ -575,6 +575,9 @@ rds_cluster_instance = aws_rds_cluster_instance
 class aws_rds_cluster_parameter_group(_resource): pass
 rds_cluster_parameter_group = aws_rds_cluster_parameter_group
 
+class aws_rds_cluster_endpoint(_resource): pass
+rds_cluster_instance_endpoint = aws_rds_cluster_endpoint
+
 class aws_redshift_cluster(_resource): pass
 redshift_cluster = aws_redshift_cluster
 
