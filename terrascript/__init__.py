@@ -118,6 +118,7 @@ class Terrascript(object):
 
     def validate(self, delete=True):
         """Validate a Terraform configuration."""
+        import shutil
         import tempfile
         import subprocess
 
@@ -140,6 +141,7 @@ class Terrascript(object):
         proc.communicate()
 
         tmpfile.close()
+        shutil.rmtree(tmpdir)
 
         return proc.returncode == 0
 
