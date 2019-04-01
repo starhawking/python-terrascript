@@ -843,6 +843,9 @@ proxy_protocol_policy = aws_proxy_protocol_policy
 class aws_rds_cluster(_resource): pass
 rds_cluster = aws_rds_cluster
 
+class aws_rds_cluster_endpoint(_resource): pass
+rds_cluster_endpoint = aws_rds_cluster_endpoint
+
 class aws_rds_cluster_instance(_resource): pass
 rds_cluster_instance = aws_rds_cluster_instance
 
