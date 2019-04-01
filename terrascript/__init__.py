@@ -21,7 +21,11 @@ DEBUG = False
 
 import logging 
 import os
-from collections import defaultdict, UserDict
+from collections import defaultdict
+try:
+    from collections import UserDict
+except ImportError:
+    from six.moves import UserDict
 
 logger = logging.getLogger(__name__)
 
