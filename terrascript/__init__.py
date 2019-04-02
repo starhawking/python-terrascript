@@ -118,7 +118,6 @@ class Terrascript(object):
 
     def validate(self, delete=True):
         """Validate a Terraform configuration."""
-        import shutil
         import tempfile
         import subprocess
 
