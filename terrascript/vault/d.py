@@ -1,1 +1,7 @@
 from terrascript import _data
+class vault_database_secret_backend_connection(_data): pass
+database_secret_backend_connection = vault_database_secret_backend_connection
+
+class vault_database_secret_backend_role(_data): pass
+database_secret_backend_role = vault_database_secret_backend_role
+
