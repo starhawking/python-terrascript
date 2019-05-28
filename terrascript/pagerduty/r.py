@@ -26,3 +26,9 @@ team_membership = pagerduty_team_membership
 class pagerduty_user(_resource): pass
 user = pagerduty_user
 
+class pagerduty_user_contact_method(_resource): pass
+user_contact_method = pagerduty_user_contact_method
+
+class pagerduty_extension(_resource): pass
+extension = pagerduty_extension
+
