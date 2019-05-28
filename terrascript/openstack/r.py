@@ -5,14 +5,26 @@ blockstorage_volume_v1 = openstack_blockstorage_volume_v1
 class openstack_blockstorage_volume_v2(_resource): pass
 blockstorage_volume_v2 = openstack_blockstorage_volume_v2
 
+class openstack_blockstorage_volume_v3(_resource): pass
+blockstorage_volume_v3 = openstack_blockstorage_volume_v3
+
 class openstack_blockstorage_volume_attach_v2(_resource): pass
 blockstorage_volume_attach_v2 = openstack_blockstorage_volume_attach_v2
+
+class openstack_blockstorage_volume_attach_v3(_resource): pass
+blockstorage_volume_attach_v3 = openstack_blockstorage_volume_attach_v3
 
 class openstack_compute_flavor_v2(_resource): pass
 compute_flavor_v2 = openstack_compute_flavor_v2
 
+class openstack_compute_flavor_access_v2(_resource): pass
+compute_flavor_access_v2 = openstack_compute_flavor_access_v2
+
 class openstack_compute_instance_v2(_resource): pass
 compute_instance_v2 = openstack_compute_instance_v2
+
+class openstack_compute_interface_attach_v2(_resource): pass
+compute_interface_attach_v2 = openstack_compute_interface_attach_v2
 
 class openstack_compute_keypair_v2(_resource): pass
 compute_keypair_v2 = openstack_compute_keypair_v2
@@ -32,8 +44,23 @@ compute_floatingip_associate_v2 = openstack_compute_floatingip_associate_v2
 class openstack_compute_volume_attach_v2(_resource): pass
 compute_volume_attach_v2 = openstack_compute_volume_attach_v2
 
+class openstack_containerinfra_clustertemplate_v1(_resource): pass
+containerinfra_clustertemplate_v1 = openstack_containerinfra_clustertemplate_v1
+
+class openstack_containerinfra_cluster_v1(_resource): pass
+containerinfra_cluster_v1 = openstack_containerinfra_cluster_v1
+
 class openstack_db_instance_v1(_resource): pass
 db_instance_v1 = openstack_db_instance_v1
+
+class openstack_db_user_v1(_resource): pass
+db_user_v1 = openstack_db_user_v1
+
+class openstack_db_configuration_v1(_resource): pass
+db_configuration_v1 = openstack_db_configuration_v1
+
+class openstack_db_database_v1(_resource): pass
+db_database_v1 = openstack_db_database_v1
 
 class openstack_dns_recordset_v2(_resource): pass
 dns_recordset_v2 = openstack_dns_recordset_v2
@@ -53,8 +80,17 @@ fw_rule_v1 = openstack_fw_rule_v1
 class openstack_identity_project_v3(_resource): pass
 identity_project_v3 = openstack_identity_project_v3
 
+class openstack_identity_role_v3(_resource): pass
+identity_role_v3 = openstack_identity_role_v3
+
+class openstack_identity_role_assignment_v3(_resource): pass
+identity_role_assignment_v3 = openstack_identity_role_assignment_v3
+
 class openstack_identity_user_v3(_resource): pass
 identity_user_v3 = openstack_identity_user_v3
+
+class openstack_identity_application_credential_v3(_resource): pass
+identity_application_credential_v3 = openstack_identity_application_credential_v3
 
 class openstack_images_image_v2(_resource): pass
 images_image_v2 = openstack_images_image_v2
@@ -86,17 +122,26 @@ lb_member_v2 = openstack_lb_member_v2
 class openstack_lb_monitor_v2(_resource): pass
 lb_monitor_v2 = openstack_lb_monitor_v2
 
-class openstack_networking_network_v2(_resource): pass
-networking_network_v2 = openstack_networking_network_v2
+class openstack_lb_l7policy_v2(_resource): pass
+lb_l7policy_v2 = openstack_lb_l7policy_v2
 
-class openstack_networking_subnet_v2(_resource): pass
-networking_subnet_v2 = openstack_networking_subnet_v2
+class openstack_lb_l7rule_v2(_resource): pass
+lb_l7rule_v2 = openstack_lb_l7rule_v2
 
 class openstack_networking_floatingip_v2(_resource): pass
 networking_floatingip_v2 = openstack_networking_floatingip_v2
 
+class openstack_networking_floatingip_associate_v2(_resource): pass
+networking_floatingip_associate_v2 = openstack_networking_floatingip_associate_v2
+
+class openstack_networking_network_v2(_resource): pass
+networking_network_v2 = openstack_networking_network_v2
+
 class openstack_networking_port_v2(_resource): pass
 networking_port_v2 = openstack_networking_port_v2
+
+class openstack_networking_port_secgroup_associate_v2(_resource): pass
+networking_port_secgroup_associate_v2 = openstack_networking_port_secgroup_associate_v2
 
 class openstack_networking_router_v2(_resource): pass
 networking_router_v2 = openstack_networking_router_v2
@@ -113,9 +158,54 @@ networking_secgroup_v2 = openstack_networking_secgroup_v2
 class openstack_networking_secgroup_rule_v2(_resource): pass
 networking_secgroup_rule_v2 = openstack_networking_secgroup_rule_v2
 
+class openstack_networking_subnet_v2(_resource): pass
+networking_subnet_v2 = openstack_networking_subnet_v2
+
+class openstack_networking_subnet_route_v2(_resource): pass
+networking_subnet_route_v2 = openstack_networking_subnet_route_v2
+
+class openstack_networking_subnetpool_v2(_resource): pass
+networking_subnetpool_v2 = openstack_networking_subnetpool_v2
+
+class openstack_networking_addressscope_v2(_resource): pass
+networking_addressscope_v2 = openstack_networking_addressscope_v2
+
+class openstack_networking_trunk_v2(_resource): pass
+networking_trunk_v2 = openstack_networking_trunk_v2
+
 class openstack_objectstorage_container_v1(_resource): pass
 objectstorage_container_v1 = openstack_objectstorage_container_v1
 
 class openstack_objectstorage_object_v1(_resource): pass
 objectstorage_object_v1 = openstack_objectstorage_object_v1
+
+class openstack_objectstorage_tempurl_v1(_resource): pass
+objectstorage_tempurl_v1 = openstack_objectstorage_tempurl_v1
+
+class openstack_vpnaas_ipsec_policy_v2(_resource): pass
+vpnaas_ipsec_policy_v2 = openstack_vpnaas_ipsec_policy_v2
+
+class openstack_vpnaas_service_v2(_resource): pass
+vpnaas_service_v2 = openstack_vpnaas_service_v2
+
+class openstack_vpnaas_ike_policy_v2(_resource): pass
+vpnaas_ike_policy_v2 = openstack_vpnaas_ike_policy_v2
+
+class openstack_vpnaas_endpoint_group_v2(_resource): pass
+vpnaas_endpoint_group_v2 = openstack_vpnaas_endpoint_group_v2
+
+class openstack_vpnaas_site_connection_v2(_resource): pass
+vpnaas_site_connection_v2 = openstack_vpnaas_site_connection_v2
+
+class openstack_sharedfilesystem_securityservice_v2(_resource): pass
+sharedfilesystem_securityservice_v2 = openstack_sharedfilesystem_securityservice_v2
+
+class openstack_sharedfilesystem_sharenetwork_v2(_resource): pass
+sharedfilesystem_sharenetwork_v2 = openstack_sharedfilesystem_sharenetwork_v2
+
+class openstack_sharedfilesystem_share_v2(_resource): pass
+sharedfilesystem_share_v2 = openstack_sharedfilesystem_share_v2
+
+class openstack_sharedfilesystem_share_access_v2(_resource): pass
+sharedfilesystem_share_access_v2 = openstack_sharedfilesystem_share_access_v2
 
