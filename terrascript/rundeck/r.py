@@ -11,3 +11,6 @@ private_key = rundeck_private_key
 class rundeck_public_key(_resource): pass
 public_key = rundeck_public_key
 
+class rundeck_acl_policy(_resource): pass
+acl_policy = rundeck_acl_policy
+
