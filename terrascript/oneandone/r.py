@@ -23,3 +23,15 @@ loadbalancer = oneandone_loadbalancer
 class oneandone_vpn(_resource): pass
 vpn = oneandone_vpn
 
+class oneandone_ssh_key(_resource): pass
+ssh_key = oneandone_ssh_key
+
+class oneandone_block_storage(_resource): pass
+block_storage = oneandone_block_storage
+
+class oneandone_image(_resource): pass
+image = oneandone_image
+
+class oneandone_baremetal(_resource): pass
+baremetal = oneandone_baremetal
+
