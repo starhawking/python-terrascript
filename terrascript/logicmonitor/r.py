@@ -1,4 +1,7 @@
 from terrascript import _resource
+class logicmonitor_collector(_resource): pass
+collector = logicmonitor_collector
+
 class logicmonitor_collector_group(_resource): pass
 collector_group = logicmonitor_collector_group
 

@@ -8,9 +8,15 @@ aaaa_record_set = dns_aaaa_record_set
 class dns_cname_record_set(_data): pass
 cname_record_set = dns_cname_record_set
 
-class dns_txt_record_set(_data): pass
-txt_record_set = dns_txt_record_set
+class dns_mx_record_set(_data): pass
+mx_record_set = dns_mx_record_set
 
 class dns_ns_record_set(_data): pass
 ns_record_set = dns_ns_record_set
+
+class dns_ptr_record_set(_data): pass
+ptr_record_set = dns_ptr_record_set
+
+class dns_txt_record_set(_data): pass
+txt_record_set = dns_txt_record_set
 
