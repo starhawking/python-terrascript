@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 
 
 THREE_TIER_ITEMS = ['data', 'resource', 'provider']
-TWO_TIER_ITEMS = ['variable', 'module', 'output', 'provisioner']
+TWO_TIER_ITEMS = ['variable', 'module', 'output', 'provisioner', 'locals']
 ONE_TIER_ITEMS = ['terraform']
 
 
@@ -255,6 +255,13 @@ class provider(_base):
        super(provider, self).__init__(alias, **kwargs)
 
 
+class locals(_base):
+    _class = 'locals'
+
+    def __init__(self, **kwargs):
+        super(locals, self).__init__(None, **kwargs)
+
+
 class terraform(_base):
     _class = 'terraform'
     def __init__(self, **kwargs):
@@ -311,6 +318,6 @@ f = fn = func = function = _function()
 
 __all__ = ['Terrascript',
            'resource', 'data', 'module', 'variable',
-           'output', 'terraform', 'provider', 
+           'output', 'terraform', 'provider', 'locals',
            'provisioner', 'connection', 'backend',
            'f', 'fn', 'func', 'function']
