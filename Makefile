@@ -3,7 +3,8 @@
 NOSE := python3 -m nose --failed --verbose --with-coverage --cover-package=terrascript --stop --no-byte-compile --logging-level=DEBUG --detailed-errors
 
 # The tests must be executed in this order!!
-TESTS := tests/test.py tests/test_providers.py 
+TESTS := $(wildcard tests/test*.py)
+#tests/test_providers.py 
 TEST_ISSUES := $(wildcard tests/test_issue*.py)
 
 NOSEIDS = $(shell ./.read_noseids.py)
