@@ -5,13 +5,17 @@
 [![GitHub issues](https://img.shields.io/github/issues/mjuenema/python-terrascript.svg?style=flat-square)](https://github.com/mjuenema/python-terrascript/issues)
 [![Travis](https://img.shields.io/travis/mjuenema/python-terrascript/master.svg?style=flat-square)](https://www.travis-ci.org/mjuenema/python-terrascript)
 
-**Terrascript** provides a method of generating [Terraform](https://www.terraform.io)
+**Terrascript** provides a method of generating [Terraform 0.12+](https://www.terraform.io) JSON
 files, while harnessing all the features the Python 3 (3.3+) language provides. 
 
-## Notes
+## Compatibility
 
-* **Terrascript** release 0.5.0 introduced changes that are not backwards compatible with earlier releases.
-* [Terraform 0.12](https://www.hashicorp.com/blog/terraform-0-1-2-preview) seems to introduce some [changes to its JSON syntax](https://www.hashicorp.com/blog/terraform-0-12-reliable-json-syntax). I have not investigated this yet and any feedback is very welcome.
+Terraform versions prior to 0.12 are no longer supported by current Terrascript releases.
+
+| Terraform | Terrascript |
+|-----------|-------------|
+| >= 0.12.x | >= 0.7.x    |
+| <= 0.11.x | <= 0.6.x    |
 
 ## Example
 
