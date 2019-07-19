@@ -5,6 +5,12 @@
 * Added missing escape quote to the result json dump (pull #57)
 * Updated DigitalOcean resources (pull #58)
 
+## [0.7.0] - Not yet released
+### Added
+* Support for Terraform 0.12 JSON syntax.
+### Removed
+* Support for all Terraform versions prior to release 0.12.
+
 ## [0.6.0] - 2018-09-28
 ### Added
 * vSphere data sources/resources (pull #52)
