@@ -3,12 +3,11 @@
 NOSE := python3 -m nose --failed --verbose --with-coverage --cover-package=terrascript --stop --no-byte-compile --logging-level=DEBUG --detailed-errors
 
 # The tests must be executed in this order!!
-TESTS := $(wildcard tests/test*.py)
+TESTS := $(wildcard tests/test_0*.py)
 #tests/test_providers.py 
 TEST_ISSUES := $(wildcard tests/test_issue*.py)
 
 NOSEIDS = $(shell ./.read_noseids.py)
-
 
 all: help
 
@@ -28,16 +27,16 @@ test2:
 	$(NOSE) --processes=165 --process-restartworker --process-timeout=30 $(TESTS)
 
 test:
-	$(NOSE) --with-id $(TESTS) $(TEST_ISSUES)
+	$(NOSE) --with-id $(TESTS)
 
-test_issues:
-	$(NOSE) --with-id $(TEST_ISSUES)
+#test_issues:
+#	$(NOSE) --with-id $(TEST_ISSUES)
 
 debug:
-	$(NOSE) --with-id --pdb $(TESTS) $(TEST_ISSUES)
+	$(NOSE) --with-id --pdb $(TESTS)
 
-debug_issues:
-	$(NOSE) --with-id --pdb $(TEST_ISSUES)
+#debug_issues:
+#	$(NOSE) --with-id --pdb $(TEST_ISSUES)
 
 code: clean
 	./makecode.py

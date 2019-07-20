@@ -10,7 +10,7 @@ class Test_Resource(object):
     def setup(self):
         self.resource = Resource('label', arg1='val1', arg2='val2')
 
-    def test_instance_Resource(self):
+    def test_instanceResource(self):
         assert isinstance(self.resource, Resource)
 
     def test_labels(self):
@@ -18,10 +18,11 @@ class Test_Resource(object):
 
     def test_args(self):
         assert self.resource._args == {'arg1': 'val1', 'arg2': 'val2'}
-        
+
     def test_str(self):
         assert json.loads(str(self.resource)) == self.resource._args
-        
+
+
 @raises(TypeError)
 def test_resource_missing_label():
     Resource(arg1='arg1', arg2='arg2')

@@ -16,10 +16,10 @@ __author__ = 'Markus Juenemann <markus@juenemann.net>'
 __version__ = '0.7.0'
 __license__ = 'BSD 2-clause "Simplified" License'
 
-INDENT = 0
+INDENT = 2
 """JSON indentation level."""
 
-SORT = False
+SORT = True
 """Whether to sort keys when generating JSON."""
 
 DEBUG = False
@@ -28,29 +28,24 @@ DEBUG = False
 logger = logging.getLogger(__name__)
 
 
-THREE_TIER_ITEMS = ['data', 'resource', 'provider']
-TWO_TIER_ITEMS = ['variable', 'module', 'output', 'provisioner']
-ONE_TIER_ITEMS = ['terraform']
+# THREE_TIER_ITEMS = ['data', 'resource', 'provider']
+# TWO_TIER_ITEMS = ['variable', 'module', 'output', 'provisioner']
+# ONE_TIER_ITEMS = ['terraform']
 
 
-# class _Config(dict):
-#     """Used as an attribute by the `Terrascript` class to store the actual configuration."""
-#     def __getitem__(self, key):
-#         try:
-#             return super(_Config, self).__getitem__(key)
-#         except KeyError:
-#             # Work-around for issue 3 as described in https://github.com/hashicorp/terraform/issues/13037:
-#             # Make 'data' a list of a single dictionary.
-#             if key == 'data':
-#                 super(_Config, self).__setitem__(key, [defaultdict(dict)])
-#             elif key in THREE_TIER_ITEMS:
-#                 super(_Config, self).__setitem__(key, defaultdict(dict))
-#             elif key in TWO_TIER_ITEMS:
-#                 super(_Config, self).__setitem__(key, {})
-#             else:
-#                 raise KeyError(key)
+class NestedDefaultDict(collections.defaultdict):
+    """Version of `collections.defaultdict` that supports
+       nested keys, e.g.
 
-#         return super(_Config, self).__getitem__(key)
+         >>>nd = NestedDefaultDict()
+         >>>nd[1][2][3] = 123
+         >>>nd[1][2][3]
+         123
+
+    """
+
+    def __init__(self, *args, **kwargs):
+        super(NestedDefaultDict, self).__init__(NestedDefaultDict, *args, **kwargs)
 
 
 class Block(collections.abc.MutableMapping):
@@ -115,9 +110,6 @@ class Terrascript(Block):
         #       {'resource': 3, 'output': 2, ...}
         raise NotImplementedError()
         
-    # def _encode(self):
-    #     return self._args
-        
     def __add__(self, block):
         
         if isinstance(block, Resource):
@@ -131,76 +123,23 @@ class Terrascript(Block):
             #    }
             #   }
             # }
-            
+
             if not 'resource' in self:
-                self['resource'] = {}
-            if not block.__class__.__name__ in self['resource']:
-                self['resource'][block.__class__.__name__] = {}
-            #if block._labels[0] in self['resource'][block.__class__.__name__]:
-            #    raise ValueError('A %s resource named %s already exists' % block.__class__.__name__, block._labels[0])
-            #else:
-            self['resource'][block.__class__.__name__][block._labels[0]] = block
-        
+                self['resource'] = NestedDict()
+            self['resource'][block.__class__.__name__][block._labels[0]] = block._args
+
         else:
             raise ValueError('An instance of %s cannot be added to instances of %s' % block.__class__.__name__, self.__class__.__name__)
             
-            
-        
-        # # Does not add EMPTY values
-        # clone = item._kwargs.copy()
-        # for k in clone:
-        #     if item._kwargs[k] is None:
-        #         del item._kwargs[k]
+        add = __add__
 
-        # # Work-around for issue 3 as described in https://github.com/hashicorp/terraform/issues/13037:
-        # # Make 'data' a list of a single dictionary.
-        # if item._class == 'data':
-        #     self.config[item._class][0][item._type][item._name] = item._kwargs
-        # elif item._class in THREE_TIER_ITEMS:
-        #     self.config[item._class][item._type][item._name] = item._kwargs
-        # elif item._class in TWO_TIER_ITEMS:
-        #     self.config[item._class][item._name] = item._kwargs
-        # elif item._class in ONE_TIER_ITEMS:
-        #     self.config[item._class] = item._kwargs
-        # else:
-        #     raise KeyError(item)
+    def dump(self):
+        """The `dump()` method is kept for backwards compatibilty
+           as the `__str__()` method returns the JSON representation.
 
-        # if not isinstance(item, Terrascript):
-        #     if item in self._item_list:
-        #         self._item_list.remove(item)
-        #     self._item_list.append(item)
+        """
 
-        # return self
-
-#     def add(self, item):
-#         self.__add__(item)
-#         return item
-
-#     def update(self, terrascript2):
-#         if isinstance(terrascript2, Terrascript):
-#             for item in terrascript2._item_list:
-#                 self.__add__(item)
-#         else:
-#             raise TypeError('{0} is not a Terrascript instance.'.format(
-#                 type(terrascript2)))
-
-    # def dump(self):
-    #     """Return the JSON representaion of config."""
-    #     import json
-
-    #     def _json_default(v):
-    #         # How to encode non-standard objects
-    #         if isinstance(v, provisioner):
-    #             return {v._type: v.data}
-    #         elif isinstance(v, UserDict):
-    #             return v.data
-    #         else:
-    #             return str(v)
-
-    #     # Work on copy of _Config but with unused top-level elements removed.
-    #     #
-    #     config = {k: v for k,v in self.config.items() if v}
-    #     return json.dumps(config, indent=INDENT, sort_keys=SORT, default=_json_default)
+        return str(self)
 
     def validate(self, delete=True):
         """Validate a Terraform configuration."""
@@ -230,7 +169,7 @@ class Terrascript(Block):
                                     cwd=tmpdir,
                                     stdout=subprocess.PIPE,
                                     stderr=subprocess.PIPE)
-            proc.communicate()
+            stdout, stderr = proc.communicate()
 
             tmpfile.close()
 
@@ -238,72 +177,15 @@ class Terrascript(Block):
     
     
 class Resource(Block):
+    """Base class for actual resource classes.
+    
+       Derived classes must be named *exactly* like the
+       Terraform resource they represent.
+          
+    """
+    
     def __init__(self, label, **args):
         super(Resource, self).__init__(label, **args)
-        
-
-# class _base(object):
-#     _class = None
-#     """One of 'resource', 'data', 'module', etc."""
-
-#     _type = None
-#     """The resource type, e.g. 'aws_instance'."""
-
-#     _name = None
-#     """The name of this resource, e.g. 'my_ec2_instance'."""
-
-#     def __init__(self, name_, **kwargs):
-#         if not self._type:
-#             self._type = self.__class__.__name__
-#         self._name = name_
-#         self._kwargs = kwargs
-
-
-#     def __getattr__(self, name):
-#         """References to attributes."""
-#         if self._class == 'resource':
-#             return '${{{}.{}.{}}}'.format(self._type, self._name, name)
-#         elif self._class == 'module':
-#             return '${{module.{}.{}}}'.format(self._name, name)
-#         else:
-#             return '${{{}.{}.{}.{}}}'.format(self._class, self._type, self._name, name)
-
-#     def __getitem__(self, i):
-#         if isinstance(i, int):
-#             # "${var.NAME[i]}"
-#             return '${{var.{}[{}]}}'.format(self._name, i)
-#         else:
-#             # "${var.NAME["i"]}"
-#             return "${{var.{}[\"{}\"]}}".format(self._name, i)
-
-#     def __repr__(self):
-#         """References to objects."""
-#         if self._class == 'variable':
-#             """Interpolated reference to a variable, e.g. ``${var.http_port}``."""
-#             return self.interpolated
-#         else:
-#             """Non-interpolated reference to a non-resource, e.g. ``module.http``."""
-#             return self.fullname
-
-#     @property
-#     def interpolated(self):
-#         """The object in interpolated syntax: ``${...}``."""
-#         return '${{{}}}'.format(self.fullname)
-
-#     @property
-#     def fullname(self):
-#         """The object's full name."""
-#         if self._class == 'variable':
-#             return 'var.{}'.format(self._name)
-#         elif self._class == 'resource':
-#             return '{}.{}'.format(self._type, self._name)
-#         else:
-#             return '{}.{}'.format(self._class, self._name)
-
-
-# class _resource(_base):
-#     """Base class for resources."""
-#     _class = 'resource'
 
 
 # class _data(_base):
