@@ -6,7 +6,7 @@ from terrascript import *
 from nose.tools import *
 
 
-class Test_Resource(object):
+class Test_Provider(object):
     def setup(self):
         self.resource = Resource('dummy', 'label', arg1='val1', arg2='val2')
 

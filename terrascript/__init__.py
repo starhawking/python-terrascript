@@ -103,47 +103,6 @@ class Block(NestedDefaultDict):
          self.update(args)
          
 
-    
- 
- 
-#     def __getitem__(self, key):
-#         return self._args[key]
-#     
-#     def __setitem__(self, key, value):
-#         self._args[key] = value
-#         
-#     def __delitem__(self, key):
-#         del(self._args[key])
-# 
-#     def __len__(self):
-#         raise NotImplementedError('Instances of %s do not have a length' %
-#                                   (self.__class__.__name__))
-# 
-#     def __iter__(self):
-#         for key in self._args:
-#             yield key
-#             
-#     def __str__(self):
-#         """The `__str__` method is (ab)used to convert to Terraform JSON."""
-#         
-#         def _encode(o):
-#             try:
-#                 return o._args
-#             except AttributeError:
-#                 raise TypeError(repr(o) + " is not JSON serializable")
-#                 
-#         return json.dumps(self, default=_encode, indent=INDENT, sort_keys=SORT)
-#                 
-#     def keys(self):
-#         return self._args.keys()
-#     
-#     def values(self):
-#         return self._args.values()
-#     
-#     def items(self):
-#         return self._args.items()
-
-
 class Terrascript(Block):
     """Top-level container for Terraform configurations.
     
@@ -153,14 +112,7 @@ class Terrascript(Block):
     def __init__(self):
         super(Terrascript, self).__init__()
         
-    def __add__(self, block):
-        
-        # Add the top-level key if it is missing.
-        if isinstance(block, Resource) and 'resource' not in self:
-            self['resource'] = NestedDefaultDict()
-        elif isinstance(block, Provider) and 'provider' not in self:
-            self['resource'] = NestedDefaultDict()
-        
+    def __add__(self, block):        
         
         if type(block) == Resource:
             # Resource can be instantiated directly to add Terraform resources
@@ -200,12 +152,43 @@ class Terrascript(Block):
             self['resource'][block.__class__.__name__][block._labels[0]] = block
             
         elif type(block) == Provider:
+            #
+            # {
+            #   "resource": {}, 
+            #     "provider": {
+            #       "openstack": {                 <== block._labels[0]
+            #          "user_name": "admin", 
+            #          "tenant_name": "admin", 
+            #          "password": "pwd", 
+            #          "auth_url": "http://myauthurl:5000/v2.0", 
+            #          "region": "RegionOne"
+            #       }
+            #     }
+            #   }
+            # }
+            #
             self['provider'][block._labels[0]] = block
             
         elif isinstance(block, Provider):
+            #
+            # {
+            #   "resource": {}, 
+            #     "provider": {
+            #       "openstack": {                 <== block.__class__.__name__
+            #          "user_name": "admin", 
+            #          "tenant_name": "admin", 
+            #          "password": "pwd", 
+            #          "auth_url": "http://myauthurl:5000/v2.0", 
+            #          "region": "RegionOne"
+            #       }
+            #     }
+            #   }
+            # }
+            #
             self['provider'][block.__class__.__name__] = block
 
         else:
+            # TODO: Create test for trying to add a non-Terraform class to a terrascript instance,
             raise ValueError('An instance of %s cannot be added to instances of %s' % block.__class__.__name__, self.__class__.__name__)
         
         return self
@@ -217,13 +200,16 @@ class Terrascript(Block):
            as the `__str__()` method returns the JSON representation.
 
         """
+        
+        warnings.warn('The Terrascript.dump() method will be removed in the future. Use str(...) instead.',
+                      category=DeprecationWarning)
 
         return str(self)
 
     def validate(self):
         """Validate a Terraform configuration."""
         
-        warnings.warn('The Terrascript.validate() method will be removed in the future',
+        warnings.warn('The Terrascript.validate() method will be removed in the future. Use the Terraform CLI instead.',
                       category=DeprecationWarning)
         
         result, _ = _validate(self)
@@ -265,12 +251,8 @@ class Provider(Block):
        
     """
     
-    def __init__(self, *labels, **args):
-        super(Provider, self).__init__(labels, **args)
+    def __init__(self, label, **args):
+        super(Provider, self).__init__(label, **args)
 
 
-__all__ = ['Block', 'Terrascript', 'Resource']
-#           'resource', 'data', 'module', 'variable',
-#           'output', 'terraform', 'provider', 
-#           'provisioner', 'connection', 'backend',
-#           'f', 'fn', 'func', 'function']
+__all__ = ['Block', 'Terrascript', 'Resource', 'Provider']
