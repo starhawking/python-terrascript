@@ -46,54 +46,63 @@ class NestedDefaultDict(collections.defaultdict):
 
     def __init__(self, *args, **kwargs):
         super(NestedDefaultDict, self).__init__(NestedDefaultDict, *args, **kwargs)
+        
+    def __str__(self):
+        return json.dumps(dict(self))
 
 
-class Block(collections.abc.MutableMapping):
+class Block(NestedDefaultDict):
     """A `Block` is a container for other content.
     
        See https://www.terraform.io/docs/configuration/syntax.html#blocks.
        
     """
+    
     def __init__(self, *labels, **args):
-        self._labels = labels
-        self._args = args
+         super(Block, self).__init__()
+         self._labels = labels
+         self.update(args)
+         
 
-    def __getitem__(self, key):
-        return self._args[key]
     
-    def __setitem__(self, key, value):
-        self._args[key] = value
-        
-    def __delitem__(self, key):
-        del(self._args[key])
-
-    def __len__(self):
-        raise NotImplementedError('Instances of %s do not have a length' %
-                                  (self.__class__.__name__))
-
-    def __iter__(self):
-        for key in self._args:
-            yield key
-            
-    def __str__(self):
-        """The `__str__` method is (ab)used to convert to Terraform JSON."""
-        
-        def _encode(o):
-            try:
-                return o._args
-            except AttributeError:
-                raise TypeError(repr(o) + " is not JSON serializable")
-                
-        return json.dumps(self, default=_encode, indent=INDENT, sort_keys=SORT)
-                
-    def keys(self):
-        return self._args.keys()
-    
-    def values(self):
-        return self._args.values()
-    
-    def items(self):
-        return self._args.items()
+ 
+ 
+#     def __getitem__(self, key):
+#         return self._args[key]
+#     
+#     def __setitem__(self, key, value):
+#         self._args[key] = value
+#         
+#     def __delitem__(self, key):
+#         del(self._args[key])
+# 
+#     def __len__(self):
+#         raise NotImplementedError('Instances of %s do not have a length' %
+#                                   (self.__class__.__name__))
+# 
+#     def __iter__(self):
+#         for key in self._args:
+#             yield key
+#             
+#     def __str__(self):
+#         """The `__str__` method is (ab)used to convert to Terraform JSON."""
+#         
+#         def _encode(o):
+#             try:
+#                 return o._args
+#             except AttributeError:
+#                 raise TypeError(repr(o) + " is not JSON serializable")
+#                 
+#         return json.dumps(self, default=_encode, indent=INDENT, sort_keys=SORT)
+#                 
+#     def keys(self):
+#         return self._args.keys()
+#     
+#     def values(self):
+#         return self._args.values()
+#     
+#     def items(self):
+#         return self._args.items()
 
 
 class Terrascript(Block):
@@ -105,11 +114,11 @@ class Terrascript(Block):
     def __init__(self):
         super(Terrascript, self).__init__()
         
-    def __len__(self):
-        # TODO: Possibly return number of items per type, e.g.
-        #       {'resource': 3, 'output': 2, ...}
-        raise NotImplementedError()
-        
+#     def __len__(self):
+#         # TODO: Possibly return number of items per type, e.g.
+#         #       {'resource': 3, 'output': 2, ...}
+#         raise NotImplementedError()
+#         
     def __add__(self, block):
         
         if isinstance(block, Resource):
