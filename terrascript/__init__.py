@@ -11,6 +11,7 @@ import os
 import json
 from collections import defaultdict, UserDict
 import collections.abc
+import warnings
 
 __author__ = 'Markus Juenemann <markus@juenemann.net>'
 __version__ = '0.7.0'
@@ -28,9 +29,45 @@ DEBUG = False
 logger = logging.getLogger(__name__)
 
 
-# THREE_TIER_ITEMS = ['data', 'resource', 'provider']
-# TWO_TIER_ITEMS = ['variable', 'module', 'output', 'provisioner']
-# ONE_TIER_ITEMS = ['terraform']
+def _validate(config):
+    """Validate a Terraform configuration. 
+    
+       This used to be a method of the `Terraform` class which is now
+       deprecated. Users are encouraged to use the ``config validate``
+       command instead.
+        
+    """
+    
+    import tempfile
+    import subprocess
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        tmpfile = tempfile.NamedTemporaryFile(mode='w',
+                                              dir=tmpdir,
+                                              suffix='.tf.json')
+
+        tmpfile.write(str(config))
+        tmpfile.flush()
+
+        # Download plugins
+        proc = subprocess.Popen(['terraform', 'init'], cwd=tmpdir,
+                                stdout=subprocess.PIPE, stderr=None)
+        proc.communicate()
+        assert proc.returncode == 0
+
+        # Validate configuration
+        proc = subprocess.Popen(['terraform',
+                                 'validate'],
+                                cwd=tmpdir,
+                                stdout=subprocess.PIPE,
+                                stderr=subprocess.STDOUT)
+        proc.communicate()
+        
+        #raise Exception
+        
+        tmpfile.close()
+
+    return proc.returncode == 0
 
 
 class NestedDefaultDict(collections.defaultdict):
@@ -52,6 +89,8 @@ class Block(collections.abc.MutableMapping):
     """A `Block` is a container for other content.
     
        See https://www.terraform.io/docs/configuration/syntax.html#blocks.
+       
+       TODO: Can we make this a NestedDefaultDict?
        
     """
     def __init__(self, *labels, **args):
@@ -105,6 +144,12 @@ class Terrascript(Block):
     def __init__(self):
         super(Terrascript, self).__init__()
         
+#        # Initialise top-level keys with empty dictionaries. These will show
+#        # as empty dictionaries in the JSOn output if they won't be populated
+#        # but that is fine.
+#        self['resource'] = NestedDefaultDict()
+#        self['provider'] = NestedDefaultDict()
+        
     def __len__(self):
         # TODO: Possibly return number of items per type, e.g.
         #       {'resource': 3, 'output': 2, ...}
@@ -112,7 +157,35 @@ class Terrascript(Block):
         
     def __add__(self, block):
         
-        if isinstance(block, Resource):
+        # Add the top-level key if it is missing.
+        if isinstance(block, Resource) and 'resource' not in self:
+            self['resource'] = NestedDefaultDict()
+        elif isinstance(block, Provider) and 'provider' not in self:
+            self['resource'] = NestedDefaultDict()
+        
+        
+        if type(block) == Resource:
+            # Resource can be instantiated directly to add Terraform resources
+            # for which no subclass exists in Terrascript.\
+            #
+               # {
+            #  "resource": {
+            #    "foobar":       {                 <== block._labels[0]
+            #      "example": {                    <== block._labels[1]
+            #        "instance_type": "t2.micro",
+            #        "ami": "ami-abc123"
+            #      }
+            #    }
+            #   }
+            # }
+            
+            ##if not 'resource' in self:
+            ##    self['resource'] = NestedDefaultDict()
+            self['resource'][block._labels[0]][block._labels[1]] = block._args
+            
+        elif isinstance(block, Resource):
+            # Covers only subclasses of Resource because of 'if type()...' above. 
+            #
             # {
             #  "resource": {
             #    "aws_instance": {                 <== block.__class__.__name__
@@ -124,14 +197,19 @@ class Terrascript(Block):
             #   }
             # }
 
-            if not 'resource' in self:
-                self['resource'] = NestedDict()
+            ##if not 'resource' in self:
+            ##    self['resource'] = NestedDefaultDict()
+            self['resource'][block.__class__.__name__][block._labels[0]] = block._args
+            
+        elif isinstance(block, Provider):
             self['resource'][block.__class__.__name__][block._labels[0]] = block._args
 
         else:
             raise ValueError('An instance of %s cannot be added to instances of %s' % block.__class__.__name__, self.__class__.__name__)
+        
+        return self
             
-        add = __add__
+    add = __add__
 
     def dump(self):
         """The `dump()` method is kept for backwards compatibilty
@@ -141,152 +219,54 @@ class Terrascript(Block):
 
         return str(self)
 
-    def validate(self, delete=True):
+    def validate(self):
         """Validate a Terraform configuration."""
-        import tempfile
-        import subprocess
+        
+        warnings.warn('The Terrascript.validate() method will be removed in the future',
+                      category=DeprecationWarning)
+        
+        result, _ = _validate(self)
 
-        config = self.dump()
-        with tempfile.TemporaryDirectory() as tmpdir:
-            tmpfile = tempfile.NamedTemporaryFile(mode='w',
-                                                  dir=tmpdir,
-                                                  suffix='.tf.json',
-                                                  delete=delete)
-
-            tmpfile.write(self.dump())
-            tmpfile.flush()
-
-            # Download plugins
-            proc = subprocess.Popen(['terraform', 'init'], cwd=tmpdir,
-                                    stdout=subprocess.PIPE, stderr=None)
-            proc.communicate()
-            assert proc.returncode == 0
-
-            # Validate configuration
-            proc = subprocess.Popen(['terraform',
-                                     'validate',
-                                     '-check-variables=false'],
-                                    cwd=tmpdir,
-                                    stdout=subprocess.PIPE,
-                                    stderr=subprocess.PIPE)
-            stdout, stderr = proc.communicate()
-
-            tmpfile.close()
-
-        return proc.returncode == 0
+        return result
     
     
 class Resource(Block):
     """Base class for actual resource classes.
     
+       This class can be instantiated directly to define Terraform resources
+       for which no subclass of `Resource` exists in Terrascript. 
+    
        Derived classes must be named *exactly* like the
        Terraform resource they represent.
           
+       https://www.terraform.io/docs/configuration/resources.html
     """
     
-    def __init__(self, label, **args):
-        super(Resource, self).__init__(label, **args)
+    def __init__(self, *labels, **args):
+        if type(self) == Resource:
+            if len(labels) != 2:
+                raise TypeError('%s takes exactly two arguments (%d given)' % 
+                                (self.__class__.__name__, len(labels)))
+        else:
+            if len(labels) != 1:
+                raise TypeError('%s takes exactly one argument (%d given)' % 
+                                (self.__class__.__name__, len(labels)))
+        super(Resource, self).__init__(*labels, **args)
 
 
-# class _data(_base):
-#     """Base class for data sources."""
-#     _class = 'data'
+class Provider(Block): 
+    """Class for providers.
+    
+       Currently there are no subclasses of `Provider` and the class
+       must be used directly.
+       
+       https://www.terraform.io/docs/configuration/providers.html
+       
+    """
+    
+    def __init__(self, *labels, **args):
+        super(Provider, self).__init__(labels, **args)
 
-#     def __init__(self, obj_name, **kwargs):
-#         super(_data, self).__init__(obj_name, **kwargs)
-
-
-# class resource(_base):
-#     """Class for creating a resource for which no convenience wrapper exists."""
-#     _class = 'resource'
-
-#     def __init__(self, type_, name, **kwargs):
-#         self._type = type_
-#         super(resource, self).__init__(name, **kwargs)
-
-
-# class data(_base):
-#     """Class for creating a data source for which no convenience wrapper exists."""
-#     _class = 'data'
-
-#     def __init__(self, type_, name, **kwargs):
-#         self._type = type_
-#         super(data, self).__init__(name, **kwargs)
-
-
-# class module(_base):
-#     _class = 'module'
-
-
-# class variable(_base):
-#     _class = 'variable'
-
-
-# class output(_base):
-#     _class = 'output'
-
-
-# class provider(_base):
-#     _class = 'provider'
-
-#     def __init__(self, name, **kwargs):
-#        alias = kwargs.get('alias', '__DEFAULT__')
-#        self._type = name
-#        super(provider, self).__init__(alias, **kwargs)
-
-
-# class terraform(_base):
-#     _class = 'terraform'
-#     def __init__(self, **kwargs):
-#         # Terraform does not have a name
-#         super(terraform, self).__init__(None, **kwargs)
-
-
-# class provisioner(UserDict):
-#     def __init__(self, type_, **kwargs):
-#        self._type = type_
-#        self.data = kwargs
-
-
-# class connection(UserDict):
-#     def __init__(self,  **kwargs):
-#         self.data = kwargs
-
-
-# class backend(UserDict):
-#     def __init__(self,  name, **kwargs):
-#         self.data = {name: kwargs}
-
-
-# class _function(object):
-#     """Terraform function.
-
-#        >>> function.lookup(map, key)
-#        "${lookup(map, key)}"
-
-#     """
-
-#     class _function(object):
-#         def __init__(self, name):
-#             self.name = name
-
-#         def format(self, arg):
-#             """Format a function argument."""
-#             if isinstance(arg, _base):
-#                 return arg.fullname
-#             elif isinstance(arg, str):
-#                 return '"{}"'.format(arg)
-#             else:
-#                 return arg
-
-#         def __call__(self, *args):
-#             return '${{{}({})}}'.format(self.name, ','.join([self.format(arg) for arg in args]))
-
-#     def __getattr__(self, name):
-#         return self._function(name)
-
-# f = fn = func = function = _function()
-# """Shortcuts for `function()`."""
 
 __all__ = ['Block', 'Terrascript', 'Resource']
 #           'resource', 'data', 'module', 'variable',

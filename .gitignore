@@ -106,3 +106,4 @@ ENV/
 #!terrascript/terraform/*
 .project
 .pytest_cache
+.pydevproject

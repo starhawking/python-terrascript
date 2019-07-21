@@ -8,13 +8,13 @@ from nose.tools import *
 
 class Test_Resource(object):
     def setup(self):
-        self.resource = Resource('label', arg1='val1', arg2='val2')
+        self.resource = Resource('dummy', 'label', arg1='val1', arg2='val2')
 
     def test_instanceResource(self):
         assert isinstance(self.resource, Resource)
 
     def test_labels(self):
-        assert self.resource._labels == ('label',)
+        assert self.resource._labels == ('dummy', 'label')
 
     def test_args(self):
         assert self.resource._args == {'arg1': 'val1', 'arg2': 'val2'}
