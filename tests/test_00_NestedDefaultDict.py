@@ -20,6 +20,6 @@ class Test_NestedDefaultDict(object):
         self.nd[11] = 11
         assert self.nd[1][2][3] == 123
         assert self.nd[11] == 11
-
-    def test_jsonify(self):
-        assert json.dumps(self.nd) == '{"1": {"2": {"3": 123}}}'
+        
+    def test_str(self):
+        assert json.loads(str(self.nd)) == {'1': {'2': {'3': 123}}}

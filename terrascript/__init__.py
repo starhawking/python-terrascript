@@ -83,9 +83,12 @@ class NestedDefaultDict(collections.defaultdict):
 
     def __init__(self, *args, **kwargs):
         super(NestedDefaultDict, self).__init__(NestedDefaultDict, *args, **kwargs)
+        
+    def __str__(self):
+        return json.dumps(dict(self))
 
 
-class Block(collections.abc.MutableMapping):
+class Block(NestedDefaultDict):
     """A `Block` is a container for other content.
     
        See https://www.terraform.io/docs/configuration/syntax.html#blocks.
@@ -93,46 +96,52 @@ class Block(collections.abc.MutableMapping):
        TODO: Can we make this a NestedDefaultDict?
        
     """
+    
     def __init__(self, *labels, **args):
-        self._labels = labels
-        self._args = args
+         super(Block, self).__init__()
+         self._labels = labels
+         self.update(args)
+         
 
-    def __getitem__(self, key):
-        return self._args[key]
     
-    def __setitem__(self, key, value):
-        self._args[key] = value
-        
-    def __delitem__(self, key):
-        del(self._args[key])
-
-    def __len__(self):
-        raise NotImplementedError('Instances of %s do not have a length' %
-                                  (self.__class__.__name__))
-
-    def __iter__(self):
-        for key in self._args:
-            yield key
-            
-    def __str__(self):
-        """The `__str__` method is (ab)used to convert to Terraform JSON."""
-        
-        def _encode(o):
-            try:
-                return o._args
-            except AttributeError:
-                raise TypeError(repr(o) + " is not JSON serializable")
-                
-        return json.dumps(self, default=_encode, indent=INDENT, sort_keys=SORT)
-                
-    def keys(self):
-        return self._args.keys()
-    
-    def values(self):
-        return self._args.values()
-    
-    def items(self):
-        return self._args.items()
+ 
+ 
+#     def __getitem__(self, key):
+#         return self._args[key]
+#     
+#     def __setitem__(self, key, value):
+#         self._args[key] = value
+#         
+#     def __delitem__(self, key):
+#         del(self._args[key])
+# 
+#     def __len__(self):
+#         raise NotImplementedError('Instances of %s do not have a length' %
+#                                   (self.__class__.__name__))
+# 
+#     def __iter__(self):
+#         for key in self._args:
+#             yield key
+#             
+#     def __str__(self):
+#         """The `__str__` method is (ab)used to convert to Terraform JSON."""
+#         
+#         def _encode(o):
+#             try:
+#                 return o._args
+#             except AttributeError:
+#                 raise TypeError(repr(o) + " is not JSON serializable")
+#                 
+#         return json.dumps(self, default=_encode, indent=INDENT, sort_keys=SORT)
+#                 
+#     def keys(self):
+#         return self._args.keys()
+#     
+#     def values(self):
+#         return self._args.values()
+#     
+#     def items(self):
+#         return self._args.items()
 
 
 class Terrascript(Block):
@@ -143,17 +152,6 @@ class Terrascript(Block):
 
     def __init__(self):
         super(Terrascript, self).__init__()
-        
-#        # Initialise top-level keys with empty dictionaries. These will show
-#        # as empty dictionaries in the JSOn output if they won't be populated
-#        # but that is fine.
-#        self['resource'] = NestedDefaultDict()
-#        self['provider'] = NestedDefaultDict()
-        
-    def __len__(self):
-        # TODO: Possibly return number of items per type, e.g.
-        #       {'resource': 3, 'output': 2, ...}
-        raise NotImplementedError()
         
     def __add__(self, block):
         
@@ -181,7 +179,7 @@ class Terrascript(Block):
             
             ##if not 'resource' in self:
             ##    self['resource'] = NestedDefaultDict()
-            self['resource'][block._labels[0]][block._labels[1]] = block._args
+            self['resource'][block._labels[0]][block._labels[1]] = block
             
         elif isinstance(block, Resource):
             # Covers only subclasses of Resource because of 'if type()...' above. 
@@ -199,10 +197,13 @@ class Terrascript(Block):
 
             ##if not 'resource' in self:
             ##    self['resource'] = NestedDefaultDict()
-            self['resource'][block.__class__.__name__][block._labels[0]] = block._args
+            self['resource'][block.__class__.__name__][block._labels[0]] = block
+            
+        elif type(block) == Provider:
+            self['provider'][block._labels[0]] = block
             
         elif isinstance(block, Provider):
-            self['resource'][block.__class__.__name__][block._labels[0]] = block._args
+            self['provider'][block.__class__.__name__] = block
 
         else:
             raise ValueError('An instance of %s cannot be added to instances of %s' % block.__class__.__name__, self.__class__.__name__)

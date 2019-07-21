@@ -22,14 +22,13 @@ class Test_Block(object):
         self.block['arg3'] = 'val3'
         assert self.block['arg3'] == 'val3'
         
-    @raises(KeyError)
+    ##@raises(KeyError)
     def test_MutableMapping_delitem(self):
         del(self.block['arg1'])
-        self.block['arg1']
+        assert 'arg1' not in self.block
         
-    @raises(NotImplementedError)
     def test_MutableMapping_len(self):
-        len(self.block)
+        len(self.block) == 2
         
     def test_MutableMapping_iter(self):
         for arg in self.block:
@@ -50,7 +49,6 @@ class Test_Block(object):
     def test_instance_Block(self):
         assert isinstance(self.block, Block)
         assert hasattr(self.block, '_labels')
-        assert hasattr(self.block, '_args')
         
     def test_labels(self):
         assert isinstance(self.block._labels, tuple)
@@ -58,12 +56,11 @@ class Test_Block(object):
         assert self.block._labels == ('label1', 'label2', )
 
     def test_args(self):
-        assert isinstance(self.block._args, dict)
-        assert self.block._args == {'arg1': 'val1', 'arg2': 'val2'}
+        assert isinstance(self.block, dict)
+        assert self.block == {'arg1': 'val1', 'arg2': 'val2'}
 
-    @raises(NotImplementedError)
     def test_len(self):
-        len(self.block)
+        len(self.block) == 2
         
     def test_str(self):
-        assert json.loads(str(self.block)) == self.block._args
+        assert json.loads(str(self.block)) == self.block
