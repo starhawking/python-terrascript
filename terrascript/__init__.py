@@ -82,7 +82,7 @@ class NestedDefaultDict(collections.defaultdict):
     """
 
     def __init__(self, *args, **kwargs):
-        super(NestedDefaultDict, self).__init__(NestedDefaultDict, *args, **kwargs)
+        super().__init__(NestedDefaultDict, *args, **kwargs)
         
     def __str__(self):
         return json.dumps(dict(self))
@@ -98,9 +98,9 @@ class Block(NestedDefaultDict):
     """
     
     def __init__(self, *labels, **args):
-         super(Block, self).__init__()
-         self._labels = labels
-         self.update(args)
+        super().__init__()
+        self._labels = labels
+        self.update(args)
          
 
 class Terrascript(Block):
@@ -110,7 +110,7 @@ class Terrascript(Block):
     """
 
     def __init__(self):
-        super(Terrascript, self).__init__()
+        super().__init__()
         
     def __add__(self, block):        
         
@@ -238,7 +238,7 @@ class Resource(Block):
             if len(labels) != 1:
                 raise TypeError('%s takes exactly one argument (%d given)' % 
                                 (self.__class__.__name__, len(labels)))
-        super(Resource, self).__init__(*labels, **args)
+        super().__init__(*labels, **args)
 
 
 class Provider(Block): 
@@ -252,7 +252,7 @@ class Provider(Block):
     """
     
     def __init__(self, label, **args):
-        super(Provider, self).__init__(label, **args)
+        super().__init__(label, **args)
 
 
 __all__ = ['Block', 'Terrascript', 'Resource', 'Provider']
