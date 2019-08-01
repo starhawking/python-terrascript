@@ -83,7 +83,7 @@ class NestedDefaultDict(collections.defaultdict):
 
     def __init__(self, *args, **kwargs):
         super().__init__(NestedDefaultDict, *args, **kwargs)
-        
+
     def __str__(self):
         return json.dumps(dict(self))
 
@@ -187,6 +187,20 @@ class Terrascript(Block):
             #
             self['provider'][block.__class__.__name__] = block
 
+        elif isinstance(block, Terraform):
+            # {
+            #   "terraform": {
+            #     "required_version": ">= 0.12.0",
+            #     "backend": {
+            #       "s3": {
+            #         "region": "us-west-2",
+            #         "bucket": "acme-terraform-states"
+            #       }
+            #     }
+            #   }
+            # }
+            self['terraform'] = block
+
         else:
             # TODO: Create test for trying to add a non-Terraform class to a terrascript instance,
             raise ValueError('An instance of %s cannot be added to instances of %s' % block.__class__.__name__, self.__class__.__name__)
@@ -250,9 +264,23 @@ class Provider(Block):
        https://www.terraform.io/docs/configuration/providers.html
        
     """
-    
+
     def __init__(self, label, **args):
         super().__init__(label, **args)
 
 
-__all__ = ['Block', 'Terrascript', 'Resource', 'Provider']
+class Terraform(Block):
+    """Class for Terraform settings.
+
+      https://www.terraform.io/docs/configuration/syntax-json.html#terraform-blocks
+    """
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def backend(self, name, **kwargs):
+        """Helper method to add a backend config."""
+        self['backend'][name] = kwargs
+        return self
+
+
+__all__ = ['Block', 'Terrascript', 'Resource', 'Provider', 'Terraform']
