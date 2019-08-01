@@ -1,6 +1,5 @@
-from typing import Iterable
-
-from terrascript import Terrascript, ReferenceMixin, Resource
+from terrascript import Resource, Terrascript
+from terrascript.reference import ReferenceMixin
 
 
 class Test_ReferenceMixin:
@@ -10,7 +9,7 @@ class Test_ReferenceMixin:
     def test_reference_mixin(self):
         class Data(ReferenceMixin):
             @property
-            def ref_list(self) -> Iterable[str]:
+            def ref_list(self):
                 return ["data", "foo", "bar"]
 
         data = Data()
@@ -21,7 +20,7 @@ class Test_ReferenceMixin:
     def test_reference_mixin_variable(self):
         class Variable(ReferenceMixin):
             @property
-            def ref_list(self) -> Iterable[str]:
+            def ref_list(self):
                 return ["var", "foo"]
 
         var = Variable()

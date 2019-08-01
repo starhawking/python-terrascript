@@ -10,7 +10,6 @@ import collections.abc
 import json
 import logging
 import warnings
-from typing import Iterable
 
 from terrascript.reference import ReferenceMixin
 
@@ -266,7 +265,7 @@ class Resource(ReferenceMixin, Block):
         super().__init__(*labels, **args)
 
     @property
-    def ref_list(self) -> Iterable[str]:
+    def ref_list(self):
         return self._labels if len(self._labels) == 2 else (self.__class__.__name__,) + self._labels
 
 

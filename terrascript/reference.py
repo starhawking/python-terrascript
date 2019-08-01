@@ -1,10 +1,9 @@
 from abc import ABC, abstractproperty
-from typing import Iterable
 
 
 class ReferenceMixin(ABC):
     @abstractproperty
-    def ref_list(self) -> Iterable[str]:
+    def ref_list(self):
         ...
 
     def __repr__(self):
