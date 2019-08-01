@@ -211,6 +211,19 @@ class Terrascript(Block):
             # }
             self['terraform'] = block
 
+        elif isinstance(block, Data):
+            # {
+            #     "data": {
+            #         "foo": {
+            #             "bar": {
+            #                 "provider": "aws.foo"
+            #             }
+            #         }
+            #     }
+            # }
+            #
+            self['data'][block._labels[0]][block._labels[1]] = block
+
         else:
             # TODO: Create test for trying to add a non-Terraform class to a terrascript instance,
             raise ValueError('An instance of %s cannot be added to instances of %s' % block.__class__.__name__, self.__class__.__name__)
@@ -297,4 +310,20 @@ class Terraform(Block):
         return self
 
 
-__all__ = ['Block', 'Terrascript', 'Resource', 'Provider', 'Terraform']
+class Data(ReferenceMixin, Block):
+    """Class for data.
+
+      https://www.terraform.io/docs/configuration/syntax-json.html#resource-and-data-blocks
+    """
+
+    def __init__(self, *labels, **kwargs):
+        if len(labels) != 2:
+            raise TypeError('Data takes exactly two arguments (%d given)' % len(labels))
+        super().__init__(*labels, **kwargs)
+
+    @property
+    def ref_list(self):
+        return ('data',) + self._labels
+
+
+__all__ = ['Block', 'Terrascript', 'Resource', 'Provider', 'Terraform', 'Data']
