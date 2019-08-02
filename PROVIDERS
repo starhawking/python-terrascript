@@ -22,6 +22,7 @@ fastly
 github
 gitlab
 google
+google-beta
 grafana
 heroku
 http
