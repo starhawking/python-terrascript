@@ -1,4 +1,5 @@
-from terrascript import _data
-class opsgenie_user(_data): pass
+from terrascript import Data
+class opsgenie_user(Data):
+    def __init__(self, _label, **kwargs): super().__init__('opsgenie_user', _label, **kwargs)
 user = opsgenie_user
 

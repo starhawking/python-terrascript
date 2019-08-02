@@ -10,6 +10,7 @@ cloudflare
 cloudscale
 cloudstack
 cobbler
+consul
 datadog
 digitalocean
 dns
@@ -41,6 +42,7 @@ mysql
 newrelic
 nomad
 ns1
+null
 oneandone
 opc
 openstack

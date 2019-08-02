@@ -279,6 +279,14 @@ class google_cloudbuild_trigger(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_cloudbuild_trigger', _label, **kwargs)
 cloudbuild_trigger = google_cloudbuild_trigger
 
+class google_cloud_run_domain_mapping(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_cloud_run_domain_mapping', _label, **kwargs)
+cloud_run_domain_mapping = google_cloud_run_domain_mapping
+
+class google_cloud_run_service(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_cloud_run_service', _label, **kwargs)
+cloud_run_service = google_cloud_run_service
+
 class google_cloud_scheduler_job(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_cloud_scheduler_job', _label, **kwargs)
 cloud_scheduler_job = google_cloud_scheduler_job
@@ -379,6 +387,10 @@ class google_compute_region_disk(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_compute_region_disk', _label, **kwargs)
 compute_region_disk = google_compute_region_disk
 
+class google_compute_resource_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_compute_resource_policy', _label, **kwargs)
+compute_resource_policy = google_compute_resource_policy
+
 class google_compute_route(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_compute_route', _label, **kwargs)
 compute_route = google_compute_route
@@ -394,6 +406,10 @@ compute_snapshot = google_compute_snapshot
 class google_compute_ssl_certificate(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_compute_ssl_certificate', _label, **kwargs)
 compute_ssl_certificate = google_compute_ssl_certificate
+
+class google_compute_managed_ssl_certificate(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_compute_managed_ssl_certificate', _label, **kwargs)
+compute_managed_ssl_certificate = google_compute_managed_ssl_certificate
 
 class google_compute_ssl_policy(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_compute_ssl_policy', _label, **kwargs)
@@ -427,6 +443,14 @@ class google_compute_vpn_gateway(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_compute_vpn_gateway', _label, **kwargs)
 compute_vpn_gateway = google_compute_vpn_gateway
 
+class google_compute_ha_vpn_gateway(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_compute_ha_vpn_gateway', _label, **kwargs)
+compute_ha_vpn_gateway = google_compute_ha_vpn_gateway
+
+class google_compute_external_vpn_gateway(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_compute_external_vpn_gateway', _label, **kwargs)
+compute_external_vpn_gateway = google_compute_external_vpn_gateway
+
 class google_compute_url_map(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_compute_url_map', _label, **kwargs)
 compute_url_map = google_compute_url_map
@@ -435,9 +459,17 @@ class google_compute_vpn_tunnel(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_compute_vpn_tunnel', _label, **kwargs)
 compute_vpn_tunnel = google_compute_vpn_tunnel
 
+class google_container_analysis_note(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_container_analysis_note', _label, **kwargs)
+container_analysis_note = google_container_analysis_note
+
 class google_dns_managed_zone(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_dns_managed_zone', _label, **kwargs)
 dns_managed_zone = google_dns_managed_zone
+
+class google_dns_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_dns_policy', _label, **kwargs)
+dns_policy = google_dns_policy
 
 class google_filestore_instance(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_filestore_instance', _label, **kwargs)
@@ -446,6 +478,22 @@ filestore_instance = google_filestore_instance
 class google_firestore_index(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_firestore_index', _label, **kwargs)
 firestore_index = google_firestore_index
+
+class google_healthcare_dataset(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_healthcare_dataset', _label, **kwargs)
+healthcare_dataset = google_healthcare_dataset
+
+class google_healthcare_dicom_store(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_healthcare_dicom_store', _label, **kwargs)
+healthcare_dicom_store = google_healthcare_dicom_store
+
+class google_healthcare_fhir_store(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_healthcare_fhir_store', _label, **kwargs)
+healthcare_fhir_store = google_healthcare_fhir_store
+
+class google_healthcare_hl7_v2_store(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_healthcare_hl7_v2_store', _label, **kwargs)
+healthcare_hl7_v2_store = google_healthcare_hl7_v2_store
 
 class google_kms_key_ring(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_kms_key_ring', _label, **kwargs)
@@ -490,6 +538,10 @@ redis_instance = google_redis_instance
 class google_resource_manager_lien(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_resource_manager_lien', _label, **kwargs)
 resource_manager_lien = google_resource_manager_lien
+
+class google_security_scanner_scan_config(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_security_scanner_scan_config', _label, **kwargs)
+security_scanner_scan_config = google_security_scanner_scan_config
 
 class google_sourcerepo_repository(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_sourcerepo_repository', _label, **kwargs)
