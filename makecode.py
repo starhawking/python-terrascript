@@ -42,7 +42,10 @@ for provider in PROVIDERS:
     commit = branch.commit
     tree = repo.tree(commit.sha)
 
-    regex = re.compile('^'+provider+'/provider.go')
+    if provider == 'consul':
+        regex = re.compile('^'+provider+'/resource_provider.go')
+    else:
+        regex = re.compile('^'+provider+'/provider.go')
 
     recursed_tree = tree.recurse().tree
     provider_go_hash = [h for h in recursed_tree
