@@ -10,6 +10,7 @@ import collections.abc
 import json
 import logging
 import warnings
+from abc import ABC, abstractmethod
 
 from terrascript.reference import ReferenceMixin
 
@@ -113,6 +114,12 @@ class Block(NestedDefaultDict):
             return values
 
 
+class TopLevelBlock(ABC, Block):
+    @abstractmethod
+    def add_to_terrascript(self, terrascript):
+        ...
+
+
 class Terrascript(Block):
     """Top-level container for Terraform configurations.
     
@@ -123,111 +130,7 @@ class Terrascript(Block):
         super().__init__()
 
     def __add__(self, block):
-
-        if type(block) == Resource:
-            # Resource can be instantiated directly to add Terraform resources
-            # for which no subclass exists in Terrascript.\
-            #
-               # {
-            #  "resource": {
-            #    "foobar":       {                 <== block._labels[0]
-            #      "example": {                    <== block._labels[1]
-            #        "instance_type": "t2.micro",
-            #        "ami": "ami-abc123"
-            #      }
-            #    }
-            #   }
-            # }
-
-            ##if not 'resource' in self:
-            ##    self['resource'] = NestedDefaultDict()
-            self['resource'][block._labels[0]][block._labels[1]] = block
-
-        elif isinstance(block, Resource):
-            # Covers only subclasses of Resource because of 'if type()...' above. 
-            #
-            # {
-            #  "resource": {
-            #    "aws_instance": {                 <== block.__class__.__name__
-            #      "example": {                    <== block._labels[0]
-            #        "instance_type": "t2.micro",
-            #        "ami": "ami-abc123"
-            #      }
-            #    }
-            #   }
-            # }
-
-            ##if not 'resource' in self:
-            ##    self['resource'] = NestedDefaultDict()
-            self['resource'][block.__class__.__name__][block._labels[0]] = block
-
-        elif type(block) == Provider:
-            #
-            # {
-            #   "resource": {}, 
-            #     "provider": {
-            #       "openstack": {                 <== block._labels[0]
-            #          "user_name": "admin", 
-            #          "tenant_name": "admin", 
-            #          "password": "pwd", 
-            #          "auth_url": "http://myauthurl:5000/v2.0", 
-            #          "region": "RegionOne"
-            #       }
-            #     }
-            #   }
-            # }
-            #
-            self['provider'][block._labels[0]] = block
-
-        elif isinstance(block, Provider):
-            #
-            # {
-            #   "resource": {}, 
-            #     "provider": {
-            #       "openstack": {                 <== block.__class__.__name__
-            #          "user_name": "admin", 
-            #          "tenant_name": "admin", 
-            #          "password": "pwd", 
-            #          "auth_url": "http://myauthurl:5000/v2.0", 
-            #          "region": "RegionOne"
-            #       }
-            #     }
-            #   }
-            # }
-            #
-            self['provider'][block.__class__.__name__] = block
-
-        elif isinstance(block, Terraform):
-            # {
-            #   "terraform": {
-            #     "required_version": ">= 0.12.0",
-            #     "backend": {
-            #       "s3": {
-            #         "region": "us-west-2",
-            #         "bucket": "acme-terraform-states"
-            #       }
-            #     }
-            #   }
-            # }
-            self['terraform'] = block
-
-        elif isinstance(block, Data):
-            # {
-            #     "data": {
-            #         "foo": {
-            #             "bar": {
-            #                 "provider": "aws.foo"
-            #             }
-            #         }
-            #     }
-            # }
-            #
-            self['data'][block._labels[0]][block._labels[1]] = block
-
-        else:
-            # TODO: Create test for trying to add a non-Terraform class to a terrascript instance,
-            raise ValueError('An instance of %s cannot be added to instances of %s' % block.__class__.__name__, self.__class__.__name__)
-
+        block.add_to_terrascript(self)
         return self
 
     add = __add__
@@ -254,7 +157,7 @@ class Terrascript(Block):
         return result
 
 
-class Resource(ReferenceMixin, Block):
+class Resource(ReferenceMixin, TopLevelBlock):
     """Base class for actual resource classes.
     
        This class can be instantiated directly to define Terraform resources
@@ -267,22 +170,32 @@ class Resource(ReferenceMixin, Block):
     """
 
     def __init__(self, *labels, **args):
-        if type(self) == Resource:
-            if len(labels) != 2:
-                raise TypeError('%s takes exactly two arguments (%d given)' %
-                                (self.__class__.__name__, len(labels)))
-        else:
-            if len(labels) != 1:
-                raise TypeError('%s takes exactly one argument (%d given)' %
-                                (self.__class__.__name__, len(labels)))
+        if len(labels) != 2:
+            raise TypeError('%s takes exactly two arguments (%d given)' %
+                            (self.__class__.__name__, len(labels)))
         super().__init__(*labels, **args)
 
     @property
     def ref_list(self):
-        return self._labels if len(self._labels) == 2 else (self.__class__.__name__,) + self._labels
+        return self._labels
+
+    def add_to_terrascript(self, terrascript):
+        """
+        {
+         "resource": {
+           "foobar":       {                 <== block._labels[0]
+             "example": {                    <== block._labels[1]
+               "instance_type": "t2.micro",
+               "ami": "ami-abc123"
+             }
+           }
+          }
+        }
+        """
+        terrascript['resource'][self._labels[0]][self._labels[1]] = self
 
 
-class Provider(Block):
+class Provider(TopLevelBlock):
     """Class for providers.
     
        Currently there are no subclasses of `Provider` and the class
@@ -295,8 +208,26 @@ class Provider(Block):
     def __init__(self, label, **args):
         super().__init__(label, **args)
 
+    def add_to_terrascript(self, terrascript):
+        """
+        {
+          "resource": {},
+            "provider": {
+              "openstack": {                 <== block._labels[0]
+                 "user_name": "admin",
+                 "tenant_name": "admin",
+                 "password": "pwd",
+                 "auth_url": "http://myauthurl:5000/v2.0",
+                 "region": "RegionOne"
+              }
+            }
+          }
+        }
+        """
+        terrascript['provider'][self._labels[0]] = self
 
-class Terraform(Block):
+
+class Terraform(TopLevelBlock):
     """Class for Terraform settings.
 
       https://www.terraform.io/docs/configuration/syntax-json.html#terraform-blocks
@@ -309,8 +240,24 @@ class Terraform(Block):
         self['backend'][name] = kwargs
         return self
 
+    def add_to_terrascript(self, terrascript):
+        """
+        {
+          "terraform": {
+            "required_version": ">= 0.12.0",
+            "backend": {
+              "s3": {
+                "region": "us-west-2",
+                "bucket": "acme-terraform-states"
+              }
+            }
+          }
+        }
+        """
+        terrascript['terraform'] = self
 
-class Data(ReferenceMixin, Block):
+
+class Data(ReferenceMixin, TopLevelBlock):
     """Class for data.
 
       https://www.terraform.io/docs/configuration/syntax-json.html#resource-and-data-blocks
@@ -324,6 +271,20 @@ class Data(ReferenceMixin, Block):
     @property
     def ref_list(self):
         return ('data',) + self._labels
+
+    def add_to_terrascript(self, terrascript):
+        """
+        {
+            "data": {
+                "foo": {      <== block._labels[0]
+                    "bar": {  <== block._labels[1]
+                        "provider": "aws.foo"
+                    }
+                }
+            }
+        }
+        """
+        terrascript['data'][self._labels[0]][self._labels[1]] = self
 
 
 __all__ = ['Block', 'Terrascript', 'Resource', 'Provider', 'Terraform', 'Data']
