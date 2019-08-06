@@ -17,7 +17,7 @@ REPO_OWNER = 'terraform-providers'
 PROVIDERS = [p.strip() for p in open('PROVIDERS').read().split('\n') if p]
 PROVIDERS.sort()
 
-REGEX = re.compile(b'".*?_(?P<type_>.+)":\s+(?P<class_>resource|data)')
+REGEX = re.compile(b'".*?_(?P<type_>.+)":\s+(?P<class_>resource|Resource|data)')
 #"azurerm_traffic_manager_profile":   resourceArmTrafficManagerProfile(),
 
 try:
@@ -75,7 +75,7 @@ for provider in PROVIDERS:
 
             for m in REGEX.finditer(decoded):
                 type_ = m.group('type_').decode('utf-8')
-                class_ = m.group('class_').decode('utf-8')
+                class_ = m.group('class_').decode('utf-8').lower()
 
                 if provider == 'google-beta':
                     block_name = 'google_{}'.format(type_)
