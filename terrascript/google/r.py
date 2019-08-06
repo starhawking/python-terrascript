@@ -15,9 +15,33 @@ class google_bigtable_instance(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_bigtable_instance', _label, **kwargs)
 bigtable_instance = google_bigtable_instance
 
+class google_bigtable_instance_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_bigtable_instance_iam_binding', _label, **kwargs)
+bigtable_instance_iam_binding = google_bigtable_instance_iam_binding
+
+class google_bigtable_instance_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_bigtable_instance_iam_member', _label, **kwargs)
+bigtable_instance_iam_member = google_bigtable_instance_iam_member
+
+class google_bigtable_instance_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_bigtable_instance_iam_policy', _label, **kwargs)
+bigtable_instance_iam_policy = google_bigtable_instance_iam_policy
+
 class google_bigtable_table(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_bigtable_table', _label, **kwargs)
 bigtable_table = google_bigtable_table
+
+class google_billing_account_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_billing_account_iam_binding', _label, **kwargs)
+billing_account_iam_binding = google_billing_account_iam_binding
+
+class google_billing_account_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_billing_account_iam_member', _label, **kwargs)
+billing_account_iam_member = google_billing_account_iam_member
+
+class google_billing_account_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_billing_account_iam_policy', _label, **kwargs)
+billing_account_iam_policy = google_billing_account_iam_policy
 
 class google_cloudfunctions_function(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_cloudfunctions_function', _label, **kwargs)
@@ -50,6 +74,18 @@ compute_instance_group = google_compute_instance_group
 class google_compute_instance_group_manager(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_compute_instance_group_manager', _label, **kwargs)
 compute_instance_group_manager = google_compute_instance_group_manager
+
+class google_compute_instance_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_compute_instance_iam_binding', _label, **kwargs)
+compute_instance_iam_binding = google_compute_instance_iam_binding
+
+class google_compute_instance_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_compute_instance_iam_member', _label, **kwargs)
+compute_instance_iam_member = google_compute_instance_iam_member
+
+class google_compute_instance_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_compute_instance_iam_policy', _label, **kwargs)
+compute_instance_iam_policy = google_compute_instance_iam_policy
 
 class google_compute_instance_template(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_compute_instance_template', _label, **kwargs)
@@ -99,6 +135,18 @@ class google_compute_shared_vpc_service_project(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_compute_shared_vpc_service_project', _label, **kwargs)
 compute_shared_vpc_service_project = google_compute_shared_vpc_service_project
 
+class google_compute_subnetwork_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_compute_subnetwork_iam_binding', _label, **kwargs)
+compute_subnetwork_iam_binding = google_compute_subnetwork_iam_binding
+
+class google_compute_subnetwork_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_compute_subnetwork_iam_member', _label, **kwargs)
+compute_subnetwork_iam_member = google_compute_subnetwork_iam_member
+
+class google_compute_subnetwork_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_compute_subnetwork_iam_policy', _label, **kwargs)
+compute_subnetwork_iam_policy = google_compute_subnetwork_iam_policy
+
 class google_compute_target_pool(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_compute_target_pool', _label, **kwargs)
 compute_target_pool = google_compute_target_pool
@@ -119,9 +167,33 @@ class google_dataproc_cluster(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_dataproc_cluster', _label, **kwargs)
 dataproc_cluster = google_dataproc_cluster
 
+class google_dataproc_cluster_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_dataproc_cluster_iam_binding', _label, **kwargs)
+dataproc_cluster_iam_binding = google_dataproc_cluster_iam_binding
+
+class google_dataproc_cluster_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_dataproc_cluster_iam_member', _label, **kwargs)
+dataproc_cluster_iam_member = google_dataproc_cluster_iam_member
+
+class google_dataproc_cluster_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_dataproc_cluster_iam_policy', _label, **kwargs)
+dataproc_cluster_iam_policy = google_dataproc_cluster_iam_policy
+
 class google_dataproc_job(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_dataproc_job', _label, **kwargs)
 dataproc_job = google_dataproc_job
+
+class google_dataproc_job_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_dataproc_job_iam_binding', _label, **kwargs)
+dataproc_job_iam_binding = google_dataproc_job_iam_binding
+
+class google_dataproc_job_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_dataproc_job_iam_member', _label, **kwargs)
+dataproc_job_iam_member = google_dataproc_job_iam_member
+
+class google_dataproc_job_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_dataproc_job_iam_policy', _label, **kwargs)
+dataproc_job_iam_policy = google_dataproc_job_iam_policy
 
 class google_dns_record_set(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_dns_record_set', _label, **kwargs)
@@ -135,6 +207,18 @@ class google_folder(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_folder', _label, **kwargs)
 folder = google_folder
 
+class google_folder_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_folder_iam_binding', _label, **kwargs)
+folder_iam_binding = google_folder_iam_binding
+
+class google_folder_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_folder_iam_member', _label, **kwargs)
+folder_iam_member = google_folder_iam_member
+
+class google_folder_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_folder_iam_policy', _label, **kwargs)
+folder_iam_policy = google_folder_iam_policy
+
 class google_folder_organization_policy(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_folder_organization_policy', _label, **kwargs)
 folder_organization_policy = google_folder_organization_policy
@@ -143,21 +227,81 @@ class google_logging_billing_account_sink(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_logging_billing_account_sink', _label, **kwargs)
 logging_billing_account_sink = google_logging_billing_account_sink
 
+class google_logging_billing_account_exclusion(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_logging_billing_account_exclusion', _label, **kwargs)
+logging_billing_account_exclusion = google_logging_billing_account_exclusion
+
 class google_logging_organization_sink(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_logging_organization_sink', _label, **kwargs)
 logging_organization_sink = google_logging_organization_sink
+
+class google_logging_organization_exclusion(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_logging_organization_exclusion', _label, **kwargs)
+logging_organization_exclusion = google_logging_organization_exclusion
 
 class google_logging_folder_sink(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_logging_folder_sink', _label, **kwargs)
 logging_folder_sink = google_logging_folder_sink
 
+class google_logging_folder_exclusion(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_logging_folder_exclusion', _label, **kwargs)
+logging_folder_exclusion = google_logging_folder_exclusion
+
 class google_logging_project_sink(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_logging_project_sink', _label, **kwargs)
 logging_project_sink = google_logging_project_sink
 
+class google_logging_project_exclusion(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_logging_project_exclusion', _label, **kwargs)
+logging_project_exclusion = google_logging_project_exclusion
+
+class google_kms_key_ring_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_kms_key_ring_iam_binding', _label, **kwargs)
+kms_key_ring_iam_binding = google_kms_key_ring_iam_binding
+
+class google_kms_key_ring_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_kms_key_ring_iam_member', _label, **kwargs)
+kms_key_ring_iam_member = google_kms_key_ring_iam_member
+
+class google_kms_key_ring_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_kms_key_ring_iam_policy', _label, **kwargs)
+kms_key_ring_iam_policy = google_kms_key_ring_iam_policy
+
+class google_kms_crypto_key_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_kms_crypto_key_iam_binding', _label, **kwargs)
+kms_crypto_key_iam_binding = google_kms_crypto_key_iam_binding
+
+class google_kms_crypto_key_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_kms_crypto_key_iam_member', _label, **kwargs)
+kms_crypto_key_iam_member = google_kms_crypto_key_iam_member
+
 class google_service_networking_connection(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_service_networking_connection', _label, **kwargs)
 service_networking_connection = google_service_networking_connection
+
+class google_spanner_instance_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_spanner_instance_iam_binding', _label, **kwargs)
+spanner_instance_iam_binding = google_spanner_instance_iam_binding
+
+class google_spanner_instance_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_spanner_instance_iam_member', _label, **kwargs)
+spanner_instance_iam_member = google_spanner_instance_iam_member
+
+class google_spanner_instance_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_spanner_instance_iam_policy', _label, **kwargs)
+spanner_instance_iam_policy = google_spanner_instance_iam_policy
+
+class google_spanner_database_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_spanner_database_iam_binding', _label, **kwargs)
+spanner_database_iam_binding = google_spanner_database_iam_binding
+
+class google_spanner_database_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_spanner_database_iam_member', _label, **kwargs)
+spanner_database_iam_member = google_spanner_database_iam_member
+
+class google_spanner_database_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_spanner_database_iam_policy', _label, **kwargs)
+spanner_database_iam_policy = google_spanner_database_iam_policy
 
 class google_sql_database_instance(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_sql_database_instance', _label, **kwargs)
@@ -171,9 +315,21 @@ class google_sql_user(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_sql_user', _label, **kwargs)
 sql_user = google_sql_user
 
+class google_organization_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_organization_iam_binding', _label, **kwargs)
+organization_iam_binding = google_organization_iam_binding
+
 class google_organization_iam_custom_role(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_organization_iam_custom_role', _label, **kwargs)
 organization_iam_custom_role = google_organization_iam_custom_role
+
+class google_organization_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_organization_iam_member', _label, **kwargs)
+organization_iam_member = google_organization_iam_member
+
+class google_organization_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_organization_iam_policy', _label, **kwargs)
+organization_iam_policy = google_organization_iam_policy
 
 class google_organization_policy(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_organization_policy', _label, **kwargs)
@@ -186,6 +342,18 @@ project = google_project
 class google_project_iam_policy(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_project_iam_policy', _label, **kwargs)
 project_iam_policy = google_project_iam_policy
+
+class google_project_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_project_iam_binding', _label, **kwargs)
+project_iam_binding = google_project_iam_binding
+
+class google_project_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_project_iam_member', _label, **kwargs)
+project_iam_member = google_project_iam_member
+
+class google_project_iam_audit_config(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_project_iam_audit_config', _label, **kwargs)
+project_iam_audit_config = google_project_iam_audit_config
 
 class google_project_service(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_project_service', _label, **kwargs)
@@ -207,6 +375,18 @@ class google_project_services(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_project_services', _label, **kwargs)
 project_services = google_project_services
 
+class google_pubsub_subscription_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_pubsub_subscription_iam_binding', _label, **kwargs)
+pubsub_subscription_iam_binding = google_pubsub_subscription_iam_binding
+
+class google_pubsub_subscription_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_pubsub_subscription_iam_member', _label, **kwargs)
+pubsub_subscription_iam_member = google_pubsub_subscription_iam_member
+
+class google_pubsub_subscription_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_pubsub_subscription_iam_policy', _label, **kwargs)
+pubsub_subscription_iam_policy = google_pubsub_subscription_iam_policy
+
 class google_runtimeconfig_config(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_runtimeconfig_config', _label, **kwargs)
 runtimeconfig_config = google_runtimeconfig_config
@@ -219,6 +399,18 @@ class google_service_account(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_service_account', _label, **kwargs)
 service_account = google_service_account
 
+class google_service_account_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_service_account_iam_binding', _label, **kwargs)
+service_account_iam_binding = google_service_account_iam_binding
+
+class google_service_account_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_service_account_iam_member', _label, **kwargs)
+service_account_iam_member = google_service_account_iam_member
+
+class google_service_account_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_service_account_iam_policy', _label, **kwargs)
+service_account_iam_policy = google_service_account_iam_policy
+
 class google_service_account_key(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_service_account_key', _label, **kwargs)
 service_account_key = google_service_account_key
@@ -230,6 +422,18 @@ storage_bucket = google_storage_bucket
 class google_storage_bucket_acl(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_storage_bucket_acl', _label, **kwargs)
 storage_bucket_acl = google_storage_bucket_acl
+
+class google_storage_bucket_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_storage_bucket_iam_binding', _label, **kwargs)
+storage_bucket_iam_binding = google_storage_bucket_iam_binding
+
+class google_storage_bucket_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_storage_bucket_iam_member', _label, **kwargs)
+storage_bucket_iam_member = google_storage_bucket_iam_member
+
+class google_storage_bucket_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_storage_bucket_iam_policy', _label, **kwargs)
+storage_bucket_iam_policy = google_storage_bucket_iam_policy
 
 class google_storage_bucket_object(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_storage_bucket_object', _label, **kwargs)
@@ -479,6 +683,18 @@ class google_pubsub_topic(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_pubsub_topic', _label, **kwargs)
 pubsub_topic = google_pubsub_topic
 
+class google_pubsub_topic_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_pubsub_topic_iam_binding', _label, **kwargs)
+pubsub_topic_iam_binding = google_pubsub_topic_iam_binding
+
+class google_pubsub_topic_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_pubsub_topic_iam_member', _label, **kwargs)
+pubsub_topic_iam_member = google_pubsub_topic_iam_member
+
+class google_pubsub_topic_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_pubsub_topic_iam_policy', _label, **kwargs)
+pubsub_topic_iam_policy = google_pubsub_topic_iam_policy
+
 class google_pubsub_subscription(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_pubsub_subscription', _label, **kwargs)
 pubsub_subscription = google_pubsub_subscription
@@ -494,6 +710,18 @@ resource_manager_lien = google_resource_manager_lien
 class google_sourcerepo_repository(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_sourcerepo_repository', _label, **kwargs)
 sourcerepo_repository = google_sourcerepo_repository
+
+class google_sourcerepo_repository_iam_binding(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_sourcerepo_repository_iam_binding', _label, **kwargs)
+sourcerepo_repository_iam_binding = google_sourcerepo_repository_iam_binding
+
+class google_sourcerepo_repository_iam_member(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_sourcerepo_repository_iam_member', _label, **kwargs)
+sourcerepo_repository_iam_member = google_sourcerepo_repository_iam_member
+
+class google_sourcerepo_repository_iam_policy(Resource):
+    def __init__(self, _label, **kwargs): super().__init__('google_sourcerepo_repository_iam_policy', _label, **kwargs)
+sourcerepo_repository_iam_policy = google_sourcerepo_repository_iam_policy
 
 class google_spanner_instance(Resource):
     def __init__(self, _label, **kwargs): super().__init__('google_spanner_instance', _label, **kwargs)
