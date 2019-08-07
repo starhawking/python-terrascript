@@ -257,11 +257,11 @@ class provider(_base):
        super(provider, self).__init__(alias, **kwargs)
 
 
-class locals(_base):
+class Locals(_base):
     _class = 'locals'
 
     def __init__(self, **kwargs):
-        super(locals, self).__init__(None, **kwargs)
+        super(Locals, self).__init__(None, **kwargs)
 
 
 class terraform(_base):
