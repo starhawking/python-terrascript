@@ -320,6 +320,6 @@ f = fn = func = function = _function()
 
 __all__ = ['Terrascript',
            'resource', 'data', 'module', 'variable',
-           'output', 'terraform', 'provider', 'locals',
+           'output', 'terraform', 'provider', 'Locals',
            'provisioner', 'connection', 'backend',
            'f', 'fn', 'func', 'function']
