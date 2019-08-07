@@ -33,4 +33,4 @@ class ReferenceMixin(ABC):
         e.g. ``google_compute_address.my_address.ip_version``
         """
         s = "{}.{}".format(self.fullname, item)
-        return self._interpolate(s) if self.is_var else s
+        return self._interpolate(s)

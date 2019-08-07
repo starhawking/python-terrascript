@@ -37,7 +37,5 @@ class Test_ReferenceMixin:
         assert self.config["resource"]["type"]["name2"]["depends_on"] == [repr(r)]
 
     def test_get_attr(self):
-        assert Data().some_attr == "data.foo.bar.some_attr"
-
-    def test_get_attr_variable(self):
+        assert Data().some_attr == "${data.foo.bar.some_attr}"
         assert Variable().some_attr == "${var.foo.some_attr}"
