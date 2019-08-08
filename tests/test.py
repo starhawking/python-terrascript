@@ -41,9 +41,13 @@ class Test1ConfigDefaults(object):
     def test_variable(self):
         assert isinstance(self.cfg.config['variable'], dict)
 
+    def test_locals(self):
+        assert isinstance(self.cfg.config['locals'], dict)
+
     @raises(KeyError)
     def test_wrongkey(self):
         isinstance(self.cfg.config['wrongkey'], dict)
+
 
 class Test2Config(object):
 

@@ -15,6 +15,7 @@ List of contributors (bug reports, fixes, suggestions, anything) to
 * Joao Gilberto Magalhaes
 * Kumaresh
 * leosanchez16
+* Ryan Walder
 
 Did I miss anyone?
 

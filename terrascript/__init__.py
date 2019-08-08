@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 
 THREE_TIER_ITEMS = ['data', 'resource', 'provider']
 TWO_TIER_ITEMS = ['variable', 'module', 'output', 'provisioner']
-ONE_TIER_ITEMS = ['terraform']
+ONE_TIER_ITEMS = ['terraform', 'locals']
 
 
 class _Config(dict):
@@ -43,6 +43,8 @@ class _Config(dict):
             elif key in THREE_TIER_ITEMS:
                 super(_Config, self).__setitem__(key, defaultdict(dict))
             elif key in TWO_TIER_ITEMS:
+                super(_Config, self).__setitem__(key, {})
+            elif key in ONE_TIER_ITEMS:
                 super(_Config, self).__setitem__(key, {})
             else:
                 raise KeyError(key)
@@ -255,6 +257,13 @@ class provider(_base):
        super(provider, self).__init__(alias, **kwargs)
 
 
+class Locals(_base):
+    _class = 'locals'
+
+    def __init__(self, **kwargs):
+        super(Locals, self).__init__(None, **kwargs)
+
+
 class terraform(_base):
     _class = 'terraform'
     def __init__(self, **kwargs):
@@ -311,6 +320,6 @@ f = fn = func = function = _function()
 
 __all__ = ['Terrascript',
            'resource', 'data', 'module', 'variable',
-           'output', 'terraform', 'provider', 
+           'output', 'terraform', 'provider', 'Locals',
            'provisioner', 'connection', 'backend',
            'f', 'fn', 'func', 'function']
