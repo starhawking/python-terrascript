@@ -1,6 +1,14 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+* Added locals resouce (pull #71)
+* Added null provider resouces (pull #69)
+* Added missing escape quote to the result json dump (pull #57)
+
+### Updated
+* Updated all terraform provider resources (pull #67)
+* Updated DigitalOcean resources (pull #58)
 
 ## [0.6.0] - 2018-09-28
 ### Added
