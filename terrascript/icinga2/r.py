@@ -11,3 +11,9 @@ checkcommand = icinga2_checkcommand
 class icinga2_service(_resource): pass
 service = icinga2_service
 
+class icinga2_user(_resource): pass
+user = icinga2_user
+
+class icinga2_notification(_resource): pass
+notification = icinga2_notification
+

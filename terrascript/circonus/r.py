@@ -17,3 +17,6 @@ metric_cluster = circonus_metric_cluster
 class circonus_rule_set(_resource): pass
 rule_set = circonus_rule_set
 
+class circonus_worksheet(_resource): pass
+worksheet = circonus_worksheet
+

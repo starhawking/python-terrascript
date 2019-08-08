@@ -1,4 +1,7 @@
 from terrascript import _data
+class kubernetes_secret(_data): pass
+secret = kubernetes_secret
+
 class kubernetes_service(_data): pass
 service = kubernetes_service
 

@@ -1,15 +1,93 @@
 from terrascript import _resource
-class azurerm_application_gateway(_resource): pass
-application_gateway = azurerm_application_gateway
+class azurerm_api_management(_resource): pass
+api_management = azurerm_api_management
 
-class azurerm_application_insights(_resource): pass
-application_insights = azurerm_application_insights
+class azurerm_api_management_api(_resource): pass
+api_management_api = azurerm_api_management_api
+
+class azurerm_api_management_api_operation(_resource): pass
+api_management_api_operation = azurerm_api_management_api_operation
+
+class azurerm_api_management_api_operation_policy(_resource): pass
+api_management_api_operation_policy = azurerm_api_management_api_operation_policy
+
+class azurerm_api_management_api_policy(_resource): pass
+api_management_api_policy = azurerm_api_management_api_policy
+
+class azurerm_api_management_api_schema(_resource): pass
+api_management_api_schema = azurerm_api_management_api_schema
+
+class azurerm_api_management_api_version_set(_resource): pass
+api_management_api_version_set = azurerm_api_management_api_version_set
+
+class azurerm_api_management_authorization_server(_resource): pass
+api_management_authorization_server = azurerm_api_management_authorization_server
+
+class azurerm_api_management_certificate(_resource): pass
+api_management_certificate = azurerm_api_management_certificate
+
+class azurerm_api_management_group(_resource): pass
+api_management_group = azurerm_api_management_group
+
+class azurerm_api_management_group_user(_resource): pass
+api_management_group_user = azurerm_api_management_group_user
+
+class azurerm_api_management_logger(_resource): pass
+api_management_logger = azurerm_api_management_logger
+
+class azurerm_api_management_openid_connect_provider(_resource): pass
+api_management_openid_connect_provider = azurerm_api_management_openid_connect_provider
+
+class azurerm_api_management_product(_resource): pass
+api_management_product = azurerm_api_management_product
+
+class azurerm_api_management_product_api(_resource): pass
+api_management_product_api = azurerm_api_management_product_api
+
+class azurerm_api_management_product_group(_resource): pass
+api_management_product_group = azurerm_api_management_product_group
+
+class azurerm_api_management_product_policy(_resource): pass
+api_management_product_policy = azurerm_api_management_product_policy
+
+class azurerm_api_management_property(_resource): pass
+api_management_property = azurerm_api_management_property
+
+class azurerm_api_management_subscription(_resource): pass
+api_management_subscription = azurerm_api_management_subscription
+
+class azurerm_api_management_user(_resource): pass
+api_management_user = azurerm_api_management_user
+
+class azurerm_app_service_active_slot(_resource): pass
+app_service_active_slot = azurerm_app_service_active_slot
+
+class azurerm_app_service_custom_hostname_binding(_resource): pass
+app_service_custom_hostname_binding = azurerm_app_service_custom_hostname_binding
+
+class azurerm_app_service_plan(_resource): pass
+app_service_plan = azurerm_app_service_plan
+
+class azurerm_app_service_slot(_resource): pass
+app_service_slot = azurerm_app_service_slot
 
 class azurerm_app_service(_resource): pass
 app_service = azurerm_app_service
 
-class azurerm_app_service_plan(_resource): pass
-app_service_plan = azurerm_app_service_plan
+class azurerm_application_gateway(_resource): pass
+application_gateway = azurerm_application_gateway
+
+class azurerm_application_insights_api_key(_resource): pass
+application_insights_api_key = azurerm_application_insights_api_key
+
+class azurerm_application_insights(_resource): pass
+application_insights = azurerm_application_insights
+
+class azurerm_application_insights_web_test(_resource): pass
+application_insights_web_test = azurerm_application_insights_web_test
+
+class azurerm_application_security_group(_resource): pass
+application_security_group = azurerm_application_security_group
 
 class azurerm_automation_account(_resource): pass
 automation_account = azurerm_automation_account
@@ -17,14 +95,56 @@ automation_account = azurerm_automation_account
 class azurerm_automation_credential(_resource): pass
 automation_credential = azurerm_automation_credential
 
+class azurerm_automation_dsc_configuration(_resource): pass
+automation_dsc_configuration = azurerm_automation_dsc_configuration
+
+class azurerm_automation_dsc_nodeconfiguration(_resource): pass
+automation_dsc_nodeconfiguration = azurerm_automation_dsc_nodeconfiguration
+
+class azurerm_automation_module(_resource): pass
+automation_module = azurerm_automation_module
+
 class azurerm_automation_runbook(_resource): pass
 automation_runbook = azurerm_automation_runbook
 
 class azurerm_automation_schedule(_resource): pass
 automation_schedule = azurerm_automation_schedule
 
+class azurerm_automation_variable_bool(_resource): pass
+automation_variable_bool = azurerm_automation_variable_bool
+
+class azurerm_automation_variable_datetime(_resource): pass
+automation_variable_datetime = azurerm_automation_variable_datetime
+
+class azurerm_automation_variable_int(_resource): pass
+automation_variable_int = azurerm_automation_variable_int
+
+class azurerm_automation_variable_string(_resource): pass
+automation_variable_string = azurerm_automation_variable_string
+
+class azurerm_autoscale_setting(_resource): pass
+autoscale_setting = azurerm_autoscale_setting
+
 class azurerm_availability_set(_resource): pass
 availability_set = azurerm_availability_set
+
+class azurerm_azuread_application(_resource): pass
+azuread_application = azurerm_azuread_application
+
+class azurerm_azuread_service_principal_password(_resource): pass
+azuread_service_principal_password = azurerm_azuread_service_principal_password
+
+class azurerm_azuread_service_principal(_resource): pass
+azuread_service_principal = azurerm_azuread_service_principal
+
+class azurerm_batch_account(_resource): pass
+batch_account = azurerm_batch_account
+
+class azurerm_batch_certificate(_resource): pass
+batch_certificate = azurerm_batch_certificate
+
+class azurerm_batch_pool(_resource): pass
+batch_pool = azurerm_batch_pool
 
 class azurerm_cdn_endpoint(_resource): pass
 cdn_endpoint = azurerm_cdn_endpoint
@@ -32,23 +152,113 @@ cdn_endpoint = azurerm_cdn_endpoint
 class azurerm_cdn_profile(_resource): pass
 cdn_profile = azurerm_cdn_profile
 
+class azurerm_cognitive_account(_resource): pass
+cognitive_account = azurerm_cognitive_account
+
+class azurerm_connection_monitor(_resource): pass
+connection_monitor = azurerm_connection_monitor
+
+class azurerm_container_group(_resource): pass
+container_group = azurerm_container_group
+
 class azurerm_container_registry(_resource): pass
 container_registry = azurerm_container_registry
 
 class azurerm_container_service(_resource): pass
 container_service = azurerm_container_service
 
-class azurerm_container_group(_resource): pass
-container_group = azurerm_container_group
-
 class azurerm_cosmosdb_account(_resource): pass
 cosmosdb_account = azurerm_cosmosdb_account
+
+class azurerm_cosmosdb_cassandra_keyspace(_resource): pass
+cosmosdb_cassandra_keyspace = azurerm_cosmosdb_cassandra_keyspace
+
+class azurerm_cosmosdb_mongo_collection(_resource): pass
+cosmosdb_mongo_collection = azurerm_cosmosdb_mongo_collection
+
+class azurerm_cosmosdb_mongo_database(_resource): pass
+cosmosdb_mongo_database = azurerm_cosmosdb_mongo_database
+
+class azurerm_cosmosdb_sql_database(_resource): pass
+cosmosdb_sql_database = azurerm_cosmosdb_sql_database
+
+class azurerm_cosmosdb_table(_resource): pass
+cosmosdb_table = azurerm_cosmosdb_table
+
+class azurerm_data_factory(_resource): pass
+data_factory = azurerm_data_factory
+
+class azurerm_data_factory_dataset_mysql(_resource): pass
+data_factory_dataset_mysql = azurerm_data_factory_dataset_mysql
+
+class azurerm_data_factory_dataset_postgresql(_resource): pass
+data_factory_dataset_postgresql = azurerm_data_factory_dataset_postgresql
+
+class azurerm_data_factory_dataset_sql_server_table(_resource): pass
+data_factory_dataset_sql_server_table = azurerm_data_factory_dataset_sql_server_table
+
+class azurerm_data_factory_linked_service_data_lake_storage_gen2(_resource): pass
+data_factory_linked_service_data_lake_storage_gen2 = azurerm_data_factory_linked_service_data_lake_storage_gen2
+
+class azurerm_data_factory_linked_service_mysql(_resource): pass
+data_factory_linked_service_mysql = azurerm_data_factory_linked_service_mysql
+
+class azurerm_data_factory_linked_service_postgresql(_resource): pass
+data_factory_linked_service_postgresql = azurerm_data_factory_linked_service_postgresql
+
+class azurerm_data_factory_linked_service_sql_server(_resource): pass
+data_factory_linked_service_sql_server = azurerm_data_factory_linked_service_sql_server
+
+class azurerm_data_factory_pipeline(_resource): pass
+data_factory_pipeline = azurerm_data_factory_pipeline
+
+class azurerm_data_lake_analytics_account(_resource): pass
+data_lake_analytics_account = azurerm_data_lake_analytics_account
+
+class azurerm_data_lake_analytics_firewall_rule(_resource): pass
+data_lake_analytics_firewall_rule = azurerm_data_lake_analytics_firewall_rule
+
+class azurerm_data_lake_store_file(_resource): pass
+data_lake_store_file = azurerm_data_lake_store_file
+
+class azurerm_data_lake_store_firewall_rule(_resource): pass
+data_lake_store_firewall_rule = azurerm_data_lake_store_firewall_rule
+
+class azurerm_data_lake_store(_resource): pass
+data_lake_store = azurerm_data_lake_store
+
+class azurerm_databricks_workspace(_resource): pass
+databricks_workspace = azurerm_databricks_workspace
+
+class azurerm_ddos_protection_plan(_resource): pass
+ddos_protection_plan = azurerm_ddos_protection_plan
+
+class azurerm_dev_test_lab(_resource): pass
+dev_test_lab = azurerm_dev_test_lab
+
+class azurerm_dev_test_linux_virtual_machine(_resource): pass
+dev_test_linux_virtual_machine = azurerm_dev_test_linux_virtual_machine
+
+class azurerm_dev_test_policy(_resource): pass
+dev_test_policy = azurerm_dev_test_policy
+
+class azurerm_dev_test_virtual_network(_resource): pass
+dev_test_virtual_network = azurerm_dev_test_virtual_network
+
+class azurerm_dev_test_windows_virtual_machine(_resource): pass
+dev_test_windows_virtual_machine = azurerm_dev_test_windows_virtual_machine
+
+class azurerm_devspace_controller(_resource): pass
+devspace_controller = azurerm_devspace_controller
 
 class azurerm_dns_a_record(_resource): pass
 dns_a_record = azurerm_dns_a_record
 
 class azurerm_dns_aaaa_record(_resource): pass
 dns_aaaa_record = azurerm_dns_aaaa_record
+
+class azurerm_dns_caa_record(_resource): pass
+dns_caa_record = azurerm_dns_caa_record
 
 class azurerm_dns_cname_record(_resource): pass
 dns_cname_record = azurerm_dns_cname_record
@@ -71,11 +281,14 @@ dns_txt_record = azurerm_dns_txt_record
 class azurerm_dns_zone(_resource): pass
 dns_zone = azurerm_dns_zone
 
+class azurerm_eventgrid_domain(_resource): pass
+eventgrid_domain = azurerm_eventgrid_domain
+
+class azurerm_eventgrid_event_subscription(_resource): pass
+eventgrid_event_subscription = azurerm_eventgrid_event_subscription
+
 class azurerm_eventgrid_topic(_resource): pass
 eventgrid_topic = azurerm_eventgrid_topic
-
-class azurerm_eventhub(_resource): pass
-eventhub = azurerm_eventhub
 
 class azurerm_eventhub_authorization_rule(_resource): pass
 eventhub_authorization_rule = azurerm_eventhub_authorization_rule
@@ -83,17 +296,77 @@ eventhub_authorization_rule = azurerm_eventhub_authorization_rule
 class azurerm_eventhub_consumer_group(_resource): pass
 eventhub_consumer_group = azurerm_eventhub_consumer_group
 
+class azurerm_eventhub_namespace_authorization_rule(_resource): pass
+eventhub_namespace_authorization_rule = azurerm_eventhub_namespace_authorization_rule
+
 class azurerm_eventhub_namespace(_resource): pass
 eventhub_namespace = azurerm_eventhub_namespace
+
+class azurerm_eventhub(_resource): pass
+eventhub = azurerm_eventhub
+
+class azurerm_express_route_circuit_authorization(_resource): pass
+express_route_circuit_authorization = azurerm_express_route_circuit_authorization
+
+class azurerm_express_route_circuit_peering(_resource): pass
+express_route_circuit_peering = azurerm_express_route_circuit_peering
 
 class azurerm_express_route_circuit(_resource): pass
 express_route_circuit = azurerm_express_route_circuit
 
+class azurerm_firewall_application_rule_collection(_resource): pass
+firewall_application_rule_collection = azurerm_firewall_application_rule_collection
+
+class azurerm_firewall_nat_rule_collection(_resource): pass
+firewall_nat_rule_collection = azurerm_firewall_nat_rule_collection
+
+class azurerm_firewall_network_rule_collection(_resource): pass
+firewall_network_rule_collection = azurerm_firewall_network_rule_collection
+
+class azurerm_firewall(_resource): pass
+firewall = azurerm_firewall
+
+class azurerm_function_app(_resource): pass
+function_app = azurerm_function_app
+
+class azurerm_hdinsight_hadoop_cluster(_resource): pass
+hdinsight_hadoop_cluster = azurerm_hdinsight_hadoop_cluster
+
+class azurerm_hdinsight_hbase_cluster(_resource): pass
+hdinsight_hbase_cluster = azurerm_hdinsight_hbase_cluster
+
+class azurerm_hdinsight_interactive_query_cluster(_resource): pass
+hdinsight_interactive_query_cluster = azurerm_hdinsight_interactive_query_cluster
+
+class azurerm_hdinsight_kafka_cluster(_resource): pass
+hdinsight_kafka_cluster = azurerm_hdinsight_kafka_cluster
+
+class azurerm_hdinsight_ml_services_cluster(_resource): pass
+hdinsight_ml_services_cluster = azurerm_hdinsight_ml_services_cluster
+
+class azurerm_hdinsight_rserver_cluster(_resource): pass
+hdinsight_rserver_cluster = azurerm_hdinsight_rserver_cluster
+
+class azurerm_hdinsight_spark_cluster(_resource): pass
+hdinsight_spark_cluster = azurerm_hdinsight_spark_cluster
+
+class azurerm_hdinsight_storm_cluster(_resource): pass
+hdinsight_storm_cluster = azurerm_hdinsight_storm_cluster
+
 class azurerm_image(_resource): pass
 image = azurerm_image
 
-class azurerm_key_vault(_resource): pass
-key_vault = azurerm_key_vault
+class azurerm_iothub_consumer_group(_resource): pass
+iothub_consumer_group = azurerm_iothub_consumer_group
+
+class azurerm_iothub(_resource): pass
+iothub = azurerm_iothub
+
+class azurerm_iothub_shared_access_policy(_resource): pass
+iothub_shared_access_policy = azurerm_iothub_shared_access_policy
+
+class azurerm_key_vault_access_policy(_resource): pass
+key_vault_access_policy = azurerm_key_vault_access_policy
 
 class azurerm_key_vault_certificate(_resource): pass
 key_vault_certificate = azurerm_key_vault_certificate
@@ -104,35 +377,110 @@ key_vault_key = azurerm_key_vault_key
 class azurerm_key_vault_secret(_resource): pass
 key_vault_secret = azurerm_key_vault_secret
 
-class azurerm_lb(_resource): pass
-lb = azurerm_lb
+class azurerm_key_vault(_resource): pass
+key_vault = azurerm_key_vault
+
+class azurerm_kubernetes_cluster(_resource): pass
+kubernetes_cluster = azurerm_kubernetes_cluster
 
 class azurerm_lb_backend_address_pool(_resource): pass
 lb_backend_address_pool = azurerm_lb_backend_address_pool
 
-class azurerm_lb_nat_rule(_resource): pass
-lb_nat_rule = azurerm_lb_nat_rule
-
 class azurerm_lb_nat_pool(_resource): pass
 lb_nat_pool = azurerm_lb_nat_pool
+
+class azurerm_lb_nat_rule(_resource): pass
+lb_nat_rule = azurerm_lb_nat_rule
 
 class azurerm_lb_probe(_resource): pass
 lb_probe = azurerm_lb_probe
 
+class azurerm_lb_outbound_rule(_resource): pass
+lb_outbound_rule = azurerm_lb_outbound_rule
+
 class azurerm_lb_rule(_resource): pass
 lb_rule = azurerm_lb_rule
+
+class azurerm_lb(_resource): pass
+lb = azurerm_lb
 
 class azurerm_local_network_gateway(_resource): pass
 local_network_gateway = azurerm_local_network_gateway
 
+class azurerm_log_analytics_solution(_resource): pass
+log_analytics_solution = azurerm_log_analytics_solution
+
+class azurerm_log_analytics_linked_service(_resource): pass
+log_analytics_linked_service = azurerm_log_analytics_linked_service
+
+class azurerm_log_analytics_workspace_linked_service(_resource): pass
+log_analytics_workspace_linked_service = azurerm_log_analytics_workspace_linked_service
+
 class azurerm_log_analytics_workspace(_resource): pass
 log_analytics_workspace = azurerm_log_analytics_workspace
+
+class azurerm_logic_app_action_custom(_resource): pass
+logic_app_action_custom = azurerm_logic_app_action_custom
+
+class azurerm_logic_app_action_http(_resource): pass
+logic_app_action_http = azurerm_logic_app_action_http
+
+class azurerm_logic_app_trigger_custom(_resource): pass
+logic_app_trigger_custom = azurerm_logic_app_trigger_custom
+
+class azurerm_logic_app_trigger_http_request(_resource): pass
+logic_app_trigger_http_request = azurerm_logic_app_trigger_http_request
+
+class azurerm_logic_app_trigger_recurrence(_resource): pass
+logic_app_trigger_recurrence = azurerm_logic_app_trigger_recurrence
+
+class azurerm_logic_app_workflow(_resource): pass
+logic_app_workflow = azurerm_logic_app_workflow
 
 class azurerm_managed_disk(_resource): pass
 managed_disk = azurerm_managed_disk
 
+class azurerm_management_group(_resource): pass
+management_group = azurerm_management_group
+
 class azurerm_management_lock(_resource): pass
 management_lock = azurerm_management_lock
+
+class azurerm_mariadb_database(_resource): pass
+mariadb_database = azurerm_mariadb_database
+
+class azurerm_mariadb_server(_resource): pass
+mariadb_server = azurerm_mariadb_server
+
+class azurerm_media_services_account(_resource): pass
+media_services_account = azurerm_media_services_account
+
+class azurerm_metric_alertrule(_resource): pass
+metric_alertrule = azurerm_metric_alertrule
+
+class azurerm_monitor_autoscale_setting(_resource): pass
+monitor_autoscale_setting = azurerm_monitor_autoscale_setting
+
+class azurerm_monitor_action_group(_resource): pass
+monitor_action_group = azurerm_monitor_action_group
+
+class azurerm_monitor_activity_log_alert(_resource): pass
+monitor_activity_log_alert = azurerm_monitor_activity_log_alert
+
+class azurerm_monitor_diagnostic_setting(_resource): pass
+monitor_diagnostic_setting = azurerm_monitor_diagnostic_setting
+
+class azurerm_monitor_log_profile(_resource): pass
+monitor_log_profile = azurerm_monitor_log_profile
+
+class azurerm_monitor_metric_alert(_resource): pass
+monitor_metric_alert = azurerm_monitor_metric_alert
+
+class azurerm_monitor_metric_alertrule(_resource): pass
+monitor_metric_alertrule = azurerm_monitor_metric_alertrule
+
+class azurerm_mssql_elasticpool(_resource): pass
+mssql_elasticpool = azurerm_mssql_elasticpool
 
 class azurerm_mysql_configuration(_resource): pass
 mysql_configuration = azurerm_mysql_configuration
@@ -146,8 +494,35 @@ mysql_firewall_rule = azurerm_mysql_firewall_rule
 class azurerm_mysql_server(_resource): pass
 mysql_server = azurerm_mysql_server
 
+class azurerm_mysql_virtual_network_rule(_resource): pass
+mysql_virtual_network_rule = azurerm_mysql_virtual_network_rule
+
+class azurerm_network_connection_monitor(_resource): pass
+network_connection_monitor = azurerm_network_connection_monitor
+
+class azurerm_network_ddos_protection_plan(_resource): pass
+network_ddos_protection_plan = azurerm_network_ddos_protection_plan
+
 class azurerm_network_interface(_resource): pass
 network_interface = azurerm_network_interface
+
+class azurerm_network_interface_application_gateway_backend_address_pool_association(_resource): pass
+network_interface_application_gateway_backend_address_pool_association = azurerm_network_interface_application_gateway_backend_address_pool_association
+
+class azurerm_network_interface_application_security_group_association(_resource): pass
+network_interface_application_security_group_association = azurerm_network_interface_application_security_group_association
+
+class azurerm_network_interface_backend_address_pool_association(_resource): pass
+network_interface_backend_address_pool_association = azurerm_network_interface_backend_address_pool_association
+
+class azurerm_network_interface_nat_rule_association(_resource): pass
+network_interface_nat_rule_association = azurerm_network_interface_nat_rule_association
+
+class azurerm_network_packet_capture(_resource): pass
+network_packet_capture = azurerm_network_packet_capture
+
+class azurerm_network_profile(_resource): pass
+network_profile = azurerm_network_profile
 
 class azurerm_network_security_group(_resource): pass
 network_security_group = azurerm_network_security_group
@@ -157,6 +532,27 @@ network_security_rule = azurerm_network_security_rule
 
 class azurerm_network_watcher(_resource): pass
 network_watcher = azurerm_network_watcher
+
+class azurerm_notification_hub_authorization_rule(_resource): pass
+notification_hub_authorization_rule = azurerm_notification_hub_authorization_rule
+
+class azurerm_notification_hub_namespace(_resource): pass
+notification_hub_namespace = azurerm_notification_hub_namespace
+
+class azurerm_notification_hub(_resource): pass
+notification_hub = azurerm_notification_hub
+
+class azurerm_packet_capture(_resource): pass
+packet_capture = azurerm_packet_capture
+
+class azurerm_policy_assignment(_resource): pass
+policy_assignment = azurerm_policy_assignment
+
+class azurerm_policy_definition(_resource): pass
+policy_definition = azurerm_policy_definition
+
+class azurerm_policy_set_definition(_resource): pass
+policy_set_definition = azurerm_policy_set_definition
 
 class azurerm_postgresql_configuration(_resource): pass
 postgresql_configuration = azurerm_postgresql_configuration
@@ -170,14 +566,32 @@ postgresql_firewall_rule = azurerm_postgresql_firewall_rule
 class azurerm_postgresql_server(_resource): pass
 postgresql_server = azurerm_postgresql_server
 
+class azurerm_postgresql_virtual_network_rule(_resource): pass
+postgresql_virtual_network_rule = azurerm_postgresql_virtual_network_rule
+
 class azurerm_public_ip(_resource): pass
 public_ip = azurerm_public_ip
+
+class azurerm_public_ip_prefix(_resource): pass
+public_ip_prefix = azurerm_public_ip_prefix
+
+class azurerm_recovery_services_protected_vm(_resource): pass
+recovery_services_protected_vm = azurerm_recovery_services_protected_vm
+
+class azurerm_recovery_services_protection_policy_vm(_resource): pass
+recovery_services_protection_policy_vm = azurerm_recovery_services_protection_policy_vm
+
+class azurerm_recovery_services_vault(_resource): pass
+recovery_services_vault = azurerm_recovery_services_vault
 
 class azurerm_redis_cache(_resource): pass
 redis_cache = azurerm_redis_cache
 
 class azurerm_redis_firewall_rule(_resource): pass
 redis_firewall_rule = azurerm_redis_firewall_rule
+
+class azurerm_relay_namespace(_resource): pass
+relay_namespace = azurerm_relay_namespace
 
 class azurerm_resource_group(_resource): pass
 resource_group = azurerm_resource_group
@@ -188,29 +602,74 @@ role_assignment = azurerm_role_assignment
 class azurerm_role_definition(_resource): pass
 role_definition = azurerm_role_definition
 
+class azurerm_route_table(_resource): pass
+route_table = azurerm_route_table
+
 class azurerm_route(_resource): pass
 route = azurerm_route
 
-class azurerm_route_table(_resource): pass
-route_table = azurerm_route_table
+class azurerm_scheduler_job_collection(_resource): pass
+scheduler_job_collection = azurerm_scheduler_job_collection
+
+class azurerm_scheduler_job(_resource): pass
+scheduler_job = azurerm_scheduler_job
 
 class azurerm_search_service(_resource): pass
 search_service = azurerm_search_service
 
+class azurerm_security_center_contact(_resource): pass
+security_center_contact = azurerm_security_center_contact
+
+class azurerm_security_center_subscription_pricing(_resource): pass
+security_center_subscription_pricing = azurerm_security_center_subscription_pricing
+
+class azurerm_security_center_workspace(_resource): pass
+security_center_workspace = azurerm_security_center_workspace
+
+class azurerm_service_fabric_cluster(_resource): pass
+service_fabric_cluster = azurerm_service_fabric_cluster
+
+class azurerm_servicebus_namespace_authorization_rule(_resource): pass
+servicebus_namespace_authorization_rule = azurerm_servicebus_namespace_authorization_rule
+
 class azurerm_servicebus_namespace(_resource): pass
 servicebus_namespace = azurerm_servicebus_namespace
+
+class azurerm_servicebus_queue_authorization_rule(_resource): pass
+servicebus_queue_authorization_rule = azurerm_servicebus_queue_authorization_rule
 
 class azurerm_servicebus_queue(_resource): pass
 servicebus_queue = azurerm_servicebus_queue
 
+class azurerm_servicebus_subscription_rule(_resource): pass
+servicebus_subscription_rule = azurerm_servicebus_subscription_rule
+
 class azurerm_servicebus_subscription(_resource): pass
 servicebus_subscription = azurerm_servicebus_subscription
+
+class azurerm_servicebus_topic_authorization_rule(_resource): pass
+servicebus_topic_authorization_rule = azurerm_servicebus_topic_authorization_rule
 
 class azurerm_servicebus_topic(_resource): pass
 servicebus_topic = azurerm_servicebus_topic
 
+class azurerm_shared_image_gallery(_resource): pass
+shared_image_gallery = azurerm_shared_image_gallery
+
+class azurerm_shared_image_version(_resource): pass
+shared_image_version = azurerm_shared_image_version
+
+class azurerm_shared_image(_resource): pass
+shared_image = azurerm_shared_image
+
+class azurerm_signalr_service(_resource): pass
+signalr_service = azurerm_signalr_service
+
 class azurerm_snapshot(_resource): pass
 snapshot = azurerm_snapshot
+
+class azurerm_sql_active_directory_administrator(_resource): pass
+sql_active_directory_administrator = azurerm_sql_active_directory_administrator
 
 class azurerm_sql_database(_resource): pass
 sql_database = azurerm_sql_database
@@ -224,6 +683,9 @@ sql_firewall_rule = azurerm_sql_firewall_rule
 class azurerm_sql_server(_resource): pass
 sql_server = azurerm_sql_server
 
+class azurerm_sql_virtual_network_rule(_resource): pass
+sql_virtual_network_rule = azurerm_sql_virtual_network_rule
+
 class azurerm_storage_account(_resource): pass
 storage_account = azurerm_storage_account
 
@@ -233,14 +695,44 @@ storage_blob = azurerm_storage_blob
 class azurerm_storage_container(_resource): pass
 storage_container = azurerm_storage_container
 
-class azurerm_storage_share(_resource): pass
-storage_share = azurerm_storage_share
-
 class azurerm_storage_queue(_resource): pass
 storage_queue = azurerm_storage_queue
 
+class azurerm_storage_share(_resource): pass
+storage_share = azurerm_storage_share
+
 class azurerm_storage_table(_resource): pass
 storage_table = azurerm_storage_table
+
+class azurerm_stream_analytics_job(_resource): pass
+stream_analytics_job = azurerm_stream_analytics_job
+
+class azurerm_stream_analytics_function_javascript_udf(_resource): pass
+stream_analytics_function_javascript_udf = azurerm_stream_analytics_function_javascript_udf
+
+class azurerm_stream_analytics_output_blob(_resource): pass
+stream_analytics_output_blob = azurerm_stream_analytics_output_blob
+
+class azurerm_stream_analytics_output_eventhub(_resource): pass
+stream_analytics_output_eventhub = azurerm_stream_analytics_output_eventhub
+
+class azurerm_stream_analytics_output_servicebus_queue(_resource): pass
+stream_analytics_output_servicebus_queue = azurerm_stream_analytics_output_servicebus_queue
+
+class azurerm_stream_analytics_stream_input_blob(_resource): pass
+stream_analytics_stream_input_blob = azurerm_stream_analytics_stream_input_blob
+
+class azurerm_stream_analytics_stream_input_eventhub(_resource): pass
+stream_analytics_stream_input_eventhub = azurerm_stream_analytics_stream_input_eventhub
+
+class azurerm_stream_analytics_stream_input_iothub(_resource): pass
+stream_analytics_stream_input_iothub = azurerm_stream_analytics_stream_input_iothub
+
+class azurerm_subnet_network_security_group_association(_resource): pass
+subnet_network_security_group_association = azurerm_subnet_network_security_group_association
+
+class azurerm_subnet_route_table_association(_resource): pass
+subnet_route_table_association = azurerm_subnet_route_table_association
 
 class azurerm_subnet(_resource): pass
 subnet = azurerm_subnet
@@ -254,20 +746,30 @@ traffic_manager_endpoint = azurerm_traffic_manager_endpoint
 class azurerm_traffic_manager_profile(_resource): pass
 traffic_manager_profile = azurerm_traffic_manager_profile
 
+class azurerm_user_assigned_identity(_resource): pass
+user_assigned_identity = azurerm_user_assigned_identity
+
+class azurerm_virtual_machine_data_disk_attachment(_resource): pass
+virtual_machine_data_disk_attachment = azurerm_virtual_machine_data_disk_attachment
+
 class azurerm_virtual_machine_extension(_resource): pass
 virtual_machine_extension = azurerm_virtual_machine_extension
-
-class azurerm_virtual_machine(_resource): pass
-virtual_machine = azurerm_virtual_machine
 
 class azurerm_virtual_machine_scale_set(_resource): pass
 virtual_machine_scale_set = azurerm_virtual_machine_scale_set
 
-class azurerm_virtual_network(_resource): pass
-virtual_network = azurerm_virtual_network
+class azurerm_virtual_machine(_resource): pass
+virtual_machine = azurerm_virtual_machine
+
+class azurerm_virtual_network_gateway_connection(_resource): pass
+virtual_network_gateway_connection = azurerm_virtual_network_gateway_connection
+
+class azurerm_virtual_network_gateway(_resource): pass
+virtual_network_gateway = azurerm_virtual_network_gateway
 
 class azurerm_virtual_network_peering(_resource): pass
 virtual_network_peering = azurerm_virtual_network_peering
 
-class azurerm_virtual_machine_data_disk_attachment(_resource): pass
-virtual_machine_data_disk_attachment = azurerm_virtual_machine_data_disk_attachment
+class azurerm_virtual_network(_resource): pass
+virtual_network = azurerm_virtual_network
+

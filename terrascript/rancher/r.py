@@ -23,3 +23,6 @@ secret = rancher_secret
 class rancher_stack(_resource): pass
 stack = rancher_stack
 
+class rancher_volume(_resource): pass
+volume = rancher_volume
+

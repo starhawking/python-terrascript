@@ -14,3 +14,6 @@ string = random_string
 class random_integer(_resource): pass
 integer = random_integer
 
+class random_uuid(_resource): pass
+uuid = random_uuid
+
