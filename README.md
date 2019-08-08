@@ -80,7 +80,7 @@ up to you to ensure that the generated output makes sense to Terraform.**
 * [Provisioners](doc/provisioners.md)
 * [Variables](doc/variables.md)
 * [Modules](doc/modules.md)
-* [Local Values](locals.md)
+* [Local Values](doc/locals.md)
 * [Backends](doc/backends.md)
 * [Interpolation](doc/interpolation.md)
 * [Functions](doc/functions.md)
