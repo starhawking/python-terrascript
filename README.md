@@ -10,7 +10,7 @@ files, while harnessing all the features the Python 3 (3.3+) language provides.
 
 ## Compatibility
 
-| Terraform | Terrascript | Notes |                                                           |
+| Terraform | Terrascript | Notes                                                             |
 |-----------|-------------|-------------------------------------------------------------------|
 | >= 0.12.x | 0.8.x       | Terrascript 0.8 will be an (almost) complete rewrite              |
 | >= 0.12.x | 0.7.x       | Initial support for Terraform 0.12. Will be replaced by 0.8 later |
