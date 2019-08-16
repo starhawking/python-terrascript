@@ -1,1 +1,1 @@
-from terrascript import _data
+from terrascript import Data

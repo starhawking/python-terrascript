@@ -1,1 +1,1 @@
-from terrascript import _resource
+from terrascript import Resource

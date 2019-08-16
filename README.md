@@ -82,11 +82,11 @@ up to you to ensure that the generated output makes sense to Terraform.**
 
 ## Documentation
 
+* [Terraform Settings](doc/terraform.md) (including backend settings)
 * [Dependencies](doc/dependencies.md)
 * [Provisioners](doc/provisioners.md)
 * [Variables](doc/variables.md)
 * [Modules](doc/modules.md)
-* [Backends](doc/backends.md)
 * [Interpolation](doc/interpolation.md)
 * [Functions](doc/functions.md)
 
