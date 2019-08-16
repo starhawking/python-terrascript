@@ -6,7 +6,7 @@
 
 | Git branch       | Description                                            | Accepting Pull Requests |
 |------------------|--------------------------------------------------------|-------------------------|
-| ``develop``      | Terrascript 0.8.x releases supporting Terraform 0.12.x | Not at the moment       |
+| ``develop``      | Terrascript 0.8.x releases supporting Terraform 0.12.x | Not at the moment (*)   |
 | ``develop-0.7``  | Terrascript 0.7.x releases supporting Terraform 0.12.x | Yes                     |
 | ``develop-0.6``  | Terrascript 0.6.x releases supporting Terraform 0.11.x | Yes                     |
 | ``master``       | Equals latest Terrascript 0.6.x release                | Never                   |
@@ -14,7 +14,7 @@
 
 Please make sure to submit the Pull Requests to the correct branch or I will have to reject them. 
 
-The ``develop`` branch is currently undergoing a major re-write of the Python code and is likely to be a bit 
+(*) The ``develop`` branch is currently undergoing a major re-write of the Python code and is likely to be a bit 
 of a mess at this stage. In fact, it is likely to not work at all.
 
 ## Pull Requests
