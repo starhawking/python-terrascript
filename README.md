@@ -8,10 +8,13 @@
 **Terrascript** provides a method of generating [Terraform](https://www.terraform.io)
 files, while harnessing all the features the Python 3 (3.3+) language provides. 
 
-## Notes
+## Compatibility
 
-* **Terrascript** release 0.5.0 introduced changes that are not backwards compatible with earlier releases.
-* [Terraform 0.12](https://www.hashicorp.com/blog/terraform-0-1-2-preview) seems to introduce some [changes to its JSON syntax](https://www.hashicorp.com/blog/terraform-0-12-reliable-json-syntax). I have not investigated this yet and any feedback is very welcome.
+| Terraform | Terrascript | Notes |                                                           |
+|-----------|-------------|-------------------------------------------------------------------|
+| >= 0.12.x | 0.8.x       | Terrascript 0.8 will be an (almost) complete rewrite              |
+| >= 0.12.x | 0.7.x       | Initial support for Terraform 0.12. Will be replaced by 0.8 later |
+| <= 0.11.x | 0.6.x       |                                                                   |
 
 ## Example
 
