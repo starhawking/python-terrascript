@@ -1,15 +1,27 @@
 # Changelog
 
-## [Unreleased]
+## [0.8.0] - Not yet released
+Release 0.8.0 will be a major re-write of the code.
+## [0.7.0] - Not yet released
 ### Added
-* Added locals resource (pull #71)
-* Added null provider resouces (pull #69)
+* Support for Terraform 0.12 JSON syntax.
+* Lots of other stuff (pull #72)
+## [0.6.1] - 2019-08-17
+### Added
+* Locals resouce (pull #71)
+* null provider resouces (pull #69)
+* aws_rds_cluster_endpoint (pull #60)
+* aws_kms_grant resource (pull #61)
+* aws_config_configuration_aggregator resource (pull #61)
+* Added many resources (pull #67)
 ### Updated
 * Updated all terraform provider resources (pull #67)
 * Updated DigitalOcean resources (pull #58)
 ### Fixed
 * Added missing escape quote to the result json dump (pull #57)
-
+* Remove temp directory after validation (pull #64)
+### Removed
+* Support for all Terraform versions prior to release 0.12.
 ## [0.6.0] - 2018-09-28
 ### Added
 * vSphere data sources/resources (pull #52)

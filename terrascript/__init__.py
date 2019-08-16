@@ -7,7 +7,7 @@ this project.
 """
 
 __author__ = 'Markus Juenemann <markus@juenemann.net>'
-__version__ = '0.6.0'
+__version__ = '0.6.1'
 __license__ = 'BSD 2-clause "Simplified" License'
 
 INDENT = 2
