@@ -15,8 +15,8 @@ This is the ``develop`` branch of Terrascript which is currently undergoing a ma
 | Terraform | Terrascript | Notes                                                             | PyPi | Github |
 |-----------|-------------|-------------------------------------------------------------------|------|--------|
 | 0.12.x    | 0.8.x       | Terrascript 0.8 will be an (almost) complete rewrite              |      |        |
-| 0.12.x    | 0.7.x       | Initial support for Terraform 0.12. Will be replaced by 0.8 later |      |        |
-| 0.11.x    | 0.6.x       | Last releases to support Terraform 0.11 and earlier               |      |        |                                                 
+| 0.12.x    | 0.7.x       | Initial support for Terraform 0.12. Will be replaced by 0.8 later |                                             |        |
+| 0.11.x    | 0.6.x       | Last releases to support Terraform 0.11 and earlier               |  [0.6.1](https://pypi.org/manage/project/terrascript/release/0.6.1/)    | [0.6.1](https://github.com/mjuenema/python-terrascript/tree/0.6.1) |                                                 
 
 ## Example
 
