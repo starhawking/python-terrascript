@@ -16,6 +16,7 @@ List of contributors (bug reports, fixes, suggestions, anything) to
 * Kumaresh
 * leosanchez16
 * Ryan Walder
+* Maor Friedman
 
 Did I miss anyone?
 
