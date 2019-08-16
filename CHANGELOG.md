@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 ### Added
-* Added locals resouce (pull #71)
+* Added locals resource (pull #71)
 * Added null provider resouces (pull #69)
 ### Updated
 * Updated all terraform provider resources (pull #67)
