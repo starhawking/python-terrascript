@@ -8,6 +8,8 @@
 **Terrascript** provides a method of generating [Terraform](https://www.terraform.io)
 files, while harnessing all the features the Python 3 (3.3+) language provides. 
 
+Please check the [https://github.com/mjuenema/python-terrascript/blob/develop/README.md](README.md) file in the ``develop`` branch for additional information.
+
 ## Notes
 
 * **Terrascript** release 0.5.0 introduced changes that are not backwards compatible with earlier releases.
