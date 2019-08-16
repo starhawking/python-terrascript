@@ -8,13 +8,15 @@
 **Terrascript** provides a method of generating [Terraform](https://www.terraform.io)
 files, while harnessing all the features the Python 3 (3.3+) language provides. 
 
+This is the ``develop`` branch of Terrascript which is currently undergoing a major rewrite and is unlikely to be useful at this stage.
+
 ## Compatibility
 
-| Terraform | Terrascript | Notes                                                             |
-|-----------|-------------|-------------------------------------------------------------------|
-| >= 0.12.x | 0.8.x       | Terrascript 0.8 will be an (almost) complete rewrite              |
-| >= 0.12.x | 0.7.x       | Initial support for Terraform 0.12. Will be replaced by 0.8 later |
-| <= 0.11.x | 0.6.x       | Last releases to support Terraform 0.11 and earlier               |                                                                  |
+| Terraform | Terrascript | Notes                                                             | PyPi | Github |
+|-----------|-------------|-------------------------------------------------------------------|------|--------|
+| 0.12.x    | 0.8.x       | Terrascript 0.8 will be an (almost) complete rewrite              |      |        |
+| 0.12.x    | 0.7.x       | Initial support for Terraform 0.12. Will be replaced by 0.8 later |      |        |
+| 0.11.x    | 0.6.x       | Last releases to support Terraform 0.11 and earlier               |      |        |                                                 
 
 ## Example
 
