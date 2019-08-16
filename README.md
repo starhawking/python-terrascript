@@ -8,6 +8,8 @@
 **Terrascript** provides a method of generating [Terraform 0.12+](https://www.terraform.io) JSON
 files, while harnessing all the features the Python 3 (3.3+) language provides. 
 
+This is the ``develop-0.7`` branch of Terrascript. Please also check the [README.md](https://github.com/mjuenema/python-terrascript/blob/develop/README.md) file in the ``develop`` branch for additional information.
+
 ## Compatibility
 
 Terraform versions prior to 0.12 are no longer supported by current Terrascript releases.
