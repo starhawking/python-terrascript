@@ -90,15 +90,10 @@ up to you to ensure that the generated output makes sense to Terraform.**
 * [Interpolation](doc/interpolation.md)
 * [Functions](doc/functions.md)
 
-## Status
-
-**Terrascript** works with Terraform release 0.10.6 and later.
-
-All Terraform providers are supported but most haven't seen
-any testing at all. Please let me know if you run into any problems.
-
-I'd also like to add more examples.
-
 ## FAQ
 
 * [Why no error checking?](doc/faq/no_error_checking.md)
+
+## Development
+
+Please read [DEVELOPMENT.md](DEVELOPMENT.md) for information on the development process.
