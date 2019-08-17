@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/mysql/d.py
+
+import terrascript
+

@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/dme/d.py
+
+import terrascript
+

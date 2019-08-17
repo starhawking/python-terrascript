@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:12"""
+# terrascript/cloudscale/__init__.py
+
+import terrascript
+
+class cloudscale(terrascript.Provider):
+    pass

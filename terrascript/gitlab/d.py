@@ -1,13 +1,16 @@
-from terrascript import _data
-class gitlab_group(_data): pass
-group = gitlab_group
+#  terrascript/gitlab/d.py
 
-class gitlab_project(_data): pass
-project = gitlab_project
+import terrascript
 
-class gitlab_user(_data): pass
-user = gitlab_user
 
-class gitlab_users(_data): pass
-users = gitlab_users
+class group(terrascript.Datasource):
+    pass
 
+class project(terrascript.Datasource):
+    pass
+
+class user(terrascript.Datasource):
+    pass
+
+class users(terrascript.Datasource):
+    pass

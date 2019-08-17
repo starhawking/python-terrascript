@@ -1,1 +1,6 @@
-"""2019-05-28 10:48:49"""
+# terrascript/alicloud/__init__.py
+
+import terrascript
+
+class alicloud(terrascript.Provider):
+    pass

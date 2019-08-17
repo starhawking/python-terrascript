@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:42"""
+# terrascript/triton/__init__.py
+
+import terrascript
+
+class triton(terrascript.Provider):
+    pass

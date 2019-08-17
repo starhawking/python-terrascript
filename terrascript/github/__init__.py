@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:36"""
+# terrascript/github/__init__.py
+
+import terrascript
+
+class github(terrascript.Provider):
+    pass

@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:06"""
+# terrascript/clc/__init__.py
+
+import terrascript
+
+class clc(terrascript.Provider):
+    pass

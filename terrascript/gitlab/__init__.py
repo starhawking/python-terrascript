@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:38"""
+# terrascript/gitlab/__init__.py
+
+import terrascript
+
+class gitlab(terrascript.Provider):
+    pass

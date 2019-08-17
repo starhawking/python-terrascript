@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:33"""
+# terrascript/rundeck/__init__.py
+
+import terrascript
+
+class rundeck(terrascript.Provider):
+    pass

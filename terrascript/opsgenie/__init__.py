@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:12"""
+# terrascript/opsgenie/__init__.py
+
+import terrascript
+
+class opsgenie(terrascript.Provider):
+    pass

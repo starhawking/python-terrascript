@@ -1,148 +1,160 @@
-from terrascript import _data
-class google_active_folder(_data): pass
-active_folder = google_active_folder
+#  terrascript/google/d.py
 
-class google_billing_account(_data): pass
-billing_account = google_billing_account
+import terrascript
 
-class google_dns_managed_zone(_data): pass
-dns_managed_zone = google_dns_managed_zone
 
-class google_client_config(_data): pass
-client_config = google_client_config
+class active_folder(terrascript.Datasource):
+    pass
 
-class google_client_openid_userinfo(_data): pass
-client_openid_userinfo = google_client_openid_userinfo
+class billing_account(terrascript.Datasource):
+    pass
 
-class google_cloudfunctions_function(_data): pass
-cloudfunctions_function = google_cloudfunctions_function
+class dns_managed_zone(terrascript.Datasource):
+    pass
 
-class google_compute_address(_data): pass
-compute_address = google_compute_address
+class client_config(terrascript.Datasource):
+    pass
 
-class google_compute_backend_service(_data): pass
-compute_backend_service = google_compute_backend_service
+class client_openid_userinfo(terrascript.Datasource):
+    pass
 
-class google_compute_default_service_account(_data): pass
-compute_default_service_account = google_compute_default_service_account
+class cloudfunctions_function(terrascript.Datasource):
+    pass
 
-class google_compute_forwarding_rule(_data): pass
-compute_forwarding_rule = google_compute_forwarding_rule
+class composer_image_versions(terrascript.Datasource):
+    pass
 
-class google_compute_image(_data): pass
-compute_image = google_compute_image
+class compute_address(terrascript.Datasource):
+    pass
 
-class google_compute_instance(_data): pass
-compute_instance = google_compute_instance
+class compute_backend_service(terrascript.Datasource):
+    pass
 
-class google_compute_global_address(_data): pass
-compute_global_address = google_compute_global_address
+class compute_default_service_account(terrascript.Datasource):
+    pass
 
-class google_compute_instance_group(_data): pass
-compute_instance_group = google_compute_instance_group
+class compute_forwarding_rule(terrascript.Datasource):
+    pass
 
-class google_compute_lb_ip_ranges(_data): pass
-compute_lb_ip_ranges = google_compute_lb_ip_ranges
+class compute_image(terrascript.Datasource):
+    pass
 
-class google_compute_network(_data): pass
-compute_network = google_compute_network
+class compute_instance(terrascript.Datasource):
+    pass
 
-class google_compute_node_types(_data): pass
-compute_node_types = google_compute_node_types
+class compute_global_address(terrascript.Datasource):
+    pass
 
-class google_compute_regions(_data): pass
-compute_regions = google_compute_regions
+class compute_instance_group(terrascript.Datasource):
+    pass
 
-class google_compute_region_instance_group(_data): pass
-compute_region_instance_group = google_compute_region_instance_group
+class compute_lb_ip_ranges(terrascript.Datasource):
+    pass
 
-class google_compute_subnetwork(_data): pass
-compute_subnetwork = google_compute_subnetwork
+class compute_network(terrascript.Datasource):
+    pass
 
-class google_compute_zones(_data): pass
-compute_zones = google_compute_zones
+class compute_network_endpoint_group(terrascript.Datasource):
+    pass
 
-class google_compute_vpn_gateway(_data): pass
-compute_vpn_gateway = google_compute_vpn_gateway
+class compute_node_types(terrascript.Datasource):
+    pass
 
-class google_compute_ssl_policy(_data): pass
-compute_ssl_policy = google_compute_ssl_policy
+class compute_regions(terrascript.Datasource):
+    pass
 
-class google_compute_ssl_certificate(_data): pass
-compute_ssl_certificate = google_compute_ssl_certificate
+class compute_region_instance_group(terrascript.Datasource):
+    pass
 
-class google_container_cluster(_data): pass
-container_cluster = google_container_cluster
+class compute_subnetwork(terrascript.Datasource):
+    pass
 
-class google_container_engine_versions(_data): pass
-container_engine_versions = google_container_engine_versions
+class compute_zones(terrascript.Datasource):
+    pass
 
-class google_container_registry_repository(_data): pass
-container_registry_repository = google_container_registry_repository
+class compute_vpn_gateway(terrascript.Datasource):
+    pass
 
-class google_container_registry_image(_data): pass
-container_registry_image = google_container_registry_image
+class compute_ssl_policy(terrascript.Datasource):
+    pass
 
-class google_iam_policy(_data): pass
-iam_policy = google_iam_policy
+class compute_ssl_certificate(terrascript.Datasource):
+    pass
 
-class google_iam_role(_data): pass
-iam_role = google_iam_role
+class container_cluster(terrascript.Datasource):
+    pass
 
-class google_kms_secret(_data): pass
-kms_secret = google_kms_secret
+class container_engine_versions(terrascript.Datasource):
+    pass
 
-class google_kms_key_ring(_data): pass
-kms_key_ring = google_kms_key_ring
+class container_registry_repository(terrascript.Datasource):
+    pass
 
-class google_kms_crypto_key(_data): pass
-kms_crypto_key = google_kms_crypto_key
+class container_registry_image(terrascript.Datasource):
+    pass
 
-class google_folder(_data): pass
-folder = google_folder
+class iam_policy(terrascript.Datasource):
+    pass
 
-class google_folder_organization_policy(_data): pass
-folder_organization_policy = google_folder_organization_policy
+class iam_role(terrascript.Datasource):
+    pass
 
-class google_netblock_ip_ranges(_data): pass
-netblock_ip_ranges = google_netblock_ip_ranges
+class kms_secret(terrascript.Datasource):
+    pass
 
-class google_organization(_data): pass
-organization = google_organization
+class kms_key_ring(terrascript.Datasource):
+    pass
 
-class google_project(_data): pass
-project = google_project
+class kms_crypto_key(terrascript.Datasource):
+    pass
 
-class google_projects(_data): pass
-projects = google_projects
+class kms_crypto_key_version(terrascript.Datasource):
+    pass
 
-class google_project_organization_policy(_data): pass
-project_organization_policy = google_project_organization_policy
+class folder(terrascript.Datasource):
+    pass
 
-class google_project_services(_data): pass
-project_services = google_project_services
+class folder_organization_policy(terrascript.Datasource):
+    pass
 
-class google_service_account(_data): pass
-service_account = google_service_account
+class netblock_ip_ranges(terrascript.Datasource):
+    pass
 
-class google_service_account_access_token(_data): pass
-service_account_access_token = google_service_account_access_token
+class organization(terrascript.Datasource):
+    pass
 
-class google_service_account_key(_data): pass
-service_account_key = google_service_account_key
+class project(terrascript.Datasource):
+    pass
 
-class google_storage_bucket_object(_data): pass
-storage_bucket_object = google_storage_bucket_object
+class projects(terrascript.Datasource):
+    pass
 
-class google_storage_object_signed_url(_data): pass
-storage_object_signed_url = google_storage_object_signed_url
+class project_organization_policy(terrascript.Datasource):
+    pass
 
-class google_storage_project_service_account(_data): pass
-storage_project_service_account = google_storage_project_service_account
+class project_services(terrascript.Datasource):
+    pass
 
-class google_storage_transfer_project_service_account(_data): pass
-storage_transfer_project_service_account = google_storage_transfer_project_service_account
+class service_account(terrascript.Datasource):
+    pass
 
-class google_tpu_tensorflow_versions(_data): pass
-tpu_tensorflow_versions = google_tpu_tensorflow_versions
+class service_account_access_token(terrascript.Datasource):
+    pass
 
+class service_account_key(terrascript.Datasource):
+    pass
+
+class storage_bucket_object(terrascript.Datasource):
+    pass
+
+class storage_object_signed_url(terrascript.Datasource):
+    pass
+
+class storage_project_service_account(terrascript.Datasource):
+    pass
+
+class storage_transfer_project_service_account(terrascript.Datasource):
+    pass
+
+class tpu_tensorflow_versions(terrascript.Datasource):
+    pass

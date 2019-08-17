@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/azure/d.py
+
+import terrascript
+

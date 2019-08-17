@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:05"""
+# terrascript/ns1/__init__.py
+
+import terrascript
+
+class ns1(terrascript.Provider):
+    pass

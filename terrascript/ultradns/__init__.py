@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:44"""
+# terrascript/ultradns/__init__.py
+
+import terrascript
+
+class ultradns(terrascript.Provider):
+    pass

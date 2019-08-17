@@ -1,13 +1,16 @@
-from terrascript import _data
-class scaleway_bootscript(_data): pass
-bootscript = scaleway_bootscript
+#  terrascript/scaleway/d.py
 
-class scaleway_image(_data): pass
-image = scaleway_image
+import terrascript
 
-class scaleway_security_group(_data): pass
-security_group = scaleway_security_group
 
-class scaleway_volume(_data): pass
-volume = scaleway_volume
+class bootscript(terrascript.Datasource):
+    pass
 
+class image(terrascript.Datasource):
+    pass
+
+class security_group(terrascript.Datasource):
+    pass
+
+class volume(terrascript.Datasource):
+    pass

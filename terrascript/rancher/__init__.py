@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:29"""
+# terrascript/rancher/__init__.py
+
+import terrascript
+
+class rancher(terrascript.Provider):
+    pass

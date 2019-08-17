@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:38"""
+# terrascript/statuscake/__init__.py
+
+import terrascript
+
+class statuscake(terrascript.Provider):
+    pass

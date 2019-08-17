@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:13"""
+# terrascript/cloudstack/__init__.py
+
+import terrascript
+
+class cloudstack(terrascript.Provider):
+    pass

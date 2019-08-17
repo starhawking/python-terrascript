@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:57"""
+# terrascript/mailgun/__init__.py
+
+import terrascript
+
+class mailgun(terrascript.Provider):
+    pass

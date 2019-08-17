@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:00"""
+# terrascript/newrelic/__init__.py
+
+import terrascript
+
+class newrelic(terrascript.Provider):
+    pass

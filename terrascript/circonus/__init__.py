@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:05"""
+# terrascript/circonus/__init__.py
+
+import terrascript
+
+class circonus(terrascript.Provider):
+    pass

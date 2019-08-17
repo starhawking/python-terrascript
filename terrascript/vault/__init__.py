@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:46"""
+# terrascript/vault/__init__.py
+
+import terrascript
+
+class vault(terrascript.Provider):
+    pass

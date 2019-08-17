@@ -1,1 +1,6 @@
-"""2019-05-28 10:48:57"""
+# terrascript/azure/__init__.py
+
+import terrascript
+
+class azure(terrascript.Provider):
+    pass

@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:13"""
+# terrascript/ovh/__init__.py
+
+import terrascript
+
+class ovh(terrascript.Provider):
+    pass

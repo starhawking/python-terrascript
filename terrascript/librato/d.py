@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/librato/d.py
+
+import terrascript
+

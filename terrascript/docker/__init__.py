@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:30"""
+# terrascript/docker/__init__.py
+
+import terrascript
+
+class docker(terrascript.Provider):
+    pass

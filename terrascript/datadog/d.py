@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/datadog/d.py
+
+import terrascript
+

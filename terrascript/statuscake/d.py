@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/statuscake/d.py
+
+import terrascript
+

@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:18"""
+# terrascript/postgresql/__init__.py
+
+import terrascript
+
+class postgresql(terrascript.Provider):
+    pass

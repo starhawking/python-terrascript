@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:41"""
+# terrascript/grafana/__init__.py
+
+import terrascript
+
+class grafana(terrascript.Provider):
+    pass

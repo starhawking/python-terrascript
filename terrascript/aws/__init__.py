@@ -1,1 +1,6 @@
-"""2019-05-28 10:48:56"""
+# terrascript/aws/__init__.py
+
+import terrascript
+
+class aws(terrascript.Provider):
+    pass

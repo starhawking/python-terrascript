@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:31"""
+# terrascript/dyn/__init__.py
+
+import terrascript
+
+class dyn(terrascript.Provider):
+    pass

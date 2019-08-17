@@ -1,1 +1,6 @@
-"""2019-05-28 10:48:53"""
+# terrascript/arukas/__init__.py
+
+import terrascript
+
+class arukas(terrascript.Provider):
+    pass

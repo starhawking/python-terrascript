@@ -1,4 +1,7 @@
-from terrascript import _data
-class cloudstack_template(_data): pass
-template = cloudstack_template
+#  terrascript/cloudstack/d.py
 
+import terrascript
+
+
+class template(terrascript.Datasource):
+    pass

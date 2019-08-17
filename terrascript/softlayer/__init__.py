@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:36"""
+# terrascript/softlayer/__init__.py
+
+import terrascript
+
+class softlayer(terrascript.Provider):
+    pass

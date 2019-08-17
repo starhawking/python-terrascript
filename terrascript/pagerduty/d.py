@@ -1,19 +1,25 @@
-from terrascript import _data
-class pagerduty_escalation_policy(_data): pass
-escalation_policy = pagerduty_escalation_policy
+#  terrascript/pagerduty/d.py
 
-class pagerduty_schedule(_data): pass
-schedule = pagerduty_schedule
+import terrascript
 
-class pagerduty_user(_data): pass
-user = pagerduty_user
 
-class pagerduty_team(_data): pass
-team = pagerduty_team
+class escalation_policy(terrascript.Datasource):
+    pass
 
-class pagerduty_vendor(_data): pass
-vendor = pagerduty_vendor
+class schedule(terrascript.Datasource):
+    pass
 
-class pagerduty_extension_schema(_data): pass
-extension_schema = pagerduty_extension_schema
+class user(terrascript.Datasource):
+    pass
 
+class team(terrascript.Datasource):
+    pass
+
+class vendor(terrascript.Datasource):
+    pass
+
+class extension_schema(terrascript.Datasource):
+    pass
+
+class service(terrascript.Datasource):
+    pass

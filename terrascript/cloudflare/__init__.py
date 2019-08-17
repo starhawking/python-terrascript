@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:10"""
+# terrascript/cloudflare/__init__.py
+
+import terrascript
+
+class cloudflare(terrascript.Provider):
+    pass

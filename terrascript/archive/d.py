@@ -1,4 +1,7 @@
-from terrascript import _data
-class archive_file(_data): pass
-file = archive_file
+#  terrascript/archive/d.py
 
+import terrascript
+
+
+class file(terrascript.Datasource):
+    pass
