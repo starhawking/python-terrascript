@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:51"""
+# terrascript/kubernetes/__init__.py
+
+import terrascript
+
+class kubernetes(terrascript.Provider):
+    pass

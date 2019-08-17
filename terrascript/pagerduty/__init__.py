@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:16"""
+# terrascript/pagerduty/__init__.py
+
+import terrascript
+
+class pagerduty(terrascript.Provider):
+    pass

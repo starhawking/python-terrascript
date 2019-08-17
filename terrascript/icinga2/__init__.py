@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:46"""
+# terrascript/icinga2/__init__.py
+
+import terrascript
+
+class icinga2(terrascript.Provider):
+    pass

@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:56"""
+# terrascript/logicmonitor/__init__.py
+
+import terrascript
+
+class logicmonitor(terrascript.Provider):
+    pass

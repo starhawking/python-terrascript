@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:23"""
+# terrascript/dme/__init__.py
+
+import terrascript
+
+class dme(terrascript.Provider):
+    pass

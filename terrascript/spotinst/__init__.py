@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:37"""
+# terrascript/spotinst/__init__.py
+
+import terrascript
+
+class spotinst(terrascript.Provider):
+    pass

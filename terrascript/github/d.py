@@ -1,16 +1,22 @@
-from terrascript import _data
-class github_ip_ranges(_data): pass
-ip_ranges = github_ip_ranges
+#  terrascript/github/d.py
 
-class github_repositories(_data): pass
-repositories = github_repositories
+import terrascript
 
-class github_repository(_data): pass
-repository = github_repository
 
-class github_team(_data): pass
-team = github_team
+class collaborators(terrascript.Datasource):
+    pass
 
-class github_user(_data): pass
-user = github_user
+class ip_ranges(terrascript.Datasource):
+    pass
 
+class repositories(terrascript.Datasource):
+    pass
+
+class repository(terrascript.Datasource):
+    pass
+
+class team(terrascript.Datasource):
+    pass
+
+class user(terrascript.Datasource):
+    pass

@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:44"""
+# terrascript/heroku/__init__.py
+
+import terrascript
+
+class heroku(terrascript.Provider):
+    pass

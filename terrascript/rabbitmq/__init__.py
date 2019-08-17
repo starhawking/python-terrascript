@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:26"""
+# terrascript/rabbitmq/__init__.py
+
+import terrascript
+
+class rabbitmq(terrascript.Provider):
+    pass

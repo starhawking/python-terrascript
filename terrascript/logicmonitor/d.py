@@ -1,7 +1,10 @@
-from terrascript import _data
-class logicmonitor_collectors(_data): pass
-collectors = logicmonitor_collectors
+#  terrascript/logicmonitor/d.py
 
-class logicmonitor_device_group(_data): pass
-device_group = logicmonitor_device_group
+import terrascript
 
+
+class collectors(terrascript.Datasource):
+    pass
+
+class device_group(terrascript.Datasource):
+    pass

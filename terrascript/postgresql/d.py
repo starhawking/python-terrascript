@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/postgresql/d.py
+
+import terrascript
+

@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/influxdb/d.py
+
+import terrascript
+

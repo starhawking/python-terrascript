@@ -1,10 +1,13 @@
-from terrascript import _data
-class kubernetes_secret(_data): pass
-secret = kubernetes_secret
+#  terrascript/kubernetes/d.py
 
-class kubernetes_service(_data): pass
-service = kubernetes_service
+import terrascript
 
-class kubernetes_storage_class(_data): pass
-storage_class = kubernetes_storage_class
 
+class secret(terrascript.Datasource):
+    pass
+
+class service(terrascript.Datasource):
+    pass
+
+class storage_class(terrascript.Datasource):
+    pass

@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:20"""
+# terrascript/powerdns/__init__.py
+
+import terrascript
+
+class powerdns(terrascript.Provider):
+    pass

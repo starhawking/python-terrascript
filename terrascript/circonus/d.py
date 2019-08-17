@@ -1,7 +1,10 @@
-from terrascript import _data
-class circonus_account(_data): pass
-account = circonus_account
+#  terrascript/circonus/d.py
 
-class circonus_collector(_data): pass
-collector = circonus_collector
+import terrascript
 
+
+class account(terrascript.Datasource):
+    pass
+
+class collector(terrascript.Datasource):
+    pass

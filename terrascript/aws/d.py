@@ -1,394 +1,442 @@
-from terrascript import _data
-class aws_acm_certificate(_data): pass
-acm_certificate = aws_acm_certificate
+#  terrascript/aws/d.py
 
-class aws_acmpca_certificate_authority(_data): pass
-acmpca_certificate_authority = aws_acmpca_certificate_authority
+import terrascript
 
-class aws_ami(_data): pass
-ami = aws_ami
 
-class aws_ami_ids(_data): pass
-ami_ids = aws_ami_ids
+class acm_certificate(terrascript.Datasource):
+    pass
 
-class aws_api_gateway_api_key(_data): pass
-api_gateway_api_key = aws_api_gateway_api_key
+class acmpca_certificate_authority(terrascript.Datasource):
+    pass
 
-class aws_api_gateway_resource(_data): pass
-api_gateway_resource = aws_api_gateway_resource
+class ami(terrascript.Datasource):
+    pass
 
-class aws_api_gateway_rest_api(_data): pass
-api_gateway_rest_api = aws_api_gateway_rest_api
+class ami_ids(terrascript.Datasource):
+    pass
 
-class aws_api_gateway_vpc_link(_data): pass
-api_gateway_vpc_link = aws_api_gateway_vpc_link
+class api_gateway_api_key(terrascript.Datasource):
+    pass
 
-class aws_arn(_data): pass
-arn = aws_arn
+class api_gateway_resource(terrascript.Datasource):
+    pass
 
-class aws_autoscaling_group(_data): pass
-autoscaling_group = aws_autoscaling_group
+class api_gateway_rest_api(terrascript.Datasource):
+    pass
 
-class aws_autoscaling_groups(_data): pass
-autoscaling_groups = aws_autoscaling_groups
+class api_gateway_vpc_link(terrascript.Datasource):
+    pass
 
-class aws_availability_zone(_data): pass
-availability_zone = aws_availability_zone
+class arn(terrascript.Datasource):
+    pass
 
-class aws_availability_zones(_data): pass
-availability_zones = aws_availability_zones
+class autoscaling_group(terrascript.Datasource):
+    pass
 
-class aws_batch_compute_environment(_data): pass
-batch_compute_environment = aws_batch_compute_environment
+class autoscaling_groups(terrascript.Datasource):
+    pass
 
-class aws_batch_job_queue(_data): pass
-batch_job_queue = aws_batch_job_queue
+class availability_zone(terrascript.Datasource):
+    pass
 
-class aws_billing_service_account(_data): pass
-billing_service_account = aws_billing_service_account
+class availability_zones(terrascript.Datasource):
+    pass
 
-class aws_caller_identity(_data): pass
-caller_identity = aws_caller_identity
+class batch_compute_environment(terrascript.Datasource):
+    pass
 
-class aws_canonical_user_id(_data): pass
-canonical_user_id = aws_canonical_user_id
+class batch_job_queue(terrascript.Datasource):
+    pass
 
-class aws_cloudformation_export(_data): pass
-cloudformation_export = aws_cloudformation_export
+class billing_service_account(terrascript.Datasource):
+    pass
 
-class aws_cloudformation_stack(_data): pass
-cloudformation_stack = aws_cloudformation_stack
+class caller_identity(terrascript.Datasource):
+    pass
 
-class aws_cloudhsm_v2_cluster(_data): pass
-cloudhsm_v2_cluster = aws_cloudhsm_v2_cluster
+class canonical_user_id(terrascript.Datasource):
+    pass
 
-class aws_cloudtrail_service_account(_data): pass
-cloudtrail_service_account = aws_cloudtrail_service_account
+class cloudformation_export(terrascript.Datasource):
+    pass
 
-class aws_cloudwatch_log_group(_data): pass
-cloudwatch_log_group = aws_cloudwatch_log_group
+class cloudformation_stack(terrascript.Datasource):
+    pass
 
-class aws_cognito_user_pools(_data): pass
-cognito_user_pools = aws_cognito_user_pools
+class cloudhsm_v2_cluster(terrascript.Datasource):
+    pass
 
-class aws_codecommit_repository(_data): pass
-codecommit_repository = aws_codecommit_repository
+class cloudtrail_service_account(terrascript.Datasource):
+    pass
 
-class aws_cur_report_definition(_data): pass
-cur_report_definition = aws_cur_report_definition
+class cloudwatch_log_group(terrascript.Datasource):
+    pass
 
-class aws_db_cluster_snapshot(_data): pass
-db_cluster_snapshot = aws_db_cluster_snapshot
+class cognito_user_pools(terrascript.Datasource):
+    pass
 
-class aws_db_event_categories(_data): pass
-db_event_categories = aws_db_event_categories
+class codecommit_repository(terrascript.Datasource):
+    pass
 
-class aws_db_instance(_data): pass
-db_instance = aws_db_instance
+class cur_report_definition(terrascript.Datasource):
+    pass
 
-class aws_db_snapshot(_data): pass
-db_snapshot = aws_db_snapshot
+class db_cluster_snapshot(terrascript.Datasource):
+    pass
 
-class aws_dx_gateway(_data): pass
-dx_gateway = aws_dx_gateway
+class db_event_categories(terrascript.Datasource):
+    pass
 
-class aws_dynamodb_table(_data): pass
-dynamodb_table = aws_dynamodb_table
+class db_instance(terrascript.Datasource):
+    pass
 
-class aws_ebs_snapshot(_data): pass
-ebs_snapshot = aws_ebs_snapshot
+class db_snapshot(terrascript.Datasource):
+    pass
 
-class aws_ebs_snapshot_ids(_data): pass
-ebs_snapshot_ids = aws_ebs_snapshot_ids
+class dx_gateway(terrascript.Datasource):
+    pass
 
-class aws_ebs_volume(_data): pass
-ebs_volume = aws_ebs_volume
+class dynamodb_table(terrascript.Datasource):
+    pass
 
-class aws_ec2_transit_gateway(_data): pass
-ec2_transit_gateway = aws_ec2_transit_gateway
+class ebs_default_kms_key(terrascript.Datasource):
+    pass
 
-class aws_ec2_transit_gateway_route_table(_data): pass
-ec2_transit_gateway_route_table = aws_ec2_transit_gateway_route_table
+class ebs_encryption_by_default(terrascript.Datasource):
+    pass
 
-class aws_ec2_transit_gateway_vpc_attachment(_data): pass
-ec2_transit_gateway_vpc_attachment = aws_ec2_transit_gateway_vpc_attachment
+class ebs_snapshot(terrascript.Datasource):
+    pass
 
-class aws_ec2_transit_gateway_vpn_attachment(_data): pass
-ec2_transit_gateway_vpn_attachment = aws_ec2_transit_gateway_vpn_attachment
+class ebs_snapshot_ids(terrascript.Datasource):
+    pass
 
-class aws_ecr_image(_data): pass
-ecr_image = aws_ecr_image
+class ebs_volume(terrascript.Datasource):
+    pass
 
-class aws_ecr_repository(_data): pass
-ecr_repository = aws_ecr_repository
+class ec2_transit_gateway(terrascript.Datasource):
+    pass
 
-class aws_ecs_cluster(_data): pass
-ecs_cluster = aws_ecs_cluster
+class ec2_transit_gateway_dx_gateway_attachment(terrascript.Datasource):
+    pass
 
-class aws_ecs_container_definition(_data): pass
-ecs_container_definition = aws_ecs_container_definition
+class ec2_transit_gateway_route_table(terrascript.Datasource):
+    pass
 
-class aws_ecs_service(_data): pass
-ecs_service = aws_ecs_service
+class ec2_transit_gateway_vpc_attachment(terrascript.Datasource):
+    pass
 
-class aws_ecs_task_definition(_data): pass
-ecs_task_definition = aws_ecs_task_definition
+class ec2_transit_gateway_vpn_attachment(terrascript.Datasource):
+    pass
 
-class aws_efs_file_system(_data): pass
-efs_file_system = aws_efs_file_system
+class ecr_image(terrascript.Datasource):
+    pass
 
-class aws_efs_mount_target(_data): pass
-efs_mount_target = aws_efs_mount_target
+class ecr_repository(terrascript.Datasource):
+    pass
 
-class aws_eip(_data): pass
-eip = aws_eip
+class ecs_cluster(terrascript.Datasource):
+    pass
 
-class aws_eks_cluster(_data): pass
-eks_cluster = aws_eks_cluster
+class ecs_container_definition(terrascript.Datasource):
+    pass
 
-class aws_eks_cluster_auth(_data): pass
-eks_cluster_auth = aws_eks_cluster_auth
+class ecs_service(terrascript.Datasource):
+    pass
 
-class aws_elastic_beanstalk_application(_data): pass
-elastic_beanstalk_application = aws_elastic_beanstalk_application
+class ecs_task_definition(terrascript.Datasource):
+    pass
 
-class aws_elastic_beanstalk_hosted_zone(_data): pass
-elastic_beanstalk_hosted_zone = aws_elastic_beanstalk_hosted_zone
+class customer_gateway(terrascript.Datasource):
+    pass
 
-class aws_elastic_beanstalk_solution_stack(_data): pass
-elastic_beanstalk_solution_stack = aws_elastic_beanstalk_solution_stack
+class efs_file_system(terrascript.Datasource):
+    pass
 
-class aws_elasticache_cluster(_data): pass
-elasticache_cluster = aws_elasticache_cluster
+class efs_mount_target(terrascript.Datasource):
+    pass
 
-class aws_elb(_data): pass
-elb = aws_elb
+class eip(terrascript.Datasource):
+    pass
 
-class aws_elasticache_replication_group(_data): pass
-elasticache_replication_group = aws_elasticache_replication_group
+class eks_cluster(terrascript.Datasource):
+    pass
 
-class aws_elb_hosted_zone_id(_data): pass
-elb_hosted_zone_id = aws_elb_hosted_zone_id
+class eks_cluster_auth(terrascript.Datasource):
+    pass
 
-class aws_elb_service_account(_data): pass
-elb_service_account = aws_elb_service_account
+class elastic_beanstalk_application(terrascript.Datasource):
+    pass
 
-class aws_glue_script(_data): pass
-glue_script = aws_glue_script
+class elastic_beanstalk_hosted_zone(terrascript.Datasource):
+    pass
 
-class aws_iam_account_alias(_data): pass
-iam_account_alias = aws_iam_account_alias
+class elastic_beanstalk_solution_stack(terrascript.Datasource):
+    pass
 
-class aws_iam_group(_data): pass
-iam_group = aws_iam_group
+class elasticache_cluster(terrascript.Datasource):
+    pass
 
-class aws_iam_instance_profile(_data): pass
-iam_instance_profile = aws_iam_instance_profile
+class elb(terrascript.Datasource):
+    pass
 
-class aws_iam_policy(_data): pass
-iam_policy = aws_iam_policy
+class elasticache_replication_group(terrascript.Datasource):
+    pass
 
-class aws_iam_policy_document(_data): pass
-iam_policy_document = aws_iam_policy_document
+class elb_hosted_zone_id(terrascript.Datasource):
+    pass
 
-class aws_iam_role(_data): pass
-iam_role = aws_iam_role
+class elb_service_account(terrascript.Datasource):
+    pass
 
-class aws_iam_server_certificate(_data): pass
-iam_server_certificate = aws_iam_server_certificate
+class glue_script(terrascript.Datasource):
+    pass
 
-class aws_iam_user(_data): pass
-iam_user = aws_iam_user
+class iam_account_alias(terrascript.Datasource):
+    pass
 
-class aws_internet_gateway(_data): pass
-internet_gateway = aws_internet_gateway
+class iam_group(terrascript.Datasource):
+    pass
 
-class aws_iot_endpoint(_data): pass
-iot_endpoint = aws_iot_endpoint
+class iam_instance_profile(terrascript.Datasource):
+    pass
 
-class aws_inspector_rules_packages(_data): pass
-inspector_rules_packages = aws_inspector_rules_packages
+class iam_policy(terrascript.Datasource):
+    pass
 
-class aws_instance(_data): pass
-instance = aws_instance
+class iam_policy_document(terrascript.Datasource):
+    pass
 
-class aws_instances(_data): pass
-instances = aws_instances
+class iam_role(terrascript.Datasource):
+    pass
 
-class aws_ip_ranges(_data): pass
-ip_ranges = aws_ip_ranges
+class iam_server_certificate(terrascript.Datasource):
+    pass
 
-class aws_kinesis_stream(_data): pass
-kinesis_stream = aws_kinesis_stream
+class iam_user(terrascript.Datasource):
+    pass
 
-class aws_kms_alias(_data): pass
-kms_alias = aws_kms_alias
+class internet_gateway(terrascript.Datasource):
+    pass
 
-class aws_kms_ciphertext(_data): pass
-kms_ciphertext = aws_kms_ciphertext
+class iot_endpoint(terrascript.Datasource):
+    pass
 
-class aws_kms_key(_data): pass
-kms_key = aws_kms_key
+class inspector_rules_packages(terrascript.Datasource):
+    pass
 
-class aws_kms_secret(_data): pass
-kms_secret = aws_kms_secret
+class instance(terrascript.Datasource):
+    pass
 
-class aws_kms_secrets(_data): pass
-kms_secrets = aws_kms_secrets
+class instances(terrascript.Datasource):
+    pass
 
-class aws_lambda_function(_data): pass
-lambda_function = aws_lambda_function
+class ip_ranges(terrascript.Datasource):
+    pass
 
-class aws_lambda_invocation(_data): pass
-lambda_invocation = aws_lambda_invocation
+class kinesis_stream(terrascript.Datasource):
+    pass
 
-class aws_lambda_layer_version(_data): pass
-lambda_layer_version = aws_lambda_layer_version
+class kms_alias(terrascript.Datasource):
+    pass
 
-class aws_launch_configuration(_data): pass
-launch_configuration = aws_launch_configuration
+class kms_ciphertext(terrascript.Datasource):
+    pass
 
-class aws_launch_template(_data): pass
-launch_template = aws_launch_template
+class kms_key(terrascript.Datasource):
+    pass
 
-class aws_mq_broker(_data): pass
-mq_broker = aws_mq_broker
+class kms_secret(terrascript.Datasource):
+    pass
 
-class aws_msk_cluster(_data): pass
-msk_cluster = aws_msk_cluster
+class kms_secrets(terrascript.Datasource):
+    pass
 
-class aws_nat_gateway(_data): pass
-nat_gateway = aws_nat_gateway
+class lambda_function(terrascript.Datasource):
+    pass
 
-class aws_network_acls(_data): pass
-network_acls = aws_network_acls
+class lambda_invocation(terrascript.Datasource):
+    pass
 
-class aws_network_interface(_data): pass
-network_interface = aws_network_interface
+class lambda_layer_version(terrascript.Datasource):
+    pass
 
-class aws_network_interfaces(_data): pass
-network_interfaces = aws_network_interfaces
+class launch_configuration(terrascript.Datasource):
+    pass
 
-class aws_partition(_data): pass
-partition = aws_partition
+class launch_template(terrascript.Datasource):
+    pass
 
-class aws_prefix_list(_data): pass
-prefix_list = aws_prefix_list
+class mq_broker(terrascript.Datasource):
+    pass
 
-class aws_pricing_product(_data): pass
-pricing_product = aws_pricing_product
+class msk_cluster(terrascript.Datasource):
+    pass
 
-class aws_ram_resource_share(_data): pass
-ram_resource_share = aws_ram_resource_share
+class msk_configuration(terrascript.Datasource):
+    pass
 
-class aws_rds_cluster(_data): pass
-rds_cluster = aws_rds_cluster
+class nat_gateway(terrascript.Datasource):
+    pass
 
-class aws_redshift_cluster(_data): pass
-redshift_cluster = aws_redshift_cluster
+class network_acls(terrascript.Datasource):
+    pass
 
-class aws_redshift_service_account(_data): pass
-redshift_service_account = aws_redshift_service_account
+class network_interface(terrascript.Datasource):
+    pass
 
-class aws_region(_data): pass
-region = aws_region
+class network_interfaces(terrascript.Datasource):
+    pass
 
-class aws_route(_data): pass
-route = aws_route
+class organizations_organization(terrascript.Datasource):
+    pass
 
-class aws_route_table(_data): pass
-route_table = aws_route_table
+class partition(terrascript.Datasource):
+    pass
 
-class aws_route_tables(_data): pass
-route_tables = aws_route_tables
+class prefix_list(terrascript.Datasource):
+    pass
 
-class aws_route53_delegation_set(_data): pass
-route53_delegation_set = aws_route53_delegation_set
+class pricing_product(terrascript.Datasource):
+    pass
 
-class aws_route53_zone(_data): pass
-route53_zone = aws_route53_zone
+class ram_resource_share(terrascript.Datasource):
+    pass
 
-class aws_s3_bucket(_data): pass
-s3_bucket = aws_s3_bucket
+class rds_cluster(terrascript.Datasource):
+    pass
 
-class aws_s3_bucket_object(_data): pass
-s3_bucket_object = aws_s3_bucket_object
+class redshift_cluster(terrascript.Datasource):
+    pass
 
-class aws_secretsmanager_secret(_data): pass
-secretsmanager_secret = aws_secretsmanager_secret
+class redshift_service_account(terrascript.Datasource):
+    pass
 
-class aws_secretsmanager_secret_version(_data): pass
-secretsmanager_secret_version = aws_secretsmanager_secret_version
+class region(terrascript.Datasource):
+    pass
 
-class aws_sns_topic(_data): pass
-sns_topic = aws_sns_topic
+class route(terrascript.Datasource):
+    pass
 
-class aws_sqs_queue(_data): pass
-sqs_queue = aws_sqs_queue
+class route_table(terrascript.Datasource):
+    pass
 
-class aws_ssm_document(_data): pass
-ssm_document = aws_ssm_document
+class route_tables(terrascript.Datasource):
+    pass
 
-class aws_ssm_parameter(_data): pass
-ssm_parameter = aws_ssm_parameter
+class route53_delegation_set(terrascript.Datasource):
+    pass
 
-class aws_storagegateway_local_disk(_data): pass
-storagegateway_local_disk = aws_storagegateway_local_disk
+class route53_zone(terrascript.Datasource):
+    pass
 
-class aws_subnet(_data): pass
-subnet = aws_subnet
+class s3_bucket(terrascript.Datasource):
+    pass
 
-class aws_subnet_ids(_data): pass
-subnet_ids = aws_subnet_ids
+class s3_bucket_object(terrascript.Datasource):
+    pass
 
-class aws_transfer_server(_data): pass
-transfer_server = aws_transfer_server
+class s3_bucket_objects(terrascript.Datasource):
+    pass
 
-class aws_vpcs(_data): pass
-vpcs = aws_vpcs
+class secretsmanager_secret(terrascript.Datasource):
+    pass
 
-class aws_security_group(_data): pass
-security_group = aws_security_group
+class secretsmanager_secret_version(terrascript.Datasource):
+    pass
 
-class aws_security_groups(_data): pass
-security_groups = aws_security_groups
+class servicequotas_service(terrascript.Datasource):
+    pass
 
-class aws_vpc(_data): pass
-vpc = aws_vpc
+class servicequotas_service_quota(terrascript.Datasource):
+    pass
 
-class aws_vpc_dhcp_options(_data): pass
-vpc_dhcp_options = aws_vpc_dhcp_options
+class sns_topic(terrascript.Datasource):
+    pass
 
-class aws_vpc_endpoint(_data): pass
-vpc_endpoint = aws_vpc_endpoint
+class sqs_queue(terrascript.Datasource):
+    pass
 
-class aws_vpc_endpoint_service(_data): pass
-vpc_endpoint_service = aws_vpc_endpoint_service
+class ssm_document(terrascript.Datasource):
+    pass
 
-class aws_vpc_peering_connection(_data): pass
-vpc_peering_connection = aws_vpc_peering_connection
+class ssm_parameter(terrascript.Datasource):
+    pass
 
-class aws_vpn_gateway(_data): pass
-vpn_gateway = aws_vpn_gateway
+class storagegateway_local_disk(terrascript.Datasource):
+    pass
 
-class aws_workspaces_bundle(_data): pass
-workspaces_bundle = aws_workspaces_bundle
+class subnet(terrascript.Datasource):
+    pass
 
-class aws_lb(_data): pass
-lb = aws_lb
+class subnet_ids(terrascript.Datasource):
+    pass
 
-class aws_alb(_data): pass
-alb = aws_alb
+class transfer_server(terrascript.Datasource):
+    pass
 
-class aws_lb_listener(_data): pass
-lb_listener = aws_lb_listener
+class vpcs(terrascript.Datasource):
+    pass
 
-class aws_alb_listener(_data): pass
-alb_listener = aws_alb_listener
+class security_group(terrascript.Datasource):
+    pass
 
-class aws_lb_target_group(_data): pass
-lb_target_group = aws_lb_target_group
+class security_groups(terrascript.Datasource):
+    pass
 
-class aws_alb_target_group(_data): pass
-alb_target_group = aws_alb_target_group
+class vpc(terrascript.Datasource):
+    pass
 
+class vpc_dhcp_options(terrascript.Datasource):
+    pass
+
+class vpc_endpoint(terrascript.Datasource):
+    pass
+
+class vpc_endpoint_service(terrascript.Datasource):
+    pass
+
+class vpc_peering_connection(terrascript.Datasource):
+    pass
+
+class vpn_gateway(terrascript.Datasource):
+    pass
+
+class waf_ipset(terrascript.Datasource):
+    pass
+
+class waf_rule(terrascript.Datasource):
+    pass
+
+class waf_web_acl(terrascript.Datasource):
+    pass
+
+class wafregional_ipset(terrascript.Datasource):
+    pass
+
+class wafregional_rule(terrascript.Datasource):
+    pass
+
+class wafregional_web_acl(terrascript.Datasource):
+    pass
+
+class workspaces_bundle(terrascript.Datasource):
+    pass
+
+class lb(terrascript.Datasource):
+    pass
+
+class alb(terrascript.Datasource):
+    pass
+
+class lb_listener(terrascript.Datasource):
+    pass
+
+class alb_listener(terrascript.Datasource):
+    pass
+
+class lb_target_group(terrascript.Datasource):
+    pass
+
+class alb_target_group(terrascript.Datasource):
+    pass

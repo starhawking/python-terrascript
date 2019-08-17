@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/chef/d.py
+
+import terrascript
+

@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:39"""
+# terrascript/google/__init__.py
+
+import terrascript
+
+class google(terrascript.Provider):
+    pass

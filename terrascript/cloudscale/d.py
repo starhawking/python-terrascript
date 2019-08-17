@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/cloudscale/d.py
+
+import terrascript
+

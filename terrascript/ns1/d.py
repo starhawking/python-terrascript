@@ -1,10 +1,13 @@
-from terrascript import _data
-class ns1_zone(_data): pass
-zone = ns1_zone
+#  terrascript/ns1/d.py
 
-class ns1_datasource(_data): pass
-datasource = ns1_datasource
+import terrascript
 
-class ns1_datafeed(_data): pass
-datafeed = ns1_datafeed
 
+class zone(terrascript.Datasource):
+    pass
+
+class datasource(terrascript.Datasource):
+    pass
+
+class datafeed(terrascript.Datasource):
+    pass

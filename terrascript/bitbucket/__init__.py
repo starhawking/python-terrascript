@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:00"""
+# terrascript/bitbucket/__init__.py
+
+import terrascript
+
+class bitbucket(terrascript.Provider):
+    pass

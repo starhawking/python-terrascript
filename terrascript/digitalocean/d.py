@@ -1,40 +1,46 @@
-from terrascript import _data
-class digitalocean_certificate(_data): pass
-certificate = digitalocean_certificate
+#  terrascript/digitalocean/d.py
 
-class digitalocean_domain(_data): pass
-domain = digitalocean_domain
+import terrascript
 
-class digitalocean_droplet(_data): pass
-droplet = digitalocean_droplet
 
-class digitalocean_droplet_snapshot(_data): pass
-droplet_snapshot = digitalocean_droplet_snapshot
+class certificate(terrascript.Datasource):
+    pass
 
-class digitalocean_floating_ip(_data): pass
-floating_ip = digitalocean_floating_ip
+class database_cluster(terrascript.Datasource):
+    pass
 
-class digitalocean_image(_data): pass
-image = digitalocean_image
+class domain(terrascript.Datasource):
+    pass
 
-class digitalocean_kubernetes_cluster(_data): pass
-kubernetes_cluster = digitalocean_kubernetes_cluster
+class droplet(terrascript.Datasource):
+    pass
 
-class digitalocean_loadbalancer(_data): pass
-loadbalancer = digitalocean_loadbalancer
+class droplet_snapshot(terrascript.Datasource):
+    pass
 
-class digitalocean_record(_data): pass
-record = digitalocean_record
+class floating_ip(terrascript.Datasource):
+    pass
 
-class digitalocean_ssh_key(_data): pass
-ssh_key = digitalocean_ssh_key
+class image(terrascript.Datasource):
+    pass
 
-class digitalocean_tag(_data): pass
-tag = digitalocean_tag
+class kubernetes_cluster(terrascript.Datasource):
+    pass
 
-class digitalocean_volume_snapshot(_data): pass
-volume_snapshot = digitalocean_volume_snapshot
+class loadbalancer(terrascript.Datasource):
+    pass
 
-class digitalocean_volume(_data): pass
-volume = digitalocean_volume
+class record(terrascript.Datasource):
+    pass
 
+class ssh_key(terrascript.Datasource):
+    pass
+
+class tag(terrascript.Datasource):
+    pass
+
+class volume_snapshot(terrascript.Datasource):
+    pass
+
+class volume(terrascript.Datasource):
+    pass

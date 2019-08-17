@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/ultradns/d.py
+
+import terrascript
+

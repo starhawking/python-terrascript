@@ -1,16 +1,19 @@
-from terrascript import _data
-class profitbricks_datacenter(_data): pass
-datacenter = profitbricks_datacenter
+#  terrascript/profitbricks/d.py
 
-class profitbricks_location(_data): pass
-location = profitbricks_location
+import terrascript
 
-class profitbricks_image(_data): pass
-image = profitbricks_image
 
-class profitbricks_resource(_data): pass
-resource = profitbricks_resource
+class datacenter(terrascript.Datasource):
+    pass
 
-class profitbricks_snapshot(_data): pass
-snapshot = profitbricks_snapshot
+class location(terrascript.Datasource):
+    pass
 
+class image(terrascript.Datasource):
+    pass
+
+class resource(terrascript.Datasource):
+    pass
+
+class snapshot(terrascript.Datasource):
+    pass

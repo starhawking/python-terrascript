@@ -1,4 +1,7 @@
-from terrascript import _data
-class fastly_ip_ranges(_data): pass
-ip_ranges = fastly_ip_ranges
+#  terrascript/fastly/d.py
 
+import terrascript
+
+
+class ip_ranges(terrascript.Datasource):
+    pass

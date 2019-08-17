@@ -1,10 +1,13 @@
-from terrascript import _data
-class rancher_certificate(_data): pass
-certificate = rancher_certificate
+#  terrascript/rancher/d.py
 
-class rancher_environment(_data): pass
-environment = rancher_environment
+import terrascript
 
-class rancher_setting(_data): pass
-setting = rancher_setting
 
+class certificate(terrascript.Datasource):
+    pass
+
+class environment(terrascript.Datasource):
+    pass
+
+class setting(terrascript.Datasource):
+    pass

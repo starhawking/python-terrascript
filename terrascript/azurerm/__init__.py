@@ -1,1 +1,6 @@
-"""2019-05-28 10:48:59"""
+# terrascript/azurerm/__init__.py
+
+import terrascript
+
+class azurerm(terrascript.Provider):
+    pass

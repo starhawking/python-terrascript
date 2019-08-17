@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/grafana/d.py
+
+import terrascript
+

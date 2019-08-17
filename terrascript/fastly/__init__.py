@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:35"""
+# terrascript/fastly/__init__.py
+
+import terrascript
+
+class fastly(terrascript.Provider):
+    pass

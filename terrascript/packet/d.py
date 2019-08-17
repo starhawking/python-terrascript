@@ -1,10 +1,16 @@
-from terrascript import _data
-class packet_precreated_ip_block(_data): pass
-precreated_ip_block = packet_precreated_ip_block
+#  terrascript/packet/d.py
 
-class packet_operating_system(_data): pass
-operating_system = packet_operating_system
+import terrascript
 
-class packet_spot_market_price(_data): pass
-spot_market_price = packet_spot_market_price
 
+class precreated_ip_block(terrascript.Datasource):
+    pass
+
+class operating_system(terrascript.Datasource):
+    pass
+
+class spot_market_price(terrascript.Datasource):
+    pass
+
+class device(terrascript.Datasource):
+    pass

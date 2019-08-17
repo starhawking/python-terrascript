@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:15"""
+# terrascript/cobbler/__init__.py
+
+import terrascript
+
+class cobbler(terrascript.Provider):
+    pass

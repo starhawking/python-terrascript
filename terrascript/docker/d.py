@@ -1,7 +1,10 @@
-from terrascript import _data
-class docker_registry_image(_data): pass
-registry_image = docker_registry_image
+#  terrascript/docker/d.py
 
-class docker_network(_data): pass
-network = docker_network
+import terrascript
 
+
+class registry_image(terrascript.Datasource):
+    pass
+
+class network(terrascript.Datasource):
+    pass

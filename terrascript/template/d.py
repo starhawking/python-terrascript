@@ -1,7 +1,10 @@
-from terrascript import _data
-class template_file(_data): pass
-file = template_file
+#  terrascript/template/d.py
 
-class template_cloudinit_config(_data): pass
-cloudinit_config = template_cloudinit_config
+import terrascript
 
+
+class file(terrascript.Datasource):
+    pass
+
+class cloudinit_config(terrascript.Datasource):
+    pass

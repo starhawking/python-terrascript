@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:27"""
+# terrascript/dnsimple/__init__.py
+
+import terrascript
+
+class dnsimple(terrascript.Provider):
+    pass

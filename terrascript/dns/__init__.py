@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:25"""
+# terrascript/dns/__init__.py
+
+import terrascript
+
+class dns(terrascript.Provider):
+    pass

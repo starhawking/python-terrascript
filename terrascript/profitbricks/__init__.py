@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:24"""
+# terrascript/profitbricks/__init__.py
+
+import terrascript
+
+class profitbricks(terrascript.Provider):
+    pass

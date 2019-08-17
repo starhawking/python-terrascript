@@ -1,34 +1,37 @@
-from terrascript import _data
-class ignition_config(_data): pass
-config = ignition_config
+#  terrascript/ignition/d.py
 
-class ignition_disk(_data): pass
-disk = ignition_disk
+import terrascript
 
-class ignition_raid(_data): pass
-raid = ignition_raid
 
-class ignition_filesystem(_data): pass
-filesystem = ignition_filesystem
+class config(terrascript.Datasource):
+    pass
 
-class ignition_file(_data): pass
-file = ignition_file
+class disk(terrascript.Datasource):
+    pass
 
-class ignition_directory(_data): pass
-directory = ignition_directory
+class raid(terrascript.Datasource):
+    pass
 
-class ignition_link(_data): pass
-link = ignition_link
+class filesystem(terrascript.Datasource):
+    pass
 
-class ignition_systemd_unit(_data): pass
-systemd_unit = ignition_systemd_unit
+class file(terrascript.Datasource):
+    pass
 
-class ignition_networkd_unit(_data): pass
-networkd_unit = ignition_networkd_unit
+class directory(terrascript.Datasource):
+    pass
 
-class ignition_user(_data): pass
-user = ignition_user
+class link(terrascript.Datasource):
+    pass
 
-class ignition_group(_data): pass
-group = ignition_group
+class systemd_unit(terrascript.Datasource):
+    pass
 
+class networkd_unit(terrascript.Datasource):
+    pass
+
+class user(terrascript.Datasource):
+    pass
+
+class group(terrascript.Datasource):
+    pass

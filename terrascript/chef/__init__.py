@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:02"""
+# terrascript/chef/__init__.py
+
+import terrascript
+
+class chef(terrascript.Provider):
+    pass

@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:03"""
+# terrascript/nomad/__init__.py
+
+import terrascript
+
+class nomad(terrascript.Provider):
+    pass

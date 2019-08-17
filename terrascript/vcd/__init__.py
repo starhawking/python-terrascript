@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:47"""
+# terrascript/vcd/__init__.py
+
+import terrascript
+
+class vcd(terrascript.Provider):
+    pass

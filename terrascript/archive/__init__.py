@@ -1,1 +1,6 @@
-"""2019-05-28 10:48:52"""
+# terrascript/archive/__init__.py
+
+import terrascript
+
+class archive(terrascript.Provider):
+    pass

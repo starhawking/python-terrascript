@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:55"""
+# terrascript/logentries/__init__.py
+
+import terrascript
+
+class logentries(terrascript.Provider):
+    pass

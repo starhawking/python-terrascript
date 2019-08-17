@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/bitbucket/d.py
+
+import terrascript
+

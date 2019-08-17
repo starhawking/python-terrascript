@@ -1,268 +1,304 @@
-from terrascript import _data
-class alicloud_account(_data): pass
-account = alicloud_account
+#  terrascript/alicloud/d.py
 
-class alicloud_images(_data): pass
-images = alicloud_images
+import terrascript
 
-class alicloud_regions(_data): pass
-regions = alicloud_regions
 
-class alicloud_zones(_data): pass
-zones = alicloud_zones
+class account(terrascript.Datasource):
+    pass
 
-class alicloud_instance_types(_data): pass
-instance_types = alicloud_instance_types
+class images(terrascript.Datasource):
+    pass
 
-class alicloud_instances(_data): pass
-instances = alicloud_instances
+class regions(terrascript.Datasource):
+    pass
 
-class alicloud_disks(_data): pass
-disks = alicloud_disks
+class zones(terrascript.Datasource):
+    pass
 
-class alicloud_network_interfaces(_data): pass
-network_interfaces = alicloud_network_interfaces
+class instance_type_families(terrascript.Datasource):
+    pass
 
-class alicloud_snapshots(_data): pass
-snapshots = alicloud_snapshots
+class instance_types(terrascript.Datasource):
+    pass
 
-class alicloud_vpcs(_data): pass
-vpcs = alicloud_vpcs
+class instances(terrascript.Datasource):
+    pass
 
-class alicloud_vswitches(_data): pass
-vswitches = alicloud_vswitches
+class disks(terrascript.Datasource):
+    pass
 
-class alicloud_eips(_data): pass
-eips = alicloud_eips
+class network_interfaces(terrascript.Datasource):
+    pass
 
-class alicloud_key_pairs(_data): pass
-key_pairs = alicloud_key_pairs
+class snapshots(terrascript.Datasource):
+    pass
 
-class alicloud_kms_keys(_data): pass
-kms_keys = alicloud_kms_keys
+class vpcs(terrascript.Datasource):
+    pass
 
-class alicloud_dns_domains(_data): pass
-dns_domains = alicloud_dns_domains
+class vswitches(terrascript.Datasource):
+    pass
 
-class alicloud_dns_groups(_data): pass
-dns_groups = alicloud_dns_groups
+class eips(terrascript.Datasource):
+    pass
 
-class alicloud_dns_records(_data): pass
-dns_records = alicloud_dns_records
+class key_pairs(terrascript.Datasource):
+    pass
 
-class alicloud_dns_domain_groups(_data): pass
-dns_domain_groups = alicloud_dns_domain_groups
+class kms_keys(terrascript.Datasource):
+    pass
 
-class alicloud_dns_domain_records(_data): pass
-dns_domain_records = alicloud_dns_domain_records
+class dns_domains(terrascript.Datasource):
+    pass
 
-class alicloud_ram_account_alias(_data): pass
-ram_account_alias = alicloud_ram_account_alias
+class dns_groups(terrascript.Datasource):
+    pass
 
-class alicloud_ram_account_aliases(_data): pass
-ram_account_aliases = alicloud_ram_account_aliases
+class dns_records(terrascript.Datasource):
+    pass
 
-class alicloud_ram_groups(_data): pass
-ram_groups = alicloud_ram_groups
+class dns_domain_groups(terrascript.Datasource):
+    pass
 
-class alicloud_ram_users(_data): pass
-ram_users = alicloud_ram_users
+class dns_domain_records(terrascript.Datasource):
+    pass
 
-class alicloud_ram_roles(_data): pass
-ram_roles = alicloud_ram_roles
+class ram_account_alias(terrascript.Datasource):
+    pass
 
-class alicloud_ram_policies(_data): pass
-ram_policies = alicloud_ram_policies
+class ram_account_aliases(terrascript.Datasource):
+    pass
 
-class alicloud_security_groups(_data): pass
-security_groups = alicloud_security_groups
+class ram_groups(terrascript.Datasource):
+    pass
 
-class alicloud_security_group_rules(_data): pass
-security_group_rules = alicloud_security_group_rules
+class ram_users(terrascript.Datasource):
+    pass
 
-class alicloud_slbs(_data): pass
-slbs = alicloud_slbs
+class ram_roles(terrascript.Datasource):
+    pass
 
-class alicloud_slb_attachments(_data): pass
-slb_attachments = alicloud_slb_attachments
+class ram_policies(terrascript.Datasource):
+    pass
 
-class alicloud_slb_listeners(_data): pass
-slb_listeners = alicloud_slb_listeners
+class security_groups(terrascript.Datasource):
+    pass
 
-class alicloud_slb_rules(_data): pass
-slb_rules = alicloud_slb_rules
+class security_group_rules(terrascript.Datasource):
+    pass
 
-class alicloud_slb_server_groups(_data): pass
-slb_server_groups = alicloud_slb_server_groups
+class slbs(terrascript.Datasource):
+    pass
 
-class alicloud_slb_acls(_data): pass
-slb_acls = alicloud_slb_acls
+class slb_attachments(terrascript.Datasource):
+    pass
 
-class alicloud_slb_server_certificates(_data): pass
-slb_server_certificates = alicloud_slb_server_certificates
+class slb_backend_servers(terrascript.Datasource):
+    pass
 
-class alicloud_slb_ca_certificates(_data): pass
-slb_ca_certificates = alicloud_slb_ca_certificates
+class slb_listeners(terrascript.Datasource):
+    pass
 
-class alicloud_oss_bucket_objects(_data): pass
-oss_bucket_objects = alicloud_oss_bucket_objects
+class slb_rules(terrascript.Datasource):
+    pass
 
-class alicloud_oss_buckets(_data): pass
-oss_buckets = alicloud_oss_buckets
+class slb_server_groups(terrascript.Datasource):
+    pass
 
-class alicloud_fc_functions(_data): pass
-fc_functions = alicloud_fc_functions
+class slb_master_slave_server_groups(terrascript.Datasource):
+    pass
 
-class alicloud_fc_services(_data): pass
-fc_services = alicloud_fc_services
+class slb_acls(terrascript.Datasource):
+    pass
 
-class alicloud_fc_triggers(_data): pass
-fc_triggers = alicloud_fc_triggers
+class slb_server_certificates(terrascript.Datasource):
+    pass
 
-class alicloud_db_instances(_data): pass
-db_instances = alicloud_db_instances
+class slb_ca_certificates(terrascript.Datasource):
+    pass
 
-class alicloud_pvtz_zones(_data): pass
-pvtz_zones = alicloud_pvtz_zones
+class oss_bucket_objects(terrascript.Datasource):
+    pass
 
-class alicloud_pvtz_zone_records(_data): pass
-pvtz_zone_records = alicloud_pvtz_zone_records
+class oss_buckets(terrascript.Datasource):
+    pass
 
-class alicloud_router_interfaces(_data): pass
-router_interfaces = alicloud_router_interfaces
+class ons_instances(terrascript.Datasource):
+    pass
 
-class alicloud_vpn_gateways(_data): pass
-vpn_gateways = alicloud_vpn_gateways
+class ons_topics(terrascript.Datasource):
+    pass
 
-class alicloud_vpn_customer_gateways(_data): pass
-vpn_customer_gateways = alicloud_vpn_customer_gateways
+class ons_groups(terrascript.Datasource):
+    pass
 
-class alicloud_vpn_connections(_data): pass
-vpn_connections = alicloud_vpn_connections
+class fc_functions(terrascript.Datasource):
+    pass
 
-class alicloud_ssl_vpn_servers(_data): pass
-ssl_vpn_servers = alicloud_ssl_vpn_servers
+class fc_services(terrascript.Datasource):
+    pass
 
-class alicloud_ssl_vpn_client_certs(_data): pass
-ssl_vpn_client_certs = alicloud_ssl_vpn_client_certs
+class fc_triggers(terrascript.Datasource):
+    pass
 
-class alicloud_mongo_instances(_data): pass
-mongo_instances = alicloud_mongo_instances
+class db_instances(terrascript.Datasource):
+    pass
 
-class alicloud_mongodb_instances(_data): pass
-mongodb_instances = alicloud_mongodb_instances
+class db_instance_engines(terrascript.Datasource):
+    pass
 
-class alicloud_kvstore_instances(_data): pass
-kvstore_instances = alicloud_kvstore_instances
+class db_instance_classes(terrascript.Datasource):
+    pass
 
-class alicloud_cen_instances(_data): pass
-cen_instances = alicloud_cen_instances
+class pvtz_zones(terrascript.Datasource):
+    pass
 
-class alicloud_cen_bandwidth_packages(_data): pass
-cen_bandwidth_packages = alicloud_cen_bandwidth_packages
+class pvtz_zone_records(terrascript.Datasource):
+    pass
 
-class alicloud_cen_bandwidth_limits(_data): pass
-cen_bandwidth_limits = alicloud_cen_bandwidth_limits
+class router_interfaces(terrascript.Datasource):
+    pass
 
-class alicloud_cen_route_entries(_data): pass
-cen_route_entries = alicloud_cen_route_entries
+class vpn_gateways(terrascript.Datasource):
+    pass
 
-class alicloud_cen_region_route_entries(_data): pass
-cen_region_route_entries = alicloud_cen_region_route_entries
+class vpn_customer_gateways(terrascript.Datasource):
+    pass
 
-class alicloud_cs_kubernetes_clusters(_data): pass
-cs_kubernetes_clusters = alicloud_cs_kubernetes_clusters
+class vpn_connections(terrascript.Datasource):
+    pass
 
-class alicloud_cs_managed_kubernetes_clusters(_data): pass
-cs_managed_kubernetes_clusters = alicloud_cs_managed_kubernetes_clusters
+class ssl_vpn_servers(terrascript.Datasource):
+    pass
 
-class alicloud_cr_namespaces(_data): pass
-cr_namespaces = alicloud_cr_namespaces
+class ssl_vpn_client_certs(terrascript.Datasource):
+    pass
 
-class alicloud_cr_repos(_data): pass
-cr_repos = alicloud_cr_repos
+class mongo_instances(terrascript.Datasource):
+    pass
 
-class alicloud_mns_queues(_data): pass
-mns_queues = alicloud_mns_queues
+class mongodb_instances(terrascript.Datasource):
+    pass
 
-class alicloud_mns_topics(_data): pass
-mns_topics = alicloud_mns_topics
+class gpdb_instances(terrascript.Datasource):
+    pass
 
-class alicloud_mns_topic_subscriptions(_data): pass
-mns_topic_subscriptions = alicloud_mns_topic_subscriptions
+class kvstore_instances(terrascript.Datasource):
+    pass
 
-class alicloud_api_gateway_apis(_data): pass
-api_gateway_apis = alicloud_api_gateway_apis
+class kvstore_instance_classes(terrascript.Datasource):
+    pass
 
-class alicloud_api_gateway_groups(_data): pass
-api_gateway_groups = alicloud_api_gateway_groups
+class kvstore_instance_engines(terrascript.Datasource):
+    pass
 
-class alicloud_api_gateway_apps(_data): pass
-api_gateway_apps = alicloud_api_gateway_apps
+class cen_instances(terrascript.Datasource):
+    pass
 
-class alicloud_elasticsearch_instances(_data): pass
-elasticsearch_instances = alicloud_elasticsearch_instances
+class cen_bandwidth_packages(terrascript.Datasource):
+    pass
 
-class alicloud_drds_instances(_data): pass
-drds_instances = alicloud_drds_instances
+class cen_bandwidth_limits(terrascript.Datasource):
+    pass
 
-class alicloud_nas_access_groups(_data): pass
-nas_access_groups = alicloud_nas_access_groups
+class cen_route_entries(terrascript.Datasource):
+    pass
 
-class alicloud_nas_access_rules(_data): pass
-nas_access_rules = alicloud_nas_access_rules
+class cen_region_route_entries(terrascript.Datasource):
+    pass
 
-class alicloud_nas_mount_targets(_data): pass
-nas_mount_targets = alicloud_nas_mount_targets
+class cs_kubernetes_clusters(terrascript.Datasource):
+    pass
 
-class alicloud_nas_file_systems(_data): pass
-nas_file_systems = alicloud_nas_file_systems
+class cs_managed_kubernetes_clusters(terrascript.Datasource):
+    pass
 
-class alicloud_nas_protocols(_data): pass
-nas_protocols = alicloud_nas_protocols
+class cr_namespaces(terrascript.Datasource):
+    pass
 
-class alicloud_cas_certificates(_data): pass
-cas_certificates = alicloud_cas_certificates
+class cr_repos(terrascript.Datasource):
+    pass
 
-class alicloud_actiontrails(_data): pass
-actiontrails = alicloud_actiontrails
+class mns_queues(terrascript.Datasource):
+    pass
 
-class alicloud_common_bandwidth_packages(_data): pass
-common_bandwidth_packages = alicloud_common_bandwidth_packages
+class mns_topics(terrascript.Datasource):
+    pass
 
-class alicloud_route_tables(_data): pass
-route_tables = alicloud_route_tables
+class mns_topic_subscriptions(terrascript.Datasource):
+    pass
 
-class alicloud_route_entries(_data): pass
-route_entries = alicloud_route_entries
+class api_gateway_apis(terrascript.Datasource):
+    pass
 
-class alicloud_nat_gateways(_data): pass
-nat_gateways = alicloud_nat_gateways
+class api_gateway_groups(terrascript.Datasource):
+    pass
 
-class alicloud_snat_entries(_data): pass
-snat_entries = alicloud_snat_entries
+class api_gateway_apps(terrascript.Datasource):
+    pass
 
-class alicloud_forward_entries(_data): pass
-forward_entries = alicloud_forward_entries
+class elasticsearch_instances(terrascript.Datasource):
+    pass
 
-class alicloud_ddoscoo_instances(_data): pass
-ddoscoo_instances = alicloud_ddoscoo_instances
+class drds_instances(terrascript.Datasource):
+    pass
 
-class alicloud_ess_scaling_groups(_data): pass
-ess_scaling_groups = alicloud_ess_scaling_groups
+class nas_access_groups(terrascript.Datasource):
+    pass
 
-class alicloud_ess_scaling_rules(_data): pass
-ess_scaling_rules = alicloud_ess_scaling_rules
+class nas_access_rules(terrascript.Datasource):
+    pass
 
-class alicloud_ess_scaling_configurations(_data): pass
-ess_scaling_configurations = alicloud_ess_scaling_configurations
+class nas_mount_targets(terrascript.Datasource):
+    pass
 
-class alicloud_ots_instances(_data): pass
-ots_instances = alicloud_ots_instances
+class nas_file_systems(terrascript.Datasource):
+    pass
 
-class alicloud_ots_instance_attachments(_data): pass
-ots_instance_attachments = alicloud_ots_instance_attachments
+class nas_protocols(terrascript.Datasource):
+    pass
 
-class alicloud_ots_tables(_data): pass
-ots_tables = alicloud_ots_tables
+class cas_certificates(terrascript.Datasource):
+    pass
 
+class actiontrails(terrascript.Datasource):
+    pass
+
+class common_bandwidth_packages(terrascript.Datasource):
+    pass
+
+class route_tables(terrascript.Datasource):
+    pass
+
+class route_entries(terrascript.Datasource):
+    pass
+
+class nat_gateways(terrascript.Datasource):
+    pass
+
+class snat_entries(terrascript.Datasource):
+    pass
+
+class forward_entries(terrascript.Datasource):
+    pass
+
+class ddoscoo_instances(terrascript.Datasource):
+    pass
+
+class ess_scaling_groups(terrascript.Datasource):
+    pass
+
+class ess_scaling_rules(terrascript.Datasource):
+    pass
+
+class ess_scaling_configurations(terrascript.Datasource):
+    pass
+
+class ots_instances(terrascript.Datasource):
+    pass
+
+class ots_instance_attachments(terrascript.Datasource):
+    pass
+
+class ots_tables(terrascript.Datasource):
+    pass

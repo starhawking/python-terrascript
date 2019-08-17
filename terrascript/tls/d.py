@@ -1,4 +1,7 @@
-from terrascript import _data
-class tls_public_key(_data): pass
-public_key = tls_public_key
+#  terrascript/tls/d.py
 
+import terrascript
+
+
+class public_key(terrascript.Datasource):
+    pass

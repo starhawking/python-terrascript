@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:19"""
+# terrascript/datadog/__init__.py
+
+import terrascript
+
+class datadog(terrascript.Provider):
+    pass

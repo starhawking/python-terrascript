@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/random/d.py
+
+import terrascript
+

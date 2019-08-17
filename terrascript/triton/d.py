@@ -1,22 +1,25 @@
-from terrascript import _data
-class triton_account(_data): pass
-account = triton_account
+#  terrascript/triton/d.py
 
-class triton_datacenter(_data): pass
-datacenter = triton_datacenter
+import terrascript
 
-class triton_image(_data): pass
-image = triton_image
 
-class triton_network(_data): pass
-network = triton_network
+class account(terrascript.Datasource):
+    pass
 
-class triton_package(_data): pass
-package = triton_package
+class datacenter(terrascript.Datasource):
+    pass
 
-class triton_fabric_vlan(_data): pass
-fabric_vlan = triton_fabric_vlan
+class image(terrascript.Datasource):
+    pass
 
-class triton_fabric_network(_data): pass
-fabric_network = triton_fabric_network
+class network(terrascript.Datasource):
+    pass
 
+class package(terrascript.Datasource):
+    pass
+
+class fabric_vlan(terrascript.Datasource):
+    pass
+
+class fabric_network(terrascript.Datasource):
+    pass

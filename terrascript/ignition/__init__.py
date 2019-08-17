@@ -1,1 +1,6 @@
-"""2019-05-28 10:49:48"""
+# terrascript/ignition/__init__.py
+
+import terrascript
+
+class ignition(terrascript.Provider):
+    pass

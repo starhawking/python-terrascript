@@ -1,1 +1,6 @@
-"""2019-05-28 10:50:07"""
+# terrascript/oneandone/__init__.py
+
+import terrascript
+
+class oneandone(terrascript.Provider):
+    pass

@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/powerdns/d.py
+
+import terrascript
+

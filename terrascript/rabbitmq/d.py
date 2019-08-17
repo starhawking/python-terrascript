@@ -1,1 +1,4 @@
-from terrascript import _data
+#  terrascript/rabbitmq/d.py
+
+import terrascript
+
