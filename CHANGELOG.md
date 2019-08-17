@@ -4,9 +4,9 @@
 Release 0.8.0 will be a major re-write of the code.
 ## [0.7.0] - Not yet released
 ### Added
-* Support for Terraform 0.12 JSON syntax.
+* Initial support for Terraform 0.12 but has not seen much testing yet.
 * Lots of other stuff (pull #72)
-## [0.6.1] - Not yet released
+## [0.6.1] - 2019-08-17
 ### Added
 * Locals resouce (pull #71)
 * null provider resouces (pull #69)
