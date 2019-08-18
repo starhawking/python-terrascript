@@ -30,4 +30,4 @@ there is also no function `bar()`.
 
 At an early stage I contemplated parsing the Terraform Go source code and auto-create Python
 code that does indeed verify whether the generated JSON configuration is valid Terraform input. This attempt
-proved way to difficult so I abandonded that approach.
+proved much too difficult so I abandonded that approach.
