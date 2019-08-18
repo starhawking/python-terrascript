@@ -1,412 +1,445 @@
-from terrascript import _resource
-class alicloud_instance(_resource): pass
-instance = alicloud_instance
+#  terrascript/alicloud/r.py
 
-class alicloud_ram_role_attachment(_resource): pass
-ram_role_attachment = alicloud_ram_role_attachment
+import terrascript
 
-class alicloud_disk(_resource): pass
-disk = alicloud_disk
 
-class alicloud_disk_attachment(_resource): pass
-disk_attachment = alicloud_disk_attachment
+class alicloud_instance(terrascript.Resource):
+    pass
 
-class alicloud_network_interface(_resource): pass
-network_interface = alicloud_network_interface
+class alicloud_ram_role_attachment(terrascript.Resource):
+    pass
 
-class alicloud_network_interface_attachment(_resource): pass
-network_interface_attachment = alicloud_network_interface_attachment
+class alicloud_disk(terrascript.Resource):
+    pass
 
-class alicloud_snapshot(_resource): pass
-snapshot = alicloud_snapshot
+class alicloud_disk_attachment(terrascript.Resource):
+    pass
 
-class alicloud_snapshot_policy(_resource): pass
-snapshot_policy = alicloud_snapshot_policy
+class alicloud_network_interface(terrascript.Resource):
+    pass
 
-class alicloud_launch_template(_resource): pass
-launch_template = alicloud_launch_template
+class alicloud_network_interface_attachment(terrascript.Resource):
+    pass
 
-class alicloud_security_group(_resource): pass
-security_group = alicloud_security_group
+class alicloud_snapshot(terrascript.Resource):
+    pass
 
-class alicloud_security_group_rule(_resource): pass
-security_group_rule = alicloud_security_group_rule
+class alicloud_snapshot_policy(terrascript.Resource):
+    pass
 
-class alicloud_db_database(_resource): pass
-db_database = alicloud_db_database
+class alicloud_launch_template(terrascript.Resource):
+    pass
 
-class alicloud_db_account(_resource): pass
-db_account = alicloud_db_account
+class alicloud_security_group(terrascript.Resource):
+    pass
 
-class alicloud_db_account_privilege(_resource): pass
-db_account_privilege = alicloud_db_account_privilege
+class alicloud_security_group_rule(terrascript.Resource):
+    pass
 
-class alicloud_db_backup_policy(_resource): pass
-db_backup_policy = alicloud_db_backup_policy
+class alicloud_db_database(terrascript.Resource):
+    pass
 
-class alicloud_db_connection(_resource): pass
-db_connection = alicloud_db_connection
+class alicloud_db_account(terrascript.Resource):
+    pass
 
-class alicloud_db_read_write_splitting_connection(_resource): pass
-db_read_write_splitting_connection = alicloud_db_read_write_splitting_connection
+class alicloud_db_account_privilege(terrascript.Resource):
+    pass
 
-class alicloud_db_instance(_resource): pass
-db_instance = alicloud_db_instance
+class alicloud_db_backup_policy(terrascript.Resource):
+    pass
 
-class alicloud_mongodb_instance(_resource): pass
-mongodb_instance = alicloud_mongodb_instance
+class alicloud_db_connection(terrascript.Resource):
+    pass
 
-class alicloud_mongodb_sharding_instance(_resource): pass
-mongodb_sharding_instance = alicloud_mongodb_sharding_instance
+class alicloud_db_read_write_splitting_connection(terrascript.Resource):
+    pass
 
-class alicloud_db_readonly_instance(_resource): pass
-db_readonly_instance = alicloud_db_readonly_instance
+class alicloud_db_instance(terrascript.Resource):
+    pass
 
-class alicloud_ess_scaling_group(_resource): pass
-ess_scaling_group = alicloud_ess_scaling_group
+class alicloud_mongodb_instance(terrascript.Resource):
+    pass
 
-class alicloud_ess_scaling_configuration(_resource): pass
-ess_scaling_configuration = alicloud_ess_scaling_configuration
+class alicloud_mongodb_sharding_instance(terrascript.Resource):
+    pass
 
-class alicloud_ess_scaling_rule(_resource): pass
-ess_scaling_rule = alicloud_ess_scaling_rule
+class alicloud_gpdb_instance(terrascript.Resource):
+    pass
 
-class alicloud_ess_schedule(_resource): pass
-ess_schedule = alicloud_ess_schedule
+class alicloud_gpdb_connection(terrascript.Resource):
+    pass
 
-class alicloud_ess_scheduled_task(_resource): pass
-ess_scheduled_task = alicloud_ess_scheduled_task
+class alicloud_db_readonly_instance(terrascript.Resource):
+    pass
 
-class alicloud_ess_attachment(_resource): pass
-ess_attachment = alicloud_ess_attachment
+class alicloud_ess_scaling_group(terrascript.Resource):
+    pass
 
-class alicloud_ess_lifecycle_hook(_resource): pass
-ess_lifecycle_hook = alicloud_ess_lifecycle_hook
+class alicloud_ess_scaling_configuration(terrascript.Resource):
+    pass
 
-class alicloud_ess_alarm(_resource): pass
-ess_alarm = alicloud_ess_alarm
+class alicloud_ess_scaling_rule(terrascript.Resource):
+    pass
 
-class alicloud_vpc(_resource): pass
-vpc = alicloud_vpc
+class alicloud_ess_schedule(terrascript.Resource):
+    pass
 
-class alicloud_nat_gateway(_resource): pass
-nat_gateway = alicloud_nat_gateway
+class alicloud_ess_scheduled_task(terrascript.Resource):
+    pass
 
-class alicloud_nas_file_system(_resource): pass
-nas_file_system = alicloud_nas_file_system
+class alicloud_ess_attachment(terrascript.Resource):
+    pass
 
-class alicloud_nas_mount_target(_resource): pass
-nas_mount_target = alicloud_nas_mount_target
+class alicloud_ess_lifecycle_hook(terrascript.Resource):
+    pass
 
-class alicloud_nas_access_group(_resource): pass
-nas_access_group = alicloud_nas_access_group
+class alicloud_ess_notification(terrascript.Resource):
+    pass
 
-class alicloud_nas_access_rule(_resource): pass
-nas_access_rule = alicloud_nas_access_rule
+class alicloud_ess_alarm(terrascript.Resource):
+    pass
 
-class alicloud_subnet(_resource): pass
-subnet = alicloud_subnet
+class alicloud_ess_scalinggroup_vserver_groups(terrascript.Resource):
+    pass
 
-class alicloud_vswitch(_resource): pass
-vswitch = alicloud_vswitch
+class alicloud_vpc(terrascript.Resource):
+    pass
 
-class alicloud_route_entry(_resource): pass
-route_entry = alicloud_route_entry
+class alicloud_nat_gateway(terrascript.Resource):
+    pass
 
-class alicloud_route_table(_resource): pass
-route_table = alicloud_route_table
+class alicloud_nas_file_system(terrascript.Resource):
+    pass
 
-class alicloud_route_table_attachment(_resource): pass
-route_table_attachment = alicloud_route_table_attachment
+class alicloud_nas_mount_target(terrascript.Resource):
+    pass
 
-class alicloud_snat_entry(_resource): pass
-snat_entry = alicloud_snat_entry
+class alicloud_nas_access_group(terrascript.Resource):
+    pass
 
-class alicloud_forward_entry(_resource): pass
-forward_entry = alicloud_forward_entry
+class alicloud_nas_access_rule(terrascript.Resource):
+    pass
 
-class alicloud_eip(_resource): pass
-eip = alicloud_eip
+class alicloud_subnet(terrascript.Resource):
+    pass
 
-class alicloud_eip_association(_resource): pass
-eip_association = alicloud_eip_association
+class alicloud_vswitch(terrascript.Resource):
+    pass
 
-class alicloud_slb(_resource): pass
-slb = alicloud_slb
+class alicloud_route_entry(terrascript.Resource):
+    pass
 
-class alicloud_slb_listener(_resource): pass
-slb_listener = alicloud_slb_listener
+class alicloud_route_table(terrascript.Resource):
+    pass
 
-class alicloud_slb_attachment(_resource): pass
-slb_attachment = alicloud_slb_attachment
+class alicloud_route_table_attachment(terrascript.Resource):
+    pass
 
-class alicloud_slb_server_group(_resource): pass
-slb_server_group = alicloud_slb_server_group
+class alicloud_snat_entry(terrascript.Resource):
+    pass
 
-class alicloud_slb_rule(_resource): pass
-slb_rule = alicloud_slb_rule
+class alicloud_forward_entry(terrascript.Resource):
+    pass
 
-class alicloud_slb_acl(_resource): pass
-slb_acl = alicloud_slb_acl
+class alicloud_eip(terrascript.Resource):
+    pass
 
-class alicloud_slb_ca_certificate(_resource): pass
-slb_ca_certificate = alicloud_slb_ca_certificate
+class alicloud_eip_association(terrascript.Resource):
+    pass
 
-class alicloud_slb_server_certificate(_resource): pass
-slb_server_certificate = alicloud_slb_server_certificate
+class alicloud_slb(terrascript.Resource):
+    pass
 
-class alicloud_oss_bucket(_resource): pass
-oss_bucket = alicloud_oss_bucket
+class alicloud_slb_listener(terrascript.Resource):
+    pass
 
-class alicloud_oss_bucket_object(_resource): pass
-oss_bucket_object = alicloud_oss_bucket_object
+class alicloud_slb_attachment(terrascript.Resource):
+    pass
 
-class alicloud_dns_record(_resource): pass
-dns_record = alicloud_dns_record
+class alicloud_slb_backend_server(terrascript.Resource):
+    pass
 
-class alicloud_dns(_resource): pass
-dns = alicloud_dns
+class alicloud_slb_server_group(terrascript.Resource):
+    pass
 
-class alicloud_dns_group(_resource): pass
-dns_group = alicloud_dns_group
+class alicloud_slb_master_slave_server_group(terrascript.Resource):
+    pass
 
-class alicloud_key_pair(_resource): pass
-key_pair = alicloud_key_pair
+class alicloud_slb_rule(terrascript.Resource):
+    pass
 
-class alicloud_key_pair_attachment(_resource): pass
-key_pair_attachment = alicloud_key_pair_attachment
+class alicloud_slb_acl(terrascript.Resource):
+    pass
 
-class alicloud_kms_key(_resource): pass
-kms_key = alicloud_kms_key
+class alicloud_slb_ca_certificate(terrascript.Resource):
+    pass
 
-class alicloud_ram_user(_resource): pass
-ram_user = alicloud_ram_user
+class alicloud_slb_server_certificate(terrascript.Resource):
+    pass
 
-class alicloud_ram_access_key(_resource): pass
-ram_access_key = alicloud_ram_access_key
+class alicloud_oss_bucket(terrascript.Resource):
+    pass
 
-class alicloud_ram_login_profile(_resource): pass
-ram_login_profile = alicloud_ram_login_profile
+class alicloud_oss_bucket_object(terrascript.Resource):
+    pass
 
-class alicloud_ram_group(_resource): pass
-ram_group = alicloud_ram_group
+class alicloud_ons_instance(terrascript.Resource):
+    pass
 
-class alicloud_ram_role(_resource): pass
-ram_role = alicloud_ram_role
+class alicloud_ons_topic(terrascript.Resource):
+    pass
 
-class alicloud_ram_policy(_resource): pass
-ram_policy = alicloud_ram_policy
+class alicloud_ons_group(terrascript.Resource):
+    pass
 
-class alicloud_ram_alias(_resource): pass
-ram_alias = alicloud_ram_alias
+class alicloud_dns_record(terrascript.Resource):
+    pass
 
-class alicloud_ram_account_alias(_resource): pass
-ram_account_alias = alicloud_ram_account_alias
+class alicloud_dns(terrascript.Resource):
+    pass
 
-class alicloud_ram_group_membership(_resource): pass
-ram_group_membership = alicloud_ram_group_membership
+class alicloud_dns_group(terrascript.Resource):
+    pass
 
-class alicloud_ram_user_policy_attachment(_resource): pass
-ram_user_policy_attachment = alicloud_ram_user_policy_attachment
+class alicloud_key_pair(terrascript.Resource):
+    pass
 
-class alicloud_ram_role_policy_attachment(_resource): pass
-ram_role_policy_attachment = alicloud_ram_role_policy_attachment
+class alicloud_key_pair_attachment(terrascript.Resource):
+    pass
 
-class alicloud_ram_group_policy_attachment(_resource): pass
-ram_group_policy_attachment = alicloud_ram_group_policy_attachment
+class alicloud_kms_key(terrascript.Resource):
+    pass
 
-class alicloud_container_cluster(_resource): pass
-container_cluster = alicloud_container_cluster
+class alicloud_ram_user(terrascript.Resource):
+    pass
 
-class alicloud_cs_application(_resource): pass
-cs_application = alicloud_cs_application
+class alicloud_ram_account_password_policy(terrascript.Resource):
+    pass
 
-class alicloud_cs_swarm(_resource): pass
-cs_swarm = alicloud_cs_swarm
+class alicloud_ram_access_key(terrascript.Resource):
+    pass
 
-class alicloud_cs_kubernetes(_resource): pass
-cs_kubernetes = alicloud_cs_kubernetes
+class alicloud_ram_login_profile(terrascript.Resource):
+    pass
 
-class alicloud_cs_managed_kubernetes(_resource): pass
-cs_managed_kubernetes = alicloud_cs_managed_kubernetes
+class alicloud_ram_group(terrascript.Resource):
+    pass
 
-class alicloud_cr_namespace(_resource): pass
-cr_namespace = alicloud_cr_namespace
+class alicloud_ram_role(terrascript.Resource):
+    pass
 
-class alicloud_cr_repo(_resource): pass
-cr_repo = alicloud_cr_repo
+class alicloud_ram_policy(terrascript.Resource):
+    pass
 
-class alicloud_cdn_domain(_resource): pass
-cdn_domain = alicloud_cdn_domain
+class alicloud_ram_alias(terrascript.Resource):
+    pass
 
-class alicloud_cdn_domain_new(_resource): pass
-cdn_domain_new = alicloud_cdn_domain_new
+class alicloud_ram_account_alias(terrascript.Resource):
+    pass
 
-class alicloud_cdn_domain_config(_resource): pass
-cdn_domain_config = alicloud_cdn_domain_config
+class alicloud_ram_group_membership(terrascript.Resource):
+    pass
 
-class alicloud_router_interface(_resource): pass
-router_interface = alicloud_router_interface
+class alicloud_ram_user_policy_attachment(terrascript.Resource):
+    pass
 
-class alicloud_router_interface_connection(_resource): pass
-router_interface_connection = alicloud_router_interface_connection
+class alicloud_ram_role_policy_attachment(terrascript.Resource):
+    pass
 
-class alicloud_ots_table(_resource): pass
-ots_table = alicloud_ots_table
+class alicloud_ram_group_policy_attachment(terrascript.Resource):
+    pass
 
-class alicloud_ots_instance(_resource): pass
-ots_instance = alicloud_ots_instance
+class alicloud_container_cluster(terrascript.Resource):
+    pass
 
-class alicloud_ots_instance_attachment(_resource): pass
-ots_instance_attachment = alicloud_ots_instance_attachment
+class alicloud_cs_application(terrascript.Resource):
+    pass
 
-class alicloud_cms_alarm(_resource): pass
-cms_alarm = alicloud_cms_alarm
+class alicloud_cs_swarm(terrascript.Resource):
+    pass
 
-class alicloud_pvtz_zone(_resource): pass
-pvtz_zone = alicloud_pvtz_zone
+class alicloud_cs_kubernetes(terrascript.Resource):
+    pass
 
-class alicloud_pvtz_zone_attachment(_resource): pass
-pvtz_zone_attachment = alicloud_pvtz_zone_attachment
+class alicloud_cs_managed_kubernetes(terrascript.Resource):
+    pass
 
-class alicloud_pvtz_zone_record(_resource): pass
-pvtz_zone_record = alicloud_pvtz_zone_record
+class alicloud_cr_namespace(terrascript.Resource):
+    pass
 
-class alicloud_log_project(_resource): pass
-log_project = alicloud_log_project
+class alicloud_cr_repo(terrascript.Resource):
+    pass
 
-class alicloud_log_store(_resource): pass
-log_store = alicloud_log_store
+class alicloud_cdn_domain(terrascript.Resource):
+    pass
 
-class alicloud_log_store_index(_resource): pass
-log_store_index = alicloud_log_store_index
+class alicloud_cdn_domain_new(terrascript.Resource):
+    pass
 
-class alicloud_log_machine_group(_resource): pass
-log_machine_group = alicloud_log_machine_group
+class alicloud_cdn_domain_config(terrascript.Resource):
+    pass
 
-class alicloud_logtail_config(_resource): pass
-logtail_config = alicloud_logtail_config
+class alicloud_router_interface(terrascript.Resource):
+    pass
 
-class alicloud_logtail_attachment(_resource): pass
-logtail_attachment = alicloud_logtail_attachment
+class alicloud_router_interface_connection(terrascript.Resource):
+    pass
 
-class alicloud_fc_service(_resource): pass
-fc_service = alicloud_fc_service
+class alicloud_ots_table(terrascript.Resource):
+    pass
 
-class alicloud_fc_function(_resource): pass
-fc_function = alicloud_fc_function
+class alicloud_ots_instance(terrascript.Resource):
+    pass
 
-class alicloud_fc_trigger(_resource): pass
-fc_trigger = alicloud_fc_trigger
+class alicloud_ots_instance_attachment(terrascript.Resource):
+    pass
 
-class alicloud_vpn_gateway(_resource): pass
-vpn_gateway = alicloud_vpn_gateway
+class alicloud_cms_alarm(terrascript.Resource):
+    pass
 
-class alicloud_vpn_customer_gateway(_resource): pass
-vpn_customer_gateway = alicloud_vpn_customer_gateway
+class alicloud_pvtz_zone(terrascript.Resource):
+    pass
 
-class alicloud_vpn_connection(_resource): pass
-vpn_connection = alicloud_vpn_connection
+class alicloud_pvtz_zone_attachment(terrascript.Resource):
+    pass
 
-class alicloud_ssl_vpn_server(_resource): pass
-ssl_vpn_server = alicloud_ssl_vpn_server
+class alicloud_pvtz_zone_record(terrascript.Resource):
+    pass
 
-class alicloud_ssl_vpn_client_cert(_resource): pass
-ssl_vpn_client_cert = alicloud_ssl_vpn_client_cert
+class alicloud_log_project(terrascript.Resource):
+    pass
 
-class alicloud_cen_instance(_resource): pass
-cen_instance = alicloud_cen_instance
+class alicloud_log_store(terrascript.Resource):
+    pass
 
-class alicloud_cen_instance_attachment(_resource): pass
-cen_instance_attachment = alicloud_cen_instance_attachment
+class alicloud_log_store_index(terrascript.Resource):
+    pass
 
-class alicloud_cen_bandwidth_package(_resource): pass
-cen_bandwidth_package = alicloud_cen_bandwidth_package
+class alicloud_log_machine_group(terrascript.Resource):
+    pass
 
-class alicloud_cen_bandwidth_package_attachment(_resource): pass
-cen_bandwidth_package_attachment = alicloud_cen_bandwidth_package_attachment
+class alicloud_logtail_config(terrascript.Resource):
+    pass
 
-class alicloud_cen_bandwidth_limit(_resource): pass
-cen_bandwidth_limit = alicloud_cen_bandwidth_limit
+class alicloud_logtail_attachment(terrascript.Resource):
+    pass
 
-class alicloud_cen_route_entry(_resource): pass
-cen_route_entry = alicloud_cen_route_entry
+class alicloud_fc_service(terrascript.Resource):
+    pass
 
-class alicloud_cen_instance_grant(_resource): pass
-cen_instance_grant = alicloud_cen_instance_grant
+class alicloud_fc_function(terrascript.Resource):
+    pass
 
-class alicloud_kvstore_instance(_resource): pass
-kvstore_instance = alicloud_kvstore_instance
+class alicloud_fc_trigger(terrascript.Resource):
+    pass
 
-class alicloud_kvstore_backup_policy(_resource): pass
-kvstore_backup_policy = alicloud_kvstore_backup_policy
+class alicloud_vpn_gateway(terrascript.Resource):
+    pass
 
-class alicloud_datahub_project(_resource): pass
-datahub_project = alicloud_datahub_project
+class alicloud_vpn_customer_gateway(terrascript.Resource):
+    pass
 
-class alicloud_datahub_subscription(_resource): pass
-datahub_subscription = alicloud_datahub_subscription
+class alicloud_vpn_connection(terrascript.Resource):
+    pass
 
-class alicloud_datahub_topic(_resource): pass
-datahub_topic = alicloud_datahub_topic
+class alicloud_ssl_vpn_server(terrascript.Resource):
+    pass
 
-class alicloud_mns_queue(_resource): pass
-mns_queue = alicloud_mns_queue
+class alicloud_ssl_vpn_client_cert(terrascript.Resource):
+    pass
 
-class alicloud_mns_topic(_resource): pass
-mns_topic = alicloud_mns_topic
+class alicloud_cen_instance(terrascript.Resource):
+    pass
 
-class alicloud_havip(_resource): pass
-havip = alicloud_havip
+class alicloud_cen_instance_attachment(terrascript.Resource):
+    pass
 
-class alicloud_mns_topic_subscription(_resource): pass
-mns_topic_subscription = alicloud_mns_topic_subscription
+class alicloud_cen_bandwidth_package(terrascript.Resource):
+    pass
 
-class alicloud_havip_attachment(_resource): pass
-havip_attachment = alicloud_havip_attachment
+class alicloud_cen_bandwidth_package_attachment(terrascript.Resource):
+    pass
 
-class alicloud_api_gateway_api(_resource): pass
-api_gateway_api = alicloud_api_gateway_api
+class alicloud_cen_bandwidth_limit(terrascript.Resource):
+    pass
 
-class alicloud_api_gateway_group(_resource): pass
-api_gateway_group = alicloud_api_gateway_group
+class alicloud_cen_route_entry(terrascript.Resource):
+    pass
 
-class alicloud_api_gateway_app(_resource): pass
-api_gateway_app = alicloud_api_gateway_app
+class alicloud_cen_instance_grant(terrascript.Resource):
+    pass
 
-class alicloud_api_gateway_app_attachment(_resource): pass
-api_gateway_app_attachment = alicloud_api_gateway_app_attachment
+class alicloud_kvstore_instance(terrascript.Resource):
+    pass
 
-class alicloud_api_gateway_vpc_access(_resource): pass
-api_gateway_vpc_access = alicloud_api_gateway_vpc_access
+class alicloud_kvstore_backup_policy(terrascript.Resource):
+    pass
 
-class alicloud_common_bandwidth_package(_resource): pass
-common_bandwidth_package = alicloud_common_bandwidth_package
+class alicloud_datahub_project(terrascript.Resource):
+    pass
 
-class alicloud_common_bandwidth_package_attachment(_resource): pass
-common_bandwidth_package_attachment = alicloud_common_bandwidth_package_attachment
+class alicloud_datahub_subscription(terrascript.Resource):
+    pass
 
-class alicloud_drds_instance(_resource): pass
-drds_instance = alicloud_drds_instance
+class alicloud_datahub_topic(terrascript.Resource):
+    pass
 
-class alicloud_elasticsearch_instance(_resource): pass
-elasticsearch_instance = alicloud_elasticsearch_instance
+class alicloud_mns_queue(terrascript.Resource):
+    pass
 
-class alicloud_actiontrail(_resource): pass
-actiontrail = alicloud_actiontrail
+class alicloud_mns_topic(terrascript.Resource):
+    pass
 
-class alicloud_cas_certificate(_resource): pass
-cas_certificate = alicloud_cas_certificate
+class alicloud_havip(terrascript.Resource):
+    pass
 
-class alicloud_ddoscoo_instance(_resource): pass
-ddoscoo_instance = alicloud_ddoscoo_instance
+class alicloud_mns_topic_subscription(terrascript.Resource):
+    pass
 
-class alicloud_network_acl(_resource): pass
-network_acl = alicloud_network_acl
+class alicloud_havip_attachment(terrascript.Resource):
+    pass
 
-class alicloud_network_acl_attachment(_resource): pass
-network_acl_attachment = alicloud_network_acl_attachment
+class alicloud_api_gateway_api(terrascript.Resource):
+    pass
 
-class alicloud_network_acl_entries(_resource): pass
-network_acl_entries = alicloud_network_acl_entries
+class alicloud_api_gateway_group(terrascript.Resource):
+    pass
 
+class alicloud_api_gateway_app(terrascript.Resource):
+    pass
+
+class alicloud_api_gateway_app_attachment(terrascript.Resource):
+    pass
+
+class alicloud_api_gateway_vpc_access(terrascript.Resource):
+    pass
+
+class alicloud_common_bandwidth_package(terrascript.Resource):
+    pass
+
+class alicloud_common_bandwidth_package_attachment(terrascript.Resource):
+    pass
+
+class alicloud_drds_instance(terrascript.Resource):
+    pass
+
+class alicloud_elasticsearch_instance(terrascript.Resource):
+    pass
+
+class alicloud_actiontrail(terrascript.Resource):
+    pass
+
+class alicloud_cas_certificate(terrascript.Resource):
+    pass
+
+class alicloud_ddoscoo_instance(terrascript.Resource):
+    pass
+
+class alicloud_network_acl(terrascript.Resource):
+    pass
+
+class alicloud_network_acl_attachment(terrascript.Resource):
+    pass
+
+class alicloud_network_acl_entries(terrascript.Resource):
+    pass

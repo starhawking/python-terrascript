@@ -1,19 +1,22 @@
-from terrascript import _resource
-class ultradns_dirpool(_resource): pass
-dirpool = ultradns_dirpool
+#  terrascript/ultradns/r.py
 
-class ultradns_probe_http(_resource): pass
-probe_http = ultradns_probe_http
+import terrascript
 
-class ultradns_probe_ping(_resource): pass
-probe_ping = ultradns_probe_ping
 
-class ultradns_record(_resource): pass
-record = ultradns_record
+class ultradns_dirpool(terrascript.Resource):
+    pass
 
-class ultradns_tcpool(_resource): pass
-tcpool = ultradns_tcpool
+class ultradns_probe_http(terrascript.Resource):
+    pass
 
-class ultradns_rdpool(_resource): pass
-rdpool = ultradns_rdpool
+class ultradns_probe_ping(terrascript.Resource):
+    pass
 
+class ultradns_record(terrascript.Resource):
+    pass
+
+class ultradns_tcpool(terrascript.Resource):
+    pass
+
+class ultradns_rdpool(terrascript.Resource):
+    pass

@@ -1,4 +1,7 @@
-from terrascript import _resource
-class dme_record(_resource): pass
-record = dme_record
+#  terrascript/dme/r.py
 
+import terrascript
+
+
+class dme_record(terrascript.Resource):
+    pass

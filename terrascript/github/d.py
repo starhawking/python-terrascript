@@ -3,20 +3,20 @@
 import terrascript
 
 
-class collaborators(terrascript.Datasource):
+class github_collaborators(terrascript.Datasource):
     pass
 
-class ip_ranges(terrascript.Datasource):
+class github_ip_ranges(terrascript.Datasource):
     pass
 
-class repositories(terrascript.Datasource):
+class github_repositories(terrascript.Datasource):
     pass
 
-class repository(terrascript.Datasource):
+class github_repository(terrascript.Datasource):
     pass
 
-class team(terrascript.Datasource):
+class github_team(terrascript.Datasource):
     pass
 
-class user(terrascript.Datasource):
+class github_user(terrascript.Datasource):
     pass

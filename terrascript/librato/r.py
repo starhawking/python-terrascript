@@ -1,16 +1,19 @@
-from terrascript import _resource
-class librato_space(_resource): pass
-space = librato_space
+#  terrascript/librato/r.py
 
-class librato_space_chart(_resource): pass
-space_chart = librato_space_chart
+import terrascript
 
-class librato_metric(_resource): pass
-metric = librato_metric
 
-class librato_alert(_resource): pass
-alert = librato_alert
+class librato_space(terrascript.Resource):
+    pass
 
-class librato_service(_resource): pass
-service = librato_service
+class librato_space_chart(terrascript.Resource):
+    pass
 
+class librato_metric(terrascript.Resource):
+    pass
+
+class librato_alert(terrascript.Resource):
+    pass
+
+class librato_service(terrascript.Resource):
+    pass

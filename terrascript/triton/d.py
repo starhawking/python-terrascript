@@ -3,23 +3,23 @@
 import terrascript
 
 
-class account(terrascript.Datasource):
+class triton_account(terrascript.Datasource):
     pass
 
-class datacenter(terrascript.Datasource):
+class triton_datacenter(terrascript.Datasource):
     pass
 
-class image(terrascript.Datasource):
+class triton_image(terrascript.Datasource):
     pass
 
-class network(terrascript.Datasource):
+class triton_network(terrascript.Datasource):
     pass
 
-class package(terrascript.Datasource):
+class triton_package(terrascript.Datasource):
     pass
 
-class fabric_vlan(terrascript.Datasource):
+class triton_fabric_vlan(terrascript.Datasource):
     pass
 
-class fabric_network(terrascript.Datasource):
+class triton_fabric_network(terrascript.Datasource):
     pass

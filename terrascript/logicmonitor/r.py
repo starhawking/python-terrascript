@@ -1,13 +1,16 @@
-from terrascript import _resource
-class logicmonitor_collector(_resource): pass
-collector = logicmonitor_collector
+#  terrascript/logicmonitor/r.py
 
-class logicmonitor_collector_group(_resource): pass
-collector_group = logicmonitor_collector_group
+import terrascript
 
-class logicmonitor_device(_resource): pass
-device = logicmonitor_device
 
-class logicmonitor_device_group(_resource): pass
-device_group = logicmonitor_device_group
+class logicmonitor_collector(terrascript.Resource):
+    pass
 
+class logicmonitor_collector_group(terrascript.Resource):
+    pass
+
+class logicmonitor_device(terrascript.Resource):
+    pass
+
+class logicmonitor_device_group(terrascript.Resource):
+    pass

@@ -3,8 +3,8 @@
 import terrascript
 
 
-class file(terrascript.Datasource):
+class template_file(terrascript.Datasource):
     pass
 
-class cloudinit_config(terrascript.Datasource):
+class template_cloudinit_config(terrascript.Datasource):
     pass

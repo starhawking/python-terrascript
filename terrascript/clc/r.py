@@ -1,16 +1,19 @@
-from terrascript import _resource
-class clc_server(_resource): pass
-server = clc_server
+#  terrascript/clc/r.py
 
-class clc_group(_resource): pass
-group = clc_group
+import terrascript
 
-class clc_public_ip(_resource): pass
-public_ip = clc_public_ip
 
-class clc_load_balancer(_resource): pass
-load_balancer = clc_load_balancer
+class clc_server(terrascript.Resource):
+    pass
 
-class clc_load_balancer_pool(_resource): pass
-load_balancer_pool = clc_load_balancer_pool
+class clc_group(terrascript.Resource):
+    pass
 
+class clc_public_ip(terrascript.Resource):
+    pass
+
+class clc_load_balancer(terrascript.Resource):
+    pass
+
+class clc_load_balancer_pool(terrascript.Resource):
+    pass

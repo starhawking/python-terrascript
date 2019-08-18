@@ -1,4 +1,7 @@
-from terrascript import _resource
-class local_file(_resource): pass
-file = local_file
+#  terrascript/local/r.py
 
+import terrascript
+
+
+class local_file(terrascript.Resource):
+    pass

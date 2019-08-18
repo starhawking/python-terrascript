@@ -3,11 +3,11 @@
 import terrascript
 
 
-class certificate(terrascript.Datasource):
+class rancher_certificate(terrascript.Datasource):
     pass
 
-class environment(terrascript.Datasource):
+class rancher_environment(terrascript.Datasource):
     pass
 
-class setting(terrascript.Datasource):
+class rancher_setting(terrascript.Datasource):
     pass

@@ -1,16 +1,19 @@
-from terrascript import _resource
-class rundeck_project(_resource): pass
-project = rundeck_project
+#  terrascript/rundeck/r.py
 
-class rundeck_job(_resource): pass
-job = rundeck_job
+import terrascript
 
-class rundeck_private_key(_resource): pass
-private_key = rundeck_private_key
 
-class rundeck_public_key(_resource): pass
-public_key = rundeck_public_key
+class rundeck_project(terrascript.Resource):
+    pass
 
-class rundeck_acl_policy(_resource): pass
-acl_policy = rundeck_acl_policy
+class rundeck_job(terrascript.Resource):
+    pass
 
+class rundeck_private_key(terrascript.Resource):
+    pass
+
+class rundeck_public_key(terrascript.Resource):
+    pass
+
+class rundeck_acl_policy(terrascript.Resource):
+    pass

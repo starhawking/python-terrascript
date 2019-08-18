@@ -1,46 +1,55 @@
-from terrascript import _resource
-class gitlab_branch_protection(_resource): pass
-branch_protection = gitlab_branch_protection
+#  terrascript/gitlab/r.py
 
-class gitlab_tag_protection(_resource): pass
-tag_protection = gitlab_tag_protection
+import terrascript
 
-class gitlab_group(_resource): pass
-group = gitlab_group
 
-class gitlab_project(_resource): pass
-project = gitlab_project
+class gitlab_branch_protection(terrascript.Resource):
+    pass
 
-class gitlab_label(_resource): pass
-label = gitlab_label
+class gitlab_tag_protection(terrascript.Resource):
+    pass
 
-class gitlab_pipeline_trigger(_resource): pass
-pipeline_trigger = gitlab_pipeline_trigger
+class gitlab_group(terrascript.Resource):
+    pass
 
-class gitlab_project_hook(_resource): pass
-project_hook = gitlab_project_hook
+class gitlab_project(terrascript.Resource):
+    pass
 
-class gitlab_deploy_key(_resource): pass
-deploy_key = gitlab_deploy_key
+class gitlab_label(terrascript.Resource):
+    pass
 
-class gitlab_user(_resource): pass
-user = gitlab_user
+class gitlab_pipeline_schedule(terrascript.Resource):
+    pass
 
-class gitlab_project_membership(_resource): pass
-project_membership = gitlab_project_membership
+class gitlab_pipeline_trigger(terrascript.Resource):
+    pass
 
-class gitlab_group_membership(_resource): pass
-group_membership = gitlab_group_membership
+class gitlab_project_hook(terrascript.Resource):
+    pass
 
-class gitlab_project_variable(_resource): pass
-project_variable = gitlab_project_variable
+class gitlab_deploy_key(terrascript.Resource):
+    pass
 
-class gitlab_group_variable(_resource): pass
-group_variable = gitlab_group_variable
+class gitlab_user(terrascript.Resource):
+    pass
 
-class gitlab_project_cluster(_resource): pass
-project_cluster = gitlab_project_cluster
+class gitlab_project_membership(terrascript.Resource):
+    pass
 
-class gitlab_service_slack(_resource): pass
-service_slack = gitlab_service_slack
+class gitlab_group_membership(terrascript.Resource):
+    pass
 
+class gitlab_project_variable(terrascript.Resource):
+    pass
+
+class gitlab_group_variable(terrascript.Resource):
+    pass
+
+class gitlab_project_cluster(terrascript.Resource):
+    pass
+
+class gitlab_service_slack(terrascript.Resource):
+    pass
+
+class gitlab_service_jira(terrascript.Resource):
+    pass

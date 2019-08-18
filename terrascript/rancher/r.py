@@ -1,28 +1,31 @@
-from terrascript import _resource
-class rancher_certificate(_resource): pass
-certificate = rancher_certificate
+#  terrascript/rancher/r.py
 
-class rancher_environment(_resource): pass
-environment = rancher_environment
+import terrascript
 
-class rancher_host(_resource): pass
-host = rancher_host
 
-class rancher_registration_token(_resource): pass
-registration_token = rancher_registration_token
+class rancher_certificate(terrascript.Resource):
+    pass
 
-class rancher_registry(_resource): pass
-registry = rancher_registry
+class rancher_environment(terrascript.Resource):
+    pass
 
-class rancher_registry_credential(_resource): pass
-registry_credential = rancher_registry_credential
+class rancher_host(terrascript.Resource):
+    pass
 
-class rancher_secret(_resource): pass
-secret = rancher_secret
+class rancher_registration_token(terrascript.Resource):
+    pass
 
-class rancher_stack(_resource): pass
-stack = rancher_stack
+class rancher_registry(terrascript.Resource):
+    pass
 
-class rancher_volume(_resource): pass
-volume = rancher_volume
+class rancher_registry_credential(terrascript.Resource):
+    pass
 
+class rancher_secret(terrascript.Resource):
+    pass
+
+class rancher_stack(terrascript.Resource):
+    pass
+
+class rancher_volume(terrascript.Resource):
+    pass

@@ -1,4 +1,7 @@
-from terrascript import _resource
-class statuscake_test(_resource): pass
-test = statuscake_test
+#  terrascript/statuscake/r.py
 
+import terrascript
+
+
+class statuscake_test(terrascript.Resource):
+    pass

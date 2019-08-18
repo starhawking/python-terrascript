@@ -3,44 +3,44 @@
 import terrascript
 
 
-class certificate(terrascript.Datasource):
+class digitalocean_certificate(terrascript.Datasource):
     pass
 
-class database_cluster(terrascript.Datasource):
+class digitalocean_database_cluster(terrascript.Datasource):
     pass
 
-class domain(terrascript.Datasource):
+class digitalocean_domain(terrascript.Datasource):
     pass
 
-class droplet(terrascript.Datasource):
+class digitalocean_droplet(terrascript.Datasource):
     pass
 
-class droplet_snapshot(terrascript.Datasource):
+class digitalocean_droplet_snapshot(terrascript.Datasource):
     pass
 
-class floating_ip(terrascript.Datasource):
+class digitalocean_floating_ip(terrascript.Datasource):
     pass
 
-class image(terrascript.Datasource):
+class digitalocean_image(terrascript.Datasource):
     pass
 
-class kubernetes_cluster(terrascript.Datasource):
+class digitalocean_kubernetes_cluster(terrascript.Datasource):
     pass
 
-class loadbalancer(terrascript.Datasource):
+class digitalocean_loadbalancer(terrascript.Datasource):
     pass
 
-class record(terrascript.Datasource):
+class digitalocean_record(terrascript.Datasource):
     pass
 
-class ssh_key(terrascript.Datasource):
+class digitalocean_ssh_key(terrascript.Datasource):
     pass
 
-class tag(terrascript.Datasource):
+class digitalocean_tag(terrascript.Datasource):
     pass
 
-class volume_snapshot(terrascript.Datasource):
+class digitalocean_volume_snapshot(terrascript.Datasource):
     pass
 
-class volume(terrascript.Datasource):
+class digitalocean_volume(terrascript.Datasource):
     pass

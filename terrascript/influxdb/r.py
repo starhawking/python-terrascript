@@ -1,10 +1,13 @@
-from terrascript import _resource
-class influxdb_database(_resource): pass
-database = influxdb_database
+#  terrascript/influxdb/r.py
 
-class influxdb_user(_resource): pass
-user = influxdb_user
+import terrascript
 
-class influxdb_continuous_query(_resource): pass
-continuous_query = influxdb_continuous_query
 
+class influxdb_database(terrascript.Resource):
+    pass
+
+class influxdb_user(terrascript.Resource):
+    pass
+
+class influxdb_continuous_query(terrascript.Resource):
+    pass

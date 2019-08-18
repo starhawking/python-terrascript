@@ -3,5 +3,5 @@
 import terrascript
 
 
-class instance_size(terrascript.Datasource):
+class oneandone_instance_size(terrascript.Datasource):
     pass

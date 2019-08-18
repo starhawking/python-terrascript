@@ -1,0 +1,7 @@
+{
+  "name": {
+    "integer": 1,
+    "string": "string",
+    "float": 3.14
+  }
+}

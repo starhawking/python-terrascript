@@ -2,3 +2,6 @@
 
 import terrascript
 
+
+class http(terrascript.Datasource):
+    pass

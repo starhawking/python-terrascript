@@ -1,1 +1,4 @@
-from terrascript import _resource
+#  terrascript/http/r.py
+
+import terrascript
+

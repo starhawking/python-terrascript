@@ -3,8 +3,8 @@
 import terrascript
 
 
-class collectors(terrascript.Datasource):
+class logicmonitor_collectors(terrascript.Datasource):
     pass
 
-class device_group(terrascript.Datasource):
+class logicmonitor_device_group(terrascript.Datasource):
     pass

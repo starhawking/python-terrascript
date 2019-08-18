@@ -1,19 +1,25 @@
-from terrascript import _resource
-class random_id(_resource): pass
-id = random_id
+#  terrascript/random/r.py
 
-class random_shuffle(_resource): pass
-shuffle = random_shuffle
+import terrascript
 
-class random_pet(_resource): pass
-pet = random_pet
 
-class random_string(_resource): pass
-string = random_string
+class random_id(terrascript.Resource):
+    pass
 
-class random_integer(_resource): pass
-integer = random_integer
+class random_shuffle(terrascript.Resource):
+    pass
 
-class random_uuid(_resource): pass
-uuid = random_uuid
+class random_pet(terrascript.Resource):
+    pass
 
+class random_string(terrascript.Resource):
+    pass
+
+class random_password(terrascript.Resource):
+    pass
+
+class random_integer(terrascript.Resource):
+    pass
+
+class random_uuid(terrascript.Resource):
+    pass

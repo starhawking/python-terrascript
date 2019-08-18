@@ -1,19 +1,22 @@
-from terrascript import _resource
-class cobbler_distro(_resource): pass
-distro = cobbler_distro
+#  terrascript/cobbler/r.py
 
-class cobbler_kickstart_file(_resource): pass
-kickstart_file = cobbler_kickstart_file
+import terrascript
 
-class cobbler_profile(_resource): pass
-profile = cobbler_profile
 
-class cobbler_repo(_resource): pass
-repo = cobbler_repo
+class cobbler_distro(terrascript.Resource):
+    pass
 
-class cobbler_snippet(_resource): pass
-snippet = cobbler_snippet
+class cobbler_kickstart_file(terrascript.Resource):
+    pass
 
-class cobbler_system(_resource): pass
-system = cobbler_system
+class cobbler_profile(terrascript.Resource):
+    pass
 
+class cobbler_repo(terrascript.Resource):
+    pass
+
+class cobbler_snippet(terrascript.Resource):
+    pass
+
+class cobbler_system(terrascript.Resource):
+    pass

@@ -3,11 +3,11 @@
 import terrascript
 
 
-class zone(terrascript.Datasource):
+class ns1_zone(terrascript.Datasource):
     pass
 
-class datasource(terrascript.Datasource):
+class ns1_datasource(terrascript.Datasource):
     pass
 
-class datafeed(terrascript.Datasource):
+class ns1_datafeed(terrascript.Datasource):
     pass

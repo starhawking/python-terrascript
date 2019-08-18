@@ -3,8 +3,8 @@
 import terrascript
 
 
-class registry_image(terrascript.Datasource):
+class docker_registry_image(terrascript.Datasource):
     pass
 
-class network(terrascript.Datasource):
+class docker_network(terrascript.Datasource):
     pass

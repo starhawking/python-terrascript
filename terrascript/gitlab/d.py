@@ -3,14 +3,14 @@
 import terrascript
 
 
-class group(terrascript.Datasource):
+class gitlab_group(terrascript.Datasource):
     pass
 
-class project(terrascript.Datasource):
+class gitlab_project(terrascript.Datasource):
     pass
 
-class user(terrascript.Datasource):
+class gitlab_user(terrascript.Datasource):
     pass
 
-class users(terrascript.Datasource):
+class gitlab_users(terrascript.Datasource):
     pass

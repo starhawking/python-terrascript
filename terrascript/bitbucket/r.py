@@ -1,10 +1,13 @@
-from terrascript import _resource
-class bitbucket_hook(_resource): pass
-hook = bitbucket_hook
+#  terrascript/bitbucket/r.py
 
-class bitbucket_default_reviewers(_resource): pass
-default_reviewers = bitbucket_default_reviewers
+import terrascript
 
-class bitbucket_repository(_resource): pass
-repository = bitbucket_repository
 
+class bitbucket_hook(terrascript.Resource):
+    pass
+
+class bitbucket_default_reviewers(terrascript.Resource):
+    pass
+
+class bitbucket_repository(terrascript.Resource):
+    pass

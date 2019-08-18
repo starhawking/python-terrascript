@@ -1,13 +1,16 @@
-from terrascript import _resource
-class tls_private_key(_resource): pass
-private_key = tls_private_key
+#  terrascript/tls/r.py
 
-class tls_locally_signed_cert(_resource): pass
-locally_signed_cert = tls_locally_signed_cert
+import terrascript
 
-class tls_self_signed_cert(_resource): pass
-self_signed_cert = tls_self_signed_cert
 
-class tls_cert_request(_resource): pass
-cert_request = tls_cert_request
+class tls_private_key(terrascript.Resource):
+    pass
 
+class tls_locally_signed_cert(terrascript.Resource):
+    pass
+
+class tls_self_signed_cert(terrascript.Resource):
+    pass
+
+class tls_cert_request(terrascript.Resource):
+    pass

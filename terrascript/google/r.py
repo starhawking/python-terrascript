@@ -1,193 +1,406 @@
-from terrascript import _resource
-class google_app_engine_application(_resource): pass
-app_engine_application = google_app_engine_application
+#  terrascript/google/r.py
 
-class google_bigquery_dataset(_resource): pass
-bigquery_dataset = google_bigquery_dataset
+import terrascript
 
-class google_bigquery_table(_resource): pass
-bigquery_table = google_bigquery_table
 
-class google_bigtable_instance(_resource): pass
-bigtable_instance = google_bigtable_instance
+class google_access_context_manager_access_policy(terrascript.Resource):
+    pass
 
-class google_bigtable_table(_resource): pass
-bigtable_table = google_bigtable_table
+class google_access_context_manager_access_level(terrascript.Resource):
+    pass
 
-class google_cloudfunctions_function(_resource): pass
-cloudfunctions_function = google_cloudfunctions_function
+class google_access_context_manager_service_perimeter(terrascript.Resource):
+    pass
 
-class google_cloudiot_registry(_resource): pass
-cloudiot_registry = google_cloudiot_registry
+class google_app_engine_firewall_rule(terrascript.Resource):
+    pass
 
-class google_composer_environment(_resource): pass
-composer_environment = google_composer_environment
+class google_bigquery_data_transfer_config(terrascript.Resource):
+    pass
 
-class google_compute_attached_disk(_resource): pass
-compute_attached_disk = google_compute_attached_disk
+class google_bigtable_app_profile(terrascript.Resource):
+    pass
 
-class google_compute_instance(_resource): pass
-compute_instance = google_compute_instance
+class google_binary_authorization_attestor(terrascript.Resource):
+    pass
 
-class google_compute_instance_from_template(_resource): pass
-compute_instance_from_template = google_compute_instance_from_template
+class google_binary_authorization_policy(terrascript.Resource):
+    pass
 
-class google_compute_instance_group(_resource): pass
-compute_instance_group = google_compute_instance_group
+class google_cloudbuild_trigger(terrascript.Resource):
+    pass
 
-class google_compute_instance_group_manager(_resource): pass
-compute_instance_group_manager = google_compute_instance_group_manager
+class google_cloud_scheduler_job(terrascript.Resource):
+    pass
 
-class google_compute_instance_template(_resource): pass
-compute_instance_template = google_compute_instance_template
+class google_compute_address(terrascript.Resource):
+    pass
 
-class google_compute_network_peering(_resource): pass
-compute_network_peering = google_compute_network_peering
+class google_compute_autoscaler(terrascript.Resource):
+    pass
 
-class google_compute_project_metadata(_resource): pass
-compute_project_metadata = google_compute_project_metadata
+class google_compute_backend_bucket(terrascript.Resource):
+    pass
 
-class google_compute_project_metadata_item(_resource): pass
-compute_project_metadata_item = google_compute_project_metadata_item
+class google_compute_backend_bucket_signed_url_key(terrascript.Resource):
+    pass
 
-class google_compute_region_instance_group_manager(_resource): pass
-compute_region_instance_group_manager = google_compute_region_instance_group_manager
+class google_compute_backend_service(terrascript.Resource):
+    pass
 
-class google_compute_router_interface(_resource): pass
-compute_router_interface = google_compute_router_interface
+class google_compute_region_backend_service(terrascript.Resource):
+    pass
 
-class google_compute_router_nat(_resource): pass
-compute_router_nat = google_compute_router_nat
+class google_compute_backend_service_signed_url_key(terrascript.Resource):
+    pass
 
-class google_compute_router_peer(_resource): pass
-compute_router_peer = google_compute_router_peer
+class google_compute_disk(terrascript.Resource):
+    pass
 
-class google_compute_security_policy(_resource): pass
-compute_security_policy = google_compute_security_policy
+class google_compute_firewall(terrascript.Resource):
+    pass
 
-class google_compute_shared_vpc_host_project(_resource): pass
-compute_shared_vpc_host_project = google_compute_shared_vpc_host_project
+class google_compute_forwarding_rule(terrascript.Resource):
+    pass
 
-class google_compute_shared_vpc_service_project(_resource): pass
-compute_shared_vpc_service_project = google_compute_shared_vpc_service_project
+class google_compute_global_address(terrascript.Resource):
+    pass
 
-class google_compute_target_pool(_resource): pass
-compute_target_pool = google_compute_target_pool
+class google_compute_global_forwarding_rule(terrascript.Resource):
+    pass
 
-class google_container_cluster(_resource): pass
-container_cluster = google_container_cluster
+class google_compute_http_health_check(terrascript.Resource):
+    pass
 
-class google_container_node_pool(_resource): pass
-container_node_pool = google_container_node_pool
+class google_compute_https_health_check(terrascript.Resource):
+    pass
 
-class google_dataflow_job(_resource): pass
-dataflow_job = google_dataflow_job
+class google_compute_health_check(terrascript.Resource):
+    pass
 
-class google_dataproc_cluster(_resource): pass
-dataproc_cluster = google_dataproc_cluster
+class google_compute_image(terrascript.Resource):
+    pass
 
-class google_dataproc_job(_resource): pass
-dataproc_job = google_dataproc_job
+class google_compute_interconnect_attachment(terrascript.Resource):
+    pass
 
-class google_dns_record_set(_resource): pass
-dns_record_set = google_dns_record_set
+class google_compute_network(terrascript.Resource):
+    pass
 
-class google_endpoints_service(_resource): pass
-endpoints_service = google_endpoints_service
+class google_compute_network_endpoint(terrascript.Resource):
+    pass
 
-class google_folder(_resource): pass
-folder = google_folder
+class google_compute_network_endpoint_group(terrascript.Resource):
+    pass
 
-class google_folder_organization_policy(_resource): pass
-folder_organization_policy = google_folder_organization_policy
+class google_compute_node_group(terrascript.Resource):
+    pass
 
-class google_logging_billing_account_sink(_resource): pass
-logging_billing_account_sink = google_logging_billing_account_sink
+class google_compute_node_template(terrascript.Resource):
+    pass
 
-class google_logging_metric(_resource): pass
-logging_metric = google_logging_metric
+class google_compute_region_autoscaler(terrascript.Resource):
+    pass
 
-class google_logging_organization_sink(_resource): pass
-logging_organization_sink = google_logging_organization_sink
+class google_compute_region_disk(terrascript.Resource):
+    pass
 
-class google_logging_folder_sink(_resource): pass
-logging_folder_sink = google_logging_folder_sink
+class google_compute_route(terrascript.Resource):
+    pass
 
-class google_logging_project_sink(_resource): pass
-logging_project_sink = google_logging_project_sink
+class google_compute_router(terrascript.Resource):
+    pass
 
-class google_kms_key_ring(_resource): pass
-kms_key_ring = google_kms_key_ring
+class google_compute_snapshot(terrascript.Resource):
+    pass
 
-class google_kms_crypto_key(_resource): pass
-kms_crypto_key = google_kms_crypto_key
+class google_compute_ssl_certificate(terrascript.Resource):
+    pass
 
-class google_sql_database_instance(_resource): pass
-sql_database_instance = google_sql_database_instance
+class google_compute_ssl_policy(terrascript.Resource):
+    pass
 
-class google_sql_ssl_cert(_resource): pass
-sql_ssl_cert = google_sql_ssl_cert
+class google_compute_subnetwork(terrascript.Resource):
+    pass
 
-class google_sql_user(_resource): pass
-sql_user = google_sql_user
+class google_compute_target_http_proxy(terrascript.Resource):
+    pass
 
-class google_organization_iam_custom_role(_resource): pass
-organization_iam_custom_role = google_organization_iam_custom_role
+class google_compute_target_https_proxy(terrascript.Resource):
+    pass
 
-class google_organization_policy(_resource): pass
-organization_policy = google_organization_policy
+class google_compute_target_instance(terrascript.Resource):
+    pass
 
-class google_project(_resource): pass
-project = google_project
+class google_compute_target_ssl_proxy(terrascript.Resource):
+    pass
 
-class google_project_iam_policy(_resource): pass
-project_iam_policy = google_project_iam_policy
+class google_compute_target_tcp_proxy(terrascript.Resource):
+    pass
 
-class google_project_service(_resource): pass
-project_service = google_project_service
+class google_compute_vpn_gateway(terrascript.Resource):
+    pass
 
-class google_project_iam_custom_role(_resource): pass
-project_iam_custom_role = google_project_iam_custom_role
+class google_compute_url_map(terrascript.Resource):
+    pass
 
-class google_project_organization_policy(_resource): pass
-project_organization_policy = google_project_organization_policy
+class google_compute_vpn_tunnel(terrascript.Resource):
+    pass
 
-class google_project_usage_export_bucket(_resource): pass
-project_usage_export_bucket = google_project_usage_export_bucket
+class google_dns_managed_zone(terrascript.Resource):
+    pass
 
-class google_project_services(_resource): pass
-project_services = google_project_services
+class google_filestore_instance(terrascript.Resource):
+    pass
 
-class google_runtimeconfig_config(_resource): pass
-runtimeconfig_config = google_runtimeconfig_config
+class google_firestore_index(terrascript.Resource):
+    pass
 
-class google_runtimeconfig_variable(_resource): pass
-runtimeconfig_variable = google_runtimeconfig_variable
+class google_kms_key_ring(terrascript.Resource):
+    pass
 
-class google_service_account(_resource): pass
-service_account = google_service_account
+class google_kms_crypto_key(terrascript.Resource):
+    pass
 
-class google_service_account_key(_resource): pass
-service_account_key = google_service_account_key
+class google_logging_metric(terrascript.Resource):
+    pass
 
-class google_storage_bucket(_resource): pass
-storage_bucket = google_storage_bucket
+class google_ml_engine_model(terrascript.Resource):
+    pass
 
-class google_storage_bucket_acl(_resource): pass
-storage_bucket_acl = google_storage_bucket_acl
+class google_monitoring_alert_policy(terrascript.Resource):
+    pass
 
-class google_storage_bucket_object(_resource): pass
-storage_bucket_object = google_storage_bucket_object
+class google_monitoring_group(terrascript.Resource):
+    pass
 
-class google_storage_object_acl(_resource): pass
-storage_object_acl = google_storage_object_acl
+class google_monitoring_notification_channel(terrascript.Resource):
+    pass
 
-class google_storage_default_object_acl(_resource): pass
-storage_default_object_acl = google_storage_default_object_acl
+class google_monitoring_uptime_check_config(terrascript.Resource):
+    pass
 
-class google_storage_notification(_resource): pass
-storage_notification = google_storage_notification
+class google_pubsub_topic(terrascript.Resource):
+    pass
 
-class google_storage_transfer_job(_resource): pass
-storage_transfer_job = google_storage_transfer_job
+class google_pubsub_subscription(terrascript.Resource):
+    pass
 
+class google_redis_instance(terrascript.Resource):
+    pass
+
+class google_resource_manager_lien(terrascript.Resource):
+    pass
+
+class google_scc_source(terrascript.Resource):
+    pass
+
+class google_sourcerepo_repository(terrascript.Resource):
+    pass
+
+class google_spanner_instance(terrascript.Resource):
+    pass
+
+class google_spanner_database(terrascript.Resource):
+    pass
+
+class google_sql_database(terrascript.Resource):
+    pass
+
+class google_storage_object_access_control(terrascript.Resource):
+    pass
+
+class google_storage_default_object_access_control(terrascript.Resource):
+    pass
+
+class google_tpu_node(terrascript.Resource):
+    pass
+
+class google_app_engine_application(terrascript.Resource):
+    pass
+
+class google_bigquery_dataset(terrascript.Resource):
+    pass
+
+class google_bigquery_table(terrascript.Resource):
+    pass
+
+class google_bigtable_instance(terrascript.Resource):
+    pass
+
+class google_bigtable_table(terrascript.Resource):
+    pass
+
+class google_cloudfunctions_function(terrascript.Resource):
+    pass
+
+class google_cloudiot_registry(terrascript.Resource):
+    pass
+
+class google_composer_environment(terrascript.Resource):
+    pass
+
+class google_compute_attached_disk(terrascript.Resource):
+    pass
+
+class google_compute_instance(terrascript.Resource):
+    pass
+
+class google_compute_instance_from_template(terrascript.Resource):
+    pass
+
+class google_compute_instance_group(terrascript.Resource):
+    pass
+
+class google_compute_instance_group_manager(terrascript.Resource):
+    pass
+
+class google_compute_instance_template(terrascript.Resource):
+    pass
+
+class google_compute_network_peering(terrascript.Resource):
+    pass
+
+class google_compute_project_default_network_tier(terrascript.Resource):
+    pass
+
+class google_compute_project_metadata(terrascript.Resource):
+    pass
+
+class google_compute_project_metadata_item(terrascript.Resource):
+    pass
+
+class google_compute_region_instance_group_manager(terrascript.Resource):
+    pass
+
+class google_compute_router_interface(terrascript.Resource):
+    pass
+
+class google_compute_router_nat(terrascript.Resource):
+    pass
+
+class google_compute_router_peer(terrascript.Resource):
+    pass
+
+class google_compute_security_policy(terrascript.Resource):
+    pass
+
+class google_compute_shared_vpc_host_project(terrascript.Resource):
+    pass
+
+class google_compute_shared_vpc_service_project(terrascript.Resource):
+    pass
+
+class google_compute_target_pool(terrascript.Resource):
+    pass
+
+class google_container_cluster(terrascript.Resource):
+    pass
+
+class google_container_node_pool(terrascript.Resource):
+    pass
+
+class google_dataflow_job(terrascript.Resource):
+    pass
+
+class google_dataproc_cluster(terrascript.Resource):
+    pass
+
+class google_dataproc_job(terrascript.Resource):
+    pass
+
+class google_dns_record_set(terrascript.Resource):
+    pass
+
+class google_endpoints_service(terrascript.Resource):
+    pass
+
+class google_folder(terrascript.Resource):
+    pass
+
+class google_folder_organization_policy(terrascript.Resource):
+    pass
+
+class google_logging_billing_account_sink(terrascript.Resource):
+    pass
+
+class google_logging_organization_sink(terrascript.Resource):
+    pass
+
+class google_logging_folder_sink(terrascript.Resource):
+    pass
+
+class google_logging_project_sink(terrascript.Resource):
+    pass
+
+class google_service_networking_connection(terrascript.Resource):
+    pass
+
+class google_sql_database_instance(terrascript.Resource):
+    pass
+
+class google_sql_ssl_cert(terrascript.Resource):
+    pass
+
+class google_sql_user(terrascript.Resource):
+    pass
+
+class google_organization_iam_custom_role(terrascript.Resource):
+    pass
+
+class google_organization_policy(terrascript.Resource):
+    pass
+
+class google_project(terrascript.Resource):
+    pass
+
+class google_project_iam_policy(terrascript.Resource):
+    pass
+
+class google_project_service(terrascript.Resource):
+    pass
+
+class google_project_iam_custom_role(terrascript.Resource):
+    pass
+
+class google_project_organization_policy(terrascript.Resource):
+    pass
+
+class google_project_usage_export_bucket(terrascript.Resource):
+    pass
+
+class google_project_services(terrascript.Resource):
+    pass
+
+class google_runtimeconfig_config(terrascript.Resource):
+    pass
+
+class google_runtimeconfig_variable(terrascript.Resource):
+    pass
+
+class google_service_account(terrascript.Resource):
+    pass
+
+class google_service_account_key(terrascript.Resource):
+    pass
+
+class google_storage_bucket(terrascript.Resource):
+    pass
+
+class google_storage_bucket_acl(terrascript.Resource):
+    pass
+
+class google_storage_bucket_object(terrascript.Resource):
+    pass
+
+class google_storage_object_acl(terrascript.Resource):
+    pass
+
+class google_storage_default_object_acl(terrascript.Resource):
+    pass
+
+class google_storage_notification(terrascript.Resource):
+    pass
+
+class google_storage_transfer_job(terrascript.Resource):
+    pass

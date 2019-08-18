@@ -1,4 +1,7 @@
-from terrascript import _resource
-class template_dir(_resource): pass
-dir = template_dir
+#  terrascript/template/r.py
 
+import terrascript
+
+
+class template_dir(terrascript.Resource):
+    pass

@@ -3,5 +3,5 @@
 import terrascript
 
 
-class user(terrascript.Datasource):
+class opsgenie_user(terrascript.Datasource):
     pass

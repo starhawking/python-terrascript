@@ -1,7 +1,10 @@
-from terrascript import _resource
-class opsgenie_team(_resource): pass
-team = opsgenie_team
+#  terrascript/opsgenie/r.py
 
-class opsgenie_user(_resource): pass
-user = opsgenie_user
+import terrascript
 
+
+class opsgenie_team(terrascript.Resource):
+    pass
+
+class opsgenie_user(terrascript.Resource):
+    pass

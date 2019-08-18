@@ -1,34 +1,37 @@
-from terrascript import _resource
-class pagerduty_addon(_resource): pass
-addon = pagerduty_addon
+#  terrascript/pagerduty/r.py
 
-class pagerduty_escalation_policy(_resource): pass
-escalation_policy = pagerduty_escalation_policy
+import terrascript
 
-class pagerduty_maintenance_window(_resource): pass
-maintenance_window = pagerduty_maintenance_window
 
-class pagerduty_schedule(_resource): pass
-schedule = pagerduty_schedule
+class pagerduty_addon(terrascript.Resource):
+    pass
 
-class pagerduty_service(_resource): pass
-service = pagerduty_service
+class pagerduty_escalation_policy(terrascript.Resource):
+    pass
 
-class pagerduty_service_integration(_resource): pass
-service_integration = pagerduty_service_integration
+class pagerduty_maintenance_window(terrascript.Resource):
+    pass
 
-class pagerduty_team(_resource): pass
-team = pagerduty_team
+class pagerduty_schedule(terrascript.Resource):
+    pass
 
-class pagerduty_team_membership(_resource): pass
-team_membership = pagerduty_team_membership
+class pagerduty_service(terrascript.Resource):
+    pass
 
-class pagerduty_user(_resource): pass
-user = pagerduty_user
+class pagerduty_service_integration(terrascript.Resource):
+    pass
 
-class pagerduty_user_contact_method(_resource): pass
-user_contact_method = pagerduty_user_contact_method
+class pagerduty_team(terrascript.Resource):
+    pass
 
-class pagerduty_extension(_resource): pass
-extension = pagerduty_extension
+class pagerduty_team_membership(terrascript.Resource):
+    pass
 
+class pagerduty_user(terrascript.Resource):
+    pass
+
+class pagerduty_user_contact_method(terrascript.Resource):
+    pass
+
+class pagerduty_extension(terrascript.Resource):
+    pass

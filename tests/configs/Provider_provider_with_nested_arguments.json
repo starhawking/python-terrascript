@@ -1,0 +1,26 @@
+{
+  "integer": 1,
+  "string": "string",
+  "float": 3.14,
+  "dictionary": {
+    "integer": 2,
+    "string": "string2",
+    "float": 6.28
+  },
+  "alist": [
+    2,
+    "string2",
+    6.28
+  ],
+  "nested": {
+    "dict2": {
+      "a": 1,
+      "b": 2
+    },
+    "list2": [
+      "a",
+      "b",
+      "c"
+    ]
+  }
+}

@@ -1,4 +1,10 @@
-from terrascript import _resource
-class powerdns_record(_resource): pass
-record = powerdns_record
+#  terrascript/powerdns/r.py
 
+import terrascript
+
+
+class powerdns_zone(terrascript.Resource):
+    pass
+
+class powerdns_record(terrascript.Resource):
+    pass

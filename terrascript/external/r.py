@@ -1,1 +1,4 @@
-from terrascript import _resource
+#  terrascript/external/r.py
+
+import terrascript
+

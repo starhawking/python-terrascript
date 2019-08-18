@@ -1,1 +1,4 @@
-from terrascript import _resource
+#  terrascript/grafana/r.py
+
+import terrascript
+

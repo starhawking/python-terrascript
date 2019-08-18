@@ -1,4 +1,5 @@
 
+# TODO: This needs cleaning up
 
 NOSE := python3 -m nose --failed --verbose --with-coverage --cover-package=terrascript --stop --no-byte-compile --logging-level=DEBUG --detailed-errors
 

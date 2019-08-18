@@ -1,22 +1,25 @@
-from terrascript import _resource
-class rabbitmq_binding(_resource): pass
-binding = rabbitmq_binding
+#  terrascript/rabbitmq/r.py
 
-class rabbitmq_exchange(_resource): pass
-exchange = rabbitmq_exchange
+import terrascript
 
-class rabbitmq_permissions(_resource): pass
-permissions = rabbitmq_permissions
 
-class rabbitmq_policy(_resource): pass
-policy = rabbitmq_policy
+class rabbitmq_binding(terrascript.Resource):
+    pass
 
-class rabbitmq_queue(_resource): pass
-queue = rabbitmq_queue
+class rabbitmq_exchange(terrascript.Resource):
+    pass
 
-class rabbitmq_user(_resource): pass
-user = rabbitmq_user
+class rabbitmq_permissions(terrascript.Resource):
+    pass
 
-class rabbitmq_vhost(_resource): pass
-vhost = rabbitmq_vhost
+class rabbitmq_policy(terrascript.Resource):
+    pass
 
+class rabbitmq_queue(terrascript.Resource):
+    pass
+
+class rabbitmq_user(terrascript.Resource):
+    pass
+
+class rabbitmq_vhost(terrascript.Resource):
+    pass

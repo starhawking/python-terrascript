@@ -3,17 +3,17 @@
 import terrascript
 
 
-class alert_channel(terrascript.Datasource):
+class newrelic_alert_channel(terrascript.Datasource):
     pass
 
-class alert_policy(terrascript.Datasource):
+class newrelic_alert_policy(terrascript.Datasource):
     pass
 
-class application(terrascript.Datasource):
+class newrelic_application(terrascript.Datasource):
     pass
 
-class key_transaction(terrascript.Datasource):
+class newrelic_key_transaction(terrascript.Datasource):
     pass
 
-class synthetics_monitor(terrascript.Datasource):
+class newrelic_synthetics_monitor(terrascript.Datasource):
     pass

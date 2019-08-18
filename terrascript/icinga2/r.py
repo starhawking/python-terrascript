@@ -1,19 +1,22 @@
-from terrascript import _resource
-class icinga2_host(_resource): pass
-host = icinga2_host
+#  terrascript/icinga2/r.py
 
-class icinga2_hostgroup(_resource): pass
-hostgroup = icinga2_hostgroup
+import terrascript
 
-class icinga2_checkcommand(_resource): pass
-checkcommand = icinga2_checkcommand
 
-class icinga2_service(_resource): pass
-service = icinga2_service
+class icinga2_host(terrascript.Resource):
+    pass
 
-class icinga2_user(_resource): pass
-user = icinga2_user
+class icinga2_hostgroup(terrascript.Resource):
+    pass
 
-class icinga2_notification(_resource): pass
-notification = icinga2_notification
+class icinga2_checkcommand(terrascript.Resource):
+    pass
 
+class icinga2_service(terrascript.Resource):
+    pass
+
+class icinga2_user(terrascript.Resource):
+    pass
+
+class icinga2_notification(terrascript.Resource):
+    pass

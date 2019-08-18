@@ -1,25 +1,28 @@
-from terrascript import _resource
-class triton_fabric(_resource): pass
-fabric = triton_fabric
+#  terrascript/triton/r.py
 
-class triton_firewall_rule(_resource): pass
-firewall_rule = triton_firewall_rule
+import terrascript
 
-class triton_instance_template(_resource): pass
-instance_template = triton_instance_template
 
-class triton_key(_resource): pass
-key = triton_key
+class triton_fabric(terrascript.Resource):
+    pass
 
-class triton_machine(_resource): pass
-machine = triton_machine
+class triton_firewall_rule(terrascript.Resource):
+    pass
 
-class triton_service_group(_resource): pass
-service_group = triton_service_group
+class triton_instance_template(terrascript.Resource):
+    pass
 
-class triton_snapshot(_resource): pass
-snapshot = triton_snapshot
+class triton_key(terrascript.Resource):
+    pass
 
-class triton_vlan(_resource): pass
-vlan = triton_vlan
+class triton_machine(terrascript.Resource):
+    pass
 
+class triton_service_group(terrascript.Resource):
+    pass
+
+class triton_snapshot(terrascript.Resource):
+    pass
+
+class triton_vlan(terrascript.Resource):
+    pass

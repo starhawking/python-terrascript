@@ -3,17 +3,17 @@
 import terrascript
 
 
-class datacenter(terrascript.Datasource):
+class profitbricks_datacenter(terrascript.Datasource):
     pass
 
-class location(terrascript.Datasource):
+class profitbricks_location(terrascript.Datasource):
     pass
 
-class image(terrascript.Datasource):
+class profitbricks_image(terrascript.Datasource):
     pass
 
-class resource(terrascript.Datasource):
+class profitbricks_resource(terrascript.Datasource):
     pass
 
-class snapshot(terrascript.Datasource):
+class profitbricks_snapshot(terrascript.Datasource):
     pass

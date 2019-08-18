@@ -3,5 +3,5 @@
 import terrascript
 
 
-class ip_ranges(terrascript.Datasource):
+class fastly_ip_ranges(terrascript.Datasource):
     pass

@@ -1,4 +1,7 @@
-from terrascript import _resource
-class arukas_container(_resource): pass
-container = arukas_container
+#  terrascript/arukas/r.py
 
+import terrascript
+
+
+class arukas_container(terrascript.Resource):
+    pass

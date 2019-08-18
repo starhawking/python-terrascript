@@ -1,4 +1,7 @@
-from terrascript import _resource
-class mailgun_domain(_resource): pass
-domain = mailgun_domain
+#  terrascript/mailgun/r.py
 
+import terrascript
+
+
+class mailgun_domain(terrascript.Resource):
+    pass

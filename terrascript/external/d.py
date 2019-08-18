@@ -2,3 +2,6 @@
 
 import terrascript
 
+
+class external(terrascript.Datasource):
+    pass

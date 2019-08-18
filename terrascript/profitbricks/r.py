@@ -1,40 +1,43 @@
-from terrascript import _resource
-class profitbricks_datacenter(_resource): pass
-datacenter = profitbricks_datacenter
+#  terrascript/profitbricks/r.py
 
-class profitbricks_ipblock(_resource): pass
-ipblock = profitbricks_ipblock
+import terrascript
 
-class profitbricks_firewall(_resource): pass
-firewall = profitbricks_firewall
 
-class profitbricks_lan(_resource): pass
-lan = profitbricks_lan
+class profitbricks_datacenter(terrascript.Resource):
+    pass
 
-class profitbricks_loadbalancer(_resource): pass
-loadbalancer = profitbricks_loadbalancer
+class profitbricks_ipblock(terrascript.Resource):
+    pass
 
-class profitbricks_nic(_resource): pass
-nic = profitbricks_nic
+class profitbricks_firewall(terrascript.Resource):
+    pass
 
-class profitbricks_server(_resource): pass
-server = profitbricks_server
+class profitbricks_lan(terrascript.Resource):
+    pass
 
-class profitbricks_volume(_resource): pass
-volume = profitbricks_volume
+class profitbricks_loadbalancer(terrascript.Resource):
+    pass
 
-class profitbricks_group(_resource): pass
-group = profitbricks_group
+class profitbricks_nic(terrascript.Resource):
+    pass
 
-class profitbricks_share(_resource): pass
-share = profitbricks_share
+class profitbricks_server(terrascript.Resource):
+    pass
 
-class profitbricks_user(_resource): pass
-user = profitbricks_user
+class profitbricks_volume(terrascript.Resource):
+    pass
 
-class profitbricks_snapshot(_resource): pass
-snapshot = profitbricks_snapshot
+class profitbricks_group(terrascript.Resource):
+    pass
 
-class profitbricks_ipfailover(_resource): pass
-ipfailover = profitbricks_ipfailover
+class profitbricks_share(terrascript.Resource):
+    pass
 
+class profitbricks_user(terrascript.Resource):
+    pass
+
+class profitbricks_snapshot(terrascript.Resource):
+    pass
+
+class profitbricks_ipfailover(terrascript.Resource):
+    pass

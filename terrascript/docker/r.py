@@ -1,22 +1,25 @@
-from terrascript import _resource
-class docker_container(_resource): pass
-container = docker_container
+#  terrascript/docker/r.py
 
-class docker_image(_resource): pass
-image = docker_image
+import terrascript
 
-class docker_network(_resource): pass
-network = docker_network
 
-class docker_volume(_resource): pass
-volume = docker_volume
+class docker_container(terrascript.Resource):
+    pass
 
-class docker_config(_resource): pass
-config = docker_config
+class docker_image(terrascript.Resource):
+    pass
 
-class docker_secret(_resource): pass
-secret = docker_secret
+class docker_network(terrascript.Resource):
+    pass
 
-class docker_service(_resource): pass
-service = docker_service
+class docker_volume(terrascript.Resource):
+    pass
 
+class docker_config(terrascript.Resource):
+    pass
+
+class docker_secret(terrascript.Resource):
+    pass
+
+class docker_service(terrascript.Resource):
+    pass

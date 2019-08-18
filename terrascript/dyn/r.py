@@ -1,4 +1,7 @@
-from terrascript import _resource
-class dyn_record(_resource): pass
-record = dyn_record
+#  terrascript/dyn/r.py
 
+import terrascript
+
+
+class dyn_record(terrascript.Resource):
+    pass

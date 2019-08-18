@@ -3,14 +3,14 @@
 import terrascript
 
 
-class precreated_ip_block(terrascript.Datasource):
+class packet_precreated_ip_block(terrascript.Datasource):
     pass
 
-class operating_system(terrascript.Datasource):
+class packet_operating_system(terrascript.Datasource):
     pass
 
-class spot_market_price(terrascript.Datasource):
+class packet_spot_market_price(terrascript.Datasource):
     pass
 
-class device(terrascript.Datasource):
+class packet_device(terrascript.Datasource):
     pass

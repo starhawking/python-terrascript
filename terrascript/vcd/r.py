@@ -1,58 +1,82 @@
-from terrascript import _resource
-class vcd_network(_resource): pass
-network = vcd_network
+#  terrascript/vcd/r.py
 
-class vcd_network_routed(_resource): pass
-network_routed = vcd_network_routed
+import terrascript
 
-class vcd_network_direct(_resource): pass
-network_direct = vcd_network_direct
 
-class vcd_network_isolated(_resource): pass
-network_isolated = vcd_network_isolated
+class vcd_network(terrascript.Resource):
+    pass
 
-class vcd_vapp_network(_resource): pass
-vapp_network = vcd_vapp_network
+class vcd_network_routed(terrascript.Resource):
+    pass
 
-class vcd_vapp(_resource): pass
-vapp = vcd_vapp
+class vcd_network_direct(terrascript.Resource):
+    pass
 
-class vcd_firewall_rules(_resource): pass
-firewall_rules = vcd_firewall_rules
+class vcd_network_isolated(terrascript.Resource):
+    pass
 
-class vcd_dnat(_resource): pass
-dnat = vcd_dnat
+class vcd_vapp_network(terrascript.Resource):
+    pass
 
-class vcd_snat(_resource): pass
-snat = vcd_snat
+class vcd_vapp(terrascript.Resource):
+    pass
 
-class vcd_edgegateway_vpn(_resource): pass
-edgegateway_vpn = vcd_edgegateway_vpn
+class vcd_firewall_rules(terrascript.Resource):
+    pass
 
-class vcd_vapp_vm(_resource): pass
-vapp_vm = vcd_vapp_vm
+class vcd_dnat(terrascript.Resource):
+    pass
 
-class vcd_org(_resource): pass
-org = vcd_org
+class vcd_snat(terrascript.Resource):
+    pass
 
-class vcd_org_vdc(_resource): pass
-org_vdc = vcd_org_vdc
+class vcd_edgegateway(terrascript.Resource):
+    pass
 
-class vcd_catalog(_resource): pass
-catalog = vcd_catalog
+class vcd_edgegateway_vpn(terrascript.Resource):
+    pass
 
-class vcd_catalog_item(_resource): pass
-catalog_item = vcd_catalog_item
+class vcd_vapp_vm(terrascript.Resource):
+    pass
 
-class vcd_catalog_media(_resource): pass
-catalog_media = vcd_catalog_media
+class vcd_org(terrascript.Resource):
+    pass
 
-class vcd_inserted_media(_resource): pass
-inserted_media = vcd_inserted_media
+class vcd_org_vdc(terrascript.Resource):
+    pass
 
-class vcd_independent_disk(_resource): pass
-independent_disk = vcd_independent_disk
+class vcd_org_user(terrascript.Resource):
+    pass
 
-class vcd_external_network(_resource): pass
-external_network = vcd_external_network
+class vcd_catalog(terrascript.Resource):
+    pass
 
+class vcd_catalog_item(terrascript.Resource):
+    pass
+
+class vcd_catalog_media(terrascript.Resource):
+    pass
+
+class vcd_inserted_media(terrascript.Resource):
+    pass
+
+class vcd_independent_disk(terrascript.Resource):
+    pass
+
+class vcd_external_network(terrascript.Resource):
+    pass
+
+class vcd_lb_service_monitor(terrascript.Resource):
+    pass
+
+class vcd_lb_server_pool(terrascript.Resource):
+    pass
+
+class vcd_lb_app_profile(terrascript.Resource):
+    pass
+
+class vcd_lb_app_rule(terrascript.Resource):
+    pass
+
+class vcd_lb_virtual_server(terrascript.Resource):
+    pass

@@ -3,254 +3,254 @@
 import terrascript
 
 
-class api_management(terrascript.Datasource):
+class azurerm_api_management(terrascript.Datasource):
     pass
 
-class api_management_api(terrascript.Datasource):
+class azurerm_api_management_api(terrascript.Datasource):
     pass
 
-class api_management_group(terrascript.Datasource):
+class azurerm_api_management_group(terrascript.Datasource):
     pass
 
-class api_management_product(terrascript.Datasource):
+class azurerm_api_management_product(terrascript.Datasource):
     pass
 
-class api_management_user(terrascript.Datasource):
+class azurerm_api_management_user(terrascript.Datasource):
     pass
 
-class app_service_plan(terrascript.Datasource):
+class azurerm_app_service_plan(terrascript.Datasource):
     pass
 
-class app_service(terrascript.Datasource):
+class azurerm_app_service(terrascript.Datasource):
     pass
 
-class application_insights(terrascript.Datasource):
+class azurerm_application_insights(terrascript.Datasource):
     pass
 
-class application_security_group(terrascript.Datasource):
+class azurerm_application_security_group(terrascript.Datasource):
     pass
 
-class automation_variable_bool(terrascript.Datasource):
+class azurerm_automation_variable_bool(terrascript.Datasource):
     pass
 
-class automation_variable_datetime(terrascript.Datasource):
+class azurerm_automation_variable_datetime(terrascript.Datasource):
     pass
 
-class automation_variable_int(terrascript.Datasource):
+class azurerm_automation_variable_int(terrascript.Datasource):
     pass
 
-class automation_variable_string(terrascript.Datasource):
+class azurerm_automation_variable_string(terrascript.Datasource):
     pass
 
-class availability_set(terrascript.Datasource):
+class azurerm_availability_set(terrascript.Datasource):
     pass
 
-class azuread_application(terrascript.Datasource):
+class azurerm_azuread_application(terrascript.Datasource):
     pass
 
-class azuread_service_principal(terrascript.Datasource):
+class azurerm_azuread_service_principal(terrascript.Datasource):
     pass
 
-class batch_account(terrascript.Datasource):
+class azurerm_batch_account(terrascript.Datasource):
     pass
 
-class batch_certificate(terrascript.Datasource):
+class azurerm_batch_certificate(terrascript.Datasource):
     pass
 
-class batch_pool(terrascript.Datasource):
+class azurerm_batch_pool(terrascript.Datasource):
     pass
 
-class builtin_role_definition(terrascript.Datasource):
+class azurerm_builtin_role_definition(terrascript.Datasource):
     pass
 
-class cdn_profile(terrascript.Datasource):
+class azurerm_cdn_profile(terrascript.Datasource):
     pass
 
-class client_config(terrascript.Datasource):
+class azurerm_client_config(terrascript.Datasource):
     pass
 
-class kubernetes_service_versions(terrascript.Datasource):
+class azurerm_kubernetes_service_versions(terrascript.Datasource):
     pass
 
-class container_registry(terrascript.Datasource):
+class azurerm_container_registry(terrascript.Datasource):
     pass
 
-class cosmosdb_account(terrascript.Datasource):
+class azurerm_cosmosdb_account(terrascript.Datasource):
     pass
 
-class data_lake_store(terrascript.Datasource):
+class azurerm_data_lake_store(terrascript.Datasource):
     pass
 
-class dev_test_lab(terrascript.Datasource):
+class azurerm_dev_test_lab(terrascript.Datasource):
     pass
 
-class dev_test_virtual_network(terrascript.Datasource):
+class azurerm_dev_test_virtual_network(terrascript.Datasource):
     pass
 
-class dns_zone(terrascript.Datasource):
+class azurerm_dns_zone(terrascript.Datasource):
     pass
 
-class eventhub_namespace(terrascript.Datasource):
+class azurerm_eventhub_namespace(terrascript.Datasource):
     pass
 
-class express_route_circuit(terrascript.Datasource):
+class azurerm_express_route_circuit(terrascript.Datasource):
     pass
 
-class firewall(terrascript.Datasource):
+class azurerm_firewall(terrascript.Datasource):
     pass
 
-class image(terrascript.Datasource):
+class azurerm_image(terrascript.Datasource):
     pass
 
-class hdinsight_cluster(terrascript.Datasource):
+class azurerm_hdinsight_cluster(terrascript.Datasource):
     pass
 
-class maps_account(terrascript.Datasource):
+class azurerm_maps_account(terrascript.Datasource):
     pass
 
-class key_vault_access_policy(terrascript.Datasource):
+class azurerm_key_vault_access_policy(terrascript.Datasource):
     pass
 
-class key_vault_key(terrascript.Datasource):
+class azurerm_key_vault_key(terrascript.Datasource):
     pass
 
-class key_vault_secret(terrascript.Datasource):
+class azurerm_key_vault_secret(terrascript.Datasource):
     pass
 
-class key_vault(terrascript.Datasource):
+class azurerm_key_vault(terrascript.Datasource):
     pass
 
-class kubernetes_cluster(terrascript.Datasource):
+class azurerm_kubernetes_cluster(terrascript.Datasource):
     pass
 
-class lb(terrascript.Datasource):
+class azurerm_lb(terrascript.Datasource):
     pass
 
-class lb_backend_address_pool(terrascript.Datasource):
+class azurerm_lb_backend_address_pool(terrascript.Datasource):
     pass
 
-class log_analytics_workspace(terrascript.Datasource):
+class azurerm_log_analytics_workspace(terrascript.Datasource):
     pass
 
-class logic_app_workflow(terrascript.Datasource):
+class azurerm_logic_app_workflow(terrascript.Datasource):
     pass
 
-class managed_disk(terrascript.Datasource):
+class azurerm_managed_disk(terrascript.Datasource):
     pass
 
-class management_group(terrascript.Datasource):
+class azurerm_management_group(terrascript.Datasource):
     pass
 
-class monitor_action_group(terrascript.Datasource):
+class azurerm_monitor_action_group(terrascript.Datasource):
     pass
 
-class monitor_diagnostic_categories(terrascript.Datasource):
+class azurerm_monitor_diagnostic_categories(terrascript.Datasource):
     pass
 
-class monitor_log_profile(terrascript.Datasource):
+class azurerm_monitor_log_profile(terrascript.Datasource):
     pass
 
-class mssql_elasticpool(terrascript.Datasource):
+class azurerm_mssql_elasticpool(terrascript.Datasource):
     pass
 
-class network_interface(terrascript.Datasource):
+class azurerm_network_interface(terrascript.Datasource):
     pass
 
-class network_security_group(terrascript.Datasource):
+class azurerm_network_security_group(terrascript.Datasource):
     pass
 
-class network_watcher(terrascript.Datasource):
+class azurerm_network_watcher(terrascript.Datasource):
     pass
 
-class notification_hub_namespace(terrascript.Datasource):
+class azurerm_notification_hub_namespace(terrascript.Datasource):
     pass
 
-class notification_hub(terrascript.Datasource):
+class azurerm_notification_hub(terrascript.Datasource):
     pass
 
-class platform_image(terrascript.Datasource):
+class azurerm_platform_image(terrascript.Datasource):
     pass
 
-class policy_definition(terrascript.Datasource):
+class azurerm_policy_definition(terrascript.Datasource):
     pass
 
-class public_ip(terrascript.Datasource):
+class azurerm_public_ip(terrascript.Datasource):
     pass
 
-class public_ips(terrascript.Datasource):
+class azurerm_public_ips(terrascript.Datasource):
     pass
 
-class recovery_services_vault(terrascript.Datasource):
+class azurerm_recovery_services_vault(terrascript.Datasource):
     pass
 
-class recovery_services_protection_policy_vm(terrascript.Datasource):
+class azurerm_recovery_services_protection_policy_vm(terrascript.Datasource):
     pass
 
-class redis_cache(terrascript.Datasource):
+class azurerm_redis_cache(terrascript.Datasource):
     pass
 
-class resource_group(terrascript.Datasource):
+class azurerm_resource_group(terrascript.Datasource):
     pass
 
-class role_definition(terrascript.Datasource):
+class azurerm_role_definition(terrascript.Datasource):
     pass
 
-class route_table(terrascript.Datasource):
+class azurerm_route_table(terrascript.Datasource):
     pass
 
-class scheduler_job_collection(terrascript.Datasource):
+class azurerm_scheduler_job_collection(terrascript.Datasource):
     pass
 
-class servicebus_namespace(terrascript.Datasource):
+class azurerm_servicebus_namespace(terrascript.Datasource):
     pass
 
-class shared_image_gallery(terrascript.Datasource):
+class azurerm_shared_image_gallery(terrascript.Datasource):
     pass
 
-class shared_image_version(terrascript.Datasource):
+class azurerm_shared_image_version(terrascript.Datasource):
     pass
 
-class shared_image(terrascript.Datasource):
+class azurerm_shared_image(terrascript.Datasource):
     pass
 
-class snapshot(terrascript.Datasource):
+class azurerm_snapshot(terrascript.Datasource):
     pass
 
-class sql_server(terrascript.Datasource):
+class azurerm_sql_server(terrascript.Datasource):
     pass
 
-class stream_analytics_job(terrascript.Datasource):
+class azurerm_stream_analytics_job(terrascript.Datasource):
     pass
 
-class storage_account_sas(terrascript.Datasource):
+class azurerm_storage_account_sas(terrascript.Datasource):
     pass
 
-class storage_account(terrascript.Datasource):
+class azurerm_storage_account(terrascript.Datasource):
     pass
 
-class subnet(terrascript.Datasource):
+class azurerm_subnet(terrascript.Datasource):
     pass
 
-class subscription(terrascript.Datasource):
+class azurerm_subscription(terrascript.Datasource):
     pass
 
-class subscriptions(terrascript.Datasource):
+class azurerm_subscriptions(terrascript.Datasource):
     pass
 
-class traffic_manager_geographical_location(terrascript.Datasource):
+class azurerm_traffic_manager_geographical_location(terrascript.Datasource):
     pass
 
-class user_assigned_identity(terrascript.Datasource):
+class azurerm_user_assigned_identity(terrascript.Datasource):
     pass
 
-class virtual_machine(terrascript.Datasource):
+class azurerm_virtual_machine(terrascript.Datasource):
     pass
 
-class virtual_network_gateway(terrascript.Datasource):
+class azurerm_virtual_network_gateway(terrascript.Datasource):
     pass
 
-class virtual_network_gateway_connection(terrascript.Datasource):
+class azurerm_virtual_network_gateway_connection(terrascript.Datasource):
     pass
 
-class virtual_network(terrascript.Datasource):
+class azurerm_virtual_network(terrascript.Datasource):
     pass

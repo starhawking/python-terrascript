@@ -1,7 +1,20 @@
 # Changelog
 
+## [0.9.0] - Not yet released
+### Deprecated
+* Individual modules for each provider (Example: ``terrascript.aws.r``) are now deprecated in favour of
+  single modules as added in release 0.8.0. 
 ## [0.8.0] - Not yet released
 Release 0.8.0 will be a major re-write of the code.
+### Added
+* Providers, resources and data sources are now also accessible through single modules instead of 
+  individual modules for each provider.
+* The module ``terrascript.providers`` contains **all** providers, e.g. ``terrascript.providers.google``.
+* The module ``terrascript.resources`` contains **all** resource, e.g. ``terrascript.resources.aws_instance``.
+* The module ``terrascript.datasources`` contains **all** resource, e.g. ``terrascript.datasources.alicloud_images``.
+### Removed
+* Shortened names of classes for resources and data sources. For example, ``terrascript.aws.r.instance`` no longer
+  exists, and one must use ``terrascript.aws.r.aws_instance``.
 ## [0.7.0] - Not yet released
 ### Added
 * Initial support for Terraform 0.12 but has not seen much testing yet.
@@ -30,7 +43,6 @@ Release 0.8.0 will be a major re-write of the code.
 * Added support for update terrascript from another terrascript. Same behavior as dict().update (pull #37)
 * Added new cloudflare resources and data (pull #54)
 * Added tests for Terraform 0.11.8
-
 ## [0.5.1] - 2018-05-10
 ### Fixed
 * Work-around for data/JSON bug  (issue #3).

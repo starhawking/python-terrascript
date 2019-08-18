@@ -1,7 +1,10 @@
-from terrascript import _resource
-class softlayer_virtual_guest(_resource): pass
-virtual_guest = softlayer_virtual_guest
+#  terrascript/softlayer/r.py
 
-class softlayer_ssh_key(_resource): pass
-ssh_key = softlayer_ssh_key
+import terrascript
 
+
+class softlayer_virtual_guest(terrascript.Resource):
+    pass
+
+class softlayer_ssh_key(terrascript.Resource):
+    pass

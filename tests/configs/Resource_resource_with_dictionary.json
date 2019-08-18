@@ -1,0 +1,12 @@
+{
+  "name": {
+    "integer": 1,
+    "string": "string",
+    "float": 3.14,
+    "dictionary": {
+      "integer": 2,
+      "string": "string2",
+      "float": 6.28
+    }
+  }
+}

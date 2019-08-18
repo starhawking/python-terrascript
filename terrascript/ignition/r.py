@@ -1,1 +1,4 @@
-from terrascript import _resource
+#  terrascript/ignition/r.py
+
+import terrascript
+

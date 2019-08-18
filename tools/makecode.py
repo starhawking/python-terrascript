@@ -27,6 +27,9 @@
 
 """
 
+DEBUG = True
+CONCURRENCY = 10
+
 import os
 import os.path
 import sys
@@ -36,10 +39,17 @@ import subprocess
 import shlex
 import concurrent.futures
 import jinja2
+import logging
 
-CONCURRENCY = 10
 
-REGEX = re.compile(b'".*?_(?P<name>.+)":\s+(?P<type>resource|data)')
+if DEBUG:
+    logging.basicConfig(level=logging.DEBUG)
+else:
+    logging.basicConfig(level=logging.INFO)
+    
+
+#REGEX = re.compile(b'".*?_(?P<name>.+)":\s+(?P<type>resource|data)')
+REGEX = re.compile(b'"(?P<name>.+)":\s+(?P<type>resource|data)')
 """REGEX to extract the names of resources and data sources from a provider.go file.
 
     DataSourcesMap: map[string]*schema.Resource{
@@ -91,6 +101,7 @@ class {{ resource }}(terrascript.Resource):
 """)
 
 
+
 def create_provider_directory(provider, modulesdir):
     
     providerdir = os.path.join(modulesdir, provider)
@@ -111,6 +122,16 @@ def create_provider_datasources(provider, providerdir, datasources):
     
     with open(os.path.join(providerdir, 'd.py'), 'wt') as fp:
         fp.write(DATASOURCES_TEMPLATE.render(provider=provider, datasources=datasources))
+        
+
+def create_provider_resources(provider, providerdir, resources):
+    logging.debug('create_provider_resources provider={}'.format(provider))
+    logging.debug('create_provider_resources providerdir={}'.format(providerdir))
+    for resource in resources:
+        logging.debug('create_provider_resources resource={}'.format(resource))
+    
+    with open(os.path.join(providerdir, 'r.py'), 'wt') as fp:
+        fp.write(RESOURCES_TEMPLATE.render(provider=provider, resources=resources))
 
 
 def process(provider, modulesdir):
@@ -147,7 +168,7 @@ def process(provider, modulesdir):
         providerdir = create_provider_directory(provider, modulesdir)
         create_provider_init(provider, providerdir)
         create_provider_datasources(provider, providerdir, datasources)
-        
+        create_provider_resources(provider, providerdir, resources)
 
 
 def main():

@@ -3,8 +3,8 @@
 import terrascript
 
 
-class account(terrascript.Datasource):
+class circonus_account(terrascript.Datasource):
     pass
 
-class collector(terrascript.Datasource):
+class circonus_collector(terrascript.Datasource):
     pass

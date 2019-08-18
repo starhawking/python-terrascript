@@ -1,7 +1,10 @@
-from terrascript import _resource
-class logentries_log(_resource): pass
-log = logentries_log
+#  terrascript/logentries/r.py
 
-class logentries_logset(_resource): pass
-logset = logentries_logset
+import terrascript
 
+
+class logentries_log(terrascript.Resource):
+    pass
+
+class logentries_logset(terrascript.Resource):
+    pass

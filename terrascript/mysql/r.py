@@ -1,16 +1,19 @@
-from terrascript import _resource
-class mysql_database(_resource): pass
-database = mysql_database
+#  terrascript/mysql/r.py
 
-class mysql_grant(_resource): pass
-grant = mysql_grant
+import terrascript
 
-class mysql_role(_resource): pass
-role = mysql_role
 
-class mysql_user(_resource): pass
-user = mysql_user
+class mysql_database(terrascript.Resource):
+    pass
 
-class mysql_user_password(_resource): pass
-user_password = mysql_user_password
+class mysql_grant(terrascript.Resource):
+    pass
 
+class mysql_role(terrascript.Resource):
+    pass
+
+class mysql_user(terrascript.Resource):
+    pass
+
+class mysql_user_password(terrascript.Resource):
+    pass

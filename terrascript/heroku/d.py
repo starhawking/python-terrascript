@@ -3,17 +3,17 @@
 import terrascript
 
 
-class addon(terrascript.Datasource):
+class heroku_addon(terrascript.Datasource):
     pass
 
-class app(terrascript.Datasource):
+class heroku_app(terrascript.Datasource):
     pass
 
-class space(terrascript.Datasource):
+class heroku_space(terrascript.Datasource):
     pass
 
-class space_peering_info(terrascript.Datasource):
+class heroku_space_peering_info(terrascript.Datasource):
     pass
 
-class team(terrascript.Datasource):
+class heroku_team(terrascript.Datasource):
     pass

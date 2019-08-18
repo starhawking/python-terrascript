@@ -1,10 +1,16 @@
-from terrascript import _resource
-class cloudscale_server(_resource): pass
-server = cloudscale_server
+#  terrascript/cloudscale/r.py
 
-class cloudscale_volume(_resource): pass
-volume = cloudscale_volume
+import terrascript
 
-class cloudscale_floating_ip(_resource): pass
-floating_ip = cloudscale_floating_ip
 
+class cloudscale_server(terrascript.Resource):
+    pass
+
+class cloudscale_server_group(terrascript.Resource):
+    pass
+
+class cloudscale_volume(terrascript.Resource):
+    pass
+
+class cloudscale_floating_ip(terrascript.Resource):
+    pass

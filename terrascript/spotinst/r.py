@@ -1,1 +1,4 @@
-from terrascript import _resource
+#  terrascript/spotinst/r.py
+
+import terrascript
+

@@ -1,22 +1,28 @@
-from terrascript import _resource
-class dns_a_record_set(_resource): pass
-a_record_set = dns_a_record_set
+#  terrascript/dns/r.py
 
-class dns_aaaa_record_set(_resource): pass
-aaaa_record_set = dns_aaaa_record_set
+import terrascript
 
-class dns_cname_record(_resource): pass
-cname_record = dns_cname_record
 
-class dns_mx_record_set(_resource): pass
-mx_record_set = dns_mx_record_set
+class dns_a_record_set(terrascript.Resource):
+    pass
 
-class dns_ns_record_set(_resource): pass
-ns_record_set = dns_ns_record_set
+class dns_aaaa_record_set(terrascript.Resource):
+    pass
 
-class dns_ptr_record(_resource): pass
-ptr_record = dns_ptr_record
+class dns_cname_record(terrascript.Resource):
+    pass
 
-class dns_txt_record_set(_resource): pass
-txt_record_set = dns_txt_record_set
+class dns_mx_record_set(terrascript.Resource):
+    pass
 
+class dns_ns_record_set(terrascript.Resource):
+    pass
+
+class dns_ptr_record(terrascript.Resource):
+    pass
+
+class dns_srv_record_set(terrascript.Resource):
+    pass
+
+class dns_txt_record_set(terrascript.Resource):
+    pass

@@ -3,47 +3,47 @@
 import terrascript
 
 
-class compute_cluster(terrascript.Datasource):
+class vsphere_compute_cluster(terrascript.Datasource):
     pass
 
-class custom_attribute(terrascript.Datasource):
+class vsphere_custom_attribute(terrascript.Datasource):
     pass
 
-class datacenter(terrascript.Datasource):
+class vsphere_datacenter(terrascript.Datasource):
     pass
 
-class datastore(terrascript.Datasource):
+class vsphere_datastore(terrascript.Datasource):
     pass
 
-class datastore_cluster(terrascript.Datasource):
+class vsphere_datastore_cluster(terrascript.Datasource):
     pass
 
-class distributed_virtual_switch(terrascript.Datasource):
+class vsphere_distributed_virtual_switch(terrascript.Datasource):
     pass
 
-class folder(terrascript.Datasource):
+class vsphere_folder(terrascript.Datasource):
     pass
 
-class host(terrascript.Datasource):
+class vsphere_host(terrascript.Datasource):
     pass
 
-class network(terrascript.Datasource):
+class vsphere_network(terrascript.Datasource):
     pass
 
-class resource_pool(terrascript.Datasource):
+class vsphere_resource_pool(terrascript.Datasource):
     pass
 
-class tag(terrascript.Datasource):
+class vsphere_tag(terrascript.Datasource):
     pass
 
-class tag_category(terrascript.Datasource):
+class vsphere_tag_category(terrascript.Datasource):
     pass
 
-class vapp_container(terrascript.Datasource):
+class vsphere_vapp_container(terrascript.Datasource):
     pass
 
-class virtual_machine(terrascript.Datasource):
+class vsphere_virtual_machine(terrascript.Datasource):
     pass
 
-class vmfs_disks(terrascript.Datasource):
+class vsphere_vmfs_disks(terrascript.Datasource):
     pass

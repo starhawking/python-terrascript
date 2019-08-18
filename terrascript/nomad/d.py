@@ -3,14 +3,14 @@
 import terrascript
 
 
-class job(terrascript.Datasource):
+class nomad_job(terrascript.Datasource):
     pass
 
-class deployments(terrascript.Datasource):
+class nomad_deployments(terrascript.Datasource):
     pass
 
-class namespaces(terrascript.Datasource):
+class nomad_namespaces(terrascript.Datasource):
     pass
 
-class regions(terrascript.Datasource):
+class nomad_regions(terrascript.Datasource):
     pass
