@@ -29,4 +29,9 @@ I will manually merge them into the ``develop`` branch.
 
 ## Tests
 
-Please include test cases in your Pull Requests.
+Please include test cases for your code. The recommended approach is to 
+* Create a new [issue](https://github.com/mjuenema/python-terrascript/issues) and note down the number.
+* Create a ``tests/test_issueNN.py`` file containing your tests, replacing ``NN`` with the issue number created in the previous step.
+* If applicable, create **valid** Terraform configurations in JSON format as ``tests/configs/issueNN-DESCRIPTION.tf.json``, replacing ``NN`` with the issue number.
+
+Check out the other files in ``tests/`` for examples.
