@@ -15,7 +15,7 @@ from abc import ABC, abstractmethod
 from terrascript.reference import ReferenceMixin
 
 __author__ = 'Markus Juenemann <markus@juenemann.net>'
-__version__ = '0.7.0'
+__version__ = '0.7.1'
 __license__ = 'BSD 2-clause "Simplified" License'
 
 INDENT = 2
@@ -86,7 +86,7 @@ class NestedDefaultDict(collections.defaultdict):
         super().__init__(NestedDefaultDict, *args, **kwargs)
 
     def __str__(self):
-        return json.dumps(dict(self))
+        return json.dumps(dict(self), indent=INDENT)
 
 
 class Block(NestedDefaultDict):
@@ -287,4 +287,26 @@ class Data(ReferenceMixin, TopLevelBlock):
         terrascript['data'][self._labels[0]][self._labels[1]] = self
 
 
-__all__ = ['Block', 'Terrascript', 'Resource', 'Provider', 'Terraform', 'Data']
+class Output(TopLevelBlock):
+    """Class for output.
+
+    https://www.terraform.io/docs/configuration/syntax-json.html#output-blocks
+    """
+
+    def __init__(self, label, value):
+        super().__init__(label, value=value)
+
+    def add_to_terrascript(self, terrascript):
+        """
+        {
+          "output": {
+            "example": {        <== block._labels[0]
+              "value": "${aws_instance.example}"
+            }
+          }
+        }
+        """
+        terrascript['output'][self._labels[0]] = self
+
+
+__all__ = ['Block', 'Terrascript', 'Resource', 'Provider', 'Terraform', 'Data', 'Output']

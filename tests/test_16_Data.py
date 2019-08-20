@@ -13,7 +13,7 @@ class Test_Data:
     def test_data(self):
         data = Data('foo', 'bar', baz='qux')
         self.config += data
-        assert str(self.config) == json.dumps({
+        assert dict(self.config) == {
             'data': {
                 'foo': {
                     'bar': {
@@ -21,4 +21,4 @@ class Test_Data:
                     }
                 }
             }
-        })
+        }
