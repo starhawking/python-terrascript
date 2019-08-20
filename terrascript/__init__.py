@@ -15,7 +15,7 @@ from abc import ABC, abstractmethod
 from terrascript.reference import ReferenceMixin
 
 __author__ = 'Markus Juenemann <markus@juenemann.net>'
-__version__ = '0.7.0'
+__version__ = '0.7.1'
 __license__ = 'BSD 2-clause "Simplified" License'
 
 INDENT = 2
