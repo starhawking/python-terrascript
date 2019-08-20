@@ -10,10 +10,10 @@ class Test_Output:
     def test_output(self):
         output = Output('foo', 'bar')
         self.config += output
-        assert str(self.config) == json.dumps({
+        assert dict(self.config) == {
             'output': {
                 'foo': {
                     'value': 'bar'
                 }
             }
-        })
+        }

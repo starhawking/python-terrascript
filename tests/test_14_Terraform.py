@@ -14,7 +14,7 @@ class Test_Terraform:
                 'bucket': 'acme-terraform-states'
             }
         })
-        assert str(self.config) == json.dumps({
+        assert dict(self.config) == {
             "terraform": {
                 "required_version": ">= 0.12.0",
                 "backend": {
@@ -24,7 +24,7 @@ class Test_Terraform:
                     }
                 }
             }
-        })
+        }
 
     def test_backend(self):
         new_config = Terrascript()

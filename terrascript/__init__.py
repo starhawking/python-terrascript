@@ -86,7 +86,7 @@ class NestedDefaultDict(collections.defaultdict):
         super().__init__(NestedDefaultDict, *args, **kwargs)
 
     def __str__(self):
-        return json.dumps(dict(self))
+        return json.dumps(dict(self), indent=INDENT)
 
 
 class Block(NestedDefaultDict):
