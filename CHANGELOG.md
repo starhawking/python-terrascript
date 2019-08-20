@@ -9,6 +9,7 @@
 ### Added
 * Support for Terraform 0.12 JSON syntax (issue #62).
 * Output block was missing (pull #76)
+* Lots of other stuff (pull #72)
 ### Removed
 * Support for all Terraform versions prior to release 0.12.
 
