@@ -108,3 +108,4 @@ ENV/
 .pytest_cache
 .pydevproject
 .settings
+**.ipynb

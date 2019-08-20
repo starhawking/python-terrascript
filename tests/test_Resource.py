@@ -11,6 +11,11 @@ class Test_Resource(object):
         assert isinstance(resource, terrascript.Block)
         assert isinstance(resource['name'], terrascript.Block)
         
+        
+    def test_resource_attributes(self):
+        resource = terrascript.Resource('name')
+        assert resource.name == 'name'
+        
             
     def test_resource(self):
         resource = terrascript.Resource('name')

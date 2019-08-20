@@ -5,7 +5,7 @@ https://github.com/mjuenema/python-terrascript/issues/22
 
 """
 
-from terrascript import *
+import terrascript
 from terrascript.aws.r import aws_instance
 
 def test_issue22():
@@ -41,7 +41,7 @@ def test_issue22():
        }
 
     """
-    ts = Terrascript()
+    ts = terrascript.Terrascript()
     ts += provider('aws', region='us-east-1')
     ts += provider('aws', region='us-east-2', alias='useast2')
     ts += aws_instance('I1', ami='ami-4bf3d731', instance_type='t2.large')

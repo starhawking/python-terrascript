@@ -27,6 +27,25 @@ import warnings
 logger = logging.getLogger(__name__)
 
 
+_PROVIDER = 'provider'
+_RESOURCE = 'resource'
+
+
+def nested_dict(d, keys, value):
+    if not keys[0] in d:
+        d[keys[0]] = value
+        
+    try:
+        if not keys[1] in d[keys[0]]:
+            d[keys[0]][keys[1]] = value
+    except IndexError:
+        pass
+    
+    return d
+         
+    
+
+
 class Block(dict):
     """A `Block` is a dictionary-like container for other content.
     
@@ -34,16 +53,17 @@ class Block(dict):
     
     def __init__(self, **kwargs):
         
-        for name, value in kwargs.items():
-            if isinstance(value, Resource):
-                raise AttributeError()
-                # TODO: Return Resource.name.id ???
-                #kwargs[name] = '{}.{}'.format(value.__class.__.__name__, value.name)
-            elif isinstance(value, Variable):
-                # {'name': {}} -> 'var.name'
-                kwargs[name] = 'var.{}'.format(value.name)
+#         for name, value in kwargs.items():
+#             if isinstance(value, Resource):
+#                 raise AttributeError()
+#                 # TODO: Return Resource.name.id ???
+#                 #kwargs[name] = '{}.{}'.format(value.__class.__.__name__, value.name)
+#             elif isinstance(value, Variable):
+#                 # {'name': {}} -> 'var.name'
+#                 kwargs[name] = 'var.{}'.format(value.name)
     
-        super().__init__(**kwargs)
+        self.update(**kwargs)
+        #super().__init__(**kwargs)
         
         
     def __getattr__(self, attr):
@@ -97,22 +117,33 @@ class Terrascript(dict):
     """
     
     def __init__(self, *objects):
-        for object in object:
+        
+        for object in objects:
             self += object
             
             
     def __add__(self, object):
         """Add to the configuration using the ``+`` syntax."""
+        
+        classname = object.__class__.__name__
          
         # Resource
         #
         if isinstance(object, Resource):
-            if not self.has_key('resource'):
-                self['resource'] = {}
+#             if not self.has_key('resource'):
+#                 self['resource'] = {}
             if not self['resource'].has_key(object.__class__.__name__):
                 self['resource'][object.__class__.__name__] = []
             self['resource'][object.__class__.__name__].append(object)
-            
+        #
+        # Provider
+        # 
+        elif isinstance(object, Provider):
+            if not _PROVIDER in self:
+                self[_PROVIDER] = {}
+            if not classname in self[_PROVIDER]:
+                self[_PROVIDER][classname] = []
+            self[_PROVIDER][classname].append(object)
         else:
             raise TypeError('A {} cannot be added to the configuration'.format(
                 object.__class__.__name__))
@@ -126,17 +157,33 @@ class Terrascript(dict):
         self += object
         
 
-# 
-
-
         
 class Resource(Block):
     def __init__(self, name, **kwargs):
         self[name] = Block(**kwargs)
         
         
+class Datasource(Block):
+    pass
+        
+        
 class Provider(Block):
-    def __init__(self, name, **kwargs):
+    """Terraform provider
+    
+       HCL:
+       
+         provider "google" {
+           project = "acme-app"
+           region  = "us-central1"
+         }
+         
+       JSON:
+       
+         
+
+    """
+    
+    def __init__(self, **kwargs):
         super().__init__(**kwargs)
                 
         
@@ -179,7 +226,7 @@ class Function(Block):
     pass
 
 
-# Lower case classes for backwards will be deprecated in the future.
+# Lower case classes for backwards will be deprecated in the future(???)
 
 class module(Module):
     def   init__(self, *args, **kwargs):
@@ -188,12 +235,12 @@ class module(Module):
         super().__init__(*args, **kwargs)
         
         
-import json
-print(json.dumps(Variable('availability_zone_names', 
-                                        type="list(string)",
-                                        default=["us-west-1a"]
-                                        ),
-                          indent=2))
+# import json
+# print(json.dumps(Variable('availability_zone_names', 
+#                                         type="list(string)",
+#                                         default=["us-west-1a"]
+#                                         ),
+#                           indent=2))
 
     
         
@@ -491,8 +538,6 @@ print(json.dumps(Variable('availability_zone_names',
 # """Shortcuts for `function()`."""
 # 
 # 
-# __all__ = ['Terrascript',
-#            'resource', 'data', 'module', 'variable',
-#            'output', 'terraform', 'provider', 'Locals',
-#            'provisioner', 'connection', 'backend',
-#            'f', 'fn', 'func', 'function']
+__all__ = ['Terrascript', 'Block', 'Resource', 'Provider', 'Datasource',
+           'Variable', 'Module', 'Output', 'Provisioner', 'Backend',
+           'Terraform', 'Locals', 'Function']
