@@ -17,8 +17,10 @@ Release 0.8.0 will be a major re-write of the code.
   exists, and one must use ``terrascript.aws.r.aws_instance``.
 ## [0.7.0] - Not yet released
 ### Added
-* Initial support for Terraform 0.12 but has not seen much testing yet.
-* Lots of other stuff (pull #72)
+* Support for Terraform 0.12 JSON syntax (issue #62).
+* Output block was missing (pull #76)
+### Removed
+* Support for all Terraform versions prior to release 0.12.
 ## [0.6.1] - 2019-08-17
 ### Added
 * Locals resouce (pull #71)
