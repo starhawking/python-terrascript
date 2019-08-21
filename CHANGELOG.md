@@ -12,6 +12,7 @@ Release 0.8.0 will be a major re-write of the code.
 * The module ``terrascript.providers`` contains **all** providers, e.g. ``terrascript.providers.google``.
 * The module ``terrascript.resources`` contains **all** resource, e.g. ``terrascript.resources.aws_instance``.
 * The module ``terrascript.datasources`` contains **all** resource, e.g. ``terrascript.datasources.alicloud_images``.
+* [Oracle Cloud Infrastructure Provider](https://www.terraform.io/docs/providers/oci/index.html)
 ### Removed
 * Shortened names of classes for resources and data sources. For example, ``terrascript.aws.r.instance`` no longer
   exists, and one must use ``terrascript.aws.r.aws_instance``.
