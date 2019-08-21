@@ -109,3 +109,4 @@ ENV/
 .pydevproject
 .settings
 **.ipynb
+tools/terraform

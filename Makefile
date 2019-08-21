@@ -16,7 +16,7 @@ test:
 	$(NOSE) $(TESTS)
 
 debug:
-	$(NOSE) --with-id --pdb $(TESTS) $(TEST_ISSUES)
+	$(NOSE) --pdb $(TESTS)
 
 code: clean
 	./makecode.py

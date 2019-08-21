@@ -7,5 +7,5 @@ against an expected outcome.
 Files ending in ``.tf.json`` are complete Terraform configurations whereas files
 ending just in ``.json`` are only incomplete fragments.
 
-Running ``testconfigs.sh`` will execute ``terraform init``, ``terraform validate``
-and ``terraform plan`` against complete configurations ending in ``.tf.json``.
+Running ``test_configs.sh`` will execute ``terraform init`` and ``terraform validate``
+against all complete configurations ending in ``.tf.json``.
