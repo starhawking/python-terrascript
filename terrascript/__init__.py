@@ -36,10 +36,13 @@ class Block(dict):
     """
 
     def __init__(self, **kwargs):
-
+        
         # Convert instances of Resource, Variable, Data, ... into
         # their correct reference instead of inserting the actual
         # dictionary.
+        #
+        # Resource -> 
+        # Variable -> "var.name" 
         #
         for k, v in kwargs.items():
             if isinstance(v, Variable):
@@ -109,6 +112,7 @@ class Terrascript(dict):
     def __add__(self, object):
         """Add to the configuration using the ``+`` syntax."""
 
+        #
         # Resource
         #
         if isinstance(object, Resource):
@@ -119,13 +123,6 @@ class Terrascript(dict):
             self[RESOURCE_KEY][object.__class__.__name__] = object
         #
         # Module
-        #
-        # "module": {
-        #   "example": {
-        #     "source": ...,
-        #     ...
-        #   }
-        # }
         #
         elif isinstance(object, Module):
             if MODULE_KEY not in self:
@@ -170,8 +167,14 @@ class Resource(Block):
         self[name] = Block(**kwargs)
 
 
-class Datasource(Block):
-    pass
+class Data(Block):
+    """Terraform data source block.
+    
+    """
+
+    def __init__(self, name, **kwargs):
+        super().__init__()
+        self[name] = Block(**kwargs)
 
 
 class Provider(Block):
@@ -179,14 +182,21 @@ class Provider(Block):
 
        HCL:
 
-         provider "google" {
-           project = "acme-app"
-           region  = "us-central1"
-         }
+            provider "aws" {
+                region = "us-east-1"
+                version = "u~> 2.0"
+            }
 
        JSON:
 
-
+            "provider": {
+                "aws": [
+                    {
+                        "region": "us-east-1",
+                        "version": "~> 2.0"
+                    }
+                ]
+            }
 
     """
 
@@ -219,7 +229,24 @@ class Output(Block):
 
 
 class Provisioner(Block):
-    pass
+    """Provisioner block.
+    
+            resource "aws_instance" "web" {
+                # ...
+        
+                provisioner "local-exec" {
+                    command = "echo ${self.private_ip} > file.txt"
+                }
+            }
+
+       :param name: The name of the provisioner, e.g. ``file``, ``local-exec``, ``chef``.
+       :param **kwargs: The arguments are provisioner dependent.
+                        
+    """
+    
+    def __init__(self, name, **kwargs):
+        super().__init__()
+        self[name] = Block(**kwargs)
 
 
 class Connection(Block):
@@ -248,7 +275,67 @@ class Function(Block):
 class module(Module):
     def   init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
-            self.__class__.__name__, self.__class__.__name__.title()))
+            self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
+        super().__init__(*args, **kwargs)
+        
+class data(Data):
+    def   init__(self, *args, **kwargs):
+        warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
+            self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
+        super().__init__(*args, **kwargs)
+        
+class resource(Resource):
+    def   init__(self, *args, **kwargs):
+        warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
+            self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
+        super().__init__(*args, **kwargs)
+        
+class variable(Variable):
+    def   init__(self, *args, **kwargs):
+        warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
+            self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
+        super().__init__(*args, **kwargs)
+        
+class provider(Provider):
+    def   init__(self, *args, **kwargs):
+        warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
+            self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
+        super().__init__(*args, **kwargs)
+        
+class output(Output):
+    def   init__(self, *args, **kwargs):
+        warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
+            self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
+        super().__init__(*args, **kwargs)
+        
+class provisioner(Provisioner):
+    def   init__(self, *args, **kwargs):
+        warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
+            self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
+        super().__init__(*args, **kwargs)
+        
+class connection(Connection):
+    def   init__(self, *args, **kwargs):
+        warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
+            self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
+        super().__init__(*args, **kwargs)
+        
+class backend(Backend):
+    def   init__(self, *args, **kwargs):
+        warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
+            self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
+        super().__init__(*args, **kwargs)
+        
+class terraform(Terraform):
+    def   init__(self, *args, **kwargs):
+        warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
+            self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
+        super().__init__(*args, **kwargs)
+        
+class function(Function):
+    def   init__(self, *args, **kwargs):
+        warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
+            self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
 
 # THREE_TIER_ITEMS = ['data', 'resource', 'provider']
