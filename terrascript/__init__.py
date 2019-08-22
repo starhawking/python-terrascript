@@ -28,6 +28,36 @@ PROVIDER_KEY = 'provider'
 RESOURCE_KEY = 'resource'
 MODULE_KEY = 'module'
 VARIABLE_KEY = 'variable'
+OUTPUT_KEY = 'output'
+
+
+class String(str):
+    """A `String` handles access to not yet known attributes.
+
+       This called by `Block.__getattr__` to deal with
+
+       In the example below the ``aws_instance`` does not have attributes
+       ``.server`` and in turn ``.server.private_ip``. To prevent Python
+       from raising an `AttributeError` the `String.__getattr__()` method
+       creates a new string by appending the attribute name.
+
+       Python:
+
+            config = terrascript.Terrascript()
+            config += terrascript.aws.aws(version='~> 2.0', region='us-east-1')
+            aws_instance = terrascript.aws.r.aws_instance('web', ...)
+            config += aws_instance
+            config += terrascript.Output('instance_ip_addr',
+                                          value=aws_instance.server.private_ip)
+                                                            ^^^^^^^^^^^^^^^^^^
+
+        JSON:
+
+
+    """
+
+    def __getattr__(self, name):
+        return String('{}.{}'.format(self, name))
 
 
 class Block(dict):
@@ -36,13 +66,13 @@ class Block(dict):
     """
 
     def __init__(self, **kwargs):
-        
+
         # Convert instances of Resource, Variable, Data, ... into
         # their correct reference instead of inserting the actual
         # dictionary.
         #
-        # Resource -> 
-        # Variable -> "var.name" 
+        # Resource ->
+        # Variable -> "var.name"
         #
         for k, v in kwargs.items():
             if isinstance(v, Variable):
@@ -91,7 +121,7 @@ class Block(dict):
             return self[attr]
         except KeyError:
             if isinstance(self, Resource):
-                return '{}.{}.{}'.format(self.__class__.__name__, self.name, attr)
+                return String('{}.{}.{}'.format(self.__class__.__name__, self.name, attr))
             elif isinstance(self, Provider):
                 return '+++provider+++'
 
@@ -145,6 +175,13 @@ class Terrascript(dict):
                 self[VARIABLE_KEY] = Block()
             self[VARIABLE_KEY].update(object)
         #
+        # Output
+        #
+        elif isinstance(object, Output):
+            if OUTPUT_KEY not in self:
+                self[OUTPUT_KEY] = Block()
+            self[OUTPUT_KEY].update(object)
+        #
         # else
         #
         else:
@@ -169,7 +206,7 @@ class Resource(Block):
 
 class Data(Block):
     """Terraform data source block.
-    
+
     """
 
     def __init__(self, name, **kwargs):
@@ -230,10 +267,10 @@ class Output(Block):
 
 class Provisioner(Block):
     """Provisioner block.
-    
+
             resource "aws_instance" "web" {
                 # ...
-        
+
                 provisioner "local-exec" {
                     command = "echo ${self.private_ip} > file.txt"
                 }
@@ -241,9 +278,9 @@ class Provisioner(Block):
 
        :param name: The name of the provisioner, e.g. ``file``, ``local-exec``, ``chef``.
        :param **kwargs: The arguments are provisioner dependent.
-                        
+
     """
-    
+
     def __init__(self, name, **kwargs):
         super().__init__()
         self[name] = Block(**kwargs)
@@ -277,61 +314,61 @@ class module(Module):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
-        
+
 class data(Data):
     def   init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
-        
+
 class resource(Resource):
     def   init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
-        
+
 class variable(Variable):
     def   init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
-        
+
 class provider(Provider):
     def   init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
-        
+
 class output(Output):
     def   init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
-        
+
 class provisioner(Provisioner):
     def   init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
-        
+
 class connection(Connection):
     def   init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
-        
+
 class backend(Backend):
     def   init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
-        
+
 class terraform(Terraform):
     def   init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
-        
+
 class function(Function):
     def   init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(

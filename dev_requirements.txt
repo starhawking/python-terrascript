@@ -1,0 +1,7 @@
+setuptools
+coverage
+nose
+setuptools
+jupyterlab
+sphinx
+sphinx-markdown
