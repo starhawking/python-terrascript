@@ -1,0 +1,23 @@
+{
+  "provider": {
+    "aws": [
+      {
+        "version": "~> 2.0",
+        "region": "us-east-1"
+      }
+    ]
+  },
+  "resource": {
+    "aws_instance": {
+      "web": {
+        "ami": "AMI",
+        "instance_type": "t2.micro"
+      }
+    }
+  },
+  "output": {
+    "instance_ip_addr": {
+      "value": "aws_instance.web.server.private_ip"
+    }
+  }
+}
