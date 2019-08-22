@@ -3,11 +3,11 @@
 import terrascript
 
 
-class kubernetes_secret(terrascript.Datasource):
+class kubernetes_secret(terrascript.Data):
     pass
 
-class kubernetes_service(terrascript.Datasource):
+class kubernetes_service(terrascript.Data):
     pass
 
-class kubernetes_storage_class(terrascript.Datasource):
+class kubernetes_storage_class(terrascript.Data):
     pass

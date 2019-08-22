@@ -3,14 +3,14 @@
 import terrascript
 
 
-class scaleway_bootscript(terrascript.Datasource):
+class scaleway_bootscript(terrascript.Data):
     pass
 
-class scaleway_image(terrascript.Datasource):
+class scaleway_image(terrascript.Data):
     pass
 
-class scaleway_security_group(terrascript.Datasource):
+class scaleway_security_group(terrascript.Data):
     pass
 
-class scaleway_volume(terrascript.Datasource):
+class scaleway_volume(terrascript.Data):
     pass

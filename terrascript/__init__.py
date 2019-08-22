@@ -8,6 +8,7 @@ this project.
 
 import logging
 import warnings
+import json
 
 __author__ = 'Markus Juenemann <markus@juenemann.net>'
 __version__ = '0.8.0'
@@ -15,9 +16,6 @@ __license__ = 'BSD 2-clause "Simplified" License'
 
 INDENT = 2
 """JSON indentation level."""
-
-SORT = True
-"""Whether to sort keys when generating JSON."""
 
 DEBUG = False
 """Set to enable some debugging."""
@@ -29,6 +27,8 @@ RESOURCE_KEY = 'resource'
 MODULE_KEY = 'module'
 VARIABLE_KEY = 'variable'
 OUTPUT_KEY = 'output'
+LOCALS_KEY = 'locals'
+DATA_KEY = 'data'
 
 
 class String(str):
@@ -52,7 +52,6 @@ class String(str):
                                                             ^^^^^^^^^^^^^^^^^^
 
         JSON:
-
 
     """
 
@@ -118,10 +117,13 @@ class Block(dict):
         # which must be formatted differently depending on what is referenced.
         #
         try:
+            raise KeyError
             return self[attr]
         except KeyError:
             if isinstance(self, Resource):
                 return String('{}.{}.{}'.format(self.__class__.__name__, self.name, attr))
+            elif isinstance(self, Locals):
+                return String('local.{}'.format(attr))
             elif isinstance(self, Provider):
                 return '+++provider+++'
 
@@ -139,6 +141,10 @@ class Terrascript(dict):
         for object in objects:
             self += object
 
+
+    def __str__(self):
+        return json.dumps(self, indent=INDENT)
+
     def __add__(self, object):
         """Add to the configuration using the ``+`` syntax."""
 
@@ -150,7 +156,16 @@ class Terrascript(dict):
                 self[RESOURCE_KEY] = {}
             if object.__class__.__name__ not in self[RESOURCE_KEY]:
                 self[RESOURCE_KEY][object.__class__.__name__] = {}
-            self[RESOURCE_KEY][object.__class__.__name__] = object
+            self[RESOURCE_KEY][object.__class__.__name__].update(object)
+        #
+        # Data
+        #
+        elif isinstance(object, Data):
+            if DATA_KEY not in self:
+                self[DATA_KEY] = {}
+            if object.__class__.__name__ not in self[DATA_KEY]:
+                self[DATA_KEY][object.__class__.__name__] = {}
+            self[DATA_KEY][object.__class__.__name__].update(object)
         #
         # Module
         #
@@ -181,6 +196,13 @@ class Terrascript(dict):
             if OUTPUT_KEY not in self:
                 self[OUTPUT_KEY] = Block()
             self[OUTPUT_KEY].update(object)
+        #
+        # Locals
+        #
+        elif isinstance(object, Locals):
+            if LOCALS_KEY not in self:
+                self[LOCALS_KEY] = Block()
+            self[LOCALS_KEY].update(object)
         #
         # else
         #

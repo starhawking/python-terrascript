@@ -3,5 +3,5 @@
 import terrascript
 
 
-class http(terrascript.Datasource):
+class http(terrascript.Data):
     pass

@@ -3,5 +3,5 @@
 import terrascript
 
 
-class local_file(terrascript.Datasource):
+class local_file(terrascript.Data):
     pass

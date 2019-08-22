@@ -1,17 +1,17 @@
 {
+  "provider": {
+    "aws": [
+      {
+        "access_key": "ACCESS_KEY_HERE",
+        "secret_key": "SECRET_KEY_HERE",
+        "region": "us-east-1"
+      }
+    ]
+  },
   "module": {
     "vpc": {
       "source": "terraform-aws-modules/vpc/aws",
       "version": "2.9.0"
     }
-  },
-  "provider": {
-    "aws": [
-      {
-        "access_key": "ACCESS_KEY_HERE",
-        "region": "us-east-1",
-        "secret_key": "SECRET_KEY_HERE"
-      }
-    ]
   }
 }

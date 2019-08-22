@@ -17,10 +17,11 @@ def assert_equals_json(object, path):
     """
 
     # Convert `object` into JSON string with sorted keys.
-    s1 = json.dumps(object, sort_keys=True, indent=2)
+    s1 = json.dumps(object, sort_keys=False, indent=2)
+    s1 = str(object)
 
     # Convert content of `path` into JSON string with sorted keys.
     with open(os.path.join('tests', 'configs', path), 'rt') as fp:
-        s2 = json.dumps(json.load(fp), sort_keys=True, indent=2)
+        s2 = json.dumps(json.load(fp), sort_keys=False, indent=2)
 
     assert s1 == s2

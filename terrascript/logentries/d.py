@@ -3,5 +3,5 @@
 import terrascript
 
 
-class logentries_logset(terrascript.Datasource):
+class logentries_logset(terrascript.Data):
     pass

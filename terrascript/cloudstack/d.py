@@ -3,5 +3,5 @@
 import terrascript
 
 
-class cloudstack_template(terrascript.Datasource):
+class cloudstack_template(terrascript.Data):
     pass

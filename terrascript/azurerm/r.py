@@ -174,6 +174,9 @@ class azurerm_connection_monitor(terrascript.Resource):
 class azurerm_container_group(terrascript.Resource):
     pass
 
+class azurerm_container_registry_webhook(terrascript.Resource):
+    pass
+
 class azurerm_container_registry(terrascript.Resource):
     pass
 
@@ -190,6 +193,9 @@ class azurerm_cosmosdb_mongo_collection(terrascript.Resource):
     pass
 
 class azurerm_cosmosdb_mongo_database(terrascript.Resource):
+    pass
+
+class azurerm_cosmosdb_sql_container(terrascript.Resource):
     pass
 
 class azurerm_cosmosdb_sql_database(terrascript.Resource):
@@ -483,6 +489,9 @@ class azurerm_mariadb_firewall_rule(terrascript.Resource):
 class azurerm_mariadb_server(terrascript.Resource):
     pass
 
+class azurerm_mariadb_virtual_network_rule(terrascript.Resource):
+    pass
+
 class azurerm_media_services_account(terrascript.Resource):
     pass
 
@@ -717,6 +726,9 @@ class azurerm_sql_database(terrascript.Resource):
 class azurerm_sql_elasticpool(terrascript.Resource):
     pass
 
+class azurerm_sql_failover_group(terrascript.Resource):
+    pass
+
 class azurerm_sql_firewall_rule(terrascript.Resource):
     pass
 
@@ -823,4 +835,22 @@ class azurerm_virtual_network(terrascript.Resource):
     pass
 
 class azurerm_virtual_wan(terrascript.Resource):
+    pass
+
+class azurerm_recovery_services_fabric(terrascript.Resource):
+    pass
+
+class azurerm_recovery_services_protection_container(terrascript.Resource):
+    pass
+
+class azurerm_recovery_services_replication_policy(terrascript.Resource):
+    pass
+
+class azurerm_recovery_services_protection_container_mapping(terrascript.Resource):
+    pass
+
+class azurerm_recovery_network_mapping(terrascript.Resource):
+    pass
+
+class azurerm_recovery_replicated_vm(terrascript.Resource):
     pass

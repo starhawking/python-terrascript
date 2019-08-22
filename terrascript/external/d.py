@@ -3,5 +3,5 @@
 import terrascript
 
 
-class external(terrascript.Datasource):
+class external(terrascript.Data):
     pass

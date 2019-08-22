@@ -3,6 +3,9 @@
 import terrascript
 
 
+class kubernetes_api_service(terrascript.Resource):
+    pass
+
 class kubernetes_cluster_role(terrascript.Resource):
     pass
 

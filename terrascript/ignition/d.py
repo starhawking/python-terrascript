@@ -3,35 +3,35 @@
 import terrascript
 
 
-class ignition_config(terrascript.Datasource):
+class ignition_config(terrascript.Data):
     pass
 
-class ignition_disk(terrascript.Datasource):
+class ignition_disk(terrascript.Data):
     pass
 
-class ignition_raid(terrascript.Datasource):
+class ignition_raid(terrascript.Data):
     pass
 
-class ignition_filesystem(terrascript.Datasource):
+class ignition_filesystem(terrascript.Data):
     pass
 
-class ignition_file(terrascript.Datasource):
+class ignition_file(terrascript.Data):
     pass
 
-class ignition_directory(terrascript.Datasource):
+class ignition_directory(terrascript.Data):
     pass
 
-class ignition_link(terrascript.Datasource):
+class ignition_link(terrascript.Data):
     pass
 
-class ignition_systemd_unit(terrascript.Datasource):
+class ignition_systemd_unit(terrascript.Data):
     pass
 
-class ignition_networkd_unit(terrascript.Datasource):
+class ignition_networkd_unit(terrascript.Data):
     pass
 
-class ignition_user(terrascript.Datasource):
+class ignition_user(terrascript.Data):
     pass
 
-class ignition_group(terrascript.Datasource):
+class ignition_group(terrascript.Data):
     pass

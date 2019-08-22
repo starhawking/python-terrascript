@@ -15,6 +15,9 @@ class google_access_context_manager_service_perimeter(terrascript.Resource):
 class google_app_engine_firewall_rule(terrascript.Resource):
     pass
 
+class google_bigquery_dataset(terrascript.Resource):
+    pass
+
 class google_bigquery_data_transfer_config(terrascript.Resource):
     pass
 
@@ -217,9 +220,6 @@ class google_tpu_node(terrascript.Resource):
     pass
 
 class google_app_engine_application(terrascript.Resource):
-    pass
-
-class google_bigquery_dataset(terrascript.Resource):
     pass
 
 class google_bigquery_table(terrascript.Resource):

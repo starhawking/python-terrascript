@@ -3,5 +3,5 @@
 import terrascript
 
 
-class tls_public_key(terrascript.Datasource):
+class tls_public_key(terrascript.Data):
     pass
