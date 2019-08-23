@@ -4,7 +4,7 @@ Quickstart
 The following samples shows Terraform's native HCL format and the
 Terrascript equivalent. It is taken from Terraform Getting Started Guide.
 
-.. code-block::
+.. code-block:: none
 
     provider "aws" {
       profile    = "default"
@@ -97,7 +97,7 @@ Whichever method you chose, the output will be the following JSON code.
     
 The generated JSON file is valid input for Terraform.
 
-.. code-block::
+.. code-block:: console
 
     $ terraform init
     
