@@ -23,6 +23,9 @@ Welcome to Terrascript's documentation!
    connection
    backend
    terraform
+   examples
+   appendix
+   todo
 
 
 Indices and tables

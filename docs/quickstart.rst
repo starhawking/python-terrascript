@@ -1,9 +1,6 @@
 Quickstart
 ----------
 
-A basic example
-~~~~~~~~~~~~~~~
-
 The following samples shows Terraform's native HCL format and the
 Terrascript equivalent. It is taken from Terraform Getting Started Guide.
 
@@ -31,7 +28,7 @@ specific modules for the provider and resources like ``aws_instance``.
    import terrascript.aws.r
     
    
-In Terrascript the ``terrascript.Config`` class is the top-level container
+The ``terrascript.Config`` class is the top-level container
 for configurations. The provider and resource objects are then simply added 
 to the configuration. Their names are the same as in the HCL language.
 
@@ -39,11 +36,14 @@ to the configuration. Their names are the same as in the HCL language.
     
    config = terrascript.Config()
    config += terrascript.aws.aws(profile='default', region="us-east-1")
-   config += terrascript.aws.r.aws_instance('example', ami='ami-2757f631', 
-                                            instance_type='t2.micro')
+   config += terrascript.aws.r.aws_instance('example', ami='ami-2757f631', instance_type='t2.micro')
                                 
 The content of ``config`` is actually just a Python dictionary with some 
-additional smarts that's for later.
+additional smarts.
+
+.. code-block:: python
+
+   assert isinstance(config, dict) is True
 
 Finally ``config`` has to be converted into JSON which can be achieved in three
 different ways.
@@ -72,10 +72,9 @@ compatibility and may be removed in the future.
 
    cfg = config.dump()
    
-Whichever method you chose, the output will be the following JSON code which is
-a valid Terraform configuration.
+Whichever method you chose, the output will be the following JSON code.
 
-.. code-block: json
+.. code-block:: json
 
     {
       "provider": {
@@ -89,39 +88,36 @@ a valid Terraform configuration.
       "resource": {
         "aws_instance": {
           "example": {
-             "ami": "ami-2757f631"
+             "ami": "ami-2757f631",
              "instance_type": "t2.micro"
           }
         }
       }
     }
-   
-Using the power of Python
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The first example showed a one-to-one translation from HCL into a Python script
-but didn't show off any advantages one gains when using the Terrascript
-package. Below is an example that provide a glimpse why one 
-would use Python scripts instead of writing Terraform configurations in HCL
-by hand.
-
-Read a list of AWS EC2 instances from a CSV file.
-
-.. code-block:: 
-
-    import terrascript
-    import terrascript.aws
-    import terrascript.aws.r
     
-    import csv
+The generated JSON file is valid input for Terraform.
+
+.. code-block::
+
+    $ terraform init
     
-    config = terrascript.Config()
-    config += terrascript.aws.aws(profile='default', region="us-east-1")
+    Initializing the backend...
     
-    with open('instances.csv', 'rt') as fp:
-        reader = csv.DictReader(fp)
-        for row in reader:
-            config += terrascript.aws.r.aws_instance(row['name'], 
-                                                     ami=row['ami'], 
-                                                     instance_type=row['instance_type') 
-                                                     
+    Initializing provider plugins...
+    - Checking for available provider plugins...
+    - Downloading plugin for provider "aws" (terraform-providers/aws) 2.25.0...
+    
+    The following providers do not have any version constraints in configuration,
+    so the latest version was installed.
+    
+    To prevent automatic upgrades to new major versions that may contain breaking
+    changes, it is recommended to add version = "..." constraints to the
+    corresponding provider blocks in configuration, with the constraint strings
+    suggested below.
+    
+    * provider.aws: version = "~> 2.25"
+    
+    Terraform has been successfully initialized!
+    
+    $ terraform validate
+    Success! The configuration is valid.

@@ -1,6 +1,8 @@
 Installing Terrascript
 ----------------------
 
+.. todo:: Create Terrascript 0.7.0 release.
+
 Terarscript is available from the Python Package Repository PyPi_ or
 alternatively from its Github_.
 
