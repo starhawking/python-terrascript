@@ -63,7 +63,7 @@ The original Terraform HCL format.
 
 The Terrascript code would look like this. 
 
-:: python
+::
 
     import terrascript
     import terrascript.aws
@@ -80,7 +80,7 @@ The Terrascript code would look like this.
 The content of ``config.tf.json`` will be this which is equivalent to the
 original HCL format.
 
-:: json
+::
 
     {
       "provider": {
