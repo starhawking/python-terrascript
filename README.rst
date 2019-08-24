@@ -4,12 +4,11 @@ python-terrascript
 Python-Terrascript Terrascript is a Python package for generating Terraform 
 configurations in JSON format.
 
-.. note:: This is the ``develop`` branch of Terrascript which is currently 
-          undergoing a major rewrite and is unlikely to be useful at this stage.
+This is the ``develop`` branch of Terrascript which is currently 
+undergoing a major rewrite and is unlikely to be useful at this stage.
 
-Creating Terraform configurations this way gives one the power of the control 
-and data structures of the Python language which Terraform's native HCL format 
-mostly lack.
+Creating Terraform through a Python script offers a degree of flexibility 
+superior to writing Terraform configurations by hand.
 
 * Control structures like ``if``/``else``, ``for``/``continue``/``break`` or ``try``/``except``/``finally``.
 * More string methods.
@@ -42,9 +41,10 @@ A first example
 ~~~~~~~~~~~~~~~
 
 The following example has been taken from the official Terraform documentation 
-for the AWS Provider (https://www.terraform.io/docs/providers/aws/index.html)
-and then converted into a Python script that generates the equivalent 
-configuration in JSON. 
+for the `AWS Provider`_ and then converted into a Python script that generates 
+the equivalent configuration in JSON.
+
+.. _`AWS Provider`: https://www.terraform.io/docs/providers/aws/index.html 
 
 The original Terraform HCL format. 
 
@@ -63,7 +63,7 @@ The original Terraform HCL format.
 
 The Terrascript code would look like this. 
 
-:: 
+:: python
 
     import terrascript
     import terrascript.aws
@@ -80,7 +80,7 @@ The Terrascript code would look like this.
 The content of ``config.tf.json`` will be this which is equivalent to the
 original HCL format.
 
-::
+:: json
 
     {
       "provider": {
