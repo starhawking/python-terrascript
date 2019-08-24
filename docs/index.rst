@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Terrascript's documentation!
-=======================================
+Python-Terrascript
+==================
 
 .. toctree::
    :maxdepth: 2
