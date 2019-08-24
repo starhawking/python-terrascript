@@ -3,6 +3,7 @@ Example 1: AWS VPC
 
 .. literalinclude:: ../tests/test_001.py
    :lines: 1-6,10,12-16
+   :dedent: 4
    
 JSON output.
 
