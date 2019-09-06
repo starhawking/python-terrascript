@@ -3,7 +3,7 @@
 The Python code below shows how to define Terraform input and output variables.
 
 ```python
-from terrascript import provider, dump, variable
+from terrascript import provider, dump, variable, output
 from terrascript.aws.r import aws_instance
 
 var_access_key = variable('access_key')
