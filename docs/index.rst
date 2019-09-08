@@ -7,7 +7,7 @@ Python-Terrascript
 ==================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
    introduction
@@ -25,6 +25,7 @@ Python-Terrascript
    terraform
    examples
    appendix
+   json
    todo
 
 

@@ -2,7 +2,7 @@ Quickstart
 ----------
 
 The following samples shows Terraform's native HCL format and the
-Terrascript equivalent. It is taken from Terraform Getting Started Guide.
+Terrascript equivalent.
 
 .. code-block:: none
 
@@ -53,7 +53,7 @@ Option 1: Simply use the ``str()`` representation to print or convert to JSON.
 .. code-block:: python
 
    print(config)
-   
+   # or
    cfg = str(config)
    
 Option 2: Use the ``json`` module from the Python Standard Library but ensure 

@@ -1,4 +1,4 @@
-#  terrascript/icinga2/r.py
+# terrascript/icinga2/r.py
 
 import terrascript
 

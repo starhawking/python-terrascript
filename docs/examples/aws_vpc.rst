@@ -1,12 +1,11 @@
-Example 1: AWS VPC
-~~~~~~~~~~~~~~~~~~
+AWS VPC
+~~~~~~~
 
-This example has been copied from the 
-`Terraform documentation for the AWS Provider`_.
+This example has been copied from the `Terraform documentation for the AWS Provider`_.
 
 .. _`Terraform documentation for the AWS Provider`: https://www.terraform.io/docs/providers/aws/index.html
 
-Terraform HCL.
+Terraform HCL code.
 
 .. code:: none
 
@@ -21,12 +20,12 @@ Terraform HCL.
       cidr_block = "10.0.0.0/16"
     }
 
-Terrascript.
+Python code.
 
-.. literalinclude:: ../tests/test_001.py
-   :lines: 13-16
+.. literalinclude:: ../../tests/test_001.py
+   :lines: 9-16
    :dedent: 4
    
-JSON output.
+JSON output from ``print(config)``.
 
-.. literalinclude:: ../tests/configs/test_001.tf.json
+.. literalinclude:: ../../tests/configs/test_001.tf.json

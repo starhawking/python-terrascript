@@ -1,4 +1,4 @@
-#  terrascript/rabbitmq/r.py
+# terrascript/rabbitmq/r.py
 
 import terrascript
 

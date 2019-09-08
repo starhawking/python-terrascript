@@ -1,4 +1,4 @@
-#  terrascript/vsphere/r.py
+# terrascript/vsphere/r.py
 
 import terrascript
 

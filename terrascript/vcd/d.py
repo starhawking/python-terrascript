@@ -12,6 +12,9 @@ class vcd_catalog(terrascript.Data):
 class vcd_catalog_item(terrascript.Data):
     pass
 
+class vcd_external_network(terrascript.Data):
+    pass
+
 class vcd_lb_service_monitor(terrascript.Data):
     pass
 

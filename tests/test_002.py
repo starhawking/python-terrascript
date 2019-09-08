@@ -1,8 +1,8 @@
 # https://www.terraform.io/docs/providers/aws/guides/custom-service-endpoints.html
 
 import terrascript
-import terrascript.aws
-import terrascript.aws.r
+import terrascript.provider
+import terrascript.resource
 
 from shared import assert_equals_json
 
@@ -30,12 +30,12 @@ def test():
 
     config = terrascript.Terrascript()
 
-    config += terrascript.aws.aws(version='~> 2.0',
-                                  region='us-east-1',
-                                  endpoints=dict(dynamodb='http://localhost:4569',
-                                                 s3='http://localhost:4572')
-                                )
+    config += terrascript.provider.aws(version='~> 2.0',
+                                       region='us-east-1',
+                                       endpoints=dict(dynamodb='http://localhost:4569',
+                                                      s3='http://localhost:4572')
+                                       )
 
-    config += terrascript.aws.r.aws_vpc('example', cidr_block='10.0.0.0/16')
+    config += terrascript.resource.aws_vpc('example', cidr_block='10.0.0.0/16')
 
     assert_equals_json(config, 'test_002.tf.json')

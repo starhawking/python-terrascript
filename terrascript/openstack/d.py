@@ -113,3 +113,6 @@ class openstack_sharedfilesystem_snapshot_v2(terrascript.Data):
 
 class openstack_keymanager_secret_v1(terrascript.Data):
     pass
+
+class openstack_keymanager_container_v1(terrascript.Data):
+    pass

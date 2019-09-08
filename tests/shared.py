@@ -4,7 +4,7 @@ import json
 import os
 import deepdiff
 
-def assert_deep_equal(t1, path):
+def assert_deep_equal(t1, t2):
     """Compare ``t1`` with the JSON structure parsed from ``path``. 
 
        Comparison is performed through the DeepDiff Python package
@@ -19,8 +19,11 @@ def assert_deep_equal(t1, path):
     
     t1 = json.loads(str(t1))
     
-    with open(os.path.join('tests', 'configs', path), 'rt') as fp:
-        t2 = json.load(fp)
+    try:
+        t2 = json.loads(t2)
+    except json.decoder.JSONDecodeError:
+        with open(os.path.join('tests', 'configs', t2), 'rt') as fp:
+            t2 = json.load(fp)
         
     diffs = deepdiff.DeepDiff(t1, t2)
     

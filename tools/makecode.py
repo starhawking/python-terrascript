@@ -1,21 +1,23 @@
 #!/usr/bin/env python3
 
-"""Auto-generate terrascript/PROVIDER/{r,d}.py files.
+"""Auto-generate provider specific modules.
 
-   If called without any argument(s), the script reads a list of Terraform
-   providers from the file PROVIDERS, pulls the provider's Github
-   repository and parses the provider.go file.
-
-   Alternatively this script can be called with the name of one or more
-   providers as argument(s) instead of reading the file PROVIDERS. This
-   is useful if a provider is either not (yet) listed in PROVIDERS or
-   only a subset of providers is to be updated.
+   The script reads a list of Terraform providers from the file PROVIDERS, 
+   pulls the provider's Github repository and parses the provider.go file.
 
    This script relies on the content of a provider's 'provider.go'
-   matching the regular expression `REGEX` below. Providers for which this
-   is not the case can be added manually.
+   matching the regular expression `REGEX` below.
+   
+   Runtime: 2:30 minutes
 
    Changelog:
+
+   2019-09-07 - Added creation of new module layout and prefixed existing
+                code with 'legacy_'.
+                Removed option to execute script with a list of providers
+                given on the command line. This wouldn't work anymore with
+                the new module layout as the script must always know the
+                full list of modules.
 
    2019-08-17 - Access to Github is now through the `git` command line tool
                 instead of the `github3` Python module.
@@ -27,7 +29,7 @@
 
 """
 
-DEBUG = True
+DEBUG = False
 CONCURRENCY = 10
 
 import os
@@ -40,6 +42,7 @@ import shlex
 import concurrent.futures
 import jinja2
 import logging
+import threading
 
 
 if DEBUG:
@@ -48,7 +51,6 @@ else:
     logging.basicConfig(level=logging.INFO)
 
 
-#REGEX = re.compile(b'".*?_(?P<name>.+)":\s+(?P<type>resource|data)')
 REGEX = re.compile(b'"(?P<name>.+)":\s+(?P<type>resource|data)')
 """REGEX to extract the names of resources and data sources from a provider.go file.
 
@@ -72,7 +74,7 @@ REGEX = re.compile(b'"(?P<name>.+)":\s+(?P<type>resource|data)')
 
 """
 
-INIT_TEMPLATE = jinja2.Template("""# terrascript/{{ provider }}/__init__.py
+LEGACY_INIT_TEMPLATE = jinja2.Template("""# terrascript/{{ provider }}/__init__.py
 
 import terrascript
 
@@ -80,7 +82,7 @@ class {{ provider }}(terrascript.Provider):
     pass
 """)
 
-DATASOURCES_TEMPLATE = jinja2.Template("""#  terrascript/{{ provider }}/d.py
+LEGACY_DATASOURCES_TEMPLATE = jinja2.Template("""#  terrascript/{{ provider }}/d.py
 
 import terrascript
 
@@ -90,7 +92,7 @@ class {{ datasource }}(terrascript.Data):
 {% endfor %}
 """)
 
-RESOURCES_TEMPLATE = jinja2.Template("""#  terrascript/{{ provider }}/r.py
+LEGACY_RESOURCES_TEMPLATE = jinja2.Template("""# terrascript/{{ provider }}/r.py
 
 import terrascript
 
@@ -101,8 +103,61 @@ class {{ resource }}(terrascript.Resource):
 """)
 
 
+PROVIDER_TEMPLATE = jinja2.Template("""# terrascript/provider/{{ provider }}.py
 
-def create_provider_directory(provider, modulesdir):
+import terrascript
+
+class {{ provider }}(terrascript.Provider):
+    pass
+    
+__all__ = ['{{ provider }}']
+""")
+
+
+RESOURCES_TEMPLATE = jinja2.Template("""# terrascript/resource/{{ provider }}.py
+
+import terrascript
+
+{% for resource in resources %}
+class {{ resource }}(terrascript.Resource):
+    pass
+{% endfor %}
+
+__all__ = [
+{%- for resource in resources %}
+    '{{ resource }}',
+{%- endfor %}
+]
+""")
+
+
+DATASOURCES_TEMPLATE = jinja2.Template("""# terrascript/data/{{ provider }}.py
+
+import terrascript
+
+{% for datasource in datasources %}
+class {{ datasource }}(terrascript.Data):
+    pass
+{% endfor %}
+
+__all__ = [
+{%- for datasource in datasources %}
+    '{{ datasource }}',
+{%- endfor %}
+]
+""")
+
+
+INIT_TEMPLATE = jinja2.Template("""
+
+{%- for provider in providers %}
+from .{{ provider }} import *
+{%- endfor %}
+
+""")
+
+
+def legacy_create_provider_directory(provider, modulesdir):
 
     providerdir = os.path.join(modulesdir, provider)
 
@@ -112,26 +167,49 @@ def create_provider_directory(provider, modulesdir):
     return providerdir
 
 
-def create_provider_init(provider, providerdir):
+def legacy_create_provider_init(provider, providerdir):
 
     with open(os.path.join(providerdir, '__init__.py'), 'wt') as fp:
-        fp.write(INIT_TEMPLATE.render(provider=provider))
+        fp.write(LEGACY_INIT_TEMPLATE.render(provider=provider))
 
 
-def create_provider_datasources(provider, providerdir, datasources):
+def legacy_create_provider_datasources(provider, providerdir, datasources):
 
     with open(os.path.join(providerdir, 'd.py'), 'wt') as fp:
-        fp.write(DATASOURCES_TEMPLATE.render(provider=provider, datasources=datasources))
+        fp.write(LEGACY_DATASOURCES_TEMPLATE.render(provider=provider, datasources=datasources))
 
 
-def create_provider_resources(provider, providerdir, resources):
-    logging.debug('create_provider_resources provider={}'.format(provider))
-    logging.debug('create_provider_resources providerdir={}'.format(providerdir))
+def legacy_create_provider_resources(provider, providerdir, resources):
+    logging.debug('legacy_create_provider_resources provider={}'.format(provider))
+    logging.debug('legacy_create_provider_resources providerdir={}'.format(providerdir))
     for resource in resources:
-        logging.debug('create_provider_resources resource={}'.format(resource))
+        logging.debug('legacy_create_provider_resources resource={}'.format(resource))
 
     with open(os.path.join(providerdir, 'r.py'), 'wt') as fp:
+        fp.write(LEGACY_RESOURCES_TEMPLATE.render(provider=provider, resources=resources))
+        
+        
+def legacy_process(provider, modulesdir, resources, datasources):
+        legacy_providerdir = legacy_create_provider_directory(provider, modulesdir)
+        legacy_create_provider_init(provider, legacy_providerdir)
+        legacy_create_provider_datasources(provider, legacy_providerdir, datasources)
+        legacy_create_provider_resources(provider, legacy_providerdir, resources)
+
+
+def create_provider(provider, modulesdir):
+    logging.debug('create_provider provider=%s modulesdir=%s', provider, modulesdir)
+    with open(os.path.join(modulesdir, 'provider', '{}.py'.format(provider)), 'wt') as fp:
+        fp.write(PROVIDER_TEMPLATE.render(provider=provider))
+        
+        
+def create_resources(provider, modulesdir, resources):
+    with open(os.path.join(modulesdir, 'resource', '{}.py'.format(provider)), 'wt') as fp:
         fp.write(RESOURCES_TEMPLATE.render(provider=provider, resources=resources))
+        
+        
+def create_datasources(provider, modulesdir, datasources):
+    with open(os.path.join(modulesdir, 'data', '{}.py'.format(provider)), 'wt') as fp:
+        fp.write(DATASOURCES_TEMPLATE.render(provider=provider, datasources=datasources))
 
 
 def process(provider, modulesdir):
@@ -164,13 +242,27 @@ def process(provider, modulesdir):
                 else:
                     # Shouldn't really get here.
                     pass
-
-        providerdir = create_provider_directory(provider, modulesdir)
-        create_provider_init(provider, providerdir)
-        create_provider_datasources(provider, providerdir, datasources)
-        create_provider_resources(provider, providerdir, resources)
-
-
+        
+        # The legacy layout creates 
+        #  
+        # PROVIDER/__init__.py
+        # PROVIDER/r/py
+        # PROVIDER/d/py
+        #
+        legacy_process(provider, modulesdir, resources, datasources)
+        
+        
+        # The new layout creates
+        #
+        # providers/PROVIDER.py
+        # resources/PROVIDER.py
+        # datasources/PROVIDER.py
+        #
+        create_provider(provider, modulesdir)
+        create_resources(provider, modulesdir, resources)
+        create_datasources(provider, modulesdir, datasources)
+    
+        
 def main():
 
     thisdir = os.path.abspath('.')
@@ -184,16 +276,23 @@ def main():
         print('Script must be run from the tools/ folder', file=sys.stderr)
         sys.exit(1)
 
-    # Detect whether a list of providers was passed on the command line or whether
-    # to read PROVIDERS.
-    #
-    providers = sys.argv[1:]
-    if not providers:
-        providers = [line.strip() for line in open('PROVIDERS', 'rt').readlines() if line]
 
+    providers = [line.strip() for line in open('PROVIDERS', 'rt').readlines() if line]
     with concurrent.futures.ThreadPoolExecutor(max_workers=CONCURRENCY) as executor:
         futures = [executor.submit(process, provider, modulesdir) for provider in providers]
         concurrent.futures.as_completed(futures)
+        
+    
+    # Create the __ini__.py files for providers, datasources and resources.
+    #
+    with open(os.path.join(modulesdir, 'provider', '__init__.py'), 'wt') as fp:
+        fp.write(INIT_TEMPLATE.render(providers=providers))
+        
+    with open(os.path.join(modulesdir, 'resource', '__init__.py'), 'wt') as fp:
+        fp.write(INIT_TEMPLATE.render(providers=providers))
+        
+    with open(os.path.join(modulesdir, 'data', '__init__.py'), 'wt') as fp:
+        fp.write(INIT_TEMPLATE.render(providers=providers))
 
 
 if __name__ == '__main__':

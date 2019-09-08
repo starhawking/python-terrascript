@@ -1,27 +1,30 @@
-#  terrascript/scaleway/r.py
+# terrascript/scaleway/r.py
 
 import terrascript
 
 
+class scaleway_account_ssh_key(terrascript.Resource):
+    pass
+
 class scaleway_bucket(terrascript.Resource):
     pass
 
-class scaleway_compute_instance_ip(terrascript.Resource):
+class scaleway_instance_ip(terrascript.Resource):
     pass
 
-class scaleway_compute_instance_volume(terrascript.Resource):
+class scaleway_instance_volume(terrascript.Resource):
     pass
 
-class scaleway_compute_instance_security_group(terrascript.Resource):
+class scaleway_instance_security_group(terrascript.Resource):
     pass
 
-class scaleway_compute_instance_server(terrascript.Resource):
+class scaleway_instance_server(terrascript.Resource):
     pass
 
-class scaleway_compute_instance_placement_group(terrascript.Resource):
+class scaleway_instance_placement_group(terrascript.Resource):
     pass
 
-class scaleway_storage_object_bucket(terrascript.Resource):
+class scaleway_object_bucket(terrascript.Resource):
     pass
 
 class scaleway_user_data(terrascript.Resource):

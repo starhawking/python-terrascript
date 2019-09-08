@@ -1,4 +1,4 @@
-#  terrascript/google/r.py
+# terrascript/google/r.py
 
 import terrascript
 
@@ -12,7 +12,13 @@ class google_access_context_manager_access_level(terrascript.Resource):
 class google_access_context_manager_service_perimeter(terrascript.Resource):
     pass
 
+class google_app_engine_domain_mapping(terrascript.Resource):
+    pass
+
 class google_app_engine_firewall_rule(terrascript.Resource):
+    pass
+
+class google_app_engine_standard_app_version(terrascript.Resource):
     pass
 
 class google_bigquery_dataset(terrascript.Resource):

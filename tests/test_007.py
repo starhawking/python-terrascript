@@ -1,8 +1,8 @@
 # https://www.terraform.io/docs/configuration/locals.html
 
 import terrascript
-import terrascript.aws
-import terrascript.aws.r
+import terrascript.provider
+import terrascript.resource
 
 from shared import assert_equals_json
 
@@ -11,12 +11,12 @@ def test():
 
     config = terrascript.Terrascript()
 
-    config += terrascript.aws.aws(version='~> 2.0', region='us-east-1')
+    config += terrascript.provider.aws(version='~> 2.0', region='us-east-1')
 
-    blue = terrascript.aws.r.aws_instance('blue', ami = "AMI", instance_type="t2.micro")
+    blue = terrascript.resource.aws_instance('blue', ami = "AMI", instance_type="t2.micro")
     config += blue
 
-    green = terrascript.aws.r.aws_instance('green', ami = "AMI", instance_type="t2.micro")
+    green = terrascript.resource.aws_instance('green', ami = "AMI", instance_type="t2.micro")
     config += green
 
     locals1 = terrascript.Locals(service_name='forum', owner='Community Team')

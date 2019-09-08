@@ -1,4 +1,4 @@
-#  terrascript/chef/r.py
+# terrascript/chef/r.py
 
 import terrascript
 

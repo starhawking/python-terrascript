@@ -1,6 +1,5 @@
 import terrascript
-import terrascript.aws
-import terrascript.aws.r
+import terrascript.provider
 
 from shared import assert_equals_json
 
@@ -9,9 +8,9 @@ def test():
 
     config = terrascript.Terrascript()
 
-    config += terrascript.aws.aws(access_key='ACCESS_KEY_HERE',
-                                  secret_key='SECRET_KEY_HERE',
-                                  region='us-east-1')
+    config += terrascript.provider.aws(access_key='ACCESS_KEY_HERE',
+                                       secret_key='SECRET_KEY_HERE',
+                                       region='us-east-1')
 
     config += terrascript.Module('vpc',
                                  source="terraform-aws-modules/vpc/aws",

@@ -1,5 +1,5 @@
 
-NOSE := nosetests --failed --verbose --with-coverage --cover-package=terrascript --cover-erase --stop --no-byte-compile --logging-level=DEBUG --detailed-errors
+NOSE := nosetests --failed --verbose --with-coverage --cover-package=terrascript --cover-erase --cover-branches --cover-html --stop --no-byte-compile --logging-level=DEBUG --detailed-errors
 
 TESTS := $(wildcard tests/test_*.py)
 
@@ -19,7 +19,7 @@ debug:
 	$(NOSE) --pdb $(TESTS)
 
 code: clean
-	./makecode.py
+	( cd tools && ./makecode.py )
 
 package: clean
 	python3 setup.py clean
@@ -27,6 +27,9 @@ package: clean
 
 install: clean
 	python3 setup.py install --user
+	
+html: clean
+	make -C docs html
 
 clean:
 	rm -f tests/*.pyc

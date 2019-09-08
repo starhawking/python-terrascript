@@ -153,6 +153,9 @@ class azurerm_monitor_log_profile(terrascript.Data):
 class azurerm_mssql_elasticpool(terrascript.Data):
     pass
 
+class azurerm_network_ddos_protection_plan(terrascript.Data):
+    pass
+
 class azurerm_network_interface(terrascript.Data):
     pass
 
@@ -172,6 +175,9 @@ class azurerm_platform_image(terrascript.Data):
     pass
 
 class azurerm_policy_definition(terrascript.Data):
+    pass
+
+class azurerm_proximity_placement_group(terrascript.Data):
     pass
 
 class azurerm_public_ip(terrascript.Data):
@@ -219,7 +225,13 @@ class azurerm_snapshot(terrascript.Data):
 class azurerm_sql_server(terrascript.Data):
     pass
 
+class azurerm_sql_database(terrascript.Data):
+    pass
+
 class azurerm_stream_analytics_job(terrascript.Data):
+    pass
+
+class azurerm_storage_account_blob_container_sas(terrascript.Data):
     pass
 
 class azurerm_storage_account_sas(terrascript.Data):

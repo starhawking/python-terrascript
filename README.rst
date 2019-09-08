@@ -1,7 +1,7 @@
 python-terrascript
 ------------------
 
-Python-Terrascript Terrascript is a Python package for generating Terraform 
+Python-Terrascript is a Python package for generating Terraform 
 configurations in JSON format.
 
 This is the ``develop`` branch of Terrascript which is currently 
@@ -20,6 +20,9 @@ superior to writing Terraform configurations by hand.
 Compatibility
 ~~~~~~~~~~~~~
 
+Terraform releases
+..................
+
 `Terraform 0.12` introduced some changes to how it deals with configuration 
 files in JSON format. This is reflected in Terrascript by currently having
 separate releases for Terraform 0.12 and Terraform 0.11. Earlier releases of 
@@ -36,6 +39,30 @@ Terraform  Terrascript  Notes
 ========== ============ ==================================================================
 
 Terrascript supports Python 3.3 and later.
+
+Module layout
+.............
+
+Python-Terrascript release 0.8.0 changed the location of modules. 
+Providers, resources and data sources are now all available through just
+three modules.
+
+::
+
+    import terrascript
+    import terrascript.providers    # aws, google, ...
+    import terrascript.resources    # aws_instance, google_compute_instance, ...
+    import terrascript.data         # aws_ami, google_compute_image, ...
+    
+The legacy layout is still available but should not be used for new projects.
+
+:: 
+
+    import terrascript
+    import terrascript.aws          # aws
+    import terrascript.aws.r        # aws_instance, ... 
+    import terrascript.aws.d        # aws_ami, ...
+
 
 A first example
 ~~~~~~~~~~~~~~~
@@ -55,7 +82,6 @@ The original Terraform HCL format.
       region  = "us-east-1"
     }
     
-    # Create a VPC
     resource "aws_vpc" "example" {
       cidr_block = "10.0.0.0/16"
     }
@@ -65,18 +91,18 @@ The Terrascript code would look like this.
 ::
 
     import terrascript
-    import terrascript.aws
-    import terrascript.aws.r
+    import terrascript.providers as providers
+    import terrascript.resources as resources
 
     config = terrascript.Terrascript()
 
-    config += terrascript.aws.aws(version='~> 2.0', region='us-east-1')
-    config += terrascript.aws.r.aws_vpc('example', cidr_block='10.0.0.0/16')
+    config += providers.aws(version='~> 2.0', region='us-east-1')
+    config += resources.aws_vpc('example', cidr_block='10.0.0.0/16')
     
     with open('config.tf.json', wt') as fp:
         fp.write(str(config))
 
-The content of ``config.tf.json`` will be this which is equivalent to the
+The content of ``config.tf.json`` is shown below. It is equivalent to the
 original HCL format.
 
 ::

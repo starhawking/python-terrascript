@@ -1,4 +1,4 @@
-#  terrascript/pagerduty/r.py
+# terrascript/pagerduty/r.py
 
 import terrascript
 
@@ -34,4 +34,7 @@ class pagerduty_user_contact_method(terrascript.Resource):
     pass
 
 class pagerduty_extension(terrascript.Resource):
+    pass
+
+class pagerduty_event_rule(terrascript.Resource):
     pass

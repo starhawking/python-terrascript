@@ -1,8 +1,8 @@
 # https://www.terraform.io/docs/configuration/outputs.html
 
 import terrascript
-import terrascript.aws
-import terrascript.aws.r
+import terrascript.provider
+import terrascript.resource
 
 from shared import assert_equals_json
 
@@ -11,9 +11,9 @@ def test():
 
     config = terrascript.Terrascript()
 
-    config += terrascript.aws.aws(version='~> 2.0', region='us-east-1')
+    config += terrascript.provider.aws(version='~> 2.0', region='us-east-1')
 
-    aws_instance = terrascript.aws.r.aws_instance('web', ami = "AMI", instance_type="t2.micro")
+    aws_instance = terrascript.resource.aws_instance('web', ami = "AMI", instance_type="t2.micro")
     config += aws_instance
 
     config += terrascript.Output('instance_ip_addr', value=aws_instance.server.private_ip)

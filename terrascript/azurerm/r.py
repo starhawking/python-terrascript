@@ -1,4 +1,4 @@
-#  terrascript/azurerm/r.py
+# terrascript/azurerm/r.py
 
 import terrascript
 
@@ -72,6 +72,9 @@ class azurerm_api_management_user(terrascript.Resource):
 class azurerm_app_service_active_slot(terrascript.Resource):
     pass
 
+class azurerm_app_service_certificate(terrascript.Resource):
+    pass
+
 class azurerm_app_service_custom_hostname_binding(terrascript.Resource):
     pass
 
@@ -79,6 +82,9 @@ class azurerm_app_service_plan(terrascript.Resource):
     pass
 
 class azurerm_app_service_slot(terrascript.Resource):
+    pass
+
+class azurerm_app_service_source_control_token(terrascript.Resource):
     pass
 
 class azurerm_app_service(terrascript.Resource):
@@ -154,6 +160,9 @@ class azurerm_batch_application(terrascript.Resource):
     pass
 
 class azurerm_batch_certificate(terrascript.Resource):
+    pass
+
+class azurerm_bot_channels_registration(terrascript.Resource):
     pass
 
 class azurerm_batch_pool(terrascript.Resource):
@@ -348,6 +357,9 @@ class azurerm_firewall_network_rule_collection(terrascript.Resource):
 class azurerm_firewall(terrascript.Resource):
     pass
 
+class azurerm_frontdoor(terrascript.Resource):
+    pass
+
 class azurerm_function_app(terrascript.Resource):
     pass
 
@@ -409,6 +421,12 @@ class azurerm_key_vault(terrascript.Resource):
     pass
 
 class azurerm_kubernetes_cluster(terrascript.Resource):
+    pass
+
+class azurerm_kusto_cluster(terrascript.Resource):
+    pass
+
+class azurerm_kusto_database(terrascript.Resource):
     pass
 
 class azurerm_lb_backend_address_pool(terrascript.Resource):
@@ -618,16 +636,37 @@ class azurerm_private_dns_a_record(terrascript.Resource):
 class azurerm_private_dns_cname_record(terrascript.Resource):
     pass
 
+class azurerm_proximity_placement_group(terrascript.Resource):
+    pass
+
 class azurerm_public_ip(terrascript.Resource):
     pass
 
 class azurerm_public_ip_prefix(terrascript.Resource):
     pass
 
+class azurerm_recovery_network_mapping(terrascript.Resource):
+    pass
+
+class azurerm_recovery_replicated_vm(terrascript.Resource):
+    pass
+
+class azurerm_recovery_services_fabric(terrascript.Resource):
+    pass
+
 class azurerm_recovery_services_protected_vm(terrascript.Resource):
     pass
 
+class azurerm_recovery_services_protection_container(terrascript.Resource):
+    pass
+
+class azurerm_recovery_services_protection_container_mapping(terrascript.Resource):
+    pass
+
 class azurerm_recovery_services_protection_policy_vm(terrascript.Resource):
+    pass
+
+class azurerm_recovery_services_replication_policy(terrascript.Resource):
     pass
 
 class azurerm_recovery_services_vault(terrascript.Resource):
@@ -780,6 +819,9 @@ class azurerm_stream_analytics_output_eventhub(terrascript.Resource):
 class azurerm_stream_analytics_output_servicebus_queue(terrascript.Resource):
     pass
 
+class azurerm_stream_analytics_output_servicebus_topic(terrascript.Resource):
+    pass
+
 class azurerm_stream_analytics_stream_input_blob(terrascript.Resource):
     pass
 
@@ -837,20 +879,5 @@ class azurerm_virtual_network(terrascript.Resource):
 class azurerm_virtual_wan(terrascript.Resource):
     pass
 
-class azurerm_recovery_services_fabric(terrascript.Resource):
-    pass
-
-class azurerm_recovery_services_protection_container(terrascript.Resource):
-    pass
-
-class azurerm_recovery_services_replication_policy(terrascript.Resource):
-    pass
-
-class azurerm_recovery_services_protection_container_mapping(terrascript.Resource):
-    pass
-
-class azurerm_recovery_network_mapping(terrascript.Resource):
-    pass
-
-class azurerm_recovery_replicated_vm(terrascript.Resource):
+class azurerm_web_application_firewall_policy(terrascript.Resource):
     pass

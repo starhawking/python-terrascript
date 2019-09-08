@@ -1,4 +1,4 @@
-#  terrascript/vcd/r.py
+# terrascript/vcd/r.py
 
 import terrascript
 

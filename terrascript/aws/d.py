@@ -177,6 +177,9 @@ class aws_elastic_beanstalk_solution_stack(terrascript.Data):
 class aws_elasticache_cluster(terrascript.Data):
     pass
 
+class aws_elasticsearch_domain(terrascript.Data):
+    pass
+
 class aws_elb(terrascript.Data):
     pass
 
@@ -325,6 +328,12 @@ class aws_route_tables(terrascript.Data):
     pass
 
 class aws_route53_delegation_set(terrascript.Data):
+    pass
+
+class aws_route53_resolver_rule(terrascript.Data):
+    pass
+
+class aws_route53_resolver_rules(terrascript.Data):
     pass
 
 class aws_route53_zone(terrascript.Data):

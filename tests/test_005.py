@@ -1,8 +1,8 @@
 # https://www.terraform.io/docs/provisioners/file.html
 
 import terrascript
-import terrascript.aws
-import terrascript.aws.r
+import terrascript.provider
+import terrascript.resource
 
 from shared import assert_equals_json
 
@@ -11,7 +11,7 @@ def test():
 
     config = terrascript.Terrascript()
     
-    config += terrascript.aws.aws(version='~> 2.0', region='us-east-1')
+    config += terrascript.provider.aws(version='~> 2.0', region='us-east-1')
     
     #  Copies the myapp.conf file to /etc/myapp.conf
     provisioner1 = terrascript.Provisioner('file', source='conf/myapp.conf', 
@@ -30,10 +30,12 @@ def test():
                                            destination = 'D:/IIS/webapp1')
     
     
-    config += terrascript.aws.r.aws_instance('web',
-                                             #ami = "${data.aws_ami.ubuntu.id}",
-                                             ami = "AMI",
-                                             instance_type="t2.micro",
-                                             provisioner=[provisioner1, provisioner2, provisioner3, provisioner4])
+    config += terrascript.resource.aws_instance('web',
+                                                ami = "AMI",
+                                                instance_type="t2.micro",
+                                                provisioner=[provisioner1, 
+                                                             provisioner2, 
+                                                             provisioner3, 
+                                                             provisioner4])
     
     assert_equals_json(config, 'test_005.tf.json')
