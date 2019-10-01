@@ -215,6 +215,7 @@ class Terrascript(dict):
         """Add to the configuration using the ``+`` syntax."""
 
         self += object
+        return object
 
 
 class Resource(Block):
