@@ -6,6 +6,7 @@ import terrascript.resource
 
 from shared import assert_equals_json
 
+
 def test():
     """Provider Endpoints (002)
 

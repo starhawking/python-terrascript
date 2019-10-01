@@ -3,6 +3,7 @@ import terrascript.provider
 
 from shared import assert_equals_json
 
+
 def test():
     """Module (003)"""
 

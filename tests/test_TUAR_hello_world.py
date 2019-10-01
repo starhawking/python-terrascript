@@ -27,9 +27,10 @@ def test():
     import terrascript
     import terrascript.provider
     import terrascript.resource
-    
+
     config = terrascript.Terrascript()
     config += terrascript.provider.aws(region='us-east-2', version='~>2.0')
-    config += terrascript.resource.aws_instance('example', ami='ami-0c55b159cbfafe1f0', instance_type='t2.micro')
-    
+    config += terrascript.resource.aws_instance(
+        'example', ami='ami-0c55b159cbfafe1f0', instance_type='t2.micro')
+
     shared.assert_deep_equal(config, 'test_TUAR_hello_world.tf.json')

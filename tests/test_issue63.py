@@ -6,6 +6,7 @@ import terrascript.oci
 
 from shared import assert_equals_json
 
+
 def test():
     """Issue #63 - Add support for OCI provider
 

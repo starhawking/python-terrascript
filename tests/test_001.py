@@ -3,9 +3,10 @@
 
 from shared import assert_deep_equal
 
+
 def test():
     """Resource (001)"""
-    
+
     import terrascript
     import terrascript.provider
     import terrascript.resource
