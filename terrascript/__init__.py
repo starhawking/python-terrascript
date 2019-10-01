@@ -6,6 +6,7 @@ this project.
 
 """
 
+import collections
 import logging
 import warnings
 import json
@@ -215,6 +216,34 @@ class Terrascript(dict):
         """Add to the configuration using the ``+`` syntax."""
 
         self += object
+
+    def update(self, terrascript_block):
+        """
+        Update a existing terrascript with other terrascript module.
+
+        Example:
+            ts1 = terrascript.Terrascript()
+            ts1.add(provider.aws(region='us-east-1'))
+
+            ts2 = terrascript.Terrascript()
+            ts2.add(provider.aws(region='us-east-2', alias='useast2'))
+
+            ts1.update(ts2) # ts1 is now merged with ts2 items
+
+        """
+
+        def _recursive_update(self, terrascript_block):
+            for object in terrascript_block:
+                if not isinstance(object, Block) and issubclass(type(object), Block):
+                    self += object
+                elif isinstance(object, dict):
+                    _recursive_update(self, object.values())
+                elif isinstance(object, list):
+                    for obj in object:
+                        self += obj
+
+        _recursive_update(self, terrascript_block.values())
+        return self
 
 
 class Resource(Block):
