@@ -16,7 +16,6 @@ Example:
 * One ``aws_subnet`` resource named ``subnet1``.
 
 .. code-block:: json
-   :emphasize-lines: 3,4,7,11,12
     
     {
       "resource": {
@@ -50,7 +49,6 @@ Example:
 * One ``google`` provider with alias ``google1``.
 
 .. code-block:: json
-   :emphasize-lines: 3,6,10,13,16
 
    {
      "provider": { 
@@ -84,7 +82,6 @@ Example:
 * Two variables names ``image_id`` and ``availability_zone_names``.
 
 .. code-block:: json
-   :emphasize-lines: 3,6 
  
    {
      "variable": {
@@ -112,7 +109,6 @@ Example:
 * Output values for two resources. 
 
 .. code-block:: json
-   :emphasize-lines: 3,6 
  
    {
      "output": {
@@ -161,7 +157,6 @@ Example:
 
 
 .. code-block:: json
-   :emphasize-lines: 3
 
    {
      "module": {
@@ -183,7 +178,6 @@ Example:
 * Two ``aws_ami`` data sources named ``ami1`` and ``ami2``.
 
 .. code-block:: json
-   :emphasize-lines: 3,4,7,8
 
    {
      "data": {
@@ -218,7 +212,6 @@ Example:
 * Terraform backend configuration.
 
 .. code-block:: json 
-   :emphasize-lines: 3 
 
    {
      "terraform": { 
