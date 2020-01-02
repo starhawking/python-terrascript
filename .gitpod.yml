@@ -1,2 +1,4 @@
 ports:
 - port: 9876
+image:
+  file: .gitpod.Dockerfile
