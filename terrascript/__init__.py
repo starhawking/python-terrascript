@@ -243,6 +243,7 @@ class Terrascript(dict):
         """Add to the configuration using the ``+`` syntax."""
 
         self += object
+        return object    # for backwards compatability!
 
 
 class Resource(NamedBlock):
