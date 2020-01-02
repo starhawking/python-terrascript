@@ -69,7 +69,7 @@ A first example
 
 The following example has been taken from the official Terraform documentation 
 for the `AWS Provider`_ and then converted into a Python script that generates 
-the equivalent configuration in JSON.
+the equivalent configuration in JSON syntax.
 
 .. _`AWS Provider`: https://www.terraform.io/docs/providers/aws/index.html 
 
