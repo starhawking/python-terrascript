@@ -68,3 +68,4 @@ from .vault import *
 from .vcd import *
 from .vsphere import *
 from .shell import *
+from .matchbox import *

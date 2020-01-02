@@ -138,3 +138,5 @@
   repository: https://github.com/terraform-providers/terraform-provider-vsphere
 - name: shell
   repository: https://github.com/scottwinkler/terraform-provider-shell
+- name: matchbox
+  repository: https://github.com/poseidon/terraform-provider-matchbox
