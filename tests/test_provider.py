@@ -7,11 +7,13 @@ class TestProvider(object):
         self.cfg = terrascript.Terrascript()
 
     def test_one_provider(self):
-        p1 = terrascript.provider.aws(alias='aws1', region='us-west-1')
-        assert p1['alias'] == 'aws1'
-        assert p1['region'] == 'us-west-1'
+        p = terrascript.provider.aws(alias='aws1', region='us-west-1')
+        assert isinstance(p, terrascript.Block)
+        assert isinstance(p, terrascript.Provider)
+        assert p['alias'] == 'aws1'
+        assert p['region'] == 'us-west-1'
 
-        self.cfg += p1
+        self.cfg += p
         assert len(self.cfg['provider']['aws']) == 1
         assert self.cfg['provider']['aws'][0]['alias'] == 'aws1'
         assert self.cfg['provider']['aws'][0]['region'] == 'us-west-1'

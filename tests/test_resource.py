@@ -8,6 +8,9 @@ class TestResource(object):
         
     def test_one_resource(self):
         r = terrascript.resource.aws_instance('instance1', instance_type="t2.micro")
+        assert isinstance(r, terrascript.NamedBlock)
+        assert isinstance(r, terrascript.Resource)
+        assert r._name == 'instance1'
         assert r['instance_type'] == "t2.micro"
         
         self.cfg += r
