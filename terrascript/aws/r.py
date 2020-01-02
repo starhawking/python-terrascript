@@ -3,6 +3,9 @@
 import terrascript
 
 
+class aws_accessanalyzer_analyzer(terrascript.Resource):
+    pass
+
 class aws_acm_certificate(terrascript.Resource):
     pass
 
@@ -453,6 +456,12 @@ class aws_dx_hosted_public_virtual_interface(terrascript.Resource):
 class aws_dx_hosted_public_virtual_interface_accepter(terrascript.Resource):
     pass
 
+class aws_dx_hosted_transit_virtual_interface(terrascript.Resource):
+    pass
+
+class aws_dx_hosted_transit_virtual_interface_accepter(terrascript.Resource):
+    pass
+
 class aws_dx_lag(terrascript.Resource):
     pass
 
@@ -531,6 +540,9 @@ class aws_ecr_repository(terrascript.Resource):
 class aws_ecr_repository_policy(terrascript.Resource):
     pass
 
+class aws_ecs_capacity_provider(terrascript.Resource):
+    pass
+
 class aws_ecs_cluster(terrascript.Resource):
     pass
 
@@ -556,6 +568,12 @@ class aws_eip_association(terrascript.Resource):
     pass
 
 class aws_eks_cluster(terrascript.Resource):
+    pass
+
+class aws_eks_fargate_profile(terrascript.Resource):
+    pass
+
+class aws_eks_node_group(terrascript.Resource):
     pass
 
 class aws_elasticache_cluster(terrascript.Resource):
@@ -673,6 +691,9 @@ class aws_glue_security_configuration(terrascript.Resource):
     pass
 
 class aws_glue_trigger(terrascript.Resource):
+    pass
+
+class aws_glue_workflow(terrascript.Resource):
     pass
 
 class aws_guardduty_detector(terrascript.Resource):
@@ -825,19 +846,25 @@ class aws_kms_key(terrascript.Resource):
 class aws_kms_ciphertext(terrascript.Resource):
     pass
 
-class aws_lambda_function(terrascript.Resource):
+class aws_lambda_alias(terrascript.Resource):
     pass
 
 class aws_lambda_event_source_mapping(terrascript.Resource):
     pass
 
-class aws_lambda_alias(terrascript.Resource):
+class aws_lambda_function_event_invoke_config(terrascript.Resource):
+    pass
+
+class aws_lambda_function(terrascript.Resource):
+    pass
+
+class aws_lambda_layer_version(terrascript.Resource):
     pass
 
 class aws_lambda_permission(terrascript.Resource):
     pass
 
-class aws_lambda_layer_version(terrascript.Resource):
+class aws_lambda_provisioned_concurrency_config(terrascript.Resource):
     pass
 
 class aws_launch_configuration(terrascript.Resource):
@@ -895,6 +922,9 @@ class aws_mq_broker(terrascript.Resource):
     pass
 
 class aws_mq_configuration(terrascript.Resource):
+    pass
+
+class aws_media_convert_queue(terrascript.Resource):
     pass
 
 class aws_media_package_channel(terrascript.Resource):
@@ -1020,7 +1050,13 @@ class aws_placement_group(terrascript.Resource):
 class aws_proxy_protocol_policy(terrascript.Resource):
     pass
 
+class aws_qldb_ledger(terrascript.Resource):
+    pass
+
 class aws_quicksight_group(terrascript.Resource):
+    pass
+
+class aws_quicksight_user(terrascript.Resource):
     pass
 
 class aws_ram_principal_association(terrascript.Resource):
@@ -1543,6 +1579,9 @@ class aws_pinpoint_sms_channel(terrascript.Resource):
     pass
 
 class aws_xray_sampling_rule(terrascript.Resource):
+    pass
+
+class aws_workspaces_ip_group(terrascript.Resource):
     pass
 
 class aws_alb(terrascript.Resource):

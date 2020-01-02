@@ -6,6 +6,9 @@ import terrascript
 class cloudstack_affinity_group(terrascript.Resource):
     pass
 
+class cloudstack_autoscale_vm_profile(terrascript.Resource):
+    pass
+
 class cloudstack_disk(terrascript.Resource):
     pass
 

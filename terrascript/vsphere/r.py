@@ -98,3 +98,9 @@ class vsphere_vmfs_datastore(terrascript.Resource):
 
 class vsphere_virtual_machine_snapshot(terrascript.Resource):
     pass
+
+class vsphere_host(terrascript.Resource):
+    pass
+
+class vsphere_vnic(terrascript.Resource):
+    pass

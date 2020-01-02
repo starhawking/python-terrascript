@@ -12,6 +12,21 @@ class digitalocean_cdn(terrascript.Resource):
 class digitalocean_database_cluster(terrascript.Resource):
     pass
 
+class digitalocean_database_connection_pool(terrascript.Resource):
+    pass
+
+class digitalocean_database_db(terrascript.Resource):
+    pass
+
+class digitalocean_database_firewall(terrascript.Resource):
+    pass
+
+class digitalocean_database_replica(terrascript.Resource):
+    pass
+
+class digitalocean_database_user(terrascript.Resource):
+    pass
+
 class digitalocean_domain(terrascript.Resource):
     pass
 
@@ -68,6 +83,11 @@ __all__ = [
     'digitalocean_certificate',
     'digitalocean_cdn',
     'digitalocean_database_cluster',
+    'digitalocean_database_connection_pool',
+    'digitalocean_database_db',
+    'digitalocean_database_firewall',
+    'digitalocean_database_replica',
+    'digitalocean_database_user',
     'digitalocean_domain',
     'digitalocean_droplet',
     'digitalocean_droplet_snapshot',

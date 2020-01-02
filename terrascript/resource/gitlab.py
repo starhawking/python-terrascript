@@ -18,7 +18,13 @@ class gitlab_project(terrascript.Resource):
 class gitlab_label(terrascript.Resource):
     pass
 
+class gitlab_group_label(terrascript.Resource):
+    pass
+
 class gitlab_pipeline_schedule(terrascript.Resource):
+    pass
+
+class gitlab_pipeline_schedule_variable(terrascript.Resource):
     pass
 
 class gitlab_pipeline_trigger(terrascript.Resource):
@@ -27,7 +33,13 @@ class gitlab_pipeline_trigger(terrascript.Resource):
 class gitlab_project_hook(terrascript.Resource):
     pass
 
+class gitlab_project_push_rules(terrascript.Resource):
+    pass
+
 class gitlab_deploy_key(terrascript.Resource):
+    pass
+
+class gitlab_deploy_key_enable(terrascript.Resource):
     pass
 
 class gitlab_user(terrascript.Resource):
@@ -54,6 +66,12 @@ class gitlab_service_slack(terrascript.Resource):
 class gitlab_service_jira(terrascript.Resource):
     pass
 
+class gitlab_project_share_group(terrascript.Resource):
+    pass
+
+class gitlab_group_cluster(terrascript.Resource):
+    pass
+
 
 __all__ = [
     'gitlab_branch_protection',
@@ -61,10 +79,14 @@ __all__ = [
     'gitlab_group',
     'gitlab_project',
     'gitlab_label',
+    'gitlab_group_label',
     'gitlab_pipeline_schedule',
+    'gitlab_pipeline_schedule_variable',
     'gitlab_pipeline_trigger',
     'gitlab_project_hook',
+    'gitlab_project_push_rules',
     'gitlab_deploy_key',
+    'gitlab_deploy_key_enable',
     'gitlab_user',
     'gitlab_project_membership',
     'gitlab_group_membership',
@@ -73,4 +95,6 @@ __all__ = [
     'gitlab_project_cluster',
     'gitlab_service_slack',
     'gitlab_service_jira',
+    'gitlab_project_share_group',
+    'gitlab_group_cluster',
 ]

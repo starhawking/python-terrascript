@@ -6,6 +6,9 @@ import terrascript
 class alicloud_account(terrascript.Data):
     pass
 
+class alicloud_caller_identity(terrascript.Data):
+    pass
+
 class alicloud_images(terrascript.Data):
     pass
 
@@ -46,6 +49,15 @@ class alicloud_key_pairs(terrascript.Data):
     pass
 
 class alicloud_kms_keys(terrascript.Data):
+    pass
+
+class alicloud_kms_ciphertext(terrascript.Data):
+    pass
+
+class alicloud_kms_plaintext(terrascript.Data):
+    pass
+
+class alicloud_dns_resolution_lines(terrascript.Data):
     pass
 
 class alicloud_dns_domains(terrascript.Data):
@@ -117,6 +129,9 @@ class alicloud_slb_server_certificates(terrascript.Data):
 class alicloud_slb_ca_certificates(terrascript.Data):
     pass
 
+class alicloud_slb_domain_extensions(terrascript.Data):
+    pass
+
 class alicloud_oss_bucket_objects(terrascript.Data):
     pass
 
@@ -132,7 +147,25 @@ class alicloud_ons_topics(terrascript.Data):
 class alicloud_ons_groups(terrascript.Data):
     pass
 
+class alicloud_alikafka_consumer_groups(terrascript.Data):
+    pass
+
+class alicloud_alikafka_instances(terrascript.Data):
+    pass
+
+class alicloud_alikafka_topics(terrascript.Data):
+    pass
+
+class alicloud_alikafka_sasl_users(terrascript.Data):
+    pass
+
+class alicloud_alikafka_sasl_acls(terrascript.Data):
+    pass
+
 class alicloud_fc_functions(terrascript.Data):
+    pass
+
+class alicloud_file_crc64_checksum(terrascript.Data):
     pass
 
 class alicloud_fc_services(terrascript.Data):
@@ -213,6 +246,9 @@ class alicloud_cs_kubernetes_clusters(terrascript.Data):
 class alicloud_cs_managed_kubernetes_clusters(terrascript.Data):
     pass
 
+class alicloud_cs_serverless_kubernetes_clusters(terrascript.Data):
+    pass
+
 class alicloud_cr_namespaces(terrascript.Data):
     pass
 
@@ -285,6 +321,9 @@ class alicloud_forward_entries(terrascript.Data):
 class alicloud_ddoscoo_instances(terrascript.Data):
     pass
 
+class alicloud_ddosbgp_instances(terrascript.Data):
+    pass
+
 class alicloud_ess_scaling_groups(terrascript.Data):
     pass
 
@@ -303,9 +342,43 @@ class alicloud_ots_instance_attachments(terrascript.Data):
 class alicloud_ots_tables(terrascript.Data):
     pass
 
+class alicloud_cloud_connect_networks(terrascript.Data):
+    pass
+
+class alicloud_emr_instance_types(terrascript.Data):
+    pass
+
+class alicloud_emr_disk_types(terrascript.Data):
+    pass
+
+class alicloud_emr_main_versions(terrascript.Data):
+    pass
+
+class alicloud_sag_acls(terrascript.Data):
+    pass
+
+class alicloud_yundun_dbaudit_instance(terrascript.Data):
+    pass
+
+class alicloud_yundun_bastionhost_instances(terrascript.Data):
+    pass
+
+class alicloud_market_products(terrascript.Data):
+    pass
+
+class alicloud_polardb_clusters(terrascript.Data):
+    pass
+
+class alicloud_polardb_endpoints(terrascript.Data):
+    pass
+
+class alicloud_hbase_instances(terrascript.Data):
+    pass
+
 
 __all__ = [
     'alicloud_account',
+    'alicloud_caller_identity',
     'alicloud_images',
     'alicloud_regions',
     'alicloud_zones',
@@ -320,6 +393,9 @@ __all__ = [
     'alicloud_eips',
     'alicloud_key_pairs',
     'alicloud_kms_keys',
+    'alicloud_kms_ciphertext',
+    'alicloud_kms_plaintext',
+    'alicloud_dns_resolution_lines',
     'alicloud_dns_domains',
     'alicloud_dns_groups',
     'alicloud_dns_records',
@@ -343,12 +419,19 @@ __all__ = [
     'alicloud_slb_acls',
     'alicloud_slb_server_certificates',
     'alicloud_slb_ca_certificates',
+    'alicloud_slb_domain_extensions',
     'alicloud_oss_bucket_objects',
     'alicloud_oss_buckets',
     'alicloud_ons_instances',
     'alicloud_ons_topics',
     'alicloud_ons_groups',
+    'alicloud_alikafka_consumer_groups',
+    'alicloud_alikafka_instances',
+    'alicloud_alikafka_topics',
+    'alicloud_alikafka_sasl_users',
+    'alicloud_alikafka_sasl_acls',
     'alicloud_fc_functions',
+    'alicloud_file_crc64_checksum',
     'alicloud_fc_services',
     'alicloud_fc_triggers',
     'alicloud_db_instances',
@@ -375,6 +458,7 @@ __all__ = [
     'alicloud_cen_region_route_entries',
     'alicloud_cs_kubernetes_clusters',
     'alicloud_cs_managed_kubernetes_clusters',
+    'alicloud_cs_serverless_kubernetes_clusters',
     'alicloud_cr_namespaces',
     'alicloud_cr_repos',
     'alicloud_mns_queues',
@@ -399,10 +483,22 @@ __all__ = [
     'alicloud_snat_entries',
     'alicloud_forward_entries',
     'alicloud_ddoscoo_instances',
+    'alicloud_ddosbgp_instances',
     'alicloud_ess_scaling_groups',
     'alicloud_ess_scaling_rules',
     'alicloud_ess_scaling_configurations',
     'alicloud_ots_instances',
     'alicloud_ots_instance_attachments',
     'alicloud_ots_tables',
+    'alicloud_cloud_connect_networks',
+    'alicloud_emr_instance_types',
+    'alicloud_emr_disk_types',
+    'alicloud_emr_main_versions',
+    'alicloud_sag_acls',
+    'alicloud_yundun_dbaudit_instance',
+    'alicloud_yundun_bastionhost_instances',
+    'alicloud_market_products',
+    'alicloud_polardb_clusters',
+    'alicloud_polardb_endpoints',
+    'alicloud_hbase_instances',
 ]

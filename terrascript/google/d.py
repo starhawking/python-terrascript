@@ -9,7 +9,7 @@ class google_active_folder(terrascript.Data):
 class google_billing_account(terrascript.Data):
     pass
 
-class google_dns_managed_zone(terrascript.Data):
+class google_bigquery_default_service_account(terrascript.Data):
     pass
 
 class google_client_config(terrascript.Data):
@@ -36,13 +36,13 @@ class google_compute_default_service_account(terrascript.Data):
 class google_compute_forwarding_rule(terrascript.Data):
     pass
 
+class google_compute_global_address(terrascript.Data):
+    pass
+
 class google_compute_image(terrascript.Data):
     pass
 
 class google_compute_instance(terrascript.Data):
-    pass
-
-class google_compute_global_address(terrascript.Data):
     pass
 
 class google_compute_instance_group(terrascript.Data):
@@ -66,19 +66,22 @@ class google_compute_regions(terrascript.Data):
 class google_compute_region_instance_group(terrascript.Data):
     pass
 
-class google_compute_subnetwork(terrascript.Data):
+class google_compute_router(terrascript.Data):
     pass
 
-class google_compute_zones(terrascript.Data):
-    pass
-
-class google_compute_vpn_gateway(terrascript.Data):
+class google_compute_ssl_certificate(terrascript.Data):
     pass
 
 class google_compute_ssl_policy(terrascript.Data):
     pass
 
-class google_compute_ssl_certificate(terrascript.Data):
+class google_compute_subnetwork(terrascript.Data):
+    pass
+
+class google_compute_vpn_gateway(terrascript.Data):
+    pass
+
+class google_compute_zones(terrascript.Data):
     pass
 
 class google_container_cluster(terrascript.Data):
@@ -87,10 +90,13 @@ class google_container_cluster(terrascript.Data):
 class google_container_engine_versions(terrascript.Data):
     pass
 
+class google_container_registry_image(terrascript.Data):
+    pass
+
 class google_container_registry_repository(terrascript.Data):
     pass
 
-class google_container_registry_image(terrascript.Data):
+class google_dns_managed_zone(terrascript.Data):
     pass
 
 class google_iam_policy(terrascript.Data):
@@ -99,19 +105,19 @@ class google_iam_policy(terrascript.Data):
 class google_iam_role(terrascript.Data):
     pass
 
-class google_kms_secret(terrascript.Data):
+class google_kms_crypto_key(terrascript.Data):
     pass
 
-class google_kms_secret_ciphertext(terrascript.Data):
+class google_kms_crypto_key_version(terrascript.Data):
     pass
 
 class google_kms_key_ring(terrascript.Data):
     pass
 
-class google_kms_crypto_key(terrascript.Data):
+class google_kms_secret(terrascript.Data):
     pass
 
-class google_kms_crypto_key_version(terrascript.Data):
+class google_kms_secret_ciphertext(terrascript.Data):
     pass
 
 class google_folder(terrascript.Data):
@@ -133,9 +139,6 @@ class google_projects(terrascript.Data):
     pass
 
 class google_project_organization_policy(terrascript.Data):
-    pass
-
-class google_project_services(terrascript.Data):
     pass
 
 class google_service_account(terrascript.Data):

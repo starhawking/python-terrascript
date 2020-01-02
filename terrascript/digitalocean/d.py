@@ -3,6 +3,9 @@
 import terrascript
 
 
+class digitalocean_account(terrascript.Data):
+    pass
+
 class digitalocean_certificate(terrascript.Data):
     pass
 
@@ -27,10 +30,16 @@ class digitalocean_image(terrascript.Data):
 class digitalocean_kubernetes_cluster(terrascript.Data):
     pass
 
+class digitalocean_kubernetes_versions(terrascript.Data):
+    pass
+
 class digitalocean_loadbalancer(terrascript.Data):
     pass
 
 class digitalocean_record(terrascript.Data):
+    pass
+
+class digitalocean_sizes(terrascript.Data):
     pass
 
 class digitalocean_ssh_key(terrascript.Data):

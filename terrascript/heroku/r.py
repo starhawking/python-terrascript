@@ -24,6 +24,9 @@ class heroku_app_feature(terrascript.Resource):
 class heroku_app_release(terrascript.Resource):
     pass
 
+class heroku_app_webhook(terrascript.Resource):
+    pass
+
 class heroku_build(terrascript.Resource):
     pass
 

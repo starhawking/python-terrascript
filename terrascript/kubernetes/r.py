@@ -54,6 +54,12 @@ class kubernetes_persistent_volume_claim(terrascript.Resource):
 class kubernetes_pod(terrascript.Resource):
     pass
 
+class kubernetes_pod_disruption_budget(terrascript.Resource):
+    pass
+
+class kubernetes_priority_class(terrascript.Resource):
+    pass
+
 class kubernetes_replication_controller(terrascript.Resource):
     pass
 

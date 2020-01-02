@@ -41,6 +41,3 @@ class packet_bgp_session(terrascript.Resource):
 
 class packet_port_vlan_attachment(terrascript.Resource):
     pass
-
-class packet_connect(terrascript.Resource):
-    pass

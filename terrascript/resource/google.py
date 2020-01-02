@@ -21,6 +21,9 @@ class google_app_engine_firewall_rule(terrascript.Resource):
 class google_app_engine_standard_app_version(terrascript.Resource):
     pass
 
+class google_app_engine_application_url_dispatch_rules(terrascript.Resource):
+    pass
+
 class google_bigquery_dataset(terrascript.Resource):
     pass
 
@@ -39,7 +42,16 @@ class google_binary_authorization_policy(terrascript.Resource):
 class google_cloudbuild_trigger(terrascript.Resource):
     pass
 
+class google_cloud_run_domain_mapping(terrascript.Resource):
+    pass
+
+class google_cloud_run_service(terrascript.Resource):
+    pass
+
 class google_cloud_scheduler_job(terrascript.Resource):
+    pass
+
+class google_cloud_tasks_queue(terrascript.Resource):
     pass
 
 class google_compute_address(terrascript.Resource):
@@ -61,6 +73,9 @@ class google_compute_region_backend_service(terrascript.Resource):
     pass
 
 class google_compute_backend_service_signed_url_key(terrascript.Resource):
+    pass
+
+class google_compute_disk_resource_policy_attachment(terrascript.Resource):
     pass
 
 class google_compute_disk(terrascript.Resource):
@@ -114,16 +129,31 @@ class google_compute_region_autoscaler(terrascript.Resource):
 class google_compute_region_disk(terrascript.Resource):
     pass
 
+class google_compute_region_health_check(terrascript.Resource):
+    pass
+
+class google_compute_resource_policy(terrascript.Resource):
+    pass
+
 class google_compute_route(terrascript.Resource):
     pass
 
 class google_compute_router(terrascript.Resource):
     pass
 
+class google_compute_router_nat(terrascript.Resource):
+    pass
+
+class google_compute_router_peer(terrascript.Resource):
+    pass
+
 class google_compute_snapshot(terrascript.Resource):
     pass
 
 class google_compute_ssl_certificate(terrascript.Resource):
+    pass
+
+class google_compute_reservation(terrascript.Resource):
     pass
 
 class google_compute_ssl_policy(terrascript.Resource):
@@ -156,6 +186,15 @@ class google_compute_url_map(terrascript.Resource):
 class google_compute_vpn_tunnel(terrascript.Resource):
     pass
 
+class google_container_analysis_note(terrascript.Resource):
+    pass
+
+class google_dataproc_autoscaling_policy(terrascript.Resource):
+    pass
+
+class google_deployment_manager_deployment(terrascript.Resource):
+    pass
+
 class google_dns_managed_zone(terrascript.Resource):
     pass
 
@@ -163,6 +202,27 @@ class google_filestore_instance(terrascript.Resource):
     pass
 
 class google_firestore_index(terrascript.Resource):
+    pass
+
+class google_identity_platform_default_supported_idp_config(terrascript.Resource):
+    pass
+
+class google_identity_platform_tenant_default_supported_idp_config(terrascript.Resource):
+    pass
+
+class google_identity_platform_inbound_saml_config(terrascript.Resource):
+    pass
+
+class google_identity_platform_tenant_inbound_saml_config(terrascript.Resource):
+    pass
+
+class google_identity_platform_oauth_idp_config(terrascript.Resource):
+    pass
+
+class google_identity_platform_tenant_oauth_idp_config(terrascript.Resource):
+    pass
+
+class google_identity_platform_tenant(terrascript.Resource):
     pass
 
 class google_kms_key_ring(terrascript.Resource):
@@ -216,6 +276,9 @@ class google_spanner_database(terrascript.Resource):
 class google_sql_database(terrascript.Resource):
     pass
 
+class google_storage_bucket_access_control(terrascript.Resource):
+    pass
+
 class google_storage_object_access_control(terrascript.Resource):
     pass
 
@@ -229,6 +292,9 @@ class google_app_engine_application(terrascript.Resource):
     pass
 
 class google_bigquery_table(terrascript.Resource):
+    pass
+
+class google_bigtable_gc_policy(terrascript.Resource):
     pass
 
 class google_bigtable_instance(terrascript.Resource):
@@ -280,12 +346,6 @@ class google_compute_region_instance_group_manager(terrascript.Resource):
     pass
 
 class google_compute_router_interface(terrascript.Resource):
-    pass
-
-class google_compute_router_nat(terrascript.Resource):
-    pass
-
-class google_compute_router_peer(terrascript.Resource):
     pass
 
 class google_compute_security_policy(terrascript.Resource):
@@ -375,9 +435,6 @@ class google_project_organization_policy(terrascript.Resource):
 class google_project_usage_export_bucket(terrascript.Resource):
     pass
 
-class google_project_services(terrascript.Resource):
-    pass
-
 class google_runtimeconfig_config(terrascript.Resource):
     pass
 
@@ -419,13 +476,17 @@ __all__ = [
     'google_app_engine_domain_mapping',
     'google_app_engine_firewall_rule',
     'google_app_engine_standard_app_version',
+    'google_app_engine_application_url_dispatch_rules',
     'google_bigquery_dataset',
     'google_bigquery_data_transfer_config',
     'google_bigtable_app_profile',
     'google_binary_authorization_attestor',
     'google_binary_authorization_policy',
     'google_cloudbuild_trigger',
+    'google_cloud_run_domain_mapping',
+    'google_cloud_run_service',
     'google_cloud_scheduler_job',
+    'google_cloud_tasks_queue',
     'google_compute_address',
     'google_compute_autoscaler',
     'google_compute_backend_bucket',
@@ -433,6 +494,7 @@ __all__ = [
     'google_compute_backend_service',
     'google_compute_region_backend_service',
     'google_compute_backend_service_signed_url_key',
+    'google_compute_disk_resource_policy_attachment',
     'google_compute_disk',
     'google_compute_firewall',
     'google_compute_forwarding_rule',
@@ -450,10 +512,15 @@ __all__ = [
     'google_compute_node_template',
     'google_compute_region_autoscaler',
     'google_compute_region_disk',
+    'google_compute_region_health_check',
+    'google_compute_resource_policy',
     'google_compute_route',
     'google_compute_router',
+    'google_compute_router_nat',
+    'google_compute_router_peer',
     'google_compute_snapshot',
     'google_compute_ssl_certificate',
+    'google_compute_reservation',
     'google_compute_ssl_policy',
     'google_compute_subnetwork',
     'google_compute_target_http_proxy',
@@ -464,9 +531,19 @@ __all__ = [
     'google_compute_vpn_gateway',
     'google_compute_url_map',
     'google_compute_vpn_tunnel',
+    'google_container_analysis_note',
+    'google_dataproc_autoscaling_policy',
+    'google_deployment_manager_deployment',
     'google_dns_managed_zone',
     'google_filestore_instance',
     'google_firestore_index',
+    'google_identity_platform_default_supported_idp_config',
+    'google_identity_platform_tenant_default_supported_idp_config',
+    'google_identity_platform_inbound_saml_config',
+    'google_identity_platform_tenant_inbound_saml_config',
+    'google_identity_platform_oauth_idp_config',
+    'google_identity_platform_tenant_oauth_idp_config',
+    'google_identity_platform_tenant',
     'google_kms_key_ring',
     'google_kms_crypto_key',
     'google_logging_metric',
@@ -484,11 +561,13 @@ __all__ = [
     'google_spanner_instance',
     'google_spanner_database',
     'google_sql_database',
+    'google_storage_bucket_access_control',
     'google_storage_object_access_control',
     'google_storage_default_object_access_control',
     'google_tpu_node',
     'google_app_engine_application',
     'google_bigquery_table',
+    'google_bigtable_gc_policy',
     'google_bigtable_instance',
     'google_bigtable_table',
     'google_cloudfunctions_function',
@@ -506,8 +585,6 @@ __all__ = [
     'google_compute_project_metadata_item',
     'google_compute_region_instance_group_manager',
     'google_compute_router_interface',
-    'google_compute_router_nat',
-    'google_compute_router_peer',
     'google_compute_security_policy',
     'google_compute_shared_vpc_host_project',
     'google_compute_shared_vpc_service_project',
@@ -537,7 +614,6 @@ __all__ = [
     'google_project_iam_custom_role',
     'google_project_organization_policy',
     'google_project_usage_export_bucket',
-    'google_project_services',
     'google_runtimeconfig_config',
     'google_runtimeconfig_variable',
     'google_service_account',

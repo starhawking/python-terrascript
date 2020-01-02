@@ -11,3 +11,6 @@ class bitbucket_default_reviewers(terrascript.Resource):
 
 class bitbucket_repository(terrascript.Resource):
     pass
+
+class bitbucket_repository_variable(terrascript.Resource):
+    pass

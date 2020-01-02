@@ -195,6 +195,9 @@ class aws_elb_service_account(terrascript.Data):
 class aws_glue_script(terrascript.Data):
     pass
 
+class aws_guardduty_detector(terrascript.Data):
+    pass
+
 class aws_iam_account_alias(terrascript.Data):
     pass
 
@@ -294,6 +297,9 @@ class aws_network_interfaces(terrascript.Data):
 class aws_organizations_organization(terrascript.Data):
     pass
 
+class aws_organizations_organizational_units(terrascript.Data):
+    pass
+
 class aws_partition(terrascript.Data):
     pass
 
@@ -301,6 +307,9 @@ class aws_prefix_list(terrascript.Data):
     pass
 
 class aws_pricing_product(terrascript.Data):
+    pass
+
+class aws_qldb_ledger(terrascript.Data):
     pass
 
 class aws_ram_resource_share(terrascript.Data):
@@ -417,6 +426,9 @@ class aws_waf_ipset(terrascript.Data):
 class aws_waf_rule(terrascript.Data):
     pass
 
+class aws_waf_rate_based_rule(terrascript.Data):
+    pass
+
 class aws_waf_web_acl(terrascript.Data):
     pass
 
@@ -424,6 +436,9 @@ class aws_wafregional_ipset(terrascript.Data):
     pass
 
 class aws_wafregional_rule(terrascript.Data):
+    pass
+
+class aws_wafregional_rate_based_rule(terrascript.Data):
     pass
 
 class aws_wafregional_web_acl(terrascript.Data):

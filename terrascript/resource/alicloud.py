@@ -6,6 +6,18 @@ import terrascript
 class alicloud_instance(terrascript.Resource):
     pass
 
+class alicloud_image(terrascript.Resource):
+    pass
+
+class alicloud_copy_image(terrascript.Resource):
+    pass
+
+class alicloud_image_copy(terrascript.Resource):
+    pass
+
+class alicloud_reserved_instance(terrascript.Resource):
+    pass
+
 class alicloud_ram_role_attachment(terrascript.Resource):
     pass
 
@@ -159,6 +171,9 @@ class alicloud_slb_attachment(terrascript.Resource):
 class alicloud_slb_backend_server(terrascript.Resource):
     pass
 
+class alicloud_slb_domain_extension(terrascript.Resource):
+    pass
+
 class alicloud_slb_server_group(terrascript.Resource):
     pass
 
@@ -192,6 +207,21 @@ class alicloud_ons_topic(terrascript.Resource):
 class alicloud_ons_group(terrascript.Resource):
     pass
 
+class alicloud_alikafka_consumer_group(terrascript.Resource):
+    pass
+
+class alicloud_alikafka_instance(terrascript.Resource):
+    pass
+
+class alicloud_alikafka_topic(terrascript.Resource):
+    pass
+
+class alicloud_alikafka_sasl_user(terrascript.Resource):
+    pass
+
+class alicloud_alikafka_sasl_acl(terrascript.Resource):
+    pass
+
 class alicloud_dns_record(terrascript.Resource):
     pass
 
@@ -208,6 +238,9 @@ class alicloud_key_pair_attachment(terrascript.Resource):
     pass
 
 class alicloud_kms_key(terrascript.Resource):
+    pass
+
+class alicloud_kms_ciphertext(terrascript.Resource):
     pass
 
 class alicloud_ram_user(terrascript.Resource):
@@ -262,6 +295,12 @@ class alicloud_cs_kubernetes(terrascript.Resource):
     pass
 
 class alicloud_cs_managed_kubernetes(terrascript.Resource):
+    pass
+
+class alicloud_cs_serverless_kubernetes(terrascript.Resource):
+    pass
+
+class alicloud_cs_kubernetes_autoscaler(terrascript.Resource):
     pass
 
 class alicloud_cr_namespace(terrascript.Resource):
@@ -339,6 +378,9 @@ class alicloud_vpn_gateway(terrascript.Resource):
 class alicloud_vpn_customer_gateway(terrascript.Resource):
     pass
 
+class alicloud_vpn_route_entry(terrascript.Resource):
+    pass
+
 class alicloud_vpn_connection(terrascript.Resource):
     pass
 
@@ -373,6 +415,9 @@ class alicloud_kvstore_instance(terrascript.Resource):
     pass
 
 class alicloud_kvstore_backup_policy(terrascript.Resource):
+    pass
+
+class alicloud_kvstore_account(terrascript.Resource):
     pass
 
 class alicloud_datahub_project(terrascript.Resource):
@@ -435,6 +480,9 @@ class alicloud_cas_certificate(terrascript.Resource):
 class alicloud_ddoscoo_instance(terrascript.Resource):
     pass
 
+class alicloud_ddosbgp_instance(terrascript.Resource):
+    pass
+
 class alicloud_network_acl(terrascript.Resource):
     pass
 
@@ -444,9 +492,76 @@ class alicloud_network_acl_attachment(terrascript.Resource):
 class alicloud_network_acl_entries(terrascript.Resource):
     pass
 
+class alicloud_emr_cluster(terrascript.Resource):
+    pass
+
+class alicloud_cloud_connect_network(terrascript.Resource):
+    pass
+
+class alicloud_cloud_connect_network_attachment(terrascript.Resource):
+    pass
+
+class alicloud_cloud_connect_network_grant(terrascript.Resource):
+    pass
+
+class alicloud_sag_acl(terrascript.Resource):
+    pass
+
+class alicloud_sag_acl_rule(terrascript.Resource):
+    pass
+
+class alicloud_sag_qos(terrascript.Resource):
+    pass
+
+class alicloud_sag_qos_policy(terrascript.Resource):
+    pass
+
+class alicloud_sag_qos_car(terrascript.Resource):
+    pass
+
+class alicloud_sag_snat_entry(terrascript.Resource):
+    pass
+
+class alicloud_sag_dnat_entry(terrascript.Resource):
+    pass
+
+class alicloud_sag_client_user(terrascript.Resource):
+    pass
+
+class alicloud_yundun_dbaudit_instance(terrascript.Resource):
+    pass
+
+class alicloud_yundun_bastionhost_instance(terrascript.Resource):
+    pass
+
+class alicloud_polardb_cluster(terrascript.Resource):
+    pass
+
+class alicloud_polardb_backup_policy(terrascript.Resource):
+    pass
+
+class alicloud_polardb_database(terrascript.Resource):
+    pass
+
+class alicloud_polardb_account(terrascript.Resource):
+    pass
+
+class alicloud_polardb_account_privilege(terrascript.Resource):
+    pass
+
+class alicloud_polardb_endpoint_address(terrascript.Resource):
+    pass
+
+class alicloud_hbase_instance(terrascript.Resource):
+    pass
+
 
 __all__ = [
     'alicloud_instance',
+    'alicloud_image',
+    'alicloud_copy_image',
+    'alicloud_image_copy',
+    'alicloud_reserved_instance',
     'alicloud_ram_role_attachment',
     'alicloud_disk',
     'alicloud_disk_attachment',
@@ -498,6 +613,7 @@ __all__ = [
     'alicloud_slb_listener',
     'alicloud_slb_attachment',
     'alicloud_slb_backend_server',
+    'alicloud_slb_domain_extension',
     'alicloud_slb_server_group',
     'alicloud_slb_master_slave_server_group',
     'alicloud_slb_rule',
@@ -509,12 +625,18 @@ __all__ = [
     'alicloud_ons_instance',
     'alicloud_ons_topic',
     'alicloud_ons_group',
+    'alicloud_alikafka_consumer_group',
+    'alicloud_alikafka_instance',
+    'alicloud_alikafka_topic',
+    'alicloud_alikafka_sasl_user',
+    'alicloud_alikafka_sasl_acl',
     'alicloud_dns_record',
     'alicloud_dns',
     'alicloud_dns_group',
     'alicloud_key_pair',
     'alicloud_key_pair_attachment',
     'alicloud_kms_key',
+    'alicloud_kms_ciphertext',
     'alicloud_ram_user',
     'alicloud_ram_account_password_policy',
     'alicloud_ram_access_key',
@@ -533,6 +655,8 @@ __all__ = [
     'alicloud_cs_swarm',
     'alicloud_cs_kubernetes',
     'alicloud_cs_managed_kubernetes',
+    'alicloud_cs_serverless_kubernetes',
+    'alicloud_cs_kubernetes_autoscaler',
     'alicloud_cr_namespace',
     'alicloud_cr_repo',
     'alicloud_cdn_domain',
@@ -558,6 +682,7 @@ __all__ = [
     'alicloud_fc_trigger',
     'alicloud_vpn_gateway',
     'alicloud_vpn_customer_gateway',
+    'alicloud_vpn_route_entry',
     'alicloud_vpn_connection',
     'alicloud_ssl_vpn_server',
     'alicloud_ssl_vpn_client_cert',
@@ -570,6 +695,7 @@ __all__ = [
     'alicloud_cen_instance_grant',
     'alicloud_kvstore_instance',
     'alicloud_kvstore_backup_policy',
+    'alicloud_kvstore_account',
     'alicloud_datahub_project',
     'alicloud_datahub_subscription',
     'alicloud_datahub_topic',
@@ -590,7 +716,29 @@ __all__ = [
     'alicloud_actiontrail',
     'alicloud_cas_certificate',
     'alicloud_ddoscoo_instance',
+    'alicloud_ddosbgp_instance',
     'alicloud_network_acl',
     'alicloud_network_acl_attachment',
     'alicloud_network_acl_entries',
+    'alicloud_emr_cluster',
+    'alicloud_cloud_connect_network',
+    'alicloud_cloud_connect_network_attachment',
+    'alicloud_cloud_connect_network_grant',
+    'alicloud_sag_acl',
+    'alicloud_sag_acl_rule',
+    'alicloud_sag_qos',
+    'alicloud_sag_qos_policy',
+    'alicloud_sag_qos_car',
+    'alicloud_sag_snat_entry',
+    'alicloud_sag_dnat_entry',
+    'alicloud_sag_client_user',
+    'alicloud_yundun_dbaudit_instance',
+    'alicloud_yundun_bastionhost_instance',
+    'alicloud_polardb_cluster',
+    'alicloud_polardb_backup_policy',
+    'alicloud_polardb_database',
+    'alicloud_polardb_account',
+    'alicloud_polardb_account_privilege',
+    'alicloud_polardb_endpoint_address',
+    'alicloud_hbase_instance',
 ]

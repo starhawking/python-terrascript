@@ -24,6 +24,9 @@ class heroku_app_feature(terrascript.Resource):
 class heroku_app_release(terrascript.Resource):
     pass
 
+class heroku_app_webhook(terrascript.Resource):
+    pass
+
 class heroku_build(terrascript.Resource):
     pass
 
@@ -81,6 +84,7 @@ __all__ = [
     'heroku_app_config_association',
     'heroku_app_feature',
     'heroku_app_release',
+    'heroku_app_webhook',
     'heroku_build',
     'heroku_cert',
     'heroku_config',

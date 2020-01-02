@@ -6,6 +6,18 @@ import terrascript
 class alicloud_instance(terrascript.Resource):
     pass
 
+class alicloud_image(terrascript.Resource):
+    pass
+
+class alicloud_copy_image(terrascript.Resource):
+    pass
+
+class alicloud_image_copy(terrascript.Resource):
+    pass
+
+class alicloud_reserved_instance(terrascript.Resource):
+    pass
+
 class alicloud_ram_role_attachment(terrascript.Resource):
     pass
 
@@ -159,6 +171,9 @@ class alicloud_slb_attachment(terrascript.Resource):
 class alicloud_slb_backend_server(terrascript.Resource):
     pass
 
+class alicloud_slb_domain_extension(terrascript.Resource):
+    pass
+
 class alicloud_slb_server_group(terrascript.Resource):
     pass
 
@@ -192,6 +207,21 @@ class alicloud_ons_topic(terrascript.Resource):
 class alicloud_ons_group(terrascript.Resource):
     pass
 
+class alicloud_alikafka_consumer_group(terrascript.Resource):
+    pass
+
+class alicloud_alikafka_instance(terrascript.Resource):
+    pass
+
+class alicloud_alikafka_topic(terrascript.Resource):
+    pass
+
+class alicloud_alikafka_sasl_user(terrascript.Resource):
+    pass
+
+class alicloud_alikafka_sasl_acl(terrascript.Resource):
+    pass
+
 class alicloud_dns_record(terrascript.Resource):
     pass
 
@@ -208,6 +238,9 @@ class alicloud_key_pair_attachment(terrascript.Resource):
     pass
 
 class alicloud_kms_key(terrascript.Resource):
+    pass
+
+class alicloud_kms_ciphertext(terrascript.Resource):
     pass
 
 class alicloud_ram_user(terrascript.Resource):
@@ -262,6 +295,12 @@ class alicloud_cs_kubernetes(terrascript.Resource):
     pass
 
 class alicloud_cs_managed_kubernetes(terrascript.Resource):
+    pass
+
+class alicloud_cs_serverless_kubernetes(terrascript.Resource):
+    pass
+
+class alicloud_cs_kubernetes_autoscaler(terrascript.Resource):
     pass
 
 class alicloud_cr_namespace(terrascript.Resource):
@@ -339,6 +378,9 @@ class alicloud_vpn_gateway(terrascript.Resource):
 class alicloud_vpn_customer_gateway(terrascript.Resource):
     pass
 
+class alicloud_vpn_route_entry(terrascript.Resource):
+    pass
+
 class alicloud_vpn_connection(terrascript.Resource):
     pass
 
@@ -373,6 +415,9 @@ class alicloud_kvstore_instance(terrascript.Resource):
     pass
 
 class alicloud_kvstore_backup_policy(terrascript.Resource):
+    pass
+
+class alicloud_kvstore_account(terrascript.Resource):
     pass
 
 class alicloud_datahub_project(terrascript.Resource):
@@ -435,6 +480,9 @@ class alicloud_cas_certificate(terrascript.Resource):
 class alicloud_ddoscoo_instance(terrascript.Resource):
     pass
 
+class alicloud_ddosbgp_instance(terrascript.Resource):
+    pass
+
 class alicloud_network_acl(terrascript.Resource):
     pass
 
@@ -442,4 +490,67 @@ class alicloud_network_acl_attachment(terrascript.Resource):
     pass
 
 class alicloud_network_acl_entries(terrascript.Resource):
+    pass
+
+class alicloud_emr_cluster(terrascript.Resource):
+    pass
+
+class alicloud_cloud_connect_network(terrascript.Resource):
+    pass
+
+class alicloud_cloud_connect_network_attachment(terrascript.Resource):
+    pass
+
+class alicloud_cloud_connect_network_grant(terrascript.Resource):
+    pass
+
+class alicloud_sag_acl(terrascript.Resource):
+    pass
+
+class alicloud_sag_acl_rule(terrascript.Resource):
+    pass
+
+class alicloud_sag_qos(terrascript.Resource):
+    pass
+
+class alicloud_sag_qos_policy(terrascript.Resource):
+    pass
+
+class alicloud_sag_qos_car(terrascript.Resource):
+    pass
+
+class alicloud_sag_snat_entry(terrascript.Resource):
+    pass
+
+class alicloud_sag_dnat_entry(terrascript.Resource):
+    pass
+
+class alicloud_sag_client_user(terrascript.Resource):
+    pass
+
+class alicloud_yundun_dbaudit_instance(terrascript.Resource):
+    pass
+
+class alicloud_yundun_bastionhost_instance(terrascript.Resource):
+    pass
+
+class alicloud_polardb_cluster(terrascript.Resource):
+    pass
+
+class alicloud_polardb_backup_policy(terrascript.Resource):
+    pass
+
+class alicloud_polardb_database(terrascript.Resource):
+    pass
+
+class alicloud_polardb_account(terrascript.Resource):
+    pass
+
+class alicloud_polardb_account_privilege(terrascript.Resource):
+    pass
+
+class alicloud_polardb_endpoint_address(terrascript.Resource):
+    pass
+
+class alicloud_hbase_instance(terrascript.Resource):
     pass

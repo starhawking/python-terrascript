@@ -80,3 +80,18 @@ class vcd_lb_app_rule(terrascript.Resource):
 
 class vcd_lb_virtual_server(terrascript.Resource):
     pass
+
+class vcd_nsxv_dnat(terrascript.Resource):
+    pass
+
+class vcd_nsxv_snat(terrascript.Resource):
+    pass
+
+class vcd_nsxv_firewall_rule(terrascript.Resource):
+    pass
+
+class vcd_nsxv_dhcp_relay(terrascript.Resource):
+    pass
+
+class vcd_nsxv_ip_set(terrascript.Resource):
+    pass

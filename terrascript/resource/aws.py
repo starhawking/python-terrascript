@@ -3,6 +3,9 @@
 import terrascript
 
 
+class aws_accessanalyzer_analyzer(terrascript.Resource):
+    pass
+
 class aws_acm_certificate(terrascript.Resource):
     pass
 
@@ -453,6 +456,12 @@ class aws_dx_hosted_public_virtual_interface(terrascript.Resource):
 class aws_dx_hosted_public_virtual_interface_accepter(terrascript.Resource):
     pass
 
+class aws_dx_hosted_transit_virtual_interface(terrascript.Resource):
+    pass
+
+class aws_dx_hosted_transit_virtual_interface_accepter(terrascript.Resource):
+    pass
+
 class aws_dx_lag(terrascript.Resource):
     pass
 
@@ -531,6 +540,9 @@ class aws_ecr_repository(terrascript.Resource):
 class aws_ecr_repository_policy(terrascript.Resource):
     pass
 
+class aws_ecs_capacity_provider(terrascript.Resource):
+    pass
+
 class aws_ecs_cluster(terrascript.Resource):
     pass
 
@@ -556,6 +568,12 @@ class aws_eip_association(terrascript.Resource):
     pass
 
 class aws_eks_cluster(terrascript.Resource):
+    pass
+
+class aws_eks_fargate_profile(terrascript.Resource):
+    pass
+
+class aws_eks_node_group(terrascript.Resource):
     pass
 
 class aws_elasticache_cluster(terrascript.Resource):
@@ -673,6 +691,9 @@ class aws_glue_security_configuration(terrascript.Resource):
     pass
 
 class aws_glue_trigger(terrascript.Resource):
+    pass
+
+class aws_glue_workflow(terrascript.Resource):
     pass
 
 class aws_guardduty_detector(terrascript.Resource):
@@ -825,19 +846,25 @@ class aws_kms_key(terrascript.Resource):
 class aws_kms_ciphertext(terrascript.Resource):
     pass
 
-class aws_lambda_function(terrascript.Resource):
+class aws_lambda_alias(terrascript.Resource):
     pass
 
 class aws_lambda_event_source_mapping(terrascript.Resource):
     pass
 
-class aws_lambda_alias(terrascript.Resource):
+class aws_lambda_function_event_invoke_config(terrascript.Resource):
+    pass
+
+class aws_lambda_function(terrascript.Resource):
+    pass
+
+class aws_lambda_layer_version(terrascript.Resource):
     pass
 
 class aws_lambda_permission(terrascript.Resource):
     pass
 
-class aws_lambda_layer_version(terrascript.Resource):
+class aws_lambda_provisioned_concurrency_config(terrascript.Resource):
     pass
 
 class aws_launch_configuration(terrascript.Resource):
@@ -895,6 +922,9 @@ class aws_mq_broker(terrascript.Resource):
     pass
 
 class aws_mq_configuration(terrascript.Resource):
+    pass
+
+class aws_media_convert_queue(terrascript.Resource):
     pass
 
 class aws_media_package_channel(terrascript.Resource):
@@ -1020,7 +1050,13 @@ class aws_placement_group(terrascript.Resource):
 class aws_proxy_protocol_policy(terrascript.Resource):
     pass
 
+class aws_qldb_ledger(terrascript.Resource):
+    pass
+
 class aws_quicksight_group(terrascript.Resource):
+    pass
+
+class aws_quicksight_user(terrascript.Resource):
     pass
 
 class aws_ram_principal_association(terrascript.Resource):
@@ -1545,6 +1581,9 @@ class aws_pinpoint_sms_channel(terrascript.Resource):
 class aws_xray_sampling_rule(terrascript.Resource):
     pass
 
+class aws_workspaces_ip_group(terrascript.Resource):
+    pass
+
 class aws_alb(terrascript.Resource):
     pass
 
@@ -1583,6 +1622,7 @@ class aws_lb_target_group_attachment(terrascript.Resource):
 
 
 __all__ = [
+    'aws_accessanalyzer_analyzer',
     'aws_acm_certificate',
     'aws_acm_certificate_validation',
     'aws_acmpca_certificate_authority',
@@ -1733,6 +1773,8 @@ __all__ = [
     'aws_dx_hosted_private_virtual_interface_accepter',
     'aws_dx_hosted_public_virtual_interface',
     'aws_dx_hosted_public_virtual_interface_accepter',
+    'aws_dx_hosted_transit_virtual_interface',
+    'aws_dx_hosted_transit_virtual_interface_accepter',
     'aws_dx_lag',
     'aws_dx_private_virtual_interface',
     'aws_dx_public_virtual_interface',
@@ -1759,6 +1801,7 @@ __all__ = [
     'aws_ecr_lifecycle_policy',
     'aws_ecr_repository',
     'aws_ecr_repository_policy',
+    'aws_ecs_capacity_provider',
     'aws_ecs_cluster',
     'aws_ecs_service',
     'aws_ecs_task_definition',
@@ -1768,6 +1811,8 @@ __all__ = [
     'aws_eip',
     'aws_eip_association',
     'aws_eks_cluster',
+    'aws_eks_fargate_profile',
+    'aws_eks_node_group',
     'aws_elasticache_cluster',
     'aws_elasticache_parameter_group',
     'aws_elasticache_replication_group',
@@ -1807,6 +1852,7 @@ __all__ = [
     'aws_glue_job',
     'aws_glue_security_configuration',
     'aws_glue_trigger',
+    'aws_glue_workflow',
     'aws_guardduty_detector',
     'aws_guardduty_invite_accepter',
     'aws_guardduty_ipset',
@@ -1857,11 +1903,13 @@ __all__ = [
     'aws_kms_grant',
     'aws_kms_key',
     'aws_kms_ciphertext',
-    'aws_lambda_function',
-    'aws_lambda_event_source_mapping',
     'aws_lambda_alias',
-    'aws_lambda_permission',
+    'aws_lambda_event_source_mapping',
+    'aws_lambda_function_event_invoke_config',
+    'aws_lambda_function',
     'aws_lambda_layer_version',
+    'aws_lambda_permission',
+    'aws_lambda_provisioned_concurrency_config',
     'aws_launch_configuration',
     'aws_launch_template',
     'aws_licensemanager_association',
@@ -1881,6 +1929,7 @@ __all__ = [
     'aws_main_route_table_association',
     'aws_mq_broker',
     'aws_mq_configuration',
+    'aws_media_convert_queue',
     'aws_media_package_channel',
     'aws_media_store_container',
     'aws_media_store_container_policy',
@@ -1922,7 +1971,9 @@ __all__ = [
     'aws_organizations_organizational_unit',
     'aws_placement_group',
     'aws_proxy_protocol_policy',
+    'aws_qldb_ledger',
     'aws_quicksight_group',
+    'aws_quicksight_user',
     'aws_ram_principal_association',
     'aws_ram_resource_association',
     'aws_ram_resource_share',
@@ -2097,6 +2148,7 @@ __all__ = [
     'aws_pinpoint_gcm_channel',
     'aws_pinpoint_sms_channel',
     'aws_xray_sampling_rule',
+    'aws_workspaces_ip_group',
     'aws_alb',
     'aws_lb',
     'aws_alb_listener',

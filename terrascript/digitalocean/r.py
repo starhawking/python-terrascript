@@ -12,6 +12,21 @@ class digitalocean_cdn(terrascript.Resource):
 class digitalocean_database_cluster(terrascript.Resource):
     pass
 
+class digitalocean_database_connection_pool(terrascript.Resource):
+    pass
+
+class digitalocean_database_db(terrascript.Resource):
+    pass
+
+class digitalocean_database_firewall(terrascript.Resource):
+    pass
+
+class digitalocean_database_replica(terrascript.Resource):
+    pass
+
+class digitalocean_database_user(terrascript.Resource):
+    pass
+
 class digitalocean_domain(terrascript.Resource):
     pass
 

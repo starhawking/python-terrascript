@@ -9,7 +9,7 @@ class google_active_folder(terrascript.Data):
 class google_billing_account(terrascript.Data):
     pass
 
-class google_dns_managed_zone(terrascript.Data):
+class google_bigquery_default_service_account(terrascript.Data):
     pass
 
 class google_client_config(terrascript.Data):
@@ -36,13 +36,13 @@ class google_compute_default_service_account(terrascript.Data):
 class google_compute_forwarding_rule(terrascript.Data):
     pass
 
+class google_compute_global_address(terrascript.Data):
+    pass
+
 class google_compute_image(terrascript.Data):
     pass
 
 class google_compute_instance(terrascript.Data):
-    pass
-
-class google_compute_global_address(terrascript.Data):
     pass
 
 class google_compute_instance_group(terrascript.Data):
@@ -66,19 +66,22 @@ class google_compute_regions(terrascript.Data):
 class google_compute_region_instance_group(terrascript.Data):
     pass
 
-class google_compute_subnetwork(terrascript.Data):
+class google_compute_router(terrascript.Data):
     pass
 
-class google_compute_zones(terrascript.Data):
-    pass
-
-class google_compute_vpn_gateway(terrascript.Data):
+class google_compute_ssl_certificate(terrascript.Data):
     pass
 
 class google_compute_ssl_policy(terrascript.Data):
     pass
 
-class google_compute_ssl_certificate(terrascript.Data):
+class google_compute_subnetwork(terrascript.Data):
+    pass
+
+class google_compute_vpn_gateway(terrascript.Data):
+    pass
+
+class google_compute_zones(terrascript.Data):
     pass
 
 class google_container_cluster(terrascript.Data):
@@ -87,10 +90,13 @@ class google_container_cluster(terrascript.Data):
 class google_container_engine_versions(terrascript.Data):
     pass
 
+class google_container_registry_image(terrascript.Data):
+    pass
+
 class google_container_registry_repository(terrascript.Data):
     pass
 
-class google_container_registry_image(terrascript.Data):
+class google_dns_managed_zone(terrascript.Data):
     pass
 
 class google_iam_policy(terrascript.Data):
@@ -99,19 +105,19 @@ class google_iam_policy(terrascript.Data):
 class google_iam_role(terrascript.Data):
     pass
 
-class google_kms_secret(terrascript.Data):
+class google_kms_crypto_key(terrascript.Data):
     pass
 
-class google_kms_secret_ciphertext(terrascript.Data):
+class google_kms_crypto_key_version(terrascript.Data):
     pass
 
 class google_kms_key_ring(terrascript.Data):
     pass
 
-class google_kms_crypto_key(terrascript.Data):
+class google_kms_secret(terrascript.Data):
     pass
 
-class google_kms_crypto_key_version(terrascript.Data):
+class google_kms_secret_ciphertext(terrascript.Data):
     pass
 
 class google_folder(terrascript.Data):
@@ -133,9 +139,6 @@ class google_projects(terrascript.Data):
     pass
 
 class google_project_organization_policy(terrascript.Data):
-    pass
-
-class google_project_services(terrascript.Data):
     pass
 
 class google_service_account(terrascript.Data):
@@ -166,7 +169,7 @@ class google_tpu_tensorflow_versions(terrascript.Data):
 __all__ = [
     'google_active_folder',
     'google_billing_account',
-    'google_dns_managed_zone',
+    'google_bigquery_default_service_account',
     'google_client_config',
     'google_client_openid_userinfo',
     'google_cloudfunctions_function',
@@ -175,9 +178,9 @@ __all__ = [
     'google_compute_backend_service',
     'google_compute_default_service_account',
     'google_compute_forwarding_rule',
+    'google_compute_global_address',
     'google_compute_image',
     'google_compute_instance',
-    'google_compute_global_address',
     'google_compute_instance_group',
     'google_compute_lb_ip_ranges',
     'google_compute_network',
@@ -185,22 +188,24 @@ __all__ = [
     'google_compute_node_types',
     'google_compute_regions',
     'google_compute_region_instance_group',
-    'google_compute_subnetwork',
-    'google_compute_zones',
-    'google_compute_vpn_gateway',
-    'google_compute_ssl_policy',
+    'google_compute_router',
     'google_compute_ssl_certificate',
+    'google_compute_ssl_policy',
+    'google_compute_subnetwork',
+    'google_compute_vpn_gateway',
+    'google_compute_zones',
     'google_container_cluster',
     'google_container_engine_versions',
-    'google_container_registry_repository',
     'google_container_registry_image',
+    'google_container_registry_repository',
+    'google_dns_managed_zone',
     'google_iam_policy',
     'google_iam_role',
-    'google_kms_secret',
-    'google_kms_secret_ciphertext',
-    'google_kms_key_ring',
     'google_kms_crypto_key',
     'google_kms_crypto_key_version',
+    'google_kms_key_ring',
+    'google_kms_secret',
+    'google_kms_secret_ciphertext',
     'google_folder',
     'google_folder_organization_policy',
     'google_netblock_ip_ranges',
@@ -208,7 +213,6 @@ __all__ = [
     'google_project',
     'google_projects',
     'google_project_organization_policy',
-    'google_project_services',
     'google_service_account',
     'google_service_account_access_token',
     'google_service_account_key',

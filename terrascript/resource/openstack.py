@@ -45,6 +45,9 @@ class openstack_compute_secgroup_v2(terrascript.Resource):
 class openstack_compute_servergroup_v2(terrascript.Resource):
     pass
 
+class openstack_compute_quotaset_v2(terrascript.Resource):
+    pass
+
 class openstack_compute_floatingip_v2(terrascript.Resource):
     pass
 
@@ -111,6 +114,12 @@ class openstack_identity_application_credential_v3(terrascript.Resource):
 class openstack_images_image_v2(terrascript.Resource):
     pass
 
+class openstack_images_image_access_v2(terrascript.Resource):
+    pass
+
+class openstack_images_image_access_accept_v2(terrascript.Resource):
+    pass
+
 class openstack_lb_member_v1(terrascript.Resource):
     pass
 
@@ -174,6 +183,9 @@ class openstack_networking_qos_minimum_bandwidth_rule_v2(terrascript.Resource):
 class openstack_networking_qos_policy_v2(terrascript.Resource):
     pass
 
+class openstack_networking_quota_v2(terrascript.Resource):
+    pass
+
 class openstack_networking_router_v2(terrascript.Resource):
     pass
 
@@ -211,6 +223,9 @@ class openstack_objectstorage_object_v1(terrascript.Resource):
     pass
 
 class openstack_objectstorage_tempurl_v1(terrascript.Resource):
+    pass
+
+class openstack_orchestration_stack_v1(terrascript.Resource):
     pass
 
 class openstack_vpnaas_ipsec_policy_v2(terrascript.Resource):
@@ -262,6 +277,7 @@ __all__ = [
     'openstack_compute_keypair_v2',
     'openstack_compute_secgroup_v2',
     'openstack_compute_servergroup_v2',
+    'openstack_compute_quotaset_v2',
     'openstack_compute_floatingip_v2',
     'openstack_compute_floatingip_associate_v2',
     'openstack_compute_volume_attach_v2',
@@ -284,6 +300,8 @@ __all__ = [
     'openstack_identity_user_v3',
     'openstack_identity_application_credential_v3',
     'openstack_images_image_v2',
+    'openstack_images_image_access_v2',
+    'openstack_images_image_access_accept_v2',
     'openstack_lb_member_v1',
     'openstack_lb_monitor_v1',
     'openstack_lb_pool_v1',
@@ -305,6 +323,7 @@ __all__ = [
     'openstack_networking_qos_dscp_marking_rule_v2',
     'openstack_networking_qos_minimum_bandwidth_rule_v2',
     'openstack_networking_qos_policy_v2',
+    'openstack_networking_quota_v2',
     'openstack_networking_router_v2',
     'openstack_networking_router_interface_v2',
     'openstack_networking_router_route_v2',
@@ -318,6 +337,7 @@ __all__ = [
     'openstack_objectstorage_container_v1',
     'openstack_objectstorage_object_v1',
     'openstack_objectstorage_tempurl_v1',
+    'openstack_orchestration_stack_v1',
     'openstack_vpnaas_ipsec_policy_v2',
     'openstack_vpnaas_service_v2',
     'openstack_vpnaas_ike_policy_v2',

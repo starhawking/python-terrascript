@@ -99,6 +99,12 @@ class vsphere_vmfs_datastore(terrascript.Resource):
 class vsphere_virtual_machine_snapshot(terrascript.Resource):
     pass
 
+class vsphere_host(terrascript.Resource):
+    pass
+
+class vsphere_vnic(terrascript.Resource):
+    pass
+
 
 __all__ = [
     'vsphere_compute_cluster',
@@ -133,4 +139,6 @@ __all__ = [
     'vsphere_vapp_entity',
     'vsphere_vmfs_datastore',
     'vsphere_virtual_machine_snapshot',
+    'vsphere_host',
+    'vsphere_vnic',
 ]

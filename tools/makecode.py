@@ -12,6 +12,9 @@
 
    Changelog:
 
+   2020-01-03 - Renamed `PROVIDERS` to `providers.yml` to accomodate
+                custom repository paths to community providers.
+
    2019-09-07 - Added creation of new module layout and prefixed existing
                 code with 'legacy_'.
                 Removed option to execute script with a list of providers
@@ -31,6 +34,7 @@
 
 DEBUG = False
 CONCURRENCY = 10
+INPUT = 'providers.yml'
 
 import os
 import os.path
@@ -43,6 +47,7 @@ import concurrent.futures
 import jinja2
 import logging
 import threading
+import yaml
 
 
 if DEBUG:
@@ -212,13 +217,15 @@ def create_datasources(provider, modulesdir, datasources):
         fp.write(DATASOURCES_TEMPLATE.render(provider=provider, datasources=datasources))
 
 
-def process(provider, modulesdir):
+def process(entry, modulesdir):
 
-    print(provider)
+    provider = entry['name']
+    repository = entry.get('repository', 'https://github.com/terraform-providers/terraform-provider-{}'.format(provider))
+    logging.info(provider)
 
     with tempfile.TemporaryDirectory() as tmpdir:
 
-        cmd = 'git clone --depth=1 https://github.com/terraform-providers/terraform-provider-{} .'.format(provider)
+        cmd = 'git clone --depth=1 {} .'.format(repository)
         result = subprocess.run(shlex.split(cmd), stdout=subprocess.PIPE, stderr=subprocess.STDOUT, cwd=tmpdir)
         if result.returncode != 0:
             print(result.stdout)
@@ -271,20 +278,27 @@ def main():
 
     try:
         os.stat(os.path.join(thisdir, sys.argv[0]))
-        os.stat(os.path.join(thisdir, 'PROVIDERS'))
+        os.stat(os.path.join(thisdir, INPUT))
     except FileNotFoundError:
         print('Script must be run from the tools/ folder', file=sys.stderr)
         sys.exit(1)
 
 
-    providers = [line.strip() for line in open('PROVIDERS', 'rt').readlines() if line]
+    with open(INPUT, 'rt') as fp:
+        entries = yaml.load(fp, Loader=yaml.SafeLoader)
+        # entries is now a list of dictionaries: [{'name': NAME, 'repository': URL}, ...]
+
     with concurrent.futures.ThreadPoolExecutor(max_workers=CONCURRENCY) as executor:
-        futures = [executor.submit(process, provider, modulesdir) for provider in providers]
-        concurrent.futures.as_completed(futures)
+        futures = [executor.submit(process, entry, modulesdir) for entry in entries]
+        for future in concurrent.futures.as_completed(futures):
+            exc = future.exception()
+            if exc:
+                raise ex
         
     
     # Create the __ini__.py files for providers, datasources and resources.
     #
+    providers = [entry['name'] for entry in entries]
     with open(os.path.join(modulesdir, 'provider', '__init__.py'), 'wt') as fp:
         fp.write(INIT_TEMPLATE.render(providers=providers))
         

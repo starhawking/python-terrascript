@@ -15,10 +15,16 @@ class newrelic_alert_policy_channel(terrascript.Resource):
 class newrelic_alert_policy(terrascript.Resource):
     pass
 
+class newrelic_plugins_alert_condition(terrascript.Resource):
+    pass
+
 class newrelic_dashboard(terrascript.Resource):
     pass
 
 class newrelic_infra_alert_condition(terrascript.Resource):
+    pass
+
+class newrelic_insights_event(terrascript.Resource):
     pass
 
 class newrelic_nrql_alert_condition(terrascript.Resource):

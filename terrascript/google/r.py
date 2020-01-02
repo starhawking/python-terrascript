@@ -21,6 +21,9 @@ class google_app_engine_firewall_rule(terrascript.Resource):
 class google_app_engine_standard_app_version(terrascript.Resource):
     pass
 
+class google_app_engine_application_url_dispatch_rules(terrascript.Resource):
+    pass
+
 class google_bigquery_dataset(terrascript.Resource):
     pass
 
@@ -39,7 +42,16 @@ class google_binary_authorization_policy(terrascript.Resource):
 class google_cloudbuild_trigger(terrascript.Resource):
     pass
 
+class google_cloud_run_domain_mapping(terrascript.Resource):
+    pass
+
+class google_cloud_run_service(terrascript.Resource):
+    pass
+
 class google_cloud_scheduler_job(terrascript.Resource):
+    pass
+
+class google_cloud_tasks_queue(terrascript.Resource):
     pass
 
 class google_compute_address(terrascript.Resource):
@@ -61,6 +73,9 @@ class google_compute_region_backend_service(terrascript.Resource):
     pass
 
 class google_compute_backend_service_signed_url_key(terrascript.Resource):
+    pass
+
+class google_compute_disk_resource_policy_attachment(terrascript.Resource):
     pass
 
 class google_compute_disk(terrascript.Resource):
@@ -114,16 +129,31 @@ class google_compute_region_autoscaler(terrascript.Resource):
 class google_compute_region_disk(terrascript.Resource):
     pass
 
+class google_compute_region_health_check(terrascript.Resource):
+    pass
+
+class google_compute_resource_policy(terrascript.Resource):
+    pass
+
 class google_compute_route(terrascript.Resource):
     pass
 
 class google_compute_router(terrascript.Resource):
     pass
 
+class google_compute_router_nat(terrascript.Resource):
+    pass
+
+class google_compute_router_peer(terrascript.Resource):
+    pass
+
 class google_compute_snapshot(terrascript.Resource):
     pass
 
 class google_compute_ssl_certificate(terrascript.Resource):
+    pass
+
+class google_compute_reservation(terrascript.Resource):
     pass
 
 class google_compute_ssl_policy(terrascript.Resource):
@@ -156,6 +186,15 @@ class google_compute_url_map(terrascript.Resource):
 class google_compute_vpn_tunnel(terrascript.Resource):
     pass
 
+class google_container_analysis_note(terrascript.Resource):
+    pass
+
+class google_dataproc_autoscaling_policy(terrascript.Resource):
+    pass
+
+class google_deployment_manager_deployment(terrascript.Resource):
+    pass
+
 class google_dns_managed_zone(terrascript.Resource):
     pass
 
@@ -163,6 +202,27 @@ class google_filestore_instance(terrascript.Resource):
     pass
 
 class google_firestore_index(terrascript.Resource):
+    pass
+
+class google_identity_platform_default_supported_idp_config(terrascript.Resource):
+    pass
+
+class google_identity_platform_tenant_default_supported_idp_config(terrascript.Resource):
+    pass
+
+class google_identity_platform_inbound_saml_config(terrascript.Resource):
+    pass
+
+class google_identity_platform_tenant_inbound_saml_config(terrascript.Resource):
+    pass
+
+class google_identity_platform_oauth_idp_config(terrascript.Resource):
+    pass
+
+class google_identity_platform_tenant_oauth_idp_config(terrascript.Resource):
+    pass
+
+class google_identity_platform_tenant(terrascript.Resource):
     pass
 
 class google_kms_key_ring(terrascript.Resource):
@@ -216,6 +276,9 @@ class google_spanner_database(terrascript.Resource):
 class google_sql_database(terrascript.Resource):
     pass
 
+class google_storage_bucket_access_control(terrascript.Resource):
+    pass
+
 class google_storage_object_access_control(terrascript.Resource):
     pass
 
@@ -229,6 +292,9 @@ class google_app_engine_application(terrascript.Resource):
     pass
 
 class google_bigquery_table(terrascript.Resource):
+    pass
+
+class google_bigtable_gc_policy(terrascript.Resource):
     pass
 
 class google_bigtable_instance(terrascript.Resource):
@@ -280,12 +346,6 @@ class google_compute_region_instance_group_manager(terrascript.Resource):
     pass
 
 class google_compute_router_interface(terrascript.Resource):
-    pass
-
-class google_compute_router_nat(terrascript.Resource):
-    pass
-
-class google_compute_router_peer(terrascript.Resource):
     pass
 
 class google_compute_security_policy(terrascript.Resource):
@@ -373,9 +433,6 @@ class google_project_organization_policy(terrascript.Resource):
     pass
 
 class google_project_usage_export_bucket(terrascript.Resource):
-    pass
-
-class google_project_services(terrascript.Resource):
     pass
 
 class google_runtimeconfig_config(terrascript.Resource):

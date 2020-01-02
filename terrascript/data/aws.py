@@ -195,6 +195,9 @@ class aws_elb_service_account(terrascript.Data):
 class aws_glue_script(terrascript.Data):
     pass
 
+class aws_guardduty_detector(terrascript.Data):
+    pass
+
 class aws_iam_account_alias(terrascript.Data):
     pass
 
@@ -294,6 +297,9 @@ class aws_network_interfaces(terrascript.Data):
 class aws_organizations_organization(terrascript.Data):
     pass
 
+class aws_organizations_organizational_units(terrascript.Data):
+    pass
+
 class aws_partition(terrascript.Data):
     pass
 
@@ -301,6 +307,9 @@ class aws_prefix_list(terrascript.Data):
     pass
 
 class aws_pricing_product(terrascript.Data):
+    pass
+
+class aws_qldb_ledger(terrascript.Data):
     pass
 
 class aws_ram_resource_share(terrascript.Data):
@@ -417,6 +426,9 @@ class aws_waf_ipset(terrascript.Data):
 class aws_waf_rule(terrascript.Data):
     pass
 
+class aws_waf_rate_based_rule(terrascript.Data):
+    pass
+
 class aws_waf_web_acl(terrascript.Data):
     pass
 
@@ -424,6 +436,9 @@ class aws_wafregional_ipset(terrascript.Data):
     pass
 
 class aws_wafregional_rule(terrascript.Data):
+    pass
+
+class aws_wafregional_rate_based_rule(terrascript.Data):
     pass
 
 class aws_wafregional_web_acl(terrascript.Data):
@@ -516,6 +531,7 @@ __all__ = [
     'aws_elb_hosted_zone_id',
     'aws_elb_service_account',
     'aws_glue_script',
+    'aws_guardduty_detector',
     'aws_iam_account_alias',
     'aws_iam_group',
     'aws_iam_instance_profile',
@@ -549,9 +565,11 @@ __all__ = [
     'aws_network_interface',
     'aws_network_interfaces',
     'aws_organizations_organization',
+    'aws_organizations_organizational_units',
     'aws_partition',
     'aws_prefix_list',
     'aws_pricing_product',
+    'aws_qldb_ledger',
     'aws_ram_resource_share',
     'aws_rds_cluster',
     'aws_redshift_cluster',
@@ -590,9 +608,11 @@ __all__ = [
     'aws_vpn_gateway',
     'aws_waf_ipset',
     'aws_waf_rule',
+    'aws_waf_rate_based_rule',
     'aws_waf_web_acl',
     'aws_wafregional_ipset',
     'aws_wafregional_rule',
+    'aws_wafregional_rate_based_rule',
     'aws_wafregional_web_acl',
     'aws_workspaces_bundle',
     'aws_lb',

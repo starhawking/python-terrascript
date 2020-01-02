@@ -12,6 +12,12 @@ class openstack_blockstorage_snapshot_v2(terrascript.Data):
 class openstack_blockstorage_snapshot_v3(terrascript.Data):
     pass
 
+class openstack_blockstorage_volume_v2(terrascript.Data):
+    pass
+
+class openstack_blockstorage_volume_v3(terrascript.Data):
+    pass
+
 class openstack_compute_availability_zones_v2(terrascript.Data):
     pass
 
@@ -122,6 +128,8 @@ __all__ = [
     'openstack_blockstorage_availability_zones_v3',
     'openstack_blockstorage_snapshot_v2',
     'openstack_blockstorage_snapshot_v3',
+    'openstack_blockstorage_volume_v2',
+    'openstack_blockstorage_volume_v3',
     'openstack_compute_availability_zones_v2',
     'openstack_compute_flavor_v2',
     'openstack_compute_keypair_v2',
