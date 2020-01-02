@@ -126,7 +126,8 @@ class Block(dict):
                 return String('local.{}'.format(attr))
             elif isinstance(self, Provider):
                 return '+++provider+++'
-            
+
+
 class NamedBlock(Block):
     def __init__(self, name, **kwargs):
         self._name = name
@@ -165,7 +166,6 @@ class Terrascript(dict):
                 self[RESOURCE_KEY][block.__class__.__name__] = {}
             # self['resource'][RESOURCE][NAME] = {...}
             self[RESOURCE_KEY][block.__class__.__name__][block._name] = block
-            #self[RESOURCE_KEY][block.__class__.__name__].update(block)
         #
         # Data
         #
@@ -178,7 +178,6 @@ class Terrascript(dict):
                 self[DATA_KEY][block.__class__.__name__] = {}
             # self['data'][DATASOURCE][NAME] = {...}
             self[DATA_KEY][block.__class__.__name__][block._name] = block
-            #self[DATA_KEY][block.__class__.__name__].update(block)
         #
         # Module
         #
@@ -209,7 +208,6 @@ class Terrascript(dict):
                 self[VARIABLE_KEY] = Block()
             # self['variable'][NAME]
             self[VARIABLE_KEY][block._name] = block
-            #self[VARIABLE_KEY].update(block)
         #
         # Output
         #
@@ -259,10 +257,6 @@ class Resource(NamedBlock):
 class Data(NamedBlock):
     """Terraform data source block."""
     pass
-
-#     def __init__(self, name, **kwargs):
-#         super().__init__()
-#         self[name] = Block(**kwargs)
 
 
 class Provider(Block):
@@ -367,67 +361,77 @@ class Function(Block):
 # Lower case classes for backwards will be deprecated in the future(???)
 
 class module(Module):
-    def   init__(self, *args, **kwargs):
+    def init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
+
 
 class data(Data):
-    def   init__(self, *args, **kwargs):
+    def init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
+
 
 class resource(Resource):
-    def   init__(self, *args, **kwargs):
+    def init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
+
 
 class variable(Variable):
-    def   init__(self, *args, **kwargs):
+    def init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
+
 
 class provider(Provider):
-    def   init__(self, *args, **kwargs):
+    def init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
+
 
 class output(Output):
-    def   init__(self, *args, **kwargs):
+    def init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
+
 
 class provisioner(Provisioner):
-    def   init__(self, *args, **kwargs):
+    def init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
+
 
 class connection(Connection):
-    def   init__(self, *args, **kwargs):
+    def init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
+
 
 class backend(Backend):
-    def   init__(self, *args, **kwargs):
+    def init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
+
 
 class terraform(Terraform):
-    def   init__(self, *args, **kwargs):
+    def init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)
 
+
 class function(Function):
-    def   init__(self, *args, **kwargs):
+    def init__(self, *args, **kwargs):
         warnings.warn("'{}' will be deprecated in the future, please use '{}' instead".format(
             self.__class__.__name__, self.__class__.__name__.title()), PendingDeprecationWarning)
         super().__init__(*args, **kwargs)

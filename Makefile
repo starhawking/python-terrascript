@@ -1,7 +1,7 @@
 
 NOSE := nosetests --failed --verbose --no-byte-compile --logging-level=DEBUG --detailed-errors
-
 COVERAGE := $(NOSE) --with-coverage --cover-package=terrascript --cover-erase --cover-branches --cover-html
+FLAKE8 := python3 -m flake8
 
 TESTS := $(wildcard tests/test_*.py)
 
@@ -20,6 +20,9 @@ test:
 
 coverage:
 	$(COVERAGE) $(TESTS)
+
+flake8:
+	$(FLAKE8) terrascript/__init__.py #$(TESTS)
 
 debug:
 	$(NOSE) --pdb $(TESTS)
