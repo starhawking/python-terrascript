@@ -177,10 +177,13 @@ class Terrascript(dict):
         # Provider
         #
         elif isinstance(object, Provider):
+            # self['provider']
             if PROVIDER_KEY not in self:
                 self[PROVIDER_KEY] = {}
+            # self['provider'][PROVIDER]
             if object.__class__.__name__ not in self[PROVIDER_KEY]:
                 self[PROVIDER_KEY][object.__class__.__name__] = []
+            # self['provider']['asw'] = [{...}, ...]
             self[PROVIDER_KEY][object.__class__.__name__].append(object)
         #
         # Variable

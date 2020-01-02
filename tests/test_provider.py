@@ -12,9 +12,9 @@ class TestProvider(object):
         assert p1['region'] == 'us-west-1'
 
         self.cfg += p1
-        assert len(self.cfg['provider']) == 1
-        assert self.cfg['provider'][0]['alias'] == 'aws1'
-        assert self.cfg['provider'][0]['region'] == 'us-west-1'
+        assert len(self.cfg['provider']['aws']) == 1
+        assert self.cfg['provider']['aws'][0]['alias'] == 'aws1'
+        assert self.cfg['provider']['aws'][0]['region'] == 'us-west-1'
 
     def test_two_providers(self):
         p1 = terrascript.provider.aws(alias='aws1', region='us-west-1')
@@ -27,12 +27,25 @@ class TestProvider(object):
 
         self.cfg += p1
         self.cfg += p2
-        assert len(self.cfg['provider']) == 2
-        assert self.cfg['provider'][0]['alias'] == 'aws1'
-        assert self.cfg['provider'][0]['region'] == 'us-west-1'
-        assert self.cfg['provider'][1]['alias'] == 'aws2'
-        assert self.cfg['provider'][1]['region'] == 'us-west-2'
-
-def test_duplicate_providers(self):
-    # Ensure that duplicate providers are only added once.
-    pass
+        assert len(self.cfg['provider']['aws']) == 2
+        assert self.cfg['provider']['aws'][0]['alias'] == 'aws1'
+        assert self.cfg['provider']['aws'][0]['region'] == 'us-west-1'
+        assert self.cfg['provider']['aws'][1]['alias'] == 'aws2'
+        assert self.cfg['provider']['aws'][1]['region'] == 'us-west-2'
+        
+    def test_example1(self):
+        # https://www.terraform.io/docs/providers/aws/index.html
+        
+        p = terrascript.provider.aws(
+                version="~> 2.0",
+                region="region",
+                access_key="access_key",
+                secret_key="my-secret-key"
+            )
+        
+        self.cfg += p
+        
+        assert self.cfg['provider']['aws'][0]['version'] == "~> 2.0"
+        assert self.cfg['provider']['aws'][0]['region'] == "region"
+        assert self.cfg['provider']['aws'][0]['access_key'] == "access_key"
+        assert self.cfg['provider']['aws'][0]['secret_key'] == "my-secret-key"
