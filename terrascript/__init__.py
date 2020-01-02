@@ -309,4 +309,28 @@ class Output(TopLevelBlock):
         terrascript['output'][self._labels[0]] = self
 
 
-__all__ = ['Block', 'Terrascript', 'Resource', 'Provider', 'Terraform', 'Data', 'Output']
+class Locals(ReferenceMixin, TopLevelBlock):
+    """Class for locals.
+
+    https://www.terraform.io/docs/configuration/syntax-json.html#locals-blocks
+    """
+
+    def __init__(self, **values):
+        super().__init__('locals', **values)
+
+    def add_to_terrascript(self, terrascript):
+        """
+        {
+            "locals": {
+                "greeting": "Hello, ${var.name}"
+            }
+        }
+        """
+        terrascript['locals'].update(self)
+
+    @property
+    def ref_list(self):
+        return ['locals']
+
+
+__all__ = ['Block', 'Terrascript', 'Resource', 'Provider', 'Terraform', 'Data', 'Output', 'Locals']
