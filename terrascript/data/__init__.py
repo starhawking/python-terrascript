@@ -1,4 +1,6 @@
 
+
+from .terraform import *
 from .alicloud import *
 from .archive import *
 from .arukas import *
