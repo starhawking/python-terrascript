@@ -29,6 +29,7 @@ VARIABLE_KEY = 'variable'
 OUTPUT_KEY = 'output'
 LOCALS_KEY = 'locals'
 DATA_KEY = 'data'
+TERRAFORM_KEY = 'terraform'
 
 
 class String(str):
@@ -227,9 +228,10 @@ class Terrascript(dict):
             # self['locals'][NAME]
             self[LOCALS_KEY][block._name] = block
         #
-        # Input
+        # Terraform
         #
-        # TODO: Input
+        elif isinstance(block, Terraform):
+            self[TERRAFORM_KEY] = block
         #
         # else
         #
@@ -320,7 +322,7 @@ class Connection(Block):
     pass
 
 
-class Backend(Block):
+class Backend(NamedBlock):
     pass
 
 

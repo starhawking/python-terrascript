@@ -14,6 +14,7 @@
 
    2020-01-03 - Renamed `PROVIDERS` to `providers.yml` to accomodate
                 custom repository paths to community providers.
+                Add inclusion of `data/terraform.py`.
 
    2019-09-07 - Added creation of new module layout and prefixed existing
                 code with 'legacy_'.
@@ -155,6 +156,7 @@ __all__ = [
 
 INIT_TEMPLATE = jinja2.Template("""
 
+from .terraform import *
 {%- for provider in providers %}
 from .{{ provider }} import *
 {%- endfor %}
