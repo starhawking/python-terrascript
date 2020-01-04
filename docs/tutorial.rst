@@ -8,82 +8,40 @@ Since release 0.8.0 all Terrascript classes are available by importing
 just four modules.
 
 .. code-block:: python
-   :linenos:
 
     import terrascript
     import terrascript.provider
     import terrascript.resource
     import terrascript.data
 
-.. note:: The old layout, e.g. ```import terarscript.aws.r``` is still available
+.. note:: The old layout, e.g. ``import terarscript.aws.r`` is still available
           for backward compatibility but it's use is discouraged. 
 
 Provider
 ~~~~~~~~
 
-Providers_ can be found in the ```terrascript.provider``` module, with one class
+Providers_ can be found in the ``terrascript.provider`` module, with one class
 for each provider. Terrascript supports most Terraform providers. The full list 
 can be found in the :doc:`appendices.
 
-.. code-block:: python
-   :linenos:
-
-    import terrascript
-    import terrascript.provider
-
-    config = terrascript.Terrascript()
-
-    # Amazon Web Service with aliases
-    config += terrascript.provider.aws(alias="east", region="us-east-1")
-    config += terrascript.provider.aws(alias="west", region="us-west-1")
+.. literalinclude:: examples/tutorial_provider1.py
+   :language: python
 
 .. _Providers: https://www.terraform.io/docs/providers/index.html
 
 Resource
 ~~~~~~~~
 
-Resources can be found in the ```terrascript.resource``` module. The example below shows
+Resources can be found in the ``terrascript.resource`` module. The example below shows
 the original HCL syntax for creating an AWS S3 bucket and the equivalent Python code. 
 
-.. code-block:: none
-   :linenos:
+.. literalinclude:: examples/tutorial_resource1.tf
 
-    provider "aws" {
-      region     = "us-east-1"
-    }
-
-    resource "aws_s3_bucket" "mybucket" {
-        bucket = "mybucket"
-        acl    = "private"
-        tags = {
-            Name        = "My bucket"
-            Environment = "Dev"
-        }
-    }
-
-And here is the same as a Python script. The first argument to ``terrascript.resource.aws_s3_bucket()```
+And here is the same as a Python script. The first argument to ``terrascript.resource.aws_s3_bucket()``
 is the Terraform label under which it can be referenced later. Note how the ```tags``` is a dictionary
 as in the HCL syntax.
 
-.. code-block:: python
-   :linenos:
-
-    import terrascript
-    import terrascript.provider
-    import terrascript.resource
-
-    config = terrascript.Terrascript()
-
-    # AWS provider
-    config += terrascript.provider.aws(region="us-east-1")
-
-    # Add an AWS S3 bucket resource
-    config += terrascript.resource.aws_s3_bucket("mybucket", bucket="mybucket",
-                                                 acl="private",
-                                                 tags={
-                                                     "Name": "My bucket",
-                                                     "Environment": "Dev"
-                                                 })
+.. literalinclude:: examples/tutorial_resource1.py
 
 Data Source
 ~~~~~~~~~~~
