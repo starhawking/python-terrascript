@@ -133,6 +133,8 @@ Links
 
 * Documentation_ for Python-Terrascript.
 * Github_ page of Python-Terrascript.
+* `Terraform JSON`_ syntax.
 
 .. _Documentation: https://python-terrascript.readthedocs.io/en/index.html
 .. _Github: https://github.com/mjuenema/python-terrascript
+.. _`Terraform JSON`: https://www.terraform.io/docs/configuration/syntax-json.html

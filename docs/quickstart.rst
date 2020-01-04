@@ -24,19 +24,21 @@ specific modules for the provider and resources like ``aws_instance``.
 .. code-block:: python
 
    import terrascript
-   import terrascript.aws
-   import terrascript.aws.r
+   import terrascript.provider
+   import terrascript.resource
     
    
-The ``terrascript.Config`` class is the top-level container
-for configurations. The provider and resource objects are then simply added 
-to the configuration. Their names are the same as in the HCL language.
+The ``terrascript.Terrascript`` class is the top-level 'container'
+for configurations. Provider, resource, data sources and other blocks 
+are then added (```+=``` or ```terrascript.Terrascript.add(...)```)
+later.
 
 .. code-block:: python
     
-   config = terrascript.Config()
-   config += terrascript.aws.aws(profile='default', region="us-east-1")
-   config += terrascript.aws.r.aws_instance('example', ami='ami-2757f631', instance_type='t2.micro')
+   config = terrascript.Terrascript()
+   config += terrascript.provider.aws(profile='default', region="us-east-1")
+   config += terrascript.resource.aws_instance('example', ami='ami-2757f631', 
+                                            instance_type='t2.micro')
                                 
 The content of ``config`` is actually just a Python dictionary with some 
 additional smarts.

@@ -13,18 +13,10 @@ Python-Terrascript
    introduction
    installation
    quickstart
-   provider
-   resource
-   data
-   input
-   output
-   local
-   module
-   connection
-   backend
-   terraform
+   tutorial
    examples
    appendix
+   list_of_providers
    json
    todo
 

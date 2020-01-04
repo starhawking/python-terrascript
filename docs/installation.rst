@@ -1,14 +1,8 @@
 Installing Terrascript
 ----------------------
 
-.. todo:: Create Terrascript 0.7.0 release.
-
 Terarscript is available from the Python Package Repository PyPi_ or
-alternatively from its Github_.
-
-As Terraform introduced major changes in their 0.12 release there are 
-currently different versions of Terrascript for 0.11.x and 0.12.x 
-releases of Terraform. 
+alternatively from its Github_ repository.
 
 .. _PyPi: https://pypi.org/project/terrascript/#history
 .. _Github: https://github.com/mjuenema/python-terrascript
@@ -17,20 +11,11 @@ releases of Terraform.
 Installing Terrascript from PyPi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Terrascript versions 0.6.x support Terraform 0.11.x.
+It is easiest to install Terrascript directly from the Python Package Index.
 
 .. code-block:: console
 
-   $ pip install terrascript==0.6.1
-   
-Terrascript versions 0.7.x support Terraform 0.12.x.
-
-.. note:: Terrascript 0.7.0 has not been released yet.
-
-.. code-block:: console
-
-   $ pip install terrascript==0.7.0
-
+   $ pip install terrascript
 
 Installing Terrascript from Github
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,31 +24,23 @@ Terrascript can also be installed from its Github_ repository.
 
 .. code-block:: console
 
-   $ git clone git@github.com:mjuenema/python-terrascript.git
+   $ git clone https://github.com/mjuenema/python-terrascript.git
    $ cd python-terrascript/
    $ git fetch
    $ git fetch --tags
    
-Like the installation from PyPi_ one currently has to choose the right
-version to match Terraform 0.11.x or Terrform 0.12x.
-
-Terrascript versions 0.6.x support Terraform 0.11.x.
+The ``master`` branch should be identical to the version on PyPi.
 
 .. code-block:: console
 
-   $ git checkout 0.6.1
+   $ git checkout master
    $ python3 setup.py install
-   
-Terrascript versions 0.7.x support Terraform 0.12.x.
 
-.. note:: Terrascript 0.7.0 has not been released yet.
+The ``develop`` branch includes the latest changes but may not always
+in a stable state. Do not use the ``develop`` branch unless you want 
+to submit a merge request on github.
 
 .. code-block:: console
 
-   $ git checkout 0.7.0
+   $ git checkout develop
    $ python3 setup.py install
-   
-There are also separate ``develop-0.6`` and ``develop-0.7`` branches that
-include the latest code changes. And for completeness the ``develop`` branch
-currently contains work towards Terrascript 0.8.0. Check the ``README.md``
-file for more details. 
