@@ -81,11 +81,12 @@ variable into the correct Terraform JSON syntax.
 .. literalinclude:: examples/tutorial_variable1.tf
 
 .. literalinclude:: examples/tutorial_variable1.py
+   :emphasize-lines: 11,12,17
 
 In the output the reference to the ``image_id`` has been converted from a reference to a 
 Python variable ``ami=v`` to the correct Terraform JSON syntax of ``var.image_id``. 
 
-.. literalinclude:: examples/tutorial_variable/tutorial_variable1.tf.json
+.. literalinclude:: examples/tutorial_variable1/tutorial_variable1.tf.json
    :emphasize-lines: 18
 
 Output
