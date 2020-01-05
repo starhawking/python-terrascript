@@ -4,24 +4,19 @@
 ### Deprecated
 * Individual modules for each provider (Example: ``terrascript.aws.r``) are now deprecated in favour of
   single modules as added in release 0.8.0. 
+
 ## [0.8.0] - Not yet released
-Release 0.8.0 will be a major re-write of the code.
 ### Added
+* Aligned with Terraform 0.12 JSOn syntax. 
 * Providers, resources and data sources are now also accessible through single modules instead of 
   individual modules for each provider.
 * The module ``terrascript.providers`` contains **all** providers, e.g. ``terrascript.providers.google``.
 * The module ``terrascript.resources`` contains **all** resource, e.g. ``terrascript.resources.aws_instance``.
 * The module ``terrascript.datasources`` contains **all** resource, e.g. ``terrascript.datasources.alicloud_images``.
 * [Oracle Cloud Infrastructure Provider](https://www.terraform.io/docs/providers/oci/index.html) (issue #63)
-### Removed
-* Shortened names of classes for resources and data sources. For example, ``terrascript.aws.r.instance`` no longer
-  exists, and one must use ``terrascript.aws.r.aws_instance``.
-## [0.7.0] - Not yet released
-### Added
-* Support for Terraform 0.12 JSON syntax (issue #62).
-* Output block was missing (pull #76)
-### Removed
-* Support for all Terraform versions prior to release 0.12.
+
+## [0.7.0] - Skipped
+
 ## [0.6.1] - 2019-08-17
 ### Added
 * Locals resouce (pull #71)

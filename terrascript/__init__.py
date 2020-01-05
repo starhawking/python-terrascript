@@ -73,10 +73,11 @@ class Block(dict):
         #
         # Resource ->
         # Variable -> "var.name"
+        # TODO: Add others?
         #
         for k, v in kwargs.items():
             if isinstance(v, Variable):
-                kwargs[k] = 'var.{}'.format(v.name)
+                kwargs[k] = 'var.{}'.format(v._name)
 
         super().update(kwargs)
 
@@ -130,8 +131,8 @@ class Block(dict):
 
 
 class NamedBlock(Block):
-    def __init__(self, name, **kwargs):
-        self._name = name
+    def __init__(self, _name, **kwargs):
+        self._name = _name
         super().__init__(**kwargs)
 
 
@@ -301,20 +302,6 @@ class Output(NamedBlock):
 
 
 class Provisioner(Block):
-    """Provisioner block.
-
-            resource "aws_instance" "web" {
-                # ...
-
-                provisioner "local-exec" {
-                    command = "echo ${self.private_ip} > file.txt"
-                }
-            }
-
-       :param name: The name of the provisioner, e.g. ``file``, ``local-exec``, ``chef``.
-       :param **kwargs: The arguments are provisioner dependent.
-
-    """
     pass
 
 

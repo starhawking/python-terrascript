@@ -1,0 +1,36 @@
+{
+  "provider": {
+    "google": [
+      {
+        "credentials": "${file(\"account.json\")}",
+        "project": "myproject",
+        "region": "us-central1"
+      }
+    ]
+  },
+  "data": {
+    "google_compute_image": {
+      "image": {
+        "family": "debian-9"
+      }
+    }
+  },
+  "resource": {
+    "google_compute_instance": {
+      "myinstance": {
+        "name": "myinstance",
+        "machine_type": "n1-standard-1",
+        "zone": "us-central1-a",
+        "boot_disk": {
+          "initialize_params": {
+            "image": null
+          }
+        },
+        "network_interface": {
+          "network": "default",
+          "access_config": {}
+        }
+      }
+    }
+  }
+}

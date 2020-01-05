@@ -24,8 +24,15 @@ Providers_ can be found in the ``terrascript.provider`` module, with one class
 for each provider. Terrascript supports most Terraform providers. The full list 
 can be found in the :doc:`appendices.
 
+HCL:
+
+Python:
+
 .. literalinclude:: examples/tutorial_provider1.py
-   :language: python
+
+JSON:
+
+.. literalinclude:: examples/tutorial_provider1/tutorial_provider1.json
 
 .. _Providers: https://www.terraform.io/docs/providers/index.html
 
@@ -46,70 +53,14 @@ as in the HCL syntax.
 Data Source
 ~~~~~~~~~~~
 
-Data Sources are located in the ```terrascript.data``` module. The example creates a Google 
+Data Sources are located in the ``terrascript.data`` module. The example creates a Google 
 Compute Instance based on the Debian-9 image. First the Terrascript HCL syntax.
 
-.. code-block:: none
-   :linenos:
+.. literalinclude:: examples/tutorial_data1.tf
 
-    provider "google" {
-        credentials = "${file("account.json")}"
-        project     = "myproject"
-        region      = "us-central1"
-    }
+And the same as Python code. 
 
-    data "google_compute_image" "debian9" {
-        family  = "debian-9"
-        project = "debian-cloud"
-    }
-
-    resource "google_compute_instance" "myinstance" {
-        name         = "test"
-        machine_type = "n1-standard-1"
-        zone         = "us-central1-a"
-        boot_disk {
-            initialize_params {
-                image = data.google_compute_image.debian9.self_link
-            }
-        }
-        network_interface {
-            network = "default"
-            access_config {
-                // Ephemeral IP
-            }
-        }
-    }
-
-.. code-block:: python
-   :linenos:
-
-    import terrascript
-    import terrascript.provider
-    import terrascript.resource
-
-    config = terrascript.Terrascript()
-
-    # Google Cloud Compute provider
-    config += terrascript.provider.google(credentials='${file("account.json")}',
-                                          project='myproject', region='us-central1')
-
-    # Google Compute Image (Debian 9) data source
-    config += terrascript.data.google_compute_image("image", family="debian-9")
-
-    # Add Google Compute Instance resource
-    config += terrascript.resource.google_compute_instance("myinstance",
-                                                           name="myinstance",
-                                                           machine_type="n1-standard-1",
-                                                           zone="us-central1-a",
-                                                           boot_disk={
-                                                                "initialize_params": {
-                                                                    "image": "data.google_compute_image.image.self_link"
-                                                                }    
-                                                           },
-                                                           network_interface={
-                                                               "network": "default",
-                                                               "access_config": {}
-                                                           })
+.. literalinclude:: examples/tutorial_data1.py
 
 The example above is mostly a one-to-one adaptation of the HCL syntax. Let's make some changes
 to show how generating Terraform configurations through Python-Terrascript may help.
@@ -118,44 +69,24 @@ to show how generating Terraform configurations through Python-Terrascript may h
 * Reference an instance of the Python-Terrascript class ```terrascript.data.google_compute_image()```
   as the boot disk image (line X)
                                           
-
-.. code-block:: python
-   :linenos:
-
-    IMAGE_FAMILY = "debian-9"
-    MACHINE_TYPE = "n1-standard-1"
-
-    import terrascript
-    import terrascript.provider
-    import terrascript.resource
-
-    config = terrascript.Terrascript()
-
-        # Google Cloud Compute provider
-    config += terrascript.provider.google(credentials='${file("account.json")}",
-                                          project="myproject", region="us-central1")
-
-    # Google Compute Image (Debian 9) data source
-    image = terrascript.data.google_compute_image("image", family=IMAGE_FAMILY)
-    config += image
-
-    # Add Google Compute Instance resource
-    config += terrascript.resource.google_compute_instance("myinstance",
-                                                           name="myinstance",
-                                                           machine_type=MACHINE_TYPE,
-                                                           zone="us-central1-a",
-                                                           boot_disk={
-                                                                "initialize_params": {
-                                                                    "image": image.self_link
-                                                                }    
-                                                           },
-                                                           network_interface={
-                                                               "network": "default",
-                                                               "access_config": {}
-                                                           })
+.. literalinclude:: examples/tutorial_data2.py
 
 Variable
 ~~~~~~~~
+
+The ``terrascript.Variable`` class can be used to define variables that can be referenced
+later. Python-Terrascript automatically takes care of converting a reference to a Python
+variable into the correct Terraform JSON syntax.
+
+.. literalinclude:: examples/tutorial_variable1.tf
+
+.. literalinclude:: examples/tutorial_variable1.py
+
+In the output the reference to the ``image_id`` has been converted from a reference to a 
+Python variable ``ami=v`` to the correct Terraform JSON syntax of ``var.image_id``. 
+
+.. literalinclude:: examples/tutorial_variable/tutorial_variable1.tf.json
+   :emphasize-lines: 18
 
 Output
 ~~~~~~
