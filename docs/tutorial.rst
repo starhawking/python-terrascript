@@ -110,7 +110,7 @@ Python variable ``ami=v`` to the correct Terraform JSON syntax of ``var.image_id
 Output
 ~~~~~~
 
-Output is implemented as the class ``terrascript.Output``. 
+Output is implemented as the ``terrascript.Output`` class. 
 
 **HCL**
 
@@ -122,12 +122,13 @@ Output is implemented as the class ``terrascript.Output``.
 
 **JSON**
 
-.. literalinclude:: examples/tutorial_variable1/tutorial_output1.tf.json
+.. literalinclude:: examples/tutorial_output1/tutorial_output1.tf.json
    :emphasize-lines: 18
-
 
 Module
 ~~~~~~
+
+Calls to Terraform modules are implemented through the ``terrascript.Module`` class. 
 
 Terraform
 ~~~~~~~~~
