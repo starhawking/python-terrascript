@@ -15,3 +15,15 @@ class TestDatasource(object):
         
         self.cfg += d
         assert self.cfg['data']['aws_eip']['external_ip']['public_ip'] == "1.2.3.4"
+
+    def test_datasource_attributes(self):
+        d = terrascript.data.aws_eip('external_ip', public_ip="1.2.3.4")
+        assert d.public_ip == "1.2.3.4"
+
+        assert isinstance(d.unknown, terrascript.Attribute)
+        assert isinstance(d.unknown.unknown, terrascript.Attribute)
+
+        assert d.unknown == 'data.aws_eip.external_ip.unknown'
+        assert d.unknown.unknown == 'data.aws_eip.external_ip.unknown.unknown'
+
+      

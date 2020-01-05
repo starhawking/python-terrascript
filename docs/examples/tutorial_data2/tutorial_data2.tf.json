@@ -23,7 +23,7 @@
         "zone": "us-central1-a",
         "boot_disk": {
           "initialize_params": {
-            "image": null
+            "image": "data.google_compute_image.image.self_link"
           }
         },
         "network_interface": {

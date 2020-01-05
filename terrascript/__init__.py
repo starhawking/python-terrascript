@@ -32,14 +32,14 @@ DATA_KEY = 'data'
 TERRAFORM_KEY = 'terraform'
 
 
-class String(str):
-    """A `String` handles access to not yet known attributes.
+class Attribute(str):
+    """An `Attribute` handles access to not yet known attributes.
 
        This called by `Block.__getattr__` to deal with
 
        In the example below the ``aws_instance`` does not have attributes
        ``.server`` and in turn ``.server.private_ip``. To prevent Python
-       from raising an `AttributeError` the `String.__getattr__()` method
+       from raising an `AttributeError` the `Attribute.__getattr__()` method
        creates a new string by appending the attribute name.
 
        Python:
@@ -57,7 +57,7 @@ class String(str):
     """
 
     def __getattr__(self, name):
-        return String('{}.{}'.format(self, name))
+        return Attribute('{}.{}'.format(self, name))
 
 
 class Block(dict):
@@ -102,32 +102,21 @@ class Block(dict):
 
         """
 
-        # The ``Block.name`` attribute gets special treatment. Some blocks have
-        # names, which are the sole top-level key of the dictionary.
-        #
-        # Resources: {'resource_name': { ... }  ==> 'resource_name'
-        # Provider: {'project': 'myproject', region: 'us_central1'} ==> AttributeError.
-        #
-#         if attr == 'name':
-#             keys = list(self.keys())
-#             if len(keys) > 1:
-#                 raise AttributeError('{} has no name'.format(self.__class__.__name__))
-#             else:
-#                 return keys[0]
-
         # Try to return the entry in the dictionary. Otherwise return a string
         # which must be formatted differently depending on what is referenced.
         #
-        try:
-            raise KeyError  # TODO: what is this raise KeyError doing here?
+        if attr in self:
             return self[attr]
-        except KeyError:
+        else:
             if isinstance(self, Resource):
-                return String('{}.{}.{}'.format(self.__class__.__name__, self.name, attr))
+                return Attribute('{}.{}.{}'.format(self.__class__.__name__, self._name, attr))
             elif isinstance(self, Locals):
-                return String('local.{}'.format(attr))
-            elif isinstance(self, Provider):
-                return '+++provider+++'
+                return Attribute('local.{}'.format(attr))
+            elif isinstance(self, Data):
+                # data.google_compute_image.NAME.ATTR
+                return Attribute('data.{}.{}.{}'.format(self.__class__.__name__, self._name, attr))
+            else:
+                raise AttributeError(attr)
 
 
 class NamedBlock(Block):
@@ -139,7 +128,7 @@ class NamedBlock(Block):
 class Terrascript(dict):
     """Top-level container for Terraform configurations.
 
-       :param *args: Optional list of Terrascript data sources, resources,
+       :param *objects: Optional list of Terrascript data sources, resources,
 
     """
 

@@ -27,3 +27,14 @@ class TestResource(object):
         self.cfg += r2
         assert self.cfg['resource']['aws_instance']['instance1']['instance_type'] == "t2.micro"
         assert self.cfg['resource']['aws_instance']['instance2']['instance_type'] == "t2.small"
+
+    def test_resource_attributes(self):
+        r = terrascript.resource.aws_instance('instance1', instance_type="t2.micro") 
+
+        assert r.instance_type == "t2.micro"
+
+        assert isinstance(r.unknown, terrascript.Attribute)
+        assert isinstance(r.unknown.unknown, terrascript.Attribute)
+
+        assert r.unknown == 'aws_instance.instance1.unknown'
+        assert r.unknown.unknown == 'aws_instance.instance1.unknown.unknown'

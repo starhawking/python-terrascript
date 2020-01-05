@@ -74,12 +74,14 @@ And the same as Python code.
 
 The example above is mostly a one-to-one adaptation of the HCL syntax. Let's make some changes
 to show how generating Terraform configurations through Python-Terrascript may help.
+
 * Define the Google Compute Image family and Google Compute Instance machine type at the beginning 
-  of the script so they are easier to change (lines X,X,X and X).
+  of the script so they are easier to change.
 * Reference an instance of the Python-Terrascript class ``terrascript.data.google_compute_image()``
-  as the boot disk image (line X)
+  as the boot disk image.
                                           
 .. literalinclude:: examples/tutorial_data2.py
+   :emphasize-lines: 1,2,16,22,26
 
 Variable
 ~~~~~~~~
@@ -88,10 +90,16 @@ The ``terrascript.Variable`` class can be used to define variables that can be r
 later. Python-Terrascript automatically takes care of converting a reference to a Python
 variable into the correct Terraform JSON syntax.
 
+**HCL**
+
 .. literalinclude:: examples/tutorial_variable1.tf
+
+**Python**
 
 .. literalinclude:: examples/tutorial_variable1.py
    :emphasize-lines: 11,12,17
+
+**JSON**
 
 In the output the reference to the ``image_id`` has been converted from a reference to a 
 Python variable ``ami=v`` to the correct Terraform JSON syntax of ``var.image_id``. 
@@ -101,6 +109,22 @@ Python variable ``ami=v`` to the correct Terraform JSON syntax of ``var.image_id
 
 Output
 ~~~~~~
+
+Output is implemented as the class ``terrascript.Output``. 
+
+**HCL**
+
+.. literalinclude:: examples/tutorial_output1.tf
+
+**Python**
+
+.. literalinclude:: examples/tutorial_output1.py
+
+**JSON**
+
+.. literalinclude:: examples/tutorial_variable1/tutorial_output1.tf.json
+   :emphasize-lines: 18
+
 
 Module
 ~~~~~~
