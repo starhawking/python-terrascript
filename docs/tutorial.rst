@@ -15,24 +15,26 @@ just four modules.
     import terrascript.data
 
 .. note:: The old layout, e.g. ``import terarscript.aws.r`` is still available
-          for backward compatibility but it's use is discouraged. 
+          for backward compatibility but its use is discouraged. 
 
 Provider
 ~~~~~~~~
 
 Providers_ can be found in the ``terrascript.provider`` module, with one class
 for each provider. Terrascript supports most Terraform providers. The full list 
-can be found in the :doc:`appendices.
+can be found in the appendices.
 
-HCL:
+**HCL**
 
-Python:
+.. literalinclude:: examples/tutorial_provider1.tf
+
+**Python**
 
 .. literalinclude:: examples/tutorial_provider1.py
 
-JSON:
+**JSON**
 
-.. literalinclude:: examples/tutorial_provider1/tutorial_provider1.json
+.. literalinclude:: examples/tutorial_provider1/tutorial_provider1.tf.json
 
 .. _Providers: https://www.terraform.io/docs/providers/index.html
 
@@ -42,13 +44,21 @@ Resource
 Resources can be found in the ``terrascript.resource`` module. The example below shows
 the original HCL syntax for creating an AWS S3 bucket and the equivalent Python code. 
 
+**HCL**
+
 .. literalinclude:: examples/tutorial_resource1.tf
 
+**Python**
+
 And here is the same as a Python script. The first argument to ``terrascript.resource.aws_s3_bucket()``
-is the Terraform label under which it can be referenced later. Note how the ```tags``` is a dictionary
+is the Terraform label under which it can be referenced later. Note how the ``tags`` is a dictionary
 as in the HCL syntax.
 
 .. literalinclude:: examples/tutorial_resource1.py
+
+**JSON**
+
+.. literalinclude:: examples/tutorial_resource1/tutorial_resource1.tf.json
 
 Data Source
 ~~~~~~~~~~~
@@ -66,7 +76,7 @@ The example above is mostly a one-to-one adaptation of the HCL syntax. Let's mak
 to show how generating Terraform configurations through Python-Terrascript may help.
 * Define the Google Compute Image family and Google Compute Instance machine type at the beginning 
   of the script so they are easier to change (lines X,X,X and X).
-* Reference an instance of the Python-Terrascript class ```terrascript.data.google_compute_image()```
+* Reference an instance of the Python-Terrascript class ``terrascript.data.google_compute_image()``
   as the boot disk image (line X)
                                           
 .. literalinclude:: examples/tutorial_data2.py

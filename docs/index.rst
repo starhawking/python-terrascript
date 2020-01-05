@@ -15,7 +15,6 @@ Python-Terrascript
    quickstart
    tutorial
    examples
-   appendix
    list_of_providers
    json
    todo
