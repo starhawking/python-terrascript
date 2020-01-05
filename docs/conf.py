@@ -57,7 +57,7 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
 # docs/_static/custom.css
-html_style = 'custom.css'
+html_css_files = [ 'custom.css' ]
 
 # https://github.com/readthedocs/readthedocs.org/issues/2569
 master_doc = 'index'
