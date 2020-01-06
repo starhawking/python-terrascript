@@ -4,9 +4,6 @@ python-terrascript
 Python-Terrascript is a Python package for generating Terraform 
 configurations in JSON format.
 
-This is the ``develop`` branch of Terrascript which is currently 
-undergoing a major rewrite and is unlikely to be useful at this stage.
-
 Creating Terraform through a Python script offers a degree of flexibility 
 superior to writing Terraform configurations by hand.
 

@@ -14,6 +14,7 @@ RUN python3 -m ensurepip --upgrade && \
                            'nose==1.3.7' \
                            'setuptools>=18.5,<22' \
                            'deepdiff==4.0.7' \
-                           'flake8==3.7.9'
+                           'flake8==3.7.9' \
+                           'sphinx'
 
 USER gitpod

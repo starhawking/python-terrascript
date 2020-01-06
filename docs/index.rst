@@ -17,7 +17,7 @@ Python-Terrascript
    examples
    list_of_providers
    json
-   todo
+   faq
 
 
 Indices and tables

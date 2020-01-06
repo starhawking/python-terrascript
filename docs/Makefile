@@ -13,6 +13,7 @@ help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 	@echo "  providers   to generate list_of_providers.rst"
 	@echo "  server      to start local documentation web server"
+	@echo "  test        to test the examples/*"
 
 .PHONY: help Makefile providers
 
@@ -31,3 +32,6 @@ providers:
 
 server: 
 	python3 -m http.server --directory _build/html/ 8000
+
+test:
+	make -C examples/

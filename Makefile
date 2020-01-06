@@ -3,25 +3,36 @@ NOSE := nosetests --failed --verbose --no-byte-compile --logging-level=DEBUG --d
 COVERAGE := $(NOSE) --with-coverage --cover-package=terrascript --cover-erase --cover-branches --cover-html
 FLAKE8 := python3 -m flake8
 
-TESTS := $(wildcard tests/test_*.py)
+TESTS_BASIC := $(wildcard tests/test_basic_*.py)
+TESTS_ISSUES := $(wildcard tests/test_issue*.py)
 
 all: help
 
 help:
-	@echo "make test"
+	@echo "make test|test_basic|test_issues|test_docs"
 	@echo "make coverage"
 	@echo "make debug"
 	@echo "make code"
 	@echo "make package"
 	@echo "make install"
 
-test:
-	$(NOSE) $(TESTS)
+# Test targets
+# 
+test: clean test_basic test_issues test_docs
 
-coverage:
-	$(COVERAGE) $(TESTS)
+test_basic: clean
+	$(NOSE) $(TESTS_BASIC)
 
-flake8:
+test_issues: clean
+	$(NOSE) $(TESTS_ISSUES)
+
+test_docs:
+	(cd docs && make test)
+
+coverage: clean
+	$(COVERAGE) $(TESTS_BASIC) $(TEST_ISSUES)
+
+flake8: clean
 	$(FLAKE8) terrascript/__init__.py #$(TESTS)
 
 debug:
