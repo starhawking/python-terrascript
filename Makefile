@@ -35,8 +35,12 @@ coverage: clean
 flake8: clean
 	$(FLAKE8) terrascript/__init__.py #$(TESTS)
 
-debug:
-	$(NOSE) --pdb $(TESTS)
+
+debug_basic: clean
+	$(NOSE) --pdb  $(TESTS_BASIC)
+
+debug_issues: clean
+	$(NOSE) --pdb  $(TESTS_ISSUES)
 
 code: clean
 	( cd tools && ./makecode.py )

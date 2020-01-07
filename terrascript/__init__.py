@@ -216,7 +216,7 @@ class Terrascript(dict):
             if LOCALS_KEY not in self:
                 self[LOCALS_KEY] = Block()
             # self['locals'][NAME]
-            self[LOCALS_KEY][block._name] = block
+            self[LOCALS_KEY].update(block)
         #
         # Terraform
         #
