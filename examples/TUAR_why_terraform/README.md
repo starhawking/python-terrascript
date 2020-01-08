@@ -1,3 +1,9 @@
+# Terraform: Up & Running - Why Terraform
+
+[Hello World](https://github.com/brikis98/terraform-up-and-running-code/tree/master/code/terraform/00-preface/hello-world)
+example adapted from Yevgeniy Brikman's book [Terraform: Up & Running](https://www.terraformupandrunning.com/).
+
+```json
 {
   "provider": {
     "aws": [
@@ -18,3 +24,4 @@
     }
   }
 }
+```

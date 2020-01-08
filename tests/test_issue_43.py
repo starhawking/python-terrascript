@@ -38,7 +38,7 @@ also a provider with the ```terraform_remote_state```.
 # The following code has been adapted to Terrascript release 0.8.0.
 # Any changes have been commented in the code.
 
-def test_issue43():
+def test_issue_43():
 
     import terrascript
     import terrascript.data                                        # <=== Use new module layout.
