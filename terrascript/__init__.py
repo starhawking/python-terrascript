@@ -237,6 +237,7 @@ class Terrascript(dict):
         self += object
         return object    # for backwards compatability!
 
+# Top-level blocks ----------------------------------------
 
 class Resource(NamedBlock):
     """Terraform resource block."""
@@ -290,9 +291,23 @@ class Output(NamedBlock):
     pass
 
 
-class Provisioner(Block):
-    pass
+# Top-level blocks ----------------------------------------
 
+class Provisioner(dict):
+    """A provisioner is a nested dictionary.
+
+       The `name` argument must be a valid Terraform provisioner.
+
+       >>> p = terrascript.Provisioner("local-exec", command="echo 'Hello World'")
+       >>> print(p)
+       {'local-exec': {'command': "echo 'Hello World"}}
+    
+       https://www.terraform.io/docs/provisioners/index.html
+
+    """
+
+    def __init__(self, name, **kwargs):
+        self[name] = kwargs
 
 class Connection(Block):
     pass

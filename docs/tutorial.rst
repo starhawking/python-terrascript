@@ -135,3 +135,23 @@ Terraform
 
 Locals
 ~~~~~~
+
+
+Provisioner
+~~~~~~~~~~~
+
+One or multiple provisioners can be added to a Terraform resource.
+Multiple provisioners must be added as a Python list, a single provisioner
+can be either on its own or inside a list. The example adds one "create"
+and one "destroy" provisioner.
+
+**Python**
+
+.. literalinclude:: examples/tutorial_provisioner1.py
+   :emphasize-lines: 10,11,15
+
+**JSON**
+
+.. literalinclude:: examples/tutorial_provisioner1/tutorial_provisioner1.tf.json
+   
+

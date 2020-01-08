@@ -19,6 +19,9 @@ def test_issue_22():
     ts += p1
     ts += p2
 
+    assert ts['provider']['aws'][0]['region'] == 'us-east-1'
+    assert ts['provider']['aws'][1]['region'] == 'us-east-2'
+
     ts += terrascript.resource.aws_instance('I1', ami='ami-4bf3d731', instance_type='t2.large')
     ts += terrascript.resource.aws_instance('I2', ami='ami-e1496384', instance_type='t2.large', provider=p2.alias)
 

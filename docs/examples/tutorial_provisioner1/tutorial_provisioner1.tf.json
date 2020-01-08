@@ -1,0 +1,30 @@
+{
+  "provider": {
+    "aws": [
+      {
+        "region": "us-east-1"
+      }
+    ]
+  },
+  "resource": {
+    "aws_instance": {
+      "instance1": {
+        "instance_type": "t2.micro",
+        "ami": "ami-4bf3d731",
+        "provisioner": [
+          {
+            "local-exec": {
+              "command": "echo 'Create'"
+            }
+          },
+          {
+            "local-exec": {
+              "when": "destroy",
+              "command": "echo 'Destroy'"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
