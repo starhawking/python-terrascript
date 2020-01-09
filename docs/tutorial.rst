@@ -136,6 +136,17 @@ Terraform
 Locals
 ~~~~~~
 
+Terraform local values are not supported. Use Python variables instead. 
+
+**Python**
+
+.. literalinclude:: examples/tutorial_locals1.py
+   :emphasize-lines: 11,12,17
+
+**JSON**
+
+.. literalinclude:: examples/tutorial_locals1/tutorial_locals1.tf.json
+   :emphasize-lines: 14,15,16
 
 Provisioner
 ~~~~~~~~~~~

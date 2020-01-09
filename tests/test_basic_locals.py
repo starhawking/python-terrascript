@@ -2,6 +2,8 @@ import terrascript
 import terrascript.provider
 import terrascript.resource
 
+# *** These test work but terrascript.Locals is not supported. ***
+
 class TestLocals(object):
 
     def __init__(self):

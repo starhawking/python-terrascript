@@ -322,6 +322,7 @@ class Terraform(Block):
 
 
 class Locals(Block):
+    # Not working, use Python variables instead.
     pass
 
 

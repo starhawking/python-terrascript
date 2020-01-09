@@ -43,4 +43,6 @@ class TestVariable(object):
         assert self.cfg['variable']['name']['type'] == 'string'
         assert self.cfg['variable']['name']['default'] == 'You'
 
-    
+    def test_reference_variable(self):
+        # TODO
+        pass
