@@ -128,10 +128,37 @@ Output is implemented as the ``terrascript.Output`` class.
 Module
 ~~~~~~
 
-Calls to Terraform modules are implemented through the ``terrascript.Module`` class. 
+Calls to other Terraform modules are implemented through the ``terrascript.Module`` class. 
 
-Terraform
-~~~~~~~~~
+**HCL**
+
+.. literalinclude:: examples/tutorial_module1.tf
+
+**Python**
+
+.. literalinclude:: examples/tutorial_module1.py
+
+**JSON**
+
+.. literalinclude:: examples/tutorial_module1/tutorial_module1.tf.json
+
+Backend
+~~~~~~~
+
+**HCL**
+
+.. literalinclude:: examples/tutorial_backend1.tf
+
+**Python**
+
+.. literalinclude:: examples/tutorial_backend1.py
+
+**JSON**
+
+.. literalinclude:: examples/tutorial_module1/tutorial_backend1.tf.json
+
+Connection
+~~~~~~~~~~
 
 Locals
 ~~~~~~

@@ -123,6 +123,23 @@ class NamedBlock(Block):
     def __init__(self, _name, **kwargs):
         self._name = _name
         super().__init__(**kwargs)
+        # TODO: Can this be done similar to NamedSubBlock?
+
+
+class NamedSubBlock(Block):
+    """NamedSubBlocks are similar to NamedBlocks except that the `name`
+       is the key to a nested dictionary contain `kwargs`. NamedSubBlocks
+       are not added to the top-level Terrascript structure but are
+       arguments to another block. The backend argument to a Terraform
+       block is a good example. 
+
+       :param name: Name of the block, e.g. 'consul'.
+
+    """
+
+    def __init__(self, name, **kwargs):
+        super().__init__()
+        self[name] = kwargs
 
 
 class Terrascript(dict):
@@ -313,7 +330,7 @@ class Connection(Block):
     pass
 
 
-class Backend(NamedBlock):
+class Backend(NamedSubBlock):
     pass
 
 
