@@ -1,6 +1,30 @@
 python-terrascript
 ------------------
 
+.. image:: https://img.shields.io/github/license/mjuenema/python-terrascript
+   :target: https://opensource.org/licenses/BSD-2-Clause
+
+.. image:: https://img.shields.io/travis/mjuenema/python-terrascript
+   :target: https://www.travis-ci.org/mjuenema/python-terrascript/builds
+   
+.. image:: https://img.shields.io/pypi/v/terrascript
+   :target: https://pypi.org/project/terrascript/
+   
+.. image:: https://img.shields.io/pypi/pyversions/terrascript
+   :target: https://pypi.org/project/terrascript/
+   
+.. image:: https://img.shields.io/pypi/dm/terrascript
+   :target: https://pypi.org/project/terrascript/
+   
+.. image:: https://img.shields.io/github/issues/mjuenema/python-terrascript
+   :target: https://github.com/mjuenema/python-terrascript/issues
+   
+.. image:: https://img.shields.io/github/stars/mjuenema/python-terrascript
+   :target: https://github.com/mjuenema/python-terrascript/stargazers
+   
+.. image:: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
+   :target: https://python-terrascript.zulipchat.com/
+
 Python-Terrascript is a Python package for generating Terraform 
 configurations in JSON format.
 
