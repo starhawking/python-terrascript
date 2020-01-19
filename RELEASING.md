@@ -28,15 +28,23 @@ git push --tags
 ```
 * Upload the release to [PyPi Test](https://test.pypi.org/project/terrascript/).
 ```
+pip3 install wheel twine
 python3 setup.py sdist bdist_wheel
 ls dist/
-/usr/bin/python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 ```
-* **TODO**: Test installing package from PyPi Test.
+* Test installing package from PyPi Test.
+```
+mkvirtualenv terrascript-test
+pip install -i https://test.pypi.org/simple/ terrascript==0.8.0
+deactivate
+rmvirtualenv terrascript-test
+```
 * Upload the release to [PyPi](https://pypi.org/project/terrascript/).
 ```
-/usr/bin/python3 -m twine upload  dist/*
+twine upload  dist/*
 ```
+* Commit any outstanding changes that will got into the next release.
 * Merge the branch ``release-x.x.x`` into ``master`` and push to Github.
 ```
 git checkout master
