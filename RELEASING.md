@@ -8,8 +8,12 @@ git checkout -b release-x.x.x
 ```
 * Update ``__version__`` in ``terrascript.__init__.py``.
 * Update version in ``docs/conf.py``.
-* Update ``CHANGELOG.md`` in the ``develop`` branch and copy file into this ``release-x.x.x`` branch.
-* Run ``make test`` inside the ``tests/`` folder to verify that the JSON configurations are valid.
+* Review ``setup.py``.
+* Update ``CHANGELOG.md``.
+* Update ``CONTRIBUTORS.md``.
+* Update ``DEVELOPMENT.md``.
+* Update ``.travis.yml``.
+* Run ``make test``.
 * Commit and push the branch ``release-x.x.x`` to Github.
 ```
 git commit -a -m 'Preparing release x.x.x'

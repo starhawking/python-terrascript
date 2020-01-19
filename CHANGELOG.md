@@ -5,10 +5,11 @@
 * Individual modules for each provider (Example: ``terrascript.aws.r``) are now deprecated in favour of
   single modules as added in release 0.8.0. 
 
-## [0.8.0] - Not yet released
+## [0.8.0] - 2020-01-20
+**This release requires Terraform 0.12 or later.**
 ### Added
-* Aligned with Terraform 0.12 JSOn syntax. 
-* Providers, resources and data sources are now also accessible through single modules instead of 
+* Almost complete rewrite to align it with Terraform 0.12 JSON syntax. 
+* Providers, resources and data sources are now accessible through single modules instead of 
   individual modules for each provider.
 * The module ``terrascript.providers`` contains **all** providers, e.g. ``terrascript.providers.google``.
 * The module ``terrascript.resources`` contains **all** resource, e.g. ``terrascript.resources.aws_instance``.
