@@ -53,6 +53,6 @@ git push origin master
 ```
 * Delete branch ``release-x.x.x``.
 ```
-git push --delete origin release-0.6.1
+git push --delete origin release-x.x.x
 ```
 * Review and update the link to PyPi in ``README.md`` in the ``develop`` branch.
