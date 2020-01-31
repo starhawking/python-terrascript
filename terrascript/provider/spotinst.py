@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class spotinst(terrascript.Provider):
     pass
-    
-__all__ = ['spotinst']
+
+
+__all__ = ["spotinst"]

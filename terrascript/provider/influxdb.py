@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class influxdb(terrascript.Provider):
     pass
-    
-__all__ = ['influxdb']
+
+
+__all__ = ["influxdb"]

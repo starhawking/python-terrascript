@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class gitlab(terrascript.Provider):
     pass
-    
-__all__ = ['gitlab']
+
+
+__all__ = ["gitlab"]

@@ -8,5 +8,5 @@ class oneandone_instance_size(terrascript.Data):
 
 
 __all__ = [
-    'oneandone_instance_size',
+    "oneandone_instance_size",
 ]

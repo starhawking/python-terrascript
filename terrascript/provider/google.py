@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class google(terrascript.Provider):
     pass
-    
-__all__ = ['google']
+
+
+__all__ = ["google"]

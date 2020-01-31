@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class aws(terrascript.Provider):
     pass
-    
-__all__ = ['aws']
+
+
+__all__ = ["aws"]

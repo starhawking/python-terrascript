@@ -8,5 +8,5 @@ class datadog_ip_ranges(terrascript.Data):
 
 
 __all__ = [
-    'datadog_ip_ranges',
+    "datadog_ip_ranges",
 ]

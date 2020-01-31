@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class powerdns(terrascript.Provider):
     pass
-    
-__all__ = ['powerdns']
+
+
+__all__ = ["powerdns"]

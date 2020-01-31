@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class cloudflare(terrascript.Provider):
     pass
-    
-__all__ = ['cloudflare']
+
+
+__all__ = ["cloudflare"]

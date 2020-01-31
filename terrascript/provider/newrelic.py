@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class newrelic(terrascript.Provider):
     pass
-    
-__all__ = ['newrelic']
+
+
+__all__ = ["newrelic"]

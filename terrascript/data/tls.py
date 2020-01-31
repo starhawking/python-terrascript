@@ -8,5 +8,5 @@ class tls_public_key(terrascript.Data):
 
 
 __all__ = [
-    'tls_public_key',
+    "tls_public_key",
 ]

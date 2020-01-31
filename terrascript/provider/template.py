@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class template(terrascript.Provider):
     pass
-    
-__all__ = ['template']
+
+
+__all__ = ["template"]

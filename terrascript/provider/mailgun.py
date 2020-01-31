@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class mailgun(terrascript.Provider):
     pass
-    
-__all__ = ['mailgun']
+
+
+__all__ = ["mailgun"]

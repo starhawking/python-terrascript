@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class bitbucket(terrascript.Provider):
     pass
-    
-__all__ = ['bitbucket']
+
+
+__all__ = ["bitbucket"]

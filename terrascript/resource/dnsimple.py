@@ -8,5 +8,5 @@ class dnsimple_record(terrascript.Resource):
 
 
 __all__ = [
-    'dnsimple_record',
+    "dnsimple_record",
 ]

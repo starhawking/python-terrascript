@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class postgresql(terrascript.Provider):
     pass
-    
-__all__ = ['postgresql']
+
+
+__all__ = ["postgresql"]

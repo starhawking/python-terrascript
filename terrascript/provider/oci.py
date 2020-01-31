@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class oci(terrascript.Provider):
     pass
-    
-__all__ = ['oci']
+
+
+__all__ = ["oci"]

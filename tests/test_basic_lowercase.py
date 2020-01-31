@@ -1,5 +1,6 @@
 import terrascript
 
+
 def test_lowercase():
     # Except locals, resource, data and provider.
     assert terrascript.Variable == terrascript.variable

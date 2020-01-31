@@ -8,5 +8,5 @@ class statuscake_test(terrascript.Resource):
 
 
 __all__ = [
-    'statuscake_test',
+    "statuscake_test",
 ]
