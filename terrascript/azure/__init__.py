@@ -2,5 +2,6 @@
 
 import terrascript
 
+
 class azure(terrascript.Provider):
     pass

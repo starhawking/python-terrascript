@@ -5,6 +5,10 @@
 * Individual modules for each provider (Example: ``terrascript.aws.r``) are now deprecated in favour of
   single modules as added in release 0.8.0. 
 
+## [0.8.1] - Not yet released
+### Changed
+* All Python code is now automatically formatted using [Black](https://pypi.org/project/black/).
+
 ## [0.8.0] - 2020-01-20
 **This release requires Terraform 0.12 or later.**
 ### Added

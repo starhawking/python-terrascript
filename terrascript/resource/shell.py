@@ -8,5 +8,5 @@ class shell_script(terrascript.Resource):
 
 
 __all__ = [
-    'shell_script',
+    "shell_script",
 ]

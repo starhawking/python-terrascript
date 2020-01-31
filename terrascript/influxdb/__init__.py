@@ -2,5 +2,6 @@
 
 import terrascript
 
+
 class influxdb(terrascript.Provider):
     pass

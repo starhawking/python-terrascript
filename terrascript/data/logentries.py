@@ -8,5 +8,5 @@ class logentries_logset(terrascript.Data):
 
 
 __all__ = [
-    'logentries_logset',
+    "logentries_logset",
 ]

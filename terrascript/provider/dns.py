@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class dns(terrascript.Provider):
     pass
-    
-__all__ = ['dns']
+
+
+__all__ = ["dns"]

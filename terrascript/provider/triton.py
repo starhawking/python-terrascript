@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class triton(terrascript.Provider):
     pass
-    
-__all__ = ['triton']
+
+
+__all__ = ["triton"]

@@ -15,6 +15,7 @@ help:
 	@echo "make code"
 	@echo "make package"
 	@echo "make install"
+	@echo "make black        - Format Python code"
 
 # Test targets
 # 
@@ -54,6 +55,9 @@ install: clean
 	
 html: clean
 	make -C docs html
+
+black: clean
+	black -t py35 .
 
 clean:
 	rm -f tests/*.pyc

@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class opsgenie(terrascript.Provider):
     pass
-    
-__all__ = ['opsgenie']
+
+
+__all__ = ["opsgenie"]

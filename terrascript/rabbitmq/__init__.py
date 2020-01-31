@@ -2,5 +2,6 @@
 
 import terrascript
 
+
 class rabbitmq(terrascript.Provider):
     pass

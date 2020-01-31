@@ -35,7 +35,7 @@
 
 DEBUG = False
 CONCURRENCY = 10
-INPUT = 'providers.yml'
+INPUT = "providers.yml"
 
 import os
 import os.path
@@ -80,15 +80,18 @@ REGEX = re.compile(b'"(?P<name>.+)":\s+(?P<type>resource|data)')
 
 """
 
-LEGACY_INIT_TEMPLATE = jinja2.Template("""# terrascript/{{ provider }}/__init__.py
+LEGACY_INIT_TEMPLATE = jinja2.Template(
+    """# terrascript/{{ provider }}/__init__.py
 
 import terrascript
 
 class {{ provider }}(terrascript.Provider):
     pass
-""")
+"""
+)
 
-LEGACY_DATASOURCES_TEMPLATE = jinja2.Template("""#  terrascript/{{ provider }}/d.py
+LEGACY_DATASOURCES_TEMPLATE = jinja2.Template(
+    """#  terrascript/{{ provider }}/d.py
 
 import terrascript
 
@@ -96,9 +99,11 @@ import terrascript
 class {{ datasource }}(terrascript.Data):
     pass
 {% endfor %}
-""")
+"""
+)
 
-LEGACY_RESOURCES_TEMPLATE = jinja2.Template("""# terrascript/{{ provider }}/r.py
+LEGACY_RESOURCES_TEMPLATE = jinja2.Template(
+    """# terrascript/{{ provider }}/r.py
 
 import terrascript
 
@@ -106,10 +111,12 @@ import terrascript
 class {{ resource }}(terrascript.Resource):
     pass
 {% endfor %}
-""")
+"""
+)
 
 
-PROVIDER_TEMPLATE = jinja2.Template("""# terrascript/provider/{{ provider }}.py
+PROVIDER_TEMPLATE = jinja2.Template(
+    """# terrascript/provider/{{ provider }}.py
 
 import terrascript
 
@@ -117,10 +124,12 @@ class {{ provider }}(terrascript.Provider):
     pass
     
 __all__ = ['{{ provider }}']
-""")
+"""
+)
 
 
-RESOURCES_TEMPLATE = jinja2.Template("""# terrascript/resource/{{ provider }}.py
+RESOURCES_TEMPLATE = jinja2.Template(
+    """# terrascript/resource/{{ provider }}.py
 
 import terrascript
 
@@ -134,10 +143,12 @@ __all__ = [
     '{{ resource }}',
 {%- endfor %}
 ]
-""")
+"""
+)
 
 
-DATASOURCES_TEMPLATE = jinja2.Template("""# terrascript/data/{{ provider }}.py
+DATASOURCES_TEMPLATE = jinja2.Template(
+    """# terrascript/data/{{ provider }}.py
 
 import terrascript
 
@@ -151,17 +162,20 @@ __all__ = [
     '{{ datasource }}',
 {%- endfor %}
 ]
-""")
+"""
+)
 
 
-INIT_TEMPLATE = jinja2.Template("""
+INIT_TEMPLATE = jinja2.Template(
+    """
 
 from .terraform import *
 {%- for provider in providers %}
 from .{{ provider }} import *
 {%- endfor %}
 
-""")
+"""
+)
 
 
 def legacy_create_provider_directory(provider, modulesdir):
@@ -176,65 +190,84 @@ def legacy_create_provider_directory(provider, modulesdir):
 
 def legacy_create_provider_init(provider, providerdir):
 
-    with open(os.path.join(providerdir, '__init__.py'), 'wt') as fp:
+    with open(os.path.join(providerdir, "__init__.py"), "wt") as fp:
         fp.write(LEGACY_INIT_TEMPLATE.render(provider=provider))
 
 
 def legacy_create_provider_datasources(provider, providerdir, datasources):
 
-    with open(os.path.join(providerdir, 'd.py'), 'wt') as fp:
-        fp.write(LEGACY_DATASOURCES_TEMPLATE.render(provider=provider, datasources=datasources))
+    with open(os.path.join(providerdir, "d.py"), "wt") as fp:
+        fp.write(
+            LEGACY_DATASOURCES_TEMPLATE.render(
+                provider=provider, datasources=datasources
+            )
+        )
 
 
 def legacy_create_provider_resources(provider, providerdir, resources):
-    logging.debug('legacy_create_provider_resources provider={}'.format(provider))
-    logging.debug('legacy_create_provider_resources providerdir={}'.format(providerdir))
+    logging.debug("legacy_create_provider_resources provider={}".format(provider))
+    logging.debug("legacy_create_provider_resources providerdir={}".format(providerdir))
     for resource in resources:
-        logging.debug('legacy_create_provider_resources resource={}'.format(resource))
+        logging.debug("legacy_create_provider_resources resource={}".format(resource))
 
-    with open(os.path.join(providerdir, 'r.py'), 'wt') as fp:
-        fp.write(LEGACY_RESOURCES_TEMPLATE.render(provider=provider, resources=resources))
-        
-        
+    with open(os.path.join(providerdir, "r.py"), "wt") as fp:
+        fp.write(
+            LEGACY_RESOURCES_TEMPLATE.render(provider=provider, resources=resources)
+        )
+
+
 def legacy_process(provider, modulesdir, resources, datasources):
-        legacy_providerdir = legacy_create_provider_directory(provider, modulesdir)
-        legacy_create_provider_init(provider, legacy_providerdir)
-        legacy_create_provider_datasources(provider, legacy_providerdir, datasources)
-        legacy_create_provider_resources(provider, legacy_providerdir, resources)
+    legacy_providerdir = legacy_create_provider_directory(provider, modulesdir)
+    legacy_create_provider_init(provider, legacy_providerdir)
+    legacy_create_provider_datasources(provider, legacy_providerdir, datasources)
+    legacy_create_provider_resources(provider, legacy_providerdir, resources)
 
 
 def create_provider(provider, modulesdir):
-    logging.debug('create_provider provider=%s modulesdir=%s', provider, modulesdir)
-    with open(os.path.join(modulesdir, 'provider', '{}.py'.format(provider)), 'wt') as fp:
+    logging.debug("create_provider provider=%s modulesdir=%s", provider, modulesdir)
+    with open(
+        os.path.join(modulesdir, "provider", "{}.py".format(provider)), "wt"
+    ) as fp:
         fp.write(PROVIDER_TEMPLATE.render(provider=provider))
-        
-        
+
+
 def create_resources(provider, modulesdir, resources):
-    with open(os.path.join(modulesdir, 'resource', '{}.py'.format(provider)), 'wt') as fp:
+    with open(
+        os.path.join(modulesdir, "resource", "{}.py".format(provider)), "wt"
+    ) as fp:
         fp.write(RESOURCES_TEMPLATE.render(provider=provider, resources=resources))
-        
-        
+
+
 def create_datasources(provider, modulesdir, datasources):
-    with open(os.path.join(modulesdir, 'data', '{}.py'.format(provider)), 'wt') as fp:
-        fp.write(DATASOURCES_TEMPLATE.render(provider=provider, datasources=datasources))
+    with open(os.path.join(modulesdir, "data", "{}.py".format(provider)), "wt") as fp:
+        fp.write(
+            DATASOURCES_TEMPLATE.render(provider=provider, datasources=datasources)
+        )
 
 
 def process(entry, modulesdir):
 
-    provider = entry['name']
-    repository = entry.get('repository', 'https://github.com/terraform-providers/terraform-provider-{}'.format(provider))
+    provider = entry["name"]
+    repository = entry.get(
+        "repository",
+        "https://github.com/terraform-providers/terraform-provider-{}".format(provider),
+    )
     logging.info(provider)
 
     with tempfile.TemporaryDirectory() as tmpdir:
 
-        cmd = 'git clone --depth=1 {} .'.format(repository)
-        result = subprocess.run(shlex.split(cmd), stdout=subprocess.PIPE, stderr=subprocess.STDOUT, cwd=tmpdir)
+        cmd = "git clone --depth=1 {} .".format(repository)
+        result = subprocess.run(
+            shlex.split(cmd),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            cwd=tmpdir,
+        )
         if result.returncode != 0:
             print(result.stdout)
             sys.exit(1)
 
-
-        with open(os.path.join(tmpdir, provider, 'provider.go'), 'rb') as fp:
+        with open(os.path.join(tmpdir, provider, "provider.go"), "rb") as fp:
             content = fp.read()
 
             resources = []
@@ -242,25 +275,24 @@ def process(entry, modulesdir):
 
             for m in REGEX.finditer(content):
 
-                name = m.groupdict()['name']
+                name = m.groupdict()["name"]
 
-                if m.groupdict()['type'] == b'resource':
+                if m.groupdict()["type"] == b"resource":
                     resources.append(name.decode())
-                elif m.groupdict()['type'] == b'data':
+                elif m.groupdict()["type"] == b"data":
                     datasources.append(name.decode())
                 else:
                     # Shouldn't really get here.
                     pass
-        
-        # The legacy layout creates 
-        #  
+
+        # The legacy layout creates
+        #
         # PROVIDER/__init__.py
         # PROVIDER/r/py
         # PROVIDER/d/py
         #
         legacy_process(provider, modulesdir, resources, datasources)
-        
-        
+
         # The new layout creates
         #
         # providers/PROVIDER.py
@@ -270,23 +302,22 @@ def process(entry, modulesdir):
         create_provider(provider, modulesdir)
         create_resources(provider, modulesdir, resources)
         create_datasources(provider, modulesdir, datasources)
-    
-        
+
+
 def main():
 
-    thisdir = os.path.abspath('.')
-    rootdir = os.path.abspath('..')
-    modulesdir = os.path.abspath('../terrascript')
+    thisdir = os.path.abspath(".")
+    rootdir = os.path.abspath("..")
+    modulesdir = os.path.abspath("../terrascript")
 
     try:
         os.stat(os.path.join(thisdir, sys.argv[0]))
         os.stat(os.path.join(thisdir, INPUT))
     except FileNotFoundError:
-        print('Script must be run from the tools/ folder', file=sys.stderr)
+        print("Script must be run from the tools/ folder", file=sys.stderr)
         sys.exit(1)
 
-
-    with open(INPUT, 'rt') as fp:
+    with open(INPUT, "rt") as fp:
         entries = yaml.load(fp, Loader=yaml.SafeLoader)
         # entries is now a list of dictionaries: [{'name': NAME, 'repository': URL}, ...]
 
@@ -296,21 +327,19 @@ def main():
             exc = future.exception()
             if exc:
                 raise ex
-        
-    
+
     # Create the __ini__.py files for providers, datasources and resources.
     #
-    providers = [entry['name'] for entry in entries]
-    with open(os.path.join(modulesdir, 'provider', '__init__.py'), 'wt') as fp:
+    providers = [entry["name"] for entry in entries]
+    with open(os.path.join(modulesdir, "provider", "__init__.py"), "wt") as fp:
         fp.write(INIT_TEMPLATE.render(providers=providers))
-        
-    with open(os.path.join(modulesdir, 'resource', '__init__.py'), 'wt') as fp:
+
+    with open(os.path.join(modulesdir, "resource", "__init__.py"), "wt") as fp:
         fp.write(INIT_TEMPLATE.render(providers=providers))
-        
-    with open(os.path.join(modulesdir, 'data', '__init__.py'), 'wt') as fp:
+
+    with open(os.path.join(modulesdir, "data", "__init__.py"), "wt") as fp:
         fp.write(INIT_TEMPLATE.render(providers=providers))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
-

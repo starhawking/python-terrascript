@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class icinga2(terrascript.Provider):
     pass
-    
-__all__ = ['icinga2']
+
+
+__all__ = ["icinga2"]

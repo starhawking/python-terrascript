@@ -3,6 +3,4 @@
 import terrascript
 
 
-
-__all__ = [
-]
+__all__ = []

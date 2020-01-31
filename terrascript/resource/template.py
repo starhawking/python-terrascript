@@ -8,5 +8,5 @@ class template_dir(terrascript.Resource):
 
 
 __all__ = [
-    'template_dir',
+    "template_dir",
 ]

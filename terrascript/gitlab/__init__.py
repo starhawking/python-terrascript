@@ -2,5 +2,6 @@
 
 import terrascript
 
+
 class gitlab(terrascript.Provider):
     pass

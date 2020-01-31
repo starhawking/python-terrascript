@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class logentries(terrascript.Provider):
     pass
-    
-__all__ = ['logentries']
+
+
+__all__ = ["logentries"]

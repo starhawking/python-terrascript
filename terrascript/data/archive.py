@@ -8,5 +8,5 @@ class archive_file(terrascript.Data):
 
 
 __all__ = [
-    'archive_file',
+    "archive_file",
 ]

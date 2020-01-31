@@ -2,5 +2,6 @@
 
 import terrascript
 
+
 class scaleway(terrascript.Provider):
     pass

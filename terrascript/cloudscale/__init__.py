@@ -2,5 +2,6 @@
 
 import terrascript
 
+
 class cloudscale(terrascript.Provider):
     pass

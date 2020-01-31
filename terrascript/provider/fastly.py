@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class fastly(terrascript.Provider):
     pass
-    
-__all__ = ['fastly']
+
+
+__all__ = ["fastly"]

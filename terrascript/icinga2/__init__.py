@@ -2,5 +2,6 @@
 
 import terrascript
 
+
 class icinga2(terrascript.Provider):
     pass
