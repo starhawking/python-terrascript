@@ -13,6 +13,7 @@ git checkout -b release-x.x.x
 * Update ``CONTRIBUTORS.md``.
 * Update ``DEVELOPMENT.md``.
 * Update ``.travis.yml``.
+* Run ``make black``.
 * Run ``make test``.
 * Commit and push the branch ``release-x.x.x`` to Github.
 ```
