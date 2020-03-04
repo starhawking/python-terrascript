@@ -260,6 +260,26 @@ class Terrascript(dict):
         self += object
         return object  # for backwards compatability!
 
+    def update(self, other):
+        for o in other:
+            self += o
+
+    def __iter__(self):
+        """Iterate over top-level items."""
+
+        def recurse(o):
+            if isinstance(o, (Resource, Data, Provider, Variable, Module, Output)):
+                yield o
+            elif isinstance(o, dict):
+                for k,v in o.items():
+                    yield from recurse(v)
+            elif isinstance(o, list):
+                for i in o:
+                    yield from recurse(i)
+
+        for o in recurse(self):
+            yield o
+
 
 # Top-level blocks ----------------------------------------
 
@@ -320,7 +340,7 @@ class Output(NamedBlock):
     pass
 
 
-# Top-level blocks ----------------------------------------
+# Other blocks ----------------------------------------
 
 
 class Provisioner(dict):

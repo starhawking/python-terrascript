@@ -6,6 +6,10 @@
   single modules as added in release 0.8.0. 
 
 ## [0.8.1] - Not yet released
+###
+* Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
+### Fixed
+* Re-introduced ``terrascript.Terrascript.update()`` method (issue #98).
 ### Changed
 * All Python code is now automatically formatted using [Black](https://pypi.org/project/black/).
 
