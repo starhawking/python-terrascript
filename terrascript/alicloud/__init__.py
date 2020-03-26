@@ -2,5 +2,6 @@
 
 import terrascript
 
+
 class alicloud(terrascript.Provider):
     pass

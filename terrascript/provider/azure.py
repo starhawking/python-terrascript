@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class azure(terrascript.Provider):
     pass
-    
-__all__ = ['azure']
+
+
+__all__ = ["azure"]

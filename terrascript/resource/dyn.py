@@ -8,5 +8,5 @@ class dyn_record(terrascript.Resource):
 
 
 __all__ = [
-    'dyn_record',
+    "dyn_record",
 ]

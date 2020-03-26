@@ -2,5 +2,6 @@
 
 import terrascript
 
+
 class mailgun(terrascript.Provider):
     pass

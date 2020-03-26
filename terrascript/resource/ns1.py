@@ -8,5 +8,5 @@ class ns1_zone(terrascript.Resource):
 
 
 __all__ = [
-    'ns1_zone',
+    "ns1_zone",
 ]

@@ -8,5 +8,5 @@ class cloudstack_template(terrascript.Data):
 
 
 __all__ = [
-    'cloudstack_template',
+    "cloudstack_template",
 ]

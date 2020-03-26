@@ -8,5 +8,5 @@ class http(terrascript.Data):
 
 
 __all__ = [
-    'http',
+    "http",
 ]

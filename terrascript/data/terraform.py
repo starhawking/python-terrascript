@@ -4,9 +4,9 @@
 
 import terrascript
 
+
 class terraform_remote_state(terrascript.Data):
     pass
 
-__all__ = [
-    'terraform_remote_state'
-]
+
+__all__ = ["terraform_remote_state"]

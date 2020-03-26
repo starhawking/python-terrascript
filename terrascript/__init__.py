@@ -10,8 +10,8 @@ import logging
 import warnings
 import json
 
-__author__ = 'Markus Juenemann <markus@juenemann.net>'
-__version__ = '0.8.0'
+__author__ = "Markus Juenemann <markus@juenemann.net>"
+__version__ = "0.8.0"
 __license__ = 'BSD 2-clause "Simplified" License'
 
 INDENT = 2
@@ -22,14 +22,14 @@ DEBUG = False
 
 LOG = logging.getLogger(__name__)
 
-PROVIDER_KEY = 'provider'
-RESOURCE_KEY = 'resource'
-MODULE_KEY = 'module'
-VARIABLE_KEY = 'variable'
-OUTPUT_KEY = 'output'
-LOCALS_KEY = 'locals'
-DATA_KEY = 'data'
-TERRAFORM_KEY = 'terraform'
+PROVIDER_KEY = "provider"
+RESOURCE_KEY = "resource"
+MODULE_KEY = "module"
+VARIABLE_KEY = "variable"
+OUTPUT_KEY = "output"
+LOCALS_KEY = "locals"
+DATA_KEY = "data"
+TERRAFORM_KEY = "terraform"
 
 
 class Attribute(str):
@@ -57,7 +57,7 @@ class Attribute(str):
     """
 
     def __getattr__(self, name):
-        return Attribute('{}.{}'.format(self, name))
+        return Attribute("{}.{}".format(self, name))
 
 
 class Block(dict):
@@ -77,7 +77,7 @@ class Block(dict):
         #
         for k, v in kwargs.items():
             if isinstance(v, Variable):
-                kwargs[k] = 'var.{}'.format(v._name)
+                kwargs[k] = "var.{}".format(v._name)
 
         super().update(kwargs)
 
@@ -107,14 +107,20 @@ class Block(dict):
         #
         if attr in self:
             return self[attr]
+        elif attr.startswith('__'):
+            raise AttributeError
         else:
             if isinstance(self, Resource):
-                return Attribute('{}.{}.{}'.format(self.__class__.__name__, self._name, attr))
+                return Attribute(
+                    "{}.{}.{}".format(self.__class__.__name__, self._name, attr)
+                )
             elif isinstance(self, Locals):
-                return Attribute('local.{}'.format(attr))
+                return Attribute("local.{}".format(attr))
             elif isinstance(self, Data):
                 # data.google_compute_image.NAME.ATTR
-                return Attribute('data.{}.{}.{}'.format(self.__class__.__name__, self._name, attr))
+                return Attribute(
+                    "data.{}.{}.{}".format(self.__class__.__name__, self._name, attr)
+                )
             else:
                 raise AttributeError(attr)
 
@@ -154,7 +160,6 @@ class Terrascript(dict):
 
         for object in objects:
             self += object
-
 
     def __str__(self):
         return json.dumps(self, indent=INDENT)
@@ -243,8 +248,11 @@ class Terrascript(dict):
         # else
         #
         else:
-            raise TypeError('A {} cannot be added to the configuration'.format(
-                block.__class__.__name__))
+            raise TypeError(
+                "A {} cannot be added to the configuration".format(
+                    block.__class__.__name__
+                )
+            )
 
         return self
 
@@ -252,17 +260,41 @@ class Terrascript(dict):
         """Add to the configuration using the ``+`` syntax."""
 
         self += object
-        return object    # for backwards compatability!
+        return object  # for backwards compatability!
+
+    def update(self, other):
+        for o in other:
+            self += o
+
+    def __iter__(self):
+        """Iterate over top-level items."""
+
+        def recurse(o):
+            if isinstance(o, (Resource, Data, Provider, Variable, Module, Output)):
+                yield o
+            elif isinstance(o, dict):
+                for k,v in o.items():
+                    yield from recurse(v)
+            elif isinstance(o, list):
+                for i in o:
+                    yield from recurse(i)
+
+        for o in recurse(self):
+            yield o
+
 
 # Top-level blocks ----------------------------------------
 
+
 class Resource(NamedBlock):
     """Terraform resource block."""
+
     pass
 
 
 class Data(NamedBlock):
     """Terraform data source block."""
+
     pass
 
 
@@ -288,6 +320,7 @@ class Provider(Block):
             }
 
     """
+
     pass
 
 
@@ -301,6 +334,7 @@ class Module(NamedBlock):
        https://www.terraform.io/docs/configuration/modules.html
 
     """
+
     pass
 
 
@@ -308,7 +342,8 @@ class Output(NamedBlock):
     pass
 
 
-# Top-level blocks ----------------------------------------
+# Other blocks ----------------------------------------
+
 
 class Provisioner(dict):
     """A provisioner is a nested dictionary.
@@ -325,6 +360,7 @@ class Provisioner(dict):
 
     def __init__(self, name, **kwargs):
         self[name] = kwargs
+
 
 class Connection(Block):
     pass
@@ -358,8 +394,29 @@ backend = Backend
 terraform = Terraform
 function = Function
 
-__all__ = ['Terrascript', 'Block', 'Resource', 'Provider', 'Datasource',
-           'Variable', 'Module', 'Output', 'Provisioner', 'Backend',
-           'Terraform', 'Locals', 'Function', 'resource', 'data', 'variable',
-           'provider', 'module', 'output', 'provisioner', 'connection',
-           'backend', 'terraform', 'function']
+__all__ = [
+    "Terrascript",
+    "Block",
+    "Resource",
+    "Provider",
+    "Datasource",
+    "Variable",
+    "Module",
+    "Output",
+    "Provisioner",
+    "Backend",
+    "Terraform",
+    "Locals",
+    "Function",
+    "resource",
+    "data",
+    "variable",
+    "provider",
+    "module",
+    "output",
+    "provisioner",
+    "connection",
+    "backend",
+    "terraform",
+    "function",
+]

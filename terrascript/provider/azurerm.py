@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class azurerm(terrascript.Provider):
     pass
-    
-__all__ = ['azurerm']
+
+
+__all__ = ["azurerm"]

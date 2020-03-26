@@ -8,5 +8,5 @@ class external(terrascript.Data):
 
 
 __all__ = [
-    'external',
+    "external",
 ]

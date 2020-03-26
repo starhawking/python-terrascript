@@ -8,5 +8,5 @@ class fastly_ip_ranges(terrascript.Data):
 
 
 __all__ = [
-    'fastly_ip_ranges',
+    "fastly_ip_ranges",
 ]

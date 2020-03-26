@@ -13,11 +13,11 @@ import sys
 import importlib
 
 # Amend module search path
-sys.path.insert(0, '../..')
-sys.path.insert(0, '.')
+sys.path.insert(0, "../..")
+sys.path.insert(0, ".")
 
 # Import the module
-module = importlib.import_module('{}'.format(sys.argv[1].replace('.py', '')))
+module = importlib.import_module("{}".format(sys.argv[1].replace(".py", "")))
 
 # Print the config to standard out
 print(module.config)

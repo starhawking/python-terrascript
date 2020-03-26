@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class docker(terrascript.Provider):
     pass
-    
-__all__ = ['docker']
+
+
+__all__ = ["docker"]

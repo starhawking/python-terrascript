@@ -8,5 +8,5 @@ class arukas_container(terrascript.Resource):
 
 
 __all__ = [
-    'arukas_container',
+    "arukas_container",
 ]

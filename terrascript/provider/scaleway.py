@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class scaleway(terrascript.Provider):
     pass
-    
-__all__ = ['scaleway']
+
+
+__all__ = ["scaleway"]

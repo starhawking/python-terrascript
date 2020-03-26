@@ -8,5 +8,5 @@ class local_file(terrascript.Data):
 
 
 __all__ = [
-    'local_file',
+    "local_file",
 ]

@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class statuscake(terrascript.Provider):
     pass
-    
-__all__ = ['statuscake']
+
+
+__all__ = ["statuscake"]

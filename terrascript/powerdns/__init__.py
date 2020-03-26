@@ -2,5 +2,6 @@
 
 import terrascript
 
+
 class powerdns(terrascript.Provider):
     pass

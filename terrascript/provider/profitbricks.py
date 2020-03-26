@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class profitbricks(terrascript.Provider):
     pass
-    
-__all__ = ['profitbricks']
+
+
+__all__ = ["profitbricks"]

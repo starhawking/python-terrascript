@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class alicloud(terrascript.Provider):
     pass
-    
-__all__ = ['alicloud']
+
+
+__all__ = ["alicloud"]

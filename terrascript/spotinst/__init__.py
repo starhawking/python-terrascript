@@ -2,5 +2,6 @@
 
 import terrascript
 
+
 class spotinst(terrascript.Provider):
     pass

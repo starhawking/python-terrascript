@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class rabbitmq(terrascript.Provider):
     pass
-    
-__all__ = ['rabbitmq']
+
+
+__all__ = ["rabbitmq"]

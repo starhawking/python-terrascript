@@ -38,31 +38,27 @@ also a provider with the ```terraform_remote_state```.
 # The following code has been adapted to Terrascript release 0.8.0.
 # Any changes have been commented in the code.
 
+
 def test_issue_43():
 
     import terrascript
-    import terrascript.data                                        # <=== Use new module layout.
-    import terrascript.provider                                    # <=== Use new module layout.
+    import terrascript.data  # <=== Use new module layout.
+    import terrascript.provider  # <=== Use new module layout.
 
-    s3_backend = terrascript.backend(                              # <=== better: terrascript.Backend()
-        "s3",
-        bucket = "mybucket",
-        key = "my.tfstate",
-        region = "us-east-1"
-        )
+    s3_backend = terrascript.backend(  # <=== better: terrascript.Backend()
+        "s3", bucket="mybucket", key="my.tfstate", region="us-east-1"
+    )
 
     ts = terrascript.Terrascript()
-    ts += terrascript.provider.terraform(backend = s3_backend)     # <=== Use new module layout.
+    ts += terrascript.provider.terraform(
+        backend=s3_backend
+    )  # <=== Use new module layout.
 
-    ts += terrascript.data.terraform_remote_state(                 # <=== Use new module layout.
+    ts += terrascript.data.terraform_remote_state(  # <=== Use new module layout.
         "another",
-        backend = "s3",
-        config = {
-            'bucket': "mybucket",
-            'key': "another.tfstate",
-            'region': "us-east-1"
-            }
-        )
+        backend="s3",
+        config={"bucket": "mybucket", "key": "another.tfstate", "region": "us-east-1"},
+    )
 
     # The resulting JSON structure is
     #

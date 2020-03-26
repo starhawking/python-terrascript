@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class vault(terrascript.Provider):
     pass
-    
-__all__ = ['vault']
+
+
+__all__ = ["vault"]

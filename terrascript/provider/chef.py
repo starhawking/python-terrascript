@@ -2,7 +2,9 @@
 
 import terrascript
 
+
 class chef(terrascript.Provider):
     pass
-    
-__all__ = ['chef']
+
+
+__all__ = ["chef"]
