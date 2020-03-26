@@ -107,6 +107,8 @@ class Block(dict):
         #
         if attr in self:
             return self[attr]
+        elif attr.startswith('__'):
+            raise AttributeError
         else:
             if isinstance(self, Resource):
                 return Attribute(
