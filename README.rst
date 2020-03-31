@@ -120,7 +120,7 @@ The Terrascript code would look like this.
     config += provider.aws(version='~> 2.0', region='us-east-1')
     config += resource.aws_vpc('example', cidr_block='10.0.0.0/16')
     
-    with open('config.tf.json', wt') as fp:
+    with open('config.tf.json', 'wt') as fp:
         fp.write(str(config))
 
 The content of ``config.tf.json`` is shown below. It is equivalent to the
