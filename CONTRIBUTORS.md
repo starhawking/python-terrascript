@@ -3,21 +3,22 @@
 List of contributors (bug reports, fixes, suggestions, anything) to
 **python-terrascript** in no particular order.
 
-* Vianney Foucault
-* Josh Smift
-* Robin Bowes
-* Nielson Santana
 * Austin Millan
-* LaurensV
-* Niranjan Bommu
-* Sergey Puzirev
-* Yuri Leunguu
-* Joao Gilberto Magalhaes
-* Kumaresh
-* leosanchez16
-* Ryan Walder
-* Maor Friedman
 * DJDavisson
+* ilons
+* Joao Gilberto Magalhaes
+* Josh Smift
+* Kumaresh
+* LaurensV
+* leosanchez16
+* Maor Friedman
+* Nielson Santana
+* Niranjan Bommu
+* Robin Bowes
+* Ryan Walder
+* Sergey Puzirev
+* Vianney Foucault
+* Yuri Leunguu
 
 Did I miss anyone?
 
