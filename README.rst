@@ -25,8 +25,22 @@ python-terrascript
 .. image:: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
    :target: https://python-terrascript.zulipchat.com/
 
-Python-Terrascript is a Python package for generating Terraform 
-configurations in JSON format.
+
+Looking for new maintainer
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**As many of you will have already noticed, I unfortunately don't have sufficient time to properly maintain python-terrascript anymore.**
+
+What was intended to be a just small experiment turned into my most popular Github project with more than 250 stars. In turn this means that at least 250 people have a certain level of expectation towards me actually mainatining this project to a certain level of quality. I am simply not able to meet this expectation anymore and don't want to pretend that I could. I am happy to pass the baton on to someone else who's willing to jump in.
+
+Thanks for all your support over the last two years. It's been great!!
+
+I created issue #110 for further discussion.
+
+About 
+~~~~~
+
+Python-Terrascript is a Python package for generating Terraform configurations in JSON format.
 
 Creating Terraform through a Python script offers a degree of flexibility 
 superior to writing Terraform configurations by hand.
