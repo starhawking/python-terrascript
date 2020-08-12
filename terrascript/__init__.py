@@ -114,6 +114,14 @@ class Block(dict):
                 return Attribute(
                     "{}.{}.{}".format(self.__class__.__name__, self._name, attr)
                 )
+            if isinstance(self, Module):
+                return Attribute(
+                    "module.{}.{}".format(self._name, attr)
+                )
+            if isinstance(self, Variable):
+                return Attribute(
+                    "var.{}.{}".format(self._name, attr)
+                )
             elif isinstance(self, Locals):
                 return Attribute("local.{}".format(attr))
             elif isinstance(self, Data):
