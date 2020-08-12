@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.9.1] - Not yet released
+### Changed
+* Contributors are now sorted in alphabetical order
+* Documentation link from readme now points toward develop build on readthedocs.io to avoid 404
+
 ## [0.9.0] - Not yet released
 ### Deprecated
 * Individual modules for each provider (Example: ``terrascript.aws.r``) are now deprecated in favour of
