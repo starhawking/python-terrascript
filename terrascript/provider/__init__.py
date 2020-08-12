@@ -1,3 +1,5 @@
+
+
 from .terraform import *
 from .alicloud import *
 from .archive import *
@@ -69,3 +71,4 @@ from .vcd import *
 from .vsphere import *
 from .shell import *
 from .matchbox import *
+from .pingdom import *

@@ -140,3 +140,5 @@
   repository: https://github.com/scottwinkler/terraform-provider-shell
 - name: matchbox
   repository: https://github.com/poseidon/terraform-provider-matchbox
+- name: pingdom
+  repository: https://github.com/russellcardullo/terraform-provider-pingdom
