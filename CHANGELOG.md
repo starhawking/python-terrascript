@@ -1,22 +1,21 @@
 # Changelog
+All notable changes to this project will be documented in this file.
 
-## [0.9.1] - Not yet released
-### Changed
-* Contributors are now sorted in alphabetical order
-* Documentation link from readme now points toward develop build on readthedocs.io to avoid 404
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.9.0] - Not yet released
-### Deprecated
-* Individual modules for each provider (Example: ``terrascript.aws.r``) are now deprecated in favour of
-  single modules as added in release 0.8.0. 
-
-## [0.8.1] - Not yet released
-###
+## [Unreleased]
+### Added
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
 ### Fixed
 * Re-introduced ``terrascript.Terrascript.update()`` method (issue #98).
 ### Changed
 * All Python code is now automatically formatted using [Black](https://pypi.org/project/black/).
+* Contributors are now sorted in alphabetical order
+* Documentation link from readme now points toward develop build on readthedocs.io to avoid 404
+### Deprecated
+* Individual modules for each provider (Example: ``terrascript.aws.r``) are now deprecated in favour of 
+  single modules as added in release 0.8.0.
 
 ## [0.8.0] - 2020-01-20
 **This release requires Terraform 0.12 or later.**
@@ -47,6 +46,7 @@
 * Remove temp directory after validation (pull #64)
 ### Removed
 * Support for all Terraform versions prior to release 0.12.
+
 ## [0.6.0] - 2018-09-28
 ### Added
 * vSphere data sources/resources (pull #52)
@@ -55,6 +55,7 @@
 * Added support for update terrascript from another terrascript. Same behavior as dict().update (pull #37)
 * Added new cloudflare resources and data (pull #54)
 * Added tests for Terraform 0.11.8
+
 ## [0.5.1] - 2018-05-10
 ### Fixed
 * Work-around for data/JSON bug  (issue #3).
@@ -102,5 +103,3 @@
 ## [0.1.0] - 2017-07-25
 * First release.
 * Supports only AWS provider.
-
-Follows [keep a changelog](http://keepachangelog.com) format.
