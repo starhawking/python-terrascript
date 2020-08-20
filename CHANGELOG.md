@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
 ### Fixed
-* String interpolation of variable should now properly result in a var.name reference (issue #112)
+* String interpolation of variable should now properly result in a var.name reference (issue #109)
 * Re-introduced ``terrascript.Terrascript.update()`` method (issue #98).
 ### Changed
 * All Python code is now automatically formatted using [Black](https://pypi.org/project/black/).
