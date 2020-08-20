@@ -1,4 +1,4 @@
-setuptools
+black
 coverage
 jupyterlab
 nose

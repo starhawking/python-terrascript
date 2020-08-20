@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 * Re-introduced ``terrascript.Terrascript.update()`` method (issue #98).
 * String interpolation of variable should now properly result in a var.name reference (issue #109)
+* Missing dev requirement Black added
 ### Changed
 * All Python code is now automatically formatted using [Black](https://pypi.org/project/black/).
 * Contributors are now sorted in alphabetical order
