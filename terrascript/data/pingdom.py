@@ -8,5 +8,5 @@ class pingdom_user(terrascript.Data):
 
 
 __all__ = [
-    'pingdom_user',
+    "pingdom_user",
 ]
