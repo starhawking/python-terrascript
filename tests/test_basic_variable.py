@@ -43,6 +43,11 @@ class TestVariable(object):
         assert self.cfg["variable"]["name"]["type"] == "string"
         assert self.cfg["variable"]["name"]["default"] == "You"
 
-    def test_reference_variable(self):
-        # TODO
-        pass
+    def test_string_interpolation(self):
+        var = terrascript.Variable("myvar", type="string", default="myval")
+
+        string_var = str(var)
+        assert string_var == "var.myvar", "String interpolation of variable did not return its reference"
+
+        embeded_var = "embeded-${{{}}}".format(var)
+        assert embeded_var == "embeded-${var.myvar}", "Formatting a string with variable did not insert reference"

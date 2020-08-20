@@ -1,5 +1,9 @@
 # Changelog
 
+## [Unreleased]
+### Fixed
+- String interpolation of variable should now properly result in a var.name reference
+
 ## [0.9.1] - Not yet released
 ### Changed
 * Contributors are now sorted in alphabetical order
