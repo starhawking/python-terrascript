@@ -5,15 +5,16 @@ All notable changes to this project will be documented in this file.
 ### Added
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
 ### Fixed
-* String interpolation of variable should now properly result in a var.name reference (issue #109)
 * Re-introduced ``terrascript.Terrascript.update()`` method (issue #98).
+* String interpolation of variable should now properly result in a var.name reference (issue #109)
 ### Changed
 * All Python code is now automatically formatted using [Black](https://pypi.org/project/black/).
 * Contributors are now sorted in alphabetical order
 * Documentation link from readme now points toward develop build on readthedocs.io to avoid 404
+* Requirements files are now sorted alphabetically and duplicate entries are removed
 ### Deprecated
-* Individual modules for each provider (Example: ``terrascript.aws.r``) are now deprecated in favour of 
-  single modules as added in release 0.8.0.
+* Individual modules for each provider (Example: ``terrascript.aws.r``) are now deprecated in favour of
+  single modules as added in release 0.8.0. 
 
 ## [0.8.0] - 2020-01-20
 **This release requires Terraform 0.12 or later.**

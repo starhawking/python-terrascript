@@ -1,8 +1,8 @@
 setuptools
 coverage
-nose
-setuptools
 jupyterlab
+nose
+recommonmark
+setuptools
 sphinx
 sphinx-markdown
-recommonmark
