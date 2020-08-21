@@ -51,7 +51,6 @@ DEBUG = False
 CONCURRENCY = 10
 INPUT = "providers.yml"
 
-
 REGEX = re.compile(b'"(?P<name>.+)":\s+(?P<type>resource|data)')
 """REGEX to extract the names of resources and data sources from a provider.go file.
 
@@ -116,7 +115,6 @@ class {{ resource }}(terrascript.Resource):
 """
 )
 
-
 PROVIDER_TEMPLATE = jinja2.Template(
     """# terrascript/provider/{{ provider }}.py
 import terrascript
@@ -130,7 +128,6 @@ __all__ = ["{{ provider }}"]
 
 """
 )
-
 
 RESOURCES_TEMPLATE = jinja2.Template(
     """# terrascript/resource/{{ provider }}.py
@@ -154,7 +151,6 @@ __all__ = [{% if resources -%}
 """
 )
 
-
 DATASOURCES_TEMPLATE = jinja2.Template(
     """# terrascript/data/{{ provider }}.py
 {%- if datasources %}
@@ -177,7 +173,6 @@ __all__ = [{% if datasources -%}
 """
 )
 
-
 INIT_TEMPLATE = jinja2.Template(
     """# terrascript/*/__init__.py
 from .terraform import *
@@ -199,13 +194,11 @@ def legacy_create_provider_directory(provider, modulesdir):
 
 
 def legacy_create_provider_init(provider, providerdir):
-
     with open(os.path.join(providerdir, "__init__.py"), "wt") as fp:
         fp.write(LEGACY_INIT_TEMPLATE.render(provider=provider))
 
 
 def legacy_create_provider_datasources(provider, providerdir, datasources):
-
     with open(os.path.join(providerdir, "d.py"), "wt") as fp:
         fp.write(
             LEGACY_DATASOURCES_TEMPLATE.render(
@@ -256,7 +249,6 @@ def create_datasources(provider, modulesdir, datasources):
 
 
 def process(entry, modulesdir):
-
     provider = entry["name"]
     repository = entry.get(
         "repository",
@@ -315,7 +307,6 @@ def process(entry, modulesdir):
 
 
 def main():
-
     thisdir = os.path.abspath(".")
     rootdir = os.path.abspath("..")
     modulesdir = os.path.abspath("../terrascript")
