@@ -228,17 +228,20 @@ def legacy_process(provider, modulesdir, resources, datasources):
 
 def create_provider(provider, modulesdir):
     logging.debug("create_provider provider=%s modulesdir=%s", provider, modulesdir)
-    with open(os.path.join(modulesdir, "provider", "{}.py".format(provider)), "wt") as fp:
+    provider_path = os.path.join(modulesdir, "provider", "{}.py".format(provider))
+    with open(provider_path, "wt") as fp:
         fp.write(PROVIDER_TEMPLATE.render(provider=provider))
 
 
 def create_resources(provider, modulesdir, resources):
-    with open(os.path.join(modulesdir, "resource", "{}.py".format(provider)), "wt") as fp:
+    resource_path = os.path.join(modulesdir, "resource", "{}.py".format(provider))
+    with open(resource_path, "wt") as fp:
         fp.write(RESOURCES_TEMPLATE.render(provider=provider, resources=resources))
 
 
 def create_datasources(provider, modulesdir, datasources):
-    with open(os.path.join(modulesdir, "data", "{}.py".format(provider)), "wt") as fp:
+    datasource_path = os.path.join(modulesdir, "data", "{}.py".format(provider))
+    with open(datasource_path, "wt") as fp:
         fp.write(
             DATASOURCES_TEMPLATE.render(provider=provider, datasources=datasources)
         )
