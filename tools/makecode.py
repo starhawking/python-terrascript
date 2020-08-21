@@ -11,7 +11,8 @@
 
    Changelog:
    2020-08-21 - Cleaned up code to conform to pep8
-                Updated templates to conform to black format bette
+                Fixed syntax error when (re)raising exception from process
+                Updated templates to conform to black format better
 
    2020-01-03 - Renamed `PROVIDERS` to `providers.yml` to accomodate
                 custom repository paths to community providers.
@@ -337,7 +338,7 @@ def main():
         for future in concurrent.futures.as_completed(futures):
             exc = future.exception()
             if exc:
-                raise ex
+                raise exc
 
     # Create the __ini__.py files for providers, datasources and resources.
     #
