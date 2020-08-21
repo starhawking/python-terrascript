@@ -52,11 +52,6 @@ DEBUG = False
 CONCURRENCY = 10
 INPUT = "providers.yml"
 
-if DEBUG:
-    logging.basicConfig(level=logging.DEBUG)
-else:
-    logging.basicConfig(level=logging.INFO)
-
 
 REGEX = re.compile(b'"(?P<name>.+)":\s+(?P<type>resource|data)')
 """REGEX to extract the names of resources and data sources from a provider.go file.
@@ -358,4 +353,8 @@ def main():
 
 
 if __name__ == "__main__":
+    if DEBUG:
+        logging.basicConfig(level=logging.DEBUG)
+    else:
+        logging.basicConfig(level=logging.INFO)
     main()
