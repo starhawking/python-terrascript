@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 * Code for providers updated to conform with black
 * Contributors are now sorted in alphabetical order
 * Documentation link from readme now points toward develop build on readthedocs.io to avoid 404
+* Documentation on variable usage updated to reflect changes in issue #109
 * Requirements files are now sorted alphabetically and duplicate entries are removed
 - Updated code for providers generated
 ### Deprecated
