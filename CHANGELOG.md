@@ -1,7 +1,8 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [0.9.0-rc1] - 2020-08-21
+**This release contains mostly small fixes**
 ### Added
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
 ### Fixed
