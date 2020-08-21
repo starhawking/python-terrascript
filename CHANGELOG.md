@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 * Tool for generating providers now outputs code (almost) compliant with black
 ### Changed
 * All Python code is now automatically formatted using [Black](https://pypi.org/project/black/).
+* Code for providers updated to conform with black
 * Contributors are now sorted in alphabetical order
 * Documentation link from readme now points toward develop build on readthedocs.io to avoid 404
 * Requirements files are now sorted alphabetically and duplicate entries are removed
