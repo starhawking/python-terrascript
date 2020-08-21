@@ -6,6 +6,10 @@ class kubernetes_api_service(terrascript.Resource):
     pass
 
 
+class kubernetes_certificate_signing_request(terrascript.Resource):
+    pass
+
+
 class kubernetes_cluster_role(terrascript.Resource):
     pass
 
@@ -19,6 +23,10 @@ class kubernetes_config_map(terrascript.Resource):
 
 
 class kubernetes_cron_job(terrascript.Resource):
+    pass
+
+
+class kubernetes_csi_driver(terrascript.Resource):
     pass
 
 
@@ -74,6 +82,10 @@ class kubernetes_pod_disruption_budget(terrascript.Resource):
     pass
 
 
+class kubernetes_pod_security_policy(terrascript.Resource):
+    pass
+
+
 class kubernetes_priority_class(terrascript.Resource):
     pass
 
@@ -111,4 +123,12 @@ class kubernetes_stateful_set(terrascript.Resource):
 
 
 class kubernetes_storage_class(terrascript.Resource):
+    pass
+
+
+class kubernetes_validating_webhook_configuration(terrascript.Resource):
+    pass
+
+
+class kubernetes_mutating_webhook_configuration(terrascript.Resource):
     pass

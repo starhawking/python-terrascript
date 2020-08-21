@@ -54,6 +54,10 @@ class gitlab_deploy_key_enable(terrascript.Resource):
     pass
 
 
+class gitlab_deploy_token(terrascript.Resource):
+    pass
+
+
 class gitlab_user(terrascript.Resource):
     pass
 
@@ -86,11 +90,19 @@ class gitlab_service_jira(terrascript.Resource):
     pass
 
 
+class gitlab_service_github(terrascript.Resource):
+    pass
+
+
 class gitlab_project_share_group(terrascript.Resource):
     pass
 
 
 class gitlab_group_cluster(terrascript.Resource):
+    pass
+
+
+class gitlab_group_ldap_link(terrascript.Resource):
     pass
 
 
@@ -108,6 +120,7 @@ __all__ = [
     "gitlab_project_push_rules",
     "gitlab_deploy_key",
     "gitlab_deploy_key_enable",
+    "gitlab_deploy_token",
     "gitlab_user",
     "gitlab_project_membership",
     "gitlab_group_membership",
@@ -116,6 +129,8 @@ __all__ = [
     "gitlab_project_cluster",
     "gitlab_service_slack",
     "gitlab_service_jira",
+    "gitlab_service_github",
     "gitlab_project_share_group",
     "gitlab_group_cluster",
+    "gitlab_group_ldap_link",
 ]

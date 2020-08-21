@@ -6,6 +6,10 @@ class packet_device(terrascript.Resource):
     pass
 
 
+class packet_device_network_type(terrascript.Resource):
+    pass
+
+
 class packet_ssh_key(terrascript.Resource):
     pass
 

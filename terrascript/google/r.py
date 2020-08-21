@@ -2,6 +2,18 @@
 import terrascript
 
 
+class google_folder_access_approval_settings(terrascript.Resource):
+    pass
+
+
+class google_project_access_approval_settings(terrascript.Resource):
+    pass
+
+
+class google_organization_access_approval_settings(terrascript.Resource):
+    pass
+
+
 class google_access_context_manager_access_policy(terrascript.Resource):
     pass
 
@@ -10,7 +22,27 @@ class google_access_context_manager_access_level(terrascript.Resource):
     pass
 
 
+class google_access_context_manager_access_levels(terrascript.Resource):
+    pass
+
+
 class google_access_context_manager_service_perimeter(terrascript.Resource):
+    pass
+
+
+class google_access_context_manager_service_perimeters(terrascript.Resource):
+    pass
+
+
+class google_access_context_manager_service_perimeter_resource(terrascript.Resource):
+    pass
+
+
+class google_active_directory_domain(terrascript.Resource):
+    pass
+
+
+class google_active_directory_domain_trust(terrascript.Resource):
     pass
 
 
@@ -26,11 +58,27 @@ class google_app_engine_standard_app_version(terrascript.Resource):
     pass
 
 
+class google_app_engine_flexible_app_version(terrascript.Resource):
+    pass
+
+
 class google_app_engine_application_url_dispatch_rules(terrascript.Resource):
     pass
 
 
+class google_app_engine_service_split_traffic(terrascript.Resource):
+    pass
+
+
 class google_bigquery_dataset(terrascript.Resource):
+    pass
+
+
+class google_bigquery_dataset_access(terrascript.Resource):
+    pass
+
+
+class google_bigquery_job(terrascript.Resource):
     pass
 
 
@@ -50,7 +98,27 @@ class google_binary_authorization_policy(terrascript.Resource):
     pass
 
 
+class google_cloud_asset_project_feed(terrascript.Resource):
+    pass
+
+
+class google_cloud_asset_folder_feed(terrascript.Resource):
+    pass
+
+
+class google_cloud_asset_organization_feed(terrascript.Resource):
+    pass
+
+
 class google_cloudbuild_trigger(terrascript.Resource):
+    pass
+
+
+class google_cloudiot_registry(terrascript.Resource):
+    pass
+
+
+class google_cloudiot_device(terrascript.Resource):
     pass
 
 
@@ -98,6 +166,10 @@ class google_compute_backend_service_signed_url_key(terrascript.Resource):
     pass
 
 
+class google_compute_region_disk_resource_policy_attachment(terrascript.Resource):
+    pass
+
+
 class google_compute_disk_resource_policy_attachment(terrascript.Resource):
     pass
 
@@ -138,6 +210,10 @@ class google_compute_image(terrascript.Resource):
     pass
 
 
+class google_compute_instance_group_named_port(terrascript.Resource):
+    pass
+
+
 class google_compute_interconnect_attachment(terrascript.Resource):
     pass
 
@@ -154,7 +230,19 @@ class google_compute_network_endpoint_group(terrascript.Resource):
     pass
 
 
+class google_compute_global_network_endpoint(terrascript.Resource):
+    pass
+
+
+class google_compute_global_network_endpoint_group(terrascript.Resource):
+    pass
+
+
 class google_compute_node_group(terrascript.Resource):
+    pass
+
+
+class google_compute_network_peering_routes_config(terrascript.Resource):
     pass
 
 
@@ -167,6 +255,10 @@ class google_compute_region_autoscaler(terrascript.Resource):
 
 
 class google_compute_region_disk(terrascript.Resource):
+    pass
+
+
+class google_compute_region_url_map(terrascript.Resource):
     pass
 
 
@@ -202,6 +294,10 @@ class google_compute_ssl_certificate(terrascript.Resource):
     pass
 
 
+class google_compute_region_ssl_certificate(terrascript.Resource):
+    pass
+
+
 class google_compute_reservation(terrascript.Resource):
     pass
 
@@ -219,6 +315,14 @@ class google_compute_target_http_proxy(terrascript.Resource):
 
 
 class google_compute_target_https_proxy(terrascript.Resource):
+    pass
+
+
+class google_compute_region_target_http_proxy(terrascript.Resource):
+    pass
+
+
+class google_compute_region_target_https_proxy(terrascript.Resource):
     pass
 
 
@@ -250,7 +354,31 @@ class google_container_analysis_note(terrascript.Resource):
     pass
 
 
+class google_container_analysis_occurrence(terrascript.Resource):
+    pass
+
+
+class google_data_catalog_entry_group(terrascript.Resource):
+    pass
+
+
+class google_data_catalog_entry(terrascript.Resource):
+    pass
+
+
+class google_data_catalog_tag_template(terrascript.Resource):
+    pass
+
+
+class google_data_catalog_tag(terrascript.Resource):
+    pass
+
+
 class google_dataproc_autoscaling_policy(terrascript.Resource):
+    pass
+
+
+class google_datastore_index(terrascript.Resource):
     pass
 
 
@@ -258,7 +386,23 @@ class google_deployment_manager_deployment(terrascript.Resource):
     pass
 
 
+class google_dialogflow_agent(terrascript.Resource):
+    pass
+
+
+class google_dialogflow_intent(terrascript.Resource):
+    pass
+
+
+class google_dialogflow_entity_type(terrascript.Resource):
+    pass
+
+
 class google_dns_managed_zone(terrascript.Resource):
+    pass
+
+
+class google_dns_policy(terrascript.Resource):
     pass
 
 
@@ -270,13 +414,55 @@ class google_firestore_index(terrascript.Resource):
     pass
 
 
+class google_game_services_realm(terrascript.Resource):
+    pass
+
+
+class google_game_services_game_server_cluster(terrascript.Resource):
+    pass
+
+
+class google_game_services_game_server_deployment(terrascript.Resource):
+    pass
+
+
+class google_game_services_game_server_config(terrascript.Resource):
+    pass
+
+
+class google_game_services_game_server_deployment_rollout(terrascript.Resource):
+    pass
+
+
+class google_healthcare_dataset(terrascript.Resource):
+    pass
+
+
+class google_healthcare_dicom_store(terrascript.Resource):
+    pass
+
+
+class google_healthcare_fhir_store(terrascript.Resource):
+    pass
+
+
+class google_healthcare_hl7_v2_store(terrascript.Resource):
+    pass
+
+
+class google_iap_brand(terrascript.Resource):
+    pass
+
+
+class google_iap_client(terrascript.Resource):
+    pass
+
+
 class google_identity_platform_default_supported_idp_config(terrascript.Resource):
     pass
 
 
-class google_identity_platform_tenant_default_supported_idp_config(
-    terrascript.Resource
-):
+class google_identity_platform_tenant_default_supported_idp_config(terrascript.Resource):
     pass
 
 
@@ -308,6 +494,14 @@ class google_kms_crypto_key(terrascript.Resource):
     pass
 
 
+class google_kms_key_ring_import_job(terrascript.Resource):
+    pass
+
+
+class google_kms_secret_ciphertext(terrascript.Resource):
+    pass
+
+
 class google_logging_metric(terrascript.Resource):
     pass
 
@@ -328,7 +522,31 @@ class google_monitoring_notification_channel(terrascript.Resource):
     pass
 
 
+class google_monitoring_custom_service(terrascript.Resource):
+    pass
+
+
+class google_monitoring_slo(terrascript.Resource):
+    pass
+
+
 class google_monitoring_uptime_check_config(terrascript.Resource):
+    pass
+
+
+class google_monitoring_metric_descriptor(terrascript.Resource):
+    pass
+
+
+class google_network_management_connectivity_test(terrascript.Resource):
+    pass
+
+
+class google_os_config_patch_deployment(terrascript.Resource):
+    pass
+
+
+class google_os_login_ssh_public_key(terrascript.Resource):
     pass
 
 
@@ -345,6 +563,14 @@ class google_redis_instance(terrascript.Resource):
 
 
 class google_resource_manager_lien(terrascript.Resource):
+    pass
+
+
+class google_secret_manager_secret(terrascript.Resource):
+    pass
+
+
+class google_secret_manager_secret_version(terrascript.Resource):
     pass
 
 
@@ -368,6 +594,10 @@ class google_sql_database(terrascript.Resource):
     pass
 
 
+class google_sql_source_representation_instance(terrascript.Resource):
+    pass
+
+
 class google_storage_bucket_access_control(terrascript.Resource):
     pass
 
@@ -380,7 +610,15 @@ class google_storage_default_object_access_control(terrascript.Resource):
     pass
 
 
+class google_storage_hmac_key(terrascript.Resource):
+    pass
+
+
 class google_tpu_node(terrascript.Resource):
+    pass
+
+
+class google_vpc_access_connector(terrascript.Resource):
     pass
 
 
@@ -405,10 +643,6 @@ class google_bigtable_table(terrascript.Resource):
 
 
 class google_cloudfunctions_function(terrascript.Resource):
-    pass
-
-
-class google_cloudiot_registry(terrascript.Resource):
     pass
 
 
@@ -488,6 +722,10 @@ class google_container_node_pool(terrascript.Resource):
     pass
 
 
+class google_container_registry(terrascript.Resource):
+    pass
+
+
 class google_dataflow_job(terrascript.Resource):
     pass
 
@@ -532,6 +770,10 @@ class google_logging_project_sink(terrascript.Resource):
     pass
 
 
+class google_monitoring_dashboard(terrascript.Resource):
+    pass
+
+
 class google_service_networking_connection(terrascript.Resource):
     pass
 
@@ -557,10 +799,6 @@ class google_organization_policy(terrascript.Resource):
 
 
 class google_project(terrascript.Resource):
-    pass
-
-
-class google_project_iam_policy(terrascript.Resource):
     pass
 
 

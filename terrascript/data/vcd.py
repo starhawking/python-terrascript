@@ -94,6 +94,18 @@ class vcd_nsxv_ip_set(terrascript.Data):
     pass
 
 
+class vcd_vapp_network(terrascript.Data):
+    pass
+
+
+class vcd_vapp_org_network(terrascript.Data):
+    pass
+
+
+class vcd_vm_affinity_rule(terrascript.Data):
+    pass
+
+
 __all__ = [
     "vcd_org",
     "vcd_org_vdc",
@@ -118,4 +130,7 @@ __all__ = [
     "vcd_nsxv_firewall_rule",
     "vcd_nsxv_dhcp_relay",
     "vcd_nsxv_ip_set",
+    "vcd_vapp_network",
+    "vcd_vapp_org_network",
+    "vcd_vm_affinity_rule",
 ]

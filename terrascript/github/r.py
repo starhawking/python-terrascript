@@ -2,6 +2,14 @@
 import terrascript
 
 
+class github_actions_secret(terrascript.Resource):
+    pass
+
+
+class github_branch(terrascript.Resource):
+    pass
+
+
 class github_branch_protection(terrascript.Resource):
     pass
 
@@ -38,6 +46,10 @@ class github_repository_deploy_key(terrascript.Resource):
     pass
 
 
+class github_repository_file(terrascript.Resource):
+    pass
+
+
 class github_repository_project(terrascript.Resource):
     pass
 
@@ -55,6 +67,10 @@ class github_team_membership(terrascript.Resource):
 
 
 class github_team_repository(terrascript.Resource):
+    pass
+
+
+class github_team_sync_group_mapping(terrascript.Resource):
     pass
 
 

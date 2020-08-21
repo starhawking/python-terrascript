@@ -24,3 +24,7 @@ class nomad_quota_specification(terrascript.Resource):
 
 class nomad_sentinel_policy(terrascript.Resource):
     pass
+
+
+class nomad_volume(terrascript.Resource):
+    pass

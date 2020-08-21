@@ -54,6 +54,18 @@ class aws_availability_zones(terrascript.Data):
     pass
 
 
+class aws_backup_plan(terrascript.Data):
+    pass
+
+
+class aws_backup_selection(terrascript.Data):
+    pass
+
+
+class aws_backup_vault(terrascript.Data):
+    pass
+
+
 class aws_batch_compute_environment(terrascript.Data):
     pass
 
@@ -79,6 +91,10 @@ class aws_cloudformation_export(terrascript.Data):
 
 
 class aws_cloudformation_stack(terrascript.Data):
+    pass
+
+
+class aws_cloudfront_distribution(terrascript.Data):
     pass
 
 
@@ -122,6 +138,10 @@ class aws_db_snapshot(terrascript.Data):
     pass
 
 
+class aws_directory_service_directory(terrascript.Data):
+    pass
+
+
 class aws_dx_gateway(terrascript.Data):
     pass
 
@@ -150,11 +170,67 @@ class aws_ebs_volume(terrascript.Data):
     pass
 
 
+class aws_ebs_volumes(terrascript.Data):
+    pass
+
+
+class aws_ec2_coip_pool(terrascript.Data):
+    pass
+
+
+class aws_ec2_coip_pools(terrascript.Data):
+    pass
+
+
+class aws_ec2_instance_type_offering(terrascript.Data):
+    pass
+
+
+class aws_ec2_instance_type_offerings(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateway(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateways(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateway_route_table(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateway_route_tables(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateway_virtual_interface(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateway_virtual_interface_group(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateway_virtual_interface_groups(terrascript.Data):
+    pass
+
+
+class aws_ec2_spot_price(terrascript.Data):
+    pass
+
+
 class aws_ec2_transit_gateway(terrascript.Data):
     pass
 
 
 class aws_ec2_transit_gateway_dx_gateway_attachment(terrascript.Data):
+    pass
+
+
+class aws_ec2_transit_gateway_peering_attachment(terrascript.Data):
     pass
 
 
@@ -167,6 +243,10 @@ class aws_ec2_transit_gateway_vpc_attachment(terrascript.Data):
 
 
 class aws_ec2_transit_gateway_vpn_attachment(terrascript.Data):
+    pass
+
+
+class aws_ecr_authorization_token(terrascript.Data):
     pass
 
 
@@ -195,6 +275,14 @@ class aws_ecs_task_definition(terrascript.Data):
 
 
 class aws_customer_gateway(terrascript.Data):
+    pass
+
+
+class aws_efs_access_point(terrascript.Data):
+    pass
+
+
+class aws_efs_access_points(terrascript.Data):
     pass
 
 
@@ -342,6 +430,10 @@ class aws_kms_secrets(terrascript.Data):
     pass
 
 
+class aws_lambda_alias(terrascript.Data):
+    pass
+
+
 class aws_lambda_function(terrascript.Data):
     pass
 
@@ -398,6 +490,30 @@ class aws_organizations_organizational_units(terrascript.Data):
     pass
 
 
+class aws_outposts_outpost(terrascript.Data):
+    pass
+
+
+class aws_outposts_outpost_instance_type(terrascript.Data):
+    pass
+
+
+class aws_outposts_outpost_instance_types(terrascript.Data):
+    pass
+
+
+class aws_outposts_outposts(terrascript.Data):
+    pass
+
+
+class aws_outposts_site(terrascript.Data):
+    pass
+
+
+class aws_outposts_sites(terrascript.Data):
+    pass
+
+
 class aws_partition(terrascript.Data):
     pass
 
@@ -431,6 +547,10 @@ class aws_redshift_service_account(terrascript.Data):
 
 
 class aws_region(terrascript.Data):
+    pass
+
+
+class aws_regions(terrascript.Data):
     pass
 
 
@@ -478,6 +598,10 @@ class aws_secretsmanager_secret(terrascript.Data):
     pass
 
 
+class aws_secretsmanager_secret_rotation(terrascript.Data):
+    pass
+
+
 class aws_secretsmanager_secret_version(terrascript.Data):
     pass
 
@@ -487,6 +611,14 @@ class aws_servicequotas_service(terrascript.Data):
 
 
 class aws_servicequotas_service_quota(terrascript.Data):
+    pass
+
+
+class aws_sfn_activity(terrascript.Data):
+    pass
+
+
+class aws_sfn_state_machine(terrascript.Data):
     pass
 
 
@@ -503,6 +635,10 @@ class aws_ssm_document(terrascript.Data):
 
 
 class aws_ssm_parameter(terrascript.Data):
+    pass
+
+
+class aws_ssm_patch_baseline(terrascript.Data):
     pass
 
 
@@ -590,7 +726,27 @@ class aws_wafregional_web_acl(terrascript.Data):
     pass
 
 
+class aws_wafv2_ip_set(terrascript.Data):
+    pass
+
+
+class aws_wafv2_regex_pattern_set(terrascript.Data):
+    pass
+
+
+class aws_wafv2_rule_group(terrascript.Data):
+    pass
+
+
+class aws_wafv2_web_acl(terrascript.Data):
+    pass
+
+
 class aws_workspaces_bundle(terrascript.Data):
+    pass
+
+
+class aws_workspaces_directory(terrascript.Data):
     pass
 
 

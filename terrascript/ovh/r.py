@@ -14,11 +14,15 @@ class ovh_cloud_user(terrascript.Resource):
     pass
 
 
-class ovh_dedicated_server_update(terrascript.Resource):
+class ovh_dedicated_server_install_task(terrascript.Resource):
     pass
 
 
 class ovh_dedicated_server_reboot_task(terrascript.Resource):
+    pass
+
+
+class ovh_dedicated_server_update(terrascript.Resource):
     pass
 
 
@@ -31,18 +35,6 @@ class ovh_domain_zone_redirection(terrascript.Resource):
 
 
 class ovh_ip_reverse(terrascript.Resource):
-    pass
-
-
-class ovh_iploadbalancing_tcp_farm(terrascript.Resource):
-    pass
-
-
-class ovh_iploadbalancing_tcp_farm_server(terrascript.Resource):
-    pass
-
-
-class ovh_iploadbalancing_tcp_frontend(terrascript.Resource):
     pass
 
 
@@ -70,6 +62,22 @@ class ovh_iploadbalancing_refresh(terrascript.Resource):
     pass
 
 
+class ovh_iploadbalancing_tcp_farm(terrascript.Resource):
+    pass
+
+
+class ovh_iploadbalancing_tcp_farm_server(terrascript.Resource):
+    pass
+
+
+class ovh_iploadbalancing_tcp_frontend(terrascript.Resource):
+    pass
+
+
+class ovh_iploadbalancing_vrack_network(terrascript.Resource):
+    pass
+
+
 class ovh_me_installation_template(terrascript.Resource):
     pass
 
@@ -78,11 +86,15 @@ class ovh_me_installation_template_partition_scheme(terrascript.Resource):
     pass
 
 
+class ovh_me_installation_template_partition_scheme_hardware_raid(terrascript.Resource):
+    pass
+
+
 class ovh_me_installation_template_partition_scheme_partition(terrascript.Resource):
     pass
 
 
-class ovh_me_installation_template_partition_scheme_hardware_raid(terrascript.Resource):
+class ovh_me_ipxe_script(terrascript.Resource):
     pass
 
 
@@ -99,4 +111,8 @@ class ovh_vrack_dedicated_server(terrascript.Resource):
 
 
 class ovh_vrack_dedicated_server_interface(terrascript.Resource):
+    pass
+
+
+class ovh_vrack_iploadbalancing(terrascript.Resource):
     pass

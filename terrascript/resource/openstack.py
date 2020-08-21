@@ -142,7 +142,15 @@ class openstack_identity_user_v3(terrascript.Resource):
     pass
 
 
+class openstack_identity_group_v3(terrascript.Resource):
+    pass
+
+
 class openstack_identity_application_credential_v3(terrascript.Resource):
+    pass
+
+
+class openstack_identity_ec2_credential_v3(terrascript.Resource):
     pass
 
 
@@ -187,6 +195,10 @@ class openstack_lb_pool_v2(terrascript.Resource):
 
 
 class openstack_lb_member_v2(terrascript.Resource):
+    pass
+
+
+class openstack_lb_members_v2(terrascript.Resource):
     pass
 
 
@@ -346,6 +358,10 @@ class openstack_keymanager_container_v1(terrascript.Resource):
     pass
 
 
+class openstack_keymanager_order_v1(terrascript.Resource):
+    pass
+
+
 __all__ = [
     "openstack_blockstorage_quotaset_v2",
     "openstack_blockstorage_quotaset_v3",
@@ -382,7 +398,9 @@ __all__ = [
     "openstack_identity_role_assignment_v3",
     "openstack_identity_service_v3",
     "openstack_identity_user_v3",
+    "openstack_identity_group_v3",
     "openstack_identity_application_credential_v3",
+    "openstack_identity_ec2_credential_v3",
     "openstack_images_image_v2",
     "openstack_images_image_access_v2",
     "openstack_images_image_access_accept_v2",
@@ -394,6 +412,7 @@ __all__ = [
     "openstack_lb_listener_v2",
     "openstack_lb_pool_v2",
     "openstack_lb_member_v2",
+    "openstack_lb_members_v2",
     "openstack_lb_monitor_v2",
     "openstack_lb_l7policy_v2",
     "openstack_lb_l7rule_v2",
@@ -433,4 +452,5 @@ __all__ = [
     "openstack_sharedfilesystem_share_access_v2",
     "openstack_keymanager_secret_v1",
     "openstack_keymanager_container_v1",
+    "openstack_keymanager_order_v1",
 ]

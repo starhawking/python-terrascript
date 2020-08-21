@@ -52,3 +52,15 @@ class profitbricks_snapshot(terrascript.Resource):
 
 class profitbricks_ipfailover(terrascript.Resource):
     pass
+
+
+class profitbricks_k8s_cluster(terrascript.Resource):
+    pass
+
+
+class profitbricks_k8s_node_pool(terrascript.Resource):
+    pass
+
+
+class profitbricks_private_crossconnect(terrascript.Resource):
+    pass

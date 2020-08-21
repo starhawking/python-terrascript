@@ -28,3 +28,15 @@ class pagerduty_extension_schema(terrascript.Data):
 
 class pagerduty_service(terrascript.Data):
     pass
+
+
+class pagerduty_business_service(terrascript.Data):
+    pass
+
+
+class pagerduty_priority(terrascript.Data):
+    pass
+
+
+class pagerduty_ruleset(terrascript.Data):
+    pass

@@ -14,6 +14,10 @@ class newrelic_application(terrascript.Data):
     pass
 
 
+class newrelic_entity(terrascript.Data):
+    pass
+
+
 class newrelic_key_transaction(terrascript.Data):
     pass
 
@@ -27,4 +31,8 @@ class newrelic_plugin_component(terrascript.Data):
 
 
 class newrelic_synthetics_monitor(terrascript.Data):
+    pass
+
+
+class newrelic_synthetics_secure_credential(terrascript.Data):
     pass

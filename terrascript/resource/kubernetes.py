@@ -6,6 +6,10 @@ class kubernetes_api_service(terrascript.Resource):
     pass
 
 
+class kubernetes_certificate_signing_request(terrascript.Resource):
+    pass
+
+
 class kubernetes_cluster_role(terrascript.Resource):
     pass
 
@@ -19,6 +23,10 @@ class kubernetes_config_map(terrascript.Resource):
 
 
 class kubernetes_cron_job(terrascript.Resource):
+    pass
+
+
+class kubernetes_csi_driver(terrascript.Resource):
     pass
 
 
@@ -74,6 +82,10 @@ class kubernetes_pod_disruption_budget(terrascript.Resource):
     pass
 
 
+class kubernetes_pod_security_policy(terrascript.Resource):
+    pass
+
+
 class kubernetes_priority_class(terrascript.Resource):
     pass
 
@@ -114,12 +126,22 @@ class kubernetes_storage_class(terrascript.Resource):
     pass
 
 
+class kubernetes_validating_webhook_configuration(terrascript.Resource):
+    pass
+
+
+class kubernetes_mutating_webhook_configuration(terrascript.Resource):
+    pass
+
+
 __all__ = [
     "kubernetes_api_service",
+    "kubernetes_certificate_signing_request",
     "kubernetes_cluster_role",
     "kubernetes_cluster_role_binding",
     "kubernetes_config_map",
     "kubernetes_cron_job",
+    "kubernetes_csi_driver",
     "kubernetes_daemonset",
     "kubernetes_deployment",
     "kubernetes_endpoints",
@@ -133,6 +155,7 @@ __all__ = [
     "kubernetes_persistent_volume_claim",
     "kubernetes_pod",
     "kubernetes_pod_disruption_budget",
+    "kubernetes_pod_security_policy",
     "kubernetes_priority_class",
     "kubernetes_replication_controller",
     "kubernetes_role_binding",
@@ -143,4 +166,6 @@ __all__ = [
     "kubernetes_service_account",
     "kubernetes_stateful_set",
     "kubernetes_storage_class",
+    "kubernetes_validating_webhook_configuration",
+    "kubernetes_mutating_webhook_configuration",
 ]

@@ -54,6 +54,18 @@ class profitbricks_ipfailover(terrascript.Resource):
     pass
 
 
+class profitbricks_k8s_cluster(terrascript.Resource):
+    pass
+
+
+class profitbricks_k8s_node_pool(terrascript.Resource):
+    pass
+
+
+class profitbricks_private_crossconnect(terrascript.Resource):
+    pass
+
+
 __all__ = [
     "profitbricks_datacenter",
     "profitbricks_ipblock",
@@ -68,4 +80,7 @@ __all__ = [
     "profitbricks_user",
     "profitbricks_snapshot",
     "profitbricks_ipfailover",
+    "profitbricks_k8s_cluster",
+    "profitbricks_k8s_node_pool",
+    "profitbricks_private_crossconnect",
 ]

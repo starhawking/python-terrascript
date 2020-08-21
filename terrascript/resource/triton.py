@@ -34,6 +34,10 @@ class triton_vlan(terrascript.Resource):
     pass
 
 
+class triton_volume(terrascript.Resource):
+    pass
+
+
 __all__ = [
     "triton_fabric",
     "triton_firewall_rule",
@@ -43,4 +47,5 @@ __all__ = [
     "triton_service_group",
     "triton_snapshot",
     "triton_vlan",
+    "triton_volume",
 ]

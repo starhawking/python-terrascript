@@ -6,6 +6,14 @@ class digitalocean_certificate(terrascript.Resource):
     pass
 
 
+class digitalocean_container_registry(terrascript.Resource):
+    pass
+
+
+class digitalocean_container_registry_docker_credentials(terrascript.Resource):
+    pass
+
+
 class digitalocean_cdn(terrascript.Resource):
     pass
 
@@ -74,11 +82,19 @@ class digitalocean_project(terrascript.Resource):
     pass
 
 
+class digitalocean_project_resources(terrascript.Resource):
+    pass
+
+
 class digitalocean_record(terrascript.Resource):
     pass
 
 
 class digitalocean_spaces_bucket(terrascript.Resource):
+    pass
+
+
+class digitalocean_spaces_bucket_object(terrascript.Resource):
     pass
 
 
@@ -102,8 +118,14 @@ class digitalocean_volume_snapshot(terrascript.Resource):
     pass
 
 
+class digitalocean_vpc(terrascript.Resource):
+    pass
+
+
 __all__ = [
     "digitalocean_certificate",
+    "digitalocean_container_registry",
+    "digitalocean_container_registry_docker_credentials",
     "digitalocean_cdn",
     "digitalocean_database_cluster",
     "digitalocean_database_connection_pool",
@@ -121,11 +143,14 @@ __all__ = [
     "digitalocean_kubernetes_node_pool",
     "digitalocean_loadbalancer",
     "digitalocean_project",
+    "digitalocean_project_resources",
     "digitalocean_record",
     "digitalocean_spaces_bucket",
+    "digitalocean_spaces_bucket_object",
     "digitalocean_ssh_key",
     "digitalocean_tag",
     "digitalocean_volume",
     "digitalocean_volume_attachment",
     "digitalocean_volume_snapshot",
+    "digitalocean_vpc",
 ]

@@ -10,7 +10,15 @@ class alicloud_image(terrascript.Resource):
     pass
 
 
+class alicloud_reserved_instance(terrascript.Resource):
+    pass
+
+
 class alicloud_copy_image(terrascript.Resource):
+    pass
+
+
+class alicloud_image_export(terrascript.Resource):
     pass
 
 
@@ -18,7 +26,11 @@ class alicloud_image_copy(terrascript.Resource):
     pass
 
 
-class alicloud_reserved_instance(terrascript.Resource):
+class alicloud_image_import(terrascript.Resource):
+    pass
+
+
+class alicloud_image_share_permission(terrascript.Resource):
     pass
 
 
@@ -107,6 +119,10 @@ class alicloud_gpdb_connection(terrascript.Resource):
 
 
 class alicloud_db_readonly_instance(terrascript.Resource):
+    pass
+
+
+class alicloud_auto_provisioning_group(terrascript.Resource):
     pass
 
 
@@ -410,6 +426,18 @@ class alicloud_cr_repo(terrascript.Resource):
     pass
 
 
+class alicloud_cr_ee_namespace(terrascript.Resource):
+    pass
+
+
+class alicloud_cr_ee_repo(terrascript.Resource):
+    pass
+
+
+class alicloud_cr_ee_sync_rule(terrascript.Resource):
+    pass
+
+
 class alicloud_cdn_domain(terrascript.Resource):
     pass
 
@@ -446,6 +474,10 @@ class alicloud_cms_alarm(terrascript.Resource):
     pass
 
 
+class alicloud_cms_site_monitor(terrascript.Resource):
+    pass
+
+
 class alicloud_pvtz_zone(terrascript.Resource):
     pass
 
@@ -479,6 +511,18 @@ class alicloud_logtail_config(terrascript.Resource):
 
 
 class alicloud_logtail_attachment(terrascript.Resource):
+    pass
+
+
+class alicloud_log_dashboard(terrascript.Resource):
+    pass
+
+
+class alicloud_log_alert(terrascript.Resource):
+    pass
+
+
+class alicloud_log_audit(terrascript.Resource):
     pass
 
 
@@ -730,9 +774,201 @@ class alicloud_polardb_account_privilege(terrascript.Resource):
     pass
 
 
+class alicloud_polardb_endpoint(terrascript.Resource):
+    pass
+
+
 class alicloud_polardb_endpoint_address(terrascript.Resource):
     pass
 
 
 class alicloud_hbase_instance(terrascript.Resource):
+    pass
+
+
+class alicloud_market_order(terrascript.Resource):
+    pass
+
+
+class alicloud_adb_cluster(terrascript.Resource):
+    pass
+
+
+class alicloud_adb_backup_policy(terrascript.Resource):
+    pass
+
+
+class alicloud_adb_account(terrascript.Resource):
+    pass
+
+
+class alicloud_adb_connection(terrascript.Resource):
+    pass
+
+
+class alicloud_cen_flowlog(terrascript.Resource):
+    pass
+
+
+class alicloud_kms_secret(terrascript.Resource):
+    pass
+
+
+class alicloud_maxcompute_project(terrascript.Resource):
+    pass
+
+
+class alicloud_kms_alias(terrascript.Resource):
+    pass
+
+
+class alicloud_dns_instance(terrascript.Resource):
+    pass
+
+
+class alicloud_dns_domain_attachment(terrascript.Resource):
+    pass
+
+
+class alicloud_edas_application(terrascript.Resource):
+    pass
+
+
+class alicloud_edas_deploy_group(terrascript.Resource):
+    pass
+
+
+class alicloud_edas_application_scale(terrascript.Resource):
+    pass
+
+
+class alicloud_edas_slb_attachment(terrascript.Resource):
+    pass
+
+
+class alicloud_edas_cluster(terrascript.Resource):
+    pass
+
+
+class alicloud_edas_instance_cluster_attachment(terrascript.Resource):
+    pass
+
+
+class alicloud_edas_application_deployment(terrascript.Resource):
+    pass
+
+
+class alicloud_dns_domain(terrascript.Resource):
+    pass
+
+
+class alicloud_dms_enterprise_instance(terrascript.Resource):
+    pass
+
+
+class alicloud_waf_domain(terrascript.Resource):
+    pass
+
+
+class alicloud_cen_route_map(terrascript.Resource):
+    pass
+
+
+class alicloud_resource_manager_role(terrascript.Resource):
+    pass
+
+
+class alicloud_resource_manager_resource_group(terrascript.Resource):
+    pass
+
+
+class alicloud_resource_manager_folder(terrascript.Resource):
+    pass
+
+
+class alicloud_resource_manager_handshake(terrascript.Resource):
+    pass
+
+
+class alicloud_cen_private_zone(terrascript.Resource):
+    pass
+
+
+class alicloud_resource_manager_policy(terrascript.Resource):
+    pass
+
+
+class alicloud_resource_manager_account(terrascript.Resource):
+    pass
+
+
+class alicloud_waf_instance(terrascript.Resource):
+    pass
+
+
+class alicloud_resource_manager_resource_directory(terrascript.Resource):
+    pass
+
+
+class alicloud_alidns_domain_group(terrascript.Resource):
+    pass
+
+
+class alicloud_resource_manager_policy_version(terrascript.Resource):
+    pass
+
+
+class alicloud_kms_key_version(terrascript.Resource):
+    pass
+
+
+class alicloud_alidns_record(terrascript.Resource):
+    pass
+
+
+class alicloud_ddoscoo_scheduler_rule(terrascript.Resource):
+    pass
+
+
+class alicloud_cassandra_cluster(terrascript.Resource):
+    pass
+
+
+class alicloud_cassandra_data_center(terrascript.Resource):
+    pass
+
+
+class alicloud_cen_vbr_health_check(terrascript.Resource):
+    pass
+
+
+class alicloud_eci_openapi_image_cache(terrascript.Resource):
+    pass
+
+
+class alicloud_eci_image_cache(terrascript.Resource):
+    pass
+
+
+class alicloud_dms_enterprise_user(terrascript.Resource):
+    pass
+
+
+class alicloud_ecs_dedicated_host(terrascript.Resource):
+    pass
+
+
+class alicloud_oos_template(terrascript.Resource):
+    pass
+
+
+class alicloud_edas_k8s_cluster(terrascript.Resource):
+    pass
+
+
+class alicloud_oos_execution(terrascript.Resource):
+    pass
+
+
+class alicloud_resource_manager_policy_attachment(terrascript.Resource):
     pass

@@ -124,3 +124,31 @@ class vcd_nsxv_dhcp_relay(terrascript.Resource):
 
 class vcd_nsxv_ip_set(terrascript.Resource):
     pass
+
+
+class vcd_vm_internal_disk(terrascript.Resource):
+    pass
+
+
+class vcd_vapp_org_network(terrascript.Resource):
+    pass
+
+
+class vcd_org_group(terrascript.Resource):
+    pass
+
+
+class vcd_vapp_firewall_rules(terrascript.Resource):
+    pass
+
+
+class vcd_vapp_nat_rules(terrascript.Resource):
+    pass
+
+
+class vcd_vapp_static_routing(terrascript.Resource):
+    pass
+
+
+class vcd_vm_affinity_rule(terrascript.Resource):
+    pass

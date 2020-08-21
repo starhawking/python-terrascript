@@ -2,11 +2,31 @@
 import terrascript
 
 
+class github_actions_public_key(terrascript.Data):
+    pass
+
+
+class github_branch(terrascript.Data):
+    pass
+
+
 class github_collaborators(terrascript.Data):
     pass
 
 
 class github_ip_ranges(terrascript.Data):
+    pass
+
+
+class github_membership(terrascript.Data):
+    pass
+
+
+class github_organization_team_sync_groups(terrascript.Data):
+    pass
+
+
+class github_release(terrascript.Data):
     pass
 
 

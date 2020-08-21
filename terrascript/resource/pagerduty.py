@@ -42,11 +42,31 @@ class pagerduty_user_contact_method(terrascript.Resource):
     pass
 
 
+class pagerduty_user_notification_rule(terrascript.Resource):
+    pass
+
+
 class pagerduty_extension(terrascript.Resource):
     pass
 
 
 class pagerduty_event_rule(terrascript.Resource):
+    pass
+
+
+class pagerduty_ruleset(terrascript.Resource):
+    pass
+
+
+class pagerduty_ruleset_rule(terrascript.Resource):
+    pass
+
+
+class pagerduty_business_service(terrascript.Resource):
+    pass
+
+
+class pagerduty_service_dependency(terrascript.Resource):
     pass
 
 
@@ -61,6 +81,11 @@ __all__ = [
     "pagerduty_team_membership",
     "pagerduty_user",
     "pagerduty_user_contact_method",
+    "pagerduty_user_notification_rule",
     "pagerduty_extension",
     "pagerduty_event_rule",
+    "pagerduty_ruleset",
+    "pagerduty_ruleset_rule",
+    "pagerduty_business_service",
+    "pagerduty_service_dependency",
 ]

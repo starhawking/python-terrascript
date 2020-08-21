@@ -6,6 +6,14 @@ class digitalocean_certificate(terrascript.Resource):
     pass
 
 
+class digitalocean_container_registry(terrascript.Resource):
+    pass
+
+
+class digitalocean_container_registry_docker_credentials(terrascript.Resource):
+    pass
+
+
 class digitalocean_cdn(terrascript.Resource):
     pass
 
@@ -74,11 +82,19 @@ class digitalocean_project(terrascript.Resource):
     pass
 
 
+class digitalocean_project_resources(terrascript.Resource):
+    pass
+
+
 class digitalocean_record(terrascript.Resource):
     pass
 
 
 class digitalocean_spaces_bucket(terrascript.Resource):
+    pass
+
+
+class digitalocean_spaces_bucket_object(terrascript.Resource):
     pass
 
 
@@ -99,4 +115,8 @@ class digitalocean_volume_attachment(terrascript.Resource):
 
 
 class digitalocean_volume_snapshot(terrascript.Resource):
+    pass
+
+
+class digitalocean_vpc(terrascript.Resource):
     pass

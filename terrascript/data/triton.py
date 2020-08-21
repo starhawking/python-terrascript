@@ -30,6 +30,10 @@ class triton_fabric_network(terrascript.Data):
     pass
 
 
+class triton_volume(terrascript.Data):
+    pass
+
+
 __all__ = [
     "triton_account",
     "triton_datacenter",
@@ -38,4 +42,5 @@ __all__ = [
     "triton_package",
     "triton_fabric_vlan",
     "triton_fabric_network",
+    "triton_volume",
 ]

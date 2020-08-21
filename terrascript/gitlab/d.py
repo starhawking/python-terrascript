@@ -10,6 +10,10 @@ class gitlab_project(terrascript.Data):
     pass
 
 
+class gitlab_projects(terrascript.Data):
+    pass
+
+
 class gitlab_user(terrascript.Data):
     pass
 
