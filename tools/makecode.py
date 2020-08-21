@@ -34,20 +34,18 @@
    for a list of earlier changes.
 
 """
+import concurrent.futures
+import logging
 import os
 import os.path
-import sys
 import re
-import tempfile
-import subprocess
 import shlex
-import concurrent.futures
+import subprocess
+import sys
+import tempfile
+
 import jinja2
-import logging
-import threading
 import yaml
-
-
 
 DEBUG = False
 CONCURRENCY = 10
