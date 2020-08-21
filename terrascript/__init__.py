@@ -330,7 +330,7 @@ class Provider(Block):
 
 class Variable(NamedBlock):
     def __repr__(self):
-        return f"var.{self._name}"
+        return "var.{}".format(self._name)
 
 
 class Module(NamedBlock):
