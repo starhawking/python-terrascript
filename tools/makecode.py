@@ -228,16 +228,12 @@ def legacy_process(provider, modulesdir, resources, datasources):
 
 def create_provider(provider, modulesdir):
     logging.debug("create_provider provider=%s modulesdir=%s", provider, modulesdir)
-    with open(
-        os.path.join(modulesdir, "provider", "{}.py".format(provider)), "wt"
-    ) as fp:
+    with open(os.path.join(modulesdir, "provider", "{}.py".format(provider)), "wt") as fp:
         fp.write(PROVIDER_TEMPLATE.render(provider=provider))
 
 
 def create_resources(provider, modulesdir, resources):
-    with open(
-        os.path.join(modulesdir, "resource", "{}.py".format(provider)), "wt"
-    ) as fp:
+    with open(os.path.join(modulesdir, "resource", "{}.py".format(provider)), "wt") as fp:
         fp.write(RESOURCES_TEMPLATE.render(provider=provider, resources=resources))
 
 
@@ -308,7 +304,7 @@ def process(entry, modulesdir):
 
 def main():
     thisdir = os.path.abspath(".")
-    rootdir = os.path.abspath("..")
+    # rootdir = os.path.abspath("..")
     modulesdir = os.path.abspath("../terrascript")
 
     try:
