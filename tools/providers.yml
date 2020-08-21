@@ -48,6 +48,8 @@
   repository: https://github.com/terraform-providers/terraform-provider-gitlab
 - name: google
   repository: https://github.com/terraform-providers/terraform-provider-google
+- name: google-beta
+  repository: https://github.com/terraform-providers/terraform-provider-google-beta
 - name: grafana
   repository: https://github.com/terraform-providers/terraform-provider-grafana
 - name: heroku
