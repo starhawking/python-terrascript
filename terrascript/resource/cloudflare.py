@@ -1,5 +1,4 @@
 # terrascript/resource/cloudflare.py
-
 import terrascript
 
 

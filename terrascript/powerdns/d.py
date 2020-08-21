@@ -1,3 +1,1 @@
-#  terrascript/powerdns/d.py
-
-import terrascript
+# terrascript/powerdns/d.py

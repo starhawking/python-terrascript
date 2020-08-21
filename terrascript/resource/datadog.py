@@ -1,5 +1,4 @@
 # terrascript/resource/datadog.py
-
 import terrascript
 
 

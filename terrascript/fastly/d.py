@@ -1,5 +1,4 @@
-#  terrascript/fastly/d.py
-
+# terrascript/fastly/d.py
 import terrascript
 
 

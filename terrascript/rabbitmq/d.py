@@ -1,3 +1,1 @@
-#  terrascript/rabbitmq/d.py
-
-import terrascript
+# terrascript/rabbitmq/d.py

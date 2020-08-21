@@ -1,3 +1,1 @@
-#  terrascript/oci/d.py
-
-import terrascript
+# terrascript/oci/d.py

@@ -107,7 +107,7 @@ class Block(dict):
         #
         if attr in self:
             return self[attr]
-        elif attr.startswith('__'):
+        elif attr.startswith("__"):
             raise AttributeError
         else:
             if isinstance(self, Resource):
@@ -115,13 +115,9 @@ class Block(dict):
                     "{}.{}.{}".format(self.__class__.__name__, self._name, attr)
                 )
             if isinstance(self, Module):
-                return Attribute(
-                    "module.{}.{}".format(self._name, attr)
-                )
+                return Attribute("module.{}.{}".format(self._name, attr))
             if isinstance(self, Variable):
-                return Attribute(
-                    "var.{}.{}".format(self._name, attr)
-                )
+                return Attribute("var.{}.{}".format(self._name, attr))
             elif isinstance(self, Locals):
                 return Attribute("local.{}".format(attr))
             elif isinstance(self, Data):
@@ -281,7 +277,7 @@ class Terrascript(dict):
             if isinstance(o, (Resource, Data, Provider, Variable, Module, Output)):
                 yield o
             elif isinstance(o, dict):
-                for k,v in o.items():
+                for k, v in o.items():
                     yield from recurse(v)
             elif isinstance(o, list):
                 for i in o:
@@ -334,7 +330,7 @@ class Provider(Block):
 
 class Variable(NamedBlock):
     def __repr__(self):
-        return f'var.{self._name}'
+        return f"var.{self._name}"
 
 
 class Module(NamedBlock):

@@ -1,5 +1,4 @@
 # terrascript/resource/vcd.py
-
 import terrascript
 
 

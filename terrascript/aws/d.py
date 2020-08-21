@@ -1,5 +1,4 @@
-#  terrascript/aws/d.py
-
+# terrascript/aws/d.py
 import terrascript
 
 

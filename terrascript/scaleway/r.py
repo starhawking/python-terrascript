@@ -1,5 +1,4 @@
 # terrascript/scaleway/r.py
-
 import terrascript
 
 

@@ -1,3 +1,1 @@
-#  terrascript/matchbox/d.py
-
-import terrascript
+# terrascript/matchbox/d.py

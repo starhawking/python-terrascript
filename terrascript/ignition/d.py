@@ -1,5 +1,4 @@
-#  terrascript/ignition/d.py
-
+# terrascript/ignition/d.py
 import terrascript
 
 

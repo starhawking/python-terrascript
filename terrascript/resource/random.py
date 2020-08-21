@@ -1,5 +1,4 @@
 # terrascript/resource/random.py
-
 import terrascript
 
 

@@ -1,5 +1,4 @@
 # terrascript/provider/logicmonitor.py
-
 import terrascript
 
 

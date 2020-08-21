@@ -1,5 +1,4 @@
 # terrascript/provider/librato.py
-
 import terrascript
 
 

@@ -1,5 +1,4 @@
-#  terrascript/cloudstack/d.py
-
+# terrascript/cloudstack/d.py
 import terrascript
 
 

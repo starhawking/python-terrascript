@@ -1,5 +1,4 @@
 # terrascript/resource/rancher.py
-
 import terrascript
 
 

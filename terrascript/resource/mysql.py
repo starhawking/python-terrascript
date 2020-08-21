@@ -1,5 +1,4 @@
 # terrascript/resource/mysql.py
-
 import terrascript
 
 

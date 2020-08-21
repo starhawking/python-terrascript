@@ -1,5 +1,4 @@
 # terrascript/softlayer/r.py
-
 import terrascript
 
 

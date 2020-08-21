@@ -1,5 +1,4 @@
 # terrascript/resource/dnsimple.py
-
 import terrascript
 
 

@@ -1,5 +1,4 @@
 # terrascript/resource/gitlab.py
-
 import terrascript
 
 

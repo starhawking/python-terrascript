@@ -1,5 +1,4 @@
-#  terrascript/opsgenie/d.py
-
+# terrascript/opsgenie/d.py
 import terrascript
 
 

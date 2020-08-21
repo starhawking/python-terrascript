@@ -1,5 +1,4 @@
 # terrascript/resource/google.py
-
 import terrascript
 
 

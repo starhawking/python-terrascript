@@ -1,5 +1,4 @@
-#  terrascript/circonus/d.py
-
+# terrascript/circonus/d.py
 import terrascript
 
 

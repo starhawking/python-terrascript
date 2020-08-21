@@ -1,5 +1,4 @@
-#  terrascript/vsphere/d.py
-
+# terrascript/vsphere/d.py
 import terrascript
 
 

@@ -1,5 +1,4 @@
 # terrascript/provider/cobbler.py
-
 import terrascript
 
 

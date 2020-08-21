@@ -1,5 +1,4 @@
 # terrascript/resource/fastly.py
-
 import terrascript
 
 

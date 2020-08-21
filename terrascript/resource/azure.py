@@ -1,5 +1,4 @@
 # terrascript/resource/azure.py
-
 import terrascript
 
 

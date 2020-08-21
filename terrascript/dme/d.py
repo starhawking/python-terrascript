@@ -1,3 +1,1 @@
-#  terrascript/dme/d.py
-
-import terrascript
+# terrascript/dme/d.py

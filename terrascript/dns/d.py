@@ -1,5 +1,4 @@
-#  terrascript/dns/d.py
-
+# terrascript/dns/d.py
 import terrascript
 
 

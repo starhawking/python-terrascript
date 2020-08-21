@@ -1,3 +1,1 @@
-#  terrascript/cloudscale/d.py
-
-import terrascript
+# terrascript/cloudscale/d.py

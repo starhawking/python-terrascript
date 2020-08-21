@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 """Auto-generate provider specific modules.
 
    The script reads a list of Terraform providers from the file PROVIDERS, 
@@ -11,6 +10,9 @@
    Runtime: 2:30 minutes
 
    Changelog:
+   2020-08-21 - Cleaned up code to conform to pep8
+                Fixed syntax error when (re)raising exception from process
+                Updated templates to conform to black format better
 
    2020-01-03 - Renamed `PROVIDERS` to `providers.yml` to accomodate
                 custom repository paths to community providers.
@@ -32,30 +34,22 @@
    for a list of earlier changes.
 
 """
+import concurrent.futures
+import logging
+import os
+import os.path
+import re
+import shlex
+import subprocess
+import sys
+import tempfile
+
+import jinja2
+import yaml
 
 DEBUG = False
 CONCURRENCY = 10
 INPUT = "providers.yml"
-
-import os
-import os.path
-import sys
-import re
-import tempfile
-import subprocess
-import shlex
-import concurrent.futures
-import jinja2
-import logging
-import threading
-import yaml
-
-
-if DEBUG:
-    logging.basicConfig(level=logging.DEBUG)
-else:
-    logging.basicConfig(level=logging.INFO)
-
 
 REGEX = re.compile(b'"(?P<name>.+)":\s+(?P<type>resource|data)')
 """REGEX to extract the names of resources and data sources from a provider.go file.
@@ -82,93 +76,105 @@ REGEX = re.compile(b'"(?P<name>.+)":\s+(?P<type>resource|data)')
 
 LEGACY_INIT_TEMPLATE = jinja2.Template(
     """# terrascript/{{ provider }}/__init__.py
-
 import terrascript
+
 
 class {{ provider }}(terrascript.Provider):
     pass
+
 """
 )
 
 LEGACY_DATASOURCES_TEMPLATE = jinja2.Template(
-    """#  terrascript/{{ provider }}/d.py
-
+    """# terrascript/{{ provider }}/d.py
+{%- if datasources %}
 import terrascript
+{%- endif -%}
+{%- for datasource in datasources %}
 
-{% for datasource in datasources %}
+
 class {{ datasource }}(terrascript.Data):
     pass
-{% endfor %}
+{%- endfor %}
+
 """
 )
 
 LEGACY_RESOURCES_TEMPLATE = jinja2.Template(
     """# terrascript/{{ provider }}/r.py
-
+{%- if resources %}
 import terrascript
+{%- endif -%}
+{%- for resource in resources %}
 
-{% for resource in resources %}
+
 class {{ resource }}(terrascript.Resource):
     pass
-{% endfor %}
+{%- endfor %}
+
 """
 )
-
 
 PROVIDER_TEMPLATE = jinja2.Template(
     """# terrascript/provider/{{ provider }}.py
-
 import terrascript
+
 
 class {{ provider }}(terrascript.Provider):
     pass
-    
-__all__ = ['{{ provider }}']
+
+
+__all__ = ["{{ provider }}"]
+
 """
 )
-
 
 RESOURCES_TEMPLATE = jinja2.Template(
     """# terrascript/resource/{{ provider }}.py
-
+{%- if resources %}
 import terrascript
+{%- endif -%}
+{%- for resource in resources %}
 
-{% for resource in resources %}
+
 class {{ resource }}(terrascript.Resource):
     pass
-{% endfor %}
-
-__all__ = [
-{%- for resource in resources %}
-    '{{ resource }}',
 {%- endfor %}
-]
+
+
+__all__ = [{% if resources -%}
+{%- for resource in resources %}
+    "{{ resource }}",
+{%- endfor %}
+{% endif %}]
+
 """
 )
-
 
 DATASOURCES_TEMPLATE = jinja2.Template(
     """# terrascript/data/{{ provider }}.py
-
+{%- if datasources %}
 import terrascript
+{%- endif -%}
+{%- for datasource in datasources %}
 
-{% for datasource in datasources %}
+
 class {{ datasource }}(terrascript.Data):
     pass
-{% endfor %}
-
-__all__ = [
-{%- for datasource in datasources %}
-    '{{ datasource }}',
 {%- endfor %}
-]
+
+
+__all__ = [{% if datasources -%}
+{%- for datasource in datasources %}
+    "{{ datasource }}",
+{%- endfor %}
+{% endif %}]
+
 """
 )
 
-
 INIT_TEMPLATE = jinja2.Template(
-    """
-
+    """# terrascript/{{ package }}/__init__.py
 from .terraform import *
 {%- for provider in providers %}
 from .{{ provider }} import *
@@ -179,7 +185,6 @@ from .{{ provider }} import *
 
 
 def legacy_create_provider_directory(provider, modulesdir):
-
     providerdir = os.path.join(modulesdir, provider)
 
     if not os.path.isdir(providerdir):
@@ -189,13 +194,11 @@ def legacy_create_provider_directory(provider, modulesdir):
 
 
 def legacy_create_provider_init(provider, providerdir):
-
     with open(os.path.join(providerdir, "__init__.py"), "wt") as fp:
         fp.write(LEGACY_INIT_TEMPLATE.render(provider=provider))
 
 
 def legacy_create_provider_datasources(provider, providerdir, datasources):
-
     with open(os.path.join(providerdir, "d.py"), "wt") as fp:
         fp.write(
             LEGACY_DATASOURCES_TEMPLATE.render(
@@ -225,28 +228,26 @@ def legacy_process(provider, modulesdir, resources, datasources):
 
 def create_provider(provider, modulesdir):
     logging.debug("create_provider provider=%s modulesdir=%s", provider, modulesdir)
-    with open(
-        os.path.join(modulesdir, "provider", "{}.py".format(provider)), "wt"
-    ) as fp:
+    provider_path = os.path.join(modulesdir, "provider", "{}.py".format(provider))
+    with open(provider_path, "wt") as fp:
         fp.write(PROVIDER_TEMPLATE.render(provider=provider))
 
 
 def create_resources(provider, modulesdir, resources):
-    with open(
-        os.path.join(modulesdir, "resource", "{}.py".format(provider)), "wt"
-    ) as fp:
+    resource_path = os.path.join(modulesdir, "resource", "{}.py".format(provider))
+    with open(resource_path, "wt") as fp:
         fp.write(RESOURCES_TEMPLATE.render(provider=provider, resources=resources))
 
 
 def create_datasources(provider, modulesdir, datasources):
-    with open(os.path.join(modulesdir, "data", "{}.py".format(provider)), "wt") as fp:
+    datasource_path = os.path.join(modulesdir, "data", "{}.py".format(provider))
+    with open(datasource_path, "wt") as fp:
         fp.write(
             DATASOURCES_TEMPLATE.render(provider=provider, datasources=datasources)
         )
 
 
 def process(entry, modulesdir):
-
     provider = entry["name"]
     repository = entry.get(
         "repository",
@@ -305,9 +306,8 @@ def process(entry, modulesdir):
 
 
 def main():
-
     thisdir = os.path.abspath(".")
-    rootdir = os.path.abspath("..")
+    # rootdir = os.path.abspath("..")
     modulesdir = os.path.abspath("../terrascript")
 
     try:
@@ -326,20 +326,24 @@ def main():
         for future in concurrent.futures.as_completed(futures):
             exc = future.exception()
             if exc:
-                raise ex
+                raise exc
 
     # Create the __ini__.py files for providers, datasources and resources.
     #
     providers = [entry["name"] for entry in entries]
     with open(os.path.join(modulesdir, "provider", "__init__.py"), "wt") as fp:
-        fp.write(INIT_TEMPLATE.render(providers=providers))
+        fp.write(INIT_TEMPLATE.render(providers=providers, package="provider"))
 
     with open(os.path.join(modulesdir, "resource", "__init__.py"), "wt") as fp:
-        fp.write(INIT_TEMPLATE.render(providers=providers))
+        fp.write(INIT_TEMPLATE.render(providers=providers, package="resource"))
 
     with open(os.path.join(modulesdir, "data", "__init__.py"), "wt") as fp:
-        fp.write(INIT_TEMPLATE.render(providers=providers))
+        fp.write(INIT_TEMPLATE.render(providers=providers, package="data"))
 
 
 if __name__ == "__main__":
+    if DEBUG:
+        logging.basicConfig(level=logging.DEBUG)
+    else:
+        logging.basicConfig(level=logging.INFO)
     main()

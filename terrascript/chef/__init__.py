@@ -1,5 +1,4 @@
 # terrascript/chef/__init__.py
-
 import terrascript
 
 

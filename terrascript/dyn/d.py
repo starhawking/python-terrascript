@@ -1,3 +1,1 @@
-#  terrascript/dyn/d.py
-
-import terrascript
+# terrascript/dyn/d.py

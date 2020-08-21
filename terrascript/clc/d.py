@@ -1,3 +1,1 @@
-#  terrascript/clc/d.py
-
-import terrascript
+# terrascript/clc/d.py

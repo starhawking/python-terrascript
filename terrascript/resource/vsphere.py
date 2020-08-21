@@ -1,5 +1,4 @@
 # terrascript/resource/vsphere.py
-
 import terrascript
 
 

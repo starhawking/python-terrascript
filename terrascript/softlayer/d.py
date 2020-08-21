@@ -1,3 +1,1 @@
-#  terrascript/softlayer/d.py
-
-import terrascript
+# terrascript/softlayer/d.py

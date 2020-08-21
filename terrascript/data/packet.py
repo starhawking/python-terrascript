@@ -1,5 +1,4 @@
 # terrascript/data/packet.py
-
 import terrascript
 
 

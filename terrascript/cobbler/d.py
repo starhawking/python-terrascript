@@ -1,3 +1,1 @@
-#  terrascript/cobbler/d.py
-
-import terrascript
+# terrascript/cobbler/d.py

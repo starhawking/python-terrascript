@@ -1,3 +1,1 @@
-#  terrascript/statuscake/d.py
-
-import terrascript
+# terrascript/statuscake/d.py

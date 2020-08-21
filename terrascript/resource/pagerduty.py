@@ -1,5 +1,4 @@
 # terrascript/resource/pagerduty.py
-
 import terrascript
 
 

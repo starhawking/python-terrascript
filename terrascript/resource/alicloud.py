@@ -1,5 +1,4 @@
 # terrascript/resource/alicloud.py
-
 import terrascript
 
 

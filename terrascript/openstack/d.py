@@ -1,5 +1,4 @@
-#  terrascript/openstack/d.py
-
+# terrascript/openstack/d.py
 import terrascript
 
 

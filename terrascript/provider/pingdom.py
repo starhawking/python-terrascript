@@ -1,8 +1,9 @@
 # terrascript/provider/pingdom.py
-
 import terrascript
+
 
 class pingdom(terrascript.Provider):
     pass
-    
-__all__ = ['pingdom']
+
+
+__all__ = ["pingdom"]
