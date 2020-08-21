@@ -174,7 +174,7 @@ __all__ = [{% if datasources -%}
 )
 
 INIT_TEMPLATE = jinja2.Template(
-    """# terrascript/*/__init__.py
+    """# terrascript/{{ package }}/__init__.py
 from .terraform import *
 {%- for provider in providers %}
 from .{{ provider }} import *
@@ -332,13 +332,13 @@ def main():
     #
     providers = [entry["name"] for entry in entries]
     with open(os.path.join(modulesdir, "provider", "__init__.py"), "wt") as fp:
-        fp.write(INIT_TEMPLATE.render(providers=providers))
+        fp.write(INIT_TEMPLATE.render(providers=providers, package="provider"))
 
     with open(os.path.join(modulesdir, "resource", "__init__.py"), "wt") as fp:
-        fp.write(INIT_TEMPLATE.render(providers=providers))
+        fp.write(INIT_TEMPLATE.render(providers=providers, package="resource"))
 
     with open(os.path.join(modulesdir, "data", "__init__.py"), "wt") as fp:
-        fp.write(INIT_TEMPLATE.render(providers=providers))
+        fp.write(INIT_TEMPLATE.render(providers=providers, package="data"))
 
 
 if __name__ == "__main__":
