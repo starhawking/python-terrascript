@@ -1,3 +1,1 @@
-#  terrascript/chef/d.py
-
-import terrascript
+# terrascript/chef/d.py

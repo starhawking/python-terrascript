@@ -1,5 +1,4 @@
 # terrascript/resource/shell.py
-
 import terrascript
 
 

@@ -11,6 +11,7 @@
    Runtime: 2:30 minutes
 
    Changelog:
+   2020-08-21 - Updated templates to conform to black format better
 
    2020-01-03 - Renamed `PROVIDERS` to `providers.yml` to accomodate
                 custom repository paths to community providers.
@@ -82,93 +83,109 @@ REGEX = re.compile(b'"(?P<name>.+)":\s+(?P<type>resource|data)')
 
 LEGACY_INIT_TEMPLATE = jinja2.Template(
     """# terrascript/{{ provider }}/__init__.py
-
 import terrascript
+
 
 class {{ provider }}(terrascript.Provider):
     pass
+
 """
 )
 
 LEGACY_DATASOURCES_TEMPLATE = jinja2.Template(
-    """#  terrascript/{{ provider }}/d.py
-
+    """# terrascript/{{ provider }}/d.py
+{%- if datasources %}
 import terrascript
+{%- endif -%}
+{%- for datasource in datasources %}
 
-{% for datasource in datasources %}
+
 class {{ datasource }}(terrascript.Data):
     pass
-{% endfor %}
+{%- endfor %}
+
 """
 )
 
 LEGACY_RESOURCES_TEMPLATE = jinja2.Template(
     """# terrascript/{{ provider }}/r.py
-
+{%- if resources %}
 import terrascript
+{%- endif -%}
+{%- for resource in resources %}
 
-{% for resource in resources %}
+
 class {{ resource }}(terrascript.Resource):
     pass
-{% endfor %}
+{%- endfor %}
+
 """
 )
 
 
 PROVIDER_TEMPLATE = jinja2.Template(
     """# terrascript/provider/{{ provider }}.py
-
 import terrascript
+
 
 class {{ provider }}(terrascript.Provider):
     pass
-    
-__all__ = ['{{ provider }}']
+
+
+__all__ = ["{{ provider }}"]
+
 """
 )
 
 
 RESOURCES_TEMPLATE = jinja2.Template(
     """# terrascript/resource/{{ provider }}.py
-
+{%- if resources %}
 import terrascript
+{%- endif -%}
+{%- for resource in resources %}
 
-{% for resource in resources %}
+
 class {{ resource }}(terrascript.Resource):
     pass
-{% endfor %}
-
-__all__ = [
-{%- for resource in resources %}
-    '{{ resource }}',
 {%- endfor %}
-]
+
+
+__all__ = [{% if resources -%}
+{%- for resource in resources %}
+    "{{ resource }}",
+{%- endfor %}
+{% endif %}]
+
 """
 )
 
 
 DATASOURCES_TEMPLATE = jinja2.Template(
     """# terrascript/data/{{ provider }}.py
-
+{%- if datasources %}
 import terrascript
+{%- endif -%}
+{%- for datasource in datasources %}
 
-{% for datasource in datasources %}
+
 class {{ datasource }}(terrascript.Data):
     pass
-{% endfor %}
-
-__all__ = [
-{%- for datasource in datasources %}
-    '{{ datasource }}',
 {%- endfor %}
-]
+
+
+__all__ = [{% if datasources -%}
+{%- for datasource in datasources %}
+    "{{ datasource }}",
+{%- endfor %}
+{% endif %}]
+
 """
 )
 
 
 INIT_TEMPLATE = jinja2.Template(
-    """
-
+    """# terrascript/*/__init__.py
 from .terraform import *
 {%- for provider in providers %}
 from .{{ provider }} import *
@@ -179,7 +196,6 @@ from .{{ provider }} import *
 
 
 def legacy_create_provider_directory(provider, modulesdir):
-
     providerdir = os.path.join(modulesdir, provider)
 
     if not os.path.isdir(providerdir):

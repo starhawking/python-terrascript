@@ -1,5 +1,4 @@
 # terrascript/openstack/r.py
-
 import terrascript
 
 

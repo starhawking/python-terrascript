@@ -1,5 +1,4 @@
-#  terrascript/logicmonitor/d.py
-
+# terrascript/logicmonitor/d.py
 import terrascript
 
 

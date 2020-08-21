@@ -1,5 +1,4 @@
-#  terrascript/pagerduty/d.py
-
+# terrascript/pagerduty/d.py
 import terrascript
 
 

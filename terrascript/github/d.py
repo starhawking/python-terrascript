@@ -1,5 +1,4 @@
-#  terrascript/github/d.py
-
+# terrascript/github/d.py
 import terrascript
 
 

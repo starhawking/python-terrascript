@@ -1,3 +1,1 @@
-#  terrascript/azure/d.py
-
-import terrascript
+# terrascript/azure/d.py

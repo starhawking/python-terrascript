@@ -1,5 +1,4 @@
-#  terrascript/alicloud/d.py
-
+# terrascript/alicloud/d.py
 import terrascript
 
 

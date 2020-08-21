@@ -1,5 +1,4 @@
 # terrascript/provider/icinga2.py
-
 import terrascript
 
 

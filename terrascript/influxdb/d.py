@@ -1,3 +1,1 @@
-#  terrascript/influxdb/d.py
-
-import terrascript
+# terrascript/influxdb/d.py

@@ -1,5 +1,4 @@
-#  terrascript/heroku/d.py
-
+# terrascript/heroku/d.py
 import terrascript
 
 

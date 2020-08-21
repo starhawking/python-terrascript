@@ -1,3 +1,1 @@
-#  terrascript/arukas/d.py
-
-import terrascript
+# terrascript/arukas/d.py

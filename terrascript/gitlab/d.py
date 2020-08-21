@@ -1,5 +1,4 @@
-#  terrascript/gitlab/d.py
-
+# terrascript/gitlab/d.py
 import terrascript
 
 

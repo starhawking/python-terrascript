@@ -1,5 +1,4 @@
 # terrascript/resource/influxdb.py
-
 import terrascript
 
 

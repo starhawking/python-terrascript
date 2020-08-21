@@ -1,3 +1,1 @@
-#  terrascript/mysql/d.py
-
-import terrascript
+# terrascript/mysql/d.py

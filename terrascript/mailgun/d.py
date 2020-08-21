@@ -1,3 +1,1 @@
-#  terrascript/mailgun/d.py
-
-import terrascript
+# terrascript/mailgun/d.py

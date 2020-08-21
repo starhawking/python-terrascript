@@ -1,3 +1,1 @@
-#  terrascript/vault/d.py
-
-import terrascript
+# terrascript/vault/d.py

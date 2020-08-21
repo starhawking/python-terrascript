@@ -1,5 +1,4 @@
 # terrascript/resource/arukas.py
-
 import terrascript
 
 

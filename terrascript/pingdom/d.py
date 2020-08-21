@@ -1,5 +1,4 @@
-#  terrascript/pingdom/d.py
-
+# terrascript/pingdom/d.py
 import terrascript
 
 

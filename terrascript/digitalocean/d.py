@@ -1,5 +1,4 @@
-#  terrascript/digitalocean/d.py
-
+# terrascript/digitalocean/d.py
 import terrascript
 
 

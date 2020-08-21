@@ -1,5 +1,4 @@
 # terrascript/resource/triton.py
-
 import terrascript
 
 

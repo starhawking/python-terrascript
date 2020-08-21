@@ -1,5 +1,4 @@
 # terrascript/data/template.py
-
 import terrascript
 
 

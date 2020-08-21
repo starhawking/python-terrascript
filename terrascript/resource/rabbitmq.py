@@ -1,5 +1,4 @@
 # terrascript/resource/rabbitmq.py
-
 import terrascript
 
 

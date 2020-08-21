@@ -1,5 +1,4 @@
 # terrascript/provider/digitalocean.py
-
 import terrascript
 
 

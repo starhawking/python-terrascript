@@ -1,5 +1,4 @@
 # terrascript/provider/spotinst.py
-
 import terrascript
 
 

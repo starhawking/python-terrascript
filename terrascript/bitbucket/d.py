@@ -1,3 +1,1 @@
-#  terrascript/bitbucket/d.py
-
-import terrascript
+# terrascript/bitbucket/d.py

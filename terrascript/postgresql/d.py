@@ -1,3 +1,1 @@
-#  terrascript/postgresql/d.py
-
-import terrascript
+# terrascript/postgresql/d.py

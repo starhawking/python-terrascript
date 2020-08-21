@@ -1,5 +1,4 @@
 # terrascript/resource/circonus.py
-
 import terrascript
 
 

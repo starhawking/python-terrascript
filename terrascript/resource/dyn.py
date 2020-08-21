@@ -1,5 +1,4 @@
 # terrascript/resource/dyn.py
-
 import terrascript
 
 

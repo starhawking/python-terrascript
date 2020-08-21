@@ -1,5 +1,4 @@
-#  terrascript/logentries/d.py
-
+# terrascript/logentries/d.py
 import terrascript
 
 

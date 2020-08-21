@@ -1,3 +1,1 @@
-#  terrascript/azurerm/d.py
-
-import terrascript
+# terrascript/azurerm/d.py

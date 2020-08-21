@@ -1,5 +1,4 @@
 # terrascript/data/opsgenie.py
-
 import terrascript
 
 

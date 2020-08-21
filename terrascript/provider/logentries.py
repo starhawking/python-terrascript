@@ -1,5 +1,4 @@
 # terrascript/provider/logentries.py
-
 import terrascript
 
 

@@ -1,3 +1,1 @@
-#  terrascript/dnsimple/d.py
-
-import terrascript
+# terrascript/dnsimple/d.py

@@ -1,3 +1,1 @@
-#  terrascript/random/d.py
-
-import terrascript
+# terrascript/random/d.py

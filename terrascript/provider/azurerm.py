@@ -1,5 +1,4 @@
 # terrascript/provider/azurerm.py
-
 import terrascript
 
 

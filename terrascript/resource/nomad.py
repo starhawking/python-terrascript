@@ -1,5 +1,4 @@
 # terrascript/resource/nomad.py
-
 import terrascript
 
 

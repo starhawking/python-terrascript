@@ -1,3 +1,1 @@
-#  terrascript/librato/d.py
-
-import terrascript
+# terrascript/librato/d.py

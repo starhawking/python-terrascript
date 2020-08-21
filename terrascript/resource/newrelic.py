@@ -1,5 +1,4 @@
 # terrascript/resource/newrelic.py
-
 import terrascript
 
 

@@ -1,5 +1,4 @@
 # terrascript/resource/cloudscale.py
-
 import terrascript
 
 

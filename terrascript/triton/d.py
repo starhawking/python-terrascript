@@ -1,5 +1,4 @@
-#  terrascript/triton/d.py
-
+# terrascript/triton/d.py
 import terrascript
 
 

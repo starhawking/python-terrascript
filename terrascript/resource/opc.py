@@ -1,5 +1,4 @@
 # terrascript/resource/opc.py
-
 import terrascript
 
 

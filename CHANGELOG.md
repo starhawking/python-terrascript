@@ -5,9 +5,10 @@ All notable changes to this project will be documented in this file.
 ### Added
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
 ### Fixed
+* Missing dev requirement Black added
 * Re-introduced ``terrascript.Terrascript.update()`` method (issue #98).
 * String interpolation of variable should now properly result in a var.name reference (issue #109)
-* Missing dev requirement Black added
+* Tool for generating providers now outputs code (almost) compliant with black
 ### Changed
 * All Python code is now automatically formatted using [Black](https://pypi.org/project/black/).
 * Contributors are now sorted in alphabetical order

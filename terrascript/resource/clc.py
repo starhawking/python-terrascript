@@ -1,5 +1,4 @@
 # terrascript/resource/clc.py
-
 import terrascript
 
 

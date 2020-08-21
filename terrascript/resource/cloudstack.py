@@ -1,5 +1,4 @@
 # terrascript/resource/cloudstack.py
-
 import terrascript
 
 

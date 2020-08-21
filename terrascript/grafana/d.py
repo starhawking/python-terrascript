@@ -1,3 +1,1 @@
-#  terrascript/grafana/d.py
-
-import terrascript
+# terrascript/grafana/d.py

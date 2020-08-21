@@ -1,5 +1,4 @@
 # terrascript/data/ignition.py
-
 import terrascript
 
 

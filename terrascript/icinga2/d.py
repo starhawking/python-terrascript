@@ -1,3 +1,1 @@
-#  terrascript/icinga2/d.py
-
-import terrascript
+# terrascript/icinga2/d.py

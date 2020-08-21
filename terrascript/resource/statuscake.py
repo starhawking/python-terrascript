@@ -1,5 +1,4 @@
 # terrascript/resource/statuscake.py
-
 import terrascript
 
 
