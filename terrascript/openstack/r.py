@@ -142,7 +142,15 @@ class openstack_identity_user_v3(terrascript.Resource):
     pass
 
 
+class openstack_identity_group_v3(terrascript.Resource):
+    pass
+
+
 class openstack_identity_application_credential_v3(terrascript.Resource):
+    pass
+
+
+class openstack_identity_ec2_credential_v3(terrascript.Resource):
     pass
 
 
@@ -187,6 +195,10 @@ class openstack_lb_pool_v2(terrascript.Resource):
 
 
 class openstack_lb_member_v2(terrascript.Resource):
+    pass
+
+
+class openstack_lb_members_v2(terrascript.Resource):
     pass
 
 
@@ -343,4 +355,8 @@ class openstack_keymanager_secret_v1(terrascript.Resource):
 
 
 class openstack_keymanager_container_v1(terrascript.Resource):
+    pass
+
+
+class openstack_keymanager_order_v1(terrascript.Resource):
     pass

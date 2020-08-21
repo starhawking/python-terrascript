@@ -126,6 +126,54 @@ class aws_api_gateway_vpc_link(terrascript.Resource):
     pass
 
 
+class aws_apigatewayv2_api(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_api_mapping(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_authorizer(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_deployment(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_domain_name(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_integration(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_integration_response(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_model(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_route(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_route_response(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_stage(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_vpc_link(terrascript.Resource):
+    pass
+
+
 class aws_app_cookie_stickiness_policy(terrascript.Resource):
     pass
 
@@ -426,6 +474,10 @@ class aws_codepipeline_webhook(terrascript.Resource):
     pass
 
 
+class aws_codestarnotifications_notification_rule(terrascript.Resource):
+    pass
+
+
 class aws_cur_report_definition(terrascript.Resource):
     pass
 
@@ -451,6 +503,10 @@ class aws_datasync_location_nfs(terrascript.Resource):
 
 
 class aws_datasync_location_s3(terrascript.Resource):
+    pass
+
+
+class aws_datasync_location_smb(terrascript.Resource):
     pass
 
 
@@ -531,6 +587,10 @@ class aws_dms_certificate(terrascript.Resource):
 
 
 class aws_dms_endpoint(terrascript.Resource):
+    pass
+
+
+class aws_dms_event_subscription(terrascript.Resource):
     pass
 
 
@@ -662,7 +722,15 @@ class aws_ebs_volume(terrascript.Resource):
     pass
 
 
+class aws_ec2_availability_zone_group(terrascript.Resource):
+    pass
+
+
 class aws_ec2_capacity_reservation(terrascript.Resource):
+    pass
+
+
+class aws_ec2_client_vpn_authorization_rule(terrascript.Resource):
     pass
 
 
@@ -674,11 +742,51 @@ class aws_ec2_client_vpn_network_association(terrascript.Resource):
     pass
 
 
+class aws_ec2_client_vpn_route(terrascript.Resource):
+    pass
+
+
 class aws_ec2_fleet(terrascript.Resource):
     pass
 
 
+class aws_ec2_local_gateway_route(terrascript.Resource):
+    pass
+
+
+class aws_ec2_local_gateway_route_table_vpc_association(terrascript.Resource):
+    pass
+
+
+class aws_ec2_tag(terrascript.Resource):
+    pass
+
+
+class aws_ec2_traffic_mirror_filter(terrascript.Resource):
+    pass
+
+
+class aws_ec2_traffic_mirror_filter_rule(terrascript.Resource):
+    pass
+
+
+class aws_ec2_traffic_mirror_target(terrascript.Resource):
+    pass
+
+
+class aws_ec2_traffic_mirror_session(terrascript.Resource):
+    pass
+
+
 class aws_ec2_transit_gateway(terrascript.Resource):
+    pass
+
+
+class aws_ec2_transit_gateway_peering_attachment(terrascript.Resource):
+    pass
+
+
+class aws_ec2_transit_gateway_peering_attachment_accepter(terrascript.Resource):
     pass
 
 
@@ -734,7 +842,15 @@ class aws_ecs_task_definition(terrascript.Resource):
     pass
 
 
+class aws_efs_access_point(terrascript.Resource):
+    pass
+
+
 class aws_efs_file_system(terrascript.Resource):
+    pass
+
+
+class aws_efs_file_system_policy(terrascript.Resource):
     pass
 
 
@@ -942,6 +1058,14 @@ class aws_guardduty_member(terrascript.Resource):
     pass
 
 
+class aws_guardduty_organization_admin_account(terrascript.Resource):
+    pass
+
+
+class aws_guardduty_organization_configuration(terrascript.Resource):
+    pass
+
+
 class aws_guardduty_threatintelset(terrascript.Resource):
     pass
 
@@ -1103,6 +1227,10 @@ class aws_kinesis_stream(terrascript.Resource):
 
 
 class aws_kinesis_analytics_application(terrascript.Resource):
+    pass
+
+
+class aws_kinesis_video_stream(terrascript.Resource):
     pass
 
 
@@ -1498,6 +1626,10 @@ class aws_route53_zone_association(terrascript.Resource):
     pass
 
 
+class aws_route53_vpc_association_authorization(terrascript.Resource):
+    pass
+
+
 class aws_route53_zone(terrascript.Resource):
     pass
 
@@ -1562,6 +1694,10 @@ class aws_secretsmanager_secret_version(terrascript.Resource):
     pass
 
 
+class aws_secretsmanager_secret_rotation(terrascript.Resource):
+    pass
+
+
 class aws_ses_active_receipt_rule_set(terrascript.Resource):
     pass
 
@@ -1618,11 +1754,19 @@ class aws_ses_template(terrascript.Resource):
     pass
 
 
+class aws_s3_access_point(terrascript.Resource):
+    pass
+
+
 class aws_s3_account_public_access_block(terrascript.Resource):
     pass
 
 
 class aws_s3_bucket(terrascript.Resource):
+    pass
+
+
+class aws_s3_bucket_analytics_configuration(terrascript.Resource):
     pass
 
 
@@ -1667,6 +1811,10 @@ class aws_security_group_rule(terrascript.Resource):
 
 
 class aws_securityhub_account(terrascript.Resource):
+    pass
+
+
+class aws_securityhub_member(terrascript.Resource):
     pass
 
 
@@ -2038,11 +2186,43 @@ class aws_wafregional_web_acl_association(terrascript.Resource):
     pass
 
 
+class aws_wafv2_ip_set(terrascript.Resource):
+    pass
+
+
+class aws_wafv2_regex_pattern_set(terrascript.Resource):
+    pass
+
+
+class aws_wafv2_rule_group(terrascript.Resource):
+    pass
+
+
+class aws_wafv2_web_acl(terrascript.Resource):
+    pass
+
+
+class aws_wafv2_web_acl_association(terrascript.Resource):
+    pass
+
+
+class aws_wafv2_web_acl_logging_configuration(terrascript.Resource):
+    pass
+
+
 class aws_worklink_fleet(terrascript.Resource):
     pass
 
 
 class aws_worklink_website_certificate_authority_association(terrascript.Resource):
+    pass
+
+
+class aws_workspaces_directory(terrascript.Resource):
+    pass
+
+
+class aws_workspaces_workspace(terrascript.Resource):
     pass
 
 

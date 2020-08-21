@@ -38,11 +38,23 @@ class scaleway_instance_volume(terrascript.Data):
     pass
 
 
-class scaleway_baremetal_offer_beta(terrascript.Data):
+class scaleway_baremetal_offer(terrascript.Data):
+    pass
+
+
+class scaleway_lb_ip_beta(terrascript.Data):
     pass
 
 
 class scaleway_marketplace_image_beta(terrascript.Data):
+    pass
+
+
+class scaleway_registry_namespace_beta(terrascript.Data):
+    pass
+
+
+class scaleway_registry_image_beta(terrascript.Data):
     pass
 
 
@@ -56,6 +68,9 @@ __all__ = [
     "scaleway_instance_server",
     "scaleway_instance_image",
     "scaleway_instance_volume",
-    "scaleway_baremetal_offer_beta",
+    "scaleway_baremetal_offer",
+    "scaleway_lb_ip_beta",
     "scaleway_marketplace_image_beta",
+    "scaleway_registry_namespace_beta",
+    "scaleway_registry_image_beta",
 ]

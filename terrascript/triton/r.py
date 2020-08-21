@@ -32,3 +32,7 @@ class triton_snapshot(terrascript.Resource):
 
 class triton_vlan(terrascript.Resource):
     pass
+
+
+class triton_volume(terrascript.Resource):
+    pass

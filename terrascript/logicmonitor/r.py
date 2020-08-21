@@ -10,6 +10,14 @@ class logicmonitor_collector_group(terrascript.Resource):
     pass
 
 
+class logicmonitor_dashboard(terrascript.Resource):
+    pass
+
+
+class logicmonitor_dashboard_group(terrascript.Resource):
+    pass
+
+
 class logicmonitor_device(terrascript.Resource):
     pass
 

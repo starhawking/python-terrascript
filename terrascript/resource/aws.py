@@ -126,6 +126,54 @@ class aws_api_gateway_vpc_link(terrascript.Resource):
     pass
 
 
+class aws_apigatewayv2_api(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_api_mapping(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_authorizer(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_deployment(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_domain_name(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_integration(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_integration_response(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_model(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_route(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_route_response(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_stage(terrascript.Resource):
+    pass
+
+
+class aws_apigatewayv2_vpc_link(terrascript.Resource):
+    pass
+
+
 class aws_app_cookie_stickiness_policy(terrascript.Resource):
     pass
 
@@ -426,6 +474,10 @@ class aws_codepipeline_webhook(terrascript.Resource):
     pass
 
 
+class aws_codestarnotifications_notification_rule(terrascript.Resource):
+    pass
+
+
 class aws_cur_report_definition(terrascript.Resource):
     pass
 
@@ -451,6 +503,10 @@ class aws_datasync_location_nfs(terrascript.Resource):
 
 
 class aws_datasync_location_s3(terrascript.Resource):
+    pass
+
+
+class aws_datasync_location_smb(terrascript.Resource):
     pass
 
 
@@ -531,6 +587,10 @@ class aws_dms_certificate(terrascript.Resource):
 
 
 class aws_dms_endpoint(terrascript.Resource):
+    pass
+
+
+class aws_dms_event_subscription(terrascript.Resource):
     pass
 
 
@@ -662,7 +722,15 @@ class aws_ebs_volume(terrascript.Resource):
     pass
 
 
+class aws_ec2_availability_zone_group(terrascript.Resource):
+    pass
+
+
 class aws_ec2_capacity_reservation(terrascript.Resource):
+    pass
+
+
+class aws_ec2_client_vpn_authorization_rule(terrascript.Resource):
     pass
 
 
@@ -674,11 +742,51 @@ class aws_ec2_client_vpn_network_association(terrascript.Resource):
     pass
 
 
+class aws_ec2_client_vpn_route(terrascript.Resource):
+    pass
+
+
 class aws_ec2_fleet(terrascript.Resource):
     pass
 
 
+class aws_ec2_local_gateway_route(terrascript.Resource):
+    pass
+
+
+class aws_ec2_local_gateway_route_table_vpc_association(terrascript.Resource):
+    pass
+
+
+class aws_ec2_tag(terrascript.Resource):
+    pass
+
+
+class aws_ec2_traffic_mirror_filter(terrascript.Resource):
+    pass
+
+
+class aws_ec2_traffic_mirror_filter_rule(terrascript.Resource):
+    pass
+
+
+class aws_ec2_traffic_mirror_target(terrascript.Resource):
+    pass
+
+
+class aws_ec2_traffic_mirror_session(terrascript.Resource):
+    pass
+
+
 class aws_ec2_transit_gateway(terrascript.Resource):
+    pass
+
+
+class aws_ec2_transit_gateway_peering_attachment(terrascript.Resource):
+    pass
+
+
+class aws_ec2_transit_gateway_peering_attachment_accepter(terrascript.Resource):
     pass
 
 
@@ -734,7 +842,15 @@ class aws_ecs_task_definition(terrascript.Resource):
     pass
 
 
+class aws_efs_access_point(terrascript.Resource):
+    pass
+
+
 class aws_efs_file_system(terrascript.Resource):
+    pass
+
+
+class aws_efs_file_system_policy(terrascript.Resource):
     pass
 
 
@@ -942,6 +1058,14 @@ class aws_guardduty_member(terrascript.Resource):
     pass
 
 
+class aws_guardduty_organization_admin_account(terrascript.Resource):
+    pass
+
+
+class aws_guardduty_organization_configuration(terrascript.Resource):
+    pass
+
+
 class aws_guardduty_threatintelset(terrascript.Resource):
     pass
 
@@ -1103,6 +1227,10 @@ class aws_kinesis_stream(terrascript.Resource):
 
 
 class aws_kinesis_analytics_application(terrascript.Resource):
+    pass
+
+
+class aws_kinesis_video_stream(terrascript.Resource):
     pass
 
 
@@ -1498,6 +1626,10 @@ class aws_route53_zone_association(terrascript.Resource):
     pass
 
 
+class aws_route53_vpc_association_authorization(terrascript.Resource):
+    pass
+
+
 class aws_route53_zone(terrascript.Resource):
     pass
 
@@ -1562,6 +1694,10 @@ class aws_secretsmanager_secret_version(terrascript.Resource):
     pass
 
 
+class aws_secretsmanager_secret_rotation(terrascript.Resource):
+    pass
+
+
 class aws_ses_active_receipt_rule_set(terrascript.Resource):
     pass
 
@@ -1618,11 +1754,19 @@ class aws_ses_template(terrascript.Resource):
     pass
 
 
+class aws_s3_access_point(terrascript.Resource):
+    pass
+
+
 class aws_s3_account_public_access_block(terrascript.Resource):
     pass
 
 
 class aws_s3_bucket(terrascript.Resource):
+    pass
+
+
+class aws_s3_bucket_analytics_configuration(terrascript.Resource):
     pass
 
 
@@ -1667,6 +1811,10 @@ class aws_security_group_rule(terrascript.Resource):
 
 
 class aws_securityhub_account(terrascript.Resource):
+    pass
+
+
+class aws_securityhub_member(terrascript.Resource):
     pass
 
 
@@ -2038,11 +2186,43 @@ class aws_wafregional_web_acl_association(terrascript.Resource):
     pass
 
 
+class aws_wafv2_ip_set(terrascript.Resource):
+    pass
+
+
+class aws_wafv2_regex_pattern_set(terrascript.Resource):
+    pass
+
+
+class aws_wafv2_rule_group(terrascript.Resource):
+    pass
+
+
+class aws_wafv2_web_acl(terrascript.Resource):
+    pass
+
+
+class aws_wafv2_web_acl_association(terrascript.Resource):
+    pass
+
+
+class aws_wafv2_web_acl_logging_configuration(terrascript.Resource):
+    pass
+
+
 class aws_worklink_fleet(terrascript.Resource):
     pass
 
 
 class aws_worklink_website_certificate_authority_association(terrascript.Resource):
+    pass
+
+
+class aws_workspaces_directory(terrascript.Resource):
+    pass
+
+
+class aws_workspaces_workspace(terrascript.Resource):
     pass
 
 
@@ -2190,6 +2370,18 @@ __all__ = [
     "aws_api_gateway_usage_plan",
     "aws_api_gateway_usage_plan_key",
     "aws_api_gateway_vpc_link",
+    "aws_apigatewayv2_api",
+    "aws_apigatewayv2_api_mapping",
+    "aws_apigatewayv2_authorizer",
+    "aws_apigatewayv2_deployment",
+    "aws_apigatewayv2_domain_name",
+    "aws_apigatewayv2_integration",
+    "aws_apigatewayv2_integration_response",
+    "aws_apigatewayv2_model",
+    "aws_apigatewayv2_route",
+    "aws_apigatewayv2_route_response",
+    "aws_apigatewayv2_stage",
+    "aws_apigatewayv2_vpc_link",
     "aws_app_cookie_stickiness_policy",
     "aws_appautoscaling_target",
     "aws_appautoscaling_policy",
@@ -2265,6 +2457,7 @@ __all__ = [
     "aws_codebuild_webhook",
     "aws_codepipeline",
     "aws_codepipeline_webhook",
+    "aws_codestarnotifications_notification_rule",
     "aws_cur_report_definition",
     "aws_customer_gateway",
     "aws_datapipeline_pipeline",
@@ -2272,6 +2465,7 @@ __all__ = [
     "aws_datasync_location_efs",
     "aws_datasync_location_nfs",
     "aws_datasync_location_s3",
+    "aws_datasync_location_smb",
     "aws_datasync_task",
     "aws_dax_cluster",
     "aws_dax_parameter_group",
@@ -2292,6 +2486,7 @@ __all__ = [
     "aws_dlm_lifecycle_policy",
     "aws_dms_certificate",
     "aws_dms_endpoint",
+    "aws_dms_event_subscription",
     "aws_dms_replication_instance",
     "aws_dms_replication_subnet_group",
     "aws_dms_replication_task",
@@ -2324,11 +2519,23 @@ __all__ = [
     "aws_ebs_snapshot",
     "aws_ebs_snapshot_copy",
     "aws_ebs_volume",
+    "aws_ec2_availability_zone_group",
     "aws_ec2_capacity_reservation",
+    "aws_ec2_client_vpn_authorization_rule",
     "aws_ec2_client_vpn_endpoint",
     "aws_ec2_client_vpn_network_association",
+    "aws_ec2_client_vpn_route",
     "aws_ec2_fleet",
+    "aws_ec2_local_gateway_route",
+    "aws_ec2_local_gateway_route_table_vpc_association",
+    "aws_ec2_tag",
+    "aws_ec2_traffic_mirror_filter",
+    "aws_ec2_traffic_mirror_filter_rule",
+    "aws_ec2_traffic_mirror_target",
+    "aws_ec2_traffic_mirror_session",
     "aws_ec2_transit_gateway",
+    "aws_ec2_transit_gateway_peering_attachment",
+    "aws_ec2_transit_gateway_peering_attachment_accepter",
     "aws_ec2_transit_gateway_route",
     "aws_ec2_transit_gateway_route_table",
     "aws_ec2_transit_gateway_route_table_association",
@@ -2342,7 +2549,9 @@ __all__ = [
     "aws_ecs_cluster",
     "aws_ecs_service",
     "aws_ecs_task_definition",
+    "aws_efs_access_point",
     "aws_efs_file_system",
+    "aws_efs_file_system_policy",
     "aws_efs_mount_target",
     "aws_egress_only_internet_gateway",
     "aws_eip",
@@ -2394,6 +2603,8 @@ __all__ = [
     "aws_guardduty_invite_accepter",
     "aws_guardduty_ipset",
     "aws_guardduty_member",
+    "aws_guardduty_organization_admin_account",
+    "aws_guardduty_organization_configuration",
     "aws_guardduty_threatintelset",
     "aws_iam_access_key",
     "aws_iam_account_alias",
@@ -2435,6 +2646,7 @@ __all__ = [
     "aws_kinesis_firehose_delivery_stream",
     "aws_kinesis_stream",
     "aws_kinesis_analytics_application",
+    "aws_kinesis_video_stream",
     "aws_kms_alias",
     "aws_kms_external_key",
     "aws_kms_grant",
@@ -2533,6 +2745,7 @@ __all__ = [
     "aws_route53_query_log",
     "aws_route53_record",
     "aws_route53_zone_association",
+    "aws_route53_vpc_association_authorization",
     "aws_route53_zone",
     "aws_route53_health_check",
     "aws_route53_resolver_endpoint",
@@ -2549,6 +2762,7 @@ __all__ = [
     "aws_sagemaker_notebook_instance",
     "aws_secretsmanager_secret",
     "aws_secretsmanager_secret_version",
+    "aws_secretsmanager_secret_rotation",
     "aws_ses_active_receipt_rule_set",
     "aws_ses_domain_identity",
     "aws_ses_domain_identity_verification",
@@ -2563,8 +2777,10 @@ __all__ = [
     "aws_ses_event_destination",
     "aws_ses_identity_notification_topic",
     "aws_ses_template",
+    "aws_s3_access_point",
     "aws_s3_account_public_access_block",
     "aws_s3_bucket",
+    "aws_s3_bucket_analytics_configuration",
     "aws_s3_bucket_policy",
     "aws_s3_bucket_public_access_block",
     "aws_s3_bucket_object",
@@ -2576,6 +2792,7 @@ __all__ = [
     "aws_default_security_group",
     "aws_security_group_rule",
     "aws_securityhub_account",
+    "aws_securityhub_member",
     "aws_securityhub_product_subscription",
     "aws_securityhub_standards_subscription",
     "aws_servicecatalog_portfolio",
@@ -2668,8 +2885,16 @@ __all__ = [
     "aws_wafregional_xss_match_set",
     "aws_wafregional_web_acl",
     "aws_wafregional_web_acl_association",
+    "aws_wafv2_ip_set",
+    "aws_wafv2_regex_pattern_set",
+    "aws_wafv2_rule_group",
+    "aws_wafv2_web_acl",
+    "aws_wafv2_web_acl_association",
+    "aws_wafv2_web_acl_logging_configuration",
     "aws_worklink_fleet",
     "aws_worklink_website_certificate_authority_association",
+    "aws_workspaces_directory",
+    "aws_workspaces_workspace",
     "aws_batch_compute_environment",
     "aws_batch_job_definition",
     "aws_batch_job_queue",

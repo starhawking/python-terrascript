@@ -30,6 +30,14 @@ class vsphere_compute_cluster_vm_host_rule(terrascript.Resource):
     pass
 
 
+class vsphere_content_library(terrascript.Resource):
+    pass
+
+
+class vsphere_content_library_item(terrascript.Resource):
+    pass
+
+
 class vsphere_custom_attribute(terrascript.Resource):
     pass
 
@@ -138,6 +146,18 @@ class vsphere_vnic(terrascript.Resource):
     pass
 
 
+class vsphere_vm_storage_policy(terrascript.Resource):
+    pass
+
+
+class vsphere_role(terrascript.Resource):
+    pass
+
+
+class vsphere_entity_permissions(terrascript.Resource):
+    pass
+
+
 __all__ = [
     "vsphere_compute_cluster",
     "vsphere_compute_cluster_host_group",
@@ -146,6 +166,8 @@ __all__ = [
     "vsphere_compute_cluster_vm_dependency_rule",
     "vsphere_compute_cluster_vm_group",
     "vsphere_compute_cluster_vm_host_rule",
+    "vsphere_content_library",
+    "vsphere_content_library_item",
     "vsphere_custom_attribute",
     "vsphere_datacenter",
     "vsphere_datastore_cluster",
@@ -173,4 +195,7 @@ __all__ = [
     "vsphere_virtual_machine_snapshot",
     "vsphere_host",
     "vsphere_vnic",
+    "vsphere_vm_storage_policy",
+    "vsphere_role",
+    "vsphere_entity_permissions",
 ]

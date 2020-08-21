@@ -26,6 +26,10 @@ class openstack_compute_availability_zones_v2(terrascript.Data):
     pass
 
 
+class openstack_compute_instance_v2(terrascript.Data):
+    pass
+
+
 class openstack_compute_flavor_v2(terrascript.Data):
     pass
 
@@ -79,6 +83,10 @@ class openstack_identity_group_v3(terrascript.Data):
 
 
 class openstack_images_image_v2(terrascript.Data):
+    pass
+
+
+class openstack_images_image_ids_v2(terrascript.Data):
     pass
 
 

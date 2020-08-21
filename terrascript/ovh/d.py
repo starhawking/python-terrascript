@@ -34,11 +34,27 @@ class ovh_iploadbalancing(terrascript.Data):
     pass
 
 
-class ovh_me_installation_templates(terrascript.Data):
+class ovh_iploadbalancing_vrack_network(terrascript.Data):
+    pass
+
+
+class ovh_iploadbalancing_vrack_networks(terrascript.Data):
     pass
 
 
 class ovh_me_installation_template(terrascript.Data):
+    pass
+
+
+class ovh_me_installation_templates(terrascript.Data):
+    pass
+
+
+class ovh_me_ipxe_script(terrascript.Data):
+    pass
+
+
+class ovh_me_ipxe_scripts(terrascript.Data):
     pass
 
 
@@ -55,6 +71,10 @@ class ovh_me_ssh_key(terrascript.Data):
 
 
 class ovh_me_ssh_keys(terrascript.Data):
+    pass
+
+
+class ovh_vps(terrascript.Data):
     pass
 
 

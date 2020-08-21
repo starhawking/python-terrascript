@@ -30,6 +30,18 @@ class pagerduty_service(terrascript.Data):
     pass
 
 
+class pagerduty_business_service(terrascript.Data):
+    pass
+
+
+class pagerduty_priority(terrascript.Data):
+    pass
+
+
+class pagerduty_ruleset(terrascript.Data):
+    pass
+
+
 __all__ = [
     "pagerduty_escalation_policy",
     "pagerduty_schedule",
@@ -38,4 +50,7 @@ __all__ = [
     "pagerduty_vendor",
     "pagerduty_extension_schema",
     "pagerduty_service",
+    "pagerduty_business_service",
+    "pagerduty_priority",
+    "pagerduty_ruleset",
 ]

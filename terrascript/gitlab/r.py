@@ -54,6 +54,10 @@ class gitlab_deploy_key_enable(terrascript.Resource):
     pass
 
 
+class gitlab_deploy_token(terrascript.Resource):
+    pass
+
+
 class gitlab_user(terrascript.Resource):
     pass
 
@@ -86,9 +90,17 @@ class gitlab_service_jira(terrascript.Resource):
     pass
 
 
+class gitlab_service_github(terrascript.Resource):
+    pass
+
+
 class gitlab_project_share_group(terrascript.Resource):
     pass
 
 
 class gitlab_group_cluster(terrascript.Resource):
+    pass
+
+
+class gitlab_group_ldap_link(terrascript.Resource):
     pass

@@ -14,11 +14,23 @@ class datadog_downtime(terrascript.Resource):
     pass
 
 
-class datadog_integration_gcp(terrascript.Resource):
+class datadog_integration_aws(terrascript.Resource):
     pass
 
 
-class datadog_integration_aws(terrascript.Resource):
+class datadog_integration_aws_lambda_arn(terrascript.Resource):
+    pass
+
+
+class datadog_integration_aws_log_collection(terrascript.Resource):
+    pass
+
+
+class datadog_integration_azure(terrascript.Resource):
+    pass
+
+
+class datadog_integration_gcp(terrascript.Resource):
     pass
 
 
@@ -27,6 +39,10 @@ class datadog_integration_pagerduty(terrascript.Resource):
 
 
 class datadog_integration_pagerduty_service_object(terrascript.Resource):
+    pass
+
+
+class datadog_logs_archive(terrascript.Resource):
     pass
 
 
@@ -82,10 +98,14 @@ __all__ = [
     "datadog_dashboard",
     "datadog_dashboard_list",
     "datadog_downtime",
-    "datadog_integration_gcp",
     "datadog_integration_aws",
+    "datadog_integration_aws_lambda_arn",
+    "datadog_integration_aws_log_collection",
+    "datadog_integration_azure",
+    "datadog_integration_gcp",
     "datadog_integration_pagerduty",
     "datadog_integration_pagerduty_service_object",
+    "datadog_logs_archive",
     "datadog_logs_custom_pipeline",
     "datadog_logs_index",
     "datadog_logs_index_order",

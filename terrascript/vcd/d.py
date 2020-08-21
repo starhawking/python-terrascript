@@ -92,3 +92,15 @@ class vcd_nsxv_dhcp_relay(terrascript.Data):
 
 class vcd_nsxv_ip_set(terrascript.Data):
     pass
+
+
+class vcd_vapp_network(terrascript.Data):
+    pass
+
+
+class vcd_vapp_org_network(terrascript.Data):
+    pass
+
+
+class vcd_vm_affinity_rule(terrascript.Data):
+    pass

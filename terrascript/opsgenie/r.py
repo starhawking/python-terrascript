@@ -18,6 +18,10 @@ class opsgenie_user_contact(terrascript.Resource):
     pass
 
 
+class opsgenie_notification_policy(terrascript.Resource):
+    pass
+
+
 class opsgenie_escalation(terrascript.Resource):
     pass
 
@@ -27,6 +31,14 @@ class opsgenie_api_integration(terrascript.Resource):
 
 
 class opsgenie_email_integration(terrascript.Resource):
+    pass
+
+
+class opsgenie_integration_action(terrascript.Resource):
+    pass
+
+
+class opsgenie_service(terrascript.Resource):
     pass
 
 
@@ -43,4 +55,12 @@ class opsgenie_maintenance(terrascript.Resource):
 
 
 class opsgenie_heartbeat(terrascript.Resource):
+    pass
+
+
+class opsgenie_alert_policy(terrascript.Resource):
+    pass
+
+
+class opsgenie_service_incident_rule(terrascript.Resource):
     pass

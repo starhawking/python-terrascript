@@ -14,11 +14,23 @@ class datadog_downtime(terrascript.Resource):
     pass
 
 
-class datadog_integration_gcp(terrascript.Resource):
+class datadog_integration_aws(terrascript.Resource):
     pass
 
 
-class datadog_integration_aws(terrascript.Resource):
+class datadog_integration_aws_lambda_arn(terrascript.Resource):
+    pass
+
+
+class datadog_integration_aws_log_collection(terrascript.Resource):
+    pass
+
+
+class datadog_integration_azure(terrascript.Resource):
+    pass
+
+
+class datadog_integration_gcp(terrascript.Resource):
     pass
 
 
@@ -27,6 +39,10 @@ class datadog_integration_pagerduty(terrascript.Resource):
 
 
 class datadog_integration_pagerduty_service_object(terrascript.Resource):
+    pass
+
+
+class datadog_logs_archive(terrascript.Resource):
     pass
 
 

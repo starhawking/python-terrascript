@@ -54,6 +54,18 @@ class aws_availability_zones(terrascript.Data):
     pass
 
 
+class aws_backup_plan(terrascript.Data):
+    pass
+
+
+class aws_backup_selection(terrascript.Data):
+    pass
+
+
+class aws_backup_vault(terrascript.Data):
+    pass
+
+
 class aws_batch_compute_environment(terrascript.Data):
     pass
 
@@ -79,6 +91,10 @@ class aws_cloudformation_export(terrascript.Data):
 
 
 class aws_cloudformation_stack(terrascript.Data):
+    pass
+
+
+class aws_cloudfront_distribution(terrascript.Data):
     pass
 
 
@@ -122,6 +138,10 @@ class aws_db_snapshot(terrascript.Data):
     pass
 
 
+class aws_directory_service_directory(terrascript.Data):
+    pass
+
+
 class aws_dx_gateway(terrascript.Data):
     pass
 
@@ -150,11 +170,67 @@ class aws_ebs_volume(terrascript.Data):
     pass
 
 
+class aws_ebs_volumes(terrascript.Data):
+    pass
+
+
+class aws_ec2_coip_pool(terrascript.Data):
+    pass
+
+
+class aws_ec2_coip_pools(terrascript.Data):
+    pass
+
+
+class aws_ec2_instance_type_offering(terrascript.Data):
+    pass
+
+
+class aws_ec2_instance_type_offerings(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateway(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateways(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateway_route_table(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateway_route_tables(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateway_virtual_interface(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateway_virtual_interface_group(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateway_virtual_interface_groups(terrascript.Data):
+    pass
+
+
+class aws_ec2_spot_price(terrascript.Data):
+    pass
+
+
 class aws_ec2_transit_gateway(terrascript.Data):
     pass
 
 
 class aws_ec2_transit_gateway_dx_gateway_attachment(terrascript.Data):
+    pass
+
+
+class aws_ec2_transit_gateway_peering_attachment(terrascript.Data):
     pass
 
 
@@ -167,6 +243,10 @@ class aws_ec2_transit_gateway_vpc_attachment(terrascript.Data):
 
 
 class aws_ec2_transit_gateway_vpn_attachment(terrascript.Data):
+    pass
+
+
+class aws_ecr_authorization_token(terrascript.Data):
     pass
 
 
@@ -195,6 +275,14 @@ class aws_ecs_task_definition(terrascript.Data):
 
 
 class aws_customer_gateway(terrascript.Data):
+    pass
+
+
+class aws_efs_access_point(terrascript.Data):
+    pass
+
+
+class aws_efs_access_points(terrascript.Data):
     pass
 
 
@@ -342,6 +430,10 @@ class aws_kms_secrets(terrascript.Data):
     pass
 
 
+class aws_lambda_alias(terrascript.Data):
+    pass
+
+
 class aws_lambda_function(terrascript.Data):
     pass
 
@@ -398,6 +490,30 @@ class aws_organizations_organizational_units(terrascript.Data):
     pass
 
 
+class aws_outposts_outpost(terrascript.Data):
+    pass
+
+
+class aws_outposts_outpost_instance_type(terrascript.Data):
+    pass
+
+
+class aws_outposts_outpost_instance_types(terrascript.Data):
+    pass
+
+
+class aws_outposts_outposts(terrascript.Data):
+    pass
+
+
+class aws_outposts_site(terrascript.Data):
+    pass
+
+
+class aws_outposts_sites(terrascript.Data):
+    pass
+
+
 class aws_partition(terrascript.Data):
     pass
 
@@ -431,6 +547,10 @@ class aws_redshift_service_account(terrascript.Data):
 
 
 class aws_region(terrascript.Data):
+    pass
+
+
+class aws_regions(terrascript.Data):
     pass
 
 
@@ -478,6 +598,10 @@ class aws_secretsmanager_secret(terrascript.Data):
     pass
 
 
+class aws_secretsmanager_secret_rotation(terrascript.Data):
+    pass
+
+
 class aws_secretsmanager_secret_version(terrascript.Data):
     pass
 
@@ -487,6 +611,14 @@ class aws_servicequotas_service(terrascript.Data):
 
 
 class aws_servicequotas_service_quota(terrascript.Data):
+    pass
+
+
+class aws_sfn_activity(terrascript.Data):
+    pass
+
+
+class aws_sfn_state_machine(terrascript.Data):
     pass
 
 
@@ -503,6 +635,10 @@ class aws_ssm_document(terrascript.Data):
 
 
 class aws_ssm_parameter(terrascript.Data):
+    pass
+
+
+class aws_ssm_patch_baseline(terrascript.Data):
     pass
 
 
@@ -590,7 +726,27 @@ class aws_wafregional_web_acl(terrascript.Data):
     pass
 
 
+class aws_wafv2_ip_set(terrascript.Data):
+    pass
+
+
+class aws_wafv2_regex_pattern_set(terrascript.Data):
+    pass
+
+
+class aws_wafv2_rule_group(terrascript.Data):
+    pass
+
+
+class aws_wafv2_web_acl(terrascript.Data):
+    pass
+
+
 class aws_workspaces_bundle(terrascript.Data):
+    pass
+
+
+class aws_workspaces_directory(terrascript.Data):
     pass
 
 
@@ -632,6 +788,9 @@ __all__ = [
     "aws_autoscaling_groups",
     "aws_availability_zone",
     "aws_availability_zones",
+    "aws_backup_plan",
+    "aws_backup_selection",
+    "aws_backup_vault",
     "aws_batch_compute_environment",
     "aws_batch_job_queue",
     "aws_billing_service_account",
@@ -639,6 +798,7 @@ __all__ = [
     "aws_canonical_user_id",
     "aws_cloudformation_export",
     "aws_cloudformation_stack",
+    "aws_cloudfront_distribution",
     "aws_cloudhsm_v2_cluster",
     "aws_cloudtrail_service_account",
     "aws_cloudwatch_log_group",
@@ -649,6 +809,7 @@ __all__ = [
     "aws_db_event_categories",
     "aws_db_instance",
     "aws_db_snapshot",
+    "aws_directory_service_directory",
     "aws_dx_gateway",
     "aws_dynamodb_table",
     "aws_ebs_default_kms_key",
@@ -656,11 +817,26 @@ __all__ = [
     "aws_ebs_snapshot",
     "aws_ebs_snapshot_ids",
     "aws_ebs_volume",
+    "aws_ebs_volumes",
+    "aws_ec2_coip_pool",
+    "aws_ec2_coip_pools",
+    "aws_ec2_instance_type_offering",
+    "aws_ec2_instance_type_offerings",
+    "aws_ec2_local_gateway",
+    "aws_ec2_local_gateways",
+    "aws_ec2_local_gateway_route_table",
+    "aws_ec2_local_gateway_route_tables",
+    "aws_ec2_local_gateway_virtual_interface",
+    "aws_ec2_local_gateway_virtual_interface_group",
+    "aws_ec2_local_gateway_virtual_interface_groups",
+    "aws_ec2_spot_price",
     "aws_ec2_transit_gateway",
     "aws_ec2_transit_gateway_dx_gateway_attachment",
+    "aws_ec2_transit_gateway_peering_attachment",
     "aws_ec2_transit_gateway_route_table",
     "aws_ec2_transit_gateway_vpc_attachment",
     "aws_ec2_transit_gateway_vpn_attachment",
+    "aws_ecr_authorization_token",
     "aws_ecr_image",
     "aws_ecr_repository",
     "aws_ecs_cluster",
@@ -668,6 +844,8 @@ __all__ = [
     "aws_ecs_service",
     "aws_ecs_task_definition",
     "aws_customer_gateway",
+    "aws_efs_access_point",
+    "aws_efs_access_points",
     "aws_efs_file_system",
     "aws_efs_mount_target",
     "aws_eip",
@@ -704,6 +882,7 @@ __all__ = [
     "aws_kms_key",
     "aws_kms_secret",
     "aws_kms_secrets",
+    "aws_lambda_alias",
     "aws_lambda_function",
     "aws_lambda_invocation",
     "aws_lambda_layer_version",
@@ -718,6 +897,12 @@ __all__ = [
     "aws_network_interfaces",
     "aws_organizations_organization",
     "aws_organizations_organizational_units",
+    "aws_outposts_outpost",
+    "aws_outposts_outpost_instance_type",
+    "aws_outposts_outpost_instance_types",
+    "aws_outposts_outposts",
+    "aws_outposts_site",
+    "aws_outposts_sites",
     "aws_partition",
     "aws_prefix_list",
     "aws_pricing_product",
@@ -727,6 +912,7 @@ __all__ = [
     "aws_redshift_cluster",
     "aws_redshift_service_account",
     "aws_region",
+    "aws_regions",
     "aws_route",
     "aws_route_table",
     "aws_route_tables",
@@ -738,13 +924,17 @@ __all__ = [
     "aws_s3_bucket_object",
     "aws_s3_bucket_objects",
     "aws_secretsmanager_secret",
+    "aws_secretsmanager_secret_rotation",
     "aws_secretsmanager_secret_version",
     "aws_servicequotas_service",
     "aws_servicequotas_service_quota",
+    "aws_sfn_activity",
+    "aws_sfn_state_machine",
     "aws_sns_topic",
     "aws_sqs_queue",
     "aws_ssm_document",
     "aws_ssm_parameter",
+    "aws_ssm_patch_baseline",
     "aws_storagegateway_local_disk",
     "aws_subnet",
     "aws_subnet_ids",
@@ -766,7 +956,12 @@ __all__ = [
     "aws_wafregional_rule",
     "aws_wafregional_rate_based_rule",
     "aws_wafregional_web_acl",
+    "aws_wafv2_ip_set",
+    "aws_wafv2_regex_pattern_set",
+    "aws_wafv2_rule_group",
+    "aws_wafv2_web_acl",
     "aws_workspaces_bundle",
+    "aws_workspaces_directory",
     "aws_lb",
     "aws_alb",
     "aws_lb_listener",

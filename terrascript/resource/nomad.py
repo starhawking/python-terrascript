@@ -26,6 +26,10 @@ class nomad_sentinel_policy(terrascript.Resource):
     pass
 
 
+class nomad_volume(terrascript.Resource):
+    pass
+
+
 __all__ = [
     "nomad_acl_policy",
     "nomad_acl_token",
@@ -33,4 +37,5 @@ __all__ = [
     "nomad_namespace",
     "nomad_quota_specification",
     "nomad_sentinel_policy",
+    "nomad_volume",
 ]

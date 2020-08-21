@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 * Contributors are now sorted in alphabetical order
 * Documentation link from readme now points toward develop build on readthedocs.io to avoid 404
 * Requirements files are now sorted alphabetically and duplicate entries are removed
+- Updated code for providers generated
 ### Deprecated
 * Individual modules for each provider (Example: ``terrascript.aws.r``) are now deprecated in favour of
   single modules as added in release 0.8.0. 

@@ -62,6 +62,10 @@ class heroku_pipeline(terrascript.Resource):
     pass
 
 
+class heroku_pipeline_config_var(terrascript.Resource):
+    pass
+
+
 class heroku_pipeline_coupling(terrascript.Resource):
     pass
 
@@ -114,6 +118,7 @@ __all__ = [
     "heroku_drain",
     "heroku_formation",
     "heroku_pipeline",
+    "heroku_pipeline_config_var",
     "heroku_pipeline_coupling",
     "heroku_slug",
     "heroku_space",

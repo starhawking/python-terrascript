@@ -6,6 +6,10 @@ class packet_device(terrascript.Resource):
     pass
 
 
+class packet_device_network_type(terrascript.Resource):
+    pass
+
+
 class packet_ssh_key(terrascript.Resource):
     pass
 
@@ -56,6 +60,7 @@ class packet_port_vlan_attachment(terrascript.Resource):
 
 __all__ = [
     "packet_device",
+    "packet_device_network_type",
     "packet_ssh_key",
     "packet_project_ssh_key",
     "packet_project",

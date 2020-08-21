@@ -20,3 +20,7 @@ class opsgenie_schedule(terrascript.Data):
 
 class opsgenie_heartbeat(terrascript.Data):
     pass
+
+
+class opsgenie_service(terrascript.Data):
+    pass

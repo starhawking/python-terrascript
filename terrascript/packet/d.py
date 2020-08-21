@@ -26,6 +26,10 @@ class packet_device(terrascript.Data):
     pass
 
 
+class packet_device_bgp_neighbors(terrascript.Data):
+    pass
+
+
 class packet_project(terrascript.Data):
     pass
 

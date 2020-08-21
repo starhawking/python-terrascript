@@ -22,11 +22,19 @@ class cloudflare_access_service_token(terrascript.Resource):
     pass
 
 
+class cloudflare_access_identity_provider(terrascript.Resource):
+    pass
+
+
 class cloudflare_account_member(terrascript.Resource):
     pass
 
 
 class cloudflare_argo(terrascript.Resource):
+    pass
+
+
+class cloudflare_byo_ip_prefix(terrascript.Resource):
     pass
 
 
@@ -46,6 +54,10 @@ class cloudflare_firewall_rule(terrascript.Resource):
     pass
 
 
+class cloudflare_healthcheck(terrascript.Resource):
+    pass
+
+
 class cloudflare_load_balancer_monitor(terrascript.Resource):
     pass
 
@@ -58,7 +70,15 @@ class cloudflare_load_balancer(terrascript.Resource):
     pass
 
 
+class cloudflare_logpush_ownership_challenge(terrascript.Resource):
+    pass
+
+
 class cloudflare_logpush_job(terrascript.Resource):
+    pass
+
+
+class cloudflare_logpull_retention(terrascript.Resource):
     pass
 
 
@@ -94,11 +114,19 @@ class cloudflare_waf_rule(terrascript.Resource):
     pass
 
 
+class cloudflare_waf_override(terrascript.Resource):
+    pass
+
+
 class cloudflare_worker_route(terrascript.Resource):
     pass
 
 
 class cloudflare_worker_script(terrascript.Resource):
+    pass
+
+
+class cloudflare_workers_kv(terrascript.Resource):
     pass
 
 

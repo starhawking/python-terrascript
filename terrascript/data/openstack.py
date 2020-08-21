@@ -26,6 +26,10 @@ class openstack_compute_availability_zones_v2(terrascript.Data):
     pass
 
 
+class openstack_compute_instance_v2(terrascript.Data):
+    pass
+
+
 class openstack_compute_flavor_v2(terrascript.Data):
     pass
 
@@ -79,6 +83,10 @@ class openstack_identity_group_v3(terrascript.Data):
 
 
 class openstack_images_image_v2(terrascript.Data):
+    pass
+
+
+class openstack_images_image_ids_v2(terrascript.Data):
     pass
 
 
@@ -169,6 +177,7 @@ __all__ = [
     "openstack_blockstorage_volume_v2",
     "openstack_blockstorage_volume_v3",
     "openstack_compute_availability_zones_v2",
+    "openstack_compute_instance_v2",
     "openstack_compute_flavor_v2",
     "openstack_compute_keypair_v2",
     "openstack_containerinfra_clustertemplate_v1",
@@ -183,6 +192,7 @@ __all__ = [
     "openstack_identity_service_v3",
     "openstack_identity_group_v3",
     "openstack_images_image_v2",
+    "openstack_images_image_ids_v2",
     "openstack_networking_addressscope_v2",
     "openstack_networking_network_v2",
     "openstack_networking_qos_bandwidth_limit_rule_v2",

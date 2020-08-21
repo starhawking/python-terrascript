@@ -126,6 +126,34 @@ class vcd_nsxv_ip_set(terrascript.Resource):
     pass
 
 
+class vcd_vm_internal_disk(terrascript.Resource):
+    pass
+
+
+class vcd_vapp_org_network(terrascript.Resource):
+    pass
+
+
+class vcd_org_group(terrascript.Resource):
+    pass
+
+
+class vcd_vapp_firewall_rules(terrascript.Resource):
+    pass
+
+
+class vcd_vapp_nat_rules(terrascript.Resource):
+    pass
+
+
+class vcd_vapp_static_routing(terrascript.Resource):
+    pass
+
+
+class vcd_vm_affinity_rule(terrascript.Resource):
+    pass
+
+
 __all__ = [
     "vcd_network",
     "vcd_network_routed",
@@ -158,4 +186,11 @@ __all__ = [
     "vcd_nsxv_firewall_rule",
     "vcd_nsxv_dhcp_relay",
     "vcd_nsxv_ip_set",
+    "vcd_vm_internal_disk",
+    "vcd_vapp_org_network",
+    "vcd_org_group",
+    "vcd_vapp_firewall_rules",
+    "vcd_vapp_nat_rules",
+    "vcd_vapp_static_routing",
+    "vcd_vm_affinity_rule",
 ]

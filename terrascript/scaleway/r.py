@@ -6,11 +6,7 @@ class scaleway_account_ssh_key(terrascript.Resource):
     pass
 
 
-class scaleway_baremetal_server_beta(terrascript.Resource):
-    pass
-
-
-class scaleway_bucket(terrascript.Resource):
+class scaleway_baremetal_server(terrascript.Resource):
     pass
 
 
@@ -27,6 +23,10 @@ class scaleway_instance_volume(terrascript.Resource):
 
 
 class scaleway_instance_security_group(terrascript.Resource):
+    pass
+
+
+class scaleway_instance_security_group_rules(terrascript.Resource):
     pass
 
 
@@ -50,11 +50,23 @@ class scaleway_lb_beta(terrascript.Resource):
     pass
 
 
+class scaleway_lb_ip_beta(terrascript.Resource):
+    pass
+
+
 class scaleway_lb_backend_beta(terrascript.Resource):
     pass
 
 
+class scaleway_lb_certificate_beta(terrascript.Resource):
+    pass
+
+
 class scaleway_lb_frontend_beta(terrascript.Resource):
+    pass
+
+
+class scaleway_registry_namespace_beta(terrascript.Resource):
     pass
 
 

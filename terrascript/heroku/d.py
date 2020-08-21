@@ -10,6 +10,10 @@ class heroku_app(terrascript.Data):
     pass
 
 
+class heroku_pipeline(terrascript.Data):
+    pass
+
+
 class heroku_space(terrascript.Data):
     pass
 

@@ -22,6 +22,10 @@ class alicloud_zones(terrascript.Data):
     pass
 
 
+class alicloud_db_zones(terrascript.Data):
+    pass
+
+
 class alicloud_instance_type_families(terrascript.Data):
     pass
 
@@ -174,6 +178,10 @@ class alicloud_slb_domain_extensions(terrascript.Data):
     pass
 
 
+class alicloud_slb_zones(terrascript.Data):
+    pass
+
+
 class alicloud_oss_bucket_objects(terrascript.Data):
     pass
 
@@ -230,6 +238,10 @@ class alicloud_fc_triggers(terrascript.Data):
     pass
 
 
+class alicloud_fc_zones(terrascript.Data):
+    pass
+
+
 class alicloud_db_instances(terrascript.Data):
     pass
 
@@ -282,11 +294,23 @@ class alicloud_mongodb_instances(terrascript.Data):
     pass
 
 
+class alicloud_mongodb_zones(terrascript.Data):
+    pass
+
+
 class alicloud_gpdb_instances(terrascript.Data):
     pass
 
 
+class alicloud_gpdb_zones(terrascript.Data):
+    pass
+
+
 class alicloud_kvstore_instances(terrascript.Data):
+    pass
+
+
+class alicloud_kvstore_zones(terrascript.Data):
     pass
 
 
@@ -338,6 +362,22 @@ class alicloud_cr_repos(terrascript.Data):
     pass
 
 
+class alicloud_cr_ee_instances(terrascript.Data):
+    pass
+
+
+class alicloud_cr_ee_namespaces(terrascript.Data):
+    pass
+
+
+class alicloud_cr_ee_repos(terrascript.Data):
+    pass
+
+
+class alicloud_cr_ee_sync_rules(terrascript.Data):
+    pass
+
+
 class alicloud_mns_queues(terrascript.Data):
     pass
 
@@ -363,6 +403,10 @@ class alicloud_api_gateway_apps(terrascript.Data):
 
 
 class alicloud_elasticsearch_instances(terrascript.Data):
+    pass
+
+
+class alicloud_elasticsearch_zones(terrascript.Data):
     pass
 
 
@@ -430,6 +474,14 @@ class alicloud_ddosbgp_instances(terrascript.Data):
     pass
 
 
+class alicloud_ess_alarms(terrascript.Data):
+    pass
+
+
+class alicloud_ess_notifications(terrascript.Data):
+    pass
+
+
 class alicloud_ess_scaling_groups(terrascript.Data):
     pass
 
@@ -439,6 +491,14 @@ class alicloud_ess_scaling_rules(terrascript.Data):
 
 
 class alicloud_ess_scaling_configurations(terrascript.Data):
+    pass
+
+
+class alicloud_ess_lifecycle_hooks(terrascript.Data):
+    pass
+
+
+class alicloud_ess_scheduled_tasks(terrascript.Data):
     pass
 
 
@@ -482,6 +542,10 @@ class alicloud_yundun_bastionhost_instances(terrascript.Data):
     pass
 
 
+class alicloud_market_product(terrascript.Data):
+    pass
+
+
 class alicloud_market_products(terrascript.Data):
     pass
 
@@ -490,11 +554,175 @@ class alicloud_polardb_clusters(terrascript.Data):
     pass
 
 
+class alicloud_polardb_node_classes(terrascript.Data):
+    pass
+
+
 class alicloud_polardb_endpoints(terrascript.Data):
     pass
 
 
+class alicloud_polardb_accounts(terrascript.Data):
+    pass
+
+
+class alicloud_polardb_databases(terrascript.Data):
+    pass
+
+
+class alicloud_polardb_zones(terrascript.Data):
+    pass
+
+
 class alicloud_hbase_instances(terrascript.Data):
+    pass
+
+
+class alicloud_hbase_zones(terrascript.Data):
+    pass
+
+
+class alicloud_adb_clusters(terrascript.Data):
+    pass
+
+
+class alicloud_adb_zones(terrascript.Data):
+    pass
+
+
+class alicloud_cen_flowlogs(terrascript.Data):
+    pass
+
+
+class alicloud_kms_aliases(terrascript.Data):
+    pass
+
+
+class alicloud_dns_domain_txt_guid(terrascript.Data):
+    pass
+
+
+class alicloud_edas_applications(terrascript.Data):
+    pass
+
+
+class alicloud_edas_deploy_groups(terrascript.Data):
+    pass
+
+
+class alicloud_edas_clusters(terrascript.Data):
+    pass
+
+
+class alicloud_resource_manager_folders(terrascript.Data):
+    pass
+
+
+class alicloud_dns_instances(terrascript.Data):
+    pass
+
+
+class alicloud_resource_manager_policies(terrascript.Data):
+    pass
+
+
+class alicloud_resource_manager_resource_groups(terrascript.Data):
+    pass
+
+
+class alicloud_resource_manager_roles(terrascript.Data):
+    pass
+
+
+class alicloud_resource_manager_policy_versions(terrascript.Data):
+    pass
+
+
+class alicloud_alidns_domain_groups(terrascript.Data):
+    pass
+
+
+class alicloud_kms_key_versions(terrascript.Data):
+    pass
+
+
+class alicloud_alidns_records(terrascript.Data):
+    pass
+
+
+class alicloud_resource_manager_accounts(terrascript.Data):
+    pass
+
+
+class alicloud_resource_manager_resource_directories(terrascript.Data):
+    pass
+
+
+class alicloud_resource_manager_handshakes(terrascript.Data):
+    pass
+
+
+class alicloud_waf_domains(terrascript.Data):
+    pass
+
+
+class alicloud_kms_secrets(terrascript.Data):
+    pass
+
+
+class alicloud_cen_route_maps(terrascript.Data):
+    pass
+
+
+class alicloud_cen_private_zones(terrascript.Data):
+    pass
+
+
+class alicloud_dms_enterprise_instances(terrascript.Data):
+    pass
+
+
+class alicloud_cassandra_clusters(terrascript.Data):
+    pass
+
+
+class alicloud_cassandra_data_centers(terrascript.Data):
+    pass
+
+
+class alicloud_cassandra_zones(terrascript.Data):
+    pass
+
+
+class alicloud_kms_secret_versions(terrascript.Data):
+    pass
+
+
+class alicloud_waf_instances(terrascript.Data):
+    pass
+
+
+class alicloud_eci_image_caches(terrascript.Data):
+    pass
+
+
+class alicloud_dms_enterprise_users(terrascript.Data):
+    pass
+
+
+class alicloud_ecs_dedicated_hosts(terrascript.Data):
+    pass
+
+
+class alicloud_oos_templates(terrascript.Data):
+    pass
+
+
+class alicloud_oos_executions(terrascript.Data):
+    pass
+
+
+class alicloud_resource_manager_policy_attachments(terrascript.Data):
     pass
 
 
@@ -504,6 +732,7 @@ __all__ = [
     "alicloud_images",
     "alicloud_regions",
     "alicloud_zones",
+    "alicloud_db_zones",
     "alicloud_instance_type_families",
     "alicloud_instance_types",
     "alicloud_instances",
@@ -542,6 +771,7 @@ __all__ = [
     "alicloud_slb_server_certificates",
     "alicloud_slb_ca_certificates",
     "alicloud_slb_domain_extensions",
+    "alicloud_slb_zones",
     "alicloud_oss_bucket_objects",
     "alicloud_oss_buckets",
     "alicloud_ons_instances",
@@ -556,6 +786,7 @@ __all__ = [
     "alicloud_file_crc64_checksum",
     "alicloud_fc_services",
     "alicloud_fc_triggers",
+    "alicloud_fc_zones",
     "alicloud_db_instances",
     "alicloud_db_instance_engines",
     "alicloud_db_instance_classes",
@@ -569,8 +800,11 @@ __all__ = [
     "alicloud_ssl_vpn_client_certs",
     "alicloud_mongo_instances",
     "alicloud_mongodb_instances",
+    "alicloud_mongodb_zones",
     "alicloud_gpdb_instances",
+    "alicloud_gpdb_zones",
     "alicloud_kvstore_instances",
+    "alicloud_kvstore_zones",
     "alicloud_kvstore_instance_classes",
     "alicloud_kvstore_instance_engines",
     "alicloud_cen_instances",
@@ -583,6 +817,10 @@ __all__ = [
     "alicloud_cs_serverless_kubernetes_clusters",
     "alicloud_cr_namespaces",
     "alicloud_cr_repos",
+    "alicloud_cr_ee_instances",
+    "alicloud_cr_ee_namespaces",
+    "alicloud_cr_ee_repos",
+    "alicloud_cr_ee_sync_rules",
     "alicloud_mns_queues",
     "alicloud_mns_topics",
     "alicloud_mns_topic_subscriptions",
@@ -590,6 +828,7 @@ __all__ = [
     "alicloud_api_gateway_groups",
     "alicloud_api_gateway_apps",
     "alicloud_elasticsearch_instances",
+    "alicloud_elasticsearch_zones",
     "alicloud_drds_instances",
     "alicloud_nas_access_groups",
     "alicloud_nas_access_rules",
@@ -606,9 +845,13 @@ __all__ = [
     "alicloud_forward_entries",
     "alicloud_ddoscoo_instances",
     "alicloud_ddosbgp_instances",
+    "alicloud_ess_alarms",
+    "alicloud_ess_notifications",
     "alicloud_ess_scaling_groups",
     "alicloud_ess_scaling_rules",
     "alicloud_ess_scaling_configurations",
+    "alicloud_ess_lifecycle_hooks",
+    "alicloud_ess_scheduled_tasks",
     "alicloud_ots_instances",
     "alicloud_ots_instance_attachments",
     "alicloud_ots_tables",
@@ -619,8 +862,50 @@ __all__ = [
     "alicloud_sag_acls",
     "alicloud_yundun_dbaudit_instance",
     "alicloud_yundun_bastionhost_instances",
+    "alicloud_market_product",
     "alicloud_market_products",
     "alicloud_polardb_clusters",
+    "alicloud_polardb_node_classes",
     "alicloud_polardb_endpoints",
+    "alicloud_polardb_accounts",
+    "alicloud_polardb_databases",
+    "alicloud_polardb_zones",
     "alicloud_hbase_instances",
+    "alicloud_hbase_zones",
+    "alicloud_adb_clusters",
+    "alicloud_adb_zones",
+    "alicloud_cen_flowlogs",
+    "alicloud_kms_aliases",
+    "alicloud_dns_domain_txt_guid",
+    "alicloud_edas_applications",
+    "alicloud_edas_deploy_groups",
+    "alicloud_edas_clusters",
+    "alicloud_resource_manager_folders",
+    "alicloud_dns_instances",
+    "alicloud_resource_manager_policies",
+    "alicloud_resource_manager_resource_groups",
+    "alicloud_resource_manager_roles",
+    "alicloud_resource_manager_policy_versions",
+    "alicloud_alidns_domain_groups",
+    "alicloud_kms_key_versions",
+    "alicloud_alidns_records",
+    "alicloud_resource_manager_accounts",
+    "alicloud_resource_manager_resource_directories",
+    "alicloud_resource_manager_handshakes",
+    "alicloud_waf_domains",
+    "alicloud_kms_secrets",
+    "alicloud_cen_route_maps",
+    "alicloud_cen_private_zones",
+    "alicloud_dms_enterprise_instances",
+    "alicloud_cassandra_clusters",
+    "alicloud_cassandra_data_centers",
+    "alicloud_cassandra_zones",
+    "alicloud_kms_secret_versions",
+    "alicloud_waf_instances",
+    "alicloud_eci_image_caches",
+    "alicloud_dms_enterprise_users",
+    "alicloud_ecs_dedicated_hosts",
+    "alicloud_oos_templates",
+    "alicloud_oos_executions",
+    "alicloud_resource_manager_policy_attachments",
 ]

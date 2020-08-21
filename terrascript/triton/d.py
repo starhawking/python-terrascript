@@ -28,3 +28,7 @@ class triton_fabric_vlan(terrascript.Data):
 
 class triton_fabric_network(terrascript.Data):
     pass
+
+
+class triton_volume(terrascript.Data):
+    pass
