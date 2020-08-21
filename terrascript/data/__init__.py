@@ -24,6 +24,7 @@ from .fastly import *
 from .github import *
 from .gitlab import *
 from .google import *
+from .google_beta import *
 from .grafana import *
 from .heroku import *
 from .http import *

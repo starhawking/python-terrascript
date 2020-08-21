@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 ### Added
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
+* Provider `google-beta`
 ### Fixed
 * Missing dev requirement Black added
 * Re-introduced ``terrascript.Terrascript.update()`` method (issue #98).
