@@ -10,7 +10,8 @@
    Runtime: 2:30 minutes
 
    Changelog:
-   2020-08-21 - Cleaned up code to conform to pep8
+   2020-08-21 - Added support for providers with dash in their name
+                Cleaned up code to conform to pep8
                 Fixed syntax error when (re)raising exception from process
                 Updated templates to conform to black format better
 
@@ -233,6 +234,14 @@ def create_provider(provider, modulesdir):
         fp.write(PROVIDER_TEMPLATE.render(provider=provider))
 
 
+def get_sanitized_name(provider):
+    """ Get the string sanitized for use as python module
+
+    :return:
+    """
+    return provider.replace("-", "_")
+
+
 def create_resources(provider, modulesdir, resources):
     resource_path = os.path.join(modulesdir, "resource", "{}.py".format(provider))
     with open(resource_path, "wt") as fp:
@@ -248,15 +257,18 @@ def create_datasources(provider, modulesdir, datasources):
 
 
 def process(entry, modulesdir):
-    provider = entry["name"]
+    repo_name = entry["name"]
+    provider = get_sanitized_name(repo_name)
+
     repository = entry.get(
         "repository",
-        "https://github.com/terraform-providers/terraform-provider-{}".format(provider),
+        "https://github.com/terraform-providers/terraform-provider-{}".format(
+            repo_name
+        ),
     )
-    logging.info(provider)
+    logging.info(repo_name)
 
     with tempfile.TemporaryDirectory() as tmpdir:
-
         cmd = "git clone --depth=1 {} .".format(repository)
         result = subprocess.run(
             shlex.split(cmd),
@@ -268,7 +280,8 @@ def process(entry, modulesdir):
             print(result.stdout)
             sys.exit(1)
 
-        with open(os.path.join(tmpdir, provider, "provider.go"), "rb") as fp:
+        provider_path = os.path.join(tmpdir, repo_name, "provider.go")
+        with open(provider_path, "rb") as fp:
             content = fp.read()
 
             resources = []
@@ -330,7 +343,7 @@ def main():
 
     # Create the __ini__.py files for providers, datasources and resources.
     #
-    providers = [entry["name"] for entry in entries]
+    providers = [get_sanitized_name(entry["name"]) for entry in entries]
     with open(os.path.join(modulesdir, "provider", "__init__.py"), "wt") as fp:
         fp.write(INIT_TEMPLATE.render(providers=providers, package="provider"))
 
