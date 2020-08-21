@@ -47,7 +47,11 @@ class TestVariable(object):
         var = terrascript.Variable("myvar", type="string", default="myval")
 
         string_var = str(var)
-        assert string_var == "var.myvar", "String interpolation of variable did not return its reference"
+        assert (
+            string_var == "var.myvar"
+        ), "String interpolation of variable did not return its reference"
 
         embeded_var = "embeded-${{{}}}".format(var)
-        assert embeded_var == "embeded-${var.myvar}", "Formatting a string with variable did not insert reference"
+        assert (
+            embeded_var == "embeded-${var.myvar}"
+        ), "Formatting a string with variable did not insert reference"
