@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 """Auto-generate provider specific modules.
 
    The script reads a list of Terraform providers from the file PROVIDERS, 
@@ -11,7 +10,8 @@
    Runtime: 2:30 minutes
 
    Changelog:
-   2020-08-21 - Updated templates to conform to black format better
+   2020-08-21 - Cleaned up code to conform to pep8
+                Updated templates to conform to black format bette
 
    2020-01-03 - Renamed `PROVIDERS` to `providers.yml` to accomodate
                 custom repository paths to community providers.
@@ -33,11 +33,6 @@
    for a list of earlier changes.
 
 """
-
-DEBUG = False
-CONCURRENCY = 10
-INPUT = "providers.yml"
-
 import os
 import os.path
 import sys
@@ -51,6 +46,11 @@ import logging
 import threading
 import yaml
 
+
+
+DEBUG = False
+CONCURRENCY = 10
+INPUT = "providers.yml"
 
 if DEBUG:
     logging.basicConfig(level=logging.DEBUG)
