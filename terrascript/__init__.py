@@ -403,6 +403,7 @@ __all__ = [
     "Backend",
     "backend",
     "Block",
+    "Connection",
     "connection",
     "Data",
     "data",
