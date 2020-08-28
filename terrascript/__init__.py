@@ -160,8 +160,8 @@ class Terrascript(dict):
     def __init__(self, *objects):
         super().__init__()
 
-        for object in objects:
-            self.add(object)
+        for item in objects:
+            self.add(item)
 
     def __str__(self):
         return json.dumps(self, indent=INDENT)
@@ -258,10 +258,10 @@ class Terrascript(dict):
 
         return self
 
-    def add(self, object):
+    def add(self, item):
         """Add to the configuration using the ``+`` syntax."""
-        self.__add__(object)
-        return object  # for backwards compatibility!
+        self.__add__(item)
+        return item  # for backwards compatibility!
 
     def update(self, other, **kwargs):
         del kwargs
@@ -271,18 +271,18 @@ class Terrascript(dict):
     def __iter__(self):
         """Iterate over top-level items."""
 
-        def recurse(o):
-            if isinstance(o, (Resource, Data, Provider, Variable, Module, Output)):
-                yield o
-            elif isinstance(o, dict):
-                for k, v in o.items():
+        def recurse(container):
+            if isinstance(container, (Resource, Data, Provider, Variable, Module, Output)):
+                yield container
+            elif isinstance(container, dict):
+                for k, v in container.items():
                     yield from recurse(v)
-            elif isinstance(o, list):
-                for i in o:
+            elif isinstance(container, list):
+                for i in container:
                     yield from recurse(i)
 
-        for o in recurse(self):
-            yield o
+        for item in recurse(self):
+            yield item
 
 
 # Top-level blocks ----------------------------------------
