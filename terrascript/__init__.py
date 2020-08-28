@@ -161,7 +161,7 @@ class Terrascript(dict):
         super().__init__()
 
         for object in objects:
-            self += object
+            self.add(object)
 
     def __str__(self):
         return json.dumps(self, indent=INDENT)
@@ -260,13 +260,12 @@ class Terrascript(dict):
 
     def add(self, object):
         """Add to the configuration using the ``+`` syntax."""
-
-        self += object
-        return object  # for backwards compatability!
+        self.__add__(object)
+        return object  # for backwards compatibility!
 
     def update(self, other):
         for o in other:
-            self += o
+            self.add(o)
 
     def __iter__(self):
         """Iterate over top-level items."""
