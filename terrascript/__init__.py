@@ -6,9 +6,8 @@ this project.
 
 """
 
-import logging
-import warnings
 import json
+import logging
 
 __author__ = "Markus Juenemann <markus@juenemann.net>"
 __version__ = "0.8.0"
