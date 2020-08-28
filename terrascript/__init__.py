@@ -353,6 +353,7 @@ class Provisioner(dict):
 
        The `name` argument must be a valid Terraform provisioner.
 
+       >>> import terrascript
        >>> p = terrascript.Provisioner("local-exec", command="echo 'Hello World'")
        >>> print(p)
        {'local-exec': {'command': "echo 'Hello World"}}
