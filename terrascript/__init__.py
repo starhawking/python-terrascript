@@ -77,7 +77,7 @@ class Block(dict):
             if isinstance(v, Variable):
                 kwargs[k] = "var.{}".format(v._name)
 
-        super().update(kwargs)
+        super().__init__(**kwargs)
 
     def __getattr__(self, attr):
         """Special handling for accessing attributes,
@@ -362,6 +362,7 @@ class Provisioner(dict):
     """
 
     def __init__(self, name, **kwargs):
+        super().__init__()
         self[name] = kwargs
 
 
