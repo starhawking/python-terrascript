@@ -404,7 +404,7 @@ __all__ = [
     "Block",
     "Resource",
     "Provider",
-    "Datasource",
+    "Data",
     "Variable",
     "Module",
     "Output",
