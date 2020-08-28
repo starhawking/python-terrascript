@@ -258,14 +258,14 @@ class Terrascript(dict):
     def __iter__(self):
         """ Iterate over top-level items. """
 
-        def recurse(container):
-            if isinstance(container, (Resource, Data, Provider, Variable, Module, Output)):
-                yield container
-            elif isinstance(container, dict):
-                for k, v in container.items():
+        def recurse(res):
+            if isinstance(res, (Resource, Data, Provider, Variable, Module, Output)):
+                yield res
+            elif isinstance(res, dict):
+                for k, v in res.items():
                     yield from recurse(v)
-            elif isinstance(container, list):
-                for i in container:
+            elif isinstance(res, list):
+                for i in res:
                     yield from recurse(i)
 
         for item in recurse(self):
@@ -277,11 +277,13 @@ class Terrascript(dict):
 
 class Resource(NamedBlock):
     """ Terraform resource block. """
+
     pass
 
 
 class Data(NamedBlock):
     """ Terraform data source block. """
+
     pass
 
 
@@ -306,6 +308,7 @@ class Provider(Block):
                 ]
             }
     """
+
     pass
 
 
@@ -319,6 +322,7 @@ class Module(NamedBlock):
 
         https://www.terraform.io/docs/configuration/modules.html
     """
+
     pass
 
 
