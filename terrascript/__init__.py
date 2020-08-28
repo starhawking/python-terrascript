@@ -263,7 +263,8 @@ class Terrascript(dict):
         self.__add__(object)
         return object  # for backwards compatibility!
 
-    def update(self, other):
+    def update(self, other, **kwargs):
+        del kwargs
         for o in other:
             self.add(o)
 
