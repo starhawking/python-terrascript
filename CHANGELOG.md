@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file.
 * Code for providers updated to conform with black
 * Contributors are now sorted in alphabetical order
 * Documentation link from readme now points toward develop build on readthedocs.io to avoid 404
+* Makefiles cleaned up, and help target contents now dynamically generated from comments
 * Requirements files are now sorted alphabetically and duplicate entries are removed
 * Updated code for providers generated
 ### Deleted
