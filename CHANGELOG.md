@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
 * Provider `google-beta`
+* Release instruction for documentation
 * RTD theme no longer bundled with Sphinx added as dev requirement
 ### Fixed
 * Missing dev requirement Black added

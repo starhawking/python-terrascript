@@ -15,6 +15,7 @@ git checkout -b release-x.x.x
 * Update ``.travis.yml``.
 * Run ``make black``.
 * Run ``make test``.
+* Run ``make docs``.
 * Commit and push the branch ``release-x.x.x`` to Github.
 ```
 git commit -a -m 'Preparing release x.x.x'
