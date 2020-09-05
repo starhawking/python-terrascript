@@ -25,8 +25,8 @@ DEFAULT_GOAL: help
 	test_issues \
 	test_docs
 
-black: clean ## Format Python code with black to keep style consistent
-	black -t py35 .
+black: clean ## Format Python code with Black to keep style consistent
+	black -t py36 .
 
 clean: ## Cleanup temporary / cached files
 	rm -f tests/*.pyc
