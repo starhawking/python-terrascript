@@ -5,7 +5,7 @@ import terrascript.resource
 # *** These test work but terrascript.Locals is not supported. ***
 
 
-class TestLocals(object):
+class TestLocals:
     def __init__(self):
         self.cfg = terrascript.Terrascript()
         self.cfg += terrascript.provider.aws(region="us-east-1")

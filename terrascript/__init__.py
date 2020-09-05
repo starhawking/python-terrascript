@@ -52,7 +52,7 @@ class Attribute(str):
     """
 
     def __getattr__(self, name):
-        return Attribute("{}.{}".format(self, name))
+        return Attribute(f"{self}.{name}")
 
 
 class Block(dict):
@@ -68,7 +68,7 @@ class Block(dict):
         # TODO: Add others?
         for k, v in kwargs.items():
             if isinstance(v, Variable):
-                kwargs[k] = "var.{}".format(v._name)
+                kwargs[k] = f"var.{v._name}"
 
         super().__init__(**kwargs)
 
@@ -100,18 +100,18 @@ class Block(dict):
         else:
             if isinstance(self, Resource):
                 return Attribute(
-                    "{}.{}.{}".format(self.__class__.__name__, self._name, attr)
+                    f"{self.__class__.__name__}.{self._name}.{attr}"
                 )
             if isinstance(self, Module):
-                return Attribute("module.{}.{}".format(self._name, attr))
+                return Attribute(f"module.{self._name}.{attr}")
             if isinstance(self, Variable):
-                return Attribute("var.{}.{}".format(self._name, attr))
+                return Attribute(f"var.{self._name}.{attr}")
             elif isinstance(self, Locals):
-                return Attribute("local.{}".format(attr))
+                return Attribute(f"local.{attr}")
             elif isinstance(self, Data):
                 # data.google_compute_image.NAME.ATTR
                 return Attribute(
-                    "data.{}.{}.{}".format(self.__class__.__name__, self._name, attr)
+                    f"data.{self.__class__.__name__}.{self._name}.{attr}"
                 )
             else:
                 raise AttributeError(attr)
@@ -268,8 +268,7 @@ class Terrascript(dict):
                 for i in res:
                     yield from recurse(i)
 
-        for item in recurse(self):
-            yield item
+        yield from recurse(self)
 
 
 # Top-level blocks ----------------------------------------
@@ -314,7 +313,7 @@ class Provider(Block):
 
 class Variable(NamedBlock):
     def __repr__(self):
-        return "var.{}".format(self._name)
+        return f"var.{self._name}"
 
 
 class Module(NamedBlock):

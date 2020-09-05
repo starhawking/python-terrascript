@@ -23,7 +23,7 @@ def assert_deep_equal(t1, t2):
     try:
         t2 = json.loads(t2)
     except json.decoder.JSONDecodeError:
-        with open(os.path.join("tests", "configs", t2), "rt") as fp:
+        with open(os.path.join("tests", "configs", t2)) as fp:
             t2 = json.load(fp)
 
     diffs = deepdiff.DeepDiff(t1, t2)
