@@ -20,11 +20,14 @@ test_requirements = [
     for r in open(join(dirname(__file__), "test_requirements.txt")).readlines()
 ]
 
+with open("README.rst") as f:
+    long_description = f.read()
+
 setup(
     name="terrascript",
     version=__version__,
     description="Python module for creating Terraform configurations",
-    long_description="Terrascript provides a method of generating Terraform files, while harnessing all the features the Python language provides.",
+    long_description=long_description,
     author="Markus Juenemann",
     author_email="markus@juenemann.net",
     url="https://github.com/mjuenema/python-terrascript",
