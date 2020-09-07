@@ -99,9 +99,7 @@ class Block(dict):
             raise AttributeError
         else:
             if isinstance(self, Resource):
-                return Attribute(
-                    f"{self.__class__.__name__}.{self._name}.{attr}"
-                )
+                return Attribute(f"{self.__class__.__name__}.{self._name}.{attr}")
             if isinstance(self, Module):
                 return Attribute(f"module.{self._name}.{attr}")
             if isinstance(self, Variable):
@@ -110,9 +108,7 @@ class Block(dict):
                 return Attribute(f"local.{attr}")
             elif isinstance(self, Data):
                 # data.google_compute_image.NAME.ATTR
-                return Attribute(
-                    f"data.{self.__class__.__name__}.{self._name}.{attr}"
-                )
+                return Attribute(f"data.{self.__class__.__name__}.{self._name}.{attr}")
             else:
                 raise AttributeError(attr)
 
