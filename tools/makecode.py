@@ -235,7 +235,7 @@ def create_provider(provider, modulesdir):
 
 
 def get_sanitized_name(provider):
-    """ Get the string sanitized for use as python module
+    """Get the string sanitized for use as python module
 
     :return:
     """

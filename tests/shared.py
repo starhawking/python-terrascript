@@ -6,15 +6,15 @@ import deepdiff
 
 
 def assert_deep_equal(t1, t2):
-    """Compare ``t1`` with the JSON structure parsed from ``path``. 
+    """Compare ``t1`` with the JSON structure parsed from ``path``.
 
-       Comparison is performed through the DeepDiff Python package
-       (https://github.com/seperman/deepdiff).
-       
-       The ``diffs`` variable will contain any differences which
-       can be displayed in the debugger.
-       
-           (Pdb) pp(diffs)
+    Comparison is performed through the DeepDiff Python package
+    (https://github.com/seperman/deepdiff).
+
+    The ``diffs`` variable will contain any differences which
+    can be displayed in the debugger.
+
+        (Pdb) pp(diffs)
 
     """
 
