@@ -25,8 +25,8 @@ DEFAULT_GOAL: help
 	test \
 	test_basic \
 	test_black \
-	test_issues \
-	test_docs
+	test_docs \
+	test_issues
 
 black: clean ## Format Python code with Black to keep style consistent
 	black -t py36 .
@@ -54,7 +54,8 @@ docs: clean ## Build documentation files
 	make -C docs html
 
 flake8: clean ## Validate code against PEP8
-	$(FLAKE8) terrascript/__init__.py #$(TESTS)
+	$(FLAKE8) \
+		terrascript/__init__.py # tests/
 
 help: ## Print this help and exit
 	@echo "Available build targets:"
@@ -80,8 +81,8 @@ test_black: clean ## Verify that all Python code are formatted correctly
 		--target-version py36 \
 		.
 
-test_issues: clean ## Run tests for prevoius issues
-	$(NOSE) $(TESTS_ISSUES)
-
 test_docs: ## Run tests for documentation
 	(cd docs && make test)
+
+test_issues: clean ## Run tests for prevoius issues
+	$(NOSE) $(TESTS_ISSUES)
