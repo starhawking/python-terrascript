@@ -2,7 +2,7 @@ import terrascript
 import terrascript.provider
 
 
-class TestVariable(object):
+class TestVariable:
     def __init__(self):
         self.cfg = terrascript.Terrascript()
 
@@ -55,6 +55,6 @@ class TestVariable(object):
         ), "String representation of variable did not return its reference"
 
         expected_value = "embeded-${var.myvar}"
-        assert expected_value == "embeded-{}".format(
-            var
+        assert (
+            expected_value == f"embeded-{var}"
         ), "Formatting a string with variable did not insert reference"

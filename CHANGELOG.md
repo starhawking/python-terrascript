@@ -2,6 +2,7 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+**This release requires Python 3.6 or later, and Terraform 0.12 or later.**
 ### Added
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
 * Provider `google-beta`
@@ -9,6 +10,7 @@ All notable changes to this project will be documented in this file.
 * Missing dev requirement Black added
 * Re-introduced ``terrascript.Terrascript.update()`` method (issue #98).
 * String interpolation of variable should now properly result in a var.name reference (issue #109)
+* terrascript module should now pass pep8 validation and have no lint errors
 * Tool for generating providers now outputs code (almost) compliant with black
 ### Changed
 * All Python code is now automatically formatted using [Black](https://pypi.org/project/black/).
@@ -17,7 +19,9 @@ All notable changes to this project will be documented in this file.
 * Documentation link from readme now points toward develop build on readthedocs.io to avoid 404
 * Documentation on variable usage updated to reflect changes in issue #109
 * Requirements files are now sorted alphabetically and duplicate entries are removed
-- Updated code for providers generated
+* Updated code for providers generated
+### Deleted
+* Python 3.5 no longer supported as the official support are dropped: https://devguide.python.org/#status-of-python-branches
 ### Deprecated
 * Individual modules for each provider (Example: ``terrascript.aws.r``) are now deprecated in favour of
   single modules as added in release 0.8.0. 

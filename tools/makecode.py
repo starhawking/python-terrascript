@@ -52,7 +52,7 @@ DEBUG = False
 CONCURRENCY = 10
 INPUT = "providers.yml"
 
-REGEX = re.compile(b'"(?P<name>.+)":\s+(?P<type>resource|data)')
+REGEX = re.compile(br'"(?P<name>.+)":\s+(?P<type>resource|data)')
 """REGEX to extract the names of resources and data sources from a provider.go file.
 
     DataSourcesMap: map[string]*schema.Resource{
@@ -209,10 +209,10 @@ def legacy_create_provider_datasources(provider, providerdir, datasources):
 
 
 def legacy_create_provider_resources(provider, providerdir, resources):
-    logging.debug("legacy_create_provider_resources provider={}".format(provider))
-    logging.debug("legacy_create_provider_resources providerdir={}".format(providerdir))
+    logging.debug(f"legacy_create_provider_resources provider={provider}")
+    logging.debug(f"legacy_create_provider_resources providerdir={providerdir}")
     for resource in resources:
-        logging.debug("legacy_create_provider_resources resource={}".format(resource))
+        logging.debug(f"legacy_create_provider_resources resource={resource}")
 
     with open(os.path.join(providerdir, "r.py"), "wt") as fp:
         fp.write(
@@ -229,13 +229,13 @@ def legacy_process(provider, modulesdir, resources, datasources):
 
 def create_provider(provider, modulesdir):
     logging.debug("create_provider provider=%s modulesdir=%s", provider, modulesdir)
-    provider_path = os.path.join(modulesdir, "provider", "{}.py".format(provider))
+    provider_path = os.path.join(modulesdir, "provider", f"{provider}.py")
     with open(provider_path, "wt") as fp:
         fp.write(PROVIDER_TEMPLATE.render(provider=provider))
 
 
 def get_sanitized_name(provider):
-    """ Get the string sanitized for use as python module
+    """Get the string sanitized for use as python module
 
     :return:
     """
@@ -243,13 +243,13 @@ def get_sanitized_name(provider):
 
 
 def create_resources(provider, modulesdir, resources):
-    resource_path = os.path.join(modulesdir, "resource", "{}.py".format(provider))
+    resource_path = os.path.join(modulesdir, "resource", f"{provider}.py")
     with open(resource_path, "wt") as fp:
         fp.write(RESOURCES_TEMPLATE.render(provider=provider, resources=resources))
 
 
 def create_datasources(provider, modulesdir, datasources):
-    datasource_path = os.path.join(modulesdir, "data", "{}.py".format(provider))
+    datasource_path = os.path.join(modulesdir, "data", f"{provider}.py")
     with open(datasource_path, "wt") as fp:
         fp.write(
             DATASOURCES_TEMPLATE.render(provider=provider, datasources=datasources)
@@ -269,7 +269,7 @@ def process(entry, modulesdir):
     logging.info(repo_name)
 
     with tempfile.TemporaryDirectory() as tmpdir:
-        cmd = "git clone --depth=1 {} .".format(repository)
+        cmd = f"git clone --depth=1 {repository} ."
         result = subprocess.run(
             shlex.split(cmd),
             stdout=subprocess.PIPE,
@@ -330,7 +330,7 @@ def main():
         print("Script must be run from the tools/ folder", file=sys.stderr)
         sys.exit(1)
 
-    with open(INPUT, "rt") as fp:
+    with open(INPUT) as fp:
         entries = yaml.load(fp, Loader=yaml.SafeLoader)
         # entries is now a list of dictionaries: [{'name': NAME, 'repository': URL}, ...]
 
