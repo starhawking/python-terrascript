@@ -22,6 +22,7 @@ DEFAULT_GOAL: help
 	package \
 	test \
 	test_basic \
+	test_black \
 	test_issues \
 	test_docs
 
@@ -69,6 +70,13 @@ test: clean test_basic test_issues test_docs ## Run all tests
 
 test_basic: clean ## Run basic tests
 	$(NOSE) $(TESTS_BASIC)
+
+test_black: clean ## Verify that all Python code are formatted correctly
+	black \
+		--check \
+		--diff \
+		--target-version py36 \
+		.
 
 test_issues: clean ## Run tests for prevoius issues
 	$(NOSE) $(TESTS_ISSUES)
