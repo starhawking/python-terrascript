@@ -6,6 +6,8 @@ FLAKE8 := python3 -m flake8
 TESTS_BASIC := $(wildcard tests/test_basic_*.py)
 TESTS_ISSUES := $(wildcard tests/test_issue*.py)
 
+export TF_IN_AUTOMATION=1
+
 DEFAULT_GOAL: help
 
 .PHONY: \
