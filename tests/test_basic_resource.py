@@ -2,7 +2,7 @@ import terrascript
 import terrascript.resource
 
 
-class TestResource(object):
+class TestResource:
     def __init__(self):
         self.cfg = terrascript.Terrascript()
 

@@ -2,7 +2,7 @@ import terrascript
 import terrascript.provider
 
 
-class TestModule(object):
+class TestModule:
     def __init__(self):
         self.cfg = terrascript.Terrascript()
 

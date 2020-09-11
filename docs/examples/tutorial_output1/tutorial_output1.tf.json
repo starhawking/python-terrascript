@@ -15,13 +15,13 @@
     "aws_instance": {
       "example": {
         "instance_type": "t2.micro",
-        "ami": "var.image_id"
+        "ami": "${var.image_id}"
       }
     }
   },
   "output": {
     "instance_ip_addr": {
-      "value": "aws_instance.example.private_ip",
+      "value": "${aws_instance.example.private_ip}",
       "description": "The private IP address of the instance."
     }
   }

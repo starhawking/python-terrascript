@@ -102,7 +102,7 @@ variable into the correct Terraform JSON syntax.
 **JSON**
 
 In the output the reference to the ``image_id`` has been converted from a reference to a 
-Python variable ``ami=v`` to the correct Terraform JSON syntax of ``var.image_id``. 
+Python variable ``ami=v`` to the correct Terraform JSON syntax of ``${var.image_id}``.
 
 .. literalinclude:: examples/tutorial_variable1/tutorial_variable1.tf.json
    :emphasize-lines: 18

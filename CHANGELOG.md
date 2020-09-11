@@ -2,7 +2,8 @@
 All notable changes to this project will be documented in this file.
 
 ## [0.9.0-rc1] - 2020-08-21
-**This release contains mostly small fixes**
+**This release requires Python 3.6 or later, and Terraform 0.12 or later.**
+**Be aware of embedded variable bugfix, which could break workarounds.**
 ### Added
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
 * Provider `google-beta`
@@ -17,8 +18,12 @@ All notable changes to this project will be documented in this file.
 * Code for providers updated to conform with black
 * Contributors are now sorted in alphabetical order
 * Documentation link from readme now points toward develop build on readthedocs.io to avoid 404
+* Documentation on variable usage updated to reflect changes in issue #109
+* Makefiles cleaned up, and help target contents now dynamically generated from comments
 * Requirements files are now sorted alphabetically and duplicate entries are removed
-- Updated code for providers generated
+* Updated code for providers generated
+### Deleted
+* Python 3.5 no longer supported as the official support are dropped: https://devguide.python.org/#status-of-python-branches
 ### Deprecated
 * Individual modules for each provider (Example: ``terrascript.aws.r``) are now deprecated in favour of
   single modules as added in release 0.8.0. 

@@ -29,30 +29,30 @@ TERRAFORM_KEY = "terraform"
 
 
 class Attribute(str):
-    """ An `Attribute` handles access to not yet known attributes.
+    """An `Attribute` handles access to not yet known attributes.
 
-        This called by `Block.__getattr__` to deal with
+    This called by `Block.__getattr__` to deal with
 
-        In the example below the ``aws_instance`` does not have attributes
-        ``.server`` and in turn ``.server.private_ip``. To prevent Python
-        from raising an `AttributeError` the `Attribute.__getattr__()` method
-        creates a new string by appending the attribute name.
+    In the example below the ``aws_instance`` does not have attributes
+    ``.server`` and in turn ``.server.private_ip``. To prevent Python
+    from raising an `AttributeError` the `Attribute.__getattr__()` method
+    creates a new string by appending the attribute name.
 
-        Python:
+    Python:
 
-            config = terrascript.Terrascript()
-            config += terrascript.aws.aws(version='~> 2.0', region='us-east-1')
-            aws_instance = terrascript.aws.r.aws_instance('web', ...)
-            config += aws_instance
-            config += terrascript.Output('instance_ip_addr',
-                                          value=aws_instance.server.private_ip)
-                                                            ^^^^^^^^^^^^^^^^^^
+        config = terrascript.Terrascript()
+        config += terrascript.aws.aws(version='~> 2.0', region='us-east-1')
+        aws_instance = terrascript.aws.r.aws_instance('web', ...)
+        config += aws_instance
+        config += terrascript.Output('instance_ip_addr',
+                                      value=aws_instance.server.private_ip)
+                                                        ^^^^^^^^^^^^^^^^^^
 
-        JSON:
+    JSON:
     """
 
     def __getattr__(self, name):
-        return Attribute("{}.{}".format(self, name))
+        return Attribute(f"{self}.{name}")
 
 
 class Block(dict):
@@ -68,28 +68,28 @@ class Block(dict):
         # TODO: Add others?
         for k, v in kwargs.items():
             if isinstance(v, Variable):
-                kwargs[k] = "var.{}".format(v._name)
+                kwargs[k] = f"var.{v._name}"
 
         super().__init__(**kwargs)
 
     def __getattr__(self, attr):
-        """ Special handling for accessing attributes,
+        """Special handling for accessing attributes,
 
-            If ``Block.attr`` does not exist, try to return Block[attr]. If that
-            does not exists either, return `attr` as a string, prefixed
-            by the name (and type) of the Block that is referenced.
+        If ``Block.attr`` does not exist, try to return Block[attr]. If that
+        does not exists either, return `attr` as a string, prefixed
+        by the name (and type) of the Block that is referenced.
 
-            This is for example necessary for referencing an attribute of a
-            Terraform resource which only becomes available after the resource
-            has been created.
+        This is for example necessary for referencing an attribute of a
+        Terraform resource which only becomes available after the resource
+        has been created.
 
-            Example:
+        Example:
 
-               instance = terrascript.resources.aws_instance("server", ...)
-               output = terrascript.Output("instance_ip_addr",
-                                           value=instance.private_ip)
-                                                        ^^^^^^^^^^
-            Where ``instance.private_ip`` does not (yet) exist.
+           instance = terrascript.resources.aws_instance("server", ...)
+           output = terrascript.Output("instance_ip_addr",
+                                       value=instance.private_ip)
+                                                    ^^^^^^^^^^
+        Where ``instance.private_ip`` does not (yet) exist.
         """
         # Try to return the entry in the dictionary. Otherwise return a string
         # which must be formatted differently depending on what is referenced.
@@ -99,20 +99,16 @@ class Block(dict):
             raise AttributeError
         else:
             if isinstance(self, Resource):
-                return Attribute(
-                    "{}.{}.{}".format(self.__class__.__name__, self._name, attr)
-                )
+                return Attribute(f"{self.__class__.__name__}.{self._name}.{attr}")
             if isinstance(self, Module):
-                return Attribute("module.{}.{}".format(self._name, attr))
+                return Attribute(f"module.{self._name}.{attr}")
             if isinstance(self, Variable):
-                return Attribute("var.{}.{}".format(self._name, attr))
+                return Attribute(f"var.{self._name}.{attr}")
             elif isinstance(self, Locals):
-                return Attribute("local.{}".format(attr))
+                return Attribute(f"local.{attr}")
             elif isinstance(self, Data):
                 # data.google_compute_image.NAME.ATTR
-                return Attribute(
-                    "data.{}.{}.{}".format(self.__class__.__name__, self._name, attr)
-                )
+                return Attribute(f"data.{self.__class__.__name__}.{self._name}.{attr}")
             else:
                 raise AttributeError(attr)
 
@@ -125,7 +121,7 @@ class NamedBlock(Block):
 
 
 class NamedSubBlock(Block):
-    """ NamedSubBlocks are similar to NamedBlocks except that the `name`
+    """NamedSubBlocks are similar to NamedBlocks except that the `name`
         is the key to a nested dictionary contain `kwargs`. NamedSubBlocks
         are not added to the top-level Terrascript structure but are
         arguments to another block. The backend argument to a Terraform
@@ -140,7 +136,7 @@ class NamedSubBlock(Block):
 
 
 class Terrascript(dict):
-    """ Top-level container for Terraform configurations.
+    """Top-level container for Terraform configurations.
 
     :param *objects: Optional list of Terrascript data sources, resources,
     """
@@ -268,8 +264,7 @@ class Terrascript(dict):
                 for i in res:
                     yield from recurse(i)
 
-        for item in recurse(self):
-            yield item
+        yield from recurse(self)
 
 
 # Top-level blocks ----------------------------------------
@@ -288,25 +283,25 @@ class Data(NamedBlock):
 
 
 class Provider(Block):
-    """ Terraform provider
+    """Terraform provider
 
-        HCL:
+    HCL:
 
-            provider "aws" {
-                region = "us-east-1"
-                version = "u~> 2.0"
-            }
+        provider "aws" {
+            region = "us-east-1"
+            version = "u~> 2.0"
+        }
 
-        JSON:
+    JSON:
 
-            "provider": {
-                "aws": [
-                    {
-                        "region": "us-east-1",
-                        "version": "~> 2.0"
-                    }
-                ]
-            }
+        "provider": {
+            "aws": [
+                {
+                    "region": "us-east-1",
+                    "version": "~> 2.0"
+                }
+            ]
+        }
     """
 
     pass
@@ -314,13 +309,13 @@ class Provider(Block):
 
 class Variable(NamedBlock):
     def __repr__(self):
-        return "var.{}".format(self._name)
+        return f"${{var.{self._name}}}"
 
 
 class Module(NamedBlock):
-    """ Terraform child module call.
+    """Terraform child module call.
 
-        https://www.terraform.io/docs/configuration/modules.html
+    https://www.terraform.io/docs/configuration/modules.html
     """
 
     pass
@@ -334,16 +329,16 @@ class Output(NamedBlock):
 
 
 class Provisioner(dict):
-    """ A provisioner is a nested dictionary.
+    """A provisioner is a nested dictionary.
 
-       The `name` argument must be a valid Terraform provisioner.
+    The `name` argument must be a valid Terraform provisioner.
 
-       >>> import terrascript
-       >>> p = terrascript.Provisioner("local-exec", command="echo 'Hello World'")
-       >>> print(p)
-       {'local-exec': {'command': "echo 'Hello World"}}
-    
-       https://www.terraform.io/docs/provisioners/index.html
+    >>> import terrascript
+    >>> p = terrascript.Provisioner("local-exec", command="echo 'Hello World'")
+    >>> print(p)
+    {'local-exec': {'command': "echo 'Hello World"}}
+
+    https://www.terraform.io/docs/provisioners/index.html
     """
 
     def __init__(self, name, **kwargs):

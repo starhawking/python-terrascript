@@ -2,7 +2,7 @@ import terrascript
 import terrascript.provider
 
 
-class TestVariable(object):
+class TestVariable:
     def __init__(self):
         self.cfg = terrascript.Terrascript()
 
@@ -46,12 +46,15 @@ class TestVariable(object):
     def test_string_interpolation(self):
         var = terrascript.Variable("myvar", type="string", default="myval")
 
-        string_var = str(var)
-        assert (
-            string_var == "var.myvar"
+        expected_value = "${var.myvar}"
+        assert expected_value == str(
+            var
         ), "String interpolation of variable did not return its reference"
+        assert expected_value == repr(
+            var
+        ), "String representation of variable did not return its reference"
 
-        embeded_var = "embeded-${{{}}}".format(var)
+        expected_value = "embeded-${var.myvar}"
         assert (
-            embeded_var == "embeded-${var.myvar}"
+            expected_value == f"embeded-{var}"
         ), "Formatting a string with variable did not insert reference"
