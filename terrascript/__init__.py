@@ -59,16 +59,10 @@ class Block(dict):
     """ A `Block` is a dictionary-like container for other content. """
 
     def __init__(self, **kwargs):
-        # Convert instances of Resource, Variable, Data, ... into
-        # their correct reference instead of inserting the actual
-        # dictionary.
-        #
-        # Resource ->
-        # Variable -> "var.name"
-        # TODO: Add others?
+        # Convert variables into references instead of adding the actual dict.
         for k, v in kwargs.items():
             if isinstance(v, Variable):
-                kwargs[k] = f"var.{v._name}"
+                kwargs[k] = str(v)
 
         super().__init__(**kwargs)
 
