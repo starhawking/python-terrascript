@@ -26,9 +26,9 @@ def test_issue_33():
         access_key=var_access_key, secret_key=var_secret_key, region=var_region
     )
 
-    assert ts["provider"]["aws"][0]["access_key"] == "var.access_key"
-    assert ts["provider"]["aws"][0]["secret_key"] == "var.secret_key"
-    assert ts["provider"]["aws"][0]["region"] == "var.region"
+    assert ts["provider"]["aws"][0]["access_key"] == "${var.access_key}"
+    assert ts["provider"]["aws"][0]["secret_key"] == "${var.secret_key}"
+    assert ts["provider"]["aws"][0]["region"] == "${var.region}"
 
     # {
     #    "variable": {
@@ -41,9 +41,9 @@ def test_issue_33():
     #  "provider": {
     #    "aws": [
     #      {
-    #        "access_key": "var.access_key",
-    #        "secret_key": "var.secret_key",
-    #        "region": "var.region"
+    #        "access_key": "${var.access_key}",
+    #        "secret_key": "${var.secret_key}",
+    #        "region": "${var.regio}n"
     #      }
     #    ]
     #  }

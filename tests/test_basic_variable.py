@@ -58,3 +58,21 @@ class TestVariable:
         assert (
             expected_value == f"embeded-{var}"
         ), "Formatting a string with variable did not insert reference"
+
+    def test_adding_variable_to_block(self):
+        """ Variables added to Block should be added as reference """
+        var = terrascript.Variable("myvar", type="string", default="value")
+        resource = terrascript.Block(variable=var)
+
+        assert (
+            "${var.myvar}" == resource["variable"]
+        ), "Adding Variable to Block did not insert reference"
+
+    def test_adding_variable_to_resource(self):
+        """ Variables added to Resource should be added as reference """
+        var = terrascript.Variable("myvar", type="string", default="value")
+        resource = terrascript.Resource("Test", var=var)
+
+        assert (
+                "${var.myvar}" == resource.var
+        ), "Adding Variable to Resource did not insert reference"
