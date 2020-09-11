@@ -32,51 +32,42 @@ Terraform HCL code.
 
 Python code.
 
-.. literalinclude:: ../tests/test_001.py
-   :lines: 9-16
+.. literalinclude:: ../tests/test_example_001.py
+   :lines: 9-15
    :dedent: 4
    
 JSON output from ``print(config)``.
 
 .. literalinclude:: ../tests/configs/test_001.tf.json
 
-Terraform: Up & Running - Hello World
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AWS Provider Endpoints
+~~~~~~~~~~~~~~~~~~~~~~
 
 Terraform HCL code.
 
-.. literalinclude:: ../tests/test_TUAR_hello_world.py
-   :lines: 7-21
+.. code:: none
+
+    # Configure AWS Provider with endpoints
+    provider "aws" {
+      version = "~> 2.0"
+      region  = "us-east-1"
+      endpoints = {
+        dynamodb = "http://localhost:4569"
+        s3 = "http://localhost:4572"
+      }
+    }
+
+    # Create a VPC
+    resource "aws_vpc" "example" {
+      cidr_block = "10.0.0.0/16"
+    }
 
 Python code.
 
-.. literalinclude:: ../tests/test_TUAR_hello_world.py
-   :language: python
-   :lines: 27-33
+.. literalinclude:: ../tests/test_example_002.py
+   :lines: 9-22
    :dedent: 4
 
-JSON output.
+JSON output from ``print(config)``.
 
-.. literalinclude:: ../tests/configs/test_TUAR_hello_world.tf.json
-   :language: json
-   
-Terraform: Up & Running - Why Terraform
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Terraform HCL code.
-
-.. literalinclude:: ../tests/test_TUAR_why_terraform.py
-   :lines: 7-27
-
-
-Python code.
-
-.. literalinclude:: ../tests/test_TUAR_why_terraform.py
-   :language: python
-   :lines: 33-48
-   :dedent: 4
-
-JSON output.
-
-.. literalinclude:: ../tests/configs/test_TUAR_why_terraform.tf.json
-   :language: json
+.. literalinclude:: ../tests/configs/test_002.tf.json

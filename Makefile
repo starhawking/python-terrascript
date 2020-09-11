@@ -5,6 +5,7 @@ FLAKE8 := python3 -m flake8
 
 TESTS_BASIC := $(wildcard tests/test_basic_*.py)
 TESTS_ISSUES := $(wildcard tests/test_issue*.py)
+TESTS_EXAMPLES := $(wildcard tests/test_example_*.py)
 
 export TF_IN_AUTOMATION=1
 
@@ -26,6 +27,7 @@ DEFAULT_GOAL: help
 	test_basic \
 	test_black \
 	test_docs \
+	test_examples \
 	test_issues
 
 black: clean ## Format Python code with Black to keep style consistent
@@ -83,6 +85,9 @@ test_black: clean ## Verify that all Python code are formatted correctly
 
 test_docs: ## Run tests for documentation
 	(cd docs && make test)
+
+test_examples: clean ## Run tests for examples
+	$(NOSE) $(TESTS_EXAMPLES)
 
 test_issues: clean ## Run tests for prevoius issues
 	$(NOSE) $(TESTS_ISSUES)
