@@ -17,9 +17,9 @@ DEFAULT_GOAL: help
 	coverage \
 	debug_basic \
 	debug_issues \
+	docs \
 	flake8 \
 	help \
-	html \
 	install \
 	package \
 	test \
@@ -50,6 +50,9 @@ debug_basic: clean ## Run basic tests in debug mode
 debug_issues: clean ## Run tests in debug mode for previous issues
 	$(NOSE) --pdb  $(TESTS_ISSUES)
 
+docs: clean ## Build documentation files
+	make -C docs html
+
 flake8: clean ## Validate code against PEP8
 	$(FLAKE8) terrascript/__init__.py #$(TESTS)
 
@@ -57,9 +60,6 @@ help: ## Print this help and exit
 	@echo "Available build targets:"
 	@grep -e "^[a-zA-Z0-9_-]*: *.*## *" $(MAKEFILE_LIST) \
 		| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-25s\033[0m %s\n", $$1, $$2}'
-
-html: clean ## Build documentation files
-	make -C docs html
 
 install: clean ## Install as python package from sources
 	python3 setup.py install --user
