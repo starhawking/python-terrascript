@@ -6,6 +6,8 @@ FLAKE8 := python3 -m flake8
 TESTS_BASIC := $(wildcard tests/test_basic_*.py)
 TESTS_ISSUES := $(wildcard tests/test_issue*.py)
 
+export TF_IN_AUTOMATION=1
+
 DEFAULT_GOAL: help
 
 .PHONY: \
@@ -22,11 +24,12 @@ DEFAULT_GOAL: help
 	package \
 	test \
 	test_basic \
+	test_black \
 	test_issues \
 	test_docs
 
-black: clean ## Format Python code with black to keep style consistent
-	black -t py35 .
+black: clean ## Format Python code with Black to keep style consistent
+	black -t py36 .
 
 clean: ## Cleanup temporary / cached files
 	rm -f tests/*.pyc
@@ -69,6 +72,13 @@ test: clean test_basic test_issues test_docs ## Run all tests
 
 test_basic: clean ## Run basic tests
 	$(NOSE) $(TESTS_BASIC)
+
+test_black: clean ## Verify that all Python code are formatted correctly
+	black \
+		--check \
+		--diff \
+		--target-version py36 \
+		.
 
 test_issues: clean ## Run tests for prevoius issues
 	$(NOSE) $(TESTS_ISSUES)

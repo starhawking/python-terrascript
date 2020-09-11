@@ -15,7 +15,7 @@
     "aws_instance": {
       "example": {
         "instance_type": "t2.micro",
-        "ami": "var.image_id"
+        "ami": "${var.image_id}"
       }
     }
   }

@@ -14,6 +14,7 @@ List of contributors (bug reports, fixes, suggestions, anything) to
 
 * Austin Millan
 * DJDavisson
+* Hugo van Kemanade
 * ilons
 * Joao Gilberto Magalhaes
 * Josh Smift

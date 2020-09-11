@@ -2,8 +2,10 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+**This release requires Python 3.6 or later, and Terraform 0.12 or later.**
 ### Added
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
+* Make target and code to fail builds unless python code format passes Black
 * Provider `google-beta`
 * Release instruction for documentation
 * RTD theme no longer bundled with Sphinx added as dev requirement
@@ -18,6 +20,7 @@ All notable changes to this project will be documented in this file.
 * Code for providers updated to conform with black
 * Contributors are now sorted in alphabetical order
 * Documentation link from readme now points toward develop build on readthedocs.io to avoid 404
+* Documentation on variable usage updated to reflect changes in issue #109
 * Makefiles cleaned up, and help target contents now dynamically generated from comments
 * Requirements files are now sorted alphabetically and duplicate entries are removed
 * Updated code for providers generated

@@ -2,7 +2,7 @@ import terrascript
 import terrascript.data
 
 
-class TestDatasource(object):
+class TestDatasource:
     def __init__(self):
         self.cfg = terrascript.Terrascript()
 
