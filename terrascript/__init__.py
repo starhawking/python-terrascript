@@ -7,7 +7,7 @@ import json
 import logging
 
 __author__ = "Markus Juenemann <markus@juenemann.net>"
-__version__ = "0.8.0"
+__version__ = "0.9.0-rc1"
 __license__ = 'BSD 2-clause "Simplified" License'
 
 """JSON indentation level."""
