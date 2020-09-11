@@ -11,6 +11,7 @@ BUILDDIR      = _build
 DEFAULT_GOAL: help
 
 .PHONY: \
+	clean \
 	help \
 	html \
 	Makefile \
@@ -29,6 +30,9 @@ help: ## Print this help and exit
 	@grep -e "^[a-zA-Z0-9_-]*: *.*## *" $(MAKEFILE_LIST) \
 		| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-25s\033[0m %s\n", $$1, $$2}'
 
+clean: ## Remove build documentation files
+	rm -rf _build
+
 html: ## Build all documentation as HTML
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
@@ -41,4 +45,4 @@ server: ## Spawn documentation web server on port 8000
 	python3 -m http.server --directory _build/html/ 8000
 
 test: ## Generate Terraform json from examples to validate syntax
-	make -C examples/
+	make -C tutorials/

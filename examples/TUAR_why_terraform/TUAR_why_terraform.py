@@ -1,9 +1,9 @@
-# Terraform: Up & Running by Yevgenij Brikman
-# https://github.com/brikis98/terraform-up-and-running-code/tree/master/code/terraform/01-why-terraform/web-server
+"""Terraform: Up & Running by Yevgenij Brikman
+https://github.com/brikis98/terraform-up-and-running-code/tree/master/code/terraform/01-why-terraform/web-server
 
-import shared
+Terraform: Up & Running - Why Terraform - Web Server
 
-HCL = """
+HCL:
 terraform {
   required_version = ">= 0.12, < 0.13"
 }
@@ -26,26 +26,23 @@ resource "aws_instance" "app" {
               EOF
 }
 """
+import terrascript
+import terrascript.provider
+import terrascript.resource
 
 
-def test():
-    """Terraform: Up & Running - Why Terraform - Web Server"""
-    import terrascript
-    import terrascript.provider
-    import terrascript.resource
+USER_DATA = "#!/bin/bash\nsudo service apache2 start"
 
-    USER_DATA = "#!/bin/bash\nsudo service apache2 start"
+config = terrascript.Terrascript()
 
-    config = terrascript.Terrascript()
+config += terrascript.provider.aws(region="us-east-2", version="~>2.0")
 
-    config += terrascript.provider.aws(region="us-east-2", version="~>2.0")
+config += terrascript.resource.aws_instance(
+    "app",
+    instance_type="t2.micro",
+    availability_zone="us-east-2a",
+    ami="ami-0c55b159cbfafe1f0",
+    user_data=USER_DATA,
+)
 
-    config += terrascript.resource.aws_instance(
-        "app",
-        instance_type="t2.micro",
-        availability_zone="us-east-2a",
-        ami="ami-0c55b159cbfafe1f0",
-        user_data=USER_DATA,
-    )
-
-    shared.assert_deep_equal(config, "test_TUAR_why_terraform.tf.json")
+print(config)

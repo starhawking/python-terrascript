@@ -105,6 +105,7 @@ When using a variable as a attribute value for a object, a reference are used.
 
 Example:
 * Variable ``image_id`` are used as name for instance.
+
 .. code-block:: json
 
    {

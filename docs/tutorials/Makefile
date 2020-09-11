@@ -24,4 +24,4 @@ help: ## Print this help and exit
 	@grep -e "^[a-zA-Z0-9_-]*: *.*## *" $(MAKEFILE_LIST) \
 		| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-25s\033[0m %s\n", $$1, $$2}'
 
-python2tfjson: $(PYTHON_OUTPUT) ## Generate Terraform json configuration from examples
+python2tfjson: $(PYTHON_OUTPUT) ## Generate Terraform json configuration from tutorials

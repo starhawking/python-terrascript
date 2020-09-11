@@ -7,10 +7,13 @@ config = terrascript.Terrascript()
 # AWS provider
 config += terrascript.provider.aws(region="us-east-1")
 
-# Local values as Python variables
-tags = {"service_name": "forum", "owner": "Community Team"}
+# Define Variable and add to config
+v = terrascript.Variable("image_id", type="string")
+config += v
 
-# Resource with two provisioners
+# AWS EC2 instance referencing the variable.
 config += terrascript.resource.aws_instance(
-    "instance1", instance_type="t2.micro", ami="ami-4bf3d731", tags=tags
+    "example",
+    instance_type="t2.micro",
+    ami=v,
 )
