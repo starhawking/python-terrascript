@@ -62,7 +62,8 @@ Terraform are not supported.
 
 ========== ============ ==================================================================
 Terraform  Terrascript  Notes                                                             
-========== ============ ================================================================== 
+========== ============ ==================================================================
+0.12.x     0.9.x        Cleanup efforts and bug fixes, dropping support for Python <3.6
 0.12.x     0.8.x        Terrascript 0.8 are a (almost) complete rewrite
 0.12.x     0.7.x        Never released
 0.11.x     0.6.x        Last releases to support Terraform 0.11 and earlier               
