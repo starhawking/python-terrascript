@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
 * Provider `google-beta`
+* Make target and code to fail builds unless python code format passes Black
 ### Fixed
 * Missing dev requirement Black added
 * Re-introduced ``terrascript.Terrascript.update()`` method (issue #98).
