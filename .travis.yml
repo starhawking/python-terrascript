@@ -19,6 +19,7 @@ before_script:
 - make package
 script:
 - travis_retry make test
+- make test_black
 - tar tvfz dist/terrascript-*.tar.gz | grep vault
 after_failure:
 - cat /tmp/*/*tf.json
