@@ -1,9 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [0.9.0-rc1] - 2020-08-21
-**This release requires Python 3.6 or later, and Terraform 0.12 or later.**
-**Be aware of embedded variable bugfix, which could break workarounds.**
+## [0.9.0-rc1] - 2020-09-14
+**This release requires Python 3.6 or later, and Terraform 0.12 or later.**  
+**Be aware of embedded variable bugfix, which could break workarounds.**  
 ### Added
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
 * Make target and code to fail builds unless python code format passes Black
@@ -25,6 +25,7 @@ All notable changes to this project will be documented in this file.
 * Documentation on variable usage updated to reflect changes in issue #109
 * Makefiles cleaned up, and help target contents now dynamically generated from comments
 * Requirements files are now sorted alphabetically and duplicate entries are removed
+* Terraform version supported updated from 0.12.15-19 to 0.12.29 + 0.13.0-2
 * Updated code for providers generated
 ### Deleted
 * Python 3.5 no longer supported as the official support are dropped: https://devguide.python.org/#status-of-python-branches
