@@ -3,7 +3,7 @@
 # Test all *.tf.json files
 
 if [ ! -e test_configs.sh ]; then
-    echo "This script must be executed form within the tools/ folder"
+    echo "This script must be executed form within the same folder"
     exit 1
 fi
 

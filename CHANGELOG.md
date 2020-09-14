@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 * Release instruction for documentation
 * RTD theme no longer bundled with Sphinx added as dev requirement
 ### Fixed
+* Documentation generation, tests and examples cleaned up
 * Missing dev requirement Black added
 * Re-introduced ``terrascript.Terrascript.update()`` method (issue #98).
 * String interpolation of variable should now properly result in a var.name reference (issue #109)

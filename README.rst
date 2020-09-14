@@ -27,7 +27,7 @@ python-terrascript
 
 
 Looking for more contributors
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 IF you feel that this project is useful to you, please consider contributing some of your time towards improving it!
 For more details on contributions, please have a look at CONTRIBUTORS.md and DEVELOPMENT.md.

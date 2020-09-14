@@ -1,8 +1,9 @@
-== tests/configs ==
+# configs
 
 This folder contains Terraform configurations or fragments in JSON format.
-They are used to verify the configurations generated in the test modules
-against an expected outcome.
+There used to be tests that used them to verify the configurations generated
+against an expected outcome. Now they wait to be converted into examples for the
+documentation instead.
 
 Files ending in ``.tf.json`` are complete Terraform configurations whereas files
 ending just in ``.json`` are only incomplete fragments.
