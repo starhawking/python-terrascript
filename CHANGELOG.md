@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 **This release requires Python 3.6 or later, and Terraform 0.12 or later.**  
 **Be aware of embedded variable bugfix, which could break workarounds.**  
 ### Added
+* Automatically push of built tags to pypi
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
 * Make target and code to fail builds unless python code format passes Black
 * Provider `google-beta`
