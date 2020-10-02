@@ -157,7 +157,9 @@ original HCL format.
     }
 
 **Terrascript does not verify that the generated JSON code is a valid Terraform configuration.**
-**This is a deliberate design decision and is explained in the Frequently Asked Questions (FAQ)**
+**This is a deliberate design decision and is explained in the** `Frequently Asked Questions (FAQ) <https://python-terrascript.readthedocs.io/en/develop/faq.html>`_
+
+.. _Frequently Asked Questions (FAQ): https://python-terrascript.readthedocs.io/en/develop/faq.html
 
 Links
 ~~~~~
