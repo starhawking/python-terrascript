@@ -1,7 +1,7 @@
 Installing Terrascript
 ----------------------
 
-Terarscript is available from the Python Package Repository PyPi_ or
+Terrascript is available from the Python Package Repository PyPi_ or
 alternatively from its Github_ repository.
 
 .. _PyPi: https://pypi.org/project/terrascript/#history
