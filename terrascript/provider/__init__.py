@@ -26,6 +26,7 @@ from .gitlab import *
 from .google import *
 from .google_beta import *
 from .grafana import *
+from .helm import *
 from .heroku import *
 from .http import *
 from .icinga2 import *
