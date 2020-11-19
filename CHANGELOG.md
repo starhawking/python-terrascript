@@ -26,7 +26,7 @@ All notable changes to this project will be documented in this file.
 * Documentation on variable usage updated to reflect changes in issue #109
 * Makefiles cleaned up, and help target contents now dynamically generated from comments
 * Requirements files are now sorted alphabetically and duplicate entries are removed
-* Terraform version supported updated from 0.12.15-19 to 0.12.29 + 0.13.0-2
+* Terraform version supported updated from 0.12.15-19 to 0.12.29 + 0.13.4-5
 * Updated code for providers generated
 ### Deleted
 * Python 3.5 no longer supported as the official support are dropped: https://devguide.python.org/#status-of-python-branches

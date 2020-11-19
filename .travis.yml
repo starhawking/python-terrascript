@@ -1,14 +1,12 @@
 language: python
-sudo: required
 python:
 - '3.6'
 - '3.7'
 - '3.8'
 env:
 - TERRAFORM=0.12.29
-- TERRAFORM=0.13.0
-- TERRAFORM=0.13.1
-- TERRAFORM=0.13.2
+- TERRAFORM=0.13.4
+- TERRAFORM=0.13.5
 cache: pip
 install:
 - "(wget https://releases.hashicorp.com/terraform/${TERRAFORM}/terraform_${TERRAFORM}_linux_amd64.zip
