@@ -13,6 +13,7 @@ install:
   ; unzip terraform_${TERRAFORM}_linux_amd64.zip ; sudo install -m 755 terraform /usr/local/bin/terraform)"
 - pip install -r test_requirements.txt
 before_script:
+- echo "Building $TRAVIS_COMMIT $TRAVIS_BRANCH ($TRAVIS_TAG)"
 - make package
 script:
 - travis_retry make test
