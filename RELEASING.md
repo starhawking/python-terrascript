@@ -1,8 +1,8 @@
 ## Creating a new release
 
-Steps for creating a new release of Terrascript (as of August 2019).
+Steps for creating a new release of Terrascript (as of November 2020).
 
-* Create a new branch ``release/x.x.x`` from ``develop-x.x``.
+* Create a new branch ``release/x.x.x`` from ``develop``.
     ```
     git checkout -b release/x.x.x
     ```
@@ -21,32 +21,28 @@ Steps for creating a new release of Terrascript (as of August 2019).
     git commit -a -m 'Preparing release x.x.x'
     git push origin release/x.x.x
     ```
+* Commit (or merge in) any outstanding changes that will got into the next release.
 * Check whether all tests on [Travis-CI](https://www.travis-ci.org/mjuenema/python-terrascript) pass.
 * Fix any problems before continuing.
-* Tag the revision ``x.x.x`` and push the tag to Github.
+* Tag a release candidate for the revision ``x.x.x`` and push the tag to Github.
+    ```
+    git tag -a x.x.xrc1 -m 'Release candidate 1 for x.x.x'
+    git push --tags
+    ```
+* Test installing release candidate from PyPi.
+    ```
+    mkvirtualenv terrascript-test
+    pip install -i https://test.pypi.org/simple/ terrascript==x.x.xrc1
+    deactivate
+    rmvirtualenv terrascript-test
+    ```
+* Verify functionality of release candidate.
+* Make and commit changes if necessary.
+* Tag the release and push the tag to Github.
     ```
     git tag -a x.x.x -m 'Release x.x.x'
     git push --tags
     ```
-* Upload the release to [PyPi Test](https://test.pypi.org/project/terrascript/).
-    ```
-    pip3 install wheel twine
-    python3 setup.py sdist bdist_wheel
-    ls dist/
-    twine upload --repository-url https://test.pypi.org/legacy/ dist/*
-    ```
-* Test installing package from PyPi Test.
-    ```
-    mkvirtualenv terrascript-test
-    pip install -i https://test.pypi.org/simple/ terrascript==0.8.0
-    deactivate
-    rmvirtualenv terrascript-test
-    ```
-* Upload the release to [PyPi](https://pypi.org/project/terrascript/).
-    ```
-    twine upload  dist/*
-    ```
-* Commit any outstanding changes that will got into the next release.
 * Merge the branch ``release/x.x.x`` into ``master`` and push to Github.
     ```
     git checkout master
