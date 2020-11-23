@@ -44,7 +44,7 @@ For each release, one or more release candidates could be created to verify that
 
 ### Finalizing the release
 When the release candidate are stable, finish the release.
-* Update version to `x.x.x` in ``terrascript/__init__.py`` and ``docs/conf.py``.
+* Update version to `x.x.x` in ``terrascript/__init__.py``, ``docs/conf.py`` and ``CHANGELOG.md``.
 * Tag and push the release tag to Github.
     ```
     git tag -a x.x.x -m 'Release x.x.x'
@@ -66,3 +66,4 @@ When the release candidate are stable, finish the release.
     git merge master
     git push origin develop
     ```
+* Add a `## [Unreleased] - <date>` to ``CHANGELOG.md`` and place unreleased changes under it.
