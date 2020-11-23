@@ -1,7 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [0.9.0-rc1] - 2020-09-14
+## [Unreleased] - 2020-11-23
+
+## [0.9.0] - 2020-11-23
 **This release requires Python 3.6 or later, and Terraform 0.12 or later.**  
 **Be aware of embedded variable bugfix, which could break workarounds.**  
 ### Added
