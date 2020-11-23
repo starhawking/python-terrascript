@@ -22,7 +22,7 @@ copyright = "2019, Markus Juenemann"
 author = "Markus Juenemann"
 
 # The full version, including alpha/beta/rc tags
-release = "0.9.0-rc3"
+release = "0.9.0rc8"
 
 
 # -- General configuration ---------------------------------------------------
