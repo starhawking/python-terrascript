@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file.
 * All Python code is now automatically formatted using [Black](https://pypi.org/project/black/).
 * Code for providers updated to conform with black
 * Contributors are now sorted in alphabetical order
+* Documentation for creating releases are now updated to reflect expected flow
 * Documentation link from readme now points toward develop build on readthedocs.io to avoid 404
 * Documentation on variable usage updated to reflect changes in issue #109
 * Makefiles cleaned up, and help target contents now dynamically generated from comments
