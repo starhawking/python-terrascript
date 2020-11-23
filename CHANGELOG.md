@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
 * Make target and code to fail builds unless python code format passes Black
 * Provider `google-beta`
+* Provider `helm`
 * Release instruction for documentation
 * RTD theme no longer bundled with Sphinx added as dev requirement
 ### Fixed
