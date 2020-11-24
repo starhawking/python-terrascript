@@ -52,6 +52,8 @@
   repository: https://github.com/terraform-providers/terraform-provider-google-beta
 - name: grafana
   repository: https://github.com/terraform-providers/terraform-provider-grafana
+- name: helm
+  repository: https://github.com/terraform-providers/terraform-provider-helm
 - name: heroku
   repository: https://github.com/terraform-providers/terraform-provider-heroku
 - name: http
