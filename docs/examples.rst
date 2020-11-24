@@ -37,7 +37,6 @@ JSON output:
 
 .. literalinclude:: examples/aws/vpc/basic.tf.json
 
-
 Provider Endpoints
 ..................
 

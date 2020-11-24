@@ -1,5 +1,6 @@
 black==20.8b1  # Both in dev_requirements.txt and test_requirements.txt
 coverage
+flake8
 jupyterlab
 nose
 recommonmark
