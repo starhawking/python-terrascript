@@ -1,7 +1,8 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased] - 2020-11-23
+## [Unreleased] - 2020-11-24
+* Provider `helm`
 
 ## [0.9.0] - 2020-11-23
 **This release requires Python 3.6 or later, and Terraform 0.12 or later.**  
@@ -11,7 +12,6 @@ All notable changes to this project will be documented in this file.
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
 * Make target and code to fail builds unless python code format passes Black
 * Provider `google-beta`
-* Provider `helm`
 * Release instruction for documentation
 * RTD theme no longer bundled with Sphinx added as dev requirement
 ### Fixed
