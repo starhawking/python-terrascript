@@ -4,30 +4,33 @@
 
 | Git branch       | Description                                            | Accepting Pull Requests |
 |------------------|--------------------------------------------------------|-------------------------|
+| ``develop-0.6``  | Terrascript 0.6.x releases supporting Terraform 0.11.x | Not generally           |
 | ``develop``      | Current development, not meant for production          | Yes                     |
-| ``develop-0.6``  | Terrascript 0.6.x releases supporting Terraform 0.11.x | Yes                     |
-| ``master``       | Equals latest Terrascript release                      | Never                   |
 | ``feature/*``    | Development of new "features"                          | Not generally           |
+| ``master``       | Equals latest Terrascript release                      | Never                   |
+| ``release/*``    | Candidate for upcoming release                         | Not generally           |
 
-Please make sure to submit the Pull Requests to the correct branch or I will have to reject them. 
+Please make sure to submit the Pull Requests to the correct branch or we will have to reject them.  
 
 ## Pull Requests
 
-I am happy to accept Pull Requests against the ``develop`` and ``develop-0.6`` branches.
+We're happy to accept Pull Requests against the ``develop`` branch.  
 
-Before submitting a Pull Request, please... 
-* Update [CHANGELOG.md](CHANGELOG.md)
-* Add yourself to [CONTRIBUTORS.md](CONTRIBUTORS.md)
+Before submitting a Pull Request, please...  
+* Update [CHANGELOG.md](CHANGELOG.md)  
+* Add yourself to [CONTRIBUTORS.md](CONTRIBUTORS.md)  
+
+When your pull request are approved, please merge it.  
 
 ## Tests
 
-Please include test cases for your code. The recommended approach is to 
-* Create a new [issue](https://github.com/mjuenema/python-terrascript/issues) and note down the number.
-* Create a ``tests/test_issue_NNN.py`` file containing your tests, replacing ``NNN`` with the issue number created in the previous step.
+Please include test cases for your code. The recommended approach is to  
+* Create a new [issue](https://github.com/mjuenema/python-terrascript/issues) and note down the number.  
+* Create a ``tests/test_issue_NNN.py`` file containing your tests, replacing ``NNN`` with the issue number created in the previous step.  
 
 Check out the other files in ``tests/`` for examples.
 
 ## Examples
 
-I'd love to start a collection of real-life Terrascript examples. I don't have any as I am (curiously enough)
-not actually using Terrascript outside of developing its code. 
+We would love to start a collection of real-life Terrascript examples.  
+If you have an example that you think would be a good demonstration of something currently missing, please make a PR.  

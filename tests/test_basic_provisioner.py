@@ -2,7 +2,7 @@ import terrascript
 import terrascript.resource
 
 
-class TestProvisioner(object):
+class TestProvisioner:
     def __init__(self):
         self.cfg = terrascript.Terrascript()
 

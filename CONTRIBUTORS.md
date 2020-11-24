@@ -1,6 +1,6 @@
 # Contributors
 If you would like to contribute, we would very honored, people contributing is 
-what makes open source projects viable in in the long run.  
+what makes open source projects viable in the long run.  
 
 You can contribute in multiple ways, for example:  
 * Perform code changes
@@ -13,7 +13,9 @@ List of contributors (bug reports, fixes, suggestions, anything) to
 **python-terrascript** in no particular order.
 
 * Austin Millan
+* Connor Leigh-Smith
 * DJDavisson
+* Hugo van Kemanade
 * ilons
 * Joao Gilberto Magalhaes
 * Josh Smift

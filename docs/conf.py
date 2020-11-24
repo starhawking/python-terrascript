@@ -22,7 +22,7 @@ copyright = "2019, Markus Juenemann"
 author = "Markus Juenemann"
 
 # The full version, including alpha/beta/rc tags
-release = "0.8.0"
+release = "0.9.0"
 
 
 # -- General configuration ---------------------------------------------------
@@ -38,7 +38,7 @@ templates_path = ["_templates"]
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**/.terraform/*"]
 
 
 # -- Options for HTML output -------------------------------------------------

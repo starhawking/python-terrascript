@@ -98,6 +98,31 @@ Example:
      }
    }
 
+Variable references
+~~~~~~~~~~~~~~~~~~~
+
+When using a variable as a attribute value for a object, a reference are used.
+
+Example:
+* Variable ``image_id`` are used as name for instance.
+
+.. code-block:: json
+
+   {
+     "variable": {
+       "image_id": {
+         "type": "string"
+       }
+     },
+     "resource": {
+       "aws_instance": {
+         "instance1": {
+           "instance_type": "${var.image_id}"
+         }
+       }
+     }
+   }
+
 Output Values
 ~~~~~~~~~~~~~
 

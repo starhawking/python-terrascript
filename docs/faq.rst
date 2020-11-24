@@ -66,7 +66,7 @@ based on the list of providers in ``tools/providers.yml``. So if a provider is m
 it simply has not yet been added to ``tools/providers.yml``. 
 
 If you believe a provider is missing simply open a new issue_ or submit a pull
-request with the missing provider added to ``tools/providers.yml`.
+request with the missing provider added to ``tools/providers.yml``.
 
 .. _issue: https://github.com/mjuenema/python-terrascript/issues
 

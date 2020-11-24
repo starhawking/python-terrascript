@@ -22,21 +22,23 @@ Provider
 
 Providers_ can be found in the ``terrascript.provider`` module, with one class
 for each provider. Terrascript supports most Terraform providers. The full list 
-can be found in the appendices.
+can be found in `List of Providers`_.
+
 
 **HCL**
 
-.. literalinclude:: examples/tutorial_provider1.tf
+.. literalinclude:: tutorials/provider1.tf
 
 **Python**
 
-.. literalinclude:: examples/tutorial_provider1.py
+.. literalinclude:: tutorials/provider1.py
 
 **JSON**
 
-.. literalinclude:: examples/tutorial_provider1/tutorial_provider1.tf.json
+.. literalinclude:: tutorials/provider1/provider1.tf.json
 
 .. _Providers: https://www.terraform.io/docs/providers/index.html
+.. _`List of Providers`: https://www.terraform.io/docs/providers/index.html
 
 Resource
 ~~~~~~~~
@@ -46,7 +48,7 @@ the original HCL syntax for creating an AWS S3 bucket and the equivalent Python 
 
 **HCL**
 
-.. literalinclude:: examples/tutorial_resource1.tf
+.. literalinclude:: tutorials/resource1.tf
 
 **Python**
 
@@ -54,11 +56,11 @@ And here is the same as a Python script. The first argument to ``terrascript.res
 is the Terraform label under which it can be referenced later. Note how the ``tags`` is a dictionary
 as in the HCL syntax.
 
-.. literalinclude:: examples/tutorial_resource1.py
+.. literalinclude:: tutorials/resource1.py
 
 **JSON**
 
-.. literalinclude:: examples/tutorial_resource1/tutorial_resource1.tf.json
+.. literalinclude:: tutorials/resource1/resource1.tf.json
 
 Data Source
 ~~~~~~~~~~~
@@ -66,11 +68,11 @@ Data Source
 Data Sources are located in the ``terrascript.data`` module. The example creates a Google 
 Compute Instance based on the Debian-9 image. First the Terrascript HCL syntax.
 
-.. literalinclude:: examples/tutorial_data1.tf
+.. literalinclude:: tutorials/data1.tf
 
 And the same as Python code. 
 
-.. literalinclude:: examples/tutorial_data1.py
+.. literalinclude:: tutorials/data1.py
 
 The example above is mostly a one-to-one adaptation of the HCL syntax. Let's make some changes
 to show how generating Terraform configurations through Python-Terrascript may help.
@@ -80,8 +82,8 @@ to show how generating Terraform configurations through Python-Terrascript may h
 * Reference an instance of the Python-Terrascript class ``terrascript.data.google_compute_image()``
   as the boot disk image.
                                           
-.. literalinclude:: examples/tutorial_data2.py
-   :emphasize-lines: 1,2,16,22,26
+.. literalinclude:: tutorials/data2.py
+   :emphasize-lines: 1,2,17,26
 
 Variable
 ~~~~~~~~
@@ -92,19 +94,19 @@ variable into the correct Terraform JSON syntax.
 
 **HCL**
 
-.. literalinclude:: examples/tutorial_variable1.tf
+.. literalinclude:: tutorials/variable1.tf
 
 **Python**
 
-.. literalinclude:: examples/tutorial_variable1.py
-   :emphasize-lines: 11,12,17
+.. literalinclude:: tutorials/variable1.py
+   :emphasize-lines: 11,18
 
 **JSON**
 
 In the output the reference to the ``image_id`` has been converted from a reference to a 
-Python variable ``ami=v`` to the correct Terraform JSON syntax of ``var.image_id``. 
+Python variable ``ami=v`` to the correct Terraform JSON syntax of ``${var.image_id}``.
 
-.. literalinclude:: examples/tutorial_variable1/tutorial_variable1.tf.json
+.. literalinclude:: tutorials/variable1/variable1.tf.json
    :emphasize-lines: 18
 
 Output
@@ -114,16 +116,15 @@ Output is implemented as the ``terrascript.Output`` class.
 
 **HCL**
 
-.. literalinclude:: examples/tutorial_output1.tf
+.. literalinclude:: tutorials/output1.tf
 
 **Python**
 
-.. literalinclude:: examples/tutorial_output1.py
+.. literalinclude:: tutorials/output1.py
 
 **JSON**
 
-.. literalinclude:: examples/tutorial_output1/tutorial_output1.tf.json
-   :emphasize-lines: 18
+.. literalinclude:: tutorials/output1/output1.tf.json
 
 Module
 ~~~~~~
@@ -132,30 +133,30 @@ Calls to other Terraform modules are implemented through the ``terrascript.Modul
 
 **HCL**
 
-.. literalinclude:: examples/tutorial_module1.tf
+.. literalinclude:: tutorials/module1.tf
 
 **Python**
 
-.. literalinclude:: examples/tutorial_module1.py
+.. literalinclude:: tutorials/module1.py
 
 **JSON**
 
-.. literalinclude:: examples/tutorial_module1/tutorial_module1.tf.json
+.. literalinclude:: tutorials/module1/module1.tf.json
 
 Backend
 ~~~~~~~
 
 **HCL**
 
-.. literalinclude:: examples/tutorial_backend1.tf
+.. literalinclude:: tutorials/backend1.tf
 
 **Python**
 
-.. literalinclude:: examples/tutorial_backend1.py
+.. literalinclude:: tutorials/backend1.py
 
 **JSON**
 
-.. literalinclude:: examples/tutorial_module1/tutorial_backend1.tf.json
+.. literalinclude:: tutorials/backend1/backend1.tf.json
 
 Connection
 ~~~~~~~~~~
@@ -167,29 +168,29 @@ Terraform local values are not supported. Use Python variables instead.
 
 **Python**
 
-.. literalinclude:: examples/tutorial_locals1.py
-   :emphasize-lines: 11,12,17
+.. literalinclude:: tutorials/locals1.py
+   :emphasize-lines: 11,18
 
 **JSON**
 
-.. literalinclude:: examples/tutorial_locals1/tutorial_locals1.tf.json
-   :emphasize-lines: 14,15,16
+.. literalinclude:: tutorials/locals1/locals1.tf.json
+   :emphasize-lines: 15-16
 
 Provisioner
 ~~~~~~~~~~~
 
 One or multiple provisioners can be added to a Terraform resource.
 Multiple provisioners must be added as a Python list, a single provisioner
-can be either on its own or inside a list. The example adds one "create"
-and one "destroy" provisioner.
+can be either on its own or inside a list.
+
+The example adds one "create" and one "destroy" provisioner.
 
 **Python**
 
-.. literalinclude:: examples/tutorial_provisioner1.py
-   :emphasize-lines: 10,11,15
+.. literalinclude:: tutorials/provisioner1.py
+   :emphasize-lines: 24,25
 
 **JSON**
 
-.. literalinclude:: examples/tutorial_provisioner1/tutorial_provisioner1.tf.json
-   
-
+.. literalinclude:: tutorials/provisioner1/provisioner1.tf.json
+   :emphasize-lines: 16,21

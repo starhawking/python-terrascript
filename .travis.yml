@@ -5,20 +5,40 @@ python:
 - '3.8'
 - '3.9-dev'
 env:
-- TERRAFORM=0.12.15
-- TERRAFORM=0.12.16
-- TERRAFORM=0.12.17
-- TERRAFORM=0.12.18
-- TERRAFORM=0.12.19
+- TERRAFORM=0.12.29
+- TERRAFORM=0.13.4
+- TERRAFORM=0.13.5
 cache: pip
 install:
 - "(wget https://releases.hashicorp.com/terraform/${TERRAFORM}/terraform_${TERRAFORM}_linux_amd64.zip
   ; unzip terraform_${TERRAFORM}_linux_amd64.zip ; sudo install -m 755 terraform /usr/local/bin/terraform)"
 - pip install -r test_requirements.txt
 before_script:
+- echo "Building $TRAVIS_COMMIT $TRAVIS_BRANCH ($TRAVIS_TAG)"
 - make package
 script:
 - travis_retry make test
+- make test_black
 - tar tvfz dist/terrascript-*.tar.gz | grep vault
 after_failure:
 - cat /tmp/*/*tf.json
+deploy:
+  - provider: pypi
+    server: https://test.pypi.org/legacy/
+    skip_existing: true
+    distributions: "sdist bdist_wheel"
+    on:
+      all_branches: true
+      condition: $TRAVIS_TAG =~ rc[0-9]+$
+    username: __token__
+    password:
+      secure: ifPwy6psn5GhArT9obeffJ+USCVGS5wTwjlulsnB0Q0n1wh0GDeWtWoEWBsk7h3za3p6yM2PiOftGCufs8gknOOc4JuMZ1e9di7mAlqiWiFHzIfpDF+SxocLW22J4+0p1G9sjfF4sZcEqunIPt57CKffHYqSF+FXFwADBt+Zd1SV8z7TM4OmsB3ir+5oGf9uPZK1ot5dg7dbDphZb/dVDdtKXjrM3yAMzPqUIX5c6XxpCCsPn8zcGQSeI+9qsYyvQUcn+FjeG5LiIliQUZDJ5PkEohhilXZZRAWgG+yZX9xl3qpNNu6wCtJ5UowLo3sCIJFWgSV+fFeHgd//qTyOaU/feHDqdsx6IBzO3GQn+Fs2QLXb6zxGGXe2fsBorLse0bD5x8bOTkpS8ocI6nrp8Ex+3P3iiLaqTUE5hIe4nsbE3bf7Gn70Pg4Feg2oNK7MGdLM8OFbBXACjxydrjvVkpwvI6n4K3213VRtaLPWEO1y4waq+I+TZoQLRys22sjcoZW77/aRAx2FTXckZSxG/WUZp4e2xmtQDQxeUN5CCN7RpwW2+2WptyCTGB8l11QJWAQSTTncRqxoYb2jc8pVsJNXE80ByFTt9zhIXRjZhNfSaWOI4M30nrGxo7rojteUdRQSj046nJBJzi8dxBoJ1aT2vVBF4d3NUpYsw3dYMuI=
+  - provider: pypi
+    skip_existing: true
+    distributions: "sdist bdist_wheel"
+    on:
+      all_branches: true
+      condition: $TRAVIS_TAG =~ ^[0-9]+\.[0-9]+\.[0-9]+$
+    username: __token__
+    password:
+      secure: aiicEW0m7XmLMomxm0OJ15jhlvlif9McDg/TxYua18erCqL/pWd0iEJ+i3ufyjx/wU+H6WXY9L7Ar5JvCiHl1pm6AQUCLNbmj6yrhlsUqurk7kqa30omL/MFmzFLL+L4YPcjgBF8m3Jw/84iXllb+tXZUkbTHcSlC+vfACbAxKNX8tzF/gAB9bUJfyi5rXL9rTpxd3rnrJxj6Zii/jCW2tINVxyV56n0Un+6+7t2F9HvjcqH7krlDeIDBUv/c/fvFr64LBrPgeFw4Q6HPQhzGFUEBmoMBFQfp5QyamCOl2HGm52Wb0Nvg/xbOx/LwTHZTdSjaiGZY205Oep8zYpMQgUObeGSt5hJLYvXgOaz7mG48n8zuTjht8dOeSDMyRtNib+QHai7YOGt1QlP1yrZmztFllUYVQJmWZ6gf8zdfTRZg5brNznn8L3X45Irg4akLGbJ2ZqsfqsQgM91Ciw8o593QMencHgBkELyXOyCZJkRs7/0KXKQwgf5+Pfp3brMjNsAwo2kRPwzNBEQKtsNO7PZJ/eVOd9UCx+4o+aHUbZsUHNtxZG5PBm+7YV6WjnvWtiaREz9qXgXmegQF5gN1kksncZHL3VhhNGLEKn1Xtg4E2q7K7bRv3wYOaqE28JV9LgnLcAJby7zGIML6CJM4s14cd11HYqIKPnwTiX0iKk=

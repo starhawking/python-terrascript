@@ -27,7 +27,7 @@ python-terrascript
 
 
 Looking for more contributors
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 IF you feel that this project is useful to you, please consider contributing some of your time towards improving it!
 For more details on contributions, please have a look at CONTRIBUTORS.md and DEVELOPMENT.md.
@@ -60,15 +60,16 @@ Terraform are not supported.
 
 .. _`Terraform 0.12`: https://www.hashicorp.com/blog/announcing-terraform-0-12  
 
-========== ============ ==================================================================
-Terraform  Terrascript  Notes                                                             
-========== ============ ================================================================== 
-0.12.x     0.8.x        Terrascript 0.8 will be an (almost) complete rewrite                   
+========== ============ ============================================================================================
+Terraform  Terrascript  Notes
+========== ============ ============================================================================================
+0.13.x     0.9.x        Cleanup efforts and bug fixes, dropping support for Python <3.6, supporting Terraform 0.13.x
+0.12.x     0.8.x        Terrascript 0.8 are a (almost) complete rewrite
 0.12.x     0.7.x        Never released
-0.11.x     0.6.x        Last releases to support Terraform 0.11 and earlier               
-========== ============ ==================================================================
+0.11.x     0.6.x        Last releases to support Terraform 0.11 and earlier
+========== ============ ============================================================================================
 
-Terrascript supports Python 3.3 and later.
+Terrascript supports Python 3.6 and later.
 
 Module layout
 .............
@@ -156,7 +157,9 @@ original HCL format.
     }
 
 **Terrascript does not verify that the generated JSON code is a valid Terraform configuration.**
-**This is a deliberate design decision and is explained in the Frequently Asked Questions (FAQ)**
+**This is a deliberate design decision and is explained in the** `Frequently Asked Questions (FAQ) <https://python-terrascript.readthedocs.io/en/develop/faq.html>`_
+
+.. _Frequently Asked Questions (FAQ): https://python-terrascript.readthedocs.io/en/develop/faq.html
 
 Links
 ~~~~~
