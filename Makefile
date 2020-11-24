@@ -5,6 +5,7 @@ FLAKE8 := python3 -m flake8
 
 TESTS_BASIC := $(wildcard tests/test_basic_*.py)
 TESTS_ISSUES := $(wildcard tests/test_issue*.py)
+TESTS_EXAMPLES := $(wildcard tests/test_example_*.py)
 
 export TF_IN_AUTOMATION=1
 
@@ -17,16 +18,17 @@ DEFAULT_GOAL: help
 	coverage \
 	debug_basic \
 	debug_issues \
+	docs \
 	flake8 \
 	help \
-	html \
 	install \
 	package \
 	test \
 	test_basic \
 	test_black \
-	test_issues \
-	test_docs
+	test_docs \
+	test_examples \
+	test_issues
 
 black: clean ## Format Python code with Black to keep style consistent
 	black -t py36 .
@@ -50,16 +52,17 @@ debug_basic: clean ## Run basic tests in debug mode
 debug_issues: clean ## Run tests in debug mode for previous issues
 	$(NOSE) --pdb  $(TESTS_ISSUES)
 
+docs: clean ## Build documentation files
+	make -C docs html
+
 flake8: clean ## Validate code against PEP8
-	$(FLAKE8) terrascript/__init__.py #$(TESTS)
+	$(FLAKE8) \
+		terrascript/__init__.py # tests/
 
 help: ## Print this help and exit
 	@echo "Available build targets:"
 	@grep -e "^[a-zA-Z0-9_-]*: *.*## *" $(MAKEFILE_LIST) \
 		| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-25s\033[0m %s\n", $$1, $$2}'
-
-html: clean ## Build documentation files
-	make -C docs html
 
 install: clean ## Install as python package from sources
 	python3 setup.py install --user
@@ -80,8 +83,11 @@ test_black: clean ## Verify that all Python code are formatted correctly
 		--target-version py36 \
 		.
 
-test_issues: clean ## Run tests for prevoius issues
-	$(NOSE) $(TESTS_ISSUES)
-
 test_docs: ## Run tests for documentation
 	(cd docs && make test)
+
+test_examples: clean ## Run tests for examples
+	$(NOSE) $(TESTS_EXAMPLES)
+
+test_issues: clean ## Run tests for prevoius issues
+	$(NOSE) $(TESTS_ISSUES)

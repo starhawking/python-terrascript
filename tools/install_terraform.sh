@@ -7,7 +7,7 @@ if [ ! -e install_terraform.sh ]; then
     exit 1
 fi
 
-RELEASE="0.12.6"
+RELEASE="0.13.2"
 
 [ -e terraform && rm -f terraform ]
 wget https://releases.hashicorp.com/terraform/${RELEASE}/terraform_${RELEASE}_linux_amd64.zip

@@ -74,5 +74,5 @@ class TestVariable:
         resource = terrascript.Resource("Test", var=var)
 
         assert (
-                "${var.myvar}" == resource.var
+            "${var.myvar}" == resource.var
         ), "Adding Variable to Resource did not insert reference"

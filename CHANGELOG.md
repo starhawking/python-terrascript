@@ -1,8 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
-**This release requires Python 3.6 or later, and Terraform 0.12 or later.**
+## [Unreleased] - 2020-11-23
+
+## [0.9.0] - 2020-11-23
+**This release requires Python 3.6 or later, and Terraform 0.12 or later.**  
+**Be aware of embedded variable bugfix, which could break workarounds.**  
 ### Added
 * Automatically push of built tags to pypi
 * Created ``terrascript.Terrascript.__iter__()`` method for iterating over resources, data sources, etc.  (issue #98).
@@ -21,10 +24,12 @@ All notable changes to this project will be documented in this file.
 * All Python code is now automatically formatted using [Black](https://pypi.org/project/black/).
 * Code for providers updated to conform with black
 * Contributors are now sorted in alphabetical order
+* Documentation for creating releases are now updated to reflect expected flow
 * Documentation link from readme now points toward develop build on readthedocs.io to avoid 404
 * Documentation on variable usage updated to reflect changes in issue #109
 * Makefiles cleaned up, and help target contents now dynamically generated from comments
 * Requirements files are now sorted alphabetically and duplicate entries are removed
+* Terraform version supported updated from 0.12.15-19 to 0.12.29 + 0.13.4-5
 * Updated code for providers generated
 ### Deleted
 * Python 3.5 no longer supported as the official support are dropped: https://devguide.python.org/#status-of-python-branches
