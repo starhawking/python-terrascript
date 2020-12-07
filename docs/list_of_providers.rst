@@ -60,6 +60,7 @@ List of Providers
 * rundeck
 * scaleway
 * shell
+* signalfx
 * softlayer
 * spotinst
 * statuscake

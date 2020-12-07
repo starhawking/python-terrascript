@@ -122,6 +122,8 @@
   repository: https://github.com/terraform-providers/terraform-provider-scaleway
 - name: softlayer
   repository: https://github.com/terraform-providers/terraform-provider-softlayer
+- name: signalfx
+  repository: https://github.com/splunk-terraform/terraform-provider-signalfx
 - name: statuscake
   repository: https://github.com/terraform-providers/terraform-provider-statuscake
 - name: spotinst
