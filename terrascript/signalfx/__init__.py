@@ -2,5 +2,5 @@
 import terrascript
 
 
-class scaleway(signalfx.Provider):
+class signalfx(signalfx.Provider):
     pass
