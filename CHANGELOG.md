@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file.
 * Provider:
   - `helm`
   - `signalfx`
+### Changed
+- Now possible to update the `terraform` property of Terrascript by adding it multiple times 
 
 ## [0.9.0] - 2020-11-23
 **This release requires Python 3.6 or later, and Terraform 0.12 or later.**  
