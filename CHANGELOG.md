@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file.
   * docker
   * github
   * google
+  * google-beta
 
 ## [0.9.0] - 2020-11-23
 **This release requires Python 3.6 or later, and Terraform 0.12 or later.**  
