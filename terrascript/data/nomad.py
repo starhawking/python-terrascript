@@ -2,6 +2,10 @@
 import terrascript
 
 
+class nomad_acl_policies(terrascript.Data):
+    pass
+
+
 class nomad_acl_policy(terrascript.Data):
     pass
 
@@ -11,6 +15,10 @@ class nomad_acl_token(terrascript.Data):
 
 
 class nomad_acl_tokens(terrascript.Data):
+    pass
+
+
+class nomad_datacenters(terrascript.Data):
     pass
 
 
@@ -42,6 +50,18 @@ class nomad_plugins(terrascript.Data):
     pass
 
 
+class nomad_scaling_policies(terrascript.Data):
+    pass
+
+
+class nomad_scaling_policy(terrascript.Data):
+    pass
+
+
+class nomad_scheduler_config(terrascript.Data):
+    pass
+
+
 class nomad_regions(terrascript.Data):
     pass
 
@@ -51,9 +71,11 @@ class nomad_volumes(terrascript.Data):
 
 
 __all__ = [
+    "nomad_acl_policies",
     "nomad_acl_policy",
     "nomad_acl_token",
     "nomad_acl_tokens",
+    "nomad_datacenters",
     "nomad_deployments",
     "nomad_job",
     "nomad_job_parser",
@@ -61,6 +83,9 @@ __all__ = [
     "nomad_namespaces",
     "nomad_plugin",
     "nomad_plugins",
+    "nomad_scaling_policies",
+    "nomad_scaling_policy",
+    "nomad_scheduler_config",
     "nomad_regions",
     "nomad_volumes",
 ]
