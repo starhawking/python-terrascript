@@ -1,5 +1,3 @@
----
-
 - name: alicloud
   repository: https://github.com/terraform-providers/terraform-provider-alicloud
 - name: archive
@@ -8,14 +6,18 @@
   repository: https://github.com/terraform-providers/terraform-provider-arukas
 - name: aws
   repository: https://github.com/terraform-providers/terraform-provider-aws
+- name: azure
+  repository: https://github.com/terraform-providers/terraform-provider-azure
+- name: azurerm
+  repository: https://github.com/terraform-providers/terraform-provider-azurerm
 - name: bitbucket
   repository: https://github.com/terraform-providers/terraform-provider-bitbucket
-- name: clc
-  repository: https://github.com/terraform-providers/terraform-provider-clc
 - name: chef
   repository: https://github.com/terraform-providers/terraform-provider-chef
 - name: circonus
   repository: https://github.com/terraform-providers/terraform-provider-circonus
+- name: clc
+  repository: https://github.com/terraform-providers/terraform-provider-clc
 - name: cloudflare
   repository: https://github.com/terraform-providers/terraform-provider-cloudflare
 - name: cloudscale
@@ -28,10 +30,10 @@
   repository: https://github.com/terraform-providers/terraform-provider-datadog
 - name: digitalocean
   repository: https://github.com/terraform-providers/terraform-provider-digitalocean
-- name: dns
-  repository: https://github.com/terraform-providers/terraform-provider-dns
 - name: dme
   repository: https://github.com/terraform-providers/terraform-provider-dme
+- name: dns
+  repository: https://github.com/terraform-providers/terraform-provider-dns
 - name: dnsimple
   repository: https://github.com/terraform-providers/terraform-provider-dnsimple
 - name: docker
@@ -76,10 +78,8 @@
   repository: https://github.com/terraform-providers/terraform-provider-logicmonitor
 - name: mailgun
   repository: https://github.com/terraform-providers/terraform-provider-mailgun
-- name: azurerm
-  repository: https://github.com/terraform-providers/terraform-provider-azurerm
-- name: azure
-  repository: https://github.com/terraform-providers/terraform-provider-azure
+- name: matchbox
+  repository: https://github.com/poseidon/terraform-provider-matchbox
 - name: mysql
   repository: https://github.com/terraform-providers/terraform-provider-mysql
 - name: newrelic
@@ -104,6 +104,8 @@
   repository: https://github.com/terraform-providers/terraform-provider-packet
 - name: pagerduty
   repository: https://github.com/terraform-providers/terraform-provider-pagerduty
+- name: pingdom
+  repository: https://github.com/russellcardullo/terraform-provider-pingdom
 - name: postgresql
   repository: https://github.com/terraform-providers/terraform-provider-postgresql
 - name: powerdns
@@ -120,14 +122,16 @@
   repository: https://github.com/terraform-providers/terraform-provider-rundeck
 - name: scaleway
   repository: https://github.com/terraform-providers/terraform-provider-scaleway
-- name: softlayer
-  repository: https://github.com/terraform-providers/terraform-provider-softlayer
+- name: shell
+  repository: https://github.com/scottwinkler/terraform-provider-shell
 - name: signalfx
   repository: https://github.com/splunk-terraform/terraform-provider-signalfx
-- name: statuscake
-  repository: https://github.com/terraform-providers/terraform-provider-statuscake
+- name: softlayer
+  repository: https://github.com/terraform-providers/terraform-provider-softlayer
 - name: spotinst
   repository: https://github.com/terraform-providers/terraform-provider-spotinst
+- name: statuscake
+  repository: https://github.com/terraform-providers/terraform-provider-statuscake
 - name: template
   repository: https://github.com/terraform-providers/terraform-provider-template
 - name: tls
@@ -142,9 +146,3 @@
   repository: https://github.com/terraform-providers/terraform-provider-vcd
 - name: vsphere
   repository: https://github.com/terraform-providers/terraform-provider-vsphere
-- name: shell
-  repository: https://github.com/scottwinkler/terraform-provider-shell
-- name: matchbox
-  repository: https://github.com/poseidon/terraform-provider-matchbox
-- name: pingdom
-  repository: https://github.com/russellcardullo/terraform-provider-pingdom
