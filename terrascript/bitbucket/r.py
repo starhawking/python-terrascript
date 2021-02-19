@@ -24,3 +24,11 @@ class bitbucket_project(terrascript.Resource):
 
 class bitbucket_branch_restriction(terrascript.Resource):
     pass
+
+
+class bitbucket_deployment(terrascript.Resource):
+    pass
+
+
+class bitbucket_deployment_variable(terrascript.Resource):
+    pass

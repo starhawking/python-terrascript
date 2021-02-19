@@ -26,6 +26,14 @@ class bitbucket_branch_restriction(terrascript.Resource):
     pass
 
 
+class bitbucket_deployment(terrascript.Resource):
+    pass
+
+
+class bitbucket_deployment_variable(terrascript.Resource):
+    pass
+
+
 __all__ = [
     "bitbucket_hook",
     "bitbucket_default_reviewers",
@@ -33,4 +41,6 @@ __all__ = [
     "bitbucket_repository_variable",
     "bitbucket_project",
     "bitbucket_branch_restriction",
+    "bitbucket_deployment",
+    "bitbucket_deployment_variable",
 ]
