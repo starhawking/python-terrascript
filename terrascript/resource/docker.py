@@ -10,6 +10,10 @@ class docker_image(terrascript.Resource):
     pass
 
 
+class docker_registry_image(terrascript.Resource):
+    pass
+
+
 class docker_network(terrascript.Resource):
     pass
 
@@ -33,6 +37,7 @@ class docker_service(terrascript.Resource):
 __all__ = [
     "docker_container",
     "docker_image",
+    "docker_registry_image",
     "docker_network",
     "docker_volume",
     "docker_config",
