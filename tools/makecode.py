@@ -257,7 +257,7 @@ def create_datasources(provider, modulesdir, datasources):
 
 
 def find_all_in_path(base_path: str, filename: str, ignore_paths: list):
-    """ Get a list of all paths in the given base path where filename is found
+    """Get a list of all paths in the given base path where filename is found
     Ignoring any matches found in list of ignored paths
 
     :param base_path:
@@ -267,7 +267,14 @@ def find_all_in_path(base_path: str, filename: str, ignore_paths: list):
     """
     results = []
     for root, dirs, files in os.walk(base_path):
-        if any([root[len(base_path):].startswith(f'{os.path.sep}{ignored}') for ignored in ignore_paths]):
+        base_path_len = len(base_path)
+        should_ignore_path = any(
+            [
+                root[base_path_len:].startswith(f"{os.path.sep}{ignored}")
+                for ignored in ignore_paths
+            ]
+        )
+        if should_ignore_path:
             continue
         if filename not in files:
             continue
@@ -300,13 +307,18 @@ def process(entry, modulesdir):
             print(result.stdout)
             sys.exit(1)
 
-        provider_path = os.path.join(tmpdir, entry['name'], "provider.go")
+        provider_path = os.path.join(tmpdir, entry["name"], "provider.go")
         if not os.path.isfile(provider_path):
-            provider_paths = find_all_in_path(tmpdir, "provider.go", ignore_paths=['vendor'])
+            provider_paths = find_all_in_path(
+                tmpdir, "provider.go", ignore_paths=["vendor"]
+            )
             if len(provider_paths) == 1:
                 provider_path = provider_paths[0]
             else:
-                logging.warning("Failed to build %s (unable to determine location of provider.go)", entry)
+                logging.warning(
+                    "Failed to build %s (unable to determine location of provider.go)",
+                    entry,
+                )
                 return
 
         with open(provider_path, "rb") as fp:
