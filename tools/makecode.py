@@ -358,9 +358,15 @@ def main():
         print("Script must be run from the tools/ folder", file=sys.stderr)
         sys.exit(1)
 
-    with open(INPUT) as fp:
+    with open(INPUT, "r+") as fp:
         entries = yaml.load(fp, Loader=yaml.SafeLoader)
         # entries is now a list of dictionaries: [{'name': NAME, 'repository': URL}, ...]
+        sorted_entries = sorted(entries, key=lambda item: item["name"])
+        if sorted != entries:
+            fp.seek(0)
+            fp.write(yaml.dump(sorted_entries, Dumper=yaml.SafeDumper))
+            entries = sorted_entries
+
     if len(sys.argv) > 1:
         build_entries = [entry for entry in entries if entry["name"] in sys.argv[1:]]
     else:
