@@ -61,8 +61,8 @@ from .random import *
 from .rundeck import *
 from .scaleway import *
 from .softlayer import *
-from .statuscake import *
 from .signalfx import *
+from .statuscake import *
 from .spotinst import *
 from .template import *
 from .tls import *

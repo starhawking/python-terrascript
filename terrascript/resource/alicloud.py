@@ -974,6 +974,14 @@ class alicloud_resource_manager_policy_attachment(terrascript.Resource):
     pass
 
 
+class alicloud_dcdn_domain(terrascript.Resource):
+    pass
+
+
+class alicloud_mse_cluster(terrascript.Resource):
+    pass
+
+
 __all__ = [
     "alicloud_instance",
     "alicloud_image",
@@ -1218,4 +1226,6 @@ __all__ = [
     "alicloud_edas_k8s_cluster",
     "alicloud_oos_execution",
     "alicloud_resource_manager_policy_attachment",
+    "alicloud_dcdn_domain",
+    "alicloud_mse_cluster",
 ]
