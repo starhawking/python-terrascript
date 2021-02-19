@@ -333,9 +333,15 @@ def main():
     with open(INPUT) as fp:
         entries = yaml.load(fp, Loader=yaml.SafeLoader)
         # entries is now a list of dictionaries: [{'name': NAME, 'repository': URL}, ...]
+    if len(sys.argv) > 1:
+        build_entries = [entry for entry in entries if entry["name"] in sys.argv[1:]]
+    else:
+        build_entries = entries
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=CONCURRENCY) as executor:
-        futures = [executor.submit(process, entry, modulesdir) for entry in entries]
+        futures = [
+            executor.submit(process, entry, modulesdir) for entry in build_entries
+        ]
         for future in concurrent.futures.as_completed(futures):
             exc = future.exception()
             if exc:
