@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased] - 2020-11-24
 ### Added
 * Build support for Python 3.9
+* Make target for building providers
 * Provider:
   - `helm`
   - `signalfx`
