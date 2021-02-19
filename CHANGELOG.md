@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
   - `signalfx`
 * Tool to generate provider bindings now accept provider to build
 ## Changed
+* Script to generate providers would now try to guess the location of the required provider.go in the repository
 * Updated generated provider bindings:
   * alicloud
   * aws
