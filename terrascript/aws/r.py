@@ -110,6 +110,10 @@ class aws_api_gateway_rest_api(terrascript.Resource):
     pass
 
 
+class aws_api_gateway_rest_api_policy(terrascript.Resource):
+    pass
+
+
 class aws_api_gateway_stage(terrascript.Resource):
     pass
 
@@ -190,11 +194,19 @@ class aws_appautoscaling_scheduled_action(terrascript.Resource):
     pass
 
 
+class aws_appmesh_gateway_route(terrascript.Resource):
+    pass
+
+
 class aws_appmesh_mesh(terrascript.Resource):
     pass
 
 
 class aws_appmesh_route(terrascript.Resource):
+    pass
+
+
+class aws_appmesh_virtual_gateway(terrascript.Resource):
     pass
 
 
@@ -266,7 +278,19 @@ class aws_autoscaling_schedule(terrascript.Resource):
     pass
 
 
+class aws_autoscalingplans_scaling_plan(terrascript.Resource):
+    pass
+
+
+class aws_backup_global_settings(terrascript.Resource):
+    pass
+
+
 class aws_backup_plan(terrascript.Resource):
+    pass
+
+
+class aws_backup_region_settings(terrascript.Resource):
     pass
 
 
@@ -275,6 +299,14 @@ class aws_backup_selection(terrascript.Resource):
 
 
 class aws_backup_vault(terrascript.Resource):
+    pass
+
+
+class aws_backup_vault_notifications(terrascript.Resource):
+    pass
+
+
+class aws_backup_vault_policy(terrascript.Resource):
     pass
 
 
@@ -298,6 +330,10 @@ class aws_cloudformation_stack_set_instance(terrascript.Resource):
     pass
 
 
+class aws_cloudfront_cache_policy(terrascript.Resource):
+    pass
+
+
 class aws_cloudfront_distribution(terrascript.Resource):
     pass
 
@@ -306,11 +342,23 @@ class aws_cloudfront_origin_access_identity(terrascript.Resource):
     pass
 
 
+class aws_cloudfront_origin_request_policy(terrascript.Resource):
+    pass
+
+
 class aws_cloudfront_public_key(terrascript.Resource):
     pass
 
 
+class aws_cloudfront_realtime_log_config(terrascript.Resource):
+    pass
+
+
 class aws_cloudtrail(terrascript.Resource):
+    pass
+
+
+class aws_cloudwatch_event_bus(terrascript.Resource):
     pass
 
 
@@ -323,6 +371,10 @@ class aws_cloudwatch_event_rule(terrascript.Resource):
 
 
 class aws_cloudwatch_event_target(terrascript.Resource):
+    pass
+
+
+class aws_cloudwatch_event_archive(terrascript.Resource):
     pass
 
 
@@ -374,6 +426,10 @@ class aws_config_configuration_recorder_status(terrascript.Resource):
     pass
 
 
+class aws_config_conformance_pack(terrascript.Resource):
+    pass
+
+
 class aws_config_delivery_channel(terrascript.Resource):
     pass
 
@@ -383,6 +439,10 @@ class aws_config_organization_custom_rule(terrascript.Resource):
 
 
 class aws_config_organization_managed_rule(terrascript.Resource):
+    pass
+
+
+class aws_config_remediation_configuration(terrascript.Resource):
     pass
 
 
@@ -426,6 +486,10 @@ class aws_cognito_resource_server(terrascript.Resource):
     pass
 
 
+class aws_cloudwatch_composite_alarm(terrascript.Resource):
+    pass
+
+
 class aws_cloudwatch_metric_alarm(terrascript.Resource):
     pass
 
@@ -454,7 +518,27 @@ class aws_codecommit_trigger(terrascript.Resource):
     pass
 
 
+class aws_codeartifact_domain(terrascript.Resource):
+    pass
+
+
+class aws_codeartifact_domain_permissions_policy(terrascript.Resource):
+    pass
+
+
+class aws_codeartifact_repository(terrascript.Resource):
+    pass
+
+
+class aws_codeartifact_repository_permissions_policy(terrascript.Resource):
+    pass
+
+
 class aws_codebuild_project(terrascript.Resource):
+    pass
+
+
+class aws_codebuild_report_group(terrascript.Resource):
     pass
 
 
@@ -471,6 +555,10 @@ class aws_codepipeline(terrascript.Resource):
 
 
 class aws_codepipeline_webhook(terrascript.Resource):
+    pass
+
+
+class aws_codestarconnections_connection(terrascript.Resource):
     pass
 
 
@@ -495,6 +583,10 @@ class aws_datasync_agent(terrascript.Resource):
 
 
 class aws_datasync_location_efs(terrascript.Resource):
+    pass
+
+
+class aws_datasync_location_fsx_windows_file_system(terrascript.Resource):
     pass
 
 
@@ -547,6 +639,18 @@ class aws_db_option_group(terrascript.Resource):
 
 
 class aws_db_parameter_group(terrascript.Resource):
+    pass
+
+
+class aws_db_proxy(terrascript.Resource):
+    pass
+
+
+class aws_db_proxy_default_target_group(terrascript.Resource):
+    pass
+
+
+class aws_db_proxy_target(terrascript.Resource):
     pass
 
 
@@ -730,6 +834,10 @@ class aws_ec2_capacity_reservation(terrascript.Resource):
     pass
 
 
+class aws_ec2_carrier_gateway(terrascript.Resource):
+    pass
+
+
 class aws_ec2_client_vpn_authorization_rule(terrascript.Resource):
     pass
 
@@ -755,6 +863,10 @@ class aws_ec2_local_gateway_route(terrascript.Resource):
 
 
 class aws_ec2_local_gateway_route_table_vpc_association(terrascript.Resource):
+    pass
+
+
+class aws_ec2_managed_prefix_list(terrascript.Resource):
     pass
 
 
@@ -787,6 +899,10 @@ class aws_ec2_transit_gateway_peering_attachment(terrascript.Resource):
 
 
 class aws_ec2_transit_gateway_peering_attachment_accepter(terrascript.Resource):
+    pass
+
+
+class aws_ec2_transit_gateway_prefix_list_reference(terrascript.Resource):
     pass
 
 
@@ -886,6 +1002,10 @@ class aws_elasticache_cluster(terrascript.Resource):
     pass
 
 
+class aws_elasticache_global_replication_group(terrascript.Resource):
+    pass
+
+
 class aws_elasticache_parameter_group(terrascript.Resource):
     pass
 
@@ -950,6 +1070,14 @@ class aws_emr_instance_group(terrascript.Resource):
     pass
 
 
+class aws_emr_instance_fleet(terrascript.Resource):
+    pass
+
+
+class aws_emr_managed_scaling_policy(terrascript.Resource):
+    pass
+
+
 class aws_emr_security_configuration(terrascript.Resource):
     pass
 
@@ -967,6 +1095,10 @@ class aws_fsx_windows_file_system(terrascript.Resource):
 
 
 class aws_fms_admin_account(terrascript.Resource):
+    pass
+
+
+class aws_fms_policy(terrascript.Resource):
     pass
 
 
@@ -1022,11 +1154,39 @@ class aws_glue_connection(terrascript.Resource):
     pass
 
 
+class aws_glue_dev_endpoint(terrascript.Resource):
+    pass
+
+
 class aws_glue_crawler(terrascript.Resource):
     pass
 
 
+class aws_glue_data_catalog_encryption_settings(terrascript.Resource):
+    pass
+
+
 class aws_glue_job(terrascript.Resource):
+    pass
+
+
+class aws_glue_ml_transform(terrascript.Resource):
+    pass
+
+
+class aws_glue_partition(terrascript.Resource):
+    pass
+
+
+class aws_glue_registry(terrascript.Resource):
+    pass
+
+
+class aws_glue_resource_policy(terrascript.Resource):
+    pass
+
+
+class aws_glue_schema(terrascript.Resource):
     pass
 
 
@@ -1038,11 +1198,19 @@ class aws_glue_trigger(terrascript.Resource):
     pass
 
 
+class aws_glue_user_defined_function(terrascript.Resource):
+    pass
+
+
 class aws_glue_workflow(terrascript.Resource):
     pass
 
 
 class aws_guardduty_detector(terrascript.Resource):
+    pass
+
+
+class aws_guardduty_filter(terrascript.Resource):
     pass
 
 
@@ -1063,6 +1231,10 @@ class aws_guardduty_organization_admin_account(terrascript.Resource):
 
 
 class aws_guardduty_organization_configuration(terrascript.Resource):
+    pass
+
+
+class aws_guardduty_publishing_destination(terrascript.Resource):
     pass
 
 
@@ -1162,6 +1334,30 @@ class aws_iam_user_login_profile(terrascript.Resource):
     pass
 
 
+class aws_imagebuilder_component(terrascript.Resource):
+    pass
+
+
+class aws_imagebuilder_distribution_configuration(terrascript.Resource):
+    pass
+
+
+class aws_imagebuilder_image(terrascript.Resource):
+    pass
+
+
+class aws_imagebuilder_image_pipeline(terrascript.Resource):
+    pass
+
+
+class aws_imagebuilder_image_recipe(terrascript.Resource):
+    pass
+
+
+class aws_imagebuilder_infrastructure_configuration(terrascript.Resource):
+    pass
+
+
 class aws_inspector_assessment_target(terrascript.Resource):
     pass
 
@@ -1218,15 +1414,19 @@ class aws_key_pair(terrascript.Resource):
     pass
 
 
+class aws_kinesis_analytics_application(terrascript.Resource):
+    pass
+
+
+class aws_kinesisanalyticsv2_application(terrascript.Resource):
+    pass
+
+
 class aws_kinesis_firehose_delivery_stream(terrascript.Resource):
     pass
 
 
 class aws_kinesis_stream(terrascript.Resource):
-    pass
-
-
-class aws_kinesis_analytics_application(terrascript.Resource):
     pass
 
 
@@ -1254,7 +1454,23 @@ class aws_kms_ciphertext(terrascript.Resource):
     pass
 
 
+class aws_lakeformation_data_lake_settings(terrascript.Resource):
+    pass
+
+
+class aws_lakeformation_permissions(terrascript.Resource):
+    pass
+
+
+class aws_lakeformation_resource(terrascript.Resource):
+    pass
+
+
 class aws_lambda_alias(terrascript.Resource):
+    pass
+
+
+class aws_lambda_code_signing_config(terrascript.Resource):
     pass
 
 
@@ -1287,6 +1503,22 @@ class aws_launch_configuration(terrascript.Resource):
 
 
 class aws_launch_template(terrascript.Resource):
+    pass
+
+
+class aws_lex_bot(terrascript.Resource):
+    pass
+
+
+class aws_lex_bot_alias(terrascript.Resource):
+    pass
+
+
+class aws_lex_intent(terrascript.Resource):
+    pass
+
+
+class aws_lex_slot_type(terrascript.Resource):
     pass
 
 
@@ -1382,6 +1614,10 @@ class aws_msk_configuration(terrascript.Resource):
     pass
 
 
+class aws_msk_scram_secret_association(terrascript.Resource):
+    pass
+
+
 class aws_nat_gateway(terrascript.Resource):
     pass
 
@@ -1431,6 +1667,26 @@ class aws_network_interface(terrascript.Resource):
 
 
 class aws_network_interface_attachment(terrascript.Resource):
+    pass
+
+
+class aws_networkfirewall_firewall(terrascript.Resource):
+    pass
+
+
+class aws_networkfirewall_firewall_policy(terrascript.Resource):
+    pass
+
+
+class aws_networkfirewall_logging_configuration(terrascript.Resource):
+    pass
+
+
+class aws_networkfirewall_resource_policy(terrascript.Resource):
+    pass
+
+
+class aws_networkfirewall_rule_group(terrascript.Resource):
     pass
 
 
@@ -1519,6 +1775,10 @@ class aws_organizations_organizational_unit(terrascript.Resource):
 
 
 class aws_placement_group(terrascript.Resource):
+    pass
+
+
+class aws_prometheus_workspace(terrascript.Resource):
     pass
 
 
@@ -1614,6 +1874,10 @@ class aws_route53_delegation_set(terrascript.Resource):
     pass
 
 
+class aws_route53_key_signing_key(terrascript.Resource):
+    pass
+
+
 class aws_route53_query_log(terrascript.Resource):
     pass
 
@@ -1638,7 +1902,19 @@ class aws_route53_health_check(terrascript.Resource):
     pass
 
 
+class aws_route53_resolver_dnssec_config(terrascript.Resource):
+    pass
+
+
 class aws_route53_resolver_endpoint(terrascript.Resource):
+    pass
+
+
+class aws_route53_resolver_query_log_config(terrascript.Resource):
+    pass
+
+
+class aws_route53_resolver_query_log_config_association(terrascript.Resource):
     pass
 
 
@@ -1666,7 +1942,19 @@ class aws_route_table_association(terrascript.Resource):
     pass
 
 
-class aws_sagemaker_model(terrascript.Resource):
+class aws_sagemaker_app_image_config(terrascript.Resource):
+    pass
+
+
+class aws_sagemaker_code_repository(terrascript.Resource):
+    pass
+
+
+class aws_sagemaker_domain(terrascript.Resource):
+    pass
+
+
+class aws_sagemaker_endpoint(terrascript.Resource):
     pass
 
 
@@ -1674,7 +1962,23 @@ class aws_sagemaker_endpoint_configuration(terrascript.Resource):
     pass
 
 
-class aws_sagemaker_endpoint(terrascript.Resource):
+class aws_sagemaker_feature_group(terrascript.Resource):
+    pass
+
+
+class aws_sagemaker_image(terrascript.Resource):
+    pass
+
+
+class aws_sagemaker_image_version(terrascript.Resource):
+    pass
+
+
+class aws_sagemaker_model(terrascript.Resource):
+    pass
+
+
+class aws_sagemaker_model_package_group(terrascript.Resource):
     pass
 
 
@@ -1686,7 +1990,15 @@ class aws_sagemaker_notebook_instance(terrascript.Resource):
     pass
 
 
+class aws_sagemaker_user_profile(terrascript.Resource):
+    pass
+
+
 class aws_secretsmanager_secret(terrascript.Resource):
+    pass
+
+
+class aws_secretsmanager_secret_policy(terrascript.Resource):
     pass
 
 
@@ -1782,6 +2094,10 @@ class aws_s3_bucket_object(terrascript.Resource):
     pass
 
 
+class aws_s3_bucket_ownership_controls(terrascript.Resource):
+    pass
+
+
 class aws_s3_bucket_notification(terrascript.Resource):
     pass
 
@@ -1791,6 +2107,26 @@ class aws_s3_bucket_metric(terrascript.Resource):
 
 
 class aws_s3_bucket_inventory(terrascript.Resource):
+    pass
+
+
+class aws_s3_object_copy(terrascript.Resource):
+    pass
+
+
+class aws_s3control_bucket(terrascript.Resource):
+    pass
+
+
+class aws_s3control_bucket_policy(terrascript.Resource):
+    pass
+
+
+class aws_s3control_bucket_lifecycle_configuration(terrascript.Resource):
+    pass
+
+
+class aws_s3outposts_endpoint(terrascript.Resource):
     pass
 
 
@@ -1814,7 +2150,19 @@ class aws_securityhub_account(terrascript.Resource):
     pass
 
 
+class aws_securityhub_action_target(terrascript.Resource):
+    pass
+
+
+class aws_securityhub_invite_accepter(terrascript.Resource):
+    pass
+
+
 class aws_securityhub_member(terrascript.Resource):
+    pass
+
+
+class aws_securityhub_organization_admin_account(terrascript.Resource):
     pass
 
 
@@ -1851,6 +2199,18 @@ class aws_servicequotas_service_quota(terrascript.Resource):
 
 
 class aws_shield_protection(terrascript.Resource):
+    pass
+
+
+class aws_signer_signing_job(terrascript.Resource):
+    pass
+
+
+class aws_signer_signing_profile(terrascript.Resource):
+    pass
+
+
+class aws_signer_signing_profile_permission(terrascript.Resource):
     pass
 
 
@@ -1898,6 +2258,22 @@ class aws_ssm_resource_data_sync(terrascript.Resource):
     pass
 
 
+class aws_ssoadmin_account_assignment(terrascript.Resource):
+    pass
+
+
+class aws_ssoadmin_managed_policy_attachment(terrascript.Resource):
+    pass
+
+
+class aws_ssoadmin_permission_set(terrascript.Resource):
+    pass
+
+
+class aws_ssoadmin_permission_set_inline_policy(terrascript.Resource):
+    pass
+
+
 class aws_storagegateway_cache(terrascript.Resource):
     pass
 
@@ -1915,6 +2291,14 @@ class aws_storagegateway_nfs_file_share(terrascript.Resource):
 
 
 class aws_storagegateway_smb_file_share(terrascript.Resource):
+    pass
+
+
+class aws_storagegateway_stored_iscsi_volume(terrascript.Resource):
+    pass
+
+
+class aws_storagegateway_tape_pool(terrascript.Resource):
     pass
 
 
@@ -1987,6 +2371,10 @@ class aws_subnet(terrascript.Resource):
 
 
 class aws_swf_domain(terrascript.Resource):
+    pass
+
+
+class aws_synthetics_canary(terrascript.Resource):
     pass
 
 
@@ -2279,6 +2667,14 @@ class aws_pinpoint_gcm_channel(terrascript.Resource):
 
 
 class aws_pinpoint_sms_channel(terrascript.Resource):
+    pass
+
+
+class aws_xray_encryption_config(terrascript.Resource):
+    pass
+
+
+class aws_xray_group(terrascript.Resource):
     pass
 
 

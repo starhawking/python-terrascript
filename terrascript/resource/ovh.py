@@ -14,6 +14,10 @@ class ovh_cloud_user(terrascript.Resource):
     pass
 
 
+class ovh_dedicated_ceph_acl(terrascript.Resource):
+    pass
+
+
 class ovh_dedicated_server_install_task(terrascript.Resource):
     pass
 
@@ -122,6 +126,7 @@ __all__ = [
     "ovh_cloud_network_private",
     "ovh_cloud_network_private_subnet",
     "ovh_cloud_user",
+    "ovh_dedicated_ceph_acl",
     "ovh_dedicated_server_install_task",
     "ovh_dedicated_server_reboot_task",
     "ovh_dedicated_server_update",

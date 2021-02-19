@@ -726,6 +726,14 @@ class alicloud_resource_manager_policy_attachments(terrascript.Data):
     pass
 
 
+class alicloud_dcdn_domains(terrascript.Data):
+    pass
+
+
+class alicloud_mse_clusters(terrascript.Data):
+    pass
+
+
 __all__ = [
     "alicloud_account",
     "alicloud_caller_identity",
@@ -908,4 +916,6 @@ __all__ = [
     "alicloud_oos_templates",
     "alicloud_oos_executions",
     "alicloud_resource_manager_policy_attachments",
+    "alicloud_dcdn_domains",
+    "alicloud_mse_clusters",
 ]

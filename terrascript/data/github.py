@@ -22,6 +22,10 @@ class github_membership(terrascript.Data):
     pass
 
 
+class github_organization(terrascript.Data):
+    pass
+
+
 class github_organization_team_sync_groups(terrascript.Data):
     pass
 
@@ -35,6 +39,10 @@ class github_repositories(terrascript.Data):
 
 
 class github_repository(terrascript.Data):
+    pass
+
+
+class github_repository_milestone(terrascript.Data):
     pass
 
 
@@ -52,10 +60,12 @@ __all__ = [
     "github_collaborators",
     "github_ip_ranges",
     "github_membership",
+    "github_organization",
     "github_organization_team_sync_groups",
     "github_release",
     "github_repositories",
     "github_repository",
+    "github_repository_milestone",
     "github_team",
     "github_user",
 ]
