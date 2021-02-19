@@ -6,6 +6,10 @@ class google_active_folder(terrascript.Data):
     pass
 
 
+class google_app_engine_default_service_account(terrascript.Data):
+    pass
+
+
 class google_billing_account(terrascript.Data):
     pass
 
@@ -23,6 +27,26 @@ class google_client_openid_userinfo(terrascript.Data):
 
 
 class google_cloudfunctions_function(terrascript.Data):
+    pass
+
+
+class google_cloud_identity_groups(terrascript.Data):
+    pass
+
+
+class google_cloud_identity_group_memberships(terrascript.Data):
+    pass
+
+
+class google_cloud_run_locations(terrascript.Data):
+    pass
+
+
+class google_cloud_run_service(terrascript.Data):
+    pass
+
+
+class google_composer_environment(terrascript.Data):
     pass
 
 
@@ -54,6 +78,10 @@ class google_compute_global_address(terrascript.Data):
     pass
 
 
+class google_compute_global_forwarding_rule(terrascript.Data):
+    pass
+
+
 class google_compute_image(terrascript.Data):
     pass
 
@@ -62,11 +90,15 @@ class google_compute_instance(terrascript.Data):
     pass
 
 
+class google_compute_instance_group(terrascript.Data):
+    pass
+
+
 class google_compute_instance_serial_port(terrascript.Data):
     pass
 
 
-class google_compute_instance_group(terrascript.Data):
+class google_compute_instance_template(terrascript.Data):
     pass
 
 
@@ -91,6 +123,14 @@ class google_compute_regions(terrascript.Data):
 
 
 class google_compute_region_instance_group(terrascript.Data):
+    pass
+
+
+class google_compute_region_ssl_certificate(terrascript.Data):
+    pass
+
+
+class google_compute_resource_policy(terrascript.Data):
     pass
 
 
@@ -158,6 +198,10 @@ class google_iam_testable_permissions(terrascript.Data):
     pass
 
 
+class google_iap_client(terrascript.Data):
+    pass
+
+
 class google_kms_crypto_key(terrascript.Data):
     pass
 
@@ -190,6 +234,14 @@ class google_monitoring_notification_channel(terrascript.Data):
     pass
 
 
+class google_monitoring_cluster_istio_service(terrascript.Data):
+    pass
+
+
+class google_monitoring_mesh_istio_service(terrascript.Data):
+    pass
+
+
 class google_monitoring_app_engine_service(terrascript.Data):
     pass
 
@@ -218,6 +270,14 @@ class google_project_organization_policy(terrascript.Data):
     pass
 
 
+class google_pubsub_topic(terrascript.Data):
+    pass
+
+
+class google_runtimeconfig_config(terrascript.Data):
+    pass
+
+
 class google_secret_manager_secret_version(terrascript.Data):
     pass
 
@@ -238,7 +298,15 @@ class google_service_account_key(terrascript.Data):
     pass
 
 
+class google_spanner_instance(terrascript.Data):
+    pass
+
+
 class google_sql_ca_certs(terrascript.Data):
+    pass
+
+
+class google_sql_backup_run(terrascript.Data):
     pass
 
 
@@ -247,6 +315,10 @@ class google_sql_database_instance(terrascript.Data):
 
 
 class google_storage_bucket_object(terrascript.Data):
+    pass
+
+
+class google_storage_bucket_object_content(terrascript.Data):
     pass
 
 
