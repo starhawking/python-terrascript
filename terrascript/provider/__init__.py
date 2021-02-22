@@ -14,6 +14,7 @@ from .cloudflare import *
 from .cloudscale import *
 from .cloudstack import *
 from .cobbler import *
+from .consul import *
 from .datadog import *
 from .digitalocean import *
 from .dme import *
