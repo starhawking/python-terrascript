@@ -3,7 +3,11 @@ import terrascript
 
 
 class vault(terrascript.Provider):
-    pass
-
+    '''Terraform Vault provider
+    
+    '''
+    __description__ = "Terraform Vault provider"
+    __version__ = "2.11.0-withsleep"
+    
 
 __all__ = ["vault"]

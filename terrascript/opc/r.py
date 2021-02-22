@@ -1,4 +1,7 @@
 # terrascript/opc/r.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 import terrascript
 
 
@@ -15,6 +18,14 @@ class opc_compute_image_list_entry(terrascript.Resource):
 
 
 class opc_compute_instance(terrascript.Resource):
+    pass
+
+
+class opc_compute_ip_address_association(terrascript.Resource):
+    pass
+
+
+class opc_compute_ip_address_prefix_set(terrascript.Resource):
     pass
 
 
@@ -42,7 +53,15 @@ class opc_compute_machine_image(terrascript.Resource):
     pass
 
 
+class opc_compute_orchestrated_instance(terrascript.Resource):
+    pass
+
+
 class opc_compute_route(terrascript.Resource):
+    pass
+
+
+class opc_compute_sec_rule(terrascript.Resource):
     pass
 
 
@@ -62,11 +81,15 @@ class opc_compute_security_list(terrascript.Resource):
     pass
 
 
+class opc_compute_security_protocol(terrascript.Resource):
+    pass
+
+
 class opc_compute_security_rule(terrascript.Resource):
     pass
 
 
-class opc_compute_sec_rule(terrascript.Resource):
+class opc_compute_snapshot(terrascript.Resource):
     pass
 
 
@@ -87,26 +110,6 @@ class opc_compute_storage_volume_snapshot(terrascript.Resource):
 
 
 class opc_compute_vnic_set(terrascript.Resource):
-    pass
-
-
-class opc_compute_security_protocol(terrascript.Resource):
-    pass
-
-
-class opc_compute_ip_address_prefix_set(terrascript.Resource):
-    pass
-
-
-class opc_compute_ip_address_association(terrascript.Resource):
-    pass
-
-
-class opc_compute_snapshot(terrascript.Resource):
-    pass
-
-
-class opc_compute_orchestrated_instance(terrascript.Resource):
     pass
 
 

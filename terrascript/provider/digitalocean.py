@@ -3,7 +3,11 @@ import terrascript
 
 
 class digitalocean(terrascript.Provider):
-    pass
-
+    '''Terraform DigitalOcean provider
+    
+    '''
+    __description__ = "Terraform DigitalOcean provider"
+    __version__ = "2.5.1"
+    
 
 __all__ = ["digitalocean"]

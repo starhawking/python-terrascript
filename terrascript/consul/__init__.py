@@ -1,2 +1,9 @@
-# Consul provider is not created through makecode.py
-# because of issues 24.
+# terrascript/consul/__init__.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
+
+import terrascript
+
+class consul(terrascript.Provider):
+    pass

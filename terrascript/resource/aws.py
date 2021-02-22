@@ -18,6 +18,30 @@ class aws_acmpca_certificate_authority(terrascript.Resource):
     pass
 
 
+class aws_alb(terrascript.Resource):
+    pass
+
+
+class aws_alb_listener(terrascript.Resource):
+    pass
+
+
+class aws_alb_listener_certificate(terrascript.Resource):
+    pass
+
+
+class aws_alb_listener_rule(terrascript.Resource):
+    pass
+
+
+class aws_alb_target_group(terrascript.Resource):
+    pass
+
+
+class aws_alb_target_group_attachment(terrascript.Resource):
+    pass
+
+
 class aws_ami(terrascript.Resource):
     pass
 
@@ -182,15 +206,15 @@ class aws_app_cookie_stickiness_policy(terrascript.Resource):
     pass
 
 
-class aws_appautoscaling_target(terrascript.Resource):
-    pass
-
-
 class aws_appautoscaling_policy(terrascript.Resource):
     pass
 
 
 class aws_appautoscaling_scheduled_action(terrascript.Resource):
+    pass
+
+
+class aws_appautoscaling_target(terrascript.Resource):
     pass
 
 
@@ -310,6 +334,18 @@ class aws_backup_vault_policy(terrascript.Resource):
     pass
 
 
+class aws_batch_compute_environment(terrascript.Resource):
+    pass
+
+
+class aws_batch_job_definition(terrascript.Resource):
+    pass
+
+
+class aws_batch_job_queue(terrascript.Resource):
+    pass
+
+
 class aws_budgets_budget(terrascript.Resource):
     pass
 
@@ -354,7 +390,27 @@ class aws_cloudfront_realtime_log_config(terrascript.Resource):
     pass
 
 
+class aws_cloudhsm_v2_cluster(terrascript.Resource):
+    pass
+
+
+class aws_cloudhsm_v2_hsm(terrascript.Resource):
+    pass
+
+
 class aws_cloudtrail(terrascript.Resource):
+    pass
+
+
+class aws_cloudwatch_composite_alarm(terrascript.Resource):
+    pass
+
+
+class aws_cloudwatch_dashboard(terrascript.Resource):
+    pass
+
+
+class aws_cloudwatch_event_archive(terrascript.Resource):
     pass
 
 
@@ -371,10 +427,6 @@ class aws_cloudwatch_event_rule(terrascript.Resource):
 
 
 class aws_cloudwatch_event_target(terrascript.Resource):
-    pass
-
-
-class aws_cloudwatch_event_archive(terrascript.Resource):
     pass
 
 
@@ -403,6 +455,110 @@ class aws_cloudwatch_log_stream(terrascript.Resource):
 
 
 class aws_cloudwatch_log_subscription_filter(terrascript.Resource):
+    pass
+
+
+class aws_cloudwatch_metric_alarm(terrascript.Resource):
+    pass
+
+
+class aws_codeartifact_domain(terrascript.Resource):
+    pass
+
+
+class aws_codeartifact_domain_permissions_policy(terrascript.Resource):
+    pass
+
+
+class aws_codeartifact_repository(terrascript.Resource):
+    pass
+
+
+class aws_codeartifact_repository_permissions_policy(terrascript.Resource):
+    pass
+
+
+class aws_codebuild_project(terrascript.Resource):
+    pass
+
+
+class aws_codebuild_report_group(terrascript.Resource):
+    pass
+
+
+class aws_codebuild_source_credential(terrascript.Resource):
+    pass
+
+
+class aws_codebuild_webhook(terrascript.Resource):
+    pass
+
+
+class aws_codecommit_repository(terrascript.Resource):
+    pass
+
+
+class aws_codecommit_trigger(terrascript.Resource):
+    pass
+
+
+class aws_codedeploy_app(terrascript.Resource):
+    pass
+
+
+class aws_codedeploy_deployment_config(terrascript.Resource):
+    pass
+
+
+class aws_codedeploy_deployment_group(terrascript.Resource):
+    pass
+
+
+class aws_codepipeline(terrascript.Resource):
+    pass
+
+
+class aws_codepipeline_webhook(terrascript.Resource):
+    pass
+
+
+class aws_codestarconnections_connection(terrascript.Resource):
+    pass
+
+
+class aws_codestarnotifications_notification_rule(terrascript.Resource):
+    pass
+
+
+class aws_cognito_identity_pool(terrascript.Resource):
+    pass
+
+
+class aws_cognito_identity_pool_roles_attachment(terrascript.Resource):
+    pass
+
+
+class aws_cognito_identity_provider(terrascript.Resource):
+    pass
+
+
+class aws_cognito_resource_server(terrascript.Resource):
+    pass
+
+
+class aws_cognito_user_group(terrascript.Resource):
+    pass
+
+
+class aws_cognito_user_pool(terrascript.Resource):
+    pass
+
+
+class aws_cognito_user_pool_client(terrascript.Resource):
+    pass
+
+
+class aws_cognito_user_pool_domain(terrascript.Resource):
     pass
 
 
@@ -443,126 +599,6 @@ class aws_config_organization_managed_rule(terrascript.Resource):
 
 
 class aws_config_remediation_configuration(terrascript.Resource):
-    pass
-
-
-class aws_cognito_identity_pool(terrascript.Resource):
-    pass
-
-
-class aws_cognito_identity_pool_roles_attachment(terrascript.Resource):
-    pass
-
-
-class aws_cognito_identity_provider(terrascript.Resource):
-    pass
-
-
-class aws_cognito_user_group(terrascript.Resource):
-    pass
-
-
-class aws_cognito_user_pool(terrascript.Resource):
-    pass
-
-
-class aws_cognito_user_pool_client(terrascript.Resource):
-    pass
-
-
-class aws_cognito_user_pool_domain(terrascript.Resource):
-    pass
-
-
-class aws_cloudhsm_v2_cluster(terrascript.Resource):
-    pass
-
-
-class aws_cloudhsm_v2_hsm(terrascript.Resource):
-    pass
-
-
-class aws_cognito_resource_server(terrascript.Resource):
-    pass
-
-
-class aws_cloudwatch_composite_alarm(terrascript.Resource):
-    pass
-
-
-class aws_cloudwatch_metric_alarm(terrascript.Resource):
-    pass
-
-
-class aws_cloudwatch_dashboard(terrascript.Resource):
-    pass
-
-
-class aws_codedeploy_app(terrascript.Resource):
-    pass
-
-
-class aws_codedeploy_deployment_config(terrascript.Resource):
-    pass
-
-
-class aws_codedeploy_deployment_group(terrascript.Resource):
-    pass
-
-
-class aws_codecommit_repository(terrascript.Resource):
-    pass
-
-
-class aws_codecommit_trigger(terrascript.Resource):
-    pass
-
-
-class aws_codeartifact_domain(terrascript.Resource):
-    pass
-
-
-class aws_codeartifact_domain_permissions_policy(terrascript.Resource):
-    pass
-
-
-class aws_codeartifact_repository(terrascript.Resource):
-    pass
-
-
-class aws_codeartifact_repository_permissions_policy(terrascript.Resource):
-    pass
-
-
-class aws_codebuild_project(terrascript.Resource):
-    pass
-
-
-class aws_codebuild_report_group(terrascript.Resource):
-    pass
-
-
-class aws_codebuild_source_credential(terrascript.Resource):
-    pass
-
-
-class aws_codebuild_webhook(terrascript.Resource):
-    pass
-
-
-class aws_codepipeline(terrascript.Resource):
-    pass
-
-
-class aws_codepipeline_webhook(terrascript.Resource):
-    pass
-
-
-class aws_codestarconnections_connection(terrascript.Resource):
-    pass
-
-
-class aws_codestarnotifications_notification_rule(terrascript.Resource):
     pass
 
 
@@ -666,15 +702,39 @@ class aws_db_subnet_group(terrascript.Resource):
     pass
 
 
+class aws_default_network_acl(terrascript.Resource):
+    pass
+
+
+class aws_default_route_table(terrascript.Resource):
+    pass
+
+
+class aws_default_security_group(terrascript.Resource):
+    pass
+
+
+class aws_default_subnet(terrascript.Resource):
+    pass
+
+
+class aws_default_vpc(terrascript.Resource):
+    pass
+
+
+class aws_default_vpc_dhcp_options(terrascript.Resource):
+    pass
+
+
 class aws_devicefarm_project(terrascript.Resource):
     pass
 
 
-class aws_directory_service_directory(terrascript.Resource):
+class aws_directory_service_conditional_forwarder(terrascript.Resource):
     pass
 
 
-class aws_directory_service_conditional_forwarder(terrascript.Resource):
+class aws_directory_service_directory(terrascript.Resource):
     pass
 
 
@@ -794,15 +854,15 @@ class aws_dx_transit_virtual_interface(terrascript.Resource):
     pass
 
 
+class aws_dynamodb_global_table(terrascript.Resource):
+    pass
+
+
 class aws_dynamodb_table(terrascript.Resource):
     pass
 
 
 class aws_dynamodb_table_item(terrascript.Resource):
-    pass
-
-
-class aws_dynamodb_global_table(terrascript.Resource):
     pass
 
 
@@ -882,11 +942,11 @@ class aws_ec2_traffic_mirror_filter_rule(terrascript.Resource):
     pass
 
 
-class aws_ec2_traffic_mirror_target(terrascript.Resource):
+class aws_ec2_traffic_mirror_session(terrascript.Resource):
     pass
 
 
-class aws_ec2_traffic_mirror_session(terrascript.Resource):
+class aws_ec2_traffic_mirror_target(terrascript.Resource):
     pass
 
 
@@ -998,6 +1058,22 @@ class aws_eks_node_group(terrascript.Resource):
     pass
 
 
+class aws_elastic_beanstalk_application(terrascript.Resource):
+    pass
+
+
+class aws_elastic_beanstalk_application_version(terrascript.Resource):
+    pass
+
+
+class aws_elastic_beanstalk_configuration_template(terrascript.Resource):
+    pass
+
+
+class aws_elastic_beanstalk_environment(terrascript.Resource):
+    pass
+
+
 class aws_elasticache_cluster(terrascript.Resource):
     pass
 
@@ -1019,22 +1095,6 @@ class aws_elasticache_security_group(terrascript.Resource):
 
 
 class aws_elasticache_subnet_group(terrascript.Resource):
-    pass
-
-
-class aws_elastic_beanstalk_application(terrascript.Resource):
-    pass
-
-
-class aws_elastic_beanstalk_application_version(terrascript.Resource):
-    pass
-
-
-class aws_elastic_beanstalk_configuration_template(terrascript.Resource):
-    pass
-
-
-class aws_elastic_beanstalk_environment(terrascript.Resource):
     pass
 
 
@@ -1066,11 +1126,11 @@ class aws_emr_cluster(terrascript.Resource):
     pass
 
 
-class aws_emr_instance_group(terrascript.Resource):
+class aws_emr_instance_fleet(terrascript.Resource):
     pass
 
 
-class aws_emr_instance_fleet(terrascript.Resource):
+class aws_emr_instance_group(terrascript.Resource):
     pass
 
 
@@ -1086,19 +1146,19 @@ class aws_flow_log(terrascript.Resource):
     pass
 
 
-class aws_fsx_lustre_file_system(terrascript.Resource):
-    pass
-
-
-class aws_fsx_windows_file_system(terrascript.Resource):
-    pass
-
-
 class aws_fms_admin_account(terrascript.Resource):
     pass
 
 
 class aws_fms_policy(terrascript.Resource):
+    pass
+
+
+class aws_fsx_lustre_file_system(terrascript.Resource):
+    pass
+
+
+class aws_fsx_windows_file_system(terrascript.Resource):
     pass
 
 
@@ -1154,15 +1214,15 @@ class aws_glue_connection(terrascript.Resource):
     pass
 
 
-class aws_glue_dev_endpoint(terrascript.Resource):
-    pass
-
-
 class aws_glue_crawler(terrascript.Resource):
     pass
 
 
 class aws_glue_data_catalog_encryption_settings(terrascript.Resource):
+    pass
+
+
+class aws_glue_dev_endpoint(terrascript.Resource):
     pass
 
 
@@ -1254,15 +1314,15 @@ class aws_iam_account_password_policy(terrascript.Resource):
     pass
 
 
-class aws_iam_group_policy(terrascript.Resource):
-    pass
-
-
 class aws_iam_group(terrascript.Resource):
     pass
 
 
 class aws_iam_group_membership(terrascript.Resource):
+    pass
+
+
+class aws_iam_group_policy(terrascript.Resource):
     pass
 
 
@@ -1286,7 +1346,7 @@ class aws_iam_policy_attachment(terrascript.Resource):
     pass
 
 
-class aws_iam_role_policy_attachment(terrascript.Resource):
+class aws_iam_role(terrascript.Resource):
     pass
 
 
@@ -1294,7 +1354,7 @@ class aws_iam_role_policy(terrascript.Resource):
     pass
 
 
-class aws_iam_role(terrascript.Resource):
+class aws_iam_role_policy_attachment(terrascript.Resource):
     pass
 
 
@@ -1310,11 +1370,15 @@ class aws_iam_service_linked_role(terrascript.Resource):
     pass
 
 
+class aws_iam_user(terrascript.Resource):
+    pass
+
+
 class aws_iam_user_group_membership(terrascript.Resource):
     pass
 
 
-class aws_iam_user_policy_attachment(terrascript.Resource):
+class aws_iam_user_login_profile(terrascript.Resource):
     pass
 
 
@@ -1322,15 +1386,11 @@ class aws_iam_user_policy(terrascript.Resource):
     pass
 
 
+class aws_iam_user_policy_attachment(terrascript.Resource):
+    pass
+
+
 class aws_iam_user_ssh_key(terrascript.Resource):
-    pass
-
-
-class aws_iam_user(terrascript.Resource):
-    pass
-
-
-class aws_iam_user_login_profile(terrascript.Resource):
     pass
 
 
@@ -1390,6 +1450,10 @@ class aws_iot_policy_attachment(terrascript.Resource):
     pass
 
 
+class aws_iot_role_alias(terrascript.Resource):
+    pass
+
+
 class aws_iot_thing(terrascript.Resource):
     pass
 
@@ -1406,19 +1470,11 @@ class aws_iot_topic_rule(terrascript.Resource):
     pass
 
 
-class aws_iot_role_alias(terrascript.Resource):
-    pass
-
-
 class aws_key_pair(terrascript.Resource):
     pass
 
 
 class aws_kinesis_analytics_application(terrascript.Resource):
-    pass
-
-
-class aws_kinesisanalyticsv2_application(terrascript.Resource):
     pass
 
 
@@ -1434,7 +1490,15 @@ class aws_kinesis_video_stream(terrascript.Resource):
     pass
 
 
+class aws_kinesisanalyticsv2_application(terrascript.Resource):
+    pass
+
+
 class aws_kms_alias(terrascript.Resource):
+    pass
+
+
+class aws_kms_ciphertext(terrascript.Resource):
     pass
 
 
@@ -1447,10 +1511,6 @@ class aws_kms_grant(terrascript.Resource):
 
 
 class aws_kms_key(terrascript.Resource):
-    pass
-
-
-class aws_kms_ciphertext(terrascript.Resource):
     pass
 
 
@@ -1478,11 +1538,11 @@ class aws_lambda_event_source_mapping(terrascript.Resource):
     pass
 
 
-class aws_lambda_function_event_invoke_config(terrascript.Resource):
+class aws_lambda_function(terrascript.Resource):
     pass
 
 
-class aws_lambda_function(terrascript.Resource):
+class aws_lambda_function_event_invoke_config(terrascript.Resource):
     pass
 
 
@@ -1503,6 +1563,38 @@ class aws_launch_configuration(terrascript.Resource):
 
 
 class aws_launch_template(terrascript.Resource):
+    pass
+
+
+class aws_lb(terrascript.Resource):
+    pass
+
+
+class aws_lb_cookie_stickiness_policy(terrascript.Resource):
+    pass
+
+
+class aws_lb_listener(terrascript.Resource):
+    pass
+
+
+class aws_lb_listener_certificate(terrascript.Resource):
+    pass
+
+
+class aws_lb_listener_rule(terrascript.Resource):
+    pass
+
+
+class aws_lb_ssl_negotiation_policy(terrascript.Resource):
+    pass
+
+
+class aws_lb_target_group(terrascript.Resource):
+    pass
+
+
+class aws_lb_target_group_attachment(terrascript.Resource):
     pass
 
 
@@ -1550,14 +1642,6 @@ class aws_lightsail_static_ip_attachment(terrascript.Resource):
     pass
 
 
-class aws_lb_cookie_stickiness_policy(terrascript.Resource):
-    pass
-
-
-class aws_load_balancer_policy(terrascript.Resource):
-    pass
-
-
 class aws_load_balancer_backend_server_policy(terrascript.Resource):
     pass
 
@@ -1566,7 +1650,7 @@ class aws_load_balancer_listener_policy(terrascript.Resource):
     pass
 
 
-class aws_lb_ssl_negotiation_policy(terrascript.Resource):
+class aws_load_balancer_policy(terrascript.Resource):
     pass
 
 
@@ -1579,14 +1663,6 @@ class aws_macie_s3_bucket_association(terrascript.Resource):
 
 
 class aws_main_route_table_association(terrascript.Resource):
-    pass
-
-
-class aws_mq_broker(terrascript.Resource):
-    pass
-
-
-class aws_mq_configuration(terrascript.Resource):
     pass
 
 
@@ -1606,6 +1682,14 @@ class aws_media_store_container_policy(terrascript.Resource):
     pass
 
 
+class aws_mq_broker(terrascript.Resource):
+    pass
+
+
+class aws_mq_configuration(terrascript.Resource):
+    pass
+
+
 class aws_msk_cluster(terrascript.Resource):
     pass
 
@@ -1619,14 +1703,6 @@ class aws_msk_scram_secret_association(terrascript.Resource):
 
 
 class aws_nat_gateway(terrascript.Resource):
-    pass
-
-
-class aws_network_acl(terrascript.Resource):
-    pass
-
-
-class aws_default_network_acl(terrascript.Resource):
     pass
 
 
@@ -1658,6 +1734,10 @@ class aws_neptune_subnet_group(terrascript.Resource):
     pass
 
 
+class aws_network_acl(terrascript.Resource):
+    pass
+
+
 class aws_network_acl_rule(terrascript.Resource):
     pass
 
@@ -1667,6 +1747,10 @@ class aws_network_interface(terrascript.Resource):
 
 
 class aws_network_interface_attachment(terrascript.Resource):
+    pass
+
+
+class aws_network_interface_sg_attachment(terrascript.Resource):
     pass
 
 
@@ -1694,11 +1778,11 @@ class aws_opsworks_application(terrascript.Resource):
     pass
 
 
-class aws_opsworks_stack(terrascript.Resource):
+class aws_opsworks_custom_layer(terrascript.Resource):
     pass
 
 
-class aws_opsworks_java_app_layer(terrascript.Resource):
+class aws_opsworks_ganglia_layer(terrascript.Resource):
     pass
 
 
@@ -1706,19 +1790,11 @@ class aws_opsworks_haproxy_layer(terrascript.Resource):
     pass
 
 
-class aws_opsworks_static_web_layer(terrascript.Resource):
+class aws_opsworks_instance(terrascript.Resource):
     pass
 
 
-class aws_opsworks_php_app_layer(terrascript.Resource):
-    pass
-
-
-class aws_opsworks_rails_app_layer(terrascript.Resource):
-    pass
-
-
-class aws_opsworks_nodejs_app_layer(terrascript.Resource):
+class aws_opsworks_java_app_layer(terrascript.Resource):
     pass
 
 
@@ -1730,19 +1806,7 @@ class aws_opsworks_mysql_layer(terrascript.Resource):
     pass
 
 
-class aws_opsworks_ganglia_layer(terrascript.Resource):
-    pass
-
-
-class aws_opsworks_custom_layer(terrascript.Resource):
-    pass
-
-
-class aws_opsworks_instance(terrascript.Resource):
-    pass
-
-
-class aws_opsworks_user_profile(terrascript.Resource):
+class aws_opsworks_nodejs_app_layer(terrascript.Resource):
     pass
 
 
@@ -1750,7 +1814,31 @@ class aws_opsworks_permission(terrascript.Resource):
     pass
 
 
+class aws_opsworks_php_app_layer(terrascript.Resource):
+    pass
+
+
+class aws_opsworks_rails_app_layer(terrascript.Resource):
+    pass
+
+
 class aws_opsworks_rds_db_instance(terrascript.Resource):
+    pass
+
+
+class aws_opsworks_stack(terrascript.Resource):
+    pass
+
+
+class aws_opsworks_static_web_layer(terrascript.Resource):
+    pass
+
+
+class aws_opsworks_user_profile(terrascript.Resource):
+    pass
+
+
+class aws_organizations_account(terrascript.Resource):
     pass
 
 
@@ -1758,7 +1846,7 @@ class aws_organizations_organization(terrascript.Resource):
     pass
 
 
-class aws_organizations_account(terrascript.Resource):
+class aws_organizations_organizational_unit(terrascript.Resource):
     pass
 
 
@@ -1770,7 +1858,47 @@ class aws_organizations_policy_attachment(terrascript.Resource):
     pass
 
 
-class aws_organizations_organizational_unit(terrascript.Resource):
+class aws_pinpoint_adm_channel(terrascript.Resource):
+    pass
+
+
+class aws_pinpoint_apns_channel(terrascript.Resource):
+    pass
+
+
+class aws_pinpoint_apns_sandbox_channel(terrascript.Resource):
+    pass
+
+
+class aws_pinpoint_apns_voip_channel(terrascript.Resource):
+    pass
+
+
+class aws_pinpoint_apns_voip_sandbox_channel(terrascript.Resource):
+    pass
+
+
+class aws_pinpoint_app(terrascript.Resource):
+    pass
+
+
+class aws_pinpoint_baidu_channel(terrascript.Resource):
+    pass
+
+
+class aws_pinpoint_email_channel(terrascript.Resource):
+    pass
+
+
+class aws_pinpoint_event_stream(terrascript.Resource):
+    pass
+
+
+class aws_pinpoint_gcm_channel(terrascript.Resource):
+    pass
+
+
+class aws_pinpoint_sms_channel(terrascript.Resource):
     pass
 
 
@@ -1838,7 +1966,7 @@ class aws_redshift_cluster(terrascript.Resource):
     pass
 
 
-class aws_redshift_security_group(terrascript.Resource):
+class aws_redshift_event_subscription(terrascript.Resource):
     pass
 
 
@@ -1846,7 +1974,7 @@ class aws_redshift_parameter_group(terrascript.Resource):
     pass
 
 
-class aws_redshift_subnet_group(terrascript.Resource):
+class aws_redshift_security_group(terrascript.Resource):
     pass
 
 
@@ -1862,7 +1990,7 @@ class aws_redshift_snapshot_schedule_association(terrascript.Resource):
     pass
 
 
-class aws_redshift_event_subscription(terrascript.Resource):
+class aws_redshift_subnet_group(terrascript.Resource):
     pass
 
 
@@ -1870,7 +1998,15 @@ class aws_resourcegroups_group(terrascript.Resource):
     pass
 
 
+class aws_route(terrascript.Resource):
+    pass
+
+
 class aws_route53_delegation_set(terrascript.Resource):
+    pass
+
+
+class aws_route53_health_check(terrascript.Resource):
     pass
 
 
@@ -1883,22 +2019,6 @@ class aws_route53_query_log(terrascript.Resource):
 
 
 class aws_route53_record(terrascript.Resource):
-    pass
-
-
-class aws_route53_zone_association(terrascript.Resource):
-    pass
-
-
-class aws_route53_vpc_association_authorization(terrascript.Resource):
-    pass
-
-
-class aws_route53_zone(terrascript.Resource):
-    pass
-
-
-class aws_route53_health_check(terrascript.Resource):
     pass
 
 
@@ -1918,15 +2038,23 @@ class aws_route53_resolver_query_log_config_association(terrascript.Resource):
     pass
 
 
-class aws_route53_resolver_rule_association(terrascript.Resource):
-    pass
-
-
 class aws_route53_resolver_rule(terrascript.Resource):
     pass
 
 
-class aws_route(terrascript.Resource):
+class aws_route53_resolver_rule_association(terrascript.Resource):
+    pass
+
+
+class aws_route53_vpc_association_authorization(terrascript.Resource):
+    pass
+
+
+class aws_route53_zone(terrascript.Resource):
+    pass
+
+
+class aws_route53_zone_association(terrascript.Resource):
     pass
 
 
@@ -1934,11 +2062,71 @@ class aws_route_table(terrascript.Resource):
     pass
 
 
-class aws_default_route_table(terrascript.Resource):
+class aws_route_table_association(terrascript.Resource):
     pass
 
 
-class aws_route_table_association(terrascript.Resource):
+class aws_s3_access_point(terrascript.Resource):
+    pass
+
+
+class aws_s3_account_public_access_block(terrascript.Resource):
+    pass
+
+
+class aws_s3_bucket(terrascript.Resource):
+    pass
+
+
+class aws_s3_bucket_analytics_configuration(terrascript.Resource):
+    pass
+
+
+class aws_s3_bucket_inventory(terrascript.Resource):
+    pass
+
+
+class aws_s3_bucket_metric(terrascript.Resource):
+    pass
+
+
+class aws_s3_bucket_notification(terrascript.Resource):
+    pass
+
+
+class aws_s3_bucket_object(terrascript.Resource):
+    pass
+
+
+class aws_s3_bucket_ownership_controls(terrascript.Resource):
+    pass
+
+
+class aws_s3_bucket_policy(terrascript.Resource):
+    pass
+
+
+class aws_s3_bucket_public_access_block(terrascript.Resource):
+    pass
+
+
+class aws_s3_object_copy(terrascript.Resource):
+    pass
+
+
+class aws_s3control_bucket(terrascript.Resource):
+    pass
+
+
+class aws_s3control_bucket_lifecycle_configuration(terrascript.Resource):
+    pass
+
+
+class aws_s3control_bucket_policy(terrascript.Resource):
+    pass
+
+
+class aws_s3outposts_endpoint(terrascript.Resource):
     pass
 
 
@@ -1982,11 +2170,11 @@ class aws_sagemaker_model_package_group(terrascript.Resource):
     pass
 
 
-class aws_sagemaker_notebook_instance_lifecycle_configuration(terrascript.Resource):
+class aws_sagemaker_notebook_instance(terrascript.Resource):
     pass
 
 
-class aws_sagemaker_notebook_instance(terrascript.Resource):
+class aws_sagemaker_notebook_instance_lifecycle_configuration(terrascript.Resource):
     pass
 
 
@@ -2002,143 +2190,15 @@ class aws_secretsmanager_secret_policy(terrascript.Resource):
     pass
 
 
-class aws_secretsmanager_secret_version(terrascript.Resource):
-    pass
-
-
 class aws_secretsmanager_secret_rotation(terrascript.Resource):
     pass
 
 
-class aws_ses_active_receipt_rule_set(terrascript.Resource):
-    pass
-
-
-class aws_ses_domain_identity(terrascript.Resource):
-    pass
-
-
-class aws_ses_domain_identity_verification(terrascript.Resource):
-    pass
-
-
-class aws_ses_domain_dkim(terrascript.Resource):
-    pass
-
-
-class aws_ses_domain_mail_from(terrascript.Resource):
-    pass
-
-
-class aws_ses_email_identity(terrascript.Resource):
-    pass
-
-
-class aws_ses_identity_policy(terrascript.Resource):
-    pass
-
-
-class aws_ses_receipt_filter(terrascript.Resource):
-    pass
-
-
-class aws_ses_receipt_rule(terrascript.Resource):
-    pass
-
-
-class aws_ses_receipt_rule_set(terrascript.Resource):
-    pass
-
-
-class aws_ses_configuration_set(terrascript.Resource):
-    pass
-
-
-class aws_ses_event_destination(terrascript.Resource):
-    pass
-
-
-class aws_ses_identity_notification_topic(terrascript.Resource):
-    pass
-
-
-class aws_ses_template(terrascript.Resource):
-    pass
-
-
-class aws_s3_access_point(terrascript.Resource):
-    pass
-
-
-class aws_s3_account_public_access_block(terrascript.Resource):
-    pass
-
-
-class aws_s3_bucket(terrascript.Resource):
-    pass
-
-
-class aws_s3_bucket_analytics_configuration(terrascript.Resource):
-    pass
-
-
-class aws_s3_bucket_policy(terrascript.Resource):
-    pass
-
-
-class aws_s3_bucket_public_access_block(terrascript.Resource):
-    pass
-
-
-class aws_s3_bucket_object(terrascript.Resource):
-    pass
-
-
-class aws_s3_bucket_ownership_controls(terrascript.Resource):
-    pass
-
-
-class aws_s3_bucket_notification(terrascript.Resource):
-    pass
-
-
-class aws_s3_bucket_metric(terrascript.Resource):
-    pass
-
-
-class aws_s3_bucket_inventory(terrascript.Resource):
-    pass
-
-
-class aws_s3_object_copy(terrascript.Resource):
-    pass
-
-
-class aws_s3control_bucket(terrascript.Resource):
-    pass
-
-
-class aws_s3control_bucket_policy(terrascript.Resource):
-    pass
-
-
-class aws_s3control_bucket_lifecycle_configuration(terrascript.Resource):
-    pass
-
-
-class aws_s3outposts_endpoint(terrascript.Resource):
+class aws_secretsmanager_secret_version(terrascript.Resource):
     pass
 
 
 class aws_security_group(terrascript.Resource):
-    pass
-
-
-class aws_network_interface_sg_attachment(terrascript.Resource):
-    pass
-
-
-class aws_default_security_group(terrascript.Resource):
     pass
 
 
@@ -2174,7 +2234,7 @@ class aws_securityhub_standards_subscription(terrascript.Resource):
     pass
 
 
-class aws_servicecatalog_portfolio(terrascript.Resource):
+class aws_serverlessapplicationrepository_cloudformation_stack(terrascript.Resource):
     pass
 
 
@@ -2194,7 +2254,75 @@ class aws_service_discovery_service(terrascript.Resource):
     pass
 
 
+class aws_servicecatalog_portfolio(terrascript.Resource):
+    pass
+
+
 class aws_servicequotas_service_quota(terrascript.Resource):
+    pass
+
+
+class aws_ses_active_receipt_rule_set(terrascript.Resource):
+    pass
+
+
+class aws_ses_configuration_set(terrascript.Resource):
+    pass
+
+
+class aws_ses_domain_dkim(terrascript.Resource):
+    pass
+
+
+class aws_ses_domain_identity(terrascript.Resource):
+    pass
+
+
+class aws_ses_domain_identity_verification(terrascript.Resource):
+    pass
+
+
+class aws_ses_domain_mail_from(terrascript.Resource):
+    pass
+
+
+class aws_ses_email_identity(terrascript.Resource):
+    pass
+
+
+class aws_ses_event_destination(terrascript.Resource):
+    pass
+
+
+class aws_ses_identity_notification_topic(terrascript.Resource):
+    pass
+
+
+class aws_ses_identity_policy(terrascript.Resource):
+    pass
+
+
+class aws_ses_receipt_filter(terrascript.Resource):
+    pass
+
+
+class aws_ses_receipt_rule(terrascript.Resource):
+    pass
+
+
+class aws_ses_receipt_rule_set(terrascript.Resource):
+    pass
+
+
+class aws_ses_template(terrascript.Resource):
+    pass
+
+
+class aws_sfn_activity(terrascript.Resource):
+    pass
+
+
+class aws_sfn_state_machine(terrascript.Resource):
     pass
 
 
@@ -2215,6 +2343,50 @@ class aws_signer_signing_profile_permission(terrascript.Resource):
 
 
 class aws_simpledb_domain(terrascript.Resource):
+    pass
+
+
+class aws_snapshot_create_volume_permission(terrascript.Resource):
+    pass
+
+
+class aws_sns_platform_application(terrascript.Resource):
+    pass
+
+
+class aws_sns_sms_preferences(terrascript.Resource):
+    pass
+
+
+class aws_sns_topic(terrascript.Resource):
+    pass
+
+
+class aws_sns_topic_policy(terrascript.Resource):
+    pass
+
+
+class aws_sns_topic_subscription(terrascript.Resource):
+    pass
+
+
+class aws_spot_datafeed_subscription(terrascript.Resource):
+    pass
+
+
+class aws_spot_fleet_request(terrascript.Resource):
+    pass
+
+
+class aws_spot_instance_request(terrascript.Resource):
+    pass
+
+
+class aws_sqs_queue(terrascript.Resource):
+    pass
+
+
+class aws_sqs_queue_policy(terrascript.Resource):
     pass
 
 
@@ -2242,15 +2414,15 @@ class aws_ssm_maintenance_window_task(terrascript.Resource):
     pass
 
 
+class aws_ssm_parameter(terrascript.Resource):
+    pass
+
+
 class aws_ssm_patch_baseline(terrascript.Resource):
     pass
 
 
 class aws_ssm_patch_group(terrascript.Resource):
-    pass
-
-
-class aws_ssm_parameter(terrascript.Resource):
     pass
 
 
@@ -2310,62 +2482,6 @@ class aws_storagegateway_working_storage(terrascript.Resource):
     pass
 
 
-class aws_spot_datafeed_subscription(terrascript.Resource):
-    pass
-
-
-class aws_spot_instance_request(terrascript.Resource):
-    pass
-
-
-class aws_spot_fleet_request(terrascript.Resource):
-    pass
-
-
-class aws_sqs_queue(terrascript.Resource):
-    pass
-
-
-class aws_sqs_queue_policy(terrascript.Resource):
-    pass
-
-
-class aws_snapshot_create_volume_permission(terrascript.Resource):
-    pass
-
-
-class aws_sns_platform_application(terrascript.Resource):
-    pass
-
-
-class aws_sns_sms_preferences(terrascript.Resource):
-    pass
-
-
-class aws_sns_topic(terrascript.Resource):
-    pass
-
-
-class aws_sns_topic_policy(terrascript.Resource):
-    pass
-
-
-class aws_sns_topic_subscription(terrascript.Resource):
-    pass
-
-
-class aws_sfn_activity(terrascript.Resource):
-    pass
-
-
-class aws_sfn_state_machine(terrascript.Resource):
-    pass
-
-
-class aws_default_subnet(terrascript.Resource):
-    pass
-
-
 class aws_subnet(terrascript.Resource):
     pass
 
@@ -2394,11 +2510,7 @@ class aws_volume_attachment(terrascript.Resource):
     pass
 
 
-class aws_vpc_dhcp_options_association(terrascript.Resource):
-    pass
-
-
-class aws_default_vpc_dhcp_options(terrascript.Resource):
+class aws_vpc(terrascript.Resource):
     pass
 
 
@@ -2406,23 +2518,7 @@ class aws_vpc_dhcp_options(terrascript.Resource):
     pass
 
 
-class aws_vpc_peering_connection(terrascript.Resource):
-    pass
-
-
-class aws_vpc_peering_connection_accepter(terrascript.Resource):
-    pass
-
-
-class aws_vpc_peering_connection_options(terrascript.Resource):
-    pass
-
-
-class aws_default_vpc(terrascript.Resource):
-    pass
-
-
-class aws_vpc(terrascript.Resource):
+class aws_vpc_dhcp_options_association(terrascript.Resource):
     pass
 
 
@@ -2438,10 +2534,6 @@ class aws_vpc_endpoint_route_table_association(terrascript.Resource):
     pass
 
 
-class aws_vpc_endpoint_subnet_association(terrascript.Resource):
-    pass
-
-
 class aws_vpc_endpoint_service(terrascript.Resource):
     pass
 
@@ -2450,7 +2542,23 @@ class aws_vpc_endpoint_service_allowed_principal(terrascript.Resource):
     pass
 
 
+class aws_vpc_endpoint_subnet_association(terrascript.Resource):
+    pass
+
+
 class aws_vpc_ipv4_cidr_block_association(terrascript.Resource):
+    pass
+
+
+class aws_vpc_peering_connection(terrascript.Resource):
+    pass
+
+
+class aws_vpc_peering_connection_accepter(terrascript.Resource):
+    pass
+
+
+class aws_vpc_peering_connection_options(terrascript.Resource):
     pass
 
 
@@ -2475,6 +2583,10 @@ class aws_vpn_gateway_route_propagation(terrascript.Resource):
 
 
 class aws_waf_byte_match_set(terrascript.Resource):
+    pass
+
+
+class aws_waf_geo_match_set(terrascript.Resource):
     pass
 
 
@@ -2506,19 +2618,15 @@ class aws_waf_size_constraint_set(terrascript.Resource):
     pass
 
 
+class aws_waf_sql_injection_match_set(terrascript.Resource):
+    pass
+
+
 class aws_waf_web_acl(terrascript.Resource):
     pass
 
 
 class aws_waf_xss_match_set(terrascript.Resource):
-    pass
-
-
-class aws_waf_sql_injection_match_set(terrascript.Resource):
-    pass
-
-
-class aws_waf_geo_match_set(terrascript.Resource):
     pass
 
 
@@ -2562,15 +2670,15 @@ class aws_wafregional_sql_injection_match_set(terrascript.Resource):
     pass
 
 
-class aws_wafregional_xss_match_set(terrascript.Resource):
-    pass
-
-
 class aws_wafregional_web_acl(terrascript.Resource):
     pass
 
 
 class aws_wafregional_web_acl_association(terrascript.Resource):
+    pass
+
+
+class aws_wafregional_xss_match_set(terrascript.Resource):
     pass
 
 
@@ -2610,63 +2718,11 @@ class aws_workspaces_directory(terrascript.Resource):
     pass
 
 
+class aws_workspaces_ip_group(terrascript.Resource):
+    pass
+
+
 class aws_workspaces_workspace(terrascript.Resource):
-    pass
-
-
-class aws_batch_compute_environment(terrascript.Resource):
-    pass
-
-
-class aws_batch_job_definition(terrascript.Resource):
-    pass
-
-
-class aws_batch_job_queue(terrascript.Resource):
-    pass
-
-
-class aws_pinpoint_app(terrascript.Resource):
-    pass
-
-
-class aws_pinpoint_adm_channel(terrascript.Resource):
-    pass
-
-
-class aws_pinpoint_apns_channel(terrascript.Resource):
-    pass
-
-
-class aws_pinpoint_apns_sandbox_channel(terrascript.Resource):
-    pass
-
-
-class aws_pinpoint_apns_voip_channel(terrascript.Resource):
-    pass
-
-
-class aws_pinpoint_apns_voip_sandbox_channel(terrascript.Resource):
-    pass
-
-
-class aws_pinpoint_baidu_channel(terrascript.Resource):
-    pass
-
-
-class aws_pinpoint_email_channel(terrascript.Resource):
-    pass
-
-
-class aws_pinpoint_event_stream(terrascript.Resource):
-    pass
-
-
-class aws_pinpoint_gcm_channel(terrascript.Resource):
-    pass
-
-
-class aws_pinpoint_sms_channel(terrascript.Resource):
     pass
 
 
@@ -2681,64 +2737,17 @@ class aws_xray_group(terrascript.Resource):
 class aws_xray_sampling_rule(terrascript.Resource):
     pass
 
-
-class aws_workspaces_ip_group(terrascript.Resource):
-    pass
-
-
-class aws_alb(terrascript.Resource):
-    pass
-
-
-class aws_lb(terrascript.Resource):
-    pass
-
-
-class aws_alb_listener(terrascript.Resource):
-    pass
-
-
-class aws_lb_listener(terrascript.Resource):
-    pass
-
-
-class aws_alb_listener_certificate(terrascript.Resource):
-    pass
-
-
-class aws_lb_listener_certificate(terrascript.Resource):
-    pass
-
-
-class aws_alb_listener_rule(terrascript.Resource):
-    pass
-
-
-class aws_lb_listener_rule(terrascript.Resource):
-    pass
-
-
-class aws_alb_target_group(terrascript.Resource):
-    pass
-
-
-class aws_lb_target_group(terrascript.Resource):
-    pass
-
-
-class aws_alb_target_group_attachment(terrascript.Resource):
-    pass
-
-
-class aws_lb_target_group_attachment(terrascript.Resource):
-    pass
-
-
 __all__ = [
     "aws_accessanalyzer_analyzer",
     "aws_acm_certificate",
     "aws_acm_certificate_validation",
     "aws_acmpca_certificate_authority",
+    "aws_alb",
+    "aws_alb_listener",
+    "aws_alb_listener_certificate",
+    "aws_alb_listener_rule",
+    "aws_alb_target_group",
+    "aws_alb_target_group_attachment",
     "aws_ami",
     "aws_ami_copy",
     "aws_ami_from_instance",
@@ -2780,9 +2789,9 @@ __all__ = [
     "aws_apigatewayv2_stage",
     "aws_apigatewayv2_vpc_link",
     "aws_app_cookie_stickiness_policy",
-    "aws_appautoscaling_target",
     "aws_appautoscaling_policy",
     "aws_appautoscaling_scheduled_action",
+    "aws_appautoscaling_target",
     "aws_appmesh_gateway_route",
     "aws_appmesh_mesh",
     "aws_appmesh_route",
@@ -2812,6 +2821,9 @@ __all__ = [
     "aws_backup_vault",
     "aws_backup_vault_notifications",
     "aws_backup_vault_policy",
+    "aws_batch_compute_environment",
+    "aws_batch_job_definition",
+    "aws_batch_job_queue",
     "aws_budgets_budget",
     "aws_cloud9_environment_ec2",
     "aws_cloudformation_stack",
@@ -2823,12 +2835,16 @@ __all__ = [
     "aws_cloudfront_origin_request_policy",
     "aws_cloudfront_public_key",
     "aws_cloudfront_realtime_log_config",
+    "aws_cloudhsm_v2_cluster",
+    "aws_cloudhsm_v2_hsm",
     "aws_cloudtrail",
+    "aws_cloudwatch_composite_alarm",
+    "aws_cloudwatch_dashboard",
+    "aws_cloudwatch_event_archive",
     "aws_cloudwatch_event_bus",
     "aws_cloudwatch_event_permission",
     "aws_cloudwatch_event_rule",
     "aws_cloudwatch_event_target",
-    "aws_cloudwatch_event_archive",
     "aws_cloudwatch_log_destination",
     "aws_cloudwatch_log_destination_policy",
     "aws_cloudwatch_log_group",
@@ -2836,6 +2852,32 @@ __all__ = [
     "aws_cloudwatch_log_resource_policy",
     "aws_cloudwatch_log_stream",
     "aws_cloudwatch_log_subscription_filter",
+    "aws_cloudwatch_metric_alarm",
+    "aws_codeartifact_domain",
+    "aws_codeartifact_domain_permissions_policy",
+    "aws_codeartifact_repository",
+    "aws_codeartifact_repository_permissions_policy",
+    "aws_codebuild_project",
+    "aws_codebuild_report_group",
+    "aws_codebuild_source_credential",
+    "aws_codebuild_webhook",
+    "aws_codecommit_repository",
+    "aws_codecommit_trigger",
+    "aws_codedeploy_app",
+    "aws_codedeploy_deployment_config",
+    "aws_codedeploy_deployment_group",
+    "aws_codepipeline",
+    "aws_codepipeline_webhook",
+    "aws_codestarconnections_connection",
+    "aws_codestarnotifications_notification_rule",
+    "aws_cognito_identity_pool",
+    "aws_cognito_identity_pool_roles_attachment",
+    "aws_cognito_identity_provider",
+    "aws_cognito_resource_server",
+    "aws_cognito_user_group",
+    "aws_cognito_user_pool",
+    "aws_cognito_user_pool_client",
+    "aws_cognito_user_pool_domain",
     "aws_config_aggregate_authorization",
     "aws_config_config_rule",
     "aws_config_configuration_aggregator",
@@ -2846,36 +2888,6 @@ __all__ = [
     "aws_config_organization_custom_rule",
     "aws_config_organization_managed_rule",
     "aws_config_remediation_configuration",
-    "aws_cognito_identity_pool",
-    "aws_cognito_identity_pool_roles_attachment",
-    "aws_cognito_identity_provider",
-    "aws_cognito_user_group",
-    "aws_cognito_user_pool",
-    "aws_cognito_user_pool_client",
-    "aws_cognito_user_pool_domain",
-    "aws_cloudhsm_v2_cluster",
-    "aws_cloudhsm_v2_hsm",
-    "aws_cognito_resource_server",
-    "aws_cloudwatch_composite_alarm",
-    "aws_cloudwatch_metric_alarm",
-    "aws_cloudwatch_dashboard",
-    "aws_codedeploy_app",
-    "aws_codedeploy_deployment_config",
-    "aws_codedeploy_deployment_group",
-    "aws_codecommit_repository",
-    "aws_codecommit_trigger",
-    "aws_codeartifact_domain",
-    "aws_codeartifact_domain_permissions_policy",
-    "aws_codeartifact_repository",
-    "aws_codeartifact_repository_permissions_policy",
-    "aws_codebuild_project",
-    "aws_codebuild_report_group",
-    "aws_codebuild_source_credential",
-    "aws_codebuild_webhook",
-    "aws_codepipeline",
-    "aws_codepipeline_webhook",
-    "aws_codestarconnections_connection",
-    "aws_codestarnotifications_notification_rule",
     "aws_cur_report_definition",
     "aws_customer_gateway",
     "aws_datapipeline_pipeline",
@@ -2901,9 +2913,15 @@ __all__ = [
     "aws_db_security_group",
     "aws_db_snapshot",
     "aws_db_subnet_group",
+    "aws_default_network_acl",
+    "aws_default_route_table",
+    "aws_default_security_group",
+    "aws_default_subnet",
+    "aws_default_vpc",
+    "aws_default_vpc_dhcp_options",
     "aws_devicefarm_project",
-    "aws_directory_service_directory",
     "aws_directory_service_conditional_forwarder",
+    "aws_directory_service_directory",
     "aws_directory_service_log_subscription",
     "aws_dlm_lifecycle_policy",
     "aws_dms_certificate",
@@ -2933,9 +2951,9 @@ __all__ = [
     "aws_dx_private_virtual_interface",
     "aws_dx_public_virtual_interface",
     "aws_dx_transit_virtual_interface",
+    "aws_dynamodb_global_table",
     "aws_dynamodb_table",
     "aws_dynamodb_table_item",
-    "aws_dynamodb_global_table",
     "aws_ebs_default_kms_key",
     "aws_ebs_encryption_by_default",
     "aws_ebs_snapshot",
@@ -2955,8 +2973,8 @@ __all__ = [
     "aws_ec2_tag",
     "aws_ec2_traffic_mirror_filter",
     "aws_ec2_traffic_mirror_filter_rule",
-    "aws_ec2_traffic_mirror_target",
     "aws_ec2_traffic_mirror_session",
+    "aws_ec2_traffic_mirror_target",
     "aws_ec2_transit_gateway",
     "aws_ec2_transit_gateway_peering_attachment",
     "aws_ec2_transit_gateway_peering_attachment_accepter",
@@ -2984,16 +3002,16 @@ __all__ = [
     "aws_eks_cluster",
     "aws_eks_fargate_profile",
     "aws_eks_node_group",
+    "aws_elastic_beanstalk_application",
+    "aws_elastic_beanstalk_application_version",
+    "aws_elastic_beanstalk_configuration_template",
+    "aws_elastic_beanstalk_environment",
     "aws_elasticache_cluster",
     "aws_elasticache_global_replication_group",
     "aws_elasticache_parameter_group",
     "aws_elasticache_replication_group",
     "aws_elasticache_security_group",
     "aws_elasticache_subnet_group",
-    "aws_elastic_beanstalk_application",
-    "aws_elastic_beanstalk_application_version",
-    "aws_elastic_beanstalk_configuration_template",
-    "aws_elastic_beanstalk_environment",
     "aws_elasticsearch_domain",
     "aws_elasticsearch_domain_policy",
     "aws_elastictranscoder_pipeline",
@@ -3001,15 +3019,15 @@ __all__ = [
     "aws_elb",
     "aws_elb_attachment",
     "aws_emr_cluster",
-    "aws_emr_instance_group",
     "aws_emr_instance_fleet",
+    "aws_emr_instance_group",
     "aws_emr_managed_scaling_policy",
     "aws_emr_security_configuration",
     "aws_flow_log",
-    "aws_fsx_lustre_file_system",
-    "aws_fsx_windows_file_system",
     "aws_fms_admin_account",
     "aws_fms_policy",
+    "aws_fsx_lustre_file_system",
+    "aws_fsx_windows_file_system",
     "aws_gamelift_alias",
     "aws_gamelift_build",
     "aws_gamelift_fleet",
@@ -3023,9 +3041,9 @@ __all__ = [
     "aws_glue_catalog_table",
     "aws_glue_classifier",
     "aws_glue_connection",
-    "aws_glue_dev_endpoint",
     "aws_glue_crawler",
     "aws_glue_data_catalog_encryption_settings",
+    "aws_glue_dev_endpoint",
     "aws_glue_job",
     "aws_glue_ml_transform",
     "aws_glue_partition",
@@ -3048,26 +3066,26 @@ __all__ = [
     "aws_iam_access_key",
     "aws_iam_account_alias",
     "aws_iam_account_password_policy",
-    "aws_iam_group_policy",
     "aws_iam_group",
     "aws_iam_group_membership",
+    "aws_iam_group_policy",
     "aws_iam_group_policy_attachment",
     "aws_iam_instance_profile",
     "aws_iam_openid_connect_provider",
     "aws_iam_policy",
     "aws_iam_policy_attachment",
-    "aws_iam_role_policy_attachment",
-    "aws_iam_role_policy",
     "aws_iam_role",
+    "aws_iam_role_policy",
+    "aws_iam_role_policy_attachment",
     "aws_iam_saml_provider",
     "aws_iam_server_certificate",
     "aws_iam_service_linked_role",
-    "aws_iam_user_group_membership",
-    "aws_iam_user_policy_attachment",
-    "aws_iam_user_policy",
-    "aws_iam_user_ssh_key",
     "aws_iam_user",
+    "aws_iam_user_group_membership",
     "aws_iam_user_login_profile",
+    "aws_iam_user_policy",
+    "aws_iam_user_policy_attachment",
+    "aws_iam_user_ssh_key",
     "aws_imagebuilder_component",
     "aws_imagebuilder_distribution_configuration",
     "aws_imagebuilder_image",
@@ -3082,35 +3100,43 @@ __all__ = [
     "aws_iot_certificate",
     "aws_iot_policy",
     "aws_iot_policy_attachment",
+    "aws_iot_role_alias",
     "aws_iot_thing",
     "aws_iot_thing_principal_attachment",
     "aws_iot_thing_type",
     "aws_iot_topic_rule",
-    "aws_iot_role_alias",
     "aws_key_pair",
     "aws_kinesis_analytics_application",
-    "aws_kinesisanalyticsv2_application",
     "aws_kinesis_firehose_delivery_stream",
     "aws_kinesis_stream",
     "aws_kinesis_video_stream",
+    "aws_kinesisanalyticsv2_application",
     "aws_kms_alias",
+    "aws_kms_ciphertext",
     "aws_kms_external_key",
     "aws_kms_grant",
     "aws_kms_key",
-    "aws_kms_ciphertext",
     "aws_lakeformation_data_lake_settings",
     "aws_lakeformation_permissions",
     "aws_lakeformation_resource",
     "aws_lambda_alias",
     "aws_lambda_code_signing_config",
     "aws_lambda_event_source_mapping",
-    "aws_lambda_function_event_invoke_config",
     "aws_lambda_function",
+    "aws_lambda_function_event_invoke_config",
     "aws_lambda_layer_version",
     "aws_lambda_permission",
     "aws_lambda_provisioned_concurrency_config",
     "aws_launch_configuration",
     "aws_launch_template",
+    "aws_lb",
+    "aws_lb_cookie_stickiness_policy",
+    "aws_lb_listener",
+    "aws_lb_listener_certificate",
+    "aws_lb_listener_rule",
+    "aws_lb_ssl_negotiation_policy",
+    "aws_lb_target_group",
+    "aws_lb_target_group_attachment",
     "aws_lex_bot",
     "aws_lex_bot_alias",
     "aws_lex_intent",
@@ -3122,26 +3148,22 @@ __all__ = [
     "aws_lightsail_key_pair",
     "aws_lightsail_static_ip",
     "aws_lightsail_static_ip_attachment",
-    "aws_lb_cookie_stickiness_policy",
-    "aws_load_balancer_policy",
     "aws_load_balancer_backend_server_policy",
     "aws_load_balancer_listener_policy",
-    "aws_lb_ssl_negotiation_policy",
+    "aws_load_balancer_policy",
     "aws_macie_member_account_association",
     "aws_macie_s3_bucket_association",
     "aws_main_route_table_association",
-    "aws_mq_broker",
-    "aws_mq_configuration",
     "aws_media_convert_queue",
     "aws_media_package_channel",
     "aws_media_store_container",
     "aws_media_store_container_policy",
+    "aws_mq_broker",
+    "aws_mq_configuration",
     "aws_msk_cluster",
     "aws_msk_configuration",
     "aws_msk_scram_secret_association",
     "aws_nat_gateway",
-    "aws_network_acl",
-    "aws_default_network_acl",
     "aws_neptune_cluster",
     "aws_neptune_cluster_instance",
     "aws_neptune_cluster_parameter_group",
@@ -3149,35 +3171,48 @@ __all__ = [
     "aws_neptune_event_subscription",
     "aws_neptune_parameter_group",
     "aws_neptune_subnet_group",
+    "aws_network_acl",
     "aws_network_acl_rule",
     "aws_network_interface",
     "aws_network_interface_attachment",
+    "aws_network_interface_sg_attachment",
     "aws_networkfirewall_firewall",
     "aws_networkfirewall_firewall_policy",
     "aws_networkfirewall_logging_configuration",
     "aws_networkfirewall_resource_policy",
     "aws_networkfirewall_rule_group",
     "aws_opsworks_application",
-    "aws_opsworks_stack",
-    "aws_opsworks_java_app_layer",
+    "aws_opsworks_custom_layer",
+    "aws_opsworks_ganglia_layer",
     "aws_opsworks_haproxy_layer",
-    "aws_opsworks_static_web_layer",
-    "aws_opsworks_php_app_layer",
-    "aws_opsworks_rails_app_layer",
-    "aws_opsworks_nodejs_app_layer",
+    "aws_opsworks_instance",
+    "aws_opsworks_java_app_layer",
     "aws_opsworks_memcached_layer",
     "aws_opsworks_mysql_layer",
-    "aws_opsworks_ganglia_layer",
-    "aws_opsworks_custom_layer",
-    "aws_opsworks_instance",
-    "aws_opsworks_user_profile",
+    "aws_opsworks_nodejs_app_layer",
     "aws_opsworks_permission",
+    "aws_opsworks_php_app_layer",
+    "aws_opsworks_rails_app_layer",
     "aws_opsworks_rds_db_instance",
-    "aws_organizations_organization",
+    "aws_opsworks_stack",
+    "aws_opsworks_static_web_layer",
+    "aws_opsworks_user_profile",
     "aws_organizations_account",
+    "aws_organizations_organization",
+    "aws_organizations_organizational_unit",
     "aws_organizations_policy",
     "aws_organizations_policy_attachment",
-    "aws_organizations_organizational_unit",
+    "aws_pinpoint_adm_channel",
+    "aws_pinpoint_apns_channel",
+    "aws_pinpoint_apns_sandbox_channel",
+    "aws_pinpoint_apns_voip_channel",
+    "aws_pinpoint_apns_voip_sandbox_channel",
+    "aws_pinpoint_app",
+    "aws_pinpoint_baidu_channel",
+    "aws_pinpoint_email_channel",
+    "aws_pinpoint_event_stream",
+    "aws_pinpoint_gcm_channel",
+    "aws_pinpoint_sms_channel",
     "aws_placement_group",
     "aws_prometheus_workspace",
     "aws_proxy_protocol_policy",
@@ -3194,32 +3229,47 @@ __all__ = [
     "aws_rds_cluster_parameter_group",
     "aws_rds_global_cluster",
     "aws_redshift_cluster",
-    "aws_redshift_security_group",
+    "aws_redshift_event_subscription",
     "aws_redshift_parameter_group",
-    "aws_redshift_subnet_group",
+    "aws_redshift_security_group",
     "aws_redshift_snapshot_copy_grant",
     "aws_redshift_snapshot_schedule",
     "aws_redshift_snapshot_schedule_association",
-    "aws_redshift_event_subscription",
+    "aws_redshift_subnet_group",
     "aws_resourcegroups_group",
+    "aws_route",
     "aws_route53_delegation_set",
+    "aws_route53_health_check",
     "aws_route53_key_signing_key",
     "aws_route53_query_log",
     "aws_route53_record",
-    "aws_route53_zone_association",
-    "aws_route53_vpc_association_authorization",
-    "aws_route53_zone",
-    "aws_route53_health_check",
     "aws_route53_resolver_dnssec_config",
     "aws_route53_resolver_endpoint",
     "aws_route53_resolver_query_log_config",
     "aws_route53_resolver_query_log_config_association",
-    "aws_route53_resolver_rule_association",
     "aws_route53_resolver_rule",
-    "aws_route",
+    "aws_route53_resolver_rule_association",
+    "aws_route53_vpc_association_authorization",
+    "aws_route53_zone",
+    "aws_route53_zone_association",
     "aws_route_table",
-    "aws_default_route_table",
     "aws_route_table_association",
+    "aws_s3_access_point",
+    "aws_s3_account_public_access_block",
+    "aws_s3_bucket",
+    "aws_s3_bucket_analytics_configuration",
+    "aws_s3_bucket_inventory",
+    "aws_s3_bucket_metric",
+    "aws_s3_bucket_notification",
+    "aws_s3_bucket_object",
+    "aws_s3_bucket_ownership_controls",
+    "aws_s3_bucket_policy",
+    "aws_s3_bucket_public_access_block",
+    "aws_s3_object_copy",
+    "aws_s3control_bucket",
+    "aws_s3control_bucket_lifecycle_configuration",
+    "aws_s3control_bucket_policy",
+    "aws_s3outposts_endpoint",
     "aws_sagemaker_app_image_config",
     "aws_sagemaker_code_repository",
     "aws_sagemaker_domain",
@@ -3230,46 +3280,14 @@ __all__ = [
     "aws_sagemaker_image_version",
     "aws_sagemaker_model",
     "aws_sagemaker_model_package_group",
-    "aws_sagemaker_notebook_instance_lifecycle_configuration",
     "aws_sagemaker_notebook_instance",
+    "aws_sagemaker_notebook_instance_lifecycle_configuration",
     "aws_sagemaker_user_profile",
     "aws_secretsmanager_secret",
     "aws_secretsmanager_secret_policy",
-    "aws_secretsmanager_secret_version",
     "aws_secretsmanager_secret_rotation",
-    "aws_ses_active_receipt_rule_set",
-    "aws_ses_domain_identity",
-    "aws_ses_domain_identity_verification",
-    "aws_ses_domain_dkim",
-    "aws_ses_domain_mail_from",
-    "aws_ses_email_identity",
-    "aws_ses_identity_policy",
-    "aws_ses_receipt_filter",
-    "aws_ses_receipt_rule",
-    "aws_ses_receipt_rule_set",
-    "aws_ses_configuration_set",
-    "aws_ses_event_destination",
-    "aws_ses_identity_notification_topic",
-    "aws_ses_template",
-    "aws_s3_access_point",
-    "aws_s3_account_public_access_block",
-    "aws_s3_bucket",
-    "aws_s3_bucket_analytics_configuration",
-    "aws_s3_bucket_policy",
-    "aws_s3_bucket_public_access_block",
-    "aws_s3_bucket_object",
-    "aws_s3_bucket_ownership_controls",
-    "aws_s3_bucket_notification",
-    "aws_s3_bucket_metric",
-    "aws_s3_bucket_inventory",
-    "aws_s3_object_copy",
-    "aws_s3control_bucket",
-    "aws_s3control_bucket_policy",
-    "aws_s3control_bucket_lifecycle_configuration",
-    "aws_s3outposts_endpoint",
+    "aws_secretsmanager_secret_version",
     "aws_security_group",
-    "aws_network_interface_sg_attachment",
-    "aws_default_security_group",
     "aws_security_group_rule",
     "aws_securityhub_account",
     "aws_securityhub_action_target",
@@ -3278,26 +3296,54 @@ __all__ = [
     "aws_securityhub_organization_admin_account",
     "aws_securityhub_product_subscription",
     "aws_securityhub_standards_subscription",
-    "aws_servicecatalog_portfolio",
+    "aws_serverlessapplicationrepository_cloudformation_stack",
     "aws_service_discovery_http_namespace",
     "aws_service_discovery_private_dns_namespace",
     "aws_service_discovery_public_dns_namespace",
     "aws_service_discovery_service",
+    "aws_servicecatalog_portfolio",
     "aws_servicequotas_service_quota",
+    "aws_ses_active_receipt_rule_set",
+    "aws_ses_configuration_set",
+    "aws_ses_domain_dkim",
+    "aws_ses_domain_identity",
+    "aws_ses_domain_identity_verification",
+    "aws_ses_domain_mail_from",
+    "aws_ses_email_identity",
+    "aws_ses_event_destination",
+    "aws_ses_identity_notification_topic",
+    "aws_ses_identity_policy",
+    "aws_ses_receipt_filter",
+    "aws_ses_receipt_rule",
+    "aws_ses_receipt_rule_set",
+    "aws_ses_template",
+    "aws_sfn_activity",
+    "aws_sfn_state_machine",
     "aws_shield_protection",
     "aws_signer_signing_job",
     "aws_signer_signing_profile",
     "aws_signer_signing_profile_permission",
     "aws_simpledb_domain",
+    "aws_snapshot_create_volume_permission",
+    "aws_sns_platform_application",
+    "aws_sns_sms_preferences",
+    "aws_sns_topic",
+    "aws_sns_topic_policy",
+    "aws_sns_topic_subscription",
+    "aws_spot_datafeed_subscription",
+    "aws_spot_fleet_request",
+    "aws_spot_instance_request",
+    "aws_sqs_queue",
+    "aws_sqs_queue_policy",
     "aws_ssm_activation",
     "aws_ssm_association",
     "aws_ssm_document",
     "aws_ssm_maintenance_window",
     "aws_ssm_maintenance_window_target",
     "aws_ssm_maintenance_window_task",
+    "aws_ssm_parameter",
     "aws_ssm_patch_baseline",
     "aws_ssm_patch_group",
-    "aws_ssm_parameter",
     "aws_ssm_resource_data_sync",
     "aws_ssoadmin_account_assignment",
     "aws_ssoadmin_managed_policy_attachment",
@@ -3312,20 +3358,6 @@ __all__ = [
     "aws_storagegateway_tape_pool",
     "aws_storagegateway_upload_buffer",
     "aws_storagegateway_working_storage",
-    "aws_spot_datafeed_subscription",
-    "aws_spot_instance_request",
-    "aws_spot_fleet_request",
-    "aws_sqs_queue",
-    "aws_sqs_queue_policy",
-    "aws_snapshot_create_volume_permission",
-    "aws_sns_platform_application",
-    "aws_sns_sms_preferences",
-    "aws_sns_topic",
-    "aws_sns_topic_policy",
-    "aws_sns_topic_subscription",
-    "aws_sfn_activity",
-    "aws_sfn_state_machine",
-    "aws_default_subnet",
     "aws_subnet",
     "aws_swf_domain",
     "aws_synthetics_canary",
@@ -3333,27 +3365,26 @@ __all__ = [
     "aws_transfer_ssh_key",
     "aws_transfer_user",
     "aws_volume_attachment",
-    "aws_vpc_dhcp_options_association",
-    "aws_default_vpc_dhcp_options",
-    "aws_vpc_dhcp_options",
-    "aws_vpc_peering_connection",
-    "aws_vpc_peering_connection_accepter",
-    "aws_vpc_peering_connection_options",
-    "aws_default_vpc",
     "aws_vpc",
+    "aws_vpc_dhcp_options",
+    "aws_vpc_dhcp_options_association",
     "aws_vpc_endpoint",
     "aws_vpc_endpoint_connection_notification",
     "aws_vpc_endpoint_route_table_association",
-    "aws_vpc_endpoint_subnet_association",
     "aws_vpc_endpoint_service",
     "aws_vpc_endpoint_service_allowed_principal",
+    "aws_vpc_endpoint_subnet_association",
     "aws_vpc_ipv4_cidr_block_association",
+    "aws_vpc_peering_connection",
+    "aws_vpc_peering_connection_accepter",
+    "aws_vpc_peering_connection_options",
     "aws_vpn_connection",
     "aws_vpn_connection_route",
     "aws_vpn_gateway",
     "aws_vpn_gateway_attachment",
     "aws_vpn_gateway_route_propagation",
     "aws_waf_byte_match_set",
+    "aws_waf_geo_match_set",
     "aws_waf_ipset",
     "aws_waf_rate_based_rule",
     "aws_waf_regex_match_set",
@@ -3361,10 +3392,9 @@ __all__ = [
     "aws_waf_rule",
     "aws_waf_rule_group",
     "aws_waf_size_constraint_set",
+    "aws_waf_sql_injection_match_set",
     "aws_waf_web_acl",
     "aws_waf_xss_match_set",
-    "aws_waf_sql_injection_match_set",
-    "aws_waf_geo_match_set",
     "aws_wafregional_byte_match_set",
     "aws_wafregional_geo_match_set",
     "aws_wafregional_ipset",
@@ -3375,9 +3405,9 @@ __all__ = [
     "aws_wafregional_rule_group",
     "aws_wafregional_size_constraint_set",
     "aws_wafregional_sql_injection_match_set",
-    "aws_wafregional_xss_match_set",
     "aws_wafregional_web_acl",
     "aws_wafregional_web_acl_association",
+    "aws_wafregional_xss_match_set",
     "aws_wafv2_ip_set",
     "aws_wafv2_regex_pattern_set",
     "aws_wafv2_rule_group",
@@ -3387,35 +3417,9 @@ __all__ = [
     "aws_worklink_fleet",
     "aws_worklink_website_certificate_authority_association",
     "aws_workspaces_directory",
+    "aws_workspaces_ip_group",
     "aws_workspaces_workspace",
-    "aws_batch_compute_environment",
-    "aws_batch_job_definition",
-    "aws_batch_job_queue",
-    "aws_pinpoint_app",
-    "aws_pinpoint_adm_channel",
-    "aws_pinpoint_apns_channel",
-    "aws_pinpoint_apns_sandbox_channel",
-    "aws_pinpoint_apns_voip_channel",
-    "aws_pinpoint_apns_voip_sandbox_channel",
-    "aws_pinpoint_baidu_channel",
-    "aws_pinpoint_email_channel",
-    "aws_pinpoint_event_stream",
-    "aws_pinpoint_gcm_channel",
-    "aws_pinpoint_sms_channel",
     "aws_xray_encryption_config",
     "aws_xray_group",
     "aws_xray_sampling_rule",
-    "aws_workspaces_ip_group",
-    "aws_alb",
-    "aws_lb",
-    "aws_alb_listener",
-    "aws_lb_listener",
-    "aws_alb_listener_certificate",
-    "aws_lb_listener_certificate",
-    "aws_alb_listener_rule",
-    "aws_lb_listener_rule",
-    "aws_alb_target_group",
-    "aws_lb_target_group",
-    "aws_alb_target_group_attachment",
-    "aws_lb_target_group_attachment",
 ]

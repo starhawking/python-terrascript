@@ -1,5 +1,68 @@
 # terrascript/opsgenie/r.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 import terrascript
+
+
+class opsgenie_alert_policy(terrascript.Resource):
+    pass
+
+
+class opsgenie_api_integration(terrascript.Resource):
+    pass
+
+
+class opsgenie_custom_role(terrascript.Resource):
+    pass
+
+
+class opsgenie_email_integration(terrascript.Resource):
+    pass
+
+
+class opsgenie_escalation(terrascript.Resource):
+    pass
+
+
+class opsgenie_heartbeat(terrascript.Resource):
+    pass
+
+
+class opsgenie_incident_template(terrascript.Resource):
+    pass
+
+
+class opsgenie_integration_action(terrascript.Resource):
+    pass
+
+
+class opsgenie_maintenance(terrascript.Resource):
+    pass
+
+
+class opsgenie_notification_policy(terrascript.Resource):
+    pass
+
+
+class opsgenie_notification_rule(terrascript.Resource):
+    pass
+
+
+class opsgenie_schedule(terrascript.Resource):
+    pass
+
+
+class opsgenie_schedule_rotation(terrascript.Resource):
+    pass
+
+
+class opsgenie_service(terrascript.Resource):
+    pass
+
+
+class opsgenie_service_incident_rule(terrascript.Resource):
+    pass
 
 
 class opsgenie_team(terrascript.Resource):
@@ -15,52 +78,4 @@ class opsgenie_user(terrascript.Resource):
 
 
 class opsgenie_user_contact(terrascript.Resource):
-    pass
-
-
-class opsgenie_notification_policy(terrascript.Resource):
-    pass
-
-
-class opsgenie_escalation(terrascript.Resource):
-    pass
-
-
-class opsgenie_api_integration(terrascript.Resource):
-    pass
-
-
-class opsgenie_email_integration(terrascript.Resource):
-    pass
-
-
-class opsgenie_integration_action(terrascript.Resource):
-    pass
-
-
-class opsgenie_service(terrascript.Resource):
-    pass
-
-
-class opsgenie_schedule(terrascript.Resource):
-    pass
-
-
-class opsgenie_schedule_rotation(terrascript.Resource):
-    pass
-
-
-class opsgenie_maintenance(terrascript.Resource):
-    pass
-
-
-class opsgenie_heartbeat(terrascript.Resource):
-    pass
-
-
-class opsgenie_alert_policy(terrascript.Resource):
-    pass
-
-
-class opsgenie_service_incident_rule(terrascript.Resource):
     pass

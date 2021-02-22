@@ -18,6 +18,14 @@ class kubernetes_namespace(terrascript.Data):
     pass
 
 
+class kubernetes_persistent_volume_claim(terrascript.Data):
+    pass
+
+
+class kubernetes_pod(terrascript.Data):
+    pass
+
+
 class kubernetes_secret(terrascript.Data):
     pass
 
@@ -34,23 +42,15 @@ class kubernetes_storage_class(terrascript.Data):
     pass
 
 
-class kubernetes_pod(terrascript.Data):
-    pass
-
-
-class kubernetes_persistent_volume_claim(terrascript.Data):
-    pass
-
-
 __all__ = [
     "kubernetes_all_namespaces",
     "kubernetes_config_map",
     "kubernetes_ingress",
     "kubernetes_namespace",
+    "kubernetes_persistent_volume_claim",
+    "kubernetes_pod",
     "kubernetes_secret",
     "kubernetes_service",
     "kubernetes_service_account",
     "kubernetes_storage_class",
-    "kubernetes_pod",
-    "kubernetes_persistent_volume_claim",
 ]

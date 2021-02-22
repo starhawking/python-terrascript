@@ -1,6 +1,9 @@
 # terrascript/kubernetes/__init__.py
-import terrascript
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 
+import terrascript
 
 class kubernetes(terrascript.Provider):
     pass

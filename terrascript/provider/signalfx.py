@@ -3,7 +3,11 @@ import terrascript
 
 
 class signalfx(terrascript.Provider):
-    pass
-
+    '''Terraform SignalFx provider
+    
+    '''
+    __description__ = "Terraform SignalFx provider"
+    __version__ = "6.7.0"
+    
 
 __all__ = ["signalfx"]

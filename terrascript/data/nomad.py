@@ -50,6 +50,10 @@ class nomad_plugins(terrascript.Data):
     pass
 
 
+class nomad_regions(terrascript.Data):
+    pass
+
+
 class nomad_scaling_policies(terrascript.Data):
     pass
 
@@ -59,10 +63,6 @@ class nomad_scaling_policy(terrascript.Data):
 
 
 class nomad_scheduler_config(terrascript.Data):
-    pass
-
-
-class nomad_regions(terrascript.Data):
     pass
 
 
@@ -83,9 +83,9 @@ __all__ = [
     "nomad_namespaces",
     "nomad_plugin",
     "nomad_plugins",
+    "nomad_regions",
     "nomad_scaling_policies",
     "nomad_scaling_policy",
     "nomad_scheduler_config",
-    "nomad_regions",
     "nomad_volumes",
 ]

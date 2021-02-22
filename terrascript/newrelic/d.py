@@ -1,5 +1,12 @@
 # terrascript/newrelic/d.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 import terrascript
+
+
+class newrelic_account(terrascript.Data):
+    pass
 
 
 class newrelic_alert_channel(terrascript.Data):
@@ -31,6 +38,10 @@ class newrelic_plugin_component(terrascript.Data):
 
 
 class newrelic_synthetics_monitor(terrascript.Data):
+    pass
+
+
+class newrelic_synthetics_monitor_location(terrascript.Data):
     pass
 
 

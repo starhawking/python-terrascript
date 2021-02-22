@@ -2,6 +2,14 @@
 import terrascript
 
 
+class digitalocean_app(terrascript.Resource):
+    pass
+
+
+class digitalocean_cdn(terrascript.Resource):
+    pass
+
+
 class digitalocean_certificate(terrascript.Resource):
     pass
 
@@ -14,7 +22,7 @@ class digitalocean_container_registry_docker_credentials(terrascript.Resource):
     pass
 
 
-class digitalocean_cdn(terrascript.Resource):
+class digitalocean_custom_image(terrascript.Resource):
     pass
 
 
@@ -121,12 +129,13 @@ class digitalocean_volume_snapshot(terrascript.Resource):
 class digitalocean_vpc(terrascript.Resource):
     pass
 
-
 __all__ = [
+    "digitalocean_app",
+    "digitalocean_cdn",
     "digitalocean_certificate",
     "digitalocean_container_registry",
     "digitalocean_container_registry_docker_credentials",
-    "digitalocean_cdn",
+    "digitalocean_custom_image",
     "digitalocean_database_cluster",
     "digitalocean_database_connection_pool",
     "digitalocean_database_db",

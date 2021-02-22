@@ -42,6 +42,10 @@ class heroku_cert(terrascript.Resource):
     pass
 
 
+class heroku_collaborator(terrascript.Resource):
+    pass
+
+
 class heroku_config(terrascript.Resource):
     pass
 
@@ -78,11 +82,11 @@ class heroku_space(terrascript.Resource):
     pass
 
 
-class heroku_space_inbound_ruleset(terrascript.Resource):
+class heroku_space_app_access(terrascript.Resource):
     pass
 
 
-class heroku_space_app_access(terrascript.Resource):
+class heroku_space_inbound_ruleset(terrascript.Resource):
     pass
 
 
@@ -101,7 +105,6 @@ class heroku_team_collaborator(terrascript.Resource):
 class heroku_team_member(terrascript.Resource):
     pass
 
-
 __all__ = [
     "heroku_account_feature",
     "heroku_addon",
@@ -113,6 +116,7 @@ __all__ = [
     "heroku_app_webhook",
     "heroku_build",
     "heroku_cert",
+    "heroku_collaborator",
     "heroku_config",
     "heroku_domain",
     "heroku_drain",
@@ -122,8 +126,8 @@ __all__ = [
     "heroku_pipeline_coupling",
     "heroku_slug",
     "heroku_space",
-    "heroku_space_inbound_ruleset",
     "heroku_space_app_access",
+    "heroku_space_inbound_ruleset",
     "heroku_space_peering_connection_accepter",
     "heroku_space_vpn_connection",
     "heroku_team_collaborator",

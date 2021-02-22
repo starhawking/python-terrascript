@@ -1,8 +1,15 @@
 # terrascript/digitalocean/d.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 import terrascript
 
 
 class digitalocean_account(terrascript.Data):
+    pass
+
+
+class digitalocean_app(terrascript.Data):
     pass
 
 
@@ -22,15 +29,19 @@ class digitalocean_domain(terrascript.Data):
     pass
 
 
+class digitalocean_domains(terrascript.Data):
+    pass
+
+
 class digitalocean_droplet(terrascript.Data):
     pass
 
 
-class digitalocean_droplets(terrascript.Data):
+class digitalocean_droplet_snapshot(terrascript.Data):
     pass
 
 
-class digitalocean_droplet_snapshot(terrascript.Data):
+class digitalocean_droplets(terrascript.Data):
     pass
 
 
@@ -70,6 +81,10 @@ class digitalocean_record(terrascript.Data):
     pass
 
 
+class digitalocean_records(terrascript.Data):
+    pass
+
+
 class digitalocean_region(terrascript.Data):
     pass
 
@@ -86,10 +101,6 @@ class digitalocean_spaces_bucket(terrascript.Data):
     pass
 
 
-class digitalocean_spaces_buckets(terrascript.Data):
-    pass
-
-
 class digitalocean_spaces_bucket_object(terrascript.Data):
     pass
 
@@ -98,7 +109,15 @@ class digitalocean_spaces_bucket_objects(terrascript.Data):
     pass
 
 
+class digitalocean_spaces_buckets(terrascript.Data):
+    pass
+
+
 class digitalocean_ssh_key(terrascript.Data):
+    pass
+
+
+class digitalocean_ssh_keys(terrascript.Data):
     pass
 
 
@@ -110,11 +129,11 @@ class digitalocean_tags(terrascript.Data):
     pass
 
 
-class digitalocean_volume_snapshot(terrascript.Data):
+class digitalocean_volume(terrascript.Data):
     pass
 
 
-class digitalocean_volume(terrascript.Data):
+class digitalocean_volume_snapshot(terrascript.Data):
     pass
 
 

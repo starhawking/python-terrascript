@@ -3,7 +3,11 @@ import terrascript
 
 
 class google(terrascript.Provider):
-    pass
-
+    '''terraform-provider-google
+    
+    '''
+    __description__ = "terraform-provider-google"
+    __version__ = "3.57.0"
+    
 
 __all__ = ["google"]

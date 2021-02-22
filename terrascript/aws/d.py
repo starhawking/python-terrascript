@@ -1,4 +1,7 @@
 # terrascript/aws/d.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 import terrascript
 
 
@@ -7,6 +10,18 @@ class aws_acm_certificate(terrascript.Data):
 
 
 class aws_acmpca_certificate_authority(terrascript.Data):
+    pass
+
+
+class aws_alb(terrascript.Data):
+    pass
+
+
+class aws_alb_listener(terrascript.Data):
+    pass
+
+
+class aws_alb_target_group(terrascript.Data):
     pass
 
 
@@ -130,15 +145,19 @@ class aws_codeartifact_repository_endpoint(terrascript.Data):
     pass
 
 
-class aws_cognito_user_pools(terrascript.Data):
-    pass
-
-
 class aws_codecommit_repository(terrascript.Data):
     pass
 
 
+class aws_cognito_user_pools(terrascript.Data):
+    pass
+
+
 class aws_cur_report_definition(terrascript.Data):
+    pass
+
+
+class aws_customer_gateway(terrascript.Data):
     pass
 
 
@@ -230,10 +249,6 @@ class aws_ec2_local_gateway(terrascript.Data):
     pass
 
 
-class aws_ec2_local_gateways(terrascript.Data):
-    pass
-
-
 class aws_ec2_local_gateway_route_table(terrascript.Data):
     pass
 
@@ -251,6 +266,10 @@ class aws_ec2_local_gateway_virtual_interface_group(terrascript.Data):
 
 
 class aws_ec2_local_gateway_virtual_interface_groups(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateways(terrascript.Data):
     pass
 
 
@@ -314,10 +333,6 @@ class aws_ecs_task_definition(terrascript.Data):
     pass
 
 
-class aws_customer_gateway(terrascript.Data):
-    pass
-
-
 class aws_efs_access_point(terrascript.Data):
     pass
 
@@ -362,15 +377,15 @@ class aws_elasticache_cluster(terrascript.Data):
     pass
 
 
+class aws_elasticache_replication_group(terrascript.Data):
+    pass
+
+
 class aws_elasticsearch_domain(terrascript.Data):
     pass
 
 
 class aws_elb(terrascript.Data):
-    pass
-
-
-class aws_elasticache_replication_group(terrascript.Data):
     pass
 
 
@@ -542,11 +557,23 @@ class aws_launch_template(terrascript.Data):
     pass
 
 
-class aws_lex_bot_alias(terrascript.Data):
+class aws_lb(terrascript.Data):
+    pass
+
+
+class aws_lb_listener(terrascript.Data):
+    pass
+
+
+class aws_lb_target_group(terrascript.Data):
     pass
 
 
 class aws_lex_bot(terrascript.Data):
+    pass
+
+
+class aws_lex_bot_alias(terrascript.Data):
     pass
 
 
@@ -574,11 +601,11 @@ class aws_nat_gateway(terrascript.Data):
     pass
 
 
-class aws_neptune_orderable_db_instance(terrascript.Data):
+class aws_neptune_engine_version(terrascript.Data):
     pass
 
 
-class aws_neptune_engine_version(terrascript.Data):
+class aws_neptune_orderable_db_instance(terrascript.Data):
     pass
 
 
@@ -686,14 +713,6 @@ class aws_route(terrascript.Data):
     pass
 
 
-class aws_route_table(terrascript.Data):
-    pass
-
-
-class aws_route_tables(terrascript.Data):
-    pass
-
-
 class aws_route53_delegation_set(terrascript.Data):
     pass
 
@@ -711,6 +730,14 @@ class aws_route53_resolver_rules(terrascript.Data):
 
 
 class aws_route53_zone(terrascript.Data):
+    pass
+
+
+class aws_route_table(terrascript.Data):
+    pass
+
+
+class aws_route_tables(terrascript.Data):
     pass
 
 
@@ -739,6 +766,18 @@ class aws_secretsmanager_secret_rotation(terrascript.Data):
 
 
 class aws_secretsmanager_secret_version(terrascript.Data):
+    pass
+
+
+class aws_security_group(terrascript.Data):
+    pass
+
+
+class aws_security_groups(terrascript.Data):
+    pass
+
+
+class aws_serverlessapplicationrepository_application(terrascript.Data):
     pass
 
 
@@ -810,18 +849,6 @@ class aws_transfer_server(terrascript.Data):
     pass
 
 
-class aws_vpcs(terrascript.Data):
-    pass
-
-
-class aws_security_group(terrascript.Data):
-    pass
-
-
-class aws_security_groups(terrascript.Data):
-    pass
-
-
 class aws_vpc(terrascript.Data):
     pass
 
@@ -846,6 +873,10 @@ class aws_vpc_peering_connections(terrascript.Data):
     pass
 
 
+class aws_vpcs(terrascript.Data):
+    pass
+
+
 class aws_vpn_gateway(terrascript.Data):
     pass
 
@@ -854,11 +885,11 @@ class aws_waf_ipset(terrascript.Data):
     pass
 
 
-class aws_waf_rule(terrascript.Data):
+class aws_waf_rate_based_rule(terrascript.Data):
     pass
 
 
-class aws_waf_rate_based_rule(terrascript.Data):
+class aws_waf_rule(terrascript.Data):
     pass
 
 
@@ -870,11 +901,11 @@ class aws_wafregional_ipset(terrascript.Data):
     pass
 
 
-class aws_wafregional_rule(terrascript.Data):
+class aws_wafregional_rate_based_rule(terrascript.Data):
     pass
 
 
-class aws_wafregional_rate_based_rule(terrascript.Data):
+class aws_wafregional_rule(terrascript.Data):
     pass
 
 
@@ -911,28 +942,4 @@ class aws_workspaces_image(terrascript.Data):
 
 
 class aws_workspaces_workspace(terrascript.Data):
-    pass
-
-
-class aws_lb(terrascript.Data):
-    pass
-
-
-class aws_alb(terrascript.Data):
-    pass
-
-
-class aws_lb_listener(terrascript.Data):
-    pass
-
-
-class aws_alb_listener(terrascript.Data):
-    pass
-
-
-class aws_lb_target_group(terrascript.Data):
-    pass
-
-
-class aws_alb_target_group(terrascript.Data):
     pass

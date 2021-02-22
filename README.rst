@@ -42,6 +42,8 @@ superior to writing Terraform configurations by hand.
 * Python functions may be used as an alternative to Terraform_ Modules.
 * Access to the Python Standard Library and third-party packages.
 
+The file [PROVIDERS.md](PROVIDERS.md) lists all currently supported Terraform providers.
+
 Installing Terrascript
 ~~~~~~~~~~~~~~~~~~~~~~
 

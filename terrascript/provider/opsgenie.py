@@ -3,7 +3,11 @@ import terrascript
 
 
 class opsgenie(terrascript.Provider):
-    pass
-
+    '''Terraform OpsGenie provider
+    
+    '''
+    __description__ = "Terraform OpsGenie provider"
+    __version__ = "0.6.3"
+    
 
 __all__ = ["opsgenie"]

@@ -1,4 +1,7 @@
 # terrascript/vsphere/r.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 import terrascript
 
 
@@ -62,11 +65,15 @@ class vsphere_distributed_virtual_switch(terrascript.Resource):
     pass
 
 
+class vsphere_dpm_host_override(terrascript.Resource):
+    pass
+
+
 class vsphere_drs_vm_override(terrascript.Resource):
     pass
 
 
-class vsphere_dpm_host_override(terrascript.Resource):
+class vsphere_entity_permissions(terrascript.Resource):
     pass
 
 
@@ -82,6 +89,10 @@ class vsphere_ha_vm_override(terrascript.Resource):
     pass
 
 
+class vsphere_host(terrascript.Resource):
+    pass
+
+
 class vsphere_host_port_group(terrascript.Resource):
     pass
 
@@ -94,7 +105,19 @@ class vsphere_license(terrascript.Resource):
     pass
 
 
+class vsphere_nas_datastore(terrascript.Resource):
+    pass
+
+
 class vsphere_resource_pool(terrascript.Resource):
+    pass
+
+
+class vsphere_role(terrascript.Resource):
+    pass
+
+
+class vsphere_storage_drs_vm_override(terrascript.Resource):
     pass
 
 
@@ -106,22 +129,6 @@ class vsphere_tag_category(terrascript.Resource):
     pass
 
 
-class vsphere_virtual_disk(terrascript.Resource):
-    pass
-
-
-class vsphere_virtual_machine(terrascript.Resource):
-    pass
-
-
-class vsphere_nas_datastore(terrascript.Resource):
-    pass
-
-
-class vsphere_storage_drs_vm_override(terrascript.Resource):
-    pass
-
-
 class vsphere_vapp_container(terrascript.Resource):
     pass
 
@@ -130,7 +137,11 @@ class vsphere_vapp_entity(terrascript.Resource):
     pass
 
 
-class vsphere_vmfs_datastore(terrascript.Resource):
+class vsphere_virtual_disk(terrascript.Resource):
+    pass
+
+
+class vsphere_virtual_machine(terrascript.Resource):
     pass
 
 
@@ -138,21 +149,13 @@ class vsphere_virtual_machine_snapshot(terrascript.Resource):
     pass
 
 
-class vsphere_host(terrascript.Resource):
-    pass
-
-
-class vsphere_vnic(terrascript.Resource):
-    pass
-
-
 class vsphere_vm_storage_policy(terrascript.Resource):
     pass
 
 
-class vsphere_role(terrascript.Resource):
+class vsphere_vmfs_datastore(terrascript.Resource):
     pass
 
 
-class vsphere_entity_permissions(terrascript.Resource):
+class vsphere_vnic(terrascript.Resource):
     pass

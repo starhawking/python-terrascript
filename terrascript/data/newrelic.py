@@ -2,6 +2,10 @@
 import terrascript
 
 
+class newrelic_account(terrascript.Data):
+    pass
+
+
 class newrelic_alert_channel(terrascript.Data):
     pass
 
@@ -34,11 +38,16 @@ class newrelic_synthetics_monitor(terrascript.Data):
     pass
 
 
+class newrelic_synthetics_monitor_location(terrascript.Data):
+    pass
+
+
 class newrelic_synthetics_secure_credential(terrascript.Data):
     pass
 
 
 __all__ = [
+    "newrelic_account",
     "newrelic_alert_channel",
     "newrelic_alert_policy",
     "newrelic_application",
@@ -47,5 +56,6 @@ __all__ = [
     "newrelic_plugin",
     "newrelic_plugin_component",
     "newrelic_synthetics_monitor",
+    "newrelic_synthetics_monitor_location",
     "newrelic_synthetics_secure_credential",
 ]

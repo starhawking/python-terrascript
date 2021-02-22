@@ -1,4 +1,7 @@
 # terrascript/kubernetes/r.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 import terrascript
 
 
@@ -62,6 +65,10 @@ class kubernetes_limit_range(terrascript.Resource):
     pass
 
 
+class kubernetes_mutating_webhook_configuration(terrascript.Resource):
+    pass
+
+
 class kubernetes_namespace(terrascript.Resource):
     pass
 
@@ -98,15 +105,15 @@ class kubernetes_replication_controller(terrascript.Resource):
     pass
 
 
-class kubernetes_role_binding(terrascript.Resource):
-    pass
-
-
 class kubernetes_resource_quota(terrascript.Resource):
     pass
 
 
 class kubernetes_role(terrascript.Resource):
+    pass
+
+
+class kubernetes_role_binding(terrascript.Resource):
     pass
 
 
@@ -131,8 +138,4 @@ class kubernetes_storage_class(terrascript.Resource):
 
 
 class kubernetes_validating_webhook_configuration(terrascript.Resource):
-    pass
-
-
-class kubernetes_mutating_webhook_configuration(terrascript.Resource):
     pass

@@ -1,5 +1,16 @@
 # terrascript/digitalocean/r.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 import terrascript
+
+
+class digitalocean_app(terrascript.Resource):
+    pass
+
+
+class digitalocean_cdn(terrascript.Resource):
+    pass
 
 
 class digitalocean_certificate(terrascript.Resource):
@@ -14,7 +25,7 @@ class digitalocean_container_registry_docker_credentials(terrascript.Resource):
     pass
 
 
-class digitalocean_cdn(terrascript.Resource):
+class digitalocean_custom_image(terrascript.Resource):
     pass
 
 

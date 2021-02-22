@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [Unreleased] - 2021-02-21
+To be merged with *[Unreleased] - 2020-11-24*
+### Added
+* Rewrote tool to generate provider bindings to automatically include all
+  providers listed on the [Terraform Registry](https://registry.terraform.io/).
+  This added 80 new providers to *Terrascript* which is too many to list here.
+### Changed
+* Added ``DeprecationWarning`` for modules under the "legacy layout".
+
 ## [Unreleased] - 2020-11-24
 ### Added
 * Build support for Python 3.9

@@ -10,6 +10,18 @@ class aws_acmpca_certificate_authority(terrascript.Data):
     pass
 
 
+class aws_alb(terrascript.Data):
+    pass
+
+
+class aws_alb_listener(terrascript.Data):
+    pass
+
+
+class aws_alb_target_group(terrascript.Data):
+    pass
+
+
 class aws_ami(terrascript.Data):
     pass
 
@@ -130,15 +142,19 @@ class aws_codeartifact_repository_endpoint(terrascript.Data):
     pass
 
 
-class aws_cognito_user_pools(terrascript.Data):
-    pass
-
-
 class aws_codecommit_repository(terrascript.Data):
     pass
 
 
+class aws_cognito_user_pools(terrascript.Data):
+    pass
+
+
 class aws_cur_report_definition(terrascript.Data):
+    pass
+
+
+class aws_customer_gateway(terrascript.Data):
     pass
 
 
@@ -230,10 +246,6 @@ class aws_ec2_local_gateway(terrascript.Data):
     pass
 
 
-class aws_ec2_local_gateways(terrascript.Data):
-    pass
-
-
 class aws_ec2_local_gateway_route_table(terrascript.Data):
     pass
 
@@ -251,6 +263,10 @@ class aws_ec2_local_gateway_virtual_interface_group(terrascript.Data):
 
 
 class aws_ec2_local_gateway_virtual_interface_groups(terrascript.Data):
+    pass
+
+
+class aws_ec2_local_gateways(terrascript.Data):
     pass
 
 
@@ -314,10 +330,6 @@ class aws_ecs_task_definition(terrascript.Data):
     pass
 
 
-class aws_customer_gateway(terrascript.Data):
-    pass
-
-
 class aws_efs_access_point(terrascript.Data):
     pass
 
@@ -362,15 +374,15 @@ class aws_elasticache_cluster(terrascript.Data):
     pass
 
 
+class aws_elasticache_replication_group(terrascript.Data):
+    pass
+
+
 class aws_elasticsearch_domain(terrascript.Data):
     pass
 
 
 class aws_elb(terrascript.Data):
-    pass
-
-
-class aws_elasticache_replication_group(terrascript.Data):
     pass
 
 
@@ -542,11 +554,23 @@ class aws_launch_template(terrascript.Data):
     pass
 
 
-class aws_lex_bot_alias(terrascript.Data):
+class aws_lb(terrascript.Data):
+    pass
+
+
+class aws_lb_listener(terrascript.Data):
+    pass
+
+
+class aws_lb_target_group(terrascript.Data):
     pass
 
 
 class aws_lex_bot(terrascript.Data):
+    pass
+
+
+class aws_lex_bot_alias(terrascript.Data):
     pass
 
 
@@ -574,11 +598,11 @@ class aws_nat_gateway(terrascript.Data):
     pass
 
 
-class aws_neptune_orderable_db_instance(terrascript.Data):
+class aws_neptune_engine_version(terrascript.Data):
     pass
 
 
-class aws_neptune_engine_version(terrascript.Data):
+class aws_neptune_orderable_db_instance(terrascript.Data):
     pass
 
 
@@ -686,14 +710,6 @@ class aws_route(terrascript.Data):
     pass
 
 
-class aws_route_table(terrascript.Data):
-    pass
-
-
-class aws_route_tables(terrascript.Data):
-    pass
-
-
 class aws_route53_delegation_set(terrascript.Data):
     pass
 
@@ -711,6 +727,14 @@ class aws_route53_resolver_rules(terrascript.Data):
 
 
 class aws_route53_zone(terrascript.Data):
+    pass
+
+
+class aws_route_table(terrascript.Data):
+    pass
+
+
+class aws_route_tables(terrascript.Data):
     pass
 
 
@@ -739,6 +763,18 @@ class aws_secretsmanager_secret_rotation(terrascript.Data):
 
 
 class aws_secretsmanager_secret_version(terrascript.Data):
+    pass
+
+
+class aws_security_group(terrascript.Data):
+    pass
+
+
+class aws_security_groups(terrascript.Data):
+    pass
+
+
+class aws_serverlessapplicationrepository_application(terrascript.Data):
     pass
 
 
@@ -810,18 +846,6 @@ class aws_transfer_server(terrascript.Data):
     pass
 
 
-class aws_vpcs(terrascript.Data):
-    pass
-
-
-class aws_security_group(terrascript.Data):
-    pass
-
-
-class aws_security_groups(terrascript.Data):
-    pass
-
-
 class aws_vpc(terrascript.Data):
     pass
 
@@ -846,6 +870,10 @@ class aws_vpc_peering_connections(terrascript.Data):
     pass
 
 
+class aws_vpcs(terrascript.Data):
+    pass
+
+
 class aws_vpn_gateway(terrascript.Data):
     pass
 
@@ -854,11 +882,11 @@ class aws_waf_ipset(terrascript.Data):
     pass
 
 
-class aws_waf_rule(terrascript.Data):
+class aws_waf_rate_based_rule(terrascript.Data):
     pass
 
 
-class aws_waf_rate_based_rule(terrascript.Data):
+class aws_waf_rule(terrascript.Data):
     pass
 
 
@@ -870,11 +898,11 @@ class aws_wafregional_ipset(terrascript.Data):
     pass
 
 
-class aws_wafregional_rule(terrascript.Data):
+class aws_wafregional_rate_based_rule(terrascript.Data):
     pass
 
 
-class aws_wafregional_rate_based_rule(terrascript.Data):
+class aws_wafregional_rule(terrascript.Data):
     pass
 
 
@@ -914,33 +942,12 @@ class aws_workspaces_workspace(terrascript.Data):
     pass
 
 
-class aws_lb(terrascript.Data):
-    pass
-
-
-class aws_alb(terrascript.Data):
-    pass
-
-
-class aws_lb_listener(terrascript.Data):
-    pass
-
-
-class aws_alb_listener(terrascript.Data):
-    pass
-
-
-class aws_lb_target_group(terrascript.Data):
-    pass
-
-
-class aws_alb_target_group(terrascript.Data):
-    pass
-
-
 __all__ = [
     "aws_acm_certificate",
     "aws_acmpca_certificate_authority",
+    "aws_alb",
+    "aws_alb_listener",
+    "aws_alb_target_group",
     "aws_ami",
     "aws_ami_ids",
     "aws_api_gateway_api_key",
@@ -971,9 +978,10 @@ __all__ = [
     "aws_cloudwatch_log_group",
     "aws_codeartifact_authorization_token",
     "aws_codeartifact_repository_endpoint",
-    "aws_cognito_user_pools",
     "aws_codecommit_repository",
+    "aws_cognito_user_pools",
     "aws_cur_report_definition",
+    "aws_customer_gateway",
     "aws_db_cluster_snapshot",
     "aws_db_event_categories",
     "aws_db_instance",
@@ -996,12 +1004,12 @@ __all__ = [
     "aws_ec2_instance_type_offering",
     "aws_ec2_instance_type_offerings",
     "aws_ec2_local_gateway",
-    "aws_ec2_local_gateways",
     "aws_ec2_local_gateway_route_table",
     "aws_ec2_local_gateway_route_tables",
     "aws_ec2_local_gateway_virtual_interface",
     "aws_ec2_local_gateway_virtual_interface_group",
     "aws_ec2_local_gateway_virtual_interface_groups",
+    "aws_ec2_local_gateways",
     "aws_ec2_managed_prefix_list",
     "aws_ec2_spot_price",
     "aws_ec2_transit_gateway",
@@ -1017,7 +1025,6 @@ __all__ = [
     "aws_ecs_container_definition",
     "aws_ecs_service",
     "aws_ecs_task_definition",
-    "aws_customer_gateway",
     "aws_efs_access_point",
     "aws_efs_access_points",
     "aws_efs_file_system",
@@ -1029,9 +1036,9 @@ __all__ = [
     "aws_elastic_beanstalk_hosted_zone",
     "aws_elastic_beanstalk_solution_stack",
     "aws_elasticache_cluster",
+    "aws_elasticache_replication_group",
     "aws_elasticsearch_domain",
     "aws_elb",
-    "aws_elasticache_replication_group",
     "aws_elb_hosted_zone_id",
     "aws_elb_service_account",
     "aws_glue_script",
@@ -1074,16 +1081,19 @@ __all__ = [
     "aws_lambda_layer_version",
     "aws_launch_configuration",
     "aws_launch_template",
-    "aws_lex_bot_alias",
+    "aws_lb",
+    "aws_lb_listener",
+    "aws_lb_target_group",
     "aws_lex_bot",
+    "aws_lex_bot_alias",
     "aws_lex_intent",
     "aws_lex_slot_type",
     "aws_mq_broker",
     "aws_msk_cluster",
     "aws_msk_configuration",
     "aws_nat_gateway",
-    "aws_neptune_orderable_db_instance",
     "aws_neptune_engine_version",
+    "aws_neptune_orderable_db_instance",
     "aws_network_acls",
     "aws_network_interface",
     "aws_network_interfaces",
@@ -1110,13 +1120,13 @@ __all__ = [
     "aws_region",
     "aws_regions",
     "aws_route",
-    "aws_route_table",
-    "aws_route_tables",
     "aws_route53_delegation_set",
     "aws_route53_resolver_endpoint",
     "aws_route53_resolver_rule",
     "aws_route53_resolver_rules",
     "aws_route53_zone",
+    "aws_route_table",
+    "aws_route_tables",
     "aws_s3_bucket",
     "aws_s3_bucket_object",
     "aws_s3_bucket_objects",
@@ -1124,6 +1134,9 @@ __all__ = [
     "aws_secretsmanager_secret",
     "aws_secretsmanager_secret_rotation",
     "aws_secretsmanager_secret_version",
+    "aws_security_group",
+    "aws_security_groups",
+    "aws_serverlessapplicationrepository_application",
     "aws_servicequotas_service",
     "aws_servicequotas_service_quota",
     "aws_sfn_activity",
@@ -1141,23 +1154,21 @@ __all__ = [
     "aws_subnet",
     "aws_subnet_ids",
     "aws_transfer_server",
-    "aws_vpcs",
-    "aws_security_group",
-    "aws_security_groups",
     "aws_vpc",
     "aws_vpc_dhcp_options",
     "aws_vpc_endpoint",
     "aws_vpc_endpoint_service",
     "aws_vpc_peering_connection",
     "aws_vpc_peering_connections",
+    "aws_vpcs",
     "aws_vpn_gateway",
     "aws_waf_ipset",
-    "aws_waf_rule",
     "aws_waf_rate_based_rule",
+    "aws_waf_rule",
     "aws_waf_web_acl",
     "aws_wafregional_ipset",
-    "aws_wafregional_rule",
     "aws_wafregional_rate_based_rule",
+    "aws_wafregional_rule",
     "aws_wafregional_web_acl",
     "aws_wafv2_ip_set",
     "aws_wafv2_regex_pattern_set",
@@ -1167,10 +1178,4 @@ __all__ = [
     "aws_workspaces_directory",
     "aws_workspaces_image",
     "aws_workspaces_workspace",
-    "aws_lb",
-    "aws_alb",
-    "aws_lb_listener",
-    "aws_alb_listener",
-    "aws_lb_target_group",
-    "aws_alb_target_group",
 ]

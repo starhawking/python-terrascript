@@ -8,3 +8,4 @@ setuptools
 sphinx
 sphinx-markdown
 sphinx_rtd_theme
+requests

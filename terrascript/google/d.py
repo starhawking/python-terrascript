@@ -1,4 +1,7 @@
 # terrascript/google/d.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 import terrascript
 
 
@@ -10,11 +13,11 @@ class google_app_engine_default_service_account(terrascript.Data):
     pass
 
 
-class google_billing_account(terrascript.Data):
+class google_bigquery_default_service_account(terrascript.Data):
     pass
 
 
-class google_bigquery_default_service_account(terrascript.Data):
+class google_billing_account(terrascript.Data):
     pass
 
 
@@ -26,15 +29,11 @@ class google_client_openid_userinfo(terrascript.Data):
     pass
 
 
-class google_cloudfunctions_function(terrascript.Data):
+class google_cloud_identity_group_memberships(terrascript.Data):
     pass
 
 
 class google_cloud_identity_groups(terrascript.Data):
-    pass
-
-
-class google_cloud_identity_group_memberships(terrascript.Data):
     pass
 
 
@@ -43,6 +42,10 @@ class google_cloud_run_locations(terrascript.Data):
 
 
 class google_cloud_run_service(terrascript.Data):
+    pass
+
+
+class google_cloudfunctions_function(terrascript.Data):
     pass
 
 
@@ -58,11 +61,11 @@ class google_compute_address(terrascript.Data):
     pass
 
 
-class google_compute_backend_service(terrascript.Data):
+class google_compute_backend_bucket(terrascript.Data):
     pass
 
 
-class google_compute_backend_bucket(terrascript.Data):
+class google_compute_backend_service(terrascript.Data):
     pass
 
 
@@ -118,15 +121,15 @@ class google_compute_node_types(terrascript.Data):
     pass
 
 
-class google_compute_regions(terrascript.Data):
-    pass
-
-
 class google_compute_region_instance_group(terrascript.Data):
     pass
 
 
 class google_compute_region_ssl_certificate(terrascript.Data):
+    pass
+
+
+class google_compute_regions(terrascript.Data):
     pass
 
 
@@ -182,6 +185,14 @@ class google_dns_managed_zone(terrascript.Data):
     pass
 
 
+class google_folder(terrascript.Data):
+    pass
+
+
+class google_folder_organization_policy(terrascript.Data):
+    pass
+
+
 class google_game_services_game_server_deployment_rollout(terrascript.Data):
     pass
 
@@ -195,10 +206,6 @@ class google_iam_role(terrascript.Data):
 
 
 class google_iam_testable_permissions(terrascript.Data):
-    pass
-
-
-class google_iap_client(terrascript.Data):
     pass
 
 
@@ -222,15 +229,7 @@ class google_kms_secret_ciphertext(terrascript.Data):
     pass
 
 
-class google_folder(terrascript.Data):
-    pass
-
-
-class google_folder_organization_policy(terrascript.Data):
-    pass
-
-
-class google_monitoring_notification_channel(terrascript.Data):
+class google_monitoring_app_engine_service(terrascript.Data):
     pass
 
 
@@ -242,7 +241,7 @@ class google_monitoring_mesh_istio_service(terrascript.Data):
     pass
 
 
-class google_monitoring_app_engine_service(terrascript.Data):
+class google_monitoring_notification_channel(terrascript.Data):
     pass
 
 
@@ -262,15 +261,19 @@ class google_project(terrascript.Data):
     pass
 
 
-class google_projects(terrascript.Data):
-    pass
-
-
 class google_project_organization_policy(terrascript.Data):
     pass
 
 
+class google_projects(terrascript.Data):
+    pass
+
+
 class google_pubsub_topic(terrascript.Data):
+    pass
+
+
+class google_redis_instance(terrascript.Data):
     pass
 
 
@@ -302,11 +305,11 @@ class google_spanner_instance(terrascript.Data):
     pass
 
 
-class google_sql_ca_certs(terrascript.Data):
+class google_sql_backup_run(terrascript.Data):
     pass
 
 
-class google_sql_backup_run(terrascript.Data):
+class google_sql_ca_certs(terrascript.Data):
     pass
 
 
@@ -335,8 +338,4 @@ class google_storage_transfer_project_service_account(terrascript.Data):
 
 
 class google_tpu_tensorflow_versions(terrascript.Data):
-    pass
-
-
-class google_redis_instance(terrascript.Data):
     pass

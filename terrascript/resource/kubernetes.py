@@ -62,6 +62,10 @@ class kubernetes_limit_range(terrascript.Resource):
     pass
 
 
+class kubernetes_mutating_webhook_configuration(terrascript.Resource):
+    pass
+
+
 class kubernetes_namespace(terrascript.Resource):
     pass
 
@@ -98,15 +102,15 @@ class kubernetes_replication_controller(terrascript.Resource):
     pass
 
 
-class kubernetes_role_binding(terrascript.Resource):
-    pass
-
-
 class kubernetes_resource_quota(terrascript.Resource):
     pass
 
 
 class kubernetes_role(terrascript.Resource):
+    pass
+
+
+class kubernetes_role_binding(terrascript.Resource):
     pass
 
 
@@ -133,11 +137,6 @@ class kubernetes_storage_class(terrascript.Resource):
 class kubernetes_validating_webhook_configuration(terrascript.Resource):
     pass
 
-
-class kubernetes_mutating_webhook_configuration(terrascript.Resource):
-    pass
-
-
 __all__ = [
     "kubernetes_api_service",
     "kubernetes_certificate_signing_request",
@@ -154,6 +153,7 @@ __all__ = [
     "kubernetes_ingress",
     "kubernetes_job",
     "kubernetes_limit_range",
+    "kubernetes_mutating_webhook_configuration",
     "kubernetes_namespace",
     "kubernetes_network_policy",
     "kubernetes_persistent_volume",
@@ -163,14 +163,13 @@ __all__ = [
     "kubernetes_pod_security_policy",
     "kubernetes_priority_class",
     "kubernetes_replication_controller",
-    "kubernetes_role_binding",
     "kubernetes_resource_quota",
     "kubernetes_role",
+    "kubernetes_role_binding",
     "kubernetes_secret",
     "kubernetes_service",
     "kubernetes_service_account",
     "kubernetes_stateful_set",
     "kubernetes_storage_class",
     "kubernetes_validating_webhook_configuration",
-    "kubernetes_mutating_webhook_configuration",
 ]

@@ -112,3 +112,4 @@ ENV/
 tools/terraform
 cover/*
 **.terraform
+tools/workdir/*

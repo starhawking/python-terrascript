@@ -1,4 +1,7 @@
 # terrascript/vsphere/d.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 import terrascript
 
 
@@ -62,6 +65,10 @@ class vsphere_resource_pool(terrascript.Data):
     pass
 
 
+class vsphere_role(terrascript.Data):
+    pass
+
+
 class vsphere_storage_policy(terrascript.Data):
     pass
 
@@ -83,8 +90,4 @@ class vsphere_virtual_machine(terrascript.Data):
 
 
 class vsphere_vmfs_disks(terrascript.Data):
-    pass
-
-
-class vsphere_role(terrascript.Data):
     pass

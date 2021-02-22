@@ -1,4 +1,7 @@
 # terrascript/heroku/r.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 import terrascript
 
 
@@ -42,6 +45,10 @@ class heroku_cert(terrascript.Resource):
     pass
 
 
+class heroku_collaborator(terrascript.Resource):
+    pass
+
+
 class heroku_config(terrascript.Resource):
     pass
 
@@ -78,11 +85,11 @@ class heroku_space(terrascript.Resource):
     pass
 
 
-class heroku_space_inbound_ruleset(terrascript.Resource):
+class heroku_space_app_access(terrascript.Resource):
     pass
 
 
-class heroku_space_app_access(terrascript.Resource):
+class heroku_space_inbound_ruleset(terrascript.Resource):
     pass
 
 

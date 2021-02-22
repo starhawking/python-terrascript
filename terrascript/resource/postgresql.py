@@ -18,7 +18,7 @@ class postgresql_grant(terrascript.Resource):
     pass
 
 
-class postgresql_schema(terrascript.Resource):
+class postgresql_grant_role(terrascript.Resource):
     pass
 
 
@@ -26,11 +26,15 @@ class postgresql_role(terrascript.Resource):
     pass
 
 
+class postgresql_schema(terrascript.Resource):
+    pass
+
 __all__ = [
     "postgresql_database",
     "postgresql_default_privileges",
     "postgresql_extension",
     "postgresql_grant",
-    "postgresql_schema",
+    "postgresql_grant_role",
     "postgresql_role",
+    "postgresql_schema",
 ]

@@ -62,6 +62,10 @@ class vsphere_resource_pool(terrascript.Data):
     pass
 
 
+class vsphere_role(terrascript.Data):
+    pass
+
+
 class vsphere_storage_policy(terrascript.Data):
     pass
 
@@ -86,10 +90,6 @@ class vsphere_vmfs_disks(terrascript.Data):
     pass
 
 
-class vsphere_role(terrascript.Data):
-    pass
-
-
 __all__ = [
     "vsphere_compute_cluster",
     "vsphere_content_library",
@@ -106,11 +106,11 @@ __all__ = [
     "vsphere_host_thumbprint",
     "vsphere_network",
     "vsphere_resource_pool",
+    "vsphere_role",
     "vsphere_storage_policy",
     "vsphere_tag",
     "vsphere_tag_category",
     "vsphere_vapp_container",
     "vsphere_virtual_machine",
     "vsphere_vmfs_disks",
-    "vsphere_role",
 ]

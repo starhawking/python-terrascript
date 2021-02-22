@@ -33,7 +33,6 @@ class dns_srv_record_set(terrascript.Resource):
 class dns_txt_record_set(terrascript.Resource):
     pass
 
-
 __all__ = [
     "dns_a_record_set",
     "dns_aaaa_record_set",

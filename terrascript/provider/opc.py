@@ -3,7 +3,11 @@ import terrascript
 
 
 class opc(terrascript.Provider):
-    pass
-
+    '''terraform-provider-opc
+    
+    '''
+    __description__ = "terraform-provider-opc"
+    __version__ = "1.4.0"
+    
 
 __all__ = ["opc"]

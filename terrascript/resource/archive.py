@@ -1,4 +1,10 @@
 # terrascript/resource/archive.py
+import terrascript
 
 
-__all__ = []
+class archive_file(terrascript.Resource):
+    pass
+
+__all__ = [
+    "archive_file",
+]

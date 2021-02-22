@@ -1,4 +1,7 @@
 # terrascript/triton/d.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 import terrascript
 
 
@@ -7,6 +10,14 @@ class triton_account(terrascript.Data):
 
 
 class triton_datacenter(terrascript.Data):
+    pass
+
+
+class triton_fabric_network(terrascript.Data):
+    pass
+
+
+class triton_fabric_vlan(terrascript.Data):
     pass
 
 
@@ -19,14 +30,6 @@ class triton_network(terrascript.Data):
 
 
 class triton_package(terrascript.Data):
-    pass
-
-
-class triton_fabric_vlan(terrascript.Data):
-    pass
-
-
-class triton_fabric_network(terrascript.Data):
     pass
 
 

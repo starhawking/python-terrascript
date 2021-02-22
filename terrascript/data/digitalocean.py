@@ -6,6 +6,10 @@ class digitalocean_account(terrascript.Data):
     pass
 
 
+class digitalocean_app(terrascript.Data):
+    pass
+
+
 class digitalocean_certificate(terrascript.Data):
     pass
 
@@ -22,15 +26,19 @@ class digitalocean_domain(terrascript.Data):
     pass
 
 
+class digitalocean_domains(terrascript.Data):
+    pass
+
+
 class digitalocean_droplet(terrascript.Data):
     pass
 
 
-class digitalocean_droplets(terrascript.Data):
+class digitalocean_droplet_snapshot(terrascript.Data):
     pass
 
 
-class digitalocean_droplet_snapshot(terrascript.Data):
+class digitalocean_droplets(terrascript.Data):
     pass
 
 
@@ -70,6 +78,10 @@ class digitalocean_record(terrascript.Data):
     pass
 
 
+class digitalocean_records(terrascript.Data):
+    pass
+
+
 class digitalocean_region(terrascript.Data):
     pass
 
@@ -86,10 +98,6 @@ class digitalocean_spaces_bucket(terrascript.Data):
     pass
 
 
-class digitalocean_spaces_buckets(terrascript.Data):
-    pass
-
-
 class digitalocean_spaces_bucket_object(terrascript.Data):
     pass
 
@@ -98,7 +106,15 @@ class digitalocean_spaces_bucket_objects(terrascript.Data):
     pass
 
 
+class digitalocean_spaces_buckets(terrascript.Data):
+    pass
+
+
 class digitalocean_ssh_key(terrascript.Data):
+    pass
+
+
+class digitalocean_ssh_keys(terrascript.Data):
     pass
 
 
@@ -110,11 +126,11 @@ class digitalocean_tags(terrascript.Data):
     pass
 
 
-class digitalocean_volume_snapshot(terrascript.Data):
+class digitalocean_volume(terrascript.Data):
     pass
 
 
-class digitalocean_volume(terrascript.Data):
+class digitalocean_volume_snapshot(terrascript.Data):
     pass
 
 
@@ -124,13 +140,15 @@ class digitalocean_vpc(terrascript.Data):
 
 __all__ = [
     "digitalocean_account",
+    "digitalocean_app",
     "digitalocean_certificate",
     "digitalocean_container_registry",
     "digitalocean_database_cluster",
     "digitalocean_domain",
+    "digitalocean_domains",
     "digitalocean_droplet",
-    "digitalocean_droplets",
     "digitalocean_droplet_snapshot",
+    "digitalocean_droplets",
     "digitalocean_floating_ip",
     "digitalocean_image",
     "digitalocean_images",
@@ -140,17 +158,19 @@ __all__ = [
     "digitalocean_project",
     "digitalocean_projects",
     "digitalocean_record",
+    "digitalocean_records",
     "digitalocean_region",
     "digitalocean_regions",
     "digitalocean_sizes",
     "digitalocean_spaces_bucket",
-    "digitalocean_spaces_buckets",
     "digitalocean_spaces_bucket_object",
     "digitalocean_spaces_bucket_objects",
+    "digitalocean_spaces_buckets",
     "digitalocean_ssh_key",
+    "digitalocean_ssh_keys",
     "digitalocean_tag",
     "digitalocean_tags",
-    "digitalocean_volume_snapshot",
     "digitalocean_volume",
+    "digitalocean_volume_snapshot",
     "digitalocean_vpc",
 ]
