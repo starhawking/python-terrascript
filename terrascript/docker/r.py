@@ -10,6 +10,10 @@ class docker_image(terrascript.Resource):
     pass
 
 
+class docker_registry_image(terrascript.Resource):
+    pass
+
+
 class docker_network(terrascript.Resource):
     pass
 

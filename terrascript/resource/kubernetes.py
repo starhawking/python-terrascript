@@ -34,6 +34,10 @@ class kubernetes_daemonset(terrascript.Resource):
     pass
 
 
+class kubernetes_default_service_account(terrascript.Resource):
+    pass
+
+
 class kubernetes_deployment(terrascript.Resource):
     pass
 
@@ -143,6 +147,7 @@ __all__ = [
     "kubernetes_cron_job",
     "kubernetes_csi_driver",
     "kubernetes_daemonset",
+    "kubernetes_default_service_account",
     "kubernetes_deployment",
     "kubernetes_endpoints",
     "kubernetes_horizontal_pod_autoscaler",

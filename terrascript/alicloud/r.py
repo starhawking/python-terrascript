@@ -972,3 +972,11 @@ class alicloud_oos_execution(terrascript.Resource):
 
 class alicloud_resource_manager_policy_attachment(terrascript.Resource):
     pass
+
+
+class alicloud_dcdn_domain(terrascript.Resource):
+    pass
+
+
+class alicloud_mse_cluster(terrascript.Resource):
+    pass

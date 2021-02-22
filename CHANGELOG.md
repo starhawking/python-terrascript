@@ -4,9 +4,30 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased] - 2020-11-24
 ### Added
 * Build support for Python 3.9
+* Make target for building providers
 * Provider:
   - `helm`
   - `signalfx`
+* Tool to generate provider bindings now accept provider to build
+## Changed
+* Script to generate providers:
+  * Automatically sorts the list of providers alphabetically
+  * Now try to guess the location of the required provider.go in the repository
+* Updated generated provider bindings:
+  * alicloud
+  * aws
+  * bitbucket
+  * dnsimple
+  * docker
+  * github
+  * google
+  * google-beta
+  * kubernetes
+  * nomad
+  * ovh
+  * profitbricks
+  * signalfx
+  * pingdom
 
 ## [0.9.0] - 2020-11-23
 **This release requires Python 3.6 or later, and Terraform 0.12 or later.**  

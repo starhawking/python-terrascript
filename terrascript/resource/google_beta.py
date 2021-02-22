@@ -26,6 +26,10 @@ class google_access_context_manager_access_levels(terrascript.Resource):
     pass
 
 
+class google_access_context_manager_access_level_condition(terrascript.Resource):
+    pass
+
+
 class google_access_context_manager_service_perimeter(terrascript.Resource):
     pass
 
@@ -38,11 +42,31 @@ class google_access_context_manager_service_perimeter_resource(terrascript.Resou
     pass
 
 
+class google_access_context_manager_gcp_user_access_binding(terrascript.Resource):
+    pass
+
+
 class google_active_directory_domain(terrascript.Resource):
     pass
 
 
 class google_active_directory_domain_trust(terrascript.Resource):
+    pass
+
+
+class google_api_gateway_api(terrascript.Resource):
+    pass
+
+
+class google_api_gateway_api_config(terrascript.Resource):
+    pass
+
+
+class google_api_gateway_gateway(terrascript.Resource):
+    pass
+
+
+class google_apigee_organization(terrascript.Resource):
     pass
 
 
@@ -83,6 +107,10 @@ class google_bigquery_dataset_access(terrascript.Resource):
 
 
 class google_bigquery_job(terrascript.Resource):
+    pass
+
+
+class google_bigquery_routine(terrascript.Resource):
     pass
 
 
@@ -418,6 +446,10 @@ class google_compute_vpn_tunnel(terrascript.Resource):
     pass
 
 
+class google_compute_target_grpc_proxy(terrascript.Resource):
+    pass
+
+
 class google_container_analysis_note(terrascript.Resource):
     pass
 
@@ -442,7 +474,31 @@ class google_data_catalog_tag(terrascript.Resource):
     pass
 
 
+class google_data_catalog_taxonomy(terrascript.Resource):
+    pass
+
+
+class google_data_catalog_policy_tag(terrascript.Resource):
+    pass
+
+
 class google_data_fusion_instance(terrascript.Resource):
+    pass
+
+
+class google_data_loss_prevention_job_trigger(terrascript.Resource):
+    pass
+
+
+class google_data_loss_prevention_inspect_template(terrascript.Resource):
+    pass
+
+
+class google_data_loss_prevention_stored_info_type(terrascript.Resource):
+    pass
+
+
+class google_data_loss_prevention_deidentify_template(terrascript.Resource):
     pass
 
 
@@ -478,6 +534,10 @@ class google_dns_policy(terrascript.Resource):
     pass
 
 
+class google_essential_contacts_contact(terrascript.Resource):
+    pass
+
+
 class google_filestore_instance(terrascript.Resource):
     pass
 
@@ -495,6 +555,10 @@ class google_firebase_web_app(terrascript.Resource):
 
 
 class google_firestore_index(terrascript.Resource):
+    pass
+
+
+class google_firestore_document(terrascript.Resource):
     pass
 
 
@@ -531,6 +595,18 @@ class google_healthcare_fhir_store(terrascript.Resource):
 
 
 class google_healthcare_hl7_v2_store(terrascript.Resource):
+    pass
+
+
+class google_healthcare_consent_store(terrascript.Resource):
+    pass
+
+
+class google_iam_workload_identity_pool(terrascript.Resource):
+    pass
+
+
+class google_iam_workload_identity_pool_provider(terrascript.Resource):
     pass
 
 
@@ -656,11 +732,27 @@ class google_os_login_ssh_public_key(terrascript.Resource):
     pass
 
 
+class google_privateca_certificate_authority(terrascript.Resource):
+    pass
+
+
+class google_privateca_certificate(terrascript.Resource):
+    pass
+
+
 class google_pubsub_topic(terrascript.Resource):
     pass
 
 
 class google_pubsub_subscription(terrascript.Resource):
+    pass
+
+
+class google_pubsub_lite_topic(terrascript.Resource):
+    pass
+
+
+class google_pubsub_lite_subscription(terrascript.Resource):
     pass
 
 
@@ -768,6 +860,10 @@ class google_bigtable_table(terrascript.Resource):
     pass
 
 
+class google_billing_subaccount(terrascript.Resource):
+    pass
+
+
 class google_cloudfunctions_function(terrascript.Resource):
     pass
 
@@ -781,6 +877,10 @@ class google_compute_attached_disk(terrascript.Resource):
 
 
 class google_compute_instance(terrascript.Resource):
+    pass
+
+
+class google_compute_instance_from_machine_image(terrascript.Resource):
     pass
 
 
@@ -876,6 +976,10 @@ class google_endpoints_service(terrascript.Resource):
     pass
 
 
+class google_eventarc_trigger(terrascript.Resource):
+    pass
+
+
 class google_folder(terrascript.Resource):
     pass
 
@@ -904,6 +1008,10 @@ class google_monitoring_dashboard(terrascript.Resource):
     pass
 
 
+class google_project_service_identity(terrascript.Resource):
+    pass
+
+
 class google_service_networking_connection(terrascript.Resource):
     pass
 
@@ -929,6 +1037,10 @@ class google_organization_policy(terrascript.Resource):
 
 
 class google_project(terrascript.Resource):
+    pass
+
+
+class google_project_default_service_accounts(terrascript.Resource):
     pass
 
 
@@ -999,11 +1111,17 @@ __all__ = [
     "google_access_context_manager_access_policy",
     "google_access_context_manager_access_level",
     "google_access_context_manager_access_levels",
+    "google_access_context_manager_access_level_condition",
     "google_access_context_manager_service_perimeter",
     "google_access_context_manager_service_perimeters",
     "google_access_context_manager_service_perimeter_resource",
+    "google_access_context_manager_gcp_user_access_binding",
     "google_active_directory_domain",
     "google_active_directory_domain_trust",
+    "google_api_gateway_api",
+    "google_api_gateway_api_config",
+    "google_api_gateway_gateway",
+    "google_apigee_organization",
     "google_app_engine_domain_mapping",
     "google_app_engine_firewall_rule",
     "google_app_engine_standard_app_version",
@@ -1014,6 +1132,7 @@ __all__ = [
     "google_bigquery_dataset",
     "google_bigquery_dataset_access",
     "google_bigquery_job",
+    "google_bigquery_routine",
     "google_bigquery_connection",
     "google_bigquery_data_transfer_config",
     "google_bigquery_reservation",
@@ -1097,13 +1216,20 @@ __all__ = [
     "google_compute_external_vpn_gateway",
     "google_compute_url_map",
     "google_compute_vpn_tunnel",
+    "google_compute_target_grpc_proxy",
     "google_container_analysis_note",
     "google_container_analysis_occurrence",
     "google_data_catalog_entry_group",
     "google_data_catalog_entry",
     "google_data_catalog_tag_template",
     "google_data_catalog_tag",
+    "google_data_catalog_taxonomy",
+    "google_data_catalog_policy_tag",
     "google_data_fusion_instance",
+    "google_data_loss_prevention_job_trigger",
+    "google_data_loss_prevention_inspect_template",
+    "google_data_loss_prevention_stored_info_type",
+    "google_data_loss_prevention_deidentify_template",
     "google_dataproc_autoscaling_policy",
     "google_datastore_index",
     "google_deployment_manager_deployment",
@@ -1112,11 +1238,13 @@ __all__ = [
     "google_dialogflow_entity_type",
     "google_dns_managed_zone",
     "google_dns_policy",
+    "google_essential_contacts_contact",
     "google_filestore_instance",
     "google_firebase_project",
     "google_firebase_project_location",
     "google_firebase_web_app",
     "google_firestore_index",
+    "google_firestore_document",
     "google_game_services_realm",
     "google_game_services_game_server_cluster",
     "google_game_services_game_server_deployment",
@@ -1126,6 +1254,9 @@ __all__ = [
     "google_healthcare_dicom_store",
     "google_healthcare_fhir_store",
     "google_healthcare_hl7_v2_store",
+    "google_healthcare_consent_store",
+    "google_iam_workload_identity_pool",
+    "google_iam_workload_identity_pool_provider",
     "google_iap_brand",
     "google_iap_client",
     "google_identity_platform_default_supported_idp_config",
@@ -1156,8 +1287,12 @@ __all__ = [
     "google_os_config_patch_deployment",
     "google_os_config_guest_policies",
     "google_os_login_ssh_public_key",
+    "google_privateca_certificate_authority",
+    "google_privateca_certificate",
     "google_pubsub_topic",
     "google_pubsub_subscription",
+    "google_pubsub_lite_topic",
+    "google_pubsub_lite_subscription",
     "google_redis_instance",
     "google_resource_manager_lien",
     "google_secret_manager_secret",
@@ -1184,10 +1319,12 @@ __all__ = [
     "google_bigtable_gc_policy",
     "google_bigtable_instance",
     "google_bigtable_table",
+    "google_billing_subaccount",
     "google_cloudfunctions_function",
     "google_composer_environment",
     "google_compute_attached_disk",
     "google_compute_instance",
+    "google_compute_instance_from_machine_image",
     "google_compute_instance_from_template",
     "google_compute_instance_group",
     "google_compute_instance_group_manager",
@@ -1211,6 +1348,7 @@ __all__ = [
     "google_dataproc_job",
     "google_dns_record_set",
     "google_endpoints_service",
+    "google_eventarc_trigger",
     "google_folder",
     "google_folder_organization_policy",
     "google_logging_billing_account_sink",
@@ -1218,6 +1356,7 @@ __all__ = [
     "google_logging_folder_sink",
     "google_logging_project_sink",
     "google_monitoring_dashboard",
+    "google_project_service_identity",
     "google_service_networking_connection",
     "google_sql_database_instance",
     "google_sql_ssl_cert",
@@ -1225,6 +1364,7 @@ __all__ = [
     "google_organization_iam_custom_role",
     "google_organization_policy",
     "google_project",
+    "google_project_default_service_accounts",
     "google_project_service",
     "google_project_iam_custom_role",
     "google_project_organization_policy",

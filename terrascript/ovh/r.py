@@ -14,6 +14,10 @@ class ovh_cloud_user(terrascript.Resource):
     pass
 
 
+class ovh_dedicated_ceph_acl(terrascript.Resource):
+    pass
+
+
 class ovh_dedicated_server_install_task(terrascript.Resource):
     pass
 
