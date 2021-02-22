@@ -26,6 +26,8 @@
   repository: https://github.com/terraform-providers/terraform-provider-cloudstack
 - name: cobbler
   repository: https://github.com/terraform-providers/terraform-provider-cobbler
+- name: consul
+  repository: https://github.com/hashicorp/terraform-provider-consul
 - name: datadog
   repository: https://github.com/terraform-providers/terraform-provider-datadog
 - name: digitalocean

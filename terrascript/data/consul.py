@@ -1,4 +1,4 @@
-# terrascript/consul/d.py
+# terrascript/data/consul.py
 import terrascript
 
 
@@ -76,3 +76,26 @@ class consul_catalog_service(terrascript.Data):
 
 class consul_catalog_services(terrascript.Data):
     pass
+
+
+__all__ = [
+    "consul_agent_self",
+    "consul_agent_config",
+    "consul_autopilot_health",
+    "consul_nodes",
+    "consul_service",
+    "consul_service_health",
+    "consul_services",
+    "consul_keys",
+    "consul_key_prefix",
+    "consul_acl_auth_method",
+    "consul_acl_policy",
+    "consul_acl_role",
+    "consul_acl_token",
+    "consul_acl_token_secret_id",
+    "consul_network_segments",
+    "consul_network_area_members",
+    "consul_catalog_nodes",
+    "consul_catalog_service",
+    "consul_catalog_services",
+]

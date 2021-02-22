@@ -506,6 +506,10 @@ class google_dataproc_autoscaling_policy(terrascript.Resource):
     pass
 
 
+class google_dataproc_metastore_service(terrascript.Resource):
+    pass
+
+
 class google_datastore_index(terrascript.Resource):
     pass
 
@@ -622,9 +626,7 @@ class google_identity_platform_default_supported_idp_config(terrascript.Resource
     pass
 
 
-class google_identity_platform_tenant_default_supported_idp_config(
-    terrascript.Resource
-):
+class google_identity_platform_tenant_default_supported_idp_config(terrascript.Resource):
     pass
 
 
@@ -1231,6 +1233,7 @@ __all__ = [
     "google_data_loss_prevention_stored_info_type",
     "google_data_loss_prevention_deidentify_template",
     "google_dataproc_autoscaling_policy",
+    "google_dataproc_metastore_service",
     "google_datastore_index",
     "google_deployment_manager_deployment",
     "google_dialogflow_agent",

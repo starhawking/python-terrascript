@@ -1,4 +1,4 @@
-# terrascript/consul/r.py
+# terrascript/resource/consul.py
 import terrascript
 
 
@@ -80,3 +80,27 @@ class consul_intention(terrascript.Resource):
 
 class consul_network_area(terrascript.Resource):
     pass
+
+
+__all__ = [
+    "consul_acl_auth_method",
+    "consul_acl_binding_rule",
+    "consul_acl_policy",
+    "consul_acl_role",
+    "consul_acl_token",
+    "consul_acl_token_policy_attachment",
+    "consul_agent_service",
+    "consul_catalog_entry",
+    "consul_certificate_authority",
+    "consul_config_entry",
+    "consul_keys",
+    "consul_key_prefix",
+    "consul_license",
+    "consul_namespace",
+    "consul_node",
+    "consul_prepared_query",
+    "consul_autopilot_config",
+    "consul_service",
+    "consul_intention",
+    "consul_network_area",
+]

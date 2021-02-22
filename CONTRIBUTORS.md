@@ -15,6 +15,7 @@ List of contributors (bug reports, fixes, suggestions, anything) to
 * Austin Millan
 * Connor Leigh-Smith
 * DJDavisson
+* Emma May
 * Hugo van Kemanade
 * ilons
 * Joao Gilberto Magalhaes
