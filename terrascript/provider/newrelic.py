@@ -1,13 +1,12 @@
 # terrascript/provider/newrelic.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.newrelic
+#
+# instead of
+#
+#   >>> import provider.newrelic.newrelic
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class newrelic(terrascript.Provider):
-    '''Terraform provider for New Relic
-    
-    '''
-    __description__ = "Terraform provider for New Relic"
-    __version__ = "2.19.0"
-    
-
-__all__ = ["newrelic"]
+from newrelic import *

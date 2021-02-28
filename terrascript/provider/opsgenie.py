@@ -1,13 +1,12 @@
 # terrascript/provider/opsgenie.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.opsgenie
+#
+# instead of
+#
+#   >>> import provider.opsgenie.opsgenie
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class opsgenie(terrascript.Provider):
-    '''Terraform OpsGenie provider
-    
-    '''
-    __description__ = "Terraform OpsGenie provider"
-    __version__ = "0.6.3"
-    
-
-__all__ = ["opsgenie"]
+from opsgenie import *

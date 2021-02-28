@@ -61,6 +61,18 @@ class oci_apigateway_gateways(terrascript.Data):
     pass
 
 
+class oci_artifacts_container_configuration(terrascript.Data):
+    pass
+
+
+class oci_artifacts_container_repositories(terrascript.Data):
+    pass
+
+
+class oci_artifacts_container_repository(terrascript.Data):
+    pass
+
+
 class oci_audit_configuration(terrascript.Data):
     pass
 
@@ -1890,6 +1902,14 @@ class oci_optimizer_profiles(terrascript.Data):
 
 
 class oci_optimizer_recommendation(terrascript.Data):
+    pass
+
+
+class oci_optimizer_recommendation_strategies(terrascript.Data):
+    pass
+
+
+class oci_optimizer_recommendation_strategy(terrascript.Data):
     pass
 
 

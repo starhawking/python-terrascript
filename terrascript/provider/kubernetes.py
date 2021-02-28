@@ -1,13 +1,12 @@
 # terrascript/provider/kubernetes.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.kubernetes
+#
+# instead of
+#
+#   >>> import provider.hashicorp.kubernetes
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class kubernetes(terrascript.Provider):
-    '''terraform-provider-kubernetes
-    
-    '''
-    __description__ = "terraform-provider-kubernetes"
-    __version__ = "2.0.2"
-    
-
-__all__ = ["kubernetes"]
+from kubernetes import *

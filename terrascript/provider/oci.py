@@ -1,13 +1,12 @@
 # terrascript/provider/oci.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.oci
+#
+# instead of
+#
+#   >>> import provider.hashicorp.oci
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class oci(terrascript.Provider):
-    '''terraform-provider-oci
-    
-    '''
-    __description__ = "terraform-provider-oci"
-    __version__ = "4.14.0"
-    
-
-__all__ = ["oci"]
+from oci import *

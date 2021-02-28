@@ -33,6 +33,14 @@ class oci_apigateway_gateway(terrascript.Resource):
     pass
 
 
+class oci_artifacts_container_configuration(terrascript.Resource):
+    pass
+
+
+class oci_artifacts_container_repository(terrascript.Resource):
+    pass
+
+
 class oci_audit_configuration(terrascript.Resource):
     pass
 

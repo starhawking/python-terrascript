@@ -29,5 +29,29 @@ class fastly_service_waf_configuration(terrascript.Resource):
     pass
 
 
+class fastly_tls_activation(terrascript.Resource):
+    pass
+
+
+class fastly_tls_certificate(terrascript.Resource):
+    pass
+
+
+class fastly_tls_platform_certificate(terrascript.Resource):
+    pass
+
+
+class fastly_tls_private_key(terrascript.Resource):
+    pass
+
+
+class fastly_tls_subscription(terrascript.Resource):
+    pass
+
+
+class fastly_tls_subscription_validation(terrascript.Resource):
+    pass
+
+
 class fastly_user_v1(terrascript.Resource):
     pass

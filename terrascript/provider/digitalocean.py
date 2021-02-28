@@ -1,13 +1,12 @@
 # terrascript/provider/digitalocean.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.digitalocean
+#
+# instead of
+#
+#   >>> import provider.digitalocean.digitalocean
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class digitalocean(terrascript.Provider):
-    '''Terraform DigitalOcean provider
-    
-    '''
-    __description__ = "Terraform DigitalOcean provider"
-    __version__ = "2.5.1"
-    
-
-__all__ = ["digitalocean"]
+from digitalocean import *

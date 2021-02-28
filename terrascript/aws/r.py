@@ -565,6 +565,10 @@ class aws_cognito_user_pool_domain(terrascript.Resource):
     pass
 
 
+class aws_cognito_user_pool_ui_customization(terrascript.Resource):
+    pass
+
+
 class aws_config_aggregate_authorization(terrascript.Resource):
     pass
 
@@ -1002,6 +1006,10 @@ class aws_ecr_repository(terrascript.Resource):
 
 
 class aws_ecr_repository_policy(terrascript.Resource):
+    pass
+
+
+class aws_ecrpublic_repository(terrascript.Resource):
     pass
 
 
@@ -2130,6 +2138,10 @@ class aws_s3control_bucket_policy(terrascript.Resource):
 
 
 class aws_s3outposts_endpoint(terrascript.Resource):
+    pass
+
+
+class aws_sagemaker_app(terrascript.Resource):
     pass
 
 

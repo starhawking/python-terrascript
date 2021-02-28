@@ -1,20 +1,12 @@
-# terrascript/resource/template.py
-import terrascript
+# terrascript/data/template.py
+# For imports without namespace, e.g.
+#
+#   >>> import data.template
+#
+# instead of
+#
+#   >>> import data.hashicorp.template
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class template_cloudinit_config(terrascript.Resource):
-    pass
-
-
-class template_dir(terrascript.Resource):
-    pass
-
-
-class template_file(terrascript.Resource):
-    pass
-
-__all__ = [
-    "template_cloudinit_config",
-    "template_dir",
-    "template_file",
-]
+from template import *

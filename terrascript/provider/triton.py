@@ -1,13 +1,12 @@
 # terrascript/provider/triton.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.triton
+#
+# instead of
+#
+#   >>> import provider.joyent.triton
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class triton(terrascript.Provider):
-    '''Terraform Joyent Triton provider
-    
-    '''
-    __description__ = "Terraform Joyent Triton provider"
-    __version__ = "0.8.1"
-    
-
-__all__ = ["triton"]
+from triton import *

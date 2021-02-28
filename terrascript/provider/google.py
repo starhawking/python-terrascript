@@ -1,13 +1,12 @@
 # terrascript/provider/google.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.google
+#
+# instead of
+#
+#   >>> import provider.hashicorp.google
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class google(terrascript.Provider):
-    '''terraform-provider-google
-    
-    '''
-    __description__ = "terraform-provider-google"
-    __version__ = "3.57.0"
-    
-
-__all__ = ["google"]
+from google import *

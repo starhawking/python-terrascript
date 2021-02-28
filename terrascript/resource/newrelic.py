@@ -1,110 +1,12 @@
-# terrascript/resource/newrelic.py
-import terrascript
+# terrascript/data/newrelic.py
+# For imports without namespace, e.g.
+#
+#   >>> import data.newrelic
+#
+# instead of
+#
+#   >>> import data.newrelic.newrelic
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class newrelic_alert_channel(terrascript.Resource):
-    pass
-
-
-class newrelic_alert_condition(terrascript.Resource):
-    pass
-
-
-class newrelic_alert_muting_rule(terrascript.Resource):
-    pass
-
-
-class newrelic_alert_policy(terrascript.Resource):
-    pass
-
-
-class newrelic_alert_policy_channel(terrascript.Resource):
-    pass
-
-
-class newrelic_api_access_key(terrascript.Resource):
-    pass
-
-
-class newrelic_application_settings(terrascript.Resource):
-    pass
-
-
-class newrelic_dashboard(terrascript.Resource):
-    pass
-
-
-class newrelic_entity_tags(terrascript.Resource):
-    pass
-
-
-class newrelic_events_to_metrics_rule(terrascript.Resource):
-    pass
-
-
-class newrelic_infra_alert_condition(terrascript.Resource):
-    pass
-
-
-class newrelic_insights_event(terrascript.Resource):
-    pass
-
-
-class newrelic_nrql_alert_condition(terrascript.Resource):
-    pass
-
-
-class newrelic_one_dashboard(terrascript.Resource):
-    pass
-
-
-class newrelic_plugins_alert_condition(terrascript.Resource):
-    pass
-
-
-class newrelic_synthetics_alert_condition(terrascript.Resource):
-    pass
-
-
-class newrelic_synthetics_monitor(terrascript.Resource):
-    pass
-
-
-class newrelic_synthetics_monitor_script(terrascript.Resource):
-    pass
-
-
-class newrelic_synthetics_multilocation_alert_condition(terrascript.Resource):
-    pass
-
-
-class newrelic_synthetics_secure_credential(terrascript.Resource):
-    pass
-
-
-class newrelic_workload(terrascript.Resource):
-    pass
-
-__all__ = [
-    "newrelic_alert_channel",
-    "newrelic_alert_condition",
-    "newrelic_alert_muting_rule",
-    "newrelic_alert_policy",
-    "newrelic_alert_policy_channel",
-    "newrelic_api_access_key",
-    "newrelic_application_settings",
-    "newrelic_dashboard",
-    "newrelic_entity_tags",
-    "newrelic_events_to_metrics_rule",
-    "newrelic_infra_alert_condition",
-    "newrelic_insights_event",
-    "newrelic_nrql_alert_condition",
-    "newrelic_one_dashboard",
-    "newrelic_plugins_alert_condition",
-    "newrelic_synthetics_alert_condition",
-    "newrelic_synthetics_monitor",
-    "newrelic_synthetics_monitor_script",
-    "newrelic_synthetics_multilocation_alert_condition",
-    "newrelic_synthetics_secure_credential",
-    "newrelic_workload",
-]
+from newrelic import *

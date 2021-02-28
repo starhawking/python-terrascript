@@ -1,13 +1,12 @@
 # terrascript/provider/scaleway.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.scaleway
+#
+# instead of
+#
+#   >>> import provider.scaleway.scaleway
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class scaleway(terrascript.Provider):
-    '''Terraform Scaleway provider
-    
-    '''
-    __description__ = "Terraform Scaleway provider"
-    __version__ = "2.0.0-rc1"
-    
-
-__all__ = ["scaleway"]
+from scaleway import *

@@ -1,25 +1,12 @@
-# terrascript/resource/tls.py
-import terrascript
+# terrascript/data/tls.py
+# For imports without namespace, e.g.
+#
+#   >>> import data.tls
+#
+# instead of
+#
+#   >>> import data.hashicorp.tls
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class tls_cert_request(terrascript.Resource):
-    pass
-
-
-class tls_locally_signed_cert(terrascript.Resource):
-    pass
-
-
-class tls_private_key(terrascript.Resource):
-    pass
-
-
-class tls_self_signed_cert(terrascript.Resource):
-    pass
-
-__all__ = [
-    "tls_cert_request",
-    "tls_locally_signed_cert",
-    "tls_private_key",
-    "tls_self_signed_cert",
-]
+from tls import *

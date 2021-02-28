@@ -1,40 +1,12 @@
-# terrascript/resource/random.py
-import terrascript
+# terrascript/data/random.py
+# For imports without namespace, e.g.
+#
+#   >>> import data.random
+#
+# instead of
+#
+#   >>> import data.hashicorp.random
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class random_id(terrascript.Resource):
-    pass
-
-
-class random_integer(terrascript.Resource):
-    pass
-
-
-class random_password(terrascript.Resource):
-    pass
-
-
-class random_pet(terrascript.Resource):
-    pass
-
-
-class random_shuffle(terrascript.Resource):
-    pass
-
-
-class random_string(terrascript.Resource):
-    pass
-
-
-class random_uuid(terrascript.Resource):
-    pass
-
-__all__ = [
-    "random_id",
-    "random_integer",
-    "random_password",
-    "random_pet",
-    "random_shuffle",
-    "random_string",
-    "random_uuid",
-]
+from random import *

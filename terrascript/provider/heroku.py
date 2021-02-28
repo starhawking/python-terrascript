@@ -1,13 +1,12 @@
 # terrascript/provider/heroku.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.heroku
+#
+# instead of
+#
+#   >>> import provider.heroku.heroku
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class heroku(terrascript.Provider):
-    '''Terraform Heroku provider
-    
-    '''
-    __description__ = "Terraform Heroku provider"
-    __version__ = "3.2.0"
-    
-
-__all__ = ["heroku"]
+from heroku import *

@@ -1,13 +1,12 @@
 # terrascript/provider/fastly.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.fastly
+#
+# instead of
+#
+#   >>> import provider.fastly.fastly
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class fastly(terrascript.Provider):
-    '''Terraform Fastly provider
-    
-    '''
-    __description__ = "Terraform Fastly provider"
-    __version__ = "0.24.0"
-    
-
-__all__ = ["fastly"]
+from fastly import *

@@ -1,13 +1,12 @@
 # terrascript/provider/http.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.http
+#
+# instead of
+#
+#   >>> import provider.hashicorp.http
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class http(terrascript.Provider):
-    '''terraform-provider-http
-    
-    '''
-    __description__ = "terraform-provider-http"
-    __version__ = "2.1.0"
-    
-
-__all__ = ["http"]
+from http import *

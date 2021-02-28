@@ -1,13 +1,12 @@
 # terrascript/provider/signalfx.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.signalfx
+#
+# instead of
+#
+#   >>> import provider.splunk-terraform.signalfx
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class signalfx(terrascript.Provider):
-    '''Terraform SignalFx provider
-    
-    '''
-    __description__ = "Terraform SignalFx provider"
-    __version__ = "6.7.0"
-    
-
-__all__ = ["signalfx"]
+from signalfx import *

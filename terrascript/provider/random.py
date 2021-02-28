@@ -1,13 +1,12 @@
 # terrascript/provider/random.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.random
+#
+# instead of
+#
+#   >>> import provider.hashicorp.random
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class random(terrascript.Provider):
-    '''terraform-provider-random
-    
-    '''
-    __description__ = "terraform-provider-random"
-    __version__ = "3.1.0"
-    
-
-__all__ = ["random"]
+from random import *

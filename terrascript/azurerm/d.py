@@ -617,6 +617,10 @@ class azurerm_snapshot(terrascript.Data):
     pass
 
 
+class azurerm_spring_cloud_app(terrascript.Data):
+    pass
+
+
 class azurerm_spring_cloud_service(terrascript.Data):
     pass
 

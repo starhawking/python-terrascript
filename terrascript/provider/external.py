@@ -1,13 +1,12 @@
 # terrascript/provider/external.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.external
+#
+# instead of
+#
+#   >>> import provider.hashicorp.external
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class external(terrascript.Provider):
-    '''terraform-provider-external
-    
-    '''
-    __description__ = "terraform-provider-external"
-    __version__ = "2.1.0"
-    
-
-__all__ = ["external"]
+from external import *

@@ -633,6 +633,14 @@ class azurerm_database_migration_service(terrascript.Resource):
     pass
 
 
+class azurerm_databox_edge_device(terrascript.Resource):
+    pass
+
+
+class azurerm_databox_edge_order(terrascript.Resource):
+    pass
+
+
 class azurerm_databricks_workspace(terrascript.Resource):
     pass
 
@@ -1058,6 +1066,10 @@ class azurerm_kusto_database_principal_assignment(terrascript.Resource):
 
 
 class azurerm_kusto_eventhub_data_connection(terrascript.Resource):
+    pass
+
+
+class azurerm_kusto_iothub_data_connection(terrascript.Resource):
     pass
 
 
@@ -1605,6 +1617,14 @@ class azurerm_redis_cache(terrascript.Resource):
     pass
 
 
+class azurerm_redis_enterprise_cluster(terrascript.Resource):
+    pass
+
+
+class azurerm_redis_enterprise_database(terrascript.Resource):
+    pass
+
+
 class azurerm_redis_firewall_rule(terrascript.Resource):
     pass
 
@@ -1654,6 +1674,10 @@ class azurerm_route_table(terrascript.Resource):
 
 
 class azurerm_search_service(terrascript.Resource):
+    pass
+
+
+class azurerm_security_center_assessment_metadata(terrascript.Resource):
     pass
 
 
@@ -1806,6 +1830,10 @@ class azurerm_spring_cloud_app(terrascript.Resource):
 
 
 class azurerm_spring_cloud_certificate(terrascript.Resource):
+    pass
+
+
+class azurerm_spring_cloud_custom_domain(terrascript.Resource):
     pass
 
 

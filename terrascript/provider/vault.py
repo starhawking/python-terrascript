@@ -1,13 +1,12 @@
 # terrascript/provider/vault.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.vault
+#
+# instead of
+#
+#   >>> import provider.hashicorp.vault
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class vault(terrascript.Provider):
-    '''Terraform Vault provider
-    
-    '''
-    __description__ = "Terraform Vault provider"
-    __version__ = "2.11.0-withsleep"
-    
-
-__all__ = ["vault"]
+from vault import *

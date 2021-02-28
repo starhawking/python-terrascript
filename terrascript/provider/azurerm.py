@@ -1,13 +1,12 @@
 # terrascript/provider/azurerm.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.azurerm
+#
+# instead of
+#
+#   >>> import provider.hashicorp.azurerm
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class azurerm(terrascript.Provider):
-    '''terraform-provider-azurerm
-    
-    '''
-    __description__ = "terraform-provider-azurerm"
-    __version__ = "2.48.0"
-    
-
-__all__ = ["azurerm"]
+from azurerm import *

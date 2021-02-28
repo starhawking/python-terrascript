@@ -1,13 +1,12 @@
 # terrascript/provider/aws.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.aws
+#
+# instead of
+#
+#   >>> import provider.hashicorp.aws
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class aws(terrascript.Provider):
-    '''terraform-provider-aws
-    
-    '''
-    __description__ = "terraform-provider-aws"
-    __version__ = "3.29.0"
-    
-
-__all__ = ["aws"]
+from aws import *

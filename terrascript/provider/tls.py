@@ -1,13 +1,12 @@
 # terrascript/provider/tls.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.tls
+#
+# instead of
+#
+#   >>> import provider.hashicorp.tls
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class tls(terrascript.Provider):
-    '''terraform-provider-tls
-    
-    '''
-    __description__ = "terraform-provider-tls"
-    __version__ = "3.1.0"
-    
-
-__all__ = ["tls"]
+from tls import *

@@ -1,13 +1,12 @@
 # terrascript/provider/vsphere.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.vsphere
+#
+# instead of
+#
+#   >>> import provider.hashicorp.vsphere
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class vsphere(terrascript.Provider):
-    '''terraform-provider-vsphere
-    
-    '''
-    __description__ = "terraform-provider-vsphere"
-    __version__ = "1.24.3"
-    
-
-__all__ = ["vsphere"]
+from vsphere import *

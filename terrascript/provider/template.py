@@ -1,13 +1,12 @@
 # terrascript/provider/template.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.template
+#
+# instead of
+#
+#   >>> import provider.hashicorp.template
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class template(terrascript.Provider):
-    '''terraform-provider-template
-    
-    '''
-    __description__ = "terraform-provider-template"
-    __version__ = "2.2.0"
-    
-
-__all__ = ["template"]
+from template import *

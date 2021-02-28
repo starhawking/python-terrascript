@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
 """Auto-generate provider specific modules.
 
-   The script reads a list of Terraform providers from the file PROVIDERS, 
-   pulls the provider's Github repository and parses the provider.go file.
-
-   This script relies on the content of a provider's 'provider.go'
-   matching the regular expression `REGEX` below.
-   
-   Runtime: 2:30 minutes
+   The list of providers is retrieved from the Terraform Registry.
+ 
 
    Changelog:
    2021-02-xx - Rewrote the main logic of this script to retrieve the
@@ -43,7 +38,7 @@
    for a list of earlier changes.
 
 """
-#import concurrent.futures
+
 import logging
 import os
 import os.path
@@ -52,33 +47,36 @@ import subprocess
 import sys
 import tempfile
 import json
+from keyword import iskeyword
 
 import jinja2
 import requests
 
 DEBUG = True
-#CONCURRENCY = 1
-
 
 REGISTRY_BASE_URL = 'https://registry.terraform.io/'
 
+RESULT_SUCCESS = 0
+RESULT_FAILED = 1
+RESULT_SKIPPED = 2
+
 
 LEGACY_INIT_TEMPLATE = jinja2.Template(
-    """# terrascript/{{ provider_name }}/__init__.py
+    """# terrascript/{{ provider_name|replace('-', '_') }}/__init__.py
 import warnings
 warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
               stacklevel=2)
 
 import terrascript
 
-class {{ provider_name }}(terrascript.Provider):
+class {{ provider_name|replace('-', '_') }}(terrascript.Provider):
     pass
 
 """
 )
 
 LEGACY_DATASOURCES_TEMPLATE = jinja2.Template(
-    """# terrascript/{{ provider_name }}/d.py
+    """# terrascript/{{ provider_name|replace('-', '_') }}/d.py
 import warnings
 warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
               stacklevel=2)
@@ -89,7 +87,7 @@ import terrascript
 {%- for datasource in datasources %}
 
 
-class {{ datasource }}(terrascript.Data):
+class {{ datasource|replace('-', '_') }}(terrascript.Data):
     pass
 {%- endfor %}
 
@@ -97,7 +95,7 @@ class {{ datasource }}(terrascript.Data):
 )
 
 LEGACY_RESOURCES_TEMPLATE = jinja2.Template(
-    """# terrascript/{{ provider_name }}/r.py
+    """# terrascript/{{ provider_name|replace('-', '_') }}/r.py
 import warnings
 warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
               stacklevel=2)
@@ -108,68 +106,129 @@ import terrascript
 {%- for resource in resources %}
 
 
-class {{ resource }}(terrascript.Resource):
+class {{ resource|replace('-', '_') }}(terrascript.Resource):
     pass
 {%- endfor %}
 
 """
 )
 
+
+# The NO_NAMESPACE_TEMPLATE is used to create Python modules that
+# permit importing a subset of modules without a namespace. The
+# rendered output is meant to be saved as.
+#
+#    terrascript/{{ category }}/{{ provider.name }}.py  
+# 
+# category: One of 'provider', 'resource' or 'data'.
+# provider: Dictionary as returned by the Terraform registry.
+#
+NO_NAMESPACE_TEMPLATE = jinja2.Template(
+   """# terrascript/{{ category }}/{{ provider.name|replace('-', '_') }}.py
+# For imports without namespace, e.g.
+#
+#   >>> import {{ category }}.{{ provider.name|replace('-', '_') }}
+#
+# instead of
+#
+#   >>> import {{ category }}.{{ provider.namespace }}.{{ provider.name|replace('-', '_') }}
+# 
+# This is only available for 'official' and 'partner' providers.
+
+from {{ provider.name|replace('-', '_') }} import *
+"""
+)
+
+# The PROVIDER_TEMPLATE is used to create 
+#
+#     terrascript/provider/{{ provider.namespace }}/{{ provider.name }}.py
+#
+# for example
+#
+#     terrascript/provider/hashicorp/aws.py
+#
 PROVIDER_TEMPLATE = jinja2.Template(
-    """# terrascript/provider/{{ provider.name }}.py
+    """# terrascript/provider/{{ provider.namespace }}/{{ provider.name|replace('-', '_') }}.py
 import terrascript
 
-
-class {{ provider.name }}(terrascript.Provider):
+class {{ provider.name|replace('-', '_')  }}(terrascript.Provider):
     '''{{provider.description}}
     
     '''
     __description__ = "{{provider.description}}"
+    __namespace__ = "{{provider.namespace}}"
+    __source__ = "{{provider.source}}"
     __version__ = "{{provider.version}}"
+    __published__ = "{{provider.published_at}}"
+    __tier__ = "{{provider.tier}}"
     
 
-__all__ = ["{{ provider.name }}"]
+__all__ = ["{{ provider.name|replace('-', '_') }}"]
 
 """
 )
 
+
+# The RESOURCES_TEMPLATE is used to create 
+#
+#     terrascript/resource/{{ provider.namespace }}/{{ provider.name }}.py
+#
+# for example
+#
+#     terrascript/resource/hashicorp/aws.py
+#
+# provider: Dictionary as returned by the Terraform registry.
+# schema: "resource_schema" node in 'terraform providers schema -json'
+#
 RESOURCES_TEMPLATE = jinja2.Template(
-    """# terrascript/resource/{{ provider.name }}.py
-{%- if schema_resources %}
+    """# terrascript/resource/{{ provider.namespace }}/{{ provider.name|replace('-', '_') }}.py
+{%- if schema %}
 import terrascript
 {%- endif -%}
-{%- for name,data in schema_resources.items() %}
+{%- for name,data in schema.items() %}
 
 
-class {{ name }}(terrascript.Resource):
+class {{ name|replace('-', '_') }}(terrascript.Resource):
     pass
 {%- endfor %}
 
-__all__ = [{% if schema_resources -%}
-{%- for name in schema_resources.keys() %}
-    "{{ name }}",
+__all__ = [{% if schema -%}
+{%- for name in schema.keys() %}
+    "{{ name|replace('-', '_') }}",
 {%- endfor %}
 {% endif %}]
 
 """
 )
 
+
+# The DATASOURCES_TEMPLATE is used to create 
+#
+#     terrascript/data/{{ provider.namespace }}/{{ provider.name }}.py
+#
+# for example
+#
+#     terrascript/data/hashicorp/aws.py
+#
+# provider: Dictionary as returned by the Terraform registry.
+# schema: "data_source_schema" node in 'terraform providers schema -json'
+#
 DATASOURCES_TEMPLATE = jinja2.Template(
-    """# terrascript/data/{{ provider.name }}.py
-{%- if schema_datasources %}
+    """# terrascript/data/{{ provider.namespace }}/{{ provider.name|replace('-', '_') }}.py
+{%- if schema %}
 import terrascript
 {%- endif -%}
-{%- for name,data in schema_datasources.items() %}
+{%- for name,data in schema.items() %}
 
 
-class {{ name }}(terrascript.Data):
+class {{ name|replace('-', '_') }}(terrascript.Data):
     pass
 {%- endfor %}
 
 
-__all__ = [{% if schema_datasources -%}
-{%- for name in schema_datasources.keys() %}
-    "{{ name }}",
+__all__ = [{% if schema -%}
+{%- for name in schema.keys() %}
+    "{{ name|replace('-', '_') }}",
 {%- endfor %}
 {% endif %}]
 
@@ -178,14 +237,20 @@ __all__ = [{% if schema_datasources -%}
 
 INIT_TEMPLATE = jinja2.Template(
     """# terrascript/{{ package }}/__init__.py
-from .terraform import *
+    
+# !!! Using wildcard imports from here is DEPPRECATED !!!
+
 {%- for provider in providers %}
-from .{{ provider.name }} import *
+from .{{provider.namespace|replace('-', '_') }}.{{ provider.name|replace('-', '_') }} import *
 {%- endfor %}
 
 """
 )
 
+
+# The MAIN_TF_TEMPLATE is used to create a temporary 'main.tf' file
+# for running 'terraform providers schema -json' against.
+#
 MAIN_TF_TEMPLATE = jinja2.Template(
     """terraform {
   required_providers {
@@ -198,16 +263,55 @@ MAIN_TF_TEMPLATE = jinja2.Template(
 """
 )
 
+
+# The LIST_OF_PROVIDERS_TEMPLATE is used to create PROVIDERS.md.
+#
+# results: List of (provider, RESULT, RESULT_TEXT) tuples.
+#
 LIST_OF_PROVIDERS_TEMPLATE = jinja2.Template(
     """## List of providers
     
 *Terrascript* currently supports the following *Terraform* providers.
 
-{%- for provider in providers %}
-- [{{ provider.name }}](https://registry.terraform.io/providers/{{provider.namespace}}/{{provider.name}}/{{provider.version}}) ({{ provider.version }})
-{%- endfor %} 
+{%- for provider,result,result_text in results %}
+{%- if result == 0 %}
+- [{{ provider.name }}](https://registry.terraform.io/providers/{{provider.namespace}}/{{provider.name}}/{{provider.version}}) ({{provider.namespace}}/{{provider.name}}/{{provider.version }})
+{%- endif %}
+{%- endfor %}
+
+The following providers are not supported.
+
+{%- for provider,result,result_text in results %}
+{%- if result != 0 %}
+- [{{ provider.name }}](https://registry.terraform.io/providers/{{provider.namespace}}/{{provider.name}}/{{provider.version}}) ({{provider.namespace}}/{{provider.name}}/{{provider.version }}) - {{ result_text }}
+{%- endif %}
+{%- endfor %}
+ 
 """
 )
+
+
+# The TESTS_TEMPLATE is used to generate tests for verifying that the
+# Python modules generated by `makecode.py` work fine and the ones that
+# failed cannot be imported.
+#
+# results: List of (provider, RESULT, RESULT_TEXT) tuples.
+#
+TESTS_TEMPLATE = jinja2.Template("""# tests/test_makecode
+{%- for provider,result,result_text in results %}
+# {{ provider.namespace }}/{{ provider.name }}
+{%- if result != 0 %}
+import provider.{{ provider.namespace }}/{{ provider.name }}
+import resource.{{ provider.namespace }}/{{ provider.name }}
+import data.{{ provider.namespace }}/{{ provider.name }}
+from provider.{{ provider.namespace }}/{{ provider.name }} import *
+from resource.{{ provider.namespace }}/{{ provider.name }} import *
+from data.{{ provider.namespace }}/{{ provider.name }} import *
+{% else %}
+
+{%- endif %}
+{%- endfor %}
+""")
 
 THIS_DIR = os.path.abspath(".")
 MODULES_DIR = os.path.abspath("../terrascript")
@@ -221,10 +325,16 @@ def http_get_json(url):
        :returns: Python dictionary.        
        
     """
+    logging.debug(f"{url}")
     
     response = requests.get(url)
     response.raise_for_status()
+    
     return response.json()
+
+
+def pythonise(name):
+    return name.replace('-', '_')
     
 
 def get_list_of_providers():
@@ -274,19 +384,23 @@ def get_list_of_providers():
         #    'next_offset': 15, 
         #    'next_url': '/v1/providers?offset=15'}, 
         # 'providers': [...]
+           
+        providers += data.get('providers', [])
+        
+        url = REGISTRY_BASE_URL + data['meta']['next_url']
         
         # Terminate loop when meta field does not change.
         #
         if previous_meta == data['meta']:
             break
         previous_meta = data['meta']
-                
-        providers += data.get('providers', [])
         
-        url = REGISTRY_BASE_URL + data['meta']['next_url']
+    if DEBUG:
+        import pprint
+        pprint.pprint(providers)
     
     return providers
-                            
+                           
 
 def legacy_create_provider_directory(provider):
     providerdir = os.path.join(MODULES_DIR, provider)
@@ -326,42 +440,115 @@ def legacy_process(provider, schema_resources, schema_datasources):
     legacy_create_provider_init(provider['name'], legacy_providerdir)
     legacy_create_provider_datasources(provider['name'], legacy_providerdir, schema_datasources.keys())
     legacy_create_provider_resources(provider['name'], legacy_providerdir, schema_resources.keys())
+    
+    
+def create_namespace_path(category, provider):
+    
+    # Create a folder for the namespace if it does not exist.
+    #
+    namespace_path = os.path.join(MODULES_DIR, category, pythonise(f"{provider['namespace']}"))
+    logging.debug(f"{namespace_path}")
+    
+    if not os.path.isdir(namespace_path):
+        os.mkdir(namespace_path)
+        
+    with open(os.path.join(namespace_path, '__init__.py'), 'wt') as fp:
+        fp.write(pythonise(f"# {provider['namespace']}"))
+        
+    return namespace_path
 
 
-def create_provider(provider, schema_provider):
+def create_python_module(path, template, **kwargs):
+    logging.debug(f"{path}")
+    
+    with open(path, "wt") as fp:
+        fp.write(template.render(**kwargs))
+
+
+def create_provider(provider, schema):
     logging.debug(f"create_provider {provider['name']}")
-    provider_path = os.path.join(MODULES_DIR, "provider", f"{provider['name']}.py")
-    with open(provider_path, "wt") as fp:
-        fp.write(PROVIDER_TEMPLATE.render(provider=provider, 
-                                          schema_provider=schema_provider))
+    
+    # Create a folder for the namespace if it does not exist.
+    #
+    namespace_path = create_namespace_path('provider', provider)
+        
+    # Create the provider module inside the namespace path.
+    #
+    path=os.path.join(namespace_path, pythonise(f"{provider['name']}.py"))
+    create_python_module(path=path, 
+                         template=PROVIDER_TEMPLATE, 
+                         provider=provider, 
+                         schema=schema)
+
+        
+    # For 'official' and 'partner' providers also create the module directly
+    # under the 'provider' path to ensure backwards compatibility.
+    #
+    path=os.path.join(MODULES_DIR, 'provider', pythonise(f"{provider['name']}.py"))
+    if provider['tier'] in ('official', 'partner'):
+        create_python_module(path=path, 
+                             template=NO_NAMESPACE_TEMPLATE, 
+                             provider=provider, 
+                             schema=schema,
+                             category='provider')       
 
 
-def get_sanitized_name(provider):
-    """Get the string sanitized for use as python module
-
-    :return:
-    """
-    return provider.replace("-", "_")
-
-
-def create_resources(provider, schema_resources):
+def create_resources(provider, schema):
     logging.debug(f"create_resources {provider['name']}")
-    resource_path = os.path.join(MODULES_DIR, "resource", f"{provider['name']}.py")
-    with open(resource_path, "wt") as fp:
-        fp.write(RESOURCES_TEMPLATE.render(provider=provider, 
-                                           schema_resources=schema_resources))
+    
+    # Create a folder for the namespace if it does not exist.
+    #
+    namespace_path = create_namespace_path('resource', provider)
+    
+            
+    # Create the resource module inside the namespace path.
+    #
+    path=os.path.join(namespace_path, pythonise(f"{provider['name']}.py"))
+    create_python_module(path=path, 
+                         template=RESOURCES_TEMPLATE, 
+                         provider=provider,
+                         schema=schema)
+
+        
+    # For 'official' and 'partner' providers also create the module directly
+    # under the 'resource' path to ensure backwards compatibility.
+    #
+    path=os.path.join(MODULES_DIR, 'resource', pythonise(f"{provider['name']}.py"))
+    if provider['tier'] in ('official', 'partner'):
+        create_python_module(path=path, 
+                             template=NO_NAMESPACE_TEMPLATE, 
+                             provider=provider,
+                             schema=schema,
+                             category='resource')
 
 
-def create_datasources(provider, schema_datasources):
+def create_datasources(provider, schema):
     logging.debug(f"create_datasources {provider['name']}")
-    datasource_path = os.path.join(MODULES_DIR, "data", f"{provider['name']}.py")
-    with open(datasource_path, "wt") as fp:
-        fp.write(
-            DATASOURCES_TEMPLATE.render(provider=provider, 
-                                        schema_datasources=schema_datasources)
-        )
+    
+    # Create a folder for the namespace if it does not exist.
+    #
+    namespace_path = create_namespace_path('data', provider)
+    
+    # Create the data source module inside the namespace path.
+    #
+    path=os.path.join(namespace_path, pythonise(f"{provider['name']}.py"))
+    create_python_module(path=path, 
+                         template=DATASOURCES_TEMPLATE, 
+                         provider=provider, 
+                         schema=schema)
 
-
+        
+    # For 'official' and 'partner' providers also create the module directly
+    # under the 'data' path to ensure backwards compatibility.
+    #
+    path=os.path.join(MODULES_DIR, 'resource', pythonise(f"{provider['name']}.py"))
+    if provider['tier'] in ('official', 'partner'):
+        create_python_module(path=path, 
+                             template=NO_NAMESPACE_TEMPLATE, 
+                             provider=provider,
+                             schema=schema,
+                             category='data')
+      
 
 def read_cache(provider):
     with open(CACHE_PATH, 'at+') as fp:
@@ -371,8 +558,8 @@ def read_cache(provider):
         except json.decoder.JSONDecodeError:
             info = {}
         return info.get(provider['name'], {'version': None})
-    
-    
+     
+     
 def write_cache(provider, data):
     with open(CACHE_PATH, 'at+') as fp:
         fp.seek(0)
@@ -380,7 +567,7 @@ def write_cache(provider, data):
             info = json.load(fp)
         except json.decoder.JSONDecodeError:
             info = {}
-            
+             
         info[provider['name']] = {'version': provider['version'], 'data': data}
         json.dump(info, fp)
 
@@ -389,6 +576,7 @@ def process(provider):
     """Process a provider.
     
        :param entry: Data for a provider (see below).
+       :returns: Tuple of (provider, RESULT, RESULT_TEXT)
        
        ```
        {'alias': None,
@@ -407,13 +595,22 @@ def process(provider):
     
     """
     
-    # Do not process the 'registry.terraform.io/hashicorp/terraform' as it
-    # is not listed on the Terraform Registry
+    logging.info(provider["name"])
+    
+    
+    # The 'terraform' provider is maintained manually as it is not
+    # listed on the Terraform Registry. 
     #
     if provider['name'] == 'terraform':
-        return None
+        return (provider, RESULT_SUCCESS, '')
     
-    logging.info(provider["name"])
+    
+    # Skip all providers and namespaces that are Python keywords.
+    #
+    if iskeyword(provider['name']):
+        return (provider, RESULT_SKIPPED, f"{provider['name']} is a Python keyword") 
+    if iskeyword(provider['namespace']):
+        return (provider, RESULT_SKIPPED, f"{provider['namespace']} is a Python keyword")
     
     
     # Return cached data if the provider version has not changed.
@@ -449,6 +646,7 @@ def process(provider):
             )
         if result.returncode != 0:
             logging.warning(result.stderr)
+            return (provider, RESULT_FAILED, 'Failed to initialise provider')
             
             
             
@@ -464,6 +662,7 @@ def process(provider):
         )
         if result.returncode != 0:
             logging.warning(result.stderr)
+            return (provider, RESULT_FAILED, 'Failed to process provider')
             
             
         # Read the output of 'terraform providers schema -json'
@@ -478,7 +677,7 @@ def process(provider):
         try:
             data = json.loads(result.stdout)
         except json.decoder.JSONDecodeError:
-            return None
+            return (provider, RESULT_FAILED, 'Failed to process provider schemas')
         
         
     # Write the data to the cache.
@@ -512,7 +711,8 @@ def process(provider):
     create_resources(provider, schema_resources)
     create_datasources(provider, schema_datasources)
 
-    return provider
+    return (provider, RESULT_SUCCESS, '')
+
 
 def main():
 
@@ -532,10 +732,14 @@ def main():
         providers = [provider for provider in providers if provider["name"] in sys.argv[1:]]
     
     
-    # Process each provider. The returned value will be ``None`` if 
-    # processing a provider failed so it can be filtered later.
+    # Process each provider.
     #
     results = [process(provider) for provider in providers]
+    
+    
+    # Filter out failed providers.
+    #
+    providers = [result[0] for result in results if result[1] == 0]
                         
 
     # Create the __ini__.py files for providers, datasources and resources.
@@ -555,7 +759,7 @@ def main():
     #
     if len(sys.argv) == 1:
         with open(os.path.join('..','PROVIDERS.md'), 'wt') as fp:
-            fp.write(LIST_OF_PROVIDERS_TEMPLATE.render(providers=providers))
+            fp.write(LIST_OF_PROVIDERS_TEMPLATE.render(results=results))
 
 
 if __name__ == "__main__":

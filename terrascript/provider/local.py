@@ -1,13 +1,12 @@
 # terrascript/provider/local.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.local
+#
+# instead of
+#
+#   >>> import provider.hashicorp.local
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class local(terrascript.Provider):
-    '''terraform-provider-local
-    
-    '''
-    __description__ = "terraform-provider-local"
-    __version__ = "2.1.0"
-    
-
-__all__ = ["local"]
+from local import *

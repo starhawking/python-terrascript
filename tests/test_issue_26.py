@@ -6,6 +6,7 @@ https://github.com/mjuenema/python-terrascript/issues/26
 """
 
 import terrascript
+import terrascript.provider
 import terrascript.resource
 
 

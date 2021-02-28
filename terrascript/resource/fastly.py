@@ -1,40 +1,12 @@
-# terrascript/resource/fastly.py
-import terrascript
+# terrascript/data/fastly.py
+# For imports without namespace, e.g.
+#
+#   >>> import data.fastly
+#
+# instead of
+#
+#   >>> import data.fastly.fastly
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class fastly_service_acl_entries_v1(terrascript.Resource):
-    pass
-
-
-class fastly_service_compute(terrascript.Resource):
-    pass
-
-
-class fastly_service_dictionary_items_v1(terrascript.Resource):
-    pass
-
-
-class fastly_service_dynamic_snippet_content_v1(terrascript.Resource):
-    pass
-
-
-class fastly_service_v1(terrascript.Resource):
-    pass
-
-
-class fastly_service_waf_configuration(terrascript.Resource):
-    pass
-
-
-class fastly_user_v1(terrascript.Resource):
-    pass
-
-__all__ = [
-    "fastly_service_acl_entries_v1",
-    "fastly_service_compute",
-    "fastly_service_dictionary_items_v1",
-    "fastly_service_dynamic_snippet_content_v1",
-    "fastly_service_v1",
-    "fastly_service_waf_configuration",
-    "fastly_user_v1",
-]
+from fastly import *

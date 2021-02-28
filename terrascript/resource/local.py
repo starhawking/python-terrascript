@@ -1,10 +1,12 @@
-# terrascript/resource/local.py
-import terrascript
+# terrascript/data/local.py
+# For imports without namespace, e.g.
+#
+#   >>> import data.local
+#
+# instead of
+#
+#   >>> import data.hashicorp.local
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class local_file(terrascript.Resource):
-    pass
-
-__all__ = [
-    "local_file",
-]
+from local import *

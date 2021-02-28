@@ -209,6 +209,10 @@ class google_iam_testable_permissions(terrascript.Data):
     pass
 
 
+class google_iap_client(terrascript.Data):
+    pass
+
+
 class google_kms_crypto_key(terrascript.Data):
     pass
 

@@ -1,13 +1,12 @@
 # terrascript/provider/nomad.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.nomad
+#
+# instead of
+#
+#   >>> import provider.hashicorp.nomad
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class nomad(terrascript.Provider):
-    '''terraform-provider-nomad
-    
-    '''
-    __description__ = "terraform-provider-nomad"
-    __version__ = "1.4.13"
-    
-
-__all__ = ["nomad"]
+from nomad import *

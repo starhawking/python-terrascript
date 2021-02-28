@@ -1,13 +1,12 @@
 # terrascript/provider/opc.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.opc
+#
+# instead of
+#
+#   >>> import provider.hashicorp.opc
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class opc(terrascript.Provider):
-    '''terraform-provider-opc
-    
-    '''
-    __description__ = "terraform-provider-opc"
-    __version__ = "1.4.0"
-    
-
-__all__ = ["opc"]
+from opc import *

@@ -97,16 +97,23 @@ Compatibility
 Terraform releases
 ..................
 
-`Terraform 0.12` introduced some changes to how it deals with configuration 
+`Terraform 0.13`_ added the `required providers` block together with tighter
+integration with the `Terraform Provider Registry`. Terrascript 0.10.x
+reflects this change and is *not backwards compatible* with earlier Terraform
+releases.   
+
+`Terraform 0.12`_ introduced some changes to how it deals with configuration 
 files in JSON format. This is reflected in Terrascript by currently having
 separate releases for Terraform 0.12 and Terraform 0.11. Earlier releases of 
 Terraform are not supported. 
 
-.. _`Terraform 0.12`: https://www.hashicorp.com/blog/announcing-terraform-0-12  
+.. _`Terraform 0.12`: https://www.hashicorp.com/blog/announcing-terraform-0-12
+.. _`Terraform 0.13`: https://www.hashicorp.com/blog/announcing-hashicorp-terraform-0-13  
 
 ========== ============ ============================================================================================
 Terraform  Terrascript  Notes
 ========== ============ ============================================================================================
+0.13.x     0.10.x       Introduced namespaces, many more providers, suppports Terraform 0.13 only 
 0.13.x     0.9.x        Cleanup efforts and bug fixes, dropping support for Python <3.6, supporting Terraform 0.13.x
 0.12.x     0.8.x        Terrascript 0.8 are a (almost) complete rewrite
 0.12.x     0.7.x        Never released

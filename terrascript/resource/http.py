@@ -1,3 +1,12 @@
-# terrascript/resource/http.py
+# terrascript/data/http.py
+# For imports without namespace, e.g.
+#
+#   >>> import data.http
+#
+# instead of
+#
+#   >>> import data.hashicorp.http
+# 
+# This is only available for 'official' and 'partner' providers.
 
-__all__ = []
+from http import *

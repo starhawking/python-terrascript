@@ -1,13 +1,12 @@
 # terrascript/provider/helm.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.helm
+#
+# instead of
+#
+#   >>> import provider.hashicorp.helm
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class helm(terrascript.Provider):
-    '''terraform-provider-helm
-    
-    '''
-    __description__ = "terraform-provider-helm"
-    __version__ = "2.0.2"
-    
-
-__all__ = ["helm"]
+from helm import *
