@@ -2,10 +2,10 @@
 
 This document lists the *Terraform* providers that are currently supported by *Terrascript*.
 
-- [Official providers](official-providers)
-- [Partner providers](partner-providers)
-- [Community providers](community-providers)
-- [Unsupported providers](unsupported-providers)
+- [Official providers](#official-providers)
+- [Partner providers](#partner-providers)
+- [Community providers](#community-providers)
+- [Unsupported providers](#unsupported-providers)
     
 ### Official providers
     
