@@ -288,6 +288,13 @@ MAIN_TF_TEMPLATE = jinja2.Template(
 LIST_OF_PROVIDERS_TEMPLATE = jinja2.Template(
     """## List of providers
     
+This document lists the *Terraform* providers that are currently supported by *Terrascript*.
+
+- [Official providers](#official-providers)
+- [Partner providers](#partner-providers)
+- [Community providers](#community-providers)
+- [Unsupported providers](#unsupported-providers)
+    
 ### Official providers
     
 *Terrascript* currently supports the following official *Terraform* providers.
