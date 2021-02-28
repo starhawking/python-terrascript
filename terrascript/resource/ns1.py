@@ -1,11 +1,12 @@
-# terrascript/resource/ns1.py
-import terrascript
+# terrascript/data/ns1.py
+# For imports without namespace, e.g.
+#
+#   >>> import data.ns1
+#
+# instead of
+#
+#   >>> import data.ns1-terraform.ns1
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class ns1_zone(terrascript.Resource):
-    pass
-
-
-__all__ = [
-    "ns1_zone",
-]
+from ns1 import *

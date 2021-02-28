@@ -1,9 +1,12 @@
 # terrascript/provider/pagerduty.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.pagerduty
+#
+# instead of
+#
+#   >>> import provider.PagerDuty.pagerduty
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class pagerduty(terrascript.Provider):
-    pass
-
-
-__all__ = ["pagerduty"]
+from pagerduty import *

@@ -6,6 +6,7 @@ FLAKE8 := python3 -m flake8
 TESTS_BASIC := $(wildcard tests/test_basic_*.py)
 TESTS_ISSUES := $(wildcard tests/test_issue*.py)
 TESTS_EXAMPLES := $(wildcard tests/test_example_*.py)
+TESTS_MAKECODE := $(wildcard tests/test_makecode_*.py)
 
 export TF_IN_AUTOMATION=1
 
@@ -42,7 +43,7 @@ clean: ## Cleanup temporary / cached files
 	rm -f .noseid*
 
 code: clean ## Generate providers shim classes / code
-	( cd tools && ./makecode.py )
+	( cd tools && ./makecode.py 2>&1 | tee makecode.out )
 
 coverage: clean ## Generate code test coverage
 	$(COVERAGE) $(TESTS_BASIC) $(TEST_ISSUES)
@@ -78,7 +79,7 @@ providers: ## Build bindings for listed providers
 	&& python3 makecode.py $(targets)
 	$(MAKE) black
 
-test: clean test_basic test_issues test_docs ## Run all tests
+test: clean test_makecode test_basic test_issues test_docs ## Run all tests
 
 test_basic: clean ## Run basic tests
 	$(NOSE) $(TESTS_BASIC)
@@ -96,5 +97,8 @@ test_docs: ## Run tests for documentation
 test_examples: clean ## Run tests for examples
 	$(NOSE) $(TESTS_EXAMPLES)
 
-test_issues: clean ## Run tests for prevoius issues
+test_issues: clean ## Run tests for previous issues
 	$(NOSE) $(TESTS_ISSUES)
+
+test_makecode: clean ## Run tests for makecode 
+	$(NOSE) $(TESTS_MAKECODE)

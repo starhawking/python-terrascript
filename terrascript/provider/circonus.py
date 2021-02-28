@@ -1,9 +1,12 @@
 # terrascript/provider/circonus.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.circonus
+#
+# instead of
+#
+#   >>> import provider.circonus-labs.circonus
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class circonus(terrascript.Provider):
-    pass
-
-
-__all__ = ["circonus"]
+from circonus import *

@@ -1,9 +1,12 @@
 # terrascript/provider/ns1.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.ns1
+#
+# instead of
+#
+#   >>> import provider.ns1-terraform.ns1
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class ns1(terrascript.Provider):
-    pass
-
-
-__all__ = ["ns1"]
+from ns1 import *

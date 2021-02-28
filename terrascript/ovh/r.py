@@ -1,4 +1,7 @@
 # terrascript/ovh/r.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 import terrascript
 
 
@@ -106,6 +109,18 @@ class ovh_me_ssh_key(terrascript.Resource):
     pass
 
 
+class ovh_publiccloud_private_network(terrascript.Resource):
+    pass
+
+
+class ovh_publiccloud_private_network_subnet(terrascript.Resource):
+    pass
+
+
+class ovh_publiccloud_user(terrascript.Resource):
+    pass
+
+
 class ovh_vrack_cloudproject(terrascript.Resource):
     pass
 
@@ -119,4 +134,8 @@ class ovh_vrack_dedicated_server_interface(terrascript.Resource):
 
 
 class ovh_vrack_iploadbalancing(terrascript.Resource):
+    pass
+
+
+class ovh_vrack_publiccloud_attachment(terrascript.Resource):
     pass

@@ -33,5 +33,9 @@ class dns_srv_record_set(terrascript.Resource):
     pass
 
 
+class dns_sshfp_record_set(terrascript.Resource):
+    pass
+
+
 class dns_txt_record_set(terrascript.Resource):
     pass

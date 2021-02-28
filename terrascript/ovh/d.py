@@ -1,4 +1,7 @@
 # terrascript/ovh/d.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 import terrascript
 
 
@@ -75,6 +78,14 @@ class ovh_me_ssh_key(terrascript.Data):
 
 
 class ovh_me_ssh_keys(terrascript.Data):
+    pass
+
+
+class ovh_publiccloud_region(terrascript.Data):
+    pass
+
+
+class ovh_publiccloud_regions(terrascript.Data):
     pass
 
 

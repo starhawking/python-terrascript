@@ -1,9 +1,12 @@
 # terrascript/provider/alicloud.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.alicloud
+#
+# instead of
+#
+#   >>> import provider.hashicorp.alicloud
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class alicloud(terrascript.Provider):
-    pass
-
-
-__all__ = ["alicloud"]
+from alicloud import *

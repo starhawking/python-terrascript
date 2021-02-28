@@ -1,4 +1,7 @@
 # terrascript/github/r.py
+import warnings
+warnings.warn("using the 'legacy layout' is deprecated", DeprecationWarning,
+              stacklevel=2)
 import terrascript
 
 
@@ -14,7 +17,15 @@ class github_branch(terrascript.Resource):
     pass
 
 
+class github_branch_default(terrascript.Resource):
+    pass
+
+
 class github_branch_protection(terrascript.Resource):
+    pass
+
+
+class github_branch_protection_v3(terrascript.Resource):
     pass
 
 
@@ -46,6 +57,10 @@ class github_project_column(terrascript.Resource):
     pass
 
 
+class github_repository(terrascript.Resource):
+    pass
+
+
 class github_repository_collaborator(terrascript.Resource):
     pass
 
@@ -70,7 +85,7 @@ class github_repository_webhook(terrascript.Resource):
     pass
 
 
-class github_repository(terrascript.Resource):
+class github_team(terrascript.Resource):
     pass
 
 
@@ -86,10 +101,6 @@ class github_team_sync_group_mapping(terrascript.Resource):
     pass
 
 
-class github_team(terrascript.Resource):
-    pass
-
-
 class github_user_gpg_key(terrascript.Resource):
     pass
 
@@ -99,8 +110,4 @@ class github_user_invitation_accepter(terrascript.Resource):
 
 
 class github_user_ssh_key(terrascript.Resource):
-    pass
-
-
-class github_branch_default(terrascript.Resource):
     pass

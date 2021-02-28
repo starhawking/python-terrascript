@@ -1,9 +1,12 @@
 # terrascript/provider/vcd.py
-import terrascript
+# For imports without namespace, e.g.
+#
+#   >>> import provider.vcd
+#
+# instead of
+#
+#   >>> import provider.vmware.vcd
+# 
+# This is only available for 'official' and 'partner' providers.
 
-
-class vcd(terrascript.Provider):
-    pass
-
-
-__all__ = ["vcd"]
+from vcd import *

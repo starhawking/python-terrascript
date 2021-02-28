@@ -5,7 +5,8 @@
  
 
    Changelog:
-   2021-02-xx - Rewrote the main logic of this script to retrieve the
+   
+   2021-02-28 - Rewrote the main logic of this script to retrieve the
                 list of providers from the Terraform Registry instead of
                 ``providers.yml`. In the process temporary files are
                 now written to ``tools/workdir/makecode`` so it can
@@ -36,6 +37,20 @@
 
    See https://github.com/mjuenema/python-terrascript/commits/develop/makecode.py
    for a list of earlier changes.
+   
+   
+   Issues:
+   ------
+   
+   2021-02-28 - Walking the Terraform Provider Registry API does not work as
+                expected as the meta/next_url field prevents one from
+                seeing all providers. According to its web site there should
+                be 828 providers. At the moment the best result is achieved 
+                when starting with '?offset=0&limit=100' but that way the 
+                final list will only include 131 providers and not 828.
+                As a partial work-around this script reads `tools/namespaces`
+                and GETs `https://registry.terraform.io/v1/providers/NAMESPACE`
+                to list all providers for that namespace.
 
 """
 
@@ -55,6 +70,8 @@ import requests
 DEBUG = True
 
 REGISTRY_BASE_URL = 'https://registry.terraform.io/'
+
+NAMESPACES_INPUT = 'namespaces'
 
 RESULT_SUCCESS = 0
 RESULT_FAILED = 1
@@ -271,13 +288,37 @@ MAIN_TF_TEMPLATE = jinja2.Template(
 LIST_OF_PROVIDERS_TEMPLATE = jinja2.Template(
     """## List of providers
     
-*Terrascript* currently supports the following *Terraform* providers.
+### Official providers
+    
+*Terrascript* currently supports the following official *Terraform* providers.
 
 {%- for provider,result,result_text in results %}
-{%- if result == 0 %}
+{%- if result == 0 and provider.tier == 'official' %}
 - [{{ provider.name }}](https://registry.terraform.io/providers/{{provider.namespace}}/{{provider.name}}/{{provider.version}}) ({{provider.namespace}}/{{provider.name}}/{{provider.version }})
 {%- endif %}
 {%- endfor %}
+
+### Partner providers
+
+*Terrascript* currently supports the following partner *Terraform* providers.
+
+{%- for provider,result,result_text in results %}
+{%- if result == 0 and provider.tier == 'partner' %}
+- [{{ provider.name }}](https://registry.terraform.io/providers/{{provider.namespace}}/{{provider.name}}/{{provider.version}}) ({{provider.namespace}}/{{provider.name}}/{{provider.version }})
+{%- endif %}
+{%- endfor %}
+
+### Community providers
+
+*Terrascript* currently supports the following community *Terraform* providers.
+
+{%- for provider,result,result_text in results %}
+{%- if result == 0 and provider.tier == 'community' %}
+- [{{ provider.name }}](https://registry.terraform.io/providers/{{provider.namespace}}/{{provider.name}}/{{provider.version}}) ({{provider.namespace}}/{{provider.name}}/{{provider.version }})
+{%- endif %}
+{%- endfor %}
+
+### Unsupported providers
 
 The following providers are not supported.
 
@@ -327,18 +368,43 @@ def http_get_json(url):
     """
     logging.debug(f"{url}")
     
-    response = requests.get(url)
-    response.raise_for_status()
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.HTTPError as e:
+        logging.warning(str(e))
+        return {}
     
-    return response.json()
-
 
 def pythonise(name):
     return name.replace('-', '_')
+
+
+def get_providers_for_namespace(namespace):
+    """Retrieve a list of providers from the Terraform Registry for namespace.
+    
+       NOTE: This function is currently used to (partially) work around the 
+             issues described at the beginning of this script for details.
+             
+       See `get_list_of_providers()` for more details.
+             
+    """
+    
+    
+    
+    url = REGISTRY_BASE_URL + f"/v1/providers/{namespace}?limit=100"
+    
+    data = http_get_json(url)
+    
+    return data.get('providers', [])
     
 
 def get_list_of_providers():
     """Retrieve a list of providers from the Terraform Registry.
+    
+       NOTE: This function is currently not used. See the Issues
+             section at the beginning of this script for details.
     
        Make repeated requests to the URL 
        ``https://registry.terraform.io/v1/providers?offset=X``
@@ -367,7 +433,7 @@ def get_list_of_providers():
     
     """
     
-    url = REGISTRY_BASE_URL + '/v1/providers'
+    url = REGISTRY_BASE_URL + '/v1/providers?offset=0&limit=100'
     providers = []
     previous_meta = None
 
@@ -384,20 +450,21 @@ def get_list_of_providers():
         #    'next_offset': 15, 
         #    'next_url': '/v1/providers?offset=15'}, 
         # 'providers': [...]
-           
-        providers += data.get('providers', [])
-        
-        url = REGISTRY_BASE_URL + data['meta']['next_url']
         
         # Terminate loop when meta field does not change.
         #
         if previous_meta == data['meta']:
             break
         previous_meta = data['meta']
+           
+        providers += data.get('providers', [])
+        
+        url = REGISTRY_BASE_URL + data['meta']['next_url']
+        
         
     if DEBUG:
         import pprint
-        pprint.pprint(providers)
+        logging.debug(pprint.pformat(providers))
     
     return providers
                            
@@ -605,12 +672,17 @@ def process(provider):
         return (provider, RESULT_SUCCESS, '')
     
     
-    # Skip all providers and namespaces that are Python keywords.
+    # Skip all providers and namespaces that are Python keywords or invalid
+    # Python identifiers.
     #
     if iskeyword(provider['name']):
         return (provider, RESULT_SKIPPED, f"{provider['name']} is a Python keyword") 
     if iskeyword(provider['namespace']):
         return (provider, RESULT_SKIPPED, f"{provider['namespace']} is a Python keyword")
+    if not pythonise(provider['name']).isidentifier():
+        return (provider, RESULT_SKIPPED, f"{provider['name']} is not a valid Python identifier") 
+    if not pythonise(provider['namespace']).isidentifier():
+        return (provider, RESULT_SKIPPED, f"{provider['namespace']} is not a valid Python identifier")
     
     
     # Return cached data if the provider version has not changed.
@@ -722,7 +794,16 @@ def main():
         print("Script must be run from the tools/ folder", file=sys.stderr)
         sys.exit(1)
         
-    providers = sorted(get_list_of_providers(), key = lambda p: p['name'])
+        
+    # Read the file with the known namespaces.
+    #
+    providers = []
+    with open(NAMESPACES_INPUT, 'rt') as fp:
+        for namespace in fp:  
+            namespace = namespace.strip()
+            providers += get_providers_for_namespace(namespace)
+    
+    providers = sorted(providers, key = lambda p: p['name'])
 
 
     # Only process subset of providers if requested to do so 
