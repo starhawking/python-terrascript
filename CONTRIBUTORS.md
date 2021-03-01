@@ -18,6 +18,7 @@ List of contributors (bug reports, fixes, suggestions, anything) to
 * Emma May
 * Hugo van Kemanade
 * ilons
+* Jack Luo
 * Joao Gilberto Magalhaes
 * Josh Smift
 * Kumaresh
