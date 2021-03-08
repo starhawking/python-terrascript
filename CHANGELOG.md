@@ -7,9 +7,8 @@ All notable changes to this project will be documented in this file.
 * Make target for building providers
 * Provider:
   - `helm`
-  - `signalfx`
-* Resource:
   - `null_resource`
+  - `signalfx`
 * Tool to generate provider bindings now accept provider to build
 ## Changed
 * Script to generate providers:

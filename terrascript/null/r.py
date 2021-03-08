@@ -1,8 +1,6 @@
-from terrascript import _resource
+# terrascript/null/r.py
+import terrascript
 
 
-class null_resource(_resource):
+class null_resource(terrascript.Resource):
     pass
-
-
-resource = null_resource

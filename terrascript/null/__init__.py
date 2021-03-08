@@ -1,1 +1,6 @@
-"""2018-04-29 9:00:00"""
+# terrascript/null/__init__.py
+import terrascript
+
+
+class null(terrascript.Provider):
+    pass
