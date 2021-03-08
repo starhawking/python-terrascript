@@ -283,6 +283,30 @@ def find_all_in_path(base_path: str, filename: str, ignore_paths: list):
     return results
 
 
+def get_schema_file_path(base_path: str, provider: str):
+    """Get the file most likely to contain the provider schema from base path
+
+    :param base_path:
+    :param provider:
+    :return:
+    """
+    default_name = "provider.go"
+    default_path = os.path.join(base_path, provider, default_name)
+    if os.path.isfile(default_path):
+        return default_path
+
+    filenames = [
+        default_name,
+        f"resource_{default_name}",
+    ]
+    for filename in filenames:
+        results = find_all_in_path(base_path, filename, ignore_paths=["vendor"])
+        if results:
+            return results[0]
+
+    return None
+
+
 def process(entry, modulesdir):
     repo_name = entry["name"]
     provider = get_sanitized_name(repo_name)
@@ -307,19 +331,13 @@ def process(entry, modulesdir):
             print(result.stdout)
             sys.exit(1)
 
-        provider_path = os.path.join(tmpdir, entry["name"], "provider.go")
-        if not os.path.isfile(provider_path):
-            provider_paths = find_all_in_path(
-                tmpdir, "provider.go", ignore_paths=["vendor"]
+        provider_path = get_schema_file_path(tmpdir, entry["name"])
+        if not provider_path:
+            logging.warning(
+                "Failed to build %s (unable to determine location of provider.go)",
+                entry,
             )
-            if len(provider_paths) == 1:
-                provider_path = provider_paths[0]
-            else:
-                logging.warning(
-                    "Failed to build %s (unable to determine location of provider.go)",
-                    entry,
-                )
-                return
+            return
 
         with open(provider_path, "rb") as fp:
             content = fp.read()
