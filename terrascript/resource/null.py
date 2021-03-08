@@ -6,6 +6,4 @@ class null_resource(terrascript.Resource):
     pass
 
 
-__all__ = [
-    "null_resource"
-]
+__all__ = ["null_resource"]
