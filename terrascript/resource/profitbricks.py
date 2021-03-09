@@ -66,6 +66,14 @@ class profitbricks_private_crossconnect(terrascript.Resource):
     pass
 
 
+class profitbricks_backup_unit(terrascript.Resource):
+    pass
+
+
+class profitbricks_s3_key(terrascript.Resource):
+    pass
+
+
 __all__ = [
     "profitbricks_datacenter",
     "profitbricks_ipblock",
@@ -83,4 +91,6 @@ __all__ = [
     "profitbricks_k8s_cluster",
     "profitbricks_k8s_node_pool",
     "profitbricks_private_crossconnect",
+    "profitbricks_backup_unit",
+    "profitbricks_s3_key",
 ]

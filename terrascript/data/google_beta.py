@@ -6,6 +6,10 @@ class google_active_folder(terrascript.Data):
     pass
 
 
+class google_app_engine_default_service_account(terrascript.Data):
+    pass
+
+
 class google_billing_account(terrascript.Data):
     pass
 
@@ -31,6 +35,18 @@ class google_cloud_identity_groups(terrascript.Data):
 
 
 class google_cloud_identity_group_memberships(terrascript.Data):
+    pass
+
+
+class google_cloud_run_locations(terrascript.Data):
+    pass
+
+
+class google_cloud_run_service(terrascript.Data):
+    pass
+
+
+class google_composer_environment(terrascript.Data):
     pass
 
 
@@ -62,6 +78,10 @@ class google_compute_global_address(terrascript.Data):
     pass
 
 
+class google_compute_global_forwarding_rule(terrascript.Data):
+    pass
+
+
 class google_compute_image(terrascript.Data):
     pass
 
@@ -70,11 +90,15 @@ class google_compute_instance(terrascript.Data):
     pass
 
 
+class google_compute_instance_group(terrascript.Data):
+    pass
+
+
 class google_compute_instance_serial_port(terrascript.Data):
     pass
 
 
-class google_compute_instance_group(terrascript.Data):
+class google_compute_instance_template(terrascript.Data):
     pass
 
 
@@ -99,6 +123,10 @@ class google_compute_regions(terrascript.Data):
 
 
 class google_compute_region_instance_group(terrascript.Data):
+    pass
+
+
+class google_compute_region_ssl_certificate(terrascript.Data):
     pass
 
 
@@ -170,6 +198,18 @@ class google_iam_testable_permissions(terrascript.Data):
     pass
 
 
+class google_iam_workload_identity_pool(terrascript.Data):
+    pass
+
+
+class google_iam_workload_identity_pool_provider(terrascript.Data):
+    pass
+
+
+class google_iap_client(terrascript.Data):
+    pass
+
+
 class google_kms_crypto_key(terrascript.Data):
     pass
 
@@ -210,6 +250,14 @@ class google_monitoring_notification_channel(terrascript.Data):
     pass
 
 
+class google_monitoring_cluster_istio_service(terrascript.Data):
+    pass
+
+
+class google_monitoring_mesh_istio_service(terrascript.Data):
+    pass
+
+
 class google_monitoring_app_engine_service(terrascript.Data):
     pass
 
@@ -238,6 +286,18 @@ class google_project_organization_policy(terrascript.Data):
     pass
 
 
+class google_pubsub_topic(terrascript.Data):
+    pass
+
+
+class google_runtimeconfig_config(terrascript.Data):
+    pass
+
+
+class google_runtimeconfig_variable(terrascript.Data):
+    pass
+
+
 class google_secret_manager_secret_version(terrascript.Data):
     pass
 
@@ -258,7 +318,15 @@ class google_service_account_key(terrascript.Data):
     pass
 
 
+class google_spanner_instance(terrascript.Data):
+    pass
+
+
 class google_sql_ca_certs(terrascript.Data):
+    pass
+
+
+class google_sql_backup_run(terrascript.Data):
     pass
 
 
@@ -267,6 +335,10 @@ class google_sql_database_instance(terrascript.Data):
 
 
 class google_storage_bucket_object(terrascript.Data):
+    pass
+
+
+class google_storage_bucket_object_content(terrascript.Data):
     pass
 
 
@@ -292,6 +364,7 @@ class google_redis_instance(terrascript.Data):
 
 __all__ = [
     "google_active_folder",
+    "google_app_engine_default_service_account",
     "google_billing_account",
     "google_bigquery_default_service_account",
     "google_client_config",
@@ -299,6 +372,9 @@ __all__ = [
     "google_cloudfunctions_function",
     "google_cloud_identity_groups",
     "google_cloud_identity_group_memberships",
+    "google_cloud_run_locations",
+    "google_cloud_run_service",
+    "google_composer_environment",
     "google_composer_image_versions",
     "google_compute_address",
     "google_compute_backend_service",
@@ -306,16 +382,19 @@ __all__ = [
     "google_compute_default_service_account",
     "google_compute_forwarding_rule",
     "google_compute_global_address",
+    "google_compute_global_forwarding_rule",
     "google_compute_image",
     "google_compute_instance",
-    "google_compute_instance_serial_port",
     "google_compute_instance_group",
+    "google_compute_instance_serial_port",
+    "google_compute_instance_template",
     "google_compute_lb_ip_ranges",
     "google_compute_network",
     "google_compute_network_endpoint_group",
     "google_compute_node_types",
     "google_compute_regions",
     "google_compute_region_instance_group",
+    "google_compute_region_ssl_certificate",
     "google_compute_resource_policy",
     "google_compute_router",
     "google_compute_ssl_certificate",
@@ -333,6 +412,9 @@ __all__ = [
     "google_iam_policy",
     "google_iam_role",
     "google_iam_testable_permissions",
+    "google_iam_workload_identity_pool",
+    "google_iam_workload_identity_pool_provider",
+    "google_iap_client",
     "google_kms_crypto_key",
     "google_kms_crypto_key_version",
     "google_kms_key_ring",
@@ -343,6 +425,8 @@ __all__ = [
     "google_folder",
     "google_folder_organization_policy",
     "google_monitoring_notification_channel",
+    "google_monitoring_cluster_istio_service",
+    "google_monitoring_mesh_istio_service",
     "google_monitoring_app_engine_service",
     "google_monitoring_uptime_check_ips",
     "google_netblock_ip_ranges",
@@ -350,14 +434,20 @@ __all__ = [
     "google_project",
     "google_projects",
     "google_project_organization_policy",
+    "google_pubsub_topic",
+    "google_runtimeconfig_config",
+    "google_runtimeconfig_variable",
     "google_secret_manager_secret_version",
     "google_service_account",
     "google_service_account_access_token",
     "google_service_account_id_token",
     "google_service_account_key",
+    "google_spanner_instance",
     "google_sql_ca_certs",
+    "google_sql_backup_run",
     "google_sql_database_instance",
     "google_storage_bucket_object",
+    "google_storage_bucket_object_content",
     "google_storage_object_signed_url",
     "google_storage_project_service_account",
     "google_storage_transfer_project_service_account",

@@ -3,9 +3,7 @@ import terrascript
 config = terrascript.Terrascript()
 
 backend = terrascript.Backend(
-    "consul",
-    address="demo.consul.io",
-    scheme="https",
+    "local",
     path="example_app/terraform_state",
 )
 

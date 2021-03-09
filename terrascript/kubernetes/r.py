@@ -34,6 +34,10 @@ class kubernetes_daemonset(terrascript.Resource):
     pass
 
 
+class kubernetes_default_service_account(terrascript.Resource):
+    pass
+
+
 class kubernetes_deployment(terrascript.Resource):
     pass
 

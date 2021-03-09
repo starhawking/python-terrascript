@@ -2,6 +2,10 @@
 import terrascript
 
 
+class github_actions_organization_secret(terrascript.Resource):
+    pass
+
+
 class github_actions_secret(terrascript.Resource):
     pass
 
@@ -34,6 +38,10 @@ class github_organization_webhook(terrascript.Resource):
     pass
 
 
+class github_project_card(terrascript.Resource):
+    pass
+
+
 class github_project_column(terrascript.Resource):
     pass
 
@@ -47,6 +55,10 @@ class github_repository_deploy_key(terrascript.Resource):
 
 
 class github_repository_file(terrascript.Resource):
+    pass
+
+
+class github_repository_milestone(terrascript.Resource):
     pass
 
 
@@ -87,4 +99,8 @@ class github_user_invitation_accepter(terrascript.Resource):
 
 
 class github_user_ssh_key(terrascript.Resource):
+    pass
+
+
+class github_branch_default(terrascript.Resource):
     pass

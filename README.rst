@@ -39,10 +39,55 @@ superior to writing Terraform configurations by hand.
 
 * Control structures like ``if``/``else``, ``for``/``continue``/``break`` or ``try``/``except``/``finally``.
 * More string methods.
-* Python functions may be used as an alternative to Terraform Modules.
+* Python functions may be used as an alternative to Terraform_ Modules.
 * Access to the Python Standard Library and third-party packages.
 
-.. _Terraform: https://www.terraform.io 
+Installing Terrascript
+~~~~~~~~~~~~~~~~~~~~~~
+
+Terrascript is available from the Python Package Repository PyPi_ or
+alternatively from its Github_ repository.
+
+.. _PyPi: https://pypi.org/project/terrascript/#history
+.. _Github: https://github.com/mjuenema/python-terrascript
+
+
+Installing Terrascript from PyPi
+..................
+
+It is easiest to install Terrascript directly from the Python Package Index.
+
+.. code-block:: console
+
+   $ python3 -m pip install terrascript
+
+Installing Terrascript from Github
+...................................
+
+Terrascript can also be installed from its Github_ repository.
+
+.. code-block:: console
+
+   $ git clone https://github.com/mjuenema/python-terrascript.git
+   $ cd python-terrascript/
+   $ git fetch
+   $ git fetch --tags
+   
+The ``master`` branch should be identical to the version on PyPi.
+
+.. code-block:: console
+
+   $ git checkout master
+   $ python3 setup.py install
+
+The ``develop`` branch includes the latest changes but may not always
+be in a stable state. Do not use the ``develop`` branch unless you want 
+to submit a merge request on github.
+
+.. code-block:: console
+
+   $ git checkout develop
+   $ python3 setup.py install
 
 Compatibility
 ~~~~~~~~~~~~~
@@ -161,10 +206,12 @@ original HCL format.
 Links
 ~~~~~
 
+* Terraform_ for Terraform.
 * Documentation_ for Python-Terrascript.
 * Github_ page of Python-Terrascript.
 * `Terraform JSON`_ syntax.
 
+.. _Terraform: https://www.terraform.io 
 .. _Documentation: https://python-terrascript.readthedocs.io/en/develop/
 .. _Github: https://github.com/mjuenema/python-terrascript
 .. _`Terraform JSON`: https://www.terraform.io/docs/configuration/syntax-json.html

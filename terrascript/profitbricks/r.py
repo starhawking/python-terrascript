@@ -64,3 +64,11 @@ class profitbricks_k8s_node_pool(terrascript.Resource):
 
 class profitbricks_private_crossconnect(terrascript.Resource):
     pass
+
+
+class profitbricks_backup_unit(terrascript.Resource):
+    pass
+
+
+class profitbricks_s3_key(terrascript.Resource):
+    pass

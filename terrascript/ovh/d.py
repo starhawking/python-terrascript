@@ -10,6 +10,10 @@ class ovh_cloud_regions(terrascript.Data):
     pass
 
 
+class ovh_dedicated_ceph(terrascript.Data):
+    pass
+
+
 class ovh_dedicated_installation_templates(terrascript.Data):
     pass
 

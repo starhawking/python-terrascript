@@ -26,6 +26,10 @@ class google_access_context_manager_access_levels(terrascript.Resource):
     pass
 
 
+class google_access_context_manager_access_level_condition(terrascript.Resource):
+    pass
+
+
 class google_access_context_manager_service_perimeter(terrascript.Resource):
     pass
 
@@ -38,11 +42,27 @@ class google_access_context_manager_service_perimeter_resource(terrascript.Resou
     pass
 
 
+class google_access_context_manager_gcp_user_access_binding(terrascript.Resource):
+    pass
+
+
 class google_active_directory_domain(terrascript.Resource):
     pass
 
 
 class google_active_directory_domain_trust(terrascript.Resource):
+    pass
+
+
+class google_apigee_organization(terrascript.Resource):
+    pass
+
+
+class google_apigee_instance(terrascript.Resource):
+    pass
+
+
+class google_apigee_environment(terrascript.Resource):
     pass
 
 
@@ -82,11 +102,23 @@ class google_bigquery_job(terrascript.Resource):
     pass
 
 
+class google_bigquery_routine(terrascript.Resource):
+    pass
+
+
 class google_bigquery_data_transfer_config(terrascript.Resource):
     pass
 
 
+class google_bigquery_reservation(terrascript.Resource):
+    pass
+
+
 class google_bigtable_app_profile(terrascript.Resource):
+    pass
+
+
+class google_billing_budget(terrascript.Resource):
     pass
 
 
@@ -111,6 +143,14 @@ class google_cloud_asset_organization_feed(terrascript.Resource):
 
 
 class google_cloudbuild_trigger(terrascript.Resource):
+    pass
+
+
+class google_cloud_identity_group(terrascript.Resource):
+    pass
+
+
+class google_cloud_identity_group_membership(terrascript.Resource):
     pass
 
 
@@ -238,6 +278,10 @@ class google_compute_global_network_endpoint_group(terrascript.Resource):
     pass
 
 
+class google_compute_region_network_endpoint_group(terrascript.Resource):
+    pass
+
+
 class google_compute_node_group(terrascript.Resource):
     pass
 
@@ -247,6 +291,18 @@ class google_compute_network_peering_routes_config(terrascript.Resource):
 
 
 class google_compute_node_template(terrascript.Resource):
+    pass
+
+
+class google_compute_packet_mirroring(terrascript.Resource):
+    pass
+
+
+class google_compute_per_instance_config(terrascript.Resource):
+    pass
+
+
+class google_compute_region_per_instance_config(terrascript.Resource):
     pass
 
 
@@ -291,6 +347,10 @@ class google_compute_snapshot(terrascript.Resource):
 
 
 class google_compute_ssl_certificate(terrascript.Resource):
+    pass
+
+
+class google_compute_managed_ssl_certificate(terrascript.Resource):
     pass
 
 
@@ -342,11 +402,23 @@ class google_compute_vpn_gateway(terrascript.Resource):
     pass
 
 
+class google_compute_ha_vpn_gateway(terrascript.Resource):
+    pass
+
+
+class google_compute_external_vpn_gateway(terrascript.Resource):
+    pass
+
+
 class google_compute_url_map(terrascript.Resource):
     pass
 
 
 class google_compute_vpn_tunnel(terrascript.Resource):
+    pass
+
+
+class google_compute_target_grpc_proxy(terrascript.Resource):
     pass
 
 
@@ -371,6 +443,22 @@ class google_data_catalog_tag_template(terrascript.Resource):
 
 
 class google_data_catalog_tag(terrascript.Resource):
+    pass
+
+
+class google_data_loss_prevention_job_trigger(terrascript.Resource):
+    pass
+
+
+class google_data_loss_prevention_inspect_template(terrascript.Resource):
+    pass
+
+
+class google_data_loss_prevention_stored_info_type(terrascript.Resource):
+    pass
+
+
+class google_data_loss_prevention_deidentify_template(terrascript.Resource):
     pass
 
 
@@ -411,6 +499,10 @@ class google_filestore_instance(terrascript.Resource):
 
 
 class google_firestore_index(terrascript.Resource):
+    pass
+
+
+class google_firestore_document(terrascript.Resource):
     pass
 
 
@@ -544,6 +636,18 @@ class google_network_management_connectivity_test(terrascript.Resource):
     pass
 
 
+class google_notebooks_environment(terrascript.Resource):
+    pass
+
+
+class google_notebooks_instance(terrascript.Resource):
+    pass
+
+
+class google_notebooks_location(terrascript.Resource):
+    pass
+
+
 class google_os_config_patch_deployment(terrascript.Resource):
     pass
 
@@ -557,6 +661,14 @@ class google_pubsub_topic(terrascript.Resource):
 
 
 class google_pubsub_subscription(terrascript.Resource):
+    pass
+
+
+class google_pubsub_lite_topic(terrascript.Resource):
+    pass
+
+
+class google_pubsub_lite_subscription(terrascript.Resource):
     pass
 
 
@@ -624,6 +736,10 @@ class google_vpc_access_connector(terrascript.Resource):
     pass
 
 
+class google_workflows_workflow(terrascript.Resource):
+    pass
+
+
 class google_app_engine_application(terrascript.Resource):
     pass
 
@@ -641,6 +757,10 @@ class google_bigtable_instance(terrascript.Resource):
 
 
 class google_bigtable_table(terrascript.Resource):
+    pass
+
+
+class google_billing_subaccount(terrascript.Resource):
     pass
 
 
@@ -801,6 +921,10 @@ class google_organization_policy(terrascript.Resource):
 
 
 class google_project(terrascript.Resource):
+    pass
+
+
+class google_project_default_service_accounts(terrascript.Resource):
     pass
 
 
