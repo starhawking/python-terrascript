@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 * Tool to generate provider bindings now accept provider to build
 ## Changed
 * All dot-files not explicitly included are now ignored by default
+* Backend tutorial code no longer uses (failing) consul backend
 * Script to generate providers:
   * Automatically sorts the list of providers alphabetically
   * Now try to guess the location of the required provider.go in the repository
