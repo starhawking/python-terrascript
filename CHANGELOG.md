@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
   - `helm`
   - `null_resource`
   - `signalfx`
+  - `nsxt`
 * Tool to generate provider bindings now accept provider to build
 ## Changed
 * All dot-files not explicitly included are now ignored by default
