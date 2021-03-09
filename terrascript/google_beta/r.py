@@ -70,6 +70,14 @@ class google_apigee_organization(terrascript.Resource):
     pass
 
 
+class google_apigee_instance(terrascript.Resource):
+    pass
+
+
+class google_apigee_environment(terrascript.Resource):
+    pass
+
+
 class google_app_engine_domain_mapping(terrascript.Resource):
     pass
 
@@ -626,7 +634,9 @@ class google_identity_platform_default_supported_idp_config(terrascript.Resource
     pass
 
 
-class google_identity_platform_tenant_default_supported_idp_config(terrascript.Resource):
+class google_identity_platform_tenant_default_supported_idp_config(
+    terrascript.Resource
+):
     pass
 
 
@@ -839,6 +849,10 @@ class google_tpu_node(terrascript.Resource):
 
 
 class google_vpc_access_connector(terrascript.Resource):
+    pass
+
+
+class google_workflows_workflow(terrascript.Resource):
     pass
 
 

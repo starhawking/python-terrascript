@@ -38,6 +38,14 @@ class aws_api_gateway_vpc_link(terrascript.Data):
     pass
 
 
+class aws_apigatewayv2_api(terrascript.Data):
+    pass
+
+
+class aws_apigatewayv2_apis(terrascript.Data):
+    pass
+
+
 class aws_arn(terrascript.Data):
     pass
 
