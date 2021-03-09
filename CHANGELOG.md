@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 * Build support for Python 3.9
 * Make target for building providers
 * Provider:
+  - `esxi`
   - `helm`
   - `null_resource`
   - `signalfx`
