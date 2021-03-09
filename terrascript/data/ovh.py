@@ -10,6 +10,10 @@ class ovh_cloud_regions(terrascript.Data):
     pass
 
 
+class ovh_dedicated_ceph(terrascript.Data):
+    pass
+
+
 class ovh_dedicated_installation_templates(terrascript.Data):
     pass
 
@@ -85,6 +89,7 @@ class ovh_vracks(terrascript.Data):
 __all__ = [
     "ovh_cloud_region",
     "ovh_cloud_regions",
+    "ovh_dedicated_ceph",
     "ovh_dedicated_installation_templates",
     "ovh_dedicated_server",
     "ovh_dedicated_server_boots",

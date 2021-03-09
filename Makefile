@@ -23,6 +23,7 @@ DEFAULT_GOAL: help
 	help \
 	install \
 	package \
+	providers \
 	test \
 	test_basic \
 	test_black \
@@ -70,6 +71,12 @@ install: clean ## Install as python package from sources
 package: clean ## Build python package from sources
 	python3 setup.py clean
 	python3 setup.py sdist
+
+providers: targets=
+providers: ## Build bindings for listed providers
+	cd tools \
+	&& python3 makecode.py $(targets)
+	$(MAKE) black
 
 test: clean test_basic test_issues test_docs ## Run all tests
 

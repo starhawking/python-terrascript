@@ -256,6 +256,57 @@ def create_datasources(provider, modulesdir, datasources):
         )
 
 
+def find_all_in_path(base_path: str, filename: str, ignore_paths: list):
+    """Get a list of all paths in the given base path where filename is found
+    Ignoring any matches found in list of ignored paths
+
+    :param base_path:
+    :param filename:
+    :param ignore_paths:
+    :return:
+    """
+    results = []
+    for root, dirs, files in os.walk(base_path):
+        base_path_len = len(base_path)
+        should_ignore_path = any(
+            [
+                root[base_path_len:].startswith(f"{os.path.sep}{ignored}")
+                for ignored in ignore_paths
+            ]
+        )
+        if should_ignore_path:
+            continue
+        if filename not in files:
+            continue
+        results.append(os.path.join(root, filename))
+
+    return results
+
+
+def get_schema_file_path(base_path: str, provider: str):
+    """Get the file most likely to contain the provider schema from base path
+
+    :param base_path:
+    :param provider:
+    :return:
+    """
+    default_name = "provider.go"
+    default_path = os.path.join(base_path, provider, default_name)
+    if os.path.isfile(default_path):
+        return default_path
+
+    filenames = [
+        default_name,
+        f"resource_{default_name}",
+    ]
+    for filename in filenames:
+        results = find_all_in_path(base_path, filename, ignore_paths=["vendor"])
+        if results:
+            return results[0]
+
+    return None
+
+
 def process(entry, modulesdir):
     repo_name = entry["name"]
     provider = get_sanitized_name(repo_name)
@@ -280,7 +331,14 @@ def process(entry, modulesdir):
             print(result.stdout)
             sys.exit(1)
 
-        provider_path = os.path.join(tmpdir, repo_name, "provider.go")
+        provider_path = get_schema_file_path(tmpdir, entry["name"])
+        if not provider_path:
+            logging.warning(
+                "Failed to build %s (unable to determine location of provider schema, usually provider.go)",
+                entry,
+            )
+            return
+
         with open(provider_path, "rb") as fp:
             content = fp.read()
 
@@ -330,16 +388,28 @@ def main():
         print("Script must be run from the tools/ folder", file=sys.stderr)
         sys.exit(1)
 
-    with open(INPUT) as fp:
+    with open(INPUT, "r+") as fp:
         entries = yaml.load(fp, Loader=yaml.SafeLoader)
         # entries is now a list of dictionaries: [{'name': NAME, 'repository': URL}, ...]
+        sorted_entries = sorted(entries, key=lambda item: item["name"])
+        if sorted != entries:
+            fp.seek(0)
+            fp.write(yaml.dump(sorted_entries, Dumper=yaml.SafeDumper))
+            entries = sorted_entries
+
+    if len(sys.argv) > 1:
+        build_entries = [entry for entry in entries if entry["name"] in sys.argv[1:]]
+    else:
+        build_entries = entries
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=CONCURRENCY) as executor:
-        futures = [executor.submit(process, entry, modulesdir) for entry in entries]
+        futures = [
+            executor.submit(process, entry, modulesdir) for entry in build_entries
+        ]
         for future in concurrent.futures.as_completed(futures):
             exc = future.exception()
             if exc:
-                raise exc
+                logging.error("Failed to build", exc_info=True)
 
     # Create the __ini__.py files for providers, datasources and resources.
     #

@@ -10,10 +10,6 @@ class pingdom_team(terrascript.Resource):
     pass
 
 
-class pingdom_user(terrascript.Resource):
-    pass
-
-
 class pingdom_contact(terrascript.Resource):
     pass
 
@@ -21,6 +17,5 @@ class pingdom_contact(terrascript.Resource):
 __all__ = [
     "pingdom_check",
     "pingdom_team",
-    "pingdom_user",
     "pingdom_contact",
 ]

@@ -1,2 +1,6 @@
-# Consul provider is not created through makecode.py
-# because of issues 24.
+# terrascript/consul/__init__.py
+import terrascript
+
+
+class consul(terrascript.Provider):
+    pass

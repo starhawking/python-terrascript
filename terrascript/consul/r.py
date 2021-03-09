@@ -1,50 +1,82 @@
-from terrascript import _resource
+# terrascript/consul/r.py
+import terrascript
 
 
-class consul_agent_service(_resource):
+class consul_acl_auth_method(terrascript.Resource):
     pass
 
 
-agent_service = consul_agent_service
-
-
-class consul_catalog_entry(_resource):
+class consul_acl_binding_rule(terrascript.Resource):
     pass
 
 
-catalog_entry = consul_catalog_entry
-
-
-class consul_keys(_resource):
+class consul_acl_policy(terrascript.Resource):
     pass
 
 
-keys = consul_keys
-
-
-class consul_key_prefix(_resource):
+class consul_acl_role(terrascript.Resource):
     pass
 
 
-key_prefix = consul_key_prefix
-
-
-class consul_node(_resource):
+class consul_acl_token(terrascript.Resource):
     pass
 
 
-node = consul_node
-
-
-class consul_prepared_query(_resource):
+class consul_acl_token_policy_attachment(terrascript.Resource):
     pass
 
 
-prepared_query = consul_prepared_query
-
-
-class consul_service(_resource):
+class consul_agent_service(terrascript.Resource):
     pass
 
 
-service = consul_service
+class consul_catalog_entry(terrascript.Resource):
+    pass
+
+
+class consul_certificate_authority(terrascript.Resource):
+    pass
+
+
+class consul_config_entry(terrascript.Resource):
+    pass
+
+
+class consul_keys(terrascript.Resource):
+    pass
+
+
+class consul_key_prefix(terrascript.Resource):
+    pass
+
+
+class consul_license(terrascript.Resource):
+    pass
+
+
+class consul_namespace(terrascript.Resource):
+    pass
+
+
+class consul_node(terrascript.Resource):
+    pass
+
+
+class consul_prepared_query(terrascript.Resource):
+    pass
+
+
+class consul_autopilot_config(terrascript.Resource):
+    pass
+
+
+class consul_service(terrascript.Resource):
+    pass
+
+
+class consul_intention(terrascript.Resource):
+    pass
+
+
+class consul_network_area(terrascript.Resource):
+    pass

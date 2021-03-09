@@ -1,7 +1,5 @@
 terraform {
-  backend "consul" {
-    address = "demo.consul.io"
-    scheme  = "https"
+  backend "local" {
     path    = "example_app/terraform_state"
   }
 }

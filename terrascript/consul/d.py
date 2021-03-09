@@ -1,36 +1,78 @@
-from terrascript import _data
+# terrascript/consul/d.py
+import terrascript
 
 
-class consul_agent_self(_data):
+class consul_agent_self(terrascript.Data):
     pass
 
 
-agent_self = consul_agent_self
-
-
-class consul_catalog_nodes(_data):
+class consul_agent_config(terrascript.Data):
     pass
 
 
-catalog_nodes = consul_catalog_nodes
-
-
-class consul_catalog_service(_data):
+class consul_autopilot_health(terrascript.Data):
     pass
 
 
-catalog_service = consul_catalog_service
-
-
-class consul_catalog_services(_data):
+class consul_nodes(terrascript.Data):
     pass
 
 
-catalog_services = consul_catalog_services
-
-
-class consul_keys(_data):
+class consul_service(terrascript.Data):
     pass
 
 
-keys = consul_keys
+class consul_service_health(terrascript.Data):
+    pass
+
+
+class consul_services(terrascript.Data):
+    pass
+
+
+class consul_keys(terrascript.Data):
+    pass
+
+
+class consul_key_prefix(terrascript.Data):
+    pass
+
+
+class consul_acl_auth_method(terrascript.Data):
+    pass
+
+
+class consul_acl_policy(terrascript.Data):
+    pass
+
+
+class consul_acl_role(terrascript.Data):
+    pass
+
+
+class consul_acl_token(terrascript.Data):
+    pass
+
+
+class consul_acl_token_secret_id(terrascript.Data):
+    pass
+
+
+class consul_network_segments(terrascript.Data):
+    pass
+
+
+class consul_network_area_members(terrascript.Data):
+    pass
+
+
+class consul_catalog_nodes(terrascript.Data):
+    pass
+
+
+class consul_catalog_service(terrascript.Data):
+    pass
+
+
+class consul_catalog_services(terrascript.Data):
+    pass

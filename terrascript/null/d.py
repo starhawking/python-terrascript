@@ -1,8 +1,6 @@
-from terrascript import _data
+# terrascript/null/d.py
+import terrascript
 
 
-class null_data_source(_data):
+class null_data_source(terrascript.Data):
     pass
-
-
-data_source = null_data_source

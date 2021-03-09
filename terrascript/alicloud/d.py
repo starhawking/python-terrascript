@@ -724,3 +724,11 @@ class alicloud_oos_executions(terrascript.Data):
 
 class alicloud_resource_manager_policy_attachments(terrascript.Data):
     pass
+
+
+class alicloud_dcdn_domains(terrascript.Data):
+    pass
+
+
+class alicloud_mse_clusters(terrascript.Data):
+    pass

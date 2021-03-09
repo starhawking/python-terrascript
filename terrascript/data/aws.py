@@ -22,6 +22,10 @@ class aws_api_gateway_api_key(terrascript.Data):
     pass
 
 
+class aws_api_gateway_domain_name(terrascript.Data):
+    pass
+
+
 class aws_api_gateway_resource(terrascript.Data):
     pass
 
@@ -31,6 +35,14 @@ class aws_api_gateway_rest_api(terrascript.Data):
 
 
 class aws_api_gateway_vpc_link(terrascript.Data):
+    pass
+
+
+class aws_apigatewayv2_api(terrascript.Data):
+    pass
+
+
+class aws_apigatewayv2_apis(terrascript.Data):
     pass
 
 
@@ -94,7 +106,15 @@ class aws_cloudformation_stack(terrascript.Data):
     pass
 
 
+class aws_cloudfront_cache_policy(terrascript.Data):
+    pass
+
+
 class aws_cloudfront_distribution(terrascript.Data):
+    pass
+
+
+class aws_cloudfront_origin_request_policy(terrascript.Data):
     pass
 
 
@@ -107,6 +127,14 @@ class aws_cloudtrail_service_account(terrascript.Data):
 
 
 class aws_cloudwatch_log_group(terrascript.Data):
+    pass
+
+
+class aws_codeartifact_authorization_token(terrascript.Data):
+    pass
+
+
+class aws_codeartifact_repository_endpoint(terrascript.Data):
     pass
 
 
@@ -138,7 +166,19 @@ class aws_db_snapshot(terrascript.Data):
     pass
 
 
+class aws_db_subnet_group(terrascript.Data):
+    pass
+
+
 class aws_directory_service_directory(terrascript.Data):
+    pass
+
+
+class aws_docdb_engine_version(terrascript.Data):
+    pass
+
+
+class aws_docdb_orderable_db_instance(terrascript.Data):
     pass
 
 
@@ -182,6 +222,10 @@ class aws_ec2_coip_pools(terrascript.Data):
     pass
 
 
+class aws_ec2_instance_type(terrascript.Data):
+    pass
+
+
 class aws_ec2_instance_type_offering(terrascript.Data):
     pass
 
@@ -215,6 +259,10 @@ class aws_ec2_local_gateway_virtual_interface_group(terrascript.Data):
 
 
 class aws_ec2_local_gateway_virtual_interface_groups(terrascript.Data):
+    pass
+
+
+class aws_ec2_managed_prefix_list(terrascript.Data):
     pass
 
 
@@ -382,11 +430,35 @@ class aws_iam_user(terrascript.Data):
     pass
 
 
-class aws_internet_gateway(terrascript.Data):
+class aws_identitystore_group(terrascript.Data):
     pass
 
 
-class aws_iot_endpoint(terrascript.Data):
+class aws_identitystore_user(terrascript.Data):
+    pass
+
+
+class aws_imagebuilder_component(terrascript.Data):
+    pass
+
+
+class aws_imagebuilder_distribution_configuration(terrascript.Data):
+    pass
+
+
+class aws_imagebuilder_image(terrascript.Data):
+    pass
+
+
+class aws_imagebuilder_image_pipeline(terrascript.Data):
+    pass
+
+
+class aws_imagebuilder_image_recipe(terrascript.Data):
+    pass
+
+
+class aws_imagebuilder_infrastructure_configuration(terrascript.Data):
     pass
 
 
@@ -399,6 +471,14 @@ class aws_instance(terrascript.Data):
 
 
 class aws_instances(terrascript.Data):
+    pass
+
+
+class aws_internet_gateway(terrascript.Data):
+    pass
+
+
+class aws_iot_endpoint(terrascript.Data):
     pass
 
 
@@ -430,7 +510,23 @@ class aws_kms_secrets(terrascript.Data):
     pass
 
 
+class aws_lakeformation_data_lake_settings(terrascript.Data):
+    pass
+
+
+class aws_lakeformation_permissions(terrascript.Data):
+    pass
+
+
+class aws_lakeformation_resource(terrascript.Data):
+    pass
+
+
 class aws_lambda_alias(terrascript.Data):
+    pass
+
+
+class aws_lambda_code_signing_config(terrascript.Data):
     pass
 
 
@@ -454,6 +550,22 @@ class aws_launch_template(terrascript.Data):
     pass
 
 
+class aws_lex_bot_alias(terrascript.Data):
+    pass
+
+
+class aws_lex_bot(terrascript.Data):
+    pass
+
+
+class aws_lex_intent(terrascript.Data):
+    pass
+
+
+class aws_lex_slot_type(terrascript.Data):
+    pass
+
+
 class aws_mq_broker(terrascript.Data):
     pass
 
@@ -467,6 +579,14 @@ class aws_msk_configuration(terrascript.Data):
 
 
 class aws_nat_gateway(terrascript.Data):
+    pass
+
+
+class aws_neptune_orderable_db_instance(terrascript.Data):
+    pass
+
+
+class aws_neptune_engine_version(terrascript.Data):
     pass
 
 
@@ -534,11 +654,27 @@ class aws_ram_resource_share(terrascript.Data):
     pass
 
 
+class aws_rds_certificate(terrascript.Data):
+    pass
+
+
 class aws_rds_cluster(terrascript.Data):
     pass
 
 
+class aws_rds_engine_version(terrascript.Data):
+    pass
+
+
+class aws_rds_orderable_db_instance(terrascript.Data):
+    pass
+
+
 class aws_redshift_cluster(terrascript.Data):
+    pass
+
+
+class aws_redshift_orderable_cluster(terrascript.Data):
     pass
 
 
@@ -570,6 +706,10 @@ class aws_route53_delegation_set(terrascript.Data):
     pass
 
 
+class aws_route53_resolver_endpoint(terrascript.Data):
+    pass
+
+
 class aws_route53_resolver_rule(terrascript.Data):
     pass
 
@@ -591,6 +731,10 @@ class aws_s3_bucket_object(terrascript.Data):
 
 
 class aws_s3_bucket_objects(terrascript.Data):
+    pass
+
+
+class aws_sagemaker_prebuilt_ecr_image(terrascript.Data):
     pass
 
 
@@ -622,6 +766,14 @@ class aws_sfn_state_machine(terrascript.Data):
     pass
 
 
+class aws_signer_signing_job(terrascript.Data):
+    pass
+
+
+class aws_signer_signing_profile(terrascript.Data):
+    pass
+
+
 class aws_sns_topic(terrascript.Data):
     pass
 
@@ -639,6 +791,14 @@ class aws_ssm_parameter(terrascript.Data):
 
 
 class aws_ssm_patch_baseline(terrascript.Data):
+    pass
+
+
+class aws_ssoadmin_instances(terrascript.Data):
+    pass
+
+
+class aws_ssoadmin_permission_set(terrascript.Data):
     pass
 
 
@@ -687,6 +847,10 @@ class aws_vpc_endpoint_service(terrascript.Data):
 
 
 class aws_vpc_peering_connection(terrascript.Data):
+    pass
+
+
+class aws_vpc_peering_connections(terrascript.Data):
     pass
 
 
@@ -750,6 +914,14 @@ class aws_workspaces_directory(terrascript.Data):
     pass
 
 
+class aws_workspaces_image(terrascript.Data):
+    pass
+
+
+class aws_workspaces_workspace(terrascript.Data):
+    pass
+
+
 class aws_lb(terrascript.Data):
     pass
 
@@ -780,9 +952,12 @@ __all__ = [
     "aws_ami",
     "aws_ami_ids",
     "aws_api_gateway_api_key",
+    "aws_api_gateway_domain_name",
     "aws_api_gateway_resource",
     "aws_api_gateway_rest_api",
     "aws_api_gateway_vpc_link",
+    "aws_apigatewayv2_api",
+    "aws_apigatewayv2_apis",
     "aws_arn",
     "aws_autoscaling_group",
     "aws_autoscaling_groups",
@@ -798,10 +973,14 @@ __all__ = [
     "aws_canonical_user_id",
     "aws_cloudformation_export",
     "aws_cloudformation_stack",
+    "aws_cloudfront_cache_policy",
     "aws_cloudfront_distribution",
+    "aws_cloudfront_origin_request_policy",
     "aws_cloudhsm_v2_cluster",
     "aws_cloudtrail_service_account",
     "aws_cloudwatch_log_group",
+    "aws_codeartifact_authorization_token",
+    "aws_codeartifact_repository_endpoint",
     "aws_cognito_user_pools",
     "aws_codecommit_repository",
     "aws_cur_report_definition",
@@ -809,7 +988,10 @@ __all__ = [
     "aws_db_event_categories",
     "aws_db_instance",
     "aws_db_snapshot",
+    "aws_db_subnet_group",
     "aws_directory_service_directory",
+    "aws_docdb_engine_version",
+    "aws_docdb_orderable_db_instance",
     "aws_dx_gateway",
     "aws_dynamodb_table",
     "aws_ebs_default_kms_key",
@@ -820,6 +1002,7 @@ __all__ = [
     "aws_ebs_volumes",
     "aws_ec2_coip_pool",
     "aws_ec2_coip_pools",
+    "aws_ec2_instance_type",
     "aws_ec2_instance_type_offering",
     "aws_ec2_instance_type_offerings",
     "aws_ec2_local_gateway",
@@ -829,6 +1012,7 @@ __all__ = [
     "aws_ec2_local_gateway_virtual_interface",
     "aws_ec2_local_gateway_virtual_interface_group",
     "aws_ec2_local_gateway_virtual_interface_groups",
+    "aws_ec2_managed_prefix_list",
     "aws_ec2_spot_price",
     "aws_ec2_transit_gateway",
     "aws_ec2_transit_gateway_dx_gateway_attachment",
@@ -870,11 +1054,19 @@ __all__ = [
     "aws_iam_role",
     "aws_iam_server_certificate",
     "aws_iam_user",
-    "aws_internet_gateway",
-    "aws_iot_endpoint",
+    "aws_identitystore_group",
+    "aws_identitystore_user",
+    "aws_imagebuilder_component",
+    "aws_imagebuilder_distribution_configuration",
+    "aws_imagebuilder_image",
+    "aws_imagebuilder_image_pipeline",
+    "aws_imagebuilder_image_recipe",
+    "aws_imagebuilder_infrastructure_configuration",
     "aws_inspector_rules_packages",
     "aws_instance",
     "aws_instances",
+    "aws_internet_gateway",
+    "aws_iot_endpoint",
     "aws_ip_ranges",
     "aws_kinesis_stream",
     "aws_kms_alias",
@@ -882,16 +1074,26 @@ __all__ = [
     "aws_kms_key",
     "aws_kms_secret",
     "aws_kms_secrets",
+    "aws_lakeformation_data_lake_settings",
+    "aws_lakeformation_permissions",
+    "aws_lakeformation_resource",
     "aws_lambda_alias",
+    "aws_lambda_code_signing_config",
     "aws_lambda_function",
     "aws_lambda_invocation",
     "aws_lambda_layer_version",
     "aws_launch_configuration",
     "aws_launch_template",
+    "aws_lex_bot_alias",
+    "aws_lex_bot",
+    "aws_lex_intent",
+    "aws_lex_slot_type",
     "aws_mq_broker",
     "aws_msk_cluster",
     "aws_msk_configuration",
     "aws_nat_gateway",
+    "aws_neptune_orderable_db_instance",
+    "aws_neptune_engine_version",
     "aws_network_acls",
     "aws_network_interface",
     "aws_network_interfaces",
@@ -908,8 +1110,12 @@ __all__ = [
     "aws_pricing_product",
     "aws_qldb_ledger",
     "aws_ram_resource_share",
+    "aws_rds_certificate",
     "aws_rds_cluster",
+    "aws_rds_engine_version",
+    "aws_rds_orderable_db_instance",
     "aws_redshift_cluster",
+    "aws_redshift_orderable_cluster",
     "aws_redshift_service_account",
     "aws_region",
     "aws_regions",
@@ -917,12 +1123,14 @@ __all__ = [
     "aws_route_table",
     "aws_route_tables",
     "aws_route53_delegation_set",
+    "aws_route53_resolver_endpoint",
     "aws_route53_resolver_rule",
     "aws_route53_resolver_rules",
     "aws_route53_zone",
     "aws_s3_bucket",
     "aws_s3_bucket_object",
     "aws_s3_bucket_objects",
+    "aws_sagemaker_prebuilt_ecr_image",
     "aws_secretsmanager_secret",
     "aws_secretsmanager_secret_rotation",
     "aws_secretsmanager_secret_version",
@@ -930,11 +1138,15 @@ __all__ = [
     "aws_servicequotas_service_quota",
     "aws_sfn_activity",
     "aws_sfn_state_machine",
+    "aws_signer_signing_job",
+    "aws_signer_signing_profile",
     "aws_sns_topic",
     "aws_sqs_queue",
     "aws_ssm_document",
     "aws_ssm_parameter",
     "aws_ssm_patch_baseline",
+    "aws_ssoadmin_instances",
+    "aws_ssoadmin_permission_set",
     "aws_storagegateway_local_disk",
     "aws_subnet",
     "aws_subnet_ids",
@@ -947,6 +1159,7 @@ __all__ = [
     "aws_vpc_endpoint",
     "aws_vpc_endpoint_service",
     "aws_vpc_peering_connection",
+    "aws_vpc_peering_connections",
     "aws_vpn_gateway",
     "aws_waf_ipset",
     "aws_waf_rule",
@@ -962,6 +1175,8 @@ __all__ = [
     "aws_wafv2_web_acl",
     "aws_workspaces_bundle",
     "aws_workspaces_directory",
+    "aws_workspaces_image",
+    "aws_workspaces_workspace",
     "aws_lb",
     "aws_alb",
     "aws_lb_listener",

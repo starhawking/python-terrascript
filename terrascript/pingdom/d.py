@@ -2,5 +2,9 @@
 import terrascript
 
 
-class pingdom_user(terrascript.Data):
+class pingdom_contact(terrascript.Data):
+    pass
+
+
+class pingdom_team(terrascript.Data):
     pass

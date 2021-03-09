@@ -22,6 +22,10 @@ class aws_api_gateway_api_key(terrascript.Data):
     pass
 
 
+class aws_api_gateway_domain_name(terrascript.Data):
+    pass
+
+
 class aws_api_gateway_resource(terrascript.Data):
     pass
 
@@ -31,6 +35,14 @@ class aws_api_gateway_rest_api(terrascript.Data):
 
 
 class aws_api_gateway_vpc_link(terrascript.Data):
+    pass
+
+
+class aws_apigatewayv2_api(terrascript.Data):
+    pass
+
+
+class aws_apigatewayv2_apis(terrascript.Data):
     pass
 
 
@@ -94,7 +106,15 @@ class aws_cloudformation_stack(terrascript.Data):
     pass
 
 
+class aws_cloudfront_cache_policy(terrascript.Data):
+    pass
+
+
 class aws_cloudfront_distribution(terrascript.Data):
+    pass
+
+
+class aws_cloudfront_origin_request_policy(terrascript.Data):
     pass
 
 
@@ -107,6 +127,14 @@ class aws_cloudtrail_service_account(terrascript.Data):
 
 
 class aws_cloudwatch_log_group(terrascript.Data):
+    pass
+
+
+class aws_codeartifact_authorization_token(terrascript.Data):
+    pass
+
+
+class aws_codeartifact_repository_endpoint(terrascript.Data):
     pass
 
 
@@ -138,7 +166,19 @@ class aws_db_snapshot(terrascript.Data):
     pass
 
 
+class aws_db_subnet_group(terrascript.Data):
+    pass
+
+
 class aws_directory_service_directory(terrascript.Data):
+    pass
+
+
+class aws_docdb_engine_version(terrascript.Data):
+    pass
+
+
+class aws_docdb_orderable_db_instance(terrascript.Data):
     pass
 
 
@@ -182,6 +222,10 @@ class aws_ec2_coip_pools(terrascript.Data):
     pass
 
 
+class aws_ec2_instance_type(terrascript.Data):
+    pass
+
+
 class aws_ec2_instance_type_offering(terrascript.Data):
     pass
 
@@ -215,6 +259,10 @@ class aws_ec2_local_gateway_virtual_interface_group(terrascript.Data):
 
 
 class aws_ec2_local_gateway_virtual_interface_groups(terrascript.Data):
+    pass
+
+
+class aws_ec2_managed_prefix_list(terrascript.Data):
     pass
 
 
@@ -382,11 +430,35 @@ class aws_iam_user(terrascript.Data):
     pass
 
 
-class aws_internet_gateway(terrascript.Data):
+class aws_identitystore_group(terrascript.Data):
     pass
 
 
-class aws_iot_endpoint(terrascript.Data):
+class aws_identitystore_user(terrascript.Data):
+    pass
+
+
+class aws_imagebuilder_component(terrascript.Data):
+    pass
+
+
+class aws_imagebuilder_distribution_configuration(terrascript.Data):
+    pass
+
+
+class aws_imagebuilder_image(terrascript.Data):
+    pass
+
+
+class aws_imagebuilder_image_pipeline(terrascript.Data):
+    pass
+
+
+class aws_imagebuilder_image_recipe(terrascript.Data):
+    pass
+
+
+class aws_imagebuilder_infrastructure_configuration(terrascript.Data):
     pass
 
 
@@ -399,6 +471,14 @@ class aws_instance(terrascript.Data):
 
 
 class aws_instances(terrascript.Data):
+    pass
+
+
+class aws_internet_gateway(terrascript.Data):
+    pass
+
+
+class aws_iot_endpoint(terrascript.Data):
     pass
 
 
@@ -430,7 +510,23 @@ class aws_kms_secrets(terrascript.Data):
     pass
 
 
+class aws_lakeformation_data_lake_settings(terrascript.Data):
+    pass
+
+
+class aws_lakeformation_permissions(terrascript.Data):
+    pass
+
+
+class aws_lakeformation_resource(terrascript.Data):
+    pass
+
+
 class aws_lambda_alias(terrascript.Data):
+    pass
+
+
+class aws_lambda_code_signing_config(terrascript.Data):
     pass
 
 
@@ -454,6 +550,22 @@ class aws_launch_template(terrascript.Data):
     pass
 
 
+class aws_lex_bot_alias(terrascript.Data):
+    pass
+
+
+class aws_lex_bot(terrascript.Data):
+    pass
+
+
+class aws_lex_intent(terrascript.Data):
+    pass
+
+
+class aws_lex_slot_type(terrascript.Data):
+    pass
+
+
 class aws_mq_broker(terrascript.Data):
     pass
 
@@ -467,6 +579,14 @@ class aws_msk_configuration(terrascript.Data):
 
 
 class aws_nat_gateway(terrascript.Data):
+    pass
+
+
+class aws_neptune_orderable_db_instance(terrascript.Data):
+    pass
+
+
+class aws_neptune_engine_version(terrascript.Data):
     pass
 
 
@@ -534,11 +654,27 @@ class aws_ram_resource_share(terrascript.Data):
     pass
 
 
+class aws_rds_certificate(terrascript.Data):
+    pass
+
+
 class aws_rds_cluster(terrascript.Data):
     pass
 
 
+class aws_rds_engine_version(terrascript.Data):
+    pass
+
+
+class aws_rds_orderable_db_instance(terrascript.Data):
+    pass
+
+
 class aws_redshift_cluster(terrascript.Data):
+    pass
+
+
+class aws_redshift_orderable_cluster(terrascript.Data):
     pass
 
 
@@ -570,6 +706,10 @@ class aws_route53_delegation_set(terrascript.Data):
     pass
 
 
+class aws_route53_resolver_endpoint(terrascript.Data):
+    pass
+
+
 class aws_route53_resolver_rule(terrascript.Data):
     pass
 
@@ -591,6 +731,10 @@ class aws_s3_bucket_object(terrascript.Data):
 
 
 class aws_s3_bucket_objects(terrascript.Data):
+    pass
+
+
+class aws_sagemaker_prebuilt_ecr_image(terrascript.Data):
     pass
 
 
@@ -622,6 +766,14 @@ class aws_sfn_state_machine(terrascript.Data):
     pass
 
 
+class aws_signer_signing_job(terrascript.Data):
+    pass
+
+
+class aws_signer_signing_profile(terrascript.Data):
+    pass
+
+
 class aws_sns_topic(terrascript.Data):
     pass
 
@@ -639,6 +791,14 @@ class aws_ssm_parameter(terrascript.Data):
 
 
 class aws_ssm_patch_baseline(terrascript.Data):
+    pass
+
+
+class aws_ssoadmin_instances(terrascript.Data):
+    pass
+
+
+class aws_ssoadmin_permission_set(terrascript.Data):
     pass
 
 
@@ -687,6 +847,10 @@ class aws_vpc_endpoint_service(terrascript.Data):
 
 
 class aws_vpc_peering_connection(terrascript.Data):
+    pass
+
+
+class aws_vpc_peering_connections(terrascript.Data):
     pass
 
 
@@ -747,6 +911,14 @@ class aws_workspaces_bundle(terrascript.Data):
 
 
 class aws_workspaces_directory(terrascript.Data):
+    pass
+
+
+class aws_workspaces_image(terrascript.Data):
+    pass
+
+
+class aws_workspaces_workspace(terrascript.Data):
     pass
 
 

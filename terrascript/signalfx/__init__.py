@@ -2,5 +2,5 @@
 import terrascript
 
 
-class signalfx(signalfx.Provider):
+class signalfx(terrascript.Provider):
     pass
