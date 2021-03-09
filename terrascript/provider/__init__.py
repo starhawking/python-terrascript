@@ -22,6 +22,7 @@ from .dns import *
 from .dnsimple import *
 from .docker import *
 from .dyn import *
+from .esxi import *
 from .external import *
 from .fastly import *
 from .github import *

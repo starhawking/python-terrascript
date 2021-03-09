@@ -42,6 +42,8 @@
   repository: https://github.com/terraform-providers/terraform-provider-docker
 - name: dyn
   repository: https://github.com/terraform-providers/terraform-provider-dyn
+- name: esxi
+  repository: https://github.com/josenk/terraform-provider-esxi
 - name: external
   repository: https://github.com/terraform-providers/terraform-provider-external
 - name: fastly
