@@ -90,6 +90,8 @@
   repository: https://github.com/terraform-providers/terraform-provider-nomad
 - name: ns1
   repository: https://github.com/terraform-providers/terraform-provider-ns1
+- name: 'null'
+  repository: https://github.com/hashicorp/terraform-provider-null
 - name: oci
   repository: https://github.com/terraform-providers/terraform-provider-oci
 - name: oneandone
