@@ -458,6 +458,10 @@ class aws_cognito_identity_provider(terrascript.Resource):
     pass
 
 
+class aws_cognito_resource_server(terrascript.Resource):
+    pass
+
+
 class aws_cognito_user_group(terrascript.Resource):
     pass
 
@@ -474,15 +478,15 @@ class aws_cognito_user_pool_domain(terrascript.Resource):
     pass
 
 
+class aws_cognito_user_pool_ui_customization(terrascript.Resource):
+    pass
+
+
 class aws_cloudhsm_v2_cluster(terrascript.Resource):
     pass
 
 
 class aws_cloudhsm_v2_hsm(terrascript.Resource):
-    pass
-
-
-class aws_cognito_resource_server(terrascript.Resource):
     pass
 
 
@@ -931,6 +935,10 @@ class aws_ec2_transit_gateway_vpc_attachment_accepter(terrascript.Resource):
 
 
 class aws_ecr_lifecycle_policy(terrascript.Resource):
+    pass
+
+
+class aws_ecrpublic_repository(terrascript.Resource):
     pass
 
 
@@ -1874,6 +1882,10 @@ class aws_route53_delegation_set(terrascript.Resource):
     pass
 
 
+class aws_route53_hosted_zone_dnssec(terrascript.Resource):
+    pass
+
+
 class aws_route53_key_signing_key(terrascript.Resource):
     pass
 
@@ -1939,6 +1951,10 @@ class aws_default_route_table(terrascript.Resource):
 
 
 class aws_route_table_association(terrascript.Resource):
+    pass
+
+
+class aws_sagemaker_app(terrascript.Resource):
     pass
 
 

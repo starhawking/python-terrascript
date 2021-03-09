@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
   - `signalfx`
 * Tool to generate provider bindings now accept provider to build
 ## Changed
+* All dot-files not explicitly included are now ignored by default
 * Script to generate providers:
   * Automatically sorts the list of providers alphabetically
   * Now try to guess the location of the required provider.go in the repository
@@ -26,9 +27,9 @@ All notable changes to this project will be documented in this file.
   * kubernetes
   * nomad
   * ovh
+  * pingdom
   * profitbricks
   * signalfx
-  * pingdom
 
 ## [0.9.0] - 2020-11-23
 **This release requires Python 3.6 or later, and Terraform 0.12 or later.**  

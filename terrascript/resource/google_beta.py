@@ -70,6 +70,14 @@ class google_apigee_organization(terrascript.Resource):
     pass
 
 
+class google_apigee_instance(terrascript.Resource):
+    pass
+
+
+class google_apigee_environment(terrascript.Resource):
+    pass
+
+
 class google_app_engine_domain_mapping(terrascript.Resource):
     pass
 
@@ -626,7 +634,9 @@ class google_identity_platform_default_supported_idp_config(terrascript.Resource
     pass
 
 
-class google_identity_platform_tenant_default_supported_idp_config(terrascript.Resource):
+class google_identity_platform_tenant_default_supported_idp_config(
+    terrascript.Resource
+):
     pass
 
 
@@ -839,6 +849,10 @@ class google_tpu_node(terrascript.Resource):
 
 
 class google_vpc_access_connector(terrascript.Resource):
+    pass
+
+
+class google_workflows_workflow(terrascript.Resource):
     pass
 
 
@@ -1124,6 +1138,8 @@ __all__ = [
     "google_api_gateway_api_config",
     "google_api_gateway_gateway",
     "google_apigee_organization",
+    "google_apigee_instance",
+    "google_apigee_environment",
     "google_app_engine_domain_mapping",
     "google_app_engine_firewall_rule",
     "google_app_engine_standard_app_version",
@@ -1317,6 +1333,7 @@ __all__ = [
     "google_storage_hmac_key",
     "google_tpu_node",
     "google_vpc_access_connector",
+    "google_workflows_workflow",
     "google_app_engine_application",
     "google_bigquery_table",
     "google_bigtable_gc_policy",

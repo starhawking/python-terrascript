@@ -458,6 +458,10 @@ class aws_cognito_identity_provider(terrascript.Resource):
     pass
 
 
+class aws_cognito_resource_server(terrascript.Resource):
+    pass
+
+
 class aws_cognito_user_group(terrascript.Resource):
     pass
 
@@ -474,15 +478,15 @@ class aws_cognito_user_pool_domain(terrascript.Resource):
     pass
 
 
+class aws_cognito_user_pool_ui_customization(terrascript.Resource):
+    pass
+
+
 class aws_cloudhsm_v2_cluster(terrascript.Resource):
     pass
 
 
 class aws_cloudhsm_v2_hsm(terrascript.Resource):
-    pass
-
-
-class aws_cognito_resource_server(terrascript.Resource):
     pass
 
 
@@ -931,6 +935,10 @@ class aws_ec2_transit_gateway_vpc_attachment_accepter(terrascript.Resource):
 
 
 class aws_ecr_lifecycle_policy(terrascript.Resource):
+    pass
+
+
+class aws_ecrpublic_repository(terrascript.Resource):
     pass
 
 
@@ -1874,6 +1882,10 @@ class aws_route53_delegation_set(terrascript.Resource):
     pass
 
 
+class aws_route53_hosted_zone_dnssec(terrascript.Resource):
+    pass
+
+
 class aws_route53_key_signing_key(terrascript.Resource):
     pass
 
@@ -1939,6 +1951,10 @@ class aws_default_route_table(terrascript.Resource):
 
 
 class aws_route_table_association(terrascript.Resource):
+    pass
+
+
+class aws_sagemaker_app(terrascript.Resource):
     pass
 
 
@@ -2849,13 +2865,14 @@ __all__ = [
     "aws_cognito_identity_pool",
     "aws_cognito_identity_pool_roles_attachment",
     "aws_cognito_identity_provider",
+    "aws_cognito_resource_server",
     "aws_cognito_user_group",
     "aws_cognito_user_pool",
     "aws_cognito_user_pool_client",
     "aws_cognito_user_pool_domain",
+    "aws_cognito_user_pool_ui_customization",
     "aws_cloudhsm_v2_cluster",
     "aws_cloudhsm_v2_hsm",
-    "aws_cognito_resource_server",
     "aws_cloudwatch_composite_alarm",
     "aws_cloudwatch_metric_alarm",
     "aws_cloudwatch_dashboard",
@@ -2968,6 +2985,7 @@ __all__ = [
     "aws_ec2_transit_gateway_vpc_attachment",
     "aws_ec2_transit_gateway_vpc_attachment_accepter",
     "aws_ecr_lifecycle_policy",
+    "aws_ecrpublic_repository",
     "aws_ecr_repository",
     "aws_ecr_repository_policy",
     "aws_ecs_capacity_provider",
@@ -3203,6 +3221,7 @@ __all__ = [
     "aws_redshift_event_subscription",
     "aws_resourcegroups_group",
     "aws_route53_delegation_set",
+    "aws_route53_hosted_zone_dnssec",
     "aws_route53_key_signing_key",
     "aws_route53_query_log",
     "aws_route53_record",
@@ -3220,6 +3239,7 @@ __all__ = [
     "aws_route_table",
     "aws_default_route_table",
     "aws_route_table_association",
+    "aws_sagemaker_app",
     "aws_sagemaker_app_image_config",
     "aws_sagemaker_code_repository",
     "aws_sagemaker_domain",

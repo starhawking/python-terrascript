@@ -38,6 +38,14 @@ class aws_api_gateway_vpc_link(terrascript.Data):
     pass
 
 
+class aws_apigatewayv2_api(terrascript.Data):
+    pass
+
+
+class aws_apigatewayv2_apis(terrascript.Data):
+    pass
+
+
 class aws_arn(terrascript.Data):
     pass
 
@@ -948,6 +956,8 @@ __all__ = [
     "aws_api_gateway_resource",
     "aws_api_gateway_rest_api",
     "aws_api_gateway_vpc_link",
+    "aws_apigatewayv2_api",
+    "aws_apigatewayv2_apis",
     "aws_arn",
     "aws_autoscaling_group",
     "aws_autoscaling_groups",
