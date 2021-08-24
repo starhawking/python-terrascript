@@ -83,8 +83,7 @@ package: clean ## Build python package from sources
 
 providers: ## Build bindings for listed providers
 	cd tools \
-	&& touch .providers_timestamp \
-	&& python3 makecode.py $(targets) \
+	&& python3 makecode.py \
 	$(MAKE) black
 
 test: clean test_makecode test_basic test_issues test_docs test_providers ## Run all tests
