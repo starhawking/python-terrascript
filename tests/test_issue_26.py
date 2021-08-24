@@ -6,16 +6,18 @@ https://github.com/mjuenema/python-terrascript/issues/26
 """
 
 import terrascript
-import terrascript.provider
-import terrascript.resource
+import terrascript.provider.DataDog.datadog
+import terrascript.resource.DataDog.datadog
 
 
 def test_issue_26():
 
     for name in ["first", "second", "third"]:
         ts = terrascript.Terrascript()
-        ts += terrascript.provider.datadog(api_key="DUMMY", app_key="DUMMY")
-        ts += terrascript.resource.datadog_monitor(
+        ts += terrascript.provider.DataDog.datadog.datadog(
+            api_key="DUMMY", app_key="DUMMY"
+        )
+        ts += terrascript.resource.DataDog.datadog.datadog_monitor(
             name,
             name=name,
             type="metric alert",

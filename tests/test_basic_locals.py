@@ -1,6 +1,6 @@
 import terrascript
-import terrascript.provider
-import terrascript.resource
+import terrascript.provider.hashicorp.aws
+import terrascript.resource.hashicorp.aws
 
 # *** These test work but terrascript.Locals is not supported. ***
 
@@ -8,7 +8,7 @@ import terrascript.resource
 class TestLocals:
     def __init__(self):
         self.cfg = terrascript.Terrascript()
-        self.cfg += terrascript.provider.aws(region="us-east-1")
+        self.cfg += terrascript.provider.hashicorp.aws.aws(region="us-east-1")
 
     def test_locals_added_once(self):
 

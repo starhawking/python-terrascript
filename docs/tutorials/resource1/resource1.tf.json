@@ -2,7 +2,9 @@
   "provider": {
     "aws": [
       {
-        "region": "us-east-1"
+        "region": "us-east-1",
+        "version": "3.35.0",
+        "source": "https://github.com/hashicorp/terraform-provider-aws"
       }
     ]
   },

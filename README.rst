@@ -44,7 +44,7 @@ superior to writing Terraform configurations by hand.
 
 The file PROVIDERS.md_ lists all currently supported Terraform providers.
 
-.. _PROVIDERS.md: _PROVIDERS.md 
+.. _PROVIDERS.md: PROVIDERS.md 
 
 Installing Terrascript
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -99,8 +99,8 @@ Compatibility
 Terraform releases
 ..................
 
-`Terraform 0.13`_ added the `required providers` block together with tighter
-integration with the `Terraform Provider Registry`. Terrascript 0.10.x
+`Terraform 0.13`_ added the `required providers`_ block together with tighter
+integration with the `Terraform Provider Registry`_. Terrascript 0.10.x
 reflects this change and is *not backwards compatible* with earlier Terraform
 releases.   
 
@@ -110,7 +110,9 @@ separate releases for Terraform 0.12 and Terraform 0.11. Earlier releases of
 Terraform are not supported. 
 
 .. _`Terraform 0.12`: https://www.hashicorp.com/blog/announcing-terraform-0-12
-.. _`Terraform 0.13`: https://www.hashicorp.com/blog/announcing-hashicorp-terraform-0-13  
+.. _`Terraform 0.13`: https://www.hashicorp.com/blog/announcing-hashicorp-terraform-0-13
+.. _`required_providers`: https://www.terraform.io/upgrade-guides/0-13.html
+.. _`Terraform Provider Registry`: https://registry.terraform.io/browse/providers
 
 ========== ============ ============================================================================================
 Terraform  Terrascript  Notes
@@ -127,26 +129,27 @@ Terrascript supports Python 3.6 and later.
 Module layout
 .............
 
-Python-Terrascript release 0.8.0 changed the location of modules. 
-Providers, resources and data sources are now all available through just
-three modules.
+Python-Terrascript's top-level directory layout is structured into providers, 
+resources and data sources.
 
 ::
 
     import terrascript
-    import terrascript.provider     # aws, google, ...
-    import terrascript.resource     # aws_instance, google_compute_instance, ...
-    import terrascript.data         # aws_ami, google_compute_image, ...
+    import terrascript.provider     
+    import terrascript.resource     
+    import terrascript.data         
     
-The legacy layout is still available but should not be used for new projects.
+This is then further structured into *namespaces* to reflect the changes in 
+_`Terraform 0.13`. Below are examples for importing the modules for the
+ `Amazon Web Services Provider`_ which is maintained by Hashicorp. 
 
-:: 
+.. _`Amazon Web Services Provider`: https://registry.terraform.io/providers/hashicorp/aws/latest
 
-    import terrascript
-    import terrascript.aws          # aws
-    import terrascript.aws.r        # aws_instance, ... 
-    import terrascript.aws.d        # aws_ami, ...
+::
 
+    import terrascript.provider.hashicorp.aws     
+    import terrascript.resource.hashicorp.aws     
+    import terrascript.data.hashicorp.aws
 
 A first example
 ~~~~~~~~~~~~~~~
@@ -157,12 +160,21 @@ the equivalent configuration in JSON syntax.
 
 .. _`AWS Provider`: https://www.terraform.io/docs/providers/aws/index.html 
 
-The original Terraform HCL format. 
+First the original Terraform HCL format, which since Terraform 0.13 must include
+a ``required_providers`` block inside the ``terraform`` block.
 
 ::
+
+    terraform {
+      required_providers {
+        aws = {
+          source = "hashicorp/aws"
+          version = "3.36.0"
+        }
+      }
+    }
     
     provider "aws" {
-      version = "~> 2.0"
       region  = "us-east-1"
     }
     
@@ -170,18 +182,27 @@ The original Terraform HCL format.
       cidr_block = "10.0.0.0/16"
     }
 
-The Terrascript code would look like this. 
+The Terrascript code would look like this. The ``required_providers`` argument
+is supplied as a nested dictionary. In this example only the 
+ `Amazon Web Services Provider`_ is used, which is maintained by Hashicorp.
 
 ::
 
     import terrascript
-    import terrascript.provider as provider
-    import terrascript.resource as resource
+    import terrascript.provider.hashicorp.aws
+    import terrascript.resource.hashicorp.aws
 
     config = terrascript.Terrascript()
+    
+    config += terrascript.Terraform(required_providers={'aws': {
+                                                          'source': 'hashicorp/aws',
+                                                          'version': '3.65.0'
+                                                          }
+                                                        }
+                                    )
 
-    config += provider.aws(version='~> 2.0', region='us-east-1')
-    config += resource.aws_vpc('example', cidr_block='10.0.0.0/16')
+    config += terrascript.provider.hashicorp.aws(region='us-east-1')
+    config += terrascript.resource.hashicorp.aws.aws_vpc('example', cidr_block='10.0.0.0/16')
     
     with open('config.tf.json', 'wt') as fp:
         fp.write(str(config))
@@ -192,6 +213,14 @@ original HCL format.
 ::
 
     {
+      "terraform": {
+        "required_providers": {
+          "aws": {
+            "source": "hashicorp/aws",
+            "version": "3.36.0"
+          }
+        }
+      },
       "provider": {
         "aws": [
           {

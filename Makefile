@@ -1,5 +1,5 @@
 
-NOSE := nosetests --failed --verbose --no-byte-compile --logging-level=DEBUG --detailed-errors
+NOSE := nosetests --failed --verbose --no-byte-compile --logging-level=DEBUG --detailed-errors --stop
 COVERAGE := $(NOSE) --with-coverage --cover-package=terrascript --cover-erase --cover-branches --cover-html
 FLAKE8 := python3 -m flake8
 
@@ -7,6 +7,7 @@ TESTS_BASIC := $(wildcard tests/test_basic_*.py)
 TESTS_ISSUES := $(wildcard tests/test_issue*.py)
 TESTS_EXAMPLES := $(wildcard tests/test_example_*.py)
 TESTS_MAKECODE := $(wildcard tests/test_makecode_*.py)
+TESTS_PROVIDERS := $(wildcard tests/test_provider_*.py)
 
 export TF_IN_AUTOMATION=1
 
@@ -44,6 +45,10 @@ clean: ## Cleanup temporary / cached files
 
 code: clean ## Generate providers shim classes / code
 	( cd tools && ./makecode.py 2>&1 | tee makecode.out )
+	# Workarounds
+	cp -vf terrascript/provider/azurerm.py terrascript/provider/azure.py
+	cp -vf terrascript/resource/azurerm.py terrascript/resource/azure.py
+	cp -vf terrascript/data/azurerm.py terrascript/data/azure.py
 
 coverage: clean ## Generate code test coverage
 	$(COVERAGE) $(TESTS_BASIC) $(TEST_ISSUES)
@@ -53,6 +58,9 @@ debug_basic: clean ## Run basic tests in debug mode
 
 debug_issues: clean ## Run tests in debug mode for previous issues
 	$(NOSE) --pdb  $(TESTS_ISSUES)
+
+debug_providers: clean ## Run tests for providers in debug mode
+	$(NOSE) --pdb $(TESTS_PROVIDERS)
 
 docs: clean ## Build documentation files
 	make -C docs html
@@ -73,13 +81,13 @@ package: clean ## Build python package from sources
 	python3 setup.py clean
 	python3 setup.py sdist
 
-providers: targets=
 providers: ## Build bindings for listed providers
 	cd tools \
-	&& python3 makecode.py $(targets)
+	&& touch .providers_timestamp \
+	&& python3 makecode.py $(targets) \
 	$(MAKE) black
 
-test: clean test_makecode test_basic test_issues test_docs ## Run all tests
+test: clean test_makecode test_basic test_issues test_docs test_providers ## Run all tests
 
 test_basic: clean ## Run basic tests
 	$(NOSE) $(TESTS_BASIC)
@@ -102,3 +110,6 @@ test_issues: clean ## Run tests for previous issues
 
 test_makecode: clean ## Run tests for makecode 
 	$(NOSE) $(TESTS_MAKECODE)
+
+test_providers: clean ## Run tests for providers 
+	$(NOSE) $(TESTS_PROVIDERS)

@@ -113,3 +113,5 @@ tools/terraform
 cover/*
 **.terraform
 tools/workdir/*
+tools/.requests_cache.sqlite
+tools/.providers_timestamp
