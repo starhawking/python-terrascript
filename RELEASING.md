@@ -7,7 +7,9 @@ Releases should be done from a branch to prevent blocking development.
     git checkout -b release/x.x.x
     ```
 * Create the providers.
-  - Execute ``make providers`` to generate the Python code.
+  ```
+  make providers
+  ```
 * Review and update if needed:
   - ``setup.py``
   - ``CHANGELOG.md``
