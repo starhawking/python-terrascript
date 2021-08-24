@@ -80,6 +80,8 @@ providers: ## Build bindings for listed providers
 
 test: clean test_basic test_issues test_docs ## Run all tests
 
+tox_test: clean test_basic test_issues
+
 test_basic: clean ## Run basic tests
 	$(NOSE) $(TESTS_BASIC)
 
