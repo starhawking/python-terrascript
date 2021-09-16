@@ -72,6 +72,7 @@ from .softlayer import *
 from .spotinst import *
 from .statuscake import *
 from .template import *
+from .time import *
 from .tls import *
 from .triton import *
 from .ultradns import *
