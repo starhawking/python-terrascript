@@ -142,6 +142,8 @@
   repository: https://github.com/terraform-providers/terraform-provider-statuscake
 - name: template
   repository: https://github.com/terraform-providers/terraform-provider-template
+- name: time
+  repository: https://github.com/hashicorp/terraform-provider-time
 - name: tls
   repository: https://github.com/terraform-providers/terraform-provider-tls
 - name: triton
