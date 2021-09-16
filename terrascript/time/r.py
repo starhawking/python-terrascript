@@ -15,12 +15,4 @@ class time_sleep(terrascript.Resource):
 
 
 class time_static(terrascript.Resource):
-    pass    
-
-
-__all__ = [
-    "time_offset",
-    "time_rotating",
-    "time_sleep",
-    "time_static",
-]
+    pass

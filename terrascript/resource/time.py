@@ -15,7 +15,7 @@ class time_sleep(terrascript.Resource):
 
 
 class time_static(terrascript.Resource):
-    pass    
+    pass
 
 
 __all__ = [
