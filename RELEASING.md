@@ -6,6 +6,10 @@ Releases should be done from a branch to prevent blocking development.
     ```
     git checkout -b release/x.x.x
     ```
+* Generate the provider modules.
+  - Execute ``make providers`` to generate the provider modules.
+  - Execute ``make test_providers`` to run the tests for the provider modules.
+  - Review ``PROVIDERS.md`` which was auto-generated in the previous steps. 
 * Review and update if needed:
   - ``setup.py``
   - ``CHANGELOG.md``

@@ -3,7 +3,10 @@ import terrascript
 
 
 class postgresql(terrascript.Provider):
-    pass
+    """Terraform PostgreSQL provider"""
+
+    __description__ = "Terraform PostgreSQL provider"
+    __version__ = "1.11.2"
 
 
 __all__ = ["postgresql"]

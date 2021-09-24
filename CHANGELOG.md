@@ -1,6 +1,30 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [Unreleased] - 2021-02-21
+To be merged with *[Unreleased] - 2020-11-24*
+### Added
+* Rewrote tool to generate provider bindings to automatically include all
+  providers listed on the [Terraform Registry](https://registry.terraform.io/).
+  This added 80 new providers to *Terrascript* which is too many to list here.
+  (discussion #149).
+* Introduced support for provider namespaces (discussion #152). This is not
+  available in the deprecated "legacy layout". Examples:
+  ``import resource.hashicorp.aws`` and ``import data.hashicorp.aws``. For 
+  backwards compatibility most providers can still be used without namespace:
+  ``import data.aws``.
+### Changed
+* The ``version`` and ``source`` arguments to providers are now optional
+  and default to the latest version.
+### Deprecated
+* Added ``DeprecationWarning`` for modules under the "legacy layout".
+* Wildcard imports like ``from provider import *``, ``from resource import *``
+  and ``from data import *`` are deprecated although there is no
+  ``DeprecationWarning`` as I don't know how to implement such. 
+  Wildcard imports from provider modules are still possible, e.g.
+  ``from resource.hashicorp.aws import *`` (with namespace) or 
+  ``from provider.aws import *``. (without namespace).  
+
 ## [Unreleased] - 2020-11-24
 ### Added
 * Build support for Python 3.9

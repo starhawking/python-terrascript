@@ -35,26 +35,23 @@ also a provider with the ```terraform_remote_state```.
 
 """
 
-# The following code has been adapted to Terrascript release 0.8.0.
-# Any changes have been commented in the code.
+# The following code has been adapted to Terrascript release 0.10
 
 
 def test_issue_43():
 
     import terrascript
-    import terrascript.data  # <=== Use new module layout.
-    import terrascript.provider  # <=== Use new module layout.
+    import terrascript.data.hashicorp.terraform
+    import terrascript.provider.hashicorp.terraform
 
-    s3_backend = terrascript.backend(  # <=== better: terrascript.Backend()
+    s3_backend = terrascript.backend(
         "s3", bucket="mybucket", key="my.tfstate", region="us-east-1"
     )
 
     ts = terrascript.Terrascript()
-    ts += terrascript.provider.terraform(
-        backend=s3_backend
-    )  # <=== Use new module layout.
+    ts += terrascript.provider.hashicorp.terraform.terraform(backend=s3_backend)
 
-    ts += terrascript.data.terraform_remote_state(  # <=== Use new module layout.
+    ts += terrascript.data.hashicorp.terraform.terraform_remote_state(
         "another",
         backend="s3",
         config={"bucket": "mybucket", "key": "another.tfstate", "region": "us-east-1"},

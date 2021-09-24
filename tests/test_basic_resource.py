@@ -1,5 +1,5 @@
 import terrascript
-import terrascript.resource
+import terrascript.resource.hashicorp.aws
 
 
 class TestResource:
@@ -7,7 +7,9 @@ class TestResource:
         self.cfg = terrascript.Terrascript()
 
     def test_one_resource(self):
-        r = terrascript.resource.aws_instance("instance1", instance_type="t2.micro")
+        r = terrascript.resource.hashicorp.aws.aws_instance(
+            "instance1", instance_type="t2.micro"
+        )
         assert isinstance(r, terrascript.NamedBlock)
         assert isinstance(r, terrascript.Resource)
         assert r._name == "instance1"
@@ -20,8 +22,12 @@ class TestResource:
         )
 
     def test_two_resources(self):
-        r1 = terrascript.resource.aws_instance("instance1", instance_type="t2.micro")
-        r2 = terrascript.resource.aws_instance("instance2", instance_type="t2.small")
+        r1 = terrascript.resource.hashicorp.aws.aws_instance(
+            "instance1", instance_type="t2.micro"
+        )
+        r2 = terrascript.resource.hashicorp.aws.aws_instance(
+            "instance2", instance_type="t2.small"
+        )
 
         assert r1["instance_type"] == "t2.micro"
         assert r2["instance_type"] == "t2.small"
@@ -38,7 +44,9 @@ class TestResource:
         )
 
     def test_resource_attributes(self):
-        r = terrascript.resource.aws_instance("instance1", instance_type="t2.micro")
+        r = terrascript.resource.hashicorp.aws.aws_instance(
+            "instance1", instance_type="t2.micro"
+        )
 
         assert r.instance_type == "t2.micro"
 

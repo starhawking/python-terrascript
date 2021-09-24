@@ -1,5 +1,5 @@
 import terrascript
-import terrascript.resource
+import terrascript.resource.aws
 
 
 class TestProvisioner:
@@ -13,7 +13,7 @@ class TestProvisioner:
 
         assert p["local-exec"]["when"] == "destroy"
 
-        self.cfg += terrascript.resource.aws_instance(
+        self.cfg += terrascript.resource.aws.aws_instance(
             "instance1", instance_type="t2.micro", provisioner=p
         )
 
@@ -33,7 +33,7 @@ class TestProvisioner:
             "local-exec", when="destroy", command="echo 'Destroy'"
         )
 
-        self.cfg += terrascript.resource.aws_instance(
+        self.cfg += terrascript.resource.aws.aws_instance(
             "instance1", instance_type="t2.micro", provisioner=[create, destroy]
         )
 

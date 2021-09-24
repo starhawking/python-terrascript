@@ -7,12 +7,14 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+.Python
 env/
 build/
 develop-eggs/
 dist/
 downloads/
 eggs/
+.eggs/
 lib/
 lib64/
 parts/
@@ -20,6 +22,7 @@ sdist/
 var/
 wheels/
 *.egg-info/
+.installed.cfg
 *.egg
 
 # PyInstaller
@@ -34,9 +37,14 @@ pip-delete-this-directory.txt
 
 # Unit test / coverage reports
 htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
 nosetests.xml
 coverage.xml
 *.cover
+.hypothesis/
 
 # Translations
 *.mo
@@ -48,6 +56,10 @@ local_settings.py
 
 # Flask stuff:
 instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
 
 # Sphinx documentation
 docs/_build/
@@ -55,33 +67,52 @@ docs/_build/
 # PyBuilder
 target/
 
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
 # celery beat schedule file
 celerybeat-schedule
 
 # SageMath parsed files
 *.sage.py
 
+# dotenv
+.env
+
 # virtualenv
+.venv
 venv/
 ENV/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
 
 # mkdocs documentation
 /site
 
+# mypy
+.mypy_cache/
+
+.noseids
 **.swp
 #terrascript/*/*
 #!terrascript/terraform/*
+.project
+.pytest_cache
+.pydevproject
+.settings
 **.ipynb
 tools/terraform
 cover/*
 **.terraform
-
-# Ignore all dot-files by default
-.*
-# Explicitly include the ones we care about
-!.gitattributes
-!.gitignore
-!.gitmodules
-!.gitpod.Dockerfile
-!.gitpod.yml
-!.travis.yml
+tools/workdir/*
+**/.requests_cache.sqlite
+**/.requests_cache
+tools/makecode.out

@@ -5,8 +5,8 @@
 
 
 import terrascript
-import terrascript.provider
-import terrascript.resource
+import terrascript.provider.hashicorp.aws
+import terrascript.resource.hashicorp.aws
 
 
 def test_issue_33():
@@ -22,7 +22,7 @@ def test_issue_33():
     var_region = ts.add(terrascript.Variable("region", default="us-east-1"))
     assert isinstance(var_region, terrascript.Variable)
 
-    ts += terrascript.provider.aws(
+    ts += terrascript.provider.hashicorp.aws.aws(
         access_key=var_access_key, secret_key=var_secret_key, region=var_region
     )
 
