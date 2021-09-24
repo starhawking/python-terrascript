@@ -1,8 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased] - 2021-02-21
-To be merged with *[Unreleased] - 2020-11-24*
+## [Unreleased] - 2021-09-24
 ### Added
 * Rewrote tool to generate provider bindings to automatically include all
   providers listed on the [Terraform Registry](https://registry.terraform.io/).
@@ -13,6 +12,10 @@ To be merged with *[Unreleased] - 2020-11-24*
   ``import resource.hashicorp.aws`` and ``import data.hashicorp.aws``. For 
   backwards compatibility most providers can still be used without namespace:
   ``import data.aws``.
+* Build support for Python 3.9
+* Make target for building providers
+* Now possible to update the `terraform` property of Terrascript by adding it multiple times
+* Tool to generate provider bindings now accept provider to build
 ### Changed
 * The ``version`` and ``source`` arguments to providers are now optional
   and default to the latest version.
@@ -24,41 +27,6 @@ To be merged with *[Unreleased] - 2020-11-24*
   Wildcard imports from provider modules are still possible, e.g.
   ``from resource.hashicorp.aws import *`` (with namespace) or 
   ``from provider.aws import *``. (without namespace).  
-
-## [Unreleased] - 2020-11-24
-### Added
-* Build support for Python 3.9
-* Make target for building providers
-* Now possible to update the `terraform` property of Terrascript by adding it multiple times
-* Provider:
-  - `esxi`
-  - `helm`
-  - `null_resource`
-  - `signalfx`
-  - `nsxt`
-  - `time`
-* Tool to generate provider bindings now accept provider to build
-## Changed
-* All dot-files not explicitly included are now ignored by default
-* Backend tutorial code no longer uses (failing) consul backend
-* Script to generate providers:
-  * Automatically sorts the list of providers alphabetically
-  * Now try to guess the location of the required provider.go in the repository
-* Updated generated provider bindings:
-  * alicloud
-  * aws
-  * bitbucket
-  * dnsimple
-  * docker
-  * github
-  * google
-  * google-beta
-  * kubernetes
-  * nomad
-  * ovh
-  * pingdom
-  * profitbricks
-  * signalfx
 ### Deleted
 * Provider terraform data resource `terraform_remote_state` alias `remote_state`
 
