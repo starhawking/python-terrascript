@@ -71,7 +71,7 @@ import requests_cache
 from cachecontrol.heuristics import expire_after
 from time import strftime
 
-DEBUG = True
+DEBUG = False
 
 REGISTRY_BASE_URL = "https://registry.terraform.io/"
 

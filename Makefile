@@ -43,12 +43,12 @@ clean: ## Cleanup temporary / cached files
 	rm -f .coverage
 	rm -f .noseid*
 
-code: clean ## Generate providers shim classes / code
-	( cd tools && ./makecode.py 2>&1 | tee makecode.out )
-	# Workarounds
-	cp -vf terrascript/provider/azurerm.py terrascript/provider/azure.py
-	cp -vf terrascript/resource/azurerm.py terrascript/resource/azure.py
-	cp -vf terrascript/data/azurerm.py terrascript/data/azure.py
+#code: clean ## Generate providers shim classes / code
+#	( cd tools && ./makecode.py 2>&1 | tee makecode.out )
+#	# Workarounds
+#	cp -vf terrascript/provider/azurerm.py terrascript/provider/azure.py
+#	cp -vf terrascript/resource/azurerm.py terrascript/resource/azure.py
+#	cp -vf terrascript/data/azurerm.py terrascript/data/azure.py
 
 coverage: clean ## Generate code test coverage
 	$(COVERAGE) $(TESTS_BASIC) $(TEST_ISSUES)
@@ -81,10 +81,13 @@ package: clean ## Build python package from sources
 	python3 setup.py clean
 	python3 setup.py sdist
 
-providers: ## Build bindings for listed providers
-	cd tools \
-	&& python3 makecode.py \
+providers: ## Build bindings for providers
+	( cd tools && python3 makecode.py 2>&1 | tee makecode.out ) || exit 1
 	$(MAKE) black
+	# Workarounds
+	#	cp -vf terrascript/provider/azurerm.py terrascript/provider/azure.py
+	#	cp -vf terrascript/resource/azurerm.py terrascript/resource/azure.py
+	#	cp -vf terrascript/data/azurerm.py terrascript/data/azure.py
 
 test: clean test_makecode test_basic test_issues test_docs test_providers ## Run all tests
 
