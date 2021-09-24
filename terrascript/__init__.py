@@ -222,7 +222,11 @@ class Terrascript(dict):
         # Terraform
         #
         elif isinstance(block, Terraform):
-            self[TERRAFORM_KEY] = block
+            # self['terraform']
+            if TERRAFORM_KEY not in self:
+                self[TERRAFORM_KEY] = {}
+            # self['terraform'] = {{...}, ...}
+            self[TERRAFORM_KEY] = self.merge(self[TERRAFORM_KEY], block)
         #
         # else
         #
@@ -244,6 +248,24 @@ class Terrascript(dict):
         del kwargs
         for o in other:
             self.add(o)
+
+    def merge(self, base, additions):
+        """ Recursively merge additions into base and return the updated result
+
+        :param base: dict to use as base for merge
+        :param additions: dict to merge values from
+        :return:
+        """
+        if not isinstance(base, dict) or not isinstance(additions, dict):
+            return additions
+
+        for key in additions:
+            if key in base:
+                base[key] = self.merge(base[key], additions[key])
+            else:
+                base[key] = additions[key]
+
+        return base
 
     def __iter__(self):
         """ Iterate over top-level items. """
