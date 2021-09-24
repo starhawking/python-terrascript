@@ -9,4 +9,6 @@ class terraform(terrascript.Provider):
     pass
 
 
-__all__ = ["terraform"]
+__all__ = [
+    "terraform",
+]

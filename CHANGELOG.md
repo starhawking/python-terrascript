@@ -30,10 +30,16 @@ To be merged with *[Unreleased] - 2020-11-24*
 * Build support for Python 3.9
 * Make target for building providers
 * Provider:
+  - `esxi`
   - `helm`
+  - `null_resource`
   - `signalfx`
+  - `nsxt`
+  - `time`
 * Tool to generate provider bindings now accept provider to build
 ## Changed
+* All dot-files not explicitly included are now ignored by default
+* Backend tutorial code no longer uses (failing) consul backend
 * Script to generate providers:
   * Automatically sorts the list of providers alphabetically
   * Now try to guess the location of the required provider.go in the repository
@@ -49,9 +55,11 @@ To be merged with *[Unreleased] - 2020-11-24*
   * kubernetes
   * nomad
   * ovh
+  * pingdom
   * profitbricks
   * signalfx
-  * pingdom
+### Deleted
+* Provider terraform data resource `terraform_remote_state` alias `remote_state`
 
 ## [0.9.0] - 2020-11-23
 **This release requires Python 3.6 or later, and Terraform 0.12 or later.**  

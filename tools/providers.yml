@@ -26,6 +26,8 @@
   repository: https://github.com/terraform-providers/terraform-provider-cloudstack
 - name: cobbler
   repository: https://github.com/terraform-providers/terraform-provider-cobbler
+- name: consul
+  repository: https://github.com/hashicorp/terraform-provider-consul
 - name: datadog
   repository: https://github.com/terraform-providers/terraform-provider-datadog
 - name: digitalocean
@@ -40,6 +42,8 @@
   repository: https://github.com/terraform-providers/terraform-provider-docker
 - name: dyn
   repository: https://github.com/terraform-providers/terraform-provider-dyn
+- name: esxi
+  repository: https://github.com/josenk/terraform-provider-esxi
 - name: external
   repository: https://github.com/terraform-providers/terraform-provider-external
 - name: fastly
@@ -88,6 +92,10 @@
   repository: https://github.com/terraform-providers/terraform-provider-nomad
 - name: ns1
   repository: https://github.com/terraform-providers/terraform-provider-ns1
+- name: nsxt
+  repository: https://github.com/vmware/terraform-provider-nsxt
+- name: 'null'
+  repository: https://github.com/hashicorp/terraform-provider-null
 - name: oci
   repository: https://github.com/terraform-providers/terraform-provider-oci
 - name: oneandone
@@ -134,6 +142,8 @@
   repository: https://github.com/terraform-providers/terraform-provider-statuscake
 - name: template
   repository: https://github.com/terraform-providers/terraform-provider-template
+- name: time
+  repository: https://github.com/hashicorp/terraform-provider-time
 - name: tls
   repository: https://github.com/terraform-providers/terraform-provider-tls
 - name: triton
