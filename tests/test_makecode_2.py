@@ -67,7 +67,8 @@ import terrascript.provider.spotinst
 import terrascript.provider.statuscake
 import terrascript.provider.template
 import terrascript.provider.tls
-#import terrascript.provider.triton
+
+# import terrascript.provider.triton
 import terrascript.provider.ultradns
 import terrascript.provider.vault
 import terrascript.provider.vcd

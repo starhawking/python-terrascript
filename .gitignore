@@ -113,6 +113,6 @@ tools/terraform
 cover/*
 **.terraform
 tools/workdir/*
-tools/.requests_cache.sqlite
-tools/.requests_cache
+**/.requests_cache.sqlite
+**/.requests_cache
 tools/makecode.out

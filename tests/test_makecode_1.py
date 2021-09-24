@@ -77,7 +77,7 @@ terrascript.provider.signalfx
 # terrascript.provider.statuscake
 terrascript.provider.template
 terrascript.provider.tls
-#terrascript.provider.triton
+# terrascript.provider.triton
 terrascript.provider.ultradns
 terrascript.provider.vault
 terrascript.provider.vcd

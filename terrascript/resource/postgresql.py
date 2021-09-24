@@ -29,6 +29,7 @@ class postgresql_role(terrascript.Resource):
 class postgresql_schema(terrascript.Resource):
     pass
 
+
 __all__ = [
     "postgresql_database",
     "postgresql_default_privileges",

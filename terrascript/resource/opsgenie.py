@@ -8,7 +8,7 @@
 # instead of
 #
 #   >>> import terrascript.resource.opsgenie.opsgenie
-# 
+#
 # This is only available for 'official' and 'partner' providers.
 
 from terrascript.resource.opsgenie.opsgenie import *

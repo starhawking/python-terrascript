@@ -82,7 +82,7 @@ package: clean ## Build python package from sources
 	python3 setup.py sdist
 
 providers: ## Build bindings for providers
-	( cd tools && python3 makecode.py 2>&1 | tee makecode.out ) || exit 1
+	tools/makecode.py 
 	$(MAKE) black
 	# Workarounds
 	#	cp -vf terrascript/provider/azurerm.py terrascript/provider/azure.py

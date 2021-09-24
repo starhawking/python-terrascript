@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """Auto-generate provider specific modules.
 
    The list of providers is retrieved from the Terraform Registry.
@@ -436,6 +437,9 @@ The following providers are not supported.
 )
 
 
+# Change into the tools/ folder
+#
+os.chdir(os.path.dirname(sys.argv[0]))
 THIS_DIR = os.path.abspath(".")
 MODULES_DIR = os.path.abspath("../terrascript")
 REQUESTS_CACHE = os.path.join(THIS_DIR, ".requests_cache")
@@ -775,7 +779,7 @@ def process(provider):
 
     """
 
-    logging.info(provider["name"])
+    logging.info(f"provider: {provider['name']}")
 
     # The 'terraform' provider is maintained manually as it is not
     # listed on the Terraform Registry.
@@ -811,56 +815,56 @@ def process(provider):
     # to retrieve information about the resources and data sources
     # of this provider.
     #
-    with tempfile.TemporaryDirectory() as tmpdir:
-        tmpdir = os.path.join(THIS_DIR, "workdir", "makecode")
+    #    with tempfile.TemporaryDirectory() as tmpdir:
+    tmpdir = os.path.join(THIS_DIR, "workdir", "makecode")
 
-        # Create a main.tf file for this provider.
-        #
-        main_tf_path = os.path.join(tmpdir, "main.tf")
-        with open(main_tf_path, "wt") as fp:
-            fp.write(MAIN_TF_TEMPLATE.render(provider=provider))
+    # Create a main.tf file for this provider.
+    #
+    main_tf_path = os.path.join(tmpdir, "main.tf")
+    with open(main_tf_path, "wt") as fp:
+        fp.write(MAIN_TF_TEMPLATE.render(provider=provider))
 
-        # Execute 'terraform init'.
-        #
-        cmd = "terraform init"
-        result = subprocess.run(
-            shlex.split(cmd),
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            cwd=tmpdir,
-            text=True,
-        )
-        if result.returncode != 0:
-            logging.warning(result.stderr)
-            return (provider, RESULT_FAILED, "Failed to initialise provider")
+    # Execute 'terraform init'.
+    #
+    cmd = "terraform init"
+    result = subprocess.run(
+        shlex.split(cmd),
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        cwd=tmpdir,
+        text=True,
+    )
+    if result.returncode != 0:
+        logging.warning(result.stderr)
+        return (provider, RESULT_FAILED, "Failed to initialise provider")
 
-        # Execute 'terraform providers schema -json'
-        #
-        cmd = "terraform providers schema -json"
-        result = subprocess.run(
-            shlex.split(cmd),
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            cwd=tmpdir,
-            text=True,
-        )
-        if result.returncode != 0:
-            logging.warning(result.stderr)
-            return (provider, RESULT_FAILED, "Failed to process provider")
+    # Execute 'terraform providers schema -json'
+    #
+    cmd = "terraform providers schema -json"
+    result = subprocess.run(
+        shlex.split(cmd),
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        cwd=tmpdir,
+        text=True,
+    )
+    if result.returncode != 0:
+        logging.warning(result.stderr)
+        return (provider, RESULT_FAILED, "Failed to process provider")
 
-        # Read the output of 'terraform providers schema -json'
-        #
-        #   format_version    "0.1"
-        #   provider_schemas
-        #     registry.terraform.io/hashicorp/aws
-        #       provider: {...}
-        #       resource_schemas: {...}
-        #       data_source_schemas: {...}
-        #
-        try:
-            data = json.loads(result.stdout)
-        except json.decoder.JSONDecodeError:
-            return (provider, RESULT_FAILED, "Failed to process provider schemas")
+    # Read the output of 'terraform providers schema -json'
+    #
+    #   format_version    "0.1"
+    #   provider_schemas
+    #     registry.terraform.io/hashicorp/aws
+    #       provider: {...}
+    #       resource_schemas: {...}
+    #       data_source_schemas: {...}
+    #
+    try:
+        data = json.loads(result.stdout)
+    except json.decoder.JSONDecodeError:
+        return (provider, RESULT_FAILED, "Failed to process provider schemas")
 
     provider_schemas = data["provider_schemas"]
     key = list(provider_schemas.keys())[0]
@@ -896,11 +900,15 @@ def process(provider):
 
 def main():
 
-    try:
-        os.stat(os.path.join(THIS_DIR, sys.argv[0]))
-    except FileNotFoundError:
-        print("Script must be run from the tools/ folder", file=sys.stderr)
-        sys.exit(1)
+    #    # Change into the tools/ folder
+    #    #
+    #    os.chdir(os.path.dirname(sys.argv[0]))
+    #
+    #    try:
+    #        os.stat(os.path.join(THIS_DIR, sys.argv[0]))
+    #    except FileNotFoundError:
+    #        print("Script must be run from the tools/ folder", file=sys.stderr)
+    #        sys.exit(1)
 
     # Read the file with the known namespaces.
     #
@@ -908,6 +916,7 @@ def main():
     with open(NAMESPACES_INPUT, "rt") as fp:
         for namespace in fp:
             namespace = namespace.strip()
+            logging.info(f"namespace: {namespace}")
             providers += get_providers_for_namespace(namespace)
 
     providers = sorted(providers, key=lambda p: p["name"])
