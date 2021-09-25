@@ -1,10 +1,17 @@
 # Development
 
+## Status
+
+Current development is towards the 0.10.0 release. The key change are that starting with this release the
+provider modules are being auto-generated from data available from the Terraform Provider Registry. 
+
+Release 0.10.0 will support Terraform 0.13 which introduced the ``required_providers`` statement.
+The main outstanding task is to update the dcoumentation and examples to include ``required_providers``.
+
 ## Git branches
 
 | Git branch       | Description                                            | Accepting Pull Requests |
 |------------------|--------------------------------------------------------|-------------------------|
-| ``develop-0.6``  | Terrascript 0.6.x releases supporting Terraform 0.11.x | Not generally           |
 | ``develop``      | Current development, not meant for production          | Yes                     |
 | ``feature/*``    | Development of new "features"                          | Not generally           |
 | ``master``       | Equals latest Terrascript release                      | Never                   |
