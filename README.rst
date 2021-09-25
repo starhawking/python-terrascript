@@ -246,7 +246,8 @@ original HCL format.
 Links
 ~~~~~
 
-* Terraform_ for Terraform.
+* Terraform_.
+* `Terraform Provider Registry`_.
 * Documentation_ for Python-Terrascript.
 * Github_ page of Python-Terrascript.
 * `Terraform JSON`_ syntax.
@@ -255,3 +256,4 @@ Links
 .. _Documentation: https://python-terrascript.readthedocs.io/en/develop/
 .. _Github: https://github.com/mjuenema/python-terrascript
 .. _`Terraform JSON`: https://www.terraform.io/docs/configuration/syntax-json.html
+.. _`Terraform Provider Registry`: https://registry.terraform.io/browse/providers
