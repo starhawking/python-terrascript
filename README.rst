@@ -164,7 +164,6 @@ First the original Terraform HCL format, which since Terraform 0.13 must include
 a ``required_providers`` block inside the ``terraform`` block.
 
 ::
-
     terraform {
       required_providers {
         aws = {
@@ -173,14 +172,15 @@ a ``required_providers`` block inside the ``terraform`` block.
         }
       }
     }
-    
+
     provider "aws" {
       region  = "us-east-1"
     }
-    
+
     resource "aws_vpc" "example" {
       cidr_block = "10.0.0.0/16"
     }
+
 
 The Terrascript code would look like this. The ``required_providers`` argument
 is supplied as a nested dictionary. In this example only the 
@@ -194,18 +194,18 @@ is supplied as a nested dictionary. In this example only the
 
     config = terrascript.Terrascript()
     
-    config += terrascript.Terraform(required_providers={'aws': {
-                                                          'source': 'hashicorp/aws',
-                                                          'version': '3.65.0'
-                                                          }
-                                                        }
-                                    )
+    # The ``required_providers`` argument is supplied as a nested dictionary.
+    config += terrascript.Terraform(required_providers={'aws': {'source': 'hashicorp/aws',
+                                                                'version': '3.36.0' }
+                                                       })
 
-    config += terrascript.provider.hashicorp.aws(region='us-east-1')
+    # The provider is a module and a class:  ***.***
+    config += terrascript.provider.hashicorp.aws.aws(region='us-east-1')
     config += terrascript.resource.hashicorp.aws.aws_vpc('example', cidr_block='10.0.0.0/16')
-    
+
     with open('config.tf.json', 'wt') as fp:
         fp.write(str(config))
+
 
 The content of ``config.tf.json`` is shown below. It is equivalent to the
 original HCL format.
@@ -224,7 +224,6 @@ original HCL format.
       "provider": {
         "aws": [
           {
-            "version": "~> 2.0",
             "region": "us-east-1"
           }
         ]
