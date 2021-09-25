@@ -7,7 +7,7 @@ import json
 import logging
 
 __author__ = "Markus Juenemann <markus@juenemann.net>"
-__version__ = "0.9.0"
+__version__ = "0.10.0"
 __license__ = 'BSD 2-clause "Simplified" License'
 
 """JSON indentation level."""
@@ -250,7 +250,7 @@ class Terrascript(dict):
             self.add(o)
 
     def merge(self, base, additions):
-        """ Recursively merge additions into base and return the updated result
+        """Recursively merge additions into base and return the updated result
 
         :param base: dict to use as base for merge
         :param additions: dict to merge values from
@@ -321,13 +321,13 @@ class Provider(Block):
     """
 
     def __init__(self, **kwargs):
-        # Populate `version` and `source` arguments from info provided
-        # by the actual provider implementation.
-        #
-        if "version" not in kwargs:
-            kwargs["version"] = self.__version__
-        if "source" not in kwargs:
-            kwargs["source"] = self.__source__
+        ## Populate `version` and `source` arguments from info provided
+        ## by the actual provider implementation.
+        ##
+        #if "version" not in kwargs:
+        #    kwargs["version"] = self.__version__
+        #if "source" not in kwargs:
+        #    kwargs["source"] = self.__source__
 
         super().__init__(**kwargs)
 

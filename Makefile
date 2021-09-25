@@ -42,6 +42,7 @@ clean: ## Cleanup temporary / cached files
 	rm -f terrascript/*/*.pyc
 	rm -f .coverage
 	rm -f .noseid*
+	rm -rf build/*
 
 #code: clean ## Generate providers shim classes / code
 #	( cd tools && ./makecode.py 2>&1 | tee makecode.out )
@@ -75,7 +76,7 @@ help: ## Print this help and exit
 		| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-25s\033[0m %s\n", $$1, $$2}'
 
 install: clean ## Install as python package from sources
-	python3 setup.py install --user
+	python3 setup.py install
 
 package: clean ## Build python package from sources
 	python3 setup.py clean

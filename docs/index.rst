@@ -11,8 +11,6 @@ Python-Terrascript
    :caption: Contents:
 
    introduction
-   installation
-   quickstart
    tutorial
    examples
    list_of_providers
