@@ -12,7 +12,6 @@ Python-Terrascript
 
    introduction
    tutorial
-   examples
    list_of_providers
    json
    faq

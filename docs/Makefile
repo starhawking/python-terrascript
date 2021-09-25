@@ -33,13 +33,12 @@ help: ## Print this help and exit
 clean: ## Remove build documentation files
 	rm -rf _build
 
-html: ## Build all documentation as HTML
+html: providers ## Build all documentation as HTML
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-providers: ## Generate list of providers into list_of_providers.rst
-	echo "List of Providers" > list_of_providers.rst
-	echo "~~~~~~~~~~~~~~~~~" >> list_of_providers.rst
-	sort ../tools/providers.yml | awk -F: '$$1 ~ /name/ { printf("*%s\n",$$2) }' >> list_of_providers.rst
+providers: ## Convert ../PROVIDERS.md to list_of_providers.rst
+	m2r ../PROVIDERS.md
+	mv ../PROVIDERS.rst list_of_providers.rst
 
 server: ## Spawn documentation web server on port 8000
 	python3 -m http.server --directory _build/html/ 8000

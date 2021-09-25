@@ -11,3 +11,4 @@ sphinx_rtd_theme
 requests
 requests-cache
 cachecontrol
+m2r
