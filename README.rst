@@ -164,6 +164,7 @@ First the original Terraform HCL format, which since Terraform 0.13 must include
 a ``required_providers`` block inside the ``terraform`` block.
 
 ::
+
     terraform {
       required_providers {
         aws = {
