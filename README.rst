@@ -23,11 +23,22 @@ python-terrascript
    :target: https://github.com/mjuenema/python-terrascript/stargazers
  
 
-Looking for more contributors
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Archived
+~~~~~~~~
 
-IF you feel that this project is useful to you, please consider contributing some of your time towards improving it!
-For more details on contributions, please have a look at CONTRIBUTORS.md and DEVELOPMENT.md.
+As many of you may noticed already, development on this project has stalled. I simply do not have the spare 
+time to maintain this project any longer. I have therefore made the decision to archive this repository to
+prevent giving the false impression that this project is still active.
+
+I would like to say a big thank you to everyone who has been part of the journey, be it by submitting pull requests,
+reporting bugs or starring this repository and I appreciate that some people may be disappointed by my decision. 
+Please let me know if anyone is interested in taking over as maintainer of this project.
+
+I can imagine some alternatives to **python-terrascript**. Terraform configurations in JSON format are really just 
+nested dictionaries which could be easily generated directly in Python. After all, **python-terrascript** is really 
+just a thin wrapper for Python dictionaries. Alternatively one could use the Jinja2 engine to generate
+Terraform configurations from templates. I believe both options are viable alternatives to **python-terrascript**. 
+
 
 About 
 ~~~~~
