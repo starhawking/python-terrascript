@@ -1,4 +1,4 @@
-name: Development
+name: Test
 
 on:
   pull_request:
@@ -10,11 +10,8 @@ on:
   push:
   workflow_call:
 
-
-
 jobs:
   test:
-    name: Test application
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,14 +21,16 @@ jobs:
           - 0.13.5     
         python-version: [ '3.6', '3.7', '3.8', '3.9' ]
     steps:
-      - name: "☁️ checkout repository"
+      - name: "checkout repository"
         uses: actions/checkout@v2
 
       - name: "Download Terraform"
         env:
           TERRAFORM: ${{matrix.tf_version}}
-        run: "(wget https://releases.hashicorp.com/terraform/${TERRAFORM}/terraform_${TERRAFORM}_linux_amd64.zip
-  ; unzip terraform_${TERRAFORM}_linux_amd64.zip ; sudo install -m 755 terraform /usr/local/bin/terraform)"
+        run: |
+          wget https://releases.hashicorp.com/terraform/${TERRAFORM}/terraform_${TERRAFORM}_linux_amd64.zip
+          unzip terraform_${TERRAFORM}_linux_amd64.zip
+          sudo install -m 755 terraform /usr/local/bin/terraform
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -42,19 +41,3 @@ jobs:
           cache-dependency-path: 'dev_requirements.txt'
       - run: pip install -r dev_requirements.txt
       - run: make test
-
-  lint:
-    name: Run Black Code Formatter
-    runs-on: ubuntu-latest
-    steps:
-      - name: "checkout repository"
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          architecture: x64
-          cache: 'pip'
-          cache-dependency-path: 'dev_requirements.txt'
-      - run: pip install -r dev_requirements.txt
-      - run: make test_black
