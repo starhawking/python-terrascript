@@ -1,11 +1,11 @@
 import terrascript
-import terrascript.provider
-import terrascript.resource
+import terrascript.provider.aws
+import terrascript.resource.aws
 
 config = terrascript.Terrascript()
 
 # AWS provider
-config += terrascript.provider.aws(region="us-east-1")
+config += terrascript.provider.aws.aws(region="us-east-1")
 
 # Provisioners
 create = terrascript.Provisioner("local-exec", command="echo 'Create'")
@@ -16,7 +16,7 @@ destroy = terrascript.Provisioner(
 )
 
 # Resource with two provisioners
-config += terrascript.resource.aws_instance(
+config += terrascript.resource.aws.aws_instance(
     "instance1",
     instance_type="t2.micro",
     ami="ami-4bf3d731",

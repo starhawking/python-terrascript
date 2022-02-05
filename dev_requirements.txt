@@ -1,14 +1,16 @@
-black==20.8b1  # Both in dev_requirements.txt and test_requirements.txt
+#black==20.8b1  # Both in dev_requirements.txt and test_requirements.txt
+black
 coverage
 flake8
-jupyterlab
+#jupyterlab
 nose
 recommonmark
 setuptools
-sphinx
+sphinx==4.3.1
 sphinx-markdown
 sphinx_rtd_theme
 requests
 requests-cache
 cachecontrol
-m2r
+myst-parser
+docutils==0.17

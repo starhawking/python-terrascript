@@ -1,12 +1,12 @@
 """Terrascript module example based on https://registry.terraform.io/modules/terraform-aws-modules/ec2-instance/aws/"""
 
 import terrascript
-import terrascript.provider
+import terrascript.provider.aws
 
 config = terrascript.Terrascript()
 
 # AWS provider
-config += terrascript.provider.aws(region="us-east-1")
+config += terrascript.provider.aws.aws(region="us-east-1")
 
 # AWS EC2 module
 config += terrascript.Module(
