@@ -10,18 +10,19 @@ on:
   push:
   workflow_call:
 
-strategy:
-  matrix:
-    tf_version:
-      - 0.12.29
-      - 0.13.4
-      - 0.13.5     
-    python-version: [ '3.6', '3.7', '3.8', '3.9' ]
+
 
 jobs:
   test:
     name: Test application
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        tf_version:
+          - 0.12.29
+          - 0.13.4
+          - 0.13.5     
+        python-version: [ '3.6', '3.7', '3.8', '3.9' ]
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v2
