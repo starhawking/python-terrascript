@@ -324,9 +324,9 @@ class Provider(Block):
         ## Populate `version` and `source` arguments from info provided
         ## by the actual provider implementation.
         ##
-        #if "version" not in kwargs:
+        # if "version" not in kwargs:
         #    kwargs["version"] = self.__version__
-        #if "source" not in kwargs:
+        # if "source" not in kwargs:
         #    kwargs["source"] = self.__source__
 
         super().__init__(**kwargs)

@@ -19,7 +19,7 @@ jobs:
     strategy:
       matrix:
         tf_version:
-          - 0.12.29
+          - 0.12.31
           - 0.13.4
           - 0.13.5     
         python-version: [ '3.6', '3.7', '3.8', '3.9' ]
@@ -42,9 +42,6 @@ jobs:
           cache-dependency-path: 'dev_requirements.txt'
       - run: pip install -r dev_requirements.txt
       - run: make test
-      - name: Upload logs on fail
-        if: ${{ failure() }}
-        run: cat /tmp/*/*tf.json
 
   lint:
     name: Run Black Code Formatter
@@ -62,6 +59,3 @@ jobs:
           cache-dependency-path: 'dev_requirements.txt'
       - run: pip install -r dev_requirements.txt
       - run: make test_black
-      - name: Show logs on fail
-        if: ${{ failure() }}
-        run: cat /tmp/*/*tf.json
