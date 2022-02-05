@@ -39,9 +39,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
           architecture: x64
           cache: 'pip'
-          cache-dependency-path: 'requirements-dev.txt'
-
-      - run: pip install -r requirements-dev.txt
+          cache-dependency-path: 'dev_requirements.txt'
+      - run: pip install -r dev_requirements.txt
       - run: make test
       - name: Upload logs on fail
         if: ${{ failure() }}
@@ -60,8 +59,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
           architecture: x64
           cache: 'pip'
-          cache-dependency-path: 'requirements-dev.txt'
-      - run: pip install -r requirements-dev.txt
+          cache-dependency-path: 'dev_requirements.txt'
+      - run: pip install -r dev_requirements.txt
       - run: make test_black
       - name: Show logs on fail
         if: ${{ failure() }}
