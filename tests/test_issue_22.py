@@ -1,7 +1,7 @@
 """
 Test for Github issue 22: Allow multiple providers of same type
 
-https://github.com/mjuenema/python-terrascript/issues/22
+https://github.com/starhawking/python-terrascript/issues/22
 
 """
 

@@ -36,7 +36,7 @@
                 Use Jinja2 for templating.
                 Make the script process multiple providers concurrently.
 
-   See https://github.com/mjuenema/python-terrascript/commits/develop/makecode.py
+   See https://github.com/starhawking/python-terrascript/commits/develop/makecode.py
    for a list of earlier changes.
    
    

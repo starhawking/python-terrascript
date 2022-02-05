@@ -32,7 +32,7 @@ When your pull request are approved, please merge it.
 ## Tests
 
 Please include test cases for your code. The recommended approach is to  
-* Create a new [issue](https://github.com/mjuenema/python-terrascript/issues) and note down the number.  
+* Create a new [issue](https://github.com/starhawking/python-terrascript/issues) and note down the number.
 * Create a ``tests/test_issue_NNN.py`` file containing your tests, replacing ``NNN`` with the issue number created in the previous step.  
 
 Check out the other files in ``tests/`` for examples.

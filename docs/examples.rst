@@ -2,7 +2,7 @@ Examples
 --------
 More examples can be found in in `Terrascripts examples/`_ directory.
 
-.. _`Terrascripts examples/`: https://github.com/mjuenema/python-terrascript/tree/develop/examples
+.. _`Terrascripts examples/`: https://github.com/starhawking/python-terrascript/tree/develop/examples
 
 AWS
 ~~~

@@ -1,7 +1,7 @@
 """
 Test for Github issue 3: Work-around for data/JSON bug 
 
-https://github.com/mjuenema/python-terrascript/issues/3
+https://github.com/starhawking/python-terrascript/issues/3
 
 Test for comment by @jbscare on 28-April-2018
 

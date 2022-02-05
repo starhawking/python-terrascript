@@ -17,10 +17,10 @@ python-terrascript
    :target: https://pypi.org/project/terrascript/
    
 .. image:: https://img.shields.io/github/issues/mjuenema/python-terrascript
-   :target: https://github.com/mjuenema/python-terrascript/issues
+   :target: https://github.com/starhawking/python-terrascript/issues
    
 .. image:: https://img.shields.io/github/stars/mjuenema/python-terrascript
-   :target: https://github.com/mjuenema/python-terrascript/stargazers
+   :target: https://github.com/starhawking/python-terrascript/stargazers
  
 
 About 
@@ -47,7 +47,7 @@ Terrascript is available from the Python Package Repository PyPi_ or
 alternatively from its Github_ repository.
 
 .. _PyPi: https://pypi.org/project/terrascript/#history
-.. _Github: https://github.com/mjuenema/python-terrascript
+.. _Github: https://github.com/starhawking/python-terrascript
 
 
 Installing Terrascript from PyPi
@@ -66,7 +66,7 @@ Terrascript can also be installed from its Github_ repository.
 
 .. code-block:: console
 
-   $ git clone https://github.com/mjuenema/python-terrascript.git
+   $ git clone https://github.com/starhawking/python-terrascript.git
    $ cd python-terrascript/
    $ git fetch
    $ git fetch --tags
@@ -248,6 +248,6 @@ Links
 
 .. _Terraform: https://www.terraform.io 
 .. _Documentation: https://python-terrascript.readthedocs.io/en/develop/
-.. _Github: https://github.com/mjuenema/python-terrascript
+.. _Github: https://github.com/starhawking/python-terrascript
 .. _`Terraform JSON`: https://www.terraform.io/docs/configuration/syntax-json.html
 .. _`Terraform Provider Registry`: https://registry.terraform.io/browse/providers

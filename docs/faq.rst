@@ -68,7 +68,7 @@ it simply has not yet been added to ``tools/providers.yml``.
 If you believe a provider is missing simply open a new issue_ or submit a pull
 request with the missing provider added to ``tools/providers.yml``.
 
-.. _issue: https://github.com/mjuenema/python-terrascript/issues
+.. _issue: https://github.com/starhawking/python-terrascript/issues
 
 Why is there sometimes so little progress in this project? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -111,7 +111,7 @@ There a various ways you can contribute to the development of **Python-Terrascri
 * Drinks: Anyone willing to catch-up for a chat over coffee (hot chocolate in my case) or beer
   when they are in Melbourne?
   
-.. _`Pull Requests`: https://github.com/mjuenema/python-terrascript/pulls?q=is%3Apr+is%3Aclosed
+.. _`Pull Requests`: https://github.com/starhawking/python-terrascript/pulls?q=is%3Apr+is%3Aclosed
 
 Are there any alternatives to Python-Terrascript?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

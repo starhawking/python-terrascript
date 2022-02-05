@@ -1,7 +1,7 @@
 """
 Test for Github issue 31: Add (test) for vault provider
 
-https://github.com/mjuenema/python-terrascript/issues/31
+https://github.com/starhawking/python-terrascript/issues/31
 
 """
 

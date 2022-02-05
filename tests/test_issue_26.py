@@ -1,7 +1,7 @@
 """
 Test for Github issue 26: Problem when using resource in a loop
 
-https://github.com/mjuenema/python-terrascript/issues/26
+https://github.com/starhawking/python-terrascript/issues/26
 
 """
 

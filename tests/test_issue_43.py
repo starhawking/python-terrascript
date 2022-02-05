@@ -1,5 +1,5 @@
 """
-https://github.com/mjuenema/python-terrascript/issues/43
+https://github.com/starhawking/python-terrascript/issues/43
 
 I have a script like this:
 

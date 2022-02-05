@@ -25,7 +25,7 @@ setup(
     long_description=long_description,
     author="Markus Juenemann",
     author_email="markus@juenemann.net",
-    url="https://github.com/mjuenema/python-terrascript",
+    url="https://github.com/starhawking/python-terrascript",
     packages=find_packages(exclude=["__pycache__"]),
     package_dir={"terrascript": "terrascript"},
     include_package_data=True,
