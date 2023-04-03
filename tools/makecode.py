@@ -481,7 +481,7 @@ def get_providers_for_namespace(namespace):
 
     """
 
-    url = REGISTRY_BASE_URL + f"/v1/providers/{namespace}?limit=100"
+    url = REGISTRY_BASE_URL + f"v1/providers/{namespace}?limit=100"
 
     data = http_get_json(url)
 
